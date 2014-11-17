@@ -51,6 +51,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Security\PermessionsCmd.cs" />
     <Compile Include="Security\UserCmd.cs" />
     <Compile Include="Security\UserInfo.cs" />
   </ItemGroup>
