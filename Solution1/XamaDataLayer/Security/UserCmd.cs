@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using XamaDataLayer;
 namespace XamaDataLayer.Security
 {
-   public  class UserCmd   
+   public static   class UserCmd   
     {
     static  DbDataContext db = new DbDataContext();
 
