@@ -32,18 +32,13 @@ namespace XamaDataLayer.Accountant
 
        public static void DeleteAccountDaily(int xid)
        {
-           try
-           {
+          
                 db = new DbDataContext();
            var dy = db.AccountDailies.Where(d => d.ID == xid).SingleOrDefault();
            db.AccountDailies.DeleteOnSubmit(dy);
            db.SubmitChanges();
-           }
-           catch (Exception)
-           {
-               
-               throw;
-           }
+          
+           
        }
 
        public static List<AccountDaily> GetAllDaily()

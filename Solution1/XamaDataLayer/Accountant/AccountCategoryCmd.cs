@@ -32,19 +32,13 @@ namespace XamaDataLayer.Accountant
 
        public static void DeleteAccountCategory(int xid)
        {
-           try
-           {
+         
            db = new DbDataContext();
            var act = db.AccountCategories.Where(a => a.ID == xid).SingleOrDefault();
            db.AccountCategories.DeleteOnSubmit(act);
 
            db.SubmitChanges();
-           }
-           catch (Exception)
-           {
-               
-               throw;
-           }
+          
        }
 
        public static List<AccountCategory> GetAll()

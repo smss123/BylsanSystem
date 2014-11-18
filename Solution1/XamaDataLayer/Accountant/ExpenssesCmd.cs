@@ -33,18 +33,13 @@ namespace XamaDataLayer.Accountant
 
         public static void DeleteExpenses(int xid)
         {
-            try
-            {
+           
             db = new DbDataContext();
             var exp = db.Expensses.Where(x => x.ID == xid).SingleOrDefault();
             db.Expensses.DeleteOnSubmit(exp);
             db.SubmitChanges();
-            }
-            catch (Exception)
-            {
-                
-                throw;
-            }
+            
+           
         }
 
         public static List<Expenss> GetAllExpensses()
