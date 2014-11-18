@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.LoginBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.GroupLogin = new System.Windows.Forms.GroupBox();
-            this.UserNameTextBox = new System.Windows.Forms.TextBox();
-            this.PasswordTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.PasswordTextBox = new System.Windows.Forms.TextBox();
+            this.UserNameTextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.GroupLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // LoginBtn
@@ -67,27 +70,21 @@
             this.GroupLogin.Controls.Add(this.UserNameTextBox);
             this.GroupLogin.Controls.Add(this.ExitBtn);
             this.GroupLogin.Controls.Add(this.LoginBtn);
-            this.GroupLogin.Location = new System.Drawing.Point(12, 12);
+            this.GroupLogin.Location = new System.Drawing.Point(19, 18);
             this.GroupLogin.Name = "GroupLogin";
             this.GroupLogin.Size = new System.Drawing.Size(312, 186);
             this.GroupLogin.TabIndex = 6;
             this.GroupLogin.TabStop = false;
             this.GroupLogin.Text = "Data Entry";
             // 
-            // UserNameTextBox
+            // label2
             // 
-            this.UserNameTextBox.Location = new System.Drawing.Point(79, 45);
-            this.UserNameTextBox.Name = "UserNameTextBox";
-            this.UserNameTextBox.Size = new System.Drawing.Size(210, 20);
-            this.UserNameTextBox.TabIndex = 5;
-            // 
-            // PasswordTextBox
-            // 
-            this.PasswordTextBox.Location = new System.Drawing.Point(79, 92);
-            this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.PasswordChar = '*';
-            this.PasswordTextBox.Size = new System.Drawing.Size(210, 20);
-            this.PasswordTextBox.TabIndex = 6;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Password:";
             // 
             // label1
             // 
@@ -98,14 +95,24 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "UserName:";
             // 
-            // label2
+            // PasswordTextBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Password:";
+            this.PasswordTextBox.Location = new System.Drawing.Point(79, 92);
+            this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.PasswordChar = '*';
+            this.PasswordTextBox.Size = new System.Drawing.Size(210, 20);
+            this.PasswordTextBox.TabIndex = 6;
+            // 
+            // UserNameTextBox
+            // 
+            this.UserNameTextBox.Location = new System.Drawing.Point(79, 45);
+            this.UserNameTextBox.Name = "UserNameTextBox";
+            this.UserNameTextBox.Size = new System.Drawing.Size(210, 20);
+            this.UserNameTextBox.TabIndex = 5;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FrmLogin
             // 
@@ -121,6 +128,7 @@
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.GroupLogin.ResumeLayout(false);
             this.GroupLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -134,5 +142,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.TextBox UserNameTextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
