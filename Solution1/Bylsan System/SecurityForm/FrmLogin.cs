@@ -17,9 +17,50 @@ namespace Bylsan_System.SecurityForm
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void FrmLogin_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        private void LoginBtn_Click(object sender, EventArgs e)
+        {
+            #region "  CheckFillTextBox "
+            
+            if (UserNameTextBox.Text == "")
+            {
+
+                UserNameTextBox.BackColor = Color.OrangeRed;
+
+                UserNameTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                UserNameTextBox.BackColor = Color.White;
+            }
+
+            //CheckPassword
+
+
+            if (PasswordTextBox.Text == "")
+            {
+
+                PasswordTextBox.BackColor = Color.OrangeRed;
+
+                PasswordTextBox.Focus();
+
+                return;
+            }
+            else
+            {
+                PasswordTextBox.BackColor = Color.White;
+            }
+        }
+         #endregion
 
         }
+     
+       
     }
-}
+
