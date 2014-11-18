@@ -30,18 +30,27 @@ namespace XamaDataLayer
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertExpenssesMovment(ExpenssesMovment instance);
-    partial void UpdateExpenssesMovment(ExpenssesMovment instance);
-    partial void DeleteExpenssesMovment(ExpenssesMovment instance);
-    partial void InsertSellItem(SellItem instance);
-    partial void UpdateSellItem(SellItem instance);
-    partial void DeleteSellItem(SellItem instance);
-    partial void InsertBranch(Branch instance);
-    partial void UpdateBranch(Branch instance);
-    partial void DeleteBranch(Branch instance);
     partial void InsertCustomer(Customer instance);
     partial void UpdateCustomer(Customer instance);
     partial void DeleteCustomer(Customer instance);
+    partial void InsertAccount(Account instance);
+    partial void UpdateAccount(Account instance);
+    partial void DeleteAccount(Account instance);
+    partial void InsertAccountCategory(AccountCategory instance);
+    partial void UpdateAccountCategory(AccountCategory instance);
+    partial void DeleteAccountCategory(AccountCategory instance);
+    partial void InsertAccountDaily(AccountDaily instance);
+    partial void UpdateAccountDaily(AccountDaily instance);
+    partial void DeleteAccountDaily(AccountDaily instance);
+    partial void InsertExpenss(Expenss instance);
+    partial void UpdateExpenss(Expenss instance);
+    partial void DeleteExpenss(Expenss instance);
+    partial void InsertExpenssesMovment(ExpenssesMovment instance);
+    partial void UpdateExpenssesMovment(ExpenssesMovment instance);
+    partial void DeleteExpenssesMovment(ExpenssesMovment instance);
+    partial void InsertBranch(Branch instance);
+    partial void UpdateBranch(Branch instance);
+    partial void DeleteBranch(Branch instance);
     partial void InsertEmployee(Employee instance);
     partial void UpdateEmployee(Employee instance);
     partial void DeleteEmployee(Employee instance);
@@ -99,18 +108,15 @@ namespace XamaDataLayer
     partial void InsertBillItem(BillItem instance);
     partial void UpdateBillItem(BillItem instance);
     partial void DeleteBillItem(BillItem instance);
-    partial void InsertExpenss(Expenss instance);
-    partial void UpdateExpenss(Expenss instance);
-    partial void DeleteExpenss(Expenss instance);
-    partial void InsertAccountDaily(AccountDaily instance);
-    partial void UpdateAccountDaily(AccountDaily instance);
-    partial void DeleteAccountDaily(AccountDaily instance);
-    partial void InsertAccountCategory(AccountCategory instance);
-    partial void UpdateAccountCategory(AccountCategory instance);
-    partial void DeleteAccountCategory(AccountCategory instance);
-    partial void InsertAccount(Account instance);
-    partial void UpdateAccount(Account instance);
-    partial void DeleteAccount(Account instance);
+    partial void InsertSellItem(SellItem instance);
+    partial void UpdateSellItem(SellItem instance);
+    partial void DeleteSellItem(SellItem instance);
+    partial void InsertSellStore(SellStore instance);
+    partial void UpdateSellStore(SellStore instance);
+    partial void DeleteSellStore(SellStore instance);
+    partial void InsertStoreOperationManager(StoreOperationManager instance);
+    partial void UpdateStoreOperationManager(StoreOperationManager instance);
+    partial void DeleteStoreOperationManager(StoreOperationManager instance);
     #endregion
 		
 		public DbDataContext() : 
@@ -143,6 +149,46 @@ namespace XamaDataLayer
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<Customer> Customers
+		{
+			get
+			{
+				return this.GetTable<Customer>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Account> Accounts
+		{
+			get
+			{
+				return this.GetTable<Account>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AccountCategory> AccountCategories
+		{
+			get
+			{
+				return this.GetTable<AccountCategory>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AccountDaily> AccountDailies
+		{
+			get
+			{
+				return this.GetTable<AccountDaily>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Expenss> Expensses
+		{
+			get
+			{
+				return this.GetTable<Expenss>();
+			}
+		}
+		
 		public System.Data.Linq.Table<ExpenssesMovment> ExpenssesMovments
 		{
 			get
@@ -151,27 +197,11 @@ namespace XamaDataLayer
 			}
 		}
 		
-		public System.Data.Linq.Table<SellItem> SellItems
-		{
-			get
-			{
-				return this.GetTable<SellItem>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Branch> Branches
 		{
 			get
 			{
 				return this.GetTable<Branch>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Customer> Customers
-		{
-			get
-			{
-				return this.GetTable<Customer>();
 			}
 		}
 		
@@ -327,660 +357,27 @@ namespace XamaDataLayer
 			}
 		}
 		
-		public System.Data.Linq.Table<Expenss> Expensses
+		public System.Data.Linq.Table<SellItem> SellItems
 		{
 			get
 			{
-				return this.GetTable<Expenss>();
+				return this.GetTable<SellItem>();
 			}
 		}
 		
-		public System.Data.Linq.Table<AccountDaily> AccountDailies
+		public System.Data.Linq.Table<SellStore> SellStores
 		{
 			get
 			{
-				return this.GetTable<AccountDaily>();
+				return this.GetTable<SellStore>();
 			}
 		}
 		
-		public System.Data.Linq.Table<AccountCategory> AccountCategories
+		public System.Data.Linq.Table<StoreOperationManager> StoreOperationManagers
 		{
 			get
 			{
-				return this.GetTable<AccountCategory>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Account> Accounts
-		{
-			get
-			{
-				return this.GetTable<Account>();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Accountant.ExpenssesMovment")]
-	public partial class ExpenssesMovment : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private System.Nullable<int> _ExpenssesID;
-		
-		private System.Nullable<double> _Amount;
-		
-		private System.Nullable<System.DateTime> _DateOfProcess;
-		
-		private string _Description;
-		
-		private EntityRef<Expenss> _Expenss;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnExpenssesIDChanging(System.Nullable<int> value);
-    partial void OnExpenssesIDChanged();
-    partial void OnAmountChanging(System.Nullable<double> value);
-    partial void OnAmountChanged();
-    partial void OnDateOfProcessChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateOfProcessChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    #endregion
-		
-		public ExpenssesMovment()
-		{
-			this._Expenss = default(EntityRef<Expenss>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpenssesID", DbType="Int")]
-		public System.Nullable<int> ExpenssesID
-		{
-			get
-			{
-				return this._ExpenssesID;
-			}
-			set
-			{
-				if ((this._ExpenssesID != value))
-				{
-					if (this._Expenss.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnExpenssesIDChanging(value);
-					this.SendPropertyChanging();
-					this._ExpenssesID = value;
-					this.SendPropertyChanged("ExpenssesID");
-					this.OnExpenssesIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Float")]
-		public System.Nullable<double> Amount
-		{
-			get
-			{
-				return this._Amount;
-			}
-			set
-			{
-				if ((this._Amount != value))
-				{
-					this.OnAmountChanging(value);
-					this.SendPropertyChanging();
-					this._Amount = value;
-					this.SendPropertyChanged("Amount");
-					this.OnAmountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfProcess", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateOfProcess
-		{
-			get
-			{
-				return this._DateOfProcess;
-			}
-			set
-			{
-				if ((this._DateOfProcess != value))
-				{
-					this.OnDateOfProcessChanging(value);
-					this.SendPropertyChanging();
-					this._DateOfProcess = value;
-					this.SendPropertyChanged("DateOfProcess");
-					this.OnDateOfProcessChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Expenss_ExpenssesMovment", Storage="_Expenss", ThisKey="ExpenssesID", OtherKey="ID", IsForeignKey=true, DeleteRule="CASCADE")]
-		public Expenss Expenss
-		{
-			get
-			{
-				return this._Expenss.Entity;
-			}
-			set
-			{
-				Expenss previousValue = this._Expenss.Entity;
-				if (((previousValue != value) 
-							|| (this._Expenss.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Expenss.Entity = null;
-						previousValue.ExpenssesMovments.Remove(this);
-					}
-					this._Expenss.Entity = value;
-					if ((value != null))
-					{
-						value.ExpenssesMovments.Add(this);
-						this._ExpenssesID = value.ID;
-					}
-					else
-					{
-						this._ExpenssesID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Expenss");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="SellSystem.SellItem")]
-	public partial class SellItem : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _ItemName;
-		
-		private string _Description;
-		
-		private System.Nullable<double> _ItemPrice;
-		
-		private EntitySet<BillItem> _BillItems;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnItemNameChanging(string value);
-    partial void OnItemNameChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnItemPriceChanging(System.Nullable<double> value);
-    partial void OnItemPriceChanged();
-    #endregion
-		
-		public SellItem()
-		{
-			this._BillItems = new EntitySet<BillItem>(new Action<BillItem>(this.attach_BillItems), new Action<BillItem>(this.detach_BillItems));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemName", DbType="NVarChar(50)")]
-		public string ItemName
-		{
-			get
-			{
-				return this._ItemName;
-			}
-			set
-			{
-				if ((this._ItemName != value))
-				{
-					this.OnItemNameChanging(value);
-					this.SendPropertyChanging();
-					this._ItemName = value;
-					this.SendPropertyChanged("ItemName");
-					this.OnItemNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(50)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPrice", DbType="Float")]
-		public System.Nullable<double> ItemPrice
-		{
-			get
-			{
-				return this._ItemPrice;
-			}
-			set
-			{
-				if ((this._ItemPrice != value))
-				{
-					this.OnItemPriceChanging(value);
-					this.SendPropertyChanging();
-					this._ItemPrice = value;
-					this.SendPropertyChanged("ItemPrice");
-					this.OnItemPriceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SellItem_BillItem", Storage="_BillItems", ThisKey="ID", OtherKey="ItemID")]
-		public EntitySet<BillItem> BillItems
-		{
-			get
-			{
-				return this._BillItems;
-			}
-			set
-			{
-				this._BillItems.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_BillItems(BillItem entity)
-		{
-			this.SendPropertyChanging();
-			entity.SellItem = this;
-		}
-		
-		private void detach_BillItems(BillItem entity)
-		{
-			this.SendPropertyChanging();
-			entity.SellItem = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Branch")]
-	public partial class Branch : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _Branch_Name;
-		
-		private string _Branch_Description;
-		
-		private System.Nullable<System.DateTime> _CreatedDate;
-		
-		private System.Nullable<int> _Manager_ID;
-		
-		private System.Nullable<int> _AccountID;
-		
-		private EntityRef<Employee> _Employee;
-		
-		private EntityRef<Account> _Account;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnBranch_NameChanging(string value);
-    partial void OnBranch_NameChanged();
-    partial void OnBranch_DescriptionChanging(string value);
-    partial void OnBranch_DescriptionChanged();
-    partial void OnCreatedDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnCreatedDateChanged();
-    partial void OnManager_IDChanging(System.Nullable<int> value);
-    partial void OnManager_IDChanged();
-    partial void OnAccountIDChanging(System.Nullable<int> value);
-    partial void OnAccountIDChanged();
-    #endregion
-		
-		public Branch()
-		{
-			this._Employee = default(EntityRef<Employee>);
-			this._Account = default(EntityRef<Account>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Branch_Name", DbType="NVarChar(50)")]
-		public string Branch_Name
-		{
-			get
-			{
-				return this._Branch_Name;
-			}
-			set
-			{
-				if ((this._Branch_Name != value))
-				{
-					this.OnBranch_NameChanging(value);
-					this.SendPropertyChanging();
-					this._Branch_Name = value;
-					this.SendPropertyChanged("Branch_Name");
-					this.OnBranch_NameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Branch_Description", DbType="NVarChar(500)")]
-		public string Branch_Description
-		{
-			get
-			{
-				return this._Branch_Description;
-			}
-			set
-			{
-				if ((this._Branch_Description != value))
-				{
-					this.OnBranch_DescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Branch_Description = value;
-					this.SendPropertyChanged("Branch_Description");
-					this.OnBranch_DescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CreatedDate
-		{
-			get
-			{
-				return this._CreatedDate;
-			}
-			set
-			{
-				if ((this._CreatedDate != value))
-				{
-					this.OnCreatedDateChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedDate = value;
-					this.SendPropertyChanged("CreatedDate");
-					this.OnCreatedDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Manager_ID", DbType="Int")]
-		public System.Nullable<int> Manager_ID
-		{
-			get
-			{
-				return this._Manager_ID;
-			}
-			set
-			{
-				if ((this._Manager_ID != value))
-				{
-					if (this._Employee.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnManager_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Manager_ID = value;
-					this.SendPropertyChanged("Manager_ID");
-					this.OnManager_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int")]
-		public System.Nullable<int> AccountID
-		{
-			get
-			{
-				return this._AccountID;
-			}
-			set
-			{
-				if ((this._AccountID != value))
-				{
-					if (this._Account.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnAccountIDChanging(value);
-					this.SendPropertyChanging();
-					this._AccountID = value;
-					this.SendPropertyChanged("AccountID");
-					this.OnAccountIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_Branch", Storage="_Employee", ThisKey="Manager_ID", OtherKey="ID", IsForeignKey=true)]
-		public Employee Employee
-		{
-			get
-			{
-				return this._Employee.Entity;
-			}
-			set
-			{
-				Employee previousValue = this._Employee.Entity;
-				if (((previousValue != value) 
-							|| (this._Employee.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Employee.Entity = null;
-						previousValue.Branches.Remove(this);
-					}
-					this._Employee.Entity = value;
-					if ((value != null))
-					{
-						value.Branches.Add(this);
-						this._Manager_ID = value.ID;
-					}
-					else
-					{
-						this._Manager_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Employee");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Branch", Storage="_Account", ThisKey="AccountID", OtherKey="ID", IsForeignKey=true)]
-		public Account Account
-		{
-			get
-			{
-				return this._Account.Entity;
-			}
-			set
-			{
-				Account previousValue = this._Account.Entity;
-				if (((previousValue != value) 
-							|| (this._Account.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Account.Entity = null;
-						previousValue.Branches.Remove(this);
-					}
-					this._Account.Entity = value;
-					if ((value != null))
-					{
-						value.Branches.Add(this);
-						this._AccountID = value.ID;
-					}
-					else
-					{
-						this._AccountID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Account");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<StoreOperationManager>();
 			}
 		}
 	}
@@ -1233,6 +630,1372 @@ namespace XamaDataLayer
 		{
 			this.SendPropertyChanging();
 			entity.Customer = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Accountant.Account")]
+	public partial class Account : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _AccountName;
+		
+		private string _Description;
+		
+		private System.Nullable<int> _CategoryID;
+		
+		private EntitySet<Customer> _Customers;
+		
+		private EntitySet<AccountDaily> _AccountDailies;
+		
+		private EntitySet<Expenss> _Expensses;
+		
+		private EntitySet<Branch> _Branches;
+		
+		private EntitySet<Order> _Orders;
+		
+		private EntityRef<AccountCategory> _AccountCategory;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnAccountNameChanging(string value);
+    partial void OnAccountNameChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnCategoryIDChanging(System.Nullable<int> value);
+    partial void OnCategoryIDChanged();
+    #endregion
+		
+		public Account()
+		{
+			this._Customers = new EntitySet<Customer>(new Action<Customer>(this.attach_Customers), new Action<Customer>(this.detach_Customers));
+			this._AccountDailies = new EntitySet<AccountDaily>(new Action<AccountDaily>(this.attach_AccountDailies), new Action<AccountDaily>(this.detach_AccountDailies));
+			this._Expensses = new EntitySet<Expenss>(new Action<Expenss>(this.attach_Expensses), new Action<Expenss>(this.detach_Expensses));
+			this._Branches = new EntitySet<Branch>(new Action<Branch>(this.attach_Branches), new Action<Branch>(this.detach_Branches));
+			this._Orders = new EntitySet<Order>(new Action<Order>(this.attach_Orders), new Action<Order>(this.detach_Orders));
+			this._AccountCategory = default(EntityRef<AccountCategory>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountName", DbType="NVarChar(50)")]
+		public string AccountName
+		{
+			get
+			{
+				return this._AccountName;
+			}
+			set
+			{
+				if ((this._AccountName != value))
+				{
+					this.OnAccountNameChanging(value);
+					this.SendPropertyChanging();
+					this._AccountName = value;
+					this.SendPropertyChanged("AccountName");
+					this.OnAccountNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", DbType="Int")]
+		public System.Nullable<int> CategoryID
+		{
+			get
+			{
+				return this._CategoryID;
+			}
+			set
+			{
+				if ((this._CategoryID != value))
+				{
+					if (this._AccountCategory.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCategoryIDChanging(value);
+					this.SendPropertyChanging();
+					this._CategoryID = value;
+					this.SendPropertyChanged("CategoryID");
+					this.OnCategoryIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Customer", Storage="_Customers", ThisKey="ID", OtherKey="AccountID")]
+		public EntitySet<Customer> Customers
+		{
+			get
+			{
+				return this._Customers;
+			}
+			set
+			{
+				this._Customers.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_AccountDaily", Storage="_AccountDailies", ThisKey="ID", OtherKey="AccountID")]
+		public EntitySet<AccountDaily> AccountDailies
+		{
+			get
+			{
+				return this._AccountDailies;
+			}
+			set
+			{
+				this._AccountDailies.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Expenss", Storage="_Expensses", ThisKey="ID", OtherKey="AccountID")]
+		public EntitySet<Expenss> Expensses
+		{
+			get
+			{
+				return this._Expensses;
+			}
+			set
+			{
+				this._Expensses.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Branch", Storage="_Branches", ThisKey="ID", OtherKey="AccountID")]
+		public EntitySet<Branch> Branches
+		{
+			get
+			{
+				return this._Branches;
+			}
+			set
+			{
+				this._Branches.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Order", Storage="_Orders", ThisKey="ID", OtherKey="OrderAccount")]
+		public EntitySet<Order> Orders
+		{
+			get
+			{
+				return this._Orders;
+			}
+			set
+			{
+				this._Orders.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AccountCategory_Account", Storage="_AccountCategory", ThisKey="CategoryID", OtherKey="ID", IsForeignKey=true)]
+		public AccountCategory AccountCategory
+		{
+			get
+			{
+				return this._AccountCategory.Entity;
+			}
+			set
+			{
+				AccountCategory previousValue = this._AccountCategory.Entity;
+				if (((previousValue != value) 
+							|| (this._AccountCategory.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._AccountCategory.Entity = null;
+						previousValue.Accounts.Remove(this);
+					}
+					this._AccountCategory.Entity = value;
+					if ((value != null))
+					{
+						value.Accounts.Add(this);
+						this._CategoryID = value.ID;
+					}
+					else
+					{
+						this._CategoryID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("AccountCategory");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Customers(Customer entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_Customers(Customer entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_AccountDailies(AccountDaily entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_AccountDailies(AccountDaily entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_Expensses(Expenss entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_Expensses(Expenss entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_Branches(Branch entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_Branches(Branch entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_Orders(Order entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_Orders(Order entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Accountant.AccountCategory")]
+	public partial class AccountCategory : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _AccountCategoryName;
+		
+		private string _Description;
+		
+		private EntitySet<Account> _Accounts;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnAccountCategoryNameChanging(string value);
+    partial void OnAccountCategoryNameChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    #endregion
+		
+		public AccountCategory()
+		{
+			this._Accounts = new EntitySet<Account>(new Action<Account>(this.attach_Accounts), new Action<Account>(this.detach_Accounts));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountCategoryName", DbType="NVarChar(50)")]
+		public string AccountCategoryName
+		{
+			get
+			{
+				return this._AccountCategoryName;
+			}
+			set
+			{
+				if ((this._AccountCategoryName != value))
+				{
+					this.OnAccountCategoryNameChanging(value);
+					this.SendPropertyChanging();
+					this._AccountCategoryName = value;
+					this.SendPropertyChanged("AccountCategoryName");
+					this.OnAccountCategoryNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(50)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AccountCategory_Account", Storage="_Accounts", ThisKey="ID", OtherKey="CategoryID")]
+		public EntitySet<Account> Accounts
+		{
+			get
+			{
+				return this._Accounts;
+			}
+			set
+			{
+				this._Accounts.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Accounts(Account entity)
+		{
+			this.SendPropertyChanging();
+			entity.AccountCategory = this;
+		}
+		
+		private void detach_Accounts(Account entity)
+		{
+			this.SendPropertyChanging();
+			entity.AccountCategory = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Accountant.AccountDaily")]
+	public partial class AccountDaily : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private System.Nullable<double> _TotalIn;
+		
+		private System.Nullable<double> _TotalOut;
+		
+		private System.Nullable<System.DateTime> _DateOfProcess;
+		
+		private string _Description;
+		
+		private string _CommandArg;
+		
+		private EntityRef<Account> _Account;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnAccountIDChanging(System.Nullable<int> value);
+    partial void OnAccountIDChanged();
+    partial void OnTotalInChanging(System.Nullable<double> value);
+    partial void OnTotalInChanged();
+    partial void OnTotalOutChanging(System.Nullable<double> value);
+    partial void OnTotalOutChanged();
+    partial void OnDateOfProcessChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateOfProcessChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnCommandArgChanging(string value);
+    partial void OnCommandArgChanged();
+    #endregion
+		
+		public AccountDaily()
+		{
+			this._Account = default(EntityRef<Account>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					if (this._Account.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnAccountIDChanging(value);
+					this.SendPropertyChanging();
+					this._AccountID = value;
+					this.SendPropertyChanged("AccountID");
+					this.OnAccountIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalIn", DbType="Float")]
+		public System.Nullable<double> TotalIn
+		{
+			get
+			{
+				return this._TotalIn;
+			}
+			set
+			{
+				if ((this._TotalIn != value))
+				{
+					this.OnTotalInChanging(value);
+					this.SendPropertyChanging();
+					this._TotalIn = value;
+					this.SendPropertyChanged("TotalIn");
+					this.OnTotalInChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalOut", DbType="Float")]
+		public System.Nullable<double> TotalOut
+		{
+			get
+			{
+				return this._TotalOut;
+			}
+			set
+			{
+				if ((this._TotalOut != value))
+				{
+					this.OnTotalOutChanging(value);
+					this.SendPropertyChanging();
+					this._TotalOut = value;
+					this.SendPropertyChanged("TotalOut");
+					this.OnTotalOutChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfProcess", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateOfProcess
+		{
+			get
+			{
+				return this._DateOfProcess;
+			}
+			set
+			{
+				if ((this._DateOfProcess != value))
+				{
+					this.OnDateOfProcessChanging(value);
+					this.SendPropertyChanging();
+					this._DateOfProcess = value;
+					this.SendPropertyChanged("DateOfProcess");
+					this.OnDateOfProcessChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(4000)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommandArg", DbType="NVarChar(50)")]
+		public string CommandArg
+		{
+			get
+			{
+				return this._CommandArg;
+			}
+			set
+			{
+				if ((this._CommandArg != value))
+				{
+					this.OnCommandArgChanging(value);
+					this.SendPropertyChanging();
+					this._CommandArg = value;
+					this.SendPropertyChanged("CommandArg");
+					this.OnCommandArgChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_AccountDaily", Storage="_Account", ThisKey="AccountID", OtherKey="ID", IsForeignKey=true)]
+		public Account Account
+		{
+			get
+			{
+				return this._Account.Entity;
+			}
+			set
+			{
+				Account previousValue = this._Account.Entity;
+				if (((previousValue != value) 
+							|| (this._Account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Account.Entity = null;
+						previousValue.AccountDailies.Remove(this);
+					}
+					this._Account.Entity = value;
+					if ((value != null))
+					{
+						value.AccountDailies.Add(this);
+						this._AccountID = value.ID;
+					}
+					else
+					{
+						this._AccountID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Account");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Accountant.Expensses")]
+	public partial class Expenss : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _ExpenssesName;
+		
+		private string _Description;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private EntitySet<ExpenssesMovment> _ExpenssesMovments;
+		
+		private EntityRef<Account> _Account;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnExpenssesNameChanging(string value);
+    partial void OnExpenssesNameChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnAccountIDChanging(System.Nullable<int> value);
+    partial void OnAccountIDChanged();
+    #endregion
+		
+		public Expenss()
+		{
+			this._ExpenssesMovments = new EntitySet<ExpenssesMovment>(new Action<ExpenssesMovment>(this.attach_ExpenssesMovments), new Action<ExpenssesMovment>(this.detach_ExpenssesMovments));
+			this._Account = default(EntityRef<Account>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpenssesName", DbType="NVarChar(50)")]
+		public string ExpenssesName
+		{
+			get
+			{
+				return this._ExpenssesName;
+			}
+			set
+			{
+				if ((this._ExpenssesName != value))
+				{
+					this.OnExpenssesNameChanging(value);
+					this.SendPropertyChanging();
+					this._ExpenssesName = value;
+					this.SendPropertyChanged("ExpenssesName");
+					this.OnExpenssesNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(4000)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					if (this._Account.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnAccountIDChanging(value);
+					this.SendPropertyChanging();
+					this._AccountID = value;
+					this.SendPropertyChanged("AccountID");
+					this.OnAccountIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Expenss_ExpenssesMovment", Storage="_ExpenssesMovments", ThisKey="ID", OtherKey="ExpenssesID")]
+		public EntitySet<ExpenssesMovment> ExpenssesMovments
+		{
+			get
+			{
+				return this._ExpenssesMovments;
+			}
+			set
+			{
+				this._ExpenssesMovments.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Expenss", Storage="_Account", ThisKey="AccountID", OtherKey="ID", IsForeignKey=true)]
+		public Account Account
+		{
+			get
+			{
+				return this._Account.Entity;
+			}
+			set
+			{
+				Account previousValue = this._Account.Entity;
+				if (((previousValue != value) 
+							|| (this._Account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Account.Entity = null;
+						previousValue.Expensses.Remove(this);
+					}
+					this._Account.Entity = value;
+					if ((value != null))
+					{
+						value.Expensses.Add(this);
+						this._AccountID = value.ID;
+					}
+					else
+					{
+						this._AccountID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Account");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_ExpenssesMovments(ExpenssesMovment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Expenss = this;
+		}
+		
+		private void detach_ExpenssesMovments(ExpenssesMovment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Expenss = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Accountant.ExpenssesMovment")]
+	public partial class ExpenssesMovment : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _ExpenssesID;
+		
+		private System.Nullable<double> _Amount;
+		
+		private System.Nullable<System.DateTime> _DateOfProcess;
+		
+		private string _Description;
+		
+		private EntityRef<Expenss> _Expenss;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnExpenssesIDChanging(System.Nullable<int> value);
+    partial void OnExpenssesIDChanged();
+    partial void OnAmountChanging(System.Nullable<double> value);
+    partial void OnAmountChanged();
+    partial void OnDateOfProcessChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateOfProcessChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    #endregion
+		
+		public ExpenssesMovment()
+		{
+			this._Expenss = default(EntityRef<Expenss>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpenssesID", DbType="Int")]
+		public System.Nullable<int> ExpenssesID
+		{
+			get
+			{
+				return this._ExpenssesID;
+			}
+			set
+			{
+				if ((this._ExpenssesID != value))
+				{
+					if (this._Expenss.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnExpenssesIDChanging(value);
+					this.SendPropertyChanging();
+					this._ExpenssesID = value;
+					this.SendPropertyChanged("ExpenssesID");
+					this.OnExpenssesIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Float")]
+		public System.Nullable<double> Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this.OnAmountChanging(value);
+					this.SendPropertyChanging();
+					this._Amount = value;
+					this.SendPropertyChanged("Amount");
+					this.OnAmountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfProcess", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateOfProcess
+		{
+			get
+			{
+				return this._DateOfProcess;
+			}
+			set
+			{
+				if ((this._DateOfProcess != value))
+				{
+					this.OnDateOfProcessChanging(value);
+					this.SendPropertyChanging();
+					this._DateOfProcess = value;
+					this.SendPropertyChanged("DateOfProcess");
+					this.OnDateOfProcessChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Expenss_ExpenssesMovment", Storage="_Expenss", ThisKey="ExpenssesID", OtherKey="ID", IsForeignKey=true, DeleteRule="CASCADE")]
+		public Expenss Expenss
+		{
+			get
+			{
+				return this._Expenss.Entity;
+			}
+			set
+			{
+				Expenss previousValue = this._Expenss.Entity;
+				if (((previousValue != value) 
+							|| (this._Expenss.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Expenss.Entity = null;
+						previousValue.ExpenssesMovments.Remove(this);
+					}
+					this._Expenss.Entity = value;
+					if ((value != null))
+					{
+						value.ExpenssesMovments.Add(this);
+						this._ExpenssesID = value.ID;
+					}
+					else
+					{
+						this._ExpenssesID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Expenss");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Branch")]
+	public partial class Branch : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _Branch_Name;
+		
+		private string _Branch_Description;
+		
+		private System.Nullable<System.DateTime> _CreatedDate;
+		
+		private System.Nullable<int> _Manager_ID;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private EntityRef<Account> _Account;
+		
+		private EntityRef<Employee> _Employee;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnBranch_NameChanging(string value);
+    partial void OnBranch_NameChanged();
+    partial void OnBranch_DescriptionChanging(string value);
+    partial void OnBranch_DescriptionChanged();
+    partial void OnCreatedDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreatedDateChanged();
+    partial void OnManager_IDChanging(System.Nullable<int> value);
+    partial void OnManager_IDChanged();
+    partial void OnAccountIDChanging(System.Nullable<int> value);
+    partial void OnAccountIDChanged();
+    #endregion
+		
+		public Branch()
+		{
+			this._Account = default(EntityRef<Account>);
+			this._Employee = default(EntityRef<Employee>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Branch_Name", DbType="NVarChar(50)")]
+		public string Branch_Name
+		{
+			get
+			{
+				return this._Branch_Name;
+			}
+			set
+			{
+				if ((this._Branch_Name != value))
+				{
+					this.OnBranch_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Branch_Name = value;
+					this.SendPropertyChanged("Branch_Name");
+					this.OnBranch_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Branch_Description", DbType="NVarChar(500)")]
+		public string Branch_Description
+		{
+			get
+			{
+				return this._Branch_Description;
+			}
+			set
+			{
+				if ((this._Branch_Description != value))
+				{
+					this.OnBranch_DescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Branch_Description = value;
+					this.SendPropertyChanged("Branch_Description");
+					this.OnBranch_DescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreatedDate
+		{
+			get
+			{
+				return this._CreatedDate;
+			}
+			set
+			{
+				if ((this._CreatedDate != value))
+				{
+					this.OnCreatedDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedDate = value;
+					this.SendPropertyChanged("CreatedDate");
+					this.OnCreatedDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Manager_ID", DbType="Int")]
+		public System.Nullable<int> Manager_ID
+		{
+			get
+			{
+				return this._Manager_ID;
+			}
+			set
+			{
+				if ((this._Manager_ID != value))
+				{
+					if (this._Employee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnManager_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Manager_ID = value;
+					this.SendPropertyChanged("Manager_ID");
+					this.OnManager_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					if (this._Account.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnAccountIDChanging(value);
+					this.SendPropertyChanging();
+					this._AccountID = value;
+					this.SendPropertyChanged("AccountID");
+					this.OnAccountIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Branch", Storage="_Account", ThisKey="AccountID", OtherKey="ID", IsForeignKey=true)]
+		public Account Account
+		{
+			get
+			{
+				return this._Account.Entity;
+			}
+			set
+			{
+				Account previousValue = this._Account.Entity;
+				if (((previousValue != value) 
+							|| (this._Account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Account.Entity = null;
+						previousValue.Branches.Remove(this);
+					}
+					this._Account.Entity = value;
+					if ((value != null))
+					{
+						value.Branches.Add(this);
+						this._AccountID = value.ID;
+					}
+					else
+					{
+						this._AccountID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Account");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Employee_Branch", Storage="_Employee", ThisKey="Manager_ID", OtherKey="ID", IsForeignKey=true)]
+		public Employee Employee
+		{
+			get
+			{
+				return this._Employee.Entity;
+			}
+			set
+			{
+				Employee previousValue = this._Employee.Entity;
+				if (((previousValue != value) 
+							|| (this._Employee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Employee.Entity = null;
+						previousValue.Branches.Remove(this);
+					}
+					this._Employee.Entity = value;
+					if ((value != null))
+					{
+						value.Branches.Add(this);
+						this._Manager_ID = value.ID;
+					}
+					else
+					{
+						this._Manager_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Employee");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -1550,11 +2313,13 @@ namespace XamaDataLayer
 		
 		private System.Nullable<System.DateTime> _OrderDate;
 		
+		private System.Nullable<int> _DeliverdToBranch;
+		
 		private EntitySet<OrderProduct> _OrderProducts;
 		
-		private EntityRef<Customer> _Customer;
-		
 		private EntityRef<Account> _Account;
+		
+		private EntityRef<Customer> _Customer;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1586,13 +2351,15 @@ namespace XamaDataLayer
     partial void OnOrderAccountChanged();
     partial void OnOrderDateChanging(System.Nullable<System.DateTime> value);
     partial void OnOrderDateChanged();
+    partial void OnDeliverdToBranchChanging(System.Nullable<int> value);
+    partial void OnDeliverdToBranchChanged();
     #endregion
 		
 		public Order()
 		{
 			this._OrderProducts = new EntitySet<OrderProduct>(new Action<OrderProduct>(this.attach_OrderProducts), new Action<OrderProduct>(this.detach_OrderProducts));
-			this._Customer = default(EntityRef<Customer>);
 			this._Account = default(EntityRef<Account>);
+			this._Customer = default(EntityRef<Customer>);
 			OnCreated();
 		}
 		
@@ -1864,6 +2631,26 @@ namespace XamaDataLayer
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DeliverdToBranch", DbType="Int")]
+		public System.Nullable<int> DeliverdToBranch
+		{
+			get
+			{
+				return this._DeliverdToBranch;
+			}
+			set
+			{
+				if ((this._DeliverdToBranch != value))
+				{
+					this.OnDeliverdToBranchChanging(value);
+					this.SendPropertyChanging();
+					this._DeliverdToBranch = value;
+					this.SendPropertyChanged("DeliverdToBranch");
+					this.OnDeliverdToBranchChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_OrderProduct", Storage="_OrderProducts", ThisKey="ID", OtherKey="OrderID")]
 		public EntitySet<OrderProduct> OrderProducts
 		{
@@ -1874,40 +2661,6 @@ namespace XamaDataLayer
 			set
 			{
 				this._OrderProducts.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Order", Storage="_Customer", ThisKey="CustomerID", OtherKey="ID", IsForeignKey=true)]
-		public Customer Customer
-		{
-			get
-			{
-				return this._Customer.Entity;
-			}
-			set
-			{
-				Customer previousValue = this._Customer.Entity;
-				if (((previousValue != value) 
-							|| (this._Customer.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Customer.Entity = null;
-						previousValue.Orders.Remove(this);
-					}
-					this._Customer.Entity = value;
-					if ((value != null))
-					{
-						value.Orders.Add(this);
-						this._CustomerID = value.ID;
-					}
-					else
-					{
-						this._CustomerID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Customer");
-				}
 			}
 		}
 		
@@ -1941,6 +2694,40 @@ namespace XamaDataLayer
 						this._OrderAccount = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Account");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Order", Storage="_Customer", ThisKey="CustomerID", OtherKey="ID", IsForeignKey=true)]
+		public Customer Customer
+		{
+			get
+			{
+				return this._Customer.Entity;
+			}
+			set
+			{
+				Customer previousValue = this._Customer.Entity;
+				if (((previousValue != value) 
+							|| (this._Customer.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Customer.Entity = null;
+						previousValue.Orders.Remove(this);
+					}
+					this._Customer.Entity = value;
+					if ((value != null))
+					{
+						value.Orders.Add(this);
+						this._CustomerID = value.ID;
+					}
+					else
+					{
+						this._CustomerID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Customer");
 				}
 			}
 		}
@@ -1996,6 +2783,8 @@ namespace XamaDataLayer
 		
 		private System.Data.Linq.Binary _ImageX;
 		
+		private string _Status;
+		
 		private EntityRef<Order> _Order;
 		
 		private EntityRef<Product> _Product;
@@ -2016,6 +2805,8 @@ namespace XamaDataLayer
     partial void OnDescriptionChanged();
     partial void OnImageXChanging(System.Data.Linq.Binary value);
     partial void OnImageXChanged();
+    partial void OnStatusChanging(string value);
+    partial void OnStatusChanged();
     #endregion
 		
 		public OrderProduct()
@@ -2149,6 +2940,26 @@ namespace XamaDataLayer
 					this._ImageX = value;
 					this.SendPropertyChanged("ImageX");
 					this.OnImageXChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="NVarChar(50)")]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
 				}
 			}
 		}
@@ -5111,6 +5922,8 @@ namespace XamaDataLayer
 		
 		private EntitySet<UserPermession> _UserPermessions;
 		
+		private EntitySet<StoreOperationManager> _StoreOperationManagers;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -5129,6 +5942,7 @@ namespace XamaDataLayer
 			this._StoreWithDrawals = new EntitySet<StoreWithDrawal>(new Action<StoreWithDrawal>(this.attach_StoreWithDrawals), new Action<StoreWithDrawal>(this.detach_StoreWithDrawals));
 			this._Histories = new EntitySet<History>(new Action<History>(this.attach_Histories), new Action<History>(this.detach_Histories));
 			this._UserPermessions = new EntitySet<UserPermession>(new Action<UserPermession>(this.attach_UserPermessions), new Action<UserPermession>(this.detach_UserPermessions));
+			this._StoreOperationManagers = new EntitySet<StoreOperationManager>(new Action<StoreOperationManager>(this.attach_StoreOperationManagers), new Action<StoreOperationManager>(this.detach_StoreOperationManagers));
 			OnCreated();
 		}
 		
@@ -5244,6 +6058,19 @@ namespace XamaDataLayer
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_StoreOperationManager", Storage="_StoreOperationManagers", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<StoreOperationManager> StoreOperationManagers
+		{
+			get
+			{
+				return this._StoreOperationManagers;
+			}
+			set
+			{
+				this._StoreOperationManagers.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -5307,6 +6134,18 @@ namespace XamaDataLayer
 		}
 		
 		private void detach_UserPermessions(UserPermession entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_StoreOperationManagers(StoreOperationManager entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_StoreOperationManagers(StoreOperationManager entity)
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
@@ -5715,23 +6554,25 @@ namespace XamaDataLayer
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Accountant.Expensses")]
-	public partial class Expenss : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="SellSystem.SellItem")]
+	public partial class SellItem : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
-		private string _ExpenssesName;
+		private string _ItemName;
 		
 		private string _Description;
 		
-		private System.Nullable<int> _AccountID;
+		private System.Nullable<double> _ItemPrice;
 		
-		private EntitySet<ExpenssesMovment> _ExpenssesMovments;
+		private System.Data.Linq.Binary _ItemIcon;
 		
-		private EntityRef<Account> _Account;
+		private EntitySet<BillItem> _BillItems;
+		
+		private EntitySet<SellStore> _SellStores;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -5739,18 +6580,20 @@ namespace XamaDataLayer
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnExpenssesNameChanging(string value);
-    partial void OnExpenssesNameChanged();
+    partial void OnItemNameChanging(string value);
+    partial void OnItemNameChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
-    partial void OnAccountIDChanging(System.Nullable<int> value);
-    partial void OnAccountIDChanged();
+    partial void OnItemPriceChanging(System.Nullable<double> value);
+    partial void OnItemPriceChanged();
+    partial void OnItemIconChanging(System.Data.Linq.Binary value);
+    partial void OnItemIconChanged();
     #endregion
 		
-		public Expenss()
+		public SellItem()
 		{
-			this._ExpenssesMovments = new EntitySet<ExpenssesMovment>(new Action<ExpenssesMovment>(this.attach_ExpenssesMovments), new Action<ExpenssesMovment>(this.detach_ExpenssesMovments));
-			this._Account = default(EntityRef<Account>);
+			this._BillItems = new EntitySet<BillItem>(new Action<BillItem>(this.attach_BillItems), new Action<BillItem>(this.detach_BillItems));
+			this._SellStores = new EntitySet<SellStore>(new Action<SellStore>(this.attach_SellStores), new Action<SellStore>(this.detach_SellStores));
 			OnCreated();
 		}
 		
@@ -5774,465 +6617,22 @@ namespace XamaDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpenssesName", DbType="NVarChar(50)")]
-		public string ExpenssesName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemName", DbType="NVarChar(50)")]
+		public string ItemName
 		{
 			get
 			{
-				return this._ExpenssesName;
+				return this._ItemName;
 			}
 			set
 			{
-				if ((this._ExpenssesName != value))
+				if ((this._ItemName != value))
 				{
-					this.OnExpenssesNameChanging(value);
+					this.OnItemNameChanging(value);
 					this.SendPropertyChanging();
-					this._ExpenssesName = value;
-					this.SendPropertyChanged("ExpenssesName");
-					this.OnExpenssesNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(4000)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int")]
-		public System.Nullable<int> AccountID
-		{
-			get
-			{
-				return this._AccountID;
-			}
-			set
-			{
-				if ((this._AccountID != value))
-				{
-					if (this._Account.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnAccountIDChanging(value);
-					this.SendPropertyChanging();
-					this._AccountID = value;
-					this.SendPropertyChanged("AccountID");
-					this.OnAccountIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Expenss_ExpenssesMovment", Storage="_ExpenssesMovments", ThisKey="ID", OtherKey="ExpenssesID")]
-		public EntitySet<ExpenssesMovment> ExpenssesMovments
-		{
-			get
-			{
-				return this._ExpenssesMovments;
-			}
-			set
-			{
-				this._ExpenssesMovments.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Expenss", Storage="_Account", ThisKey="AccountID", OtherKey="ID", IsForeignKey=true)]
-		public Account Account
-		{
-			get
-			{
-				return this._Account.Entity;
-			}
-			set
-			{
-				Account previousValue = this._Account.Entity;
-				if (((previousValue != value) 
-							|| (this._Account.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Account.Entity = null;
-						previousValue.Expensses.Remove(this);
-					}
-					this._Account.Entity = value;
-					if ((value != null))
-					{
-						value.Expensses.Add(this);
-						this._AccountID = value.ID;
-					}
-					else
-					{
-						this._AccountID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Account");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_ExpenssesMovments(ExpenssesMovment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Expenss = this;
-		}
-		
-		private void detach_ExpenssesMovments(ExpenssesMovment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Expenss = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Accountant.AccountDaily")]
-	public partial class AccountDaily : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private System.Nullable<int> _AccountID;
-		
-		private System.Nullable<double> _TotalIn;
-		
-		private System.Nullable<double> _TotalOut;
-		
-		private System.Nullable<System.DateTime> _DateOfProcess;
-		
-		private string _Description;
-		
-		private string _CommandArg;
-		
-		private EntityRef<Account> _Account;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnAccountIDChanging(System.Nullable<int> value);
-    partial void OnAccountIDChanged();
-    partial void OnTotalInChanging(System.Nullable<double> value);
-    partial void OnTotalInChanged();
-    partial void OnTotalOutChanging(System.Nullable<double> value);
-    partial void OnTotalOutChanged();
-    partial void OnDateOfProcessChanging(System.Nullable<System.DateTime> value);
-    partial void OnDateOfProcessChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnCommandArgChanging(string value);
-    partial void OnCommandArgChanged();
-    #endregion
-		
-		public AccountDaily()
-		{
-			this._Account = default(EntityRef<Account>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int")]
-		public System.Nullable<int> AccountID
-		{
-			get
-			{
-				return this._AccountID;
-			}
-			set
-			{
-				if ((this._AccountID != value))
-				{
-					if (this._Account.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnAccountIDChanging(value);
-					this.SendPropertyChanging();
-					this._AccountID = value;
-					this.SendPropertyChanged("AccountID");
-					this.OnAccountIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalIn", DbType="Float")]
-		public System.Nullable<double> TotalIn
-		{
-			get
-			{
-				return this._TotalIn;
-			}
-			set
-			{
-				if ((this._TotalIn != value))
-				{
-					this.OnTotalInChanging(value);
-					this.SendPropertyChanging();
-					this._TotalIn = value;
-					this.SendPropertyChanged("TotalIn");
-					this.OnTotalInChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalOut", DbType="Float")]
-		public System.Nullable<double> TotalOut
-		{
-			get
-			{
-				return this._TotalOut;
-			}
-			set
-			{
-				if ((this._TotalOut != value))
-				{
-					this.OnTotalOutChanging(value);
-					this.SendPropertyChanging();
-					this._TotalOut = value;
-					this.SendPropertyChanged("TotalOut");
-					this.OnTotalOutChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateOfProcess", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DateOfProcess
-		{
-			get
-			{
-				return this._DateOfProcess;
-			}
-			set
-			{
-				if ((this._DateOfProcess != value))
-				{
-					this.OnDateOfProcessChanging(value);
-					this.SendPropertyChanging();
-					this._DateOfProcess = value;
-					this.SendPropertyChanged("DateOfProcess");
-					this.OnDateOfProcessChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(4000)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommandArg", DbType="NVarChar(50)")]
-		public string CommandArg
-		{
-			get
-			{
-				return this._CommandArg;
-			}
-			set
-			{
-				if ((this._CommandArg != value))
-				{
-					this.OnCommandArgChanging(value);
-					this.SendPropertyChanging();
-					this._CommandArg = value;
-					this.SendPropertyChanged("CommandArg");
-					this.OnCommandArgChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_AccountDaily", Storage="_Account", ThisKey="AccountID", OtherKey="ID", IsForeignKey=true)]
-		public Account Account
-		{
-			get
-			{
-				return this._Account.Entity;
-			}
-			set
-			{
-				Account previousValue = this._Account.Entity;
-				if (((previousValue != value) 
-							|| (this._Account.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Account.Entity = null;
-						previousValue.AccountDailies.Remove(this);
-					}
-					this._Account.Entity = value;
-					if ((value != null))
-					{
-						value.AccountDailies.Add(this);
-						this._AccountID = value.ID;
-					}
-					else
-					{
-						this._AccountID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Account");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Accountant.AccountCategory")]
-	public partial class AccountCategory : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _AccountCategoryName;
-		
-		private string _Description;
-		
-		private EntitySet<Account> _Accounts;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnAccountCategoryNameChanging(string value);
-    partial void OnAccountCategoryNameChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    #endregion
-		
-		public AccountCategory()
-		{
-			this._Accounts = new EntitySet<Account>(new Action<Account>(this.attach_Accounts), new Action<Account>(this.detach_Accounts));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountCategoryName", DbType="NVarChar(50)")]
-		public string AccountCategoryName
-		{
-			get
-			{
-				return this._AccountCategoryName;
-			}
-			set
-			{
-				if ((this._AccountCategoryName != value))
-				{
-					this.OnAccountCategoryNameChanging(value);
-					this.SendPropertyChanging();
-					this._AccountCategoryName = value;
-					this.SendPropertyChanged("AccountCategoryName");
-					this.OnAccountCategoryNameChanged();
+					this._ItemName = value;
+					this.SendPropertyChanged("ItemName");
+					this.OnItemNameChanged();
 				}
 			}
 		}
@@ -6257,16 +6657,69 @@ namespace XamaDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AccountCategory_Account", Storage="_Accounts", ThisKey="ID", OtherKey="CategoryID")]
-		public EntitySet<Account> Accounts
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemPrice", DbType="Float")]
+		public System.Nullable<double> ItemPrice
 		{
 			get
 			{
-				return this._Accounts;
+				return this._ItemPrice;
 			}
 			set
 			{
-				this._Accounts.Assign(value);
+				if ((this._ItemPrice != value))
+				{
+					this.OnItemPriceChanging(value);
+					this.SendPropertyChanging();
+					this._ItemPrice = value;
+					this.SendPropertyChanged("ItemPrice");
+					this.OnItemPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemIcon", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary ItemIcon
+		{
+			get
+			{
+				return this._ItemIcon;
+			}
+			set
+			{
+				if ((this._ItemIcon != value))
+				{
+					this.OnItemIconChanging(value);
+					this.SendPropertyChanging();
+					this._ItemIcon = value;
+					this.SendPropertyChanged("ItemIcon");
+					this.OnItemIconChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SellItem_BillItem", Storage="_BillItems", ThisKey="ID", OtherKey="ItemID")]
+		public EntitySet<BillItem> BillItems
+		{
+			get
+			{
+				return this._BillItems;
+			}
+			set
+			{
+				this._BillItems.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SellItem_SellStore", Storage="_SellStores", ThisKey="ID", OtherKey="ItemID")]
+		public EntitySet<SellStore> SellStores
+		{
+			get
+			{
+				return this._SellStores;
+			}
+			set
+			{
+				this._SellStores.Assign(value);
 			}
 		}
 		
@@ -6290,44 +6743,46 @@ namespace XamaDataLayer
 			}
 		}
 		
-		private void attach_Accounts(Account entity)
+		private void attach_BillItems(BillItem entity)
 		{
 			this.SendPropertyChanging();
-			entity.AccountCategory = this;
+			entity.SellItem = this;
 		}
 		
-		private void detach_Accounts(Account entity)
+		private void detach_BillItems(BillItem entity)
 		{
 			this.SendPropertyChanging();
-			entity.AccountCategory = null;
+			entity.SellItem = null;
+		}
+		
+		private void attach_SellStores(SellStore entity)
+		{
+			this.SendPropertyChanging();
+			entity.SellItem = this;
+		}
+		
+		private void detach_SellStores(SellStore entity)
+		{
+			this.SendPropertyChanging();
+			entity.SellItem = null;
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Accountant.Account")]
-	public partial class Account : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="SellSystem.SellStore")]
+	public partial class SellStore : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
-		private string _AccountName;
+		private System.Nullable<int> _ItemID;
 		
-		private string _Description;
+		private System.Nullable<long> _Qty;
 		
-		private System.Nullable<int> _CategoryID;
+		private EntitySet<StoreOperationManager> _StoreOperationManagers;
 		
-		private EntitySet<Branch> _Branches;
-		
-		private EntitySet<Customer> _Customers;
-		
-		private EntitySet<Order> _Orders;
-		
-		private EntitySet<Expenss> _Expensses;
-		
-		private EntitySet<AccountDaily> _AccountDailies;
-		
-		private EntityRef<AccountCategory> _AccountCategory;
+		private EntityRef<SellItem> _SellItem;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -6335,22 +6790,207 @@ namespace XamaDataLayer
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnAccountNameChanging(string value);
-    partial void OnAccountNameChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnCategoryIDChanging(System.Nullable<int> value);
-    partial void OnCategoryIDChanged();
+    partial void OnItemIDChanging(System.Nullable<int> value);
+    partial void OnItemIDChanged();
+    partial void OnQtyChanging(System.Nullable<long> value);
+    partial void OnQtyChanged();
     #endregion
 		
-		public Account()
+		public SellStore()
 		{
-			this._Branches = new EntitySet<Branch>(new Action<Branch>(this.attach_Branches), new Action<Branch>(this.detach_Branches));
-			this._Customers = new EntitySet<Customer>(new Action<Customer>(this.attach_Customers), new Action<Customer>(this.detach_Customers));
-			this._Orders = new EntitySet<Order>(new Action<Order>(this.attach_Orders), new Action<Order>(this.detach_Orders));
-			this._Expensses = new EntitySet<Expenss>(new Action<Expenss>(this.attach_Expensses), new Action<Expenss>(this.detach_Expensses));
-			this._AccountDailies = new EntitySet<AccountDaily>(new Action<AccountDaily>(this.attach_AccountDailies), new Action<AccountDaily>(this.detach_AccountDailies));
-			this._AccountCategory = default(EntityRef<AccountCategory>);
+			this._StoreOperationManagers = new EntitySet<StoreOperationManager>(new Action<StoreOperationManager>(this.attach_StoreOperationManagers), new Action<StoreOperationManager>(this.detach_StoreOperationManagers));
+			this._SellItem = default(EntityRef<SellItem>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemID", DbType="Int")]
+		public System.Nullable<int> ItemID
+		{
+			get
+			{
+				return this._ItemID;
+			}
+			set
+			{
+				if ((this._ItemID != value))
+				{
+					if (this._SellItem.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnItemIDChanging(value);
+					this.SendPropertyChanging();
+					this._ItemID = value;
+					this.SendPropertyChanged("ItemID");
+					this.OnItemIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Qty", DbType="BigInt")]
+		public System.Nullable<long> Qty
+		{
+			get
+			{
+				return this._Qty;
+			}
+			set
+			{
+				if ((this._Qty != value))
+				{
+					this.OnQtyChanging(value);
+					this.SendPropertyChanging();
+					this._Qty = value;
+					this.SendPropertyChanged("Qty");
+					this.OnQtyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SellStore_StoreOperationManager", Storage="_StoreOperationManagers", ThisKey="ID", OtherKey="StoreID")]
+		public EntitySet<StoreOperationManager> StoreOperationManagers
+		{
+			get
+			{
+				return this._StoreOperationManagers;
+			}
+			set
+			{
+				this._StoreOperationManagers.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SellItem_SellStore", Storage="_SellItem", ThisKey="ItemID", OtherKey="ID", IsForeignKey=true, DeleteRule="CASCADE")]
+		public SellItem SellItem
+		{
+			get
+			{
+				return this._SellItem.Entity;
+			}
+			set
+			{
+				SellItem previousValue = this._SellItem.Entity;
+				if (((previousValue != value) 
+							|| (this._SellItem.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._SellItem.Entity = null;
+						previousValue.SellStores.Remove(this);
+					}
+					this._SellItem.Entity = value;
+					if ((value != null))
+					{
+						value.SellStores.Add(this);
+						this._ItemID = value.ID;
+					}
+					else
+					{
+						this._ItemID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("SellItem");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_StoreOperationManagers(StoreOperationManager entity)
+		{
+			this.SendPropertyChanging();
+			entity.SellStore = this;
+		}
+		
+		private void detach_StoreOperationManagers(StoreOperationManager entity)
+		{
+			this.SendPropertyChanging();
+			entity.SellStore = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="SellSystem.StoreOperationManager")]
+	public partial class StoreOperationManager : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _StoreID;
+		
+		private string _ProcessType;
+		
+		private System.Nullable<System.DateTime> _ProcessDate;
+		
+		private System.Nullable<long> _Qty;
+		
+		private System.Nullable<int> _UserID;
+		
+		private EntityRef<SellStore> _SellStore;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnStoreIDChanging(System.Nullable<int> value);
+    partial void OnStoreIDChanged();
+    partial void OnProcessTypeChanging(string value);
+    partial void OnProcessTypeChanged();
+    partial void OnProcessDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnProcessDateChanged();
+    partial void OnQtyChanging(System.Nullable<long> value);
+    partial void OnQtyChanged();
+    partial void OnUserIDChanging(System.Nullable<int> value);
+    partial void OnUserIDChanged();
+    #endregion
+		
+		public StoreOperationManager()
+		{
+			this._SellStore = default(EntityRef<SellStore>);
+			this._User = default(EntityRef<User>);
 			OnCreated();
 		}
 		
@@ -6374,165 +7014,178 @@ namespace XamaDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountName", DbType="NVarChar(50)")]
-		public string AccountName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StoreID", DbType="Int")]
+		public System.Nullable<int> StoreID
 		{
 			get
 			{
-				return this._AccountName;
+				return this._StoreID;
 			}
 			set
 			{
-				if ((this._AccountName != value))
+				if ((this._StoreID != value))
 				{
-					this.OnAccountNameChanging(value);
-					this.SendPropertyChanging();
-					this._AccountName = value;
-					this.SendPropertyChanged("AccountName");
-					this.OnAccountNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(MAX)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", DbType="Int")]
-		public System.Nullable<int> CategoryID
-		{
-			get
-			{
-				return this._CategoryID;
-			}
-			set
-			{
-				if ((this._CategoryID != value))
-				{
-					if (this._AccountCategory.HasLoadedOrAssignedValue)
+					if (this._SellStore.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnCategoryIDChanging(value);
+					this.OnStoreIDChanging(value);
 					this.SendPropertyChanging();
-					this._CategoryID = value;
-					this.SendPropertyChanged("CategoryID");
-					this.OnCategoryIDChanged();
+					this._StoreID = value;
+					this.SendPropertyChanged("StoreID");
+					this.OnStoreIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Branch", Storage="_Branches", ThisKey="ID", OtherKey="AccountID")]
-		public EntitySet<Branch> Branches
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProcessType", DbType="NVarChar(50)")]
+		public string ProcessType
 		{
 			get
 			{
-				return this._Branches;
+				return this._ProcessType;
 			}
 			set
 			{
-				this._Branches.Assign(value);
+				if ((this._ProcessType != value))
+				{
+					this.OnProcessTypeChanging(value);
+					this.SendPropertyChanging();
+					this._ProcessType = value;
+					this.SendPropertyChanged("ProcessType");
+					this.OnProcessTypeChanged();
+				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Customer", Storage="_Customers", ThisKey="ID", OtherKey="AccountID")]
-		public EntitySet<Customer> Customers
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProcessDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ProcessDate
 		{
 			get
 			{
-				return this._Customers;
+				return this._ProcessDate;
 			}
 			set
 			{
-				this._Customers.Assign(value);
+				if ((this._ProcessDate != value))
+				{
+					this.OnProcessDateChanging(value);
+					this.SendPropertyChanging();
+					this._ProcessDate = value;
+					this.SendPropertyChanged("ProcessDate");
+					this.OnProcessDateChanged();
+				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Order", Storage="_Orders", ThisKey="ID", OtherKey="OrderAccount")]
-		public EntitySet<Order> Orders
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Qty", DbType="BigInt")]
+		public System.Nullable<long> Qty
 		{
 			get
 			{
-				return this._Orders;
+				return this._Qty;
 			}
 			set
 			{
-				this._Orders.Assign(value);
+				if ((this._Qty != value))
+				{
+					this.OnQtyChanging(value);
+					this.SendPropertyChanging();
+					this._Qty = value;
+					this.SendPropertyChanged("Qty");
+					this.OnQtyChanged();
+				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Expenss", Storage="_Expensses", ThisKey="ID", OtherKey="AccountID")]
-		public EntitySet<Expenss> Expensses
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int")]
+		public System.Nullable<int> UserID
 		{
 			get
 			{
-				return this._Expensses;
+				return this._UserID;
 			}
 			set
 			{
-				this._Expensses.Assign(value);
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_AccountDaily", Storage="_AccountDailies", ThisKey="ID", OtherKey="AccountID")]
-		public EntitySet<AccountDaily> AccountDailies
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SellStore_StoreOperationManager", Storage="_SellStore", ThisKey="StoreID", OtherKey="ID", IsForeignKey=true)]
+		public SellStore SellStore
 		{
 			get
 			{
-				return this._AccountDailies;
+				return this._SellStore.Entity;
 			}
 			set
 			{
-				this._AccountDailies.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AccountCategory_Account", Storage="_AccountCategory", ThisKey="CategoryID", OtherKey="ID", IsForeignKey=true)]
-		public AccountCategory AccountCategory
-		{
-			get
-			{
-				return this._AccountCategory.Entity;
-			}
-			set
-			{
-				AccountCategory previousValue = this._AccountCategory.Entity;
+				SellStore previousValue = this._SellStore.Entity;
 				if (((previousValue != value) 
-							|| (this._AccountCategory.HasLoadedOrAssignedValue == false)))
+							|| (this._SellStore.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._AccountCategory.Entity = null;
-						previousValue.Accounts.Remove(this);
+						this._SellStore.Entity = null;
+						previousValue.StoreOperationManagers.Remove(this);
 					}
-					this._AccountCategory.Entity = value;
+					this._SellStore.Entity = value;
 					if ((value != null))
 					{
-						value.Accounts.Add(this);
-						this._CategoryID = value.ID;
+						value.StoreOperationManagers.Add(this);
+						this._StoreID = value.ID;
 					}
 					else
 					{
-						this._CategoryID = default(Nullable<int>);
+						this._StoreID = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("AccountCategory");
+					this.SendPropertyChanged("SellStore");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_StoreOperationManager", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.StoreOperationManagers.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.StoreOperationManagers.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("User");
 				}
 			}
 		}
@@ -6555,66 +7208,6 @@ namespace XamaDataLayer
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Branches(Branch entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_Branches(Branch entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_Customers(Customer entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_Customers(Customer entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_Orders(Order entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_Orders(Order entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_Expensses(Expenss entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_Expensses(Expenss entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_AccountDailies(AccountDaily entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_AccountDailies(AccountDaily entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
 		}
 	}
 }

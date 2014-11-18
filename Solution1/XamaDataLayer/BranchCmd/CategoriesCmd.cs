@@ -34,18 +34,12 @@ namespace XamaDataLayer.BranchCmd
        }
        public static void DeleteCategory(int xid)
        {
-           try
-           {
+          
            db = new DbDataContext();
            var categ = db.ProductCategories.Where(cat => cat.ID == xid).SingleOrDefault();
            db.ProductCategories.DeleteOnSubmit(categ);
            db.SubmitChanges();
-           }
-           catch (Exception)
-           {
-               
-               throw ;
-           }
+           
        }
     }
 }

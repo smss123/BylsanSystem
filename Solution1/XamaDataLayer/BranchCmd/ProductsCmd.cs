@@ -30,18 +30,12 @@ namespace XamaDataLayer.BranchCmd
            }
        public static void DeleteProduct(int xid)
        {
-           try
-           {
+          
            db = new DbDataContext();
            var prd = db.Products.Where(pp => pp.ID == xid).SingleOrDefault();
            db.Products.DeleteOnSubmit(prd);
            db.SubmitChanges();
-           }
-           catch (Exception)
-           {
-               
-               throw;
-           }
+          
        }
        public static List<Product> GetAllProducts()
        {

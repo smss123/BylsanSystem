@@ -40,9 +40,8 @@ namespace XamaDataLayer.Security
        public static bool EditPermessionValue(UserPermession u, int xxUserID)
        {
            var q = db.UserPermessions.Where(p => p.ID == u.ID && p.UserID == xxUserID).SingleOrDefault();
-           try
-           {
-               if (q.ID != 0)
+          
+               if (q!= null)
                {
                    q.SystemPermessionID = u.SystemPermessionID;
                    q.PermessionValue = u.PermessionValue;
@@ -51,12 +50,8 @@ namespace XamaDataLayer.Security
                    return true;
                }
                return false;
-           }
-           catch (Exception)
-           {
-
-               return false;
-           }
+          
+         
        }
 
        public static List<UserPermession> LoadingPermissonsOfCurrentUser()

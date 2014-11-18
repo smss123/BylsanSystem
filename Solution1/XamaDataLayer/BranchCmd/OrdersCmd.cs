@@ -41,18 +41,12 @@ namespace XamaDataLayer.BranchCmd
 
        public static void DeleteOrder(int xid)
        {
-           try
-           {
+          
            db = new DbDataContext();
            var ord = db.Orders.Where(oo => oo.ID == xid).SingleOrDefault();
            db.Orders.DeleteOnSubmit(ord);
            db.SubmitChanges();
-           }
-           catch (Exception)
-           {
-               
-               throw;
-           }
+          
        }
 
 

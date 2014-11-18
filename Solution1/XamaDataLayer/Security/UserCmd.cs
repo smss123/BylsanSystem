@@ -57,8 +57,7 @@ namespace XamaDataLayer.Security
 
        public static User Login(string usr, string pwd)
        {
-           try
-           {
+         
                var q = db.Users .Where(p => p.UserName == usr && p.Passwords == pwd).ToList();
                if (q.Count == 0 || q.Count == -1)
                {
@@ -71,23 +70,18 @@ namespace XamaDataLayer.Security
                    htb.ActionName = "User LogIn";
                    htb.DateOfProcess = DateTime.Now;
                    htb.HistoryAction = "User LogIn ";
-                   htb.Description = "User : " + q[1].UserName + "  LogIn And Started Use The System Now";
-                   htb.UserID = q[1].ID;
+                htb.Description = string.Format("User : {0}  LogIn And Started Use The System Now", q[1].UserName);
+                htb.UserID = q[1].ID;
 
                    WriteUserHistory (htb);
-                   return new User();
+                   return  q[0]();
                }
                else
                {
-                   return q[0];
+                   return new User();
                }
 
-           }
-           catch (Exception e)
-           {
-
-               throw e;
-           }
+          
        }
 
        

@@ -25,7 +25,7 @@ namespace XamaDataLayer.BranchCmd
            return lst;
        }
 
-       public Branch EditBranch(Branch tb, int xid)
+       public static Branch EditBranch(Branch tb, int xid)
        {
            db = new DbDataContext();
            var b = db.Branches.Where(n => n.ID == xid).SingleOrDefault();
@@ -41,18 +41,12 @@ namespace XamaDataLayer.BranchCmd
        public static void DeleteBranch(int xid)
        {
 
-           try
-           {
+          
            db = new DbDataContext();
            var b = db.Branches.Where(n => n.ID == xid).SingleOrDefault();
            db.Branches.DeleteOnSubmit(b);
            db.SubmitChanges();
-           }
-           catch (Exception)
-           {
-               
-               throw;
-           }
+          
        }
     }
 }

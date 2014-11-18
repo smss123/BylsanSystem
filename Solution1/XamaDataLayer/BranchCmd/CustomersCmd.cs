@@ -42,18 +42,12 @@ namespace XamaDataLayer.BranchCmd
 
        public static void DeleteCustomer( int xid )
        {
-           try
-           {
+          
                db = new DbDataContext();
                var c = db.Customers.Where(cc => cc.ID == xid).SingleOrDefault();
                db.Customers.DeleteOnSubmit(c);
                db.SubmitChanges();
-           }
-           catch (Exception)
-           {
-               
-               throw;
-           }
+          
        }
     }
 }
