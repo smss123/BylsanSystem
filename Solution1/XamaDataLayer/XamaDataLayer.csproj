@@ -59,6 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Db.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Helper Classes\CalculatorClass.cs" />
     <Compile Include="Helper Classes\PhotosConverter.cs" />
     <Compile Include="MailServer\InBoxCmd.cs" />
     <Compile Include="MailServer\OutBoxCmd.cs" />
