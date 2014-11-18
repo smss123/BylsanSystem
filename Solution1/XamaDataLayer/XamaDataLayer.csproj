@@ -41,8 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BranchCmd\BranchsCmd.cs" />
+    <Compile Include="BranchCmd\CategoriesCmd.cs" />
     <Compile Include="BranchCmd\CustomersCmd.cs" />
     <Compile Include="BranchCmd\EmployeesCmd.cs" />
+    <Compile Include="BranchCmd\OrderProductsCmd.cs" />
+    <Compile Include="BranchCmd\OrdersCmd.cs" />
+    <Compile Include="BranchCmd\ProductsCmd.cs" />
     <Compile Include="Db.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
