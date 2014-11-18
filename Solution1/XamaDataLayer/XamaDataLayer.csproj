@@ -55,6 +55,8 @@
       <DependentUpon>Db.dbml</DependentUpon>
     </Compile>
     <Compile Include="Helper Classes\PhotosConverter.cs" />
+    <Compile Include="MailServer\InBoxCmd.cs" />
+    <Compile Include="MailServer\OutBoxCmd.cs" />
     <Compile Include="Main Store\ItemsCmd.cs" />
     <Compile Include="Main Store\StoreCmd.cs" />
     <Compile Include="Main Store\StoreDrawalCmd.cs" />
@@ -70,7 +72,9 @@
     <Compile Include="Security\PermessionsCmd.cs" />
     <Compile Include="Security\UserCmd.cs" />
     <Compile Include="Security\UserInfo.cs" />
+    <Compile Include="SellSystem\BillItemsCmd.cs" />
     <Compile Include="SellSystem\BillsCmd.cs" />
+    <Compile Include="SellSystem\SellItemsCmd.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
