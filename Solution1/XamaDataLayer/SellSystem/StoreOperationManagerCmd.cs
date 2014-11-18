@@ -22,32 +22,26 @@ namespace XamaDataLayer.SellSystem
        public static StoreOperationManager  EditStoreOperationManager( StoreOperationManager  tb, int xid)
        {
            db = new DbDataContext();
-           var StorMang = db.StoreOperationManagers.Where(s => s.ID == xid).SingleOrDefault();
+           var storMang = db.StoreOperationManagers.Where(s => s.ID == xid).SingleOrDefault();
 
-           StorMang.StoreID = tb.StoreID;
-           StorMang.UserID = tb.UserID;
-           StorMang.ProcessDate = tb.ProcessDate;
-           StorMang.ProcessType = tb.ProcessType;
-           StorMang.Qty = tb.Qty;
+           storMang.StoreID = tb.StoreID;
+           storMang.UserID = tb.UserID;
+           storMang.ProcessDate = tb.ProcessDate;
+           storMang.ProcessType = tb.ProcessType;
+           storMang.Qty = tb.Qty;
 
            db.SubmitChanges();
-           return StorMang;
+           return storMang;
        }
 
        public static void DeleteStoreOpertionManager(int xid)
        {
-           try
-           {
+         
            db = new DbDataContext();
-           var StorMang = db.StoreOperationManagers.Where(s => s.ID == xid).SingleOrDefault();
-           db.StoreOperationManagers.DeleteOnSubmit(StorMang);
+           var storMang = db.StoreOperationManagers.Where(s => s.ID == xid).SingleOrDefault();
+           db.StoreOperationManagers.DeleteOnSubmit(storMang);
            db.SubmitChanges();
-           }
-           catch (Exception)
-           {
-               
-               throw;
-           }
+          
        }
 
 

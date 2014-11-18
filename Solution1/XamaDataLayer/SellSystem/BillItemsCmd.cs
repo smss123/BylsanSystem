@@ -37,19 +37,13 @@ namespace XamaDataLayer.SellSystem
 
        public static void DeleteAt(int xid)
        {
-           try
-           {
+          
            db = new DbDataContext();
            var bl = db.BillItems.Where(b => b.ID == xid ).SingleOrDefault();
            db.BillItems.DeleteOnSubmit(bl);
            db.SubmitChanges();
           
-           }
-           catch (Exception)
-           {
-               
-               throw;
-           }
+          
        }
 
        public static List<BillItem> LoadAllBillItemsByBill_ID(int BLLId){

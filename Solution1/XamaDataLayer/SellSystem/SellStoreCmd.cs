@@ -31,18 +31,12 @@ namespace XamaDataLayer.SellSystem
 
        public static void DeleteSellStore(int xid)
        {
-           try
-           {
+          
            db = new DbDataContext();
            var sll = db.SellStores.Where(s => s.ID == xid).SingleOrDefault();
            db.SellStores.DeleteOnSubmit(sll);
            db.SubmitChanges();
-           }
-           catch (Exception)
-           {
-               
-               throw;
-           }
+          
        }
 
        public static List<SellStore> GetAllSellStore()
