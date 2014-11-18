@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accountant\AccountCategoryCmd.cs" />
+    <Compile Include="Accountant\AccountsCmd.cs" />
     <Compile Include="BranchCmd\BranchsCmd.cs" />
     <Compile Include="BranchCmd\CategoriesCmd.cs" />
     <Compile Include="BranchCmd\CustomersCmd.cs" />
