@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BranchCmd\BranchsCmd.cs" />
     <Compile Include="Db.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -61,9 +62,7 @@
     <Compile Include="Security\UserCmd.cs" />
     <Compile Include="Security\UserInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BranchCmd\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Db.dbml">
