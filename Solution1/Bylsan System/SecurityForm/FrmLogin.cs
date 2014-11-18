@@ -24,6 +24,7 @@ namespace Bylsan_System.SecurityForm
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
+          
             #region "  CheckFillTextBox "
             
             if (UserNameTextBox.Text == "")
@@ -32,12 +33,15 @@ namespace Bylsan_System.SecurityForm
                 UserNameTextBox.BackColor = Color.OrangeRed;
 
                 UserNameTextBox.Focus();
+                errorProvider1.SetError(this.UserNameTextBox, "Please Enter user name");
 
                 return;
             }
             else
             {
                 UserNameTextBox.BackColor = Color.White;
+                errorProvider1.Clear();
+
             }
 
             //CheckPassword
@@ -49,12 +53,16 @@ namespace Bylsan_System.SecurityForm
                 PasswordTextBox.BackColor = Color.OrangeRed;
 
                 PasswordTextBox.Focus();
+                errorProvider1.SetError(this.PasswordTextBox, "Please Enter password");
+
 
                 return;
             }
             else
             {
                 PasswordTextBox.BackColor = Color.White;
+                errorProvider1.Clear();
+
             }
         }
          #endregion

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using XamaDataLayer;
 namespace XamaDataLayer.Security
 {
-   public static   class UserCmd   
+   public    class UserCmd   
     {
     static  DbDataContext db = new DbDataContext();
 
@@ -32,7 +32,7 @@ namespace XamaDataLayer.Security
                return  q ;
        }
 
-       public void DeleteUserAt(int xid)
+       public   void DeleteUserAt(int xid)
        {
            try
            {
