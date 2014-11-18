@@ -55,6 +55,8 @@
       <DependentUpon>Db.dbml</DependentUpon>
     </Compile>
     <Compile Include="Helper Classes\PhotosConverter.cs" />
+    <Compile Include="MailServer\InBoxCmd.cs" />
+    <Compile Include="MailServer\OutBoxCmd.cs" />
     <Compile Include="Main Store\ItemsCmd.cs" />
     <Compile Include="Main Store\StoreCmd.cs" />
     <Compile Include="Main Store\StoreDrawalCmd.cs" />
