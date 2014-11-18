@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XamaDataLayer.Security
 {
-   public    class UserInfo
+   public   class UserInfo
     {
        public static int CurrentUserID = 0;
        public static string CurrentUserName = "";

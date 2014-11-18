@@ -70,8 +70,8 @@ namespace XamaDataLayer.Security
                    htb.ActionName = "User LogIn";
                    htb.DateOfProcess = DateTime.Now;
                    htb.HistoryAction = "User LogIn ";
-                   htb.Description = "User : " + q[1].UserName + "  LogIn And Started Use The System Now";
-                   htb.UserID = q[1].ID;
+                htb.Description = string.Format("User : {0}  LogIn And Started Use The System Now", q[1].UserName);
+                htb.UserID = q[1].ID;
 
                    WriteUserHistory (htb);
                    return  q[0]();
