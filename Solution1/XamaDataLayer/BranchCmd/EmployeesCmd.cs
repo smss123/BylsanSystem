@@ -43,18 +43,12 @@ namespace XamaDataLayer.BranchCmd
         }
         public static void DeleteEmployee(int xid)
         {
-            try
-            {
+           
             db = new DbDataContext();
             var emp = db.Employees.Where(m => m.ID == xid).SingleOrDefault();
             db.Employees.DeleteOnSubmit(emp);
             db.SubmitChanges();
-            }
-            catch (Exception)
-            {
-                
-                throw;
-            }
+           
         }
     }
 }
