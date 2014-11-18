@@ -70,6 +70,7 @@
     <Compile Include="Security\PermessionsCmd.cs" />
     <Compile Include="Security\UserCmd.cs" />
     <Compile Include="Security\UserInfo.cs" />
+    <Compile Include="SellSystem\BillsCmd.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
