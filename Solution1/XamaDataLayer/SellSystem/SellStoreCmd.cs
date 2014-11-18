@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace XamaDataLayer.SellSystem
+{
+   public static  class SellStoreCmd
+    {
+
+       static DbDataContext db = new DbDataContext();
+       public static bool AddSellStore(SellStore tb)
+       {
+           db = new DbDataContext();
+           db.SellStores.InsertOnSubmit(tb);
+           db.SubmitChanges();
+
+           return true;
+       }
+
+       public static SellStore EditSellStore(SellStore tb, int xid)
+       {
+           db = new DbDataContext();
+           var sll = db.SellStores.Where(s => s.ID == xid).SingleOrDefault();
+           sll.ItemID = tb.ItemID;
+           sll.Qty = tb.Qty;
+           db.SubmitChanges();
+           return sll;
+       }
+
+       public static void DeleteSellStore(int xid)
+       {
+           try
+           {
+           db = new DbDataContext();
+           var sll = db.SellStores.Where(s => s.ID == xid).SingleOrDefault();
+           db.SellStores.DeleteOnSubmit(sll);
+           db.SubmitChanges();
+           }
+           catch (Exception)
+           {
+               
+               throw;
+           }
+       }
+
+       public static List<SellStore> GetAllSellStore()
+       {
+           db = new DbDataContext();
+           return db.SellStores.ToList();
+       }
+    }
+}

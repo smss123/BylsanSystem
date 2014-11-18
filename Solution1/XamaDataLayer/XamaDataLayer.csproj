@@ -80,8 +80,14 @@
     <Compile Include="SellSystem\BillItemsCmd.cs" />
     <Compile Include="SellSystem\BillsCmd.cs" />
     <Compile Include="SellSystem\SellItemsCmd.cs" />
+    <Compile Include="SellSystem\SellStoreCmd.cs" />
+    <Compile Include="SellSystem\StoreOperationManagerCmd.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Db.dbml.layout">
+      <DependentUpon>Db.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Db.dbml">
@@ -96,11 +102,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Db.dbml.layout">
-      <DependentUpon>Db.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
