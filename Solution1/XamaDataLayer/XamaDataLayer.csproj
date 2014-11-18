@@ -43,7 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accountant\AccountCategoryCmd.cs" />
+    <Compile Include="Accountant\AccountDailyCmd.cs" />
     <Compile Include="Accountant\AccountsCmd.cs" />
+    <Compile Include="Accountant\ExpenssesCmd.cs" />
+    <Compile Include="Accountant\ExpenssesMovmentCmd.cs" />
     <Compile Include="BranchCmd\BranchsCmd.cs" />
     <Compile Include="BranchCmd\CategoriesCmd.cs" />
     <Compile Include="BranchCmd\CustomersCmd.cs" />
