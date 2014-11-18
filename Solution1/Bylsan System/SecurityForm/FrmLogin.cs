@@ -20,12 +20,11 @@ namespace Bylsan_System.SecurityForm
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             
+           
         }
-
-        private void LoginBtn_Click(object sender, EventArgs e)
+        private void EnterBtn_Click(object sender, EventArgs e)
         {
-          
-            #region "  CheckFillTextBox "
+             #region "  CheckFillTextBox "
             
             if (UserNameTextBox.Text == "")
             {
@@ -67,8 +66,14 @@ namespace Bylsan_System.SecurityForm
         }
          #endregion
 
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
-     
+        }
+        }
+
+        
        
-    }
+
 
