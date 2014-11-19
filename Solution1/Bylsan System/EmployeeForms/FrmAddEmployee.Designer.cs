@@ -48,20 +48,23 @@
             // 
             // Emp_NameTextBox
             // 
+            this.Emp_NameTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.Emp_NameTextBox.Location = new System.Drawing.Point(93, 30);
             this.Emp_NameTextBox.Name = "Emp_NameTextBox";
-            this.Emp_NameTextBox.Size = new System.Drawing.Size(242, 20);
+            this.Emp_NameTextBox.Size = new System.Drawing.Size(187, 20);
             this.Emp_NameTextBox.TabIndex = 0;
             // 
             // Personalty_IDTextBox
             // 
+            this.Personalty_IDTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.Personalty_IDTextBox.Location = new System.Drawing.Point(92, 57);
             this.Personalty_IDTextBox.Name = "Personalty_IDTextBox";
-            this.Personalty_IDTextBox.Size = new System.Drawing.Size(204, 20);
+            this.Personalty_IDTextBox.Size = new System.Drawing.Size(188, 20);
             this.Personalty_IDTextBox.TabIndex = 1;
             // 
             // textBox5
             // 
+            this.textBox5.BackColor = System.Drawing.SystemColors.Info;
             this.textBox5.Location = new System.Drawing.Point(94, 142);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(186, 20);
@@ -96,10 +99,11 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.Info;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(94, 85);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(111, 21);
+            this.comboBox1.Size = new System.Drawing.Size(186, 21);
             this.comboBox1.TabIndex = 2;
             // 
             // label4
@@ -115,7 +119,7 @@
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(94, 114);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(147, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(186, 20);
             this.dateTimePicker1.TabIndex = 3;
             // 
             // label5
@@ -138,6 +142,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
             this.textBox1.Location = new System.Drawing.Point(93, 170);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(187, 20);
@@ -178,10 +183,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(365, 280);
             this.Controls.Add(this.AddEmployeeGroup);
+            this.MaximumSize = new System.Drawing.Size(381, 318);
+            this.MinimumSize = new System.Drawing.Size(381, 318);
             this.Name = "FrmAddEmployee";
-            this.Text = "FrmAddEmployee";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Employee";
             this.AddEmployeeGroup.ResumeLayout(false);
             this.AddEmployeeGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();

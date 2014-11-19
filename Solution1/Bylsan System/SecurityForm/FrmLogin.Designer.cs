@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.GroupLogin = new System.Windows.Forms.GroupBox();
-            this.ExitBtn = new Telerik.WinControls.UI.RadButton();
-            this.EnterBtn = new Telerik.WinControls.UI.RadButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.UserNameTextBox = new System.Windows.Forms.TextBox();
+            this.ExitBtn = new Telerik.WinControls.UI.RadButton();
+            this.EnterBtn = new Telerik.WinControls.UI.RadButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.GroupLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExitBtn)).BeginInit();
@@ -55,24 +55,6 @@
             this.GroupLogin.TabIndex = 6;
             this.GroupLogin.TabStop = false;
             this.GroupLogin.Text = "Login Info";
-            // 
-            // ExitBtn
-            // 
-            this.ExitBtn.Location = new System.Drawing.Point(209, 173);
-            this.ExitBtn.Name = "ExitBtn";
-            this.ExitBtn.Size = new System.Drawing.Size(122, 37);
-            this.ExitBtn.TabIndex = 10;
-            this.ExitBtn.Text = "Exit";
-            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
-            // 
-            // EnterBtn
-            // 
-            this.EnterBtn.Location = new System.Drawing.Point(19, 173);
-            this.EnterBtn.Name = "EnterBtn";
-            this.EnterBtn.Size = new System.Drawing.Size(122, 37);
-            this.EnterBtn.TabIndex = 9;
-            this.EnterBtn.Text = "Enter";
-            this.EnterBtn.Click += new System.EventHandler(this.EnterBtn_Click);
             // 
             // label2
             // 
@@ -108,6 +90,24 @@
             this.UserNameTextBox.Name = "UserNameTextBox";
             this.UserNameTextBox.Size = new System.Drawing.Size(210, 20);
             this.UserNameTextBox.TabIndex = 0;
+            // 
+            // ExitBtn
+            // 
+            this.ExitBtn.Location = new System.Drawing.Point(209, 173);
+            this.ExitBtn.Name = "ExitBtn";
+            this.ExitBtn.Size = new System.Drawing.Size(122, 37);
+            this.ExitBtn.TabIndex = 10;
+            this.ExitBtn.Text = "Exit";
+            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
+            // 
+            // EnterBtn
+            // 
+            this.EnterBtn.Location = new System.Drawing.Point(19, 173);
+            this.EnterBtn.Name = "EnterBtn";
+            this.EnterBtn.Size = new System.Drawing.Size(122, 37);
+            this.EnterBtn.TabIndex = 9;
+            this.EnterBtn.Text = "Enter";
+            this.EnterBtn.Click += new System.EventHandler(this.EnterBtn_Click);
             // 
             // errorProvider1
             // 
