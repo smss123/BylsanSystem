@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Telerik.WinControls;
+using XamaDataLayer;
+using XamaDataLayer.Security; 
 namespace Bylsan_System.SecurityForm
 {
     public partial class FrmLogin : Form
@@ -19,18 +21,17 @@ namespace Bylsan_System.SecurityForm
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            
-        }
 
-        private void LoginBtn_Click(object sender, EventArgs e)
+
+        }
+        private void EnterBtn_Click(object sender, EventArgs e)
         {
-          
             #region "  CheckFillTextBox "
-            
+
             if (UserNameTextBox.Text == "")
             {
 
-                UserNameTextBox.BackColor = Color.OrangeRed;
+                UserNameTextBox.BackColor = Color.FromArgb(255, 249, 179, 153);
 
                 UserNameTextBox.Focus();
                 errorProvider1.SetError(this.UserNameTextBox, "Please Enter user name");
@@ -50,7 +51,7 @@ namespace Bylsan_System.SecurityForm
             if (PasswordTextBox.Text == "")
             {
 
-                PasswordTextBox.BackColor = Color.OrangeRed;
+                PasswordTextBox.BackColor = Color.FromArgb(255, 249, 179, 153); ;
 
                 PasswordTextBox.Focus();
                 errorProvider1.SetError(this.PasswordTextBox, "Please Enter password");
@@ -64,11 +65,36 @@ namespace Bylsan_System.SecurityForm
                 errorProvider1.Clear();
 
             }
+            #endregion
+            
+          var  q =   UserCmd.Login(UserNameTextBox.Text, PasswordTextBox.Text);
+            if (q != null)
+            {
+              this.Text=   UserInfo.CurrentUserName;
+                //Continue Login;
+            }
+            else
+            {
+                RadMessageBox.Show("Error in Login Info");//Load msg from Opertation Class
+            }
         }
-         #endregion
+          
 
-        }
+      
      
-       
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+
+
+            var q = RadMessageBox.Show("Sure to Exit ?", "System Message", MessageBoxButtons.YesNo, null);
+            if (q == System.Windows.Forms.DialogResult.Yes)
+                Application.Exit();
+        }
     }
+}
+
+        
+       
+
 
