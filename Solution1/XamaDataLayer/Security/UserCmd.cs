@@ -61,6 +61,11 @@ namespace XamaDataLayer.Security
                var q = db.Users .Where(p => p.UserName == usr && p.Passwords == pwd).ToList();
                if (q.Count == 0 || q.Count == -1)
                {
+               
+                   return new User();
+               }
+               else
+               {
                    //=========================================
                    UserInfo.CurrentUserID = q[1].ID;
                    UserInfo.CurrentUserName = q[1].UserName;
@@ -70,15 +75,11 @@ namespace XamaDataLayer.Security
                    htb.ActionName = "User LogIn";
                    htb.DateOfProcess = DateTime.Now;
                    htb.HistoryAction = "User LogIn ";
-                htb.Description = string.Format("User : {0}  LogIn And Started Use The System Now", q[1].UserName);
-                htb.UserID = q[1].ID;
+                   htb.Description = string.Format("User : {0}  LogIn And Started Use The System Now", q[1].UserName);
+                   htb.UserID = q[1].ID;
 
-                   WriteUserHistory (htb);
-                   return  q[0]();
-               }
-               else
-               {
-                   return new User();
+                   WriteUserHistory(htb);
+                   return q[0];
                }
 
           
