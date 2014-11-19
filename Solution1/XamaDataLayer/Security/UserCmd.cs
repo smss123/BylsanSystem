@@ -32,7 +32,7 @@ namespace XamaDataLayer.Security
                return  q ;
        }
 
-       public   void DeleteUserAt(int xid)
+       public  static  void DeleteUserAt(int xid)
        {
            try
            {
@@ -62,21 +62,21 @@ namespace XamaDataLayer.Security
                if (q.Count == 0 || q.Count == -1)
                {
                
-                   return new User();
+                   return null;
                }
                else
                {
                    //=========================================
-                   UserInfo.CurrentUserID = q[1].ID;
-                   UserInfo.CurrentUserName = q[1].UserName;
-                   UserInfo.CurrentUserPassword = q[1].Passwords;
+                   UserInfo.CurrentUserID = q[0].ID;
+                   UserInfo.CurrentUserName = q[0].UserName;
+                   UserInfo.CurrentUserPassword = q[0].Passwords;
                    //==========================================
                    History htb = new History();
                    htb.ActionName = "User LogIn";
                    htb.DateOfProcess = DateTime.Now;
                    htb.HistoryAction = "User LogIn ";
-                   htb.Description = string.Format("User : {0}  LogIn And Started Use The System Now", q[1].UserName);
-                   htb.UserID = q[1].ID;
+                   htb.Description = string.Format("User : {0}  LogIn And Started Use The System Now", q[0].UserName);
+                   htb.UserID = q[0].ID;
 
                    WriteUserHistory(htb);
                    return q[0];
