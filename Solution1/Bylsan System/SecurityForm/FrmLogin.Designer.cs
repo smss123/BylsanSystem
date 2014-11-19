@@ -126,8 +126,9 @@
             this.MaximumSize = new System.Drawing.Size(367, 270);
             this.MinimumSize = new System.Drawing.Size(367, 270);
             this.Name = "FrmLogin";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Enter";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.GroupLogin.ResumeLayout(false);
             this.GroupLogin.PerformLayout();
