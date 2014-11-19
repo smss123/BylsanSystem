@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using XamaDataLayer.BranchCmd;
+using DevComponents.DotNetBar;
 namespace Bylsan_System.CustomerForms
 {
     public partial class FrmAddCustomer : Form
@@ -63,8 +64,24 @@ namespace Bylsan_System.CustomerForms
                 errorProvider1.Clear();
 
             }
+               #endregion
+            if (CustomersCmd.AddCustomer(new XamaDataLayer.Customer()
+            {
+                CustomerName = CustomerNameTxtBox.Text,
+                PhoneNumber = PhoneTextBox.Text,
+                Points = 0
+            })
+                )
+            {
+                ToastNotification.Show(this, "Customer has been Saved", null, 1000, eToastGlowColor.Green,eToastPosition.MiddleCenter);
+
+            }
+           
         }
-         #endregion
+        
+       
+       
+
         }
     }
 
