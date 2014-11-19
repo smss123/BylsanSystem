@@ -25,6 +25,35 @@ namespace XamaDataLayer.BranchCmd
            return lst;
        }
 
+
+       public static List<Branch> GetAllBranchByAccountID( int AcctId)
+       {
+           db = new DbDataContext();
+           var lst = (from b in db.Branches
+                      orderby b.CreatedDate ascending
+                      where b.AccountID == AcctId 
+                      select b).ToList();
+           return lst;
+       }
+
+       public static List<Branch> GetAllBranchByManagerID(int MangrId)
+       {
+           db = new DbDataContext();
+           var lst = (from b in db.Branches
+                      orderby b.CreatedDate ascending
+                      where b.Manager_ID == MangrId 
+                      select b).ToList();
+           return lst;
+       }
+       public static List<Branch> GetAllBranchByBarnchID(int BranId)
+       {
+           db = new DbDataContext();
+           var lst = (from b in db.Branches
+                      orderby b.CreatedDate ascending
+                      where b.ID == BranId 
+                      select b).ToList();
+           return lst;
+       }
        public static Branch EditBranch(Branch tb, int xid)
        {
            db = new DbDataContext();

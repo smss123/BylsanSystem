@@ -50,9 +50,29 @@ namespace XamaDataLayer.Main_Store
 
         public static List<StoreManager> GetAllStoreManager()
         {
+            db = new DbDataContext();
             return db.StoreManagers.ToList();
         }
 
+        public static List<StoreManager> GetAllStoreManagerByStoreID( int STorId)
+        {
+            db = new DbDataContext();
+            var lst = (from m in db.StoreManagers
+                       orderby m.DateOfProcess ascending
+                       where m.StoreID == STorId
+                       select m).ToList();
+            return lst;
+        }
+
+        public static List<StoreManager> GetAllStoreManagerByProcessType( string Procctype)
+        {
+            db = new DbDataContext();
+            var lst = (from m in db.StoreManagers
+                       orderby m.DateOfProcess ascending
+                       where m.ProcessType == Procctype  
+                       select m).ToList();
+            return lst;
+        }
 
     }
 }

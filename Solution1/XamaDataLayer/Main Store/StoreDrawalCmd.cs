@@ -48,7 +48,7 @@ namespace XamaDataLayer.Main_Store
                 throw;
             }
         }
-        public static List<StoreWithDrawal> GetAllStoreDrawal()
+        public static List<StoreWithDrawal> GetAllStoreDrawals()
         {
             return db.StoreWithDrawals.ToList();
         }

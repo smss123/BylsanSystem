@@ -46,6 +46,19 @@ namespace XamaDataLayer.Main_Store
            }
        }
 
+
+       //===============================================================
+      // Important Function : 
+       public static List<Store> GetAvailableQtyByItemID(int ItmId)
+       {
+           db = new DbDataContext();
+           var lst = (from i in db.Stores
+                      where i.ItemID == ItmId
+                      orderby i.ID ascending
+                      select i).ToList();
+           return lst;
+       }
+       //================================================================
        public static List< Store > GetAllStores()
        {
 

@@ -68,7 +68,7 @@ namespace XamaDataLayer.BranchCmd
        }
 
 
-       public static List<Order> GetAllOrderByBranchID(int xid)
+       public static List<Order> GetAllOrdersByBranchID(int xid)
        {
            db = new DbDataContext();
            var Lst = (from o in db.Orders
@@ -79,7 +79,7 @@ namespace XamaDataLayer.BranchCmd
            return Lst;
        }
 
-       public static List<Order> GetAllOrderByCustomerID(int xid)
+       public static List<Order> GetAllOrdersByCustomerID(int xid)
        {
            db = new DbDataContext();
            var Lst = (from o in db.Orders
@@ -89,6 +89,18 @@ namespace XamaDataLayer.BranchCmd
                       select o).ToList();
            return Lst;
        }
+
+       public static List<Order> GetAllOrdersByDate(DateTime dat)
+       {
+           db = new DbDataContext();
+           var Lst = (from o in db.Orders
+                      orderby o.OrderDate ascending
+                      where
+                          o.OrderDate == dat 
+                      select o).ToList();
+           return Lst;
+       }
+
     }
    
 

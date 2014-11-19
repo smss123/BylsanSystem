@@ -54,5 +54,16 @@ namespace XamaDataLayer.BranchCmd
            return LST;
 
        }
+
+       public static List<Product> GetProductByCategID(int CategID)
+       {
+           db = new DbDataContext();
+           var LST = (from p in db.Products
+                      where
+                          p.CateogryID == CategID 
+                      select p).ToList();
+           return LST;
+
+       }
     }
 }
