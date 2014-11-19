@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Drawing;
 namespace XamaDataLayer.Helper_Classes
 {
-    public static class PhotosConverter
+    public  class PhotosConverter
     {
         public byte[] ConvertImageToByteArray(System.Drawing.Image
           imageToConvert, System.Drawing.Imaging.ImageFormat formatOfImage)

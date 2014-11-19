@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XamaDataLayer.Main_Store
 {
-   public  static  class StoreCmd
+   public    class StoreCmd
     {
        static DbDataContext db = new DbDataContext();
        public static bool AddNewStore(Store  tb)

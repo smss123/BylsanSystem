@@ -74,7 +74,7 @@ namespace XamaDataLayer.Security
                 htb.UserID = q[1].ID;
 
                    WriteUserHistory (htb);
-                   return  q[0]();
+                   return  q[0];
                }
                else
                {

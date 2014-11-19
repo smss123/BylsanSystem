@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XamaDataLayer.Main_Store
 {
-    public static class StoreDrawalCmd
+    public  class StoreDrawalCmd
     {
         static DbDataContext db = new DbDataContext();
         public static bool AddDrawal(StoreWithDrawal tb)
