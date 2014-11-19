@@ -33,11 +33,19 @@ namespace XamaDataLayer.Accountant
 
         public static void DeleteExpMovment(int xid)
         {
-            
-            db = new DbDataContext();
+
+            try
+            {
+           db = new DbDataContext();
             var exp = db .ExpenssesMovments .Where (x=> x.ID == xid ).SingleOrDefault ();
             db.ExpenssesMovments.DeleteOnSubmit(exp);
             db.SubmitChanges();
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
             
            
         }

@@ -48,5 +48,11 @@ namespace XamaDataLayer.Accountant
             return db.Expensses.ToList();
         }
 
+        public static List<Expenss> GetExpenssesByAccountId( int ActId)
+        {
+            db = new DbDataContext();
+            var lst = (from i in db.Expensses where i.AccountID == ActId select i).ToList();
+            return lst;
+        }
     }
 }
