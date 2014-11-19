@@ -49,7 +49,7 @@ namespace XamaDataLayer.Main_Store
            
            db = new DbDataContext();
            return db.Items.ToList();
-
        }
+
     }
 }

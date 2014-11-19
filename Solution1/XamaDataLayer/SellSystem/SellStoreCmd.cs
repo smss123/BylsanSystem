@@ -44,5 +44,13 @@ namespace XamaDataLayer.SellSystem
            db = new DbDataContext();
            return db.SellStores.ToList();
        }
+
+       public static List<SellStore> GetSellStoreByItemID( int ItmId)
+       {
+           db = new DbDataContext();
+           var lst = (from i in db.SellStores where i.ItemID == ItmId select i).ToList();
+           return lst;
+       }
+
     }
 }

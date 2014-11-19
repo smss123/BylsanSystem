@@ -71,6 +71,14 @@ namespace XamaDataLayer.SellSystem
                       select s).ToList();
            return lst;
        }
-
+       public static List<StoreOperationManager> GetAllStoreOperationManagerByStoreID(int StorId)
+       {
+           db = new DbDataContext();
+           var lst = (from s in db.StoreOperationManagers
+                      orderby s.ID ascending
+                      where s.StoreID == StorId 
+                      select s).ToList();
+           return lst;
+       }
     }
 }

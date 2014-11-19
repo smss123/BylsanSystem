@@ -47,11 +47,13 @@ namespace XamaDataLayer.Main_Store
         }
 
 
-        //==== Loading Data
+  #region " ^^^    Loading Data   ^^^^ " 
+
+        // == {All }
         public static List<Store_Sell> GetAllSTore_Sell() {
             return db.Store_Sells.ToList();
         }
-
+        // == {By User}
         public static List<Store_Sell> GetAllSTore_SellByUserID( int xid)
         {
             var lst = (from s in db.Store_Sells
@@ -60,7 +62,7 @@ namespace XamaDataLayer.Main_Store
                        select s).ToList();
             return lst;
         }
-
+        // == {By Supplier}
         public static List<Store_Sell> GetAllSTore_SellBySupplierID(int xid)
         {
             var lst = (from s in db.Store_Sells
@@ -69,7 +71,28 @@ namespace XamaDataLayer.Main_Store
                        select s).ToList();
             return lst;
         }
+   
 
+        // == {By Item }
+        public static List<Store_Sell> GetAllSTore_SellByItemID(int xid)
+        {
+            var lst = (from s in db.Store_Sells
+                       orderby s.DateOfProcess ascending
+                       where s.ItemID  == xid
+                       select s).ToList();
+            return lst;
+        }
+        // == { By: Date}
+        public static List<Store_Sell> GetAllSTore_SellByDate(DateTime dat)
+        {
+            var lst = (from s in db.Store_Sells
+                       orderby s.DateOfProcess ascending
+                       where s.DateOfProcess == dat 
+                       select s).ToList();
+            return lst;
+        }
+ 
+     #endregion 
 
     }
 }
