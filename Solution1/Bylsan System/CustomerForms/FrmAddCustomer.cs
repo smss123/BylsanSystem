@@ -65,6 +65,7 @@ namespace Bylsan_System.CustomerForms
 
             }
                #endregion
+            Operation.BeginOperation(this);
             if (CustomersCmd.AddCustomer(new XamaDataLayer.Customer()
             {
                 CustomerName = CustomerNameTxtBox.Text,
@@ -73,9 +74,10 @@ namespace Bylsan_System.CustomerForms
             })
                 )
             {
-                ToastNotification.Show(this, "Customer has been Saved", null, 1000, eToastGlowColor.Green,eToastPosition.MiddleCenter);
+                Operation.ShowToustOk("Customer has been Saved", this);
 
             }
+            Operation.EndOperation(this);
            
         }
         
