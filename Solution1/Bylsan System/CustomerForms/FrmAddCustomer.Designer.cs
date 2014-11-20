@@ -45,10 +45,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataSource = typeof(XamaDataLayer.Customer);
-            // 
             // customerNameLabel
             // 
             customerNameLabel.AutoSize = true;
@@ -58,14 +54,6 @@
             customerNameLabel.TabIndex = 1;
             customerNameLabel.Text = "Customer Name:";
             // 
-            // customerNameTextBox
-            // 
-            this.customerNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "CustomerName", true));
-            this.customerNameTextBox.Location = new System.Drawing.Point(110, 22);
-            this.customerNameTextBox.Name = "customerNameTextBox";
-            this.customerNameTextBox.Size = new System.Drawing.Size(193, 20);
-            this.customerNameTextBox.TabIndex = 0;
-            // 
             // phoneNumberLabel
             // 
             phoneNumberLabel.AutoSize = true;
@@ -74,6 +62,18 @@
             phoneNumberLabel.Size = new System.Drawing.Size(81, 13);
             phoneNumberLabel.TabIndex = 3;
             phoneNumberLabel.Text = "Phone Number:";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(XamaDataLayer.Customer);
+            // 
+            // customerNameTextBox
+            // 
+            this.customerNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "CustomerName", true));
+            this.customerNameTextBox.Location = new System.Drawing.Point(110, 22);
+            this.customerNameTextBox.Name = "customerNameTextBox";
+            this.customerNameTextBox.Size = new System.Drawing.Size(193, 20);
+            this.customerNameTextBox.TabIndex = 0;
             // 
             // phoneNumberTextBox
             // 
@@ -92,14 +92,14 @@
             this.groupBox1.Controls.Add(this.phoneNumberTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(345, 194);
+            this.groupBox1.Size = new System.Drawing.Size(345, 180);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
             // Addbtn
             // 
-            this.Addbtn.Location = new System.Drawing.Point(27, 121);
+            this.Addbtn.Location = new System.Drawing.Point(23, 116);
             this.Addbtn.Name = "Addbtn";
             this.Addbtn.Size = new System.Drawing.Size(127, 37);
             this.Addbtn.TabIndex = 2;
@@ -114,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 237);
+            this.ClientSize = new System.Drawing.Size(369, 222);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAddCustomer";
             this.Text = "FrmAddCustomer";

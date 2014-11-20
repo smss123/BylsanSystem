@@ -46,10 +46,11 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.WinControls, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
-    <Reference Include="Telerik.WinControls.GridView, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
-    <Reference Include="Telerik.WinControls.UI, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
-    <Reference Include="TelerikCommon, Version=2013.3.1016.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="TelerikCommon, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
     <Reference Include="Xprema, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\Xprema.dll</HintPath>
@@ -67,6 +68,12 @@
     </Compile>
     <Compile Include="CustomerForms\FrmAddCustomer.Designer.cs">
       <DependentUpon>FrmAddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerForms\FrmCustomerEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerForms\FrmCustomerEdit.Designer.cs">
+      <DependentUpon>FrmCustomerEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerForms\FrmCustomerManage.cs">
       <SubType>Form</SubType>
@@ -118,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerForms\FrmAddCustomer.resx">
       <DependentUpon>FrmAddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerForms\FrmCustomerEdit.resx">
+      <DependentUpon>FrmCustomerEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerForms\FrmCustomerManage.resx">
       <DependentUpon>FrmCustomerManage.cs</DependentUpon>
