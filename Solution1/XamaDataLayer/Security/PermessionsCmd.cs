@@ -64,5 +64,44 @@ namespace XamaDataLayer.Security
        }
 
        #endregion
+
+
+       #region "   Searching & Clear   "
+       public static List<UserPermession> GetAllUserPermissonsByUserID(int UsrID)
+       {
+           db = new DbDataContext ();
+           var LST = (from u in db.UserPermessions where u.UserID == UsrID select u).ToList();
+           return LST;
+       }
+
+
+       public static bool ClearAllUserPermessions(int usrid)
+       {
+           db = new DbDataContext(); ;
+           UserPermession tb = new UserPermession();
+           var lst = (from u in db.UserPermessions where u.UserID == usrid select u).ToList();
+
+           List<int> IDes = new List<int>();
+           IDes.Clear();
+           foreach (var i in lst)
+           {
+               IDes.Add(i.ID);
+           }
+           foreach (var item in IDes)
+           {
+
+               tb = db.UserPermessions.Where(x => x.ID == item).Single();
+               db.UserPermessions.DeleteOnSubmit (tb);
+               db.SubmitChanges ();
+
+           }
+
+           return true;
+       }
+       #endregion 
+
+
+
+
    }
 }
