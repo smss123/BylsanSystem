@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Emp_NameTextBox = new System.Windows.Forms.TextBox();
             this.Personalty_IDTextBox = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -42,8 +43,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.AddEmployeeGroup = new System.Windows.Forms.GroupBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.AddEmployeeGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // Emp_NameTextBox
@@ -179,12 +182,16 @@
             this.AddBtn.Text = "Add";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FrmAddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(365, 280);
+            this.ClientSize = new System.Drawing.Size(365, 279);
             this.Controls.Add(this.AddEmployeeGroup);
             this.MaximumSize = new System.Drawing.Size(381, 318);
             this.MinimumSize = new System.Drawing.Size(381, 318);
@@ -195,6 +202,7 @@
             this.AddEmployeeGroup.ResumeLayout(false);
             this.AddEmployeeGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,5 +223,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox AddEmployeeGroup;
         private Telerik.WinControls.UI.RadButton AddBtn;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

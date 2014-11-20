@@ -16,5 +16,30 @@ namespace Bylsan_System.ProductForms
         {
             InitializeComponent();
         }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            #region "  CheckFillTextBox "
+
+
+            if (productCategoryNameTextBox.Text == "")
+            {
+
+                productCategoryNameTextBox.BackColor = Color.OrangeRed;
+
+                productCategoryNameTextBox.Focus();
+                errorProvider1.SetError(this.productCategoryNameTextBox, "Please Enter Branch name");
+
+                return;
+            }
+            else
+            {
+                productCategoryNameTextBox.BackColor = Color.White;
+                errorProvider1.Clear();
+
+            }
+
+            #endregion
+        }
     }
 }

@@ -87,6 +87,12 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Operation.cs" />
+    <Compile Include="ProductForms\frmAddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductForms\frmAddProduct.Designer.cs">
+      <DependentUpon>frmAddProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductForms\FrmAddProductCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,12 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProductForms\frmAddProduct.resx">
+      <DependentUpon>frmAddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductForms\FrmAddProductCategory.resx">
+      <DependentUpon>FrmAddProductCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -126,7 +138,36 @@
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Lib\Xprema.dll.config" />
+    <None Include="Properties\DataSources\XamaDataLayer.Account.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.AccountCategory.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.AccountDaily.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.Bill.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.BillItem.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.Branch.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.Customer.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.DbDataContext.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.Employee.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.Expenss.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.ExpenssesMovment.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.History.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.Inbox.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.Item.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.Order.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.OrderProduct.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.OutBox.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.Product.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.ProductCategory.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.SellItem.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.SellStore.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.Store.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.StoreManager.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.StoreOperationManager.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.StoreWithDrawal.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.Store_Sell.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.Supplier.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.SystemPermession.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.User.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.UserPermession.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

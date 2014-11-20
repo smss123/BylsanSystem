@@ -66,14 +66,14 @@ namespace Bylsan_System.BranchForms
                 txtBranchName.BackColor = Color.OrangeRed;
 
                 txtBranchName.Focus();
-                errorProvider1.SetError(this.txtBranchName, "Please Enter Customer name");
+                errorProvider1.SetError(this.txtBranchName, "Please Enter Branch name");
 
                 return;
             }
             else
             {
                 txtBranchName.BackColor = Color.White;
-                txtBranchName.Clear();
+                errorProvider1.Clear();
 
             }
 

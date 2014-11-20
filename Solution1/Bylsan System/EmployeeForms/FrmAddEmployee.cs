@@ -19,7 +19,26 @@ namespace Bylsan_System.EmployeeForms
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            #region "  CheckFillTextBox "
 
+            if (Emp_NameTextBox.Text == "")
+            {
+
+                Emp_NameTextBox.BackColor = Color.OrangeRed;
+
+                Emp_NameTextBox.Focus();
+                errorProvider1.SetError(this.Emp_NameTextBox, "Please Enter Employee name");
+
+                return;
+            }
+            else
+            {
+                Emp_NameTextBox.BackColor = Color.White;
+                errorProvider1.Clear();
+
+            }
+
+            #endregion
         }
     }
 }
