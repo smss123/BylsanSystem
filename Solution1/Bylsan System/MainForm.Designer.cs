@@ -124,7 +124,7 @@
             // addBranchBtn
             // 
             this.addBranchBtn.Name = "addBranchBtn";
-            this.addBranchBtn.Size = new System.Drawing.Size(152, 22);
+            this.addBranchBtn.Size = new System.Drawing.Size(136, 22);
             this.addBranchBtn.Text = "Add Branch";
             // 
             // ProductDropDownButton
