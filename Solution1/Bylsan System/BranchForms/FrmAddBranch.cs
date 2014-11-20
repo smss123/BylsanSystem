@@ -58,7 +58,26 @@ namespace Bylsan_System.BranchForms
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-          
+            #region "  CheckFillTextBox "
+
+            if (txtBranchName.Text == "")
+            {
+
+                txtBranchName.BackColor = Color.OrangeRed;
+
+                txtBranchName.Focus();
+                errorProvider1.SetError(this.txtBranchName, "Please Enter Customer name");
+
+                return;
+            }
+            else
+            {
+                txtBranchName.BackColor = Color.White;
+                txtBranchName.Clear();
+
+            }
+
+            #endregion
             Operation.BeginOperation(this);
             if (BranchsCmd.AddNewBranch(new XamaDataLayer.Branch()
             {
