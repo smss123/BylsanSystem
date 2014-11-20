@@ -32,7 +32,7 @@ namespace Bylsan_System.EmployeeForms
                 emp_NameTextBox.BackColor = Color.OrangeRed;
 
                 emp_NameTextBox.Focus();
-                errorProvider1.SetError(this.emp_NameTextBox, "Please Enter Branch name");
+                errorProvider1.SetError(this.emp_NameTextBox, "Please Enter employee name");
 
                 return;
             }

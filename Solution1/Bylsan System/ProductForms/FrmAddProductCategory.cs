@@ -21,14 +21,13 @@ namespace Bylsan_System.ProductForms
         {
             #region "  CheckFillTextBox "
 
-
             if (productCategoryNameTextBox.Text == "")
             {
 
                 productCategoryNameTextBox.BackColor = Color.OrangeRed;
 
                 productCategoryNameTextBox.Focus();
-                errorProvider1.SetError(this.productCategoryNameTextBox, "Please Enter Branch name");
+                errorProvider1.SetError(this.productCategoryNameTextBox, "Please Enter Category name");
 
                 return;
             }
@@ -38,7 +37,6 @@ namespace Bylsan_System.ProductForms
                 errorProvider1.Clear();
 
             }
-
             #endregion
         }
     }

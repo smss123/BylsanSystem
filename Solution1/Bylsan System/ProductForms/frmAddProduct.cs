@@ -27,7 +27,7 @@ namespace Bylsan_System.ProductForms
                 product_NameTextBox.BackColor = Color.OrangeRed;
 
                 product_NameTextBox.Focus();
-                errorProvider1.SetError(this.product_NameTextBox, "Please Enter Customer name");
+                errorProvider1.SetError(this.product_NameTextBox, "Please Enter product name");
 
                 return;
             }
