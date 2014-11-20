@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label nationaltyLabel;
             System.Windows.Forms.Label emp_NameLabel;
             System.Windows.Forms.Label hereDateLabel;
@@ -44,6 +45,7 @@
             this.jobTextBox = new System.Windows.Forms.TextBox();
             this.personalty_IDTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             nationaltyLabel = new System.Windows.Forms.Label();
             emp_NameLabel = new System.Windows.Forms.Label();
             hereDateLabel = new System.Windows.Forms.Label();
@@ -53,7 +55,71 @@
             phoneNumberLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // nationaltyLabel
+            // 
+            nationaltyLabel.AutoSize = true;
+            nationaltyLabel.Location = new System.Drawing.Point(32, 95);
+            nationaltyLabel.Name = "nationaltyLabel";
+            nationaltyLabel.Size = new System.Drawing.Size(60, 13);
+            nationaltyLabel.TabIndex = 17;
+            nationaltyLabel.Text = "Nationalty:";
+            // 
+            // emp_NameLabel
+            // 
+            emp_NameLabel.AutoSize = true;
+            emp_NameLabel.Location = new System.Drawing.Point(31, 35);
+            emp_NameLabel.Name = "emp_NameLabel";
+            emp_NameLabel.Size = new System.Drawing.Size(61, 13);
+            emp_NameLabel.TabIndex = 2;
+            emp_NameLabel.Text = "Emp Name:";
+            // 
+            // hereDateLabel
+            // 
+            hereDateLabel.AutoSize = true;
+            hereDateLabel.Location = new System.Drawing.Point(31, 62);
+            hereDateLabel.Name = "hereDateLabel";
+            hereDateLabel.Size = new System.Drawing.Size(60, 13);
+            hereDateLabel.TabIndex = 4;
+            hereDateLabel.Text = "Here Date:";
+            // 
+            // homeAddressLabel
+            // 
+            homeAddressLabel.AutoSize = true;
+            homeAddressLabel.Location = new System.Drawing.Point(20, 228);
+            homeAddressLabel.Name = "homeAddressLabel";
+            homeAddressLabel.Size = new System.Drawing.Size(80, 13);
+            homeAddressLabel.TabIndex = 6;
+            homeAddressLabel.Text = "Home Address:";
+            // 
+            // jobLabel
+            // 
+            jobLabel.AutoSize = true;
+            jobLabel.Location = new System.Drawing.Point(68, 196);
+            jobLabel.Name = "jobLabel";
+            jobLabel.Size = new System.Drawing.Size(28, 13);
+            jobLabel.TabIndex = 10;
+            jobLabel.Text = "Job:";
+            // 
+            // personalty_IDLabel
+            // 
+            personalty_IDLabel.AutoSize = true;
+            personalty_IDLabel.Location = new System.Drawing.Point(23, 161);
+            personalty_IDLabel.Name = "personalty_IDLabel";
+            personalty_IDLabel.Size = new System.Drawing.Size(76, 13);
+            personalty_IDLabel.TabIndex = 14;
+            personalty_IDLabel.Text = "Personalty ID:";
+            // 
+            // phoneNumberLabel
+            // 
+            phoneNumberLabel.AutoSize = true;
+            phoneNumberLabel.Location = new System.Drawing.Point(17, 126);
+            phoneNumberLabel.Name = "phoneNumberLabel";
+            phoneNumberLabel.Size = new System.Drawing.Size(81, 13);
+            phoneNumberLabel.TabIndex = 16;
+            phoneNumberLabel.Text = "Phone Number:";
             // 
             // groupBox1
             // 
@@ -86,15 +152,7 @@
             this.SaveBtn.Size = new System.Drawing.Size(126, 36);
             this.SaveBtn.TabIndex = 18;
             this.SaveBtn.Text = "Save";
-            // 
-            // nationaltyLabel
-            // 
-            nationaltyLabel.AutoSize = true;
-            nationaltyLabel.Location = new System.Drawing.Point(32, 95);
-            nationaltyLabel.Name = "nationaltyLabel";
-            nationaltyLabel.Size = new System.Drawing.Size(60, 13);
-            nationaltyLabel.TabIndex = 17;
-            nationaltyLabel.Text = "Nationalty:";
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // nationaltyComboBox
             // 
@@ -104,30 +162,12 @@
             this.nationaltyComboBox.Size = new System.Drawing.Size(121, 21);
             this.nationaltyComboBox.TabIndex = 2;
             // 
-            // emp_NameLabel
-            // 
-            emp_NameLabel.AutoSize = true;
-            emp_NameLabel.Location = new System.Drawing.Point(31, 35);
-            emp_NameLabel.Name = "emp_NameLabel";
-            emp_NameLabel.Size = new System.Drawing.Size(61, 13);
-            emp_NameLabel.TabIndex = 2;
-            emp_NameLabel.Text = "Emp Name:";
-            // 
             // emp_NameTextBox
             // 
             this.emp_NameTextBox.Location = new System.Drawing.Point(99, 32);
             this.emp_NameTextBox.Name = "emp_NameTextBox";
             this.emp_NameTextBox.Size = new System.Drawing.Size(255, 20);
             this.emp_NameTextBox.TabIndex = 0;
-            // 
-            // hereDateLabel
-            // 
-            hereDateLabel.AutoSize = true;
-            hereDateLabel.Location = new System.Drawing.Point(31, 62);
-            hereDateLabel.Name = "hereDateLabel";
-            hereDateLabel.Size = new System.Drawing.Size(60, 13);
-            hereDateLabel.TabIndex = 4;
-            hereDateLabel.Text = "Here Date:";
             // 
             // hereDateDateTimePicker
             // 
@@ -136,30 +176,12 @@
             this.hereDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.hereDateDateTimePicker.TabIndex = 1;
             // 
-            // homeAddressLabel
-            // 
-            homeAddressLabel.AutoSize = true;
-            homeAddressLabel.Location = new System.Drawing.Point(20, 228);
-            homeAddressLabel.Name = "homeAddressLabel";
-            homeAddressLabel.Size = new System.Drawing.Size(80, 13);
-            homeAddressLabel.TabIndex = 6;
-            homeAddressLabel.Text = "Home Address:";
-            // 
             // homeAddressTextBox
             // 
             this.homeAddressTextBox.Location = new System.Drawing.Point(100, 225);
             this.homeAddressTextBox.Name = "homeAddressTextBox";
             this.homeAddressTextBox.Size = new System.Drawing.Size(254, 20);
             this.homeAddressTextBox.TabIndex = 6;
-            // 
-            // jobLabel
-            // 
-            jobLabel.AutoSize = true;
-            jobLabel.Location = new System.Drawing.Point(68, 196);
-            jobLabel.Name = "jobLabel";
-            jobLabel.Size = new System.Drawing.Size(28, 13);
-            jobLabel.TabIndex = 10;
-            jobLabel.Text = "Job:";
             // 
             // jobTextBox
             // 
@@ -168,15 +190,6 @@
             this.jobTextBox.Size = new System.Drawing.Size(200, 20);
             this.jobTextBox.TabIndex = 5;
             // 
-            // personalty_IDLabel
-            // 
-            personalty_IDLabel.AutoSize = true;
-            personalty_IDLabel.Location = new System.Drawing.Point(23, 161);
-            personalty_IDLabel.Name = "personalty_IDLabel";
-            personalty_IDLabel.Size = new System.Drawing.Size(76, 13);
-            personalty_IDLabel.TabIndex = 14;
-            personalty_IDLabel.Text = "Personalty ID:";
-            // 
             // personalty_IDTextBox
             // 
             this.personalty_IDTextBox.Location = new System.Drawing.Point(99, 158);
@@ -184,21 +197,16 @@
             this.personalty_IDTextBox.Size = new System.Drawing.Size(200, 20);
             this.personalty_IDTextBox.TabIndex = 4;
             // 
-            // phoneNumberLabel
-            // 
-            phoneNumberLabel.AutoSize = true;
-            phoneNumberLabel.Location = new System.Drawing.Point(17, 126);
-            phoneNumberLabel.Name = "phoneNumberLabel";
-            phoneNumberLabel.Size = new System.Drawing.Size(81, 13);
-            phoneNumberLabel.TabIndex = 16;
-            phoneNumberLabel.Text = "Phone Number:";
-            // 
             // phoneNumberTextBox
             // 
             this.phoneNumberTextBox.Location = new System.Drawing.Point(99, 123);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(200, 20);
             this.phoneNumberTextBox.TabIndex = 3;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FrmEmployeeEdit
             // 
@@ -211,6 +219,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -226,5 +235,6 @@
         private System.Windows.Forms.TextBox jobTextBox;
         private System.Windows.Forms.TextBox personalty_IDTextBox;
         private System.Windows.Forms.TextBox phoneNumberTextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
