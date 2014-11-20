@@ -27,9 +27,9 @@ namespace Bylsan_System.BranchForms
         }
         private void LoadEmployee()
         {
-            this.EmployeeManager.MultiColumnComboBoxElement.DropDownWidth = 1000;
-            this.EmployeeManager.AutoFilter = true;
-            this.EmployeeManager.DisplayMember = "Emp_Name";
+            this.EmployeeManagerComboBox.MultiColumnComboBoxElement.DropDownWidth = 1000;
+            this.EmployeeManagerComboBox.AutoFilter = true;
+            this.EmployeeManagerComboBox.DisplayMember = "Emp_Name";
             
             this.Enabled = false;
 
@@ -37,14 +37,14 @@ namespace Bylsan_System.BranchForms
 
             this.Cursor = Cursors.WaitCursor;
             bindingSource1.DataSource = EmployeesCmd.GetAllEmployees();
-            EmployeeManager.DisplayMember = "Emp_Name";
-            EmployeeManager.ValueMember = "ID";
+            EmployeeManagerComboBox.DisplayMember = "Emp_Name";
+            EmployeeManagerComboBox.ValueMember = "ID";
             this.Cursor = Cursors.Default;
             this.Enabled = true;
 
 
 
-            this.EmployeeManager.AutoFilter = true;
+            this.EmployeeManagerComboBox.AutoFilter = true;
             CompositeFilterDescriptor compositeFilter = new CompositeFilterDescriptor();
             FilterDescriptor prodName = new FilterDescriptor("Emp_Name", FilterOperator.Contains, "");
             FilterDescriptor prodQuantity = new FilterDescriptor("PhoneNumber", FilterOperator.Contains, "");
@@ -52,7 +52,7 @@ namespace Bylsan_System.BranchForms
             compositeFilter.FilterDescriptors.Add(prodQuantity);
             compositeFilter.LogicalOperator = FilterLogicalOperator.Or;
 
-            this.EmployeeManager.EditorControl.FilterDescriptors.Add(compositeFilter);
+            this.EmployeeManagerComboBox.EditorControl.FilterDescriptors.Add(compositeFilter);
 
         }
 
@@ -83,7 +83,7 @@ namespace Bylsan_System.BranchForms
             {
                 Branch_Name = txtBranchName.Text,
                 Branch_Description = txtBranchDescription.Text,
-                Manager_ID = EmployeeManager.SelectedValue.ToString().ToInt()
+                Manager_ID = EmployeeManagerComboBox.SelectedValue.ToString().ToInt()
             }))
             {
                 Operation.ShowToustOk("Branch Has Been Saved", this);

@@ -63,6 +63,18 @@
     <Compile Include="BranchForms\FrmAddBranch.Designer.cs">
       <DependentUpon>FrmAddBranch.cs</DependentUpon>
     </Compile>
+    <Compile Include="BranchForms\FrmEditBranch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BranchForms\FrmEditBranch.Designer.cs">
+      <DependentUpon>FrmEditBranch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BranchForms\FrmManageBranch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BranchForms\FrmManageBranch.Designer.cs">
+      <DependentUpon>FrmManageBranch.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerForms\FrmAddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +98,18 @@
     </Compile>
     <Compile Include="EmployeeForms\FrmAddEmployee.Designer.cs">
       <DependentUpon>FrmAddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeForms\FrmEmployeeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeForms\FrmEmployeeEdit.Designer.cs">
+      <DependentUpon>FrmEmployeeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeForms\FrmEmployeeManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeForms\FrmEmployeeManage.Designer.cs">
+      <DependentUpon>FrmEmployeeManage.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -123,6 +147,12 @@
     <EmbeddedResource Include="BranchForms\FrmAddBranch.resx">
       <DependentUpon>FrmAddBranch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BranchForms\FrmEditBranch.resx">
+      <DependentUpon>FrmEditBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BranchForms\FrmManageBranch.resx">
+      <DependentUpon>FrmManageBranch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerForms\FrmAddCustomer.resx">
       <DependentUpon>FrmAddCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +164,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeForms\FrmAddEmployee.resx">
       <DependentUpon>FrmAddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeForms\FrmEmployeeEdit.resx">
+      <DependentUpon>FrmEmployeeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeForms\FrmEmployeeManage.resx">
+      <DependentUpon>FrmEmployeeManage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

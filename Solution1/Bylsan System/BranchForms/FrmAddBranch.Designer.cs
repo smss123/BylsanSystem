@@ -40,18 +40,19 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.EmployeeManager = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.EmployeeManagerComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBranchDescription = new System.Windows.Forms.TextBox();
             this.txtBranchName = new System.Windows.Forms.TextBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeManager.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeManager.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +61,7 @@
             // 
             this.groupBox1.Controls.Add(this.AddBtn);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.EmployeeManager);
+            this.groupBox1.Controls.Add(this.EmployeeManagerComboBox);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtBranchDescription);
@@ -79,6 +80,7 @@
             this.AddBtn.Size = new System.Drawing.Size(122, 37);
             this.AddBtn.TabIndex = 3;
             this.AddBtn.Text = "Add";
+            this.AddBtn.ThemeName = "Windows8";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // label3
@@ -90,28 +92,27 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Manager:";
             // 
-            // EmployeeManager
+            // EmployeeManagerComboBox
             // 
-            this.EmployeeManager.BackColor = System.Drawing.SystemColors.Info;
-            this.EmployeeManager.DataSource = this.bindingSource1;
+            this.EmployeeManagerComboBox.BackColor = System.Drawing.SystemColors.Info;
+            this.EmployeeManagerComboBox.DataSource = this.bindingSource1;
             // 
-            // EmployeeManager.NestedRadGridView
+            // EmployeeManagerComboBox.NestedRadGridView
             // 
-            this.EmployeeManager.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.EmployeeManager.EditorControl.Cursor = System.Windows.Forms.Cursors.Default;
-            this.EmployeeManager.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.EmployeeManager.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.EmployeeManager.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.EmployeeManager.EditorControl.Location = new System.Drawing.Point(0, 0);
+            this.EmployeeManagerComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.EmployeeManagerComboBox.EditorControl.Cursor = System.Windows.Forms.Cursors.Default;
+            this.EmployeeManagerComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.EmployeeManagerComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.EmployeeManagerComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.EmployeeManagerComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
             // 
             // 
-            this.EmployeeManager.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.EmployeeManager.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.EmployeeManager.EditorControl.MasterTemplate.AllowColumnChooser = false;
-          //  this.EmployeeManager.EditorControl.MasterTemplate.AllowSearchRow = true;
-            this.EmployeeManager.EditorControl.MasterTemplate.AutoGenerateColumns = false;
-            this.EmployeeManager.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.EmployeeManagerComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.EmployeeManagerComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.EmployeeManagerComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.EmployeeManagerComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
+            this.EmployeeManagerComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewDecimalColumn1.DataType = typeof(int);
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "ID";
@@ -163,7 +164,7 @@
             gridViewTextBoxColumn6.IsAutoGenerated = true;
             gridViewTextBoxColumn6.Name = "Job";
             gridViewTextBoxColumn6.Width = 25;
-            this.EmployeeManager.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            this.EmployeeManagerComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
             gridViewDateTimeColumn1,
@@ -172,21 +173,26 @@
             gridViewTextBoxColumn4,
             gridViewTextBoxColumn5,
             gridViewTextBoxColumn6});
-            this.EmployeeManager.EditorControl.MasterTemplate.DataSource = this.bindingSource1;
-            this.EmployeeManager.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.EmployeeManager.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.EmployeeManager.EditorControl.Name = "NestedRadGridView";
-            this.EmployeeManager.EditorControl.ReadOnly = true;
-            this.EmployeeManager.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.EmployeeManager.EditorControl.ShowGroupPanel = false;
-            this.EmployeeManager.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.EmployeeManager.EditorControl.TabIndex = 0;
-            this.EmployeeManager.Location = new System.Drawing.Point(104, 128);
-            this.EmployeeManager.Name = "EmployeeManager";
-            this.EmployeeManager.NullText = "Enter Manager";
-            this.EmployeeManager.Size = new System.Drawing.Size(195, 20);
-            this.EmployeeManager.TabIndex = 2;
-            this.EmployeeManager.TabStop = false;
+            this.EmployeeManagerComboBox.EditorControl.MasterTemplate.DataSource = this.bindingSource1;
+            this.EmployeeManagerComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.EmployeeManagerComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.EmployeeManagerComboBox.EditorControl.Name = "NestedRadGridView";
+            this.EmployeeManagerComboBox.EditorControl.ReadOnly = true;
+            this.EmployeeManagerComboBox.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.EmployeeManagerComboBox.EditorControl.ShowGroupPanel = false;
+            this.EmployeeManagerComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.EmployeeManagerComboBox.EditorControl.TabIndex = 0;
+            this.EmployeeManagerComboBox.Location = new System.Drawing.Point(104, 128);
+            this.EmployeeManagerComboBox.Name = "EmployeeManagerComboBox";
+            this.EmployeeManagerComboBox.NullText = "Enter Manager";
+            this.EmployeeManagerComboBox.Size = new System.Drawing.Size(195, 20);
+            this.EmployeeManagerComboBox.TabIndex = 2;
+            this.EmployeeManagerComboBox.TabStop = false;
+            this.EmployeeManagerComboBox.ThemeName = "Windows8";
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(XamaDataLayer.Employee);
             // 
             // label2
             // 
@@ -223,10 +229,6 @@
             this.txtBranchName.Size = new System.Drawing.Size(195, 20);
             this.txtBranchName.TabIndex = 0;
             // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(XamaDataLayer.Employee);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -248,9 +250,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeManager.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeManager.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -261,7 +263,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
-        private Telerik.WinControls.UI.RadMultiColumnComboBox EmployeeManager;
+        private Telerik.WinControls.UI.RadMultiColumnComboBox EmployeeManagerComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBranchDescription;
@@ -269,6 +271,7 @@
         private Telerik.WinControls.UI.RadButton AddBtn;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
 
     }
 }
