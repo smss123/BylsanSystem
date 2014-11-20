@@ -1,4 +1,5 @@
-﻿using Bylsan_System.SecurityForm;
+﻿using Bylsan_System.BranchForms;
+using Bylsan_System.SecurityForm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Bylsan_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogin());
+            Application.Run(new  FrmAddBranch());
         }
     }
 }
