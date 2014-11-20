@@ -8,41 +8,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Bylsan_System.EmployeeForms
+namespace Bylsan_System.ProductForms
 {
-    public partial class FrmAddEmployee : Form
+    public partial class frmAddProduct : Form
     {
-        public FrmAddEmployee()
+        public frmAddProduct()
         {
             InitializeComponent();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
 
-            if (emp_NameTextBox.Text == "")
+            if (product_NameTextBox.Text == "")
             {
 
-                emp_NameTextBox.BackColor = Color.OrangeRed;
+                product_NameTextBox.BackColor = Color.OrangeRed;
 
-                emp_NameTextBox.Focus();
-                errorProvider1.SetError(this.emp_NameTextBox, "Please Enter Branch name");
+                product_NameTextBox.Focus();
+                errorProvider1.SetError(this.product_NameTextBox, "Please Enter Customer name");
 
                 return;
             }
             else
             {
-                emp_NameTextBox.BackColor = Color.White;
+                product_NameTextBox.BackColor = Color.White;
                 errorProvider1.Clear();
 
             }
-
             #endregion
         }
     }

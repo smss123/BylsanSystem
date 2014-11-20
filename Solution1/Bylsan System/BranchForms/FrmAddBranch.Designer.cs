@@ -109,7 +109,7 @@
             this.EmployeeManager.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.EmployeeManager.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.EmployeeManager.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.EmployeeManager.EditorControl.MasterTemplate.AllowSearchRow = true;
+          //  this.EmployeeManager.EditorControl.MasterTemplate.AllowSearchRow = true;
             this.EmployeeManager.EditorControl.MasterTemplate.AutoGenerateColumns = false;
             this.EmployeeManager.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewDecimalColumn1.DataType = typeof(int);

@@ -34,17 +34,18 @@
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EmployeeDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
-            this.BranchDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
-            this.ProductDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripDropDownButton5 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripDropDownButton6 = new System.Windows.Forms.ToolStripDropDownButton();
             this.AddEmloyeebtn = new System.Windows.Forms.ToolStripMenuItem();
             this.managementEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BranchDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.addBranchBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProductDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.addProductCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripDropDownButton5 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripDropDownButton6 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -98,6 +99,18 @@
             this.EmployeeDropDownButton.Size = new System.Drawing.Size(88, 22);
             this.EmployeeDropDownButton.Text = "Employee";
             // 
+            // AddEmloyeebtn
+            // 
+            this.AddEmloyeebtn.Name = "AddEmloyeebtn";
+            this.AddEmloyeebtn.Size = new System.Drawing.Size(200, 22);
+            this.AddEmloyeebtn.Text = "Add Employee";
+            // 
+            // managementEmployeeToolStripMenuItem
+            // 
+            this.managementEmployeeToolStripMenuItem.Name = "managementEmployeeToolStripMenuItem";
+            this.managementEmployeeToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.managementEmployeeToolStripMenuItem.Text = "Management Employee";
+            // 
             // BranchDropDownButton
             // 
             this.BranchDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -107,6 +120,12 @@
             this.BranchDropDownButton.Name = "BranchDropDownButton";
             this.BranchDropDownButton.Size = new System.Drawing.Size(73, 22);
             this.BranchDropDownButton.Text = "Branch";
+            // 
+            // addBranchBtn
+            // 
+            this.addBranchBtn.Name = "addBranchBtn";
+            this.addBranchBtn.Size = new System.Drawing.Size(152, 22);
+            this.addBranchBtn.Text = "Add Branch";
             // 
             // ProductDropDownButton
             // 
@@ -118,6 +137,18 @@
             this.ProductDropDownButton.Name = "ProductDropDownButton";
             this.ProductDropDownButton.Size = new System.Drawing.Size(78, 22);
             this.ProductDropDownButton.Text = "Product";
+            // 
+            // addProductCategoryToolStripMenuItem
+            // 
+            this.addProductCategoryToolStripMenuItem.Name = "addProductCategoryToolStripMenuItem";
+            this.addProductCategoryToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.addProductCategoryToolStripMenuItem.Text = "Add Product Category";
+            // 
+            // addProductToolStripMenuItem
+            // 
+            this.addProductToolStripMenuItem.Name = "addProductToolStripMenuItem";
+            this.addProductToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.addProductToolStripMenuItem.Text = "Add Product";
             // 
             // toolStripDropDownButton5
             // 
@@ -136,36 +167,6 @@
             this.toolStripDropDownButton6.Name = "toolStripDropDownButton6";
             this.toolStripDropDownButton6.Size = new System.Drawing.Size(29, 22);
             this.toolStripDropDownButton6.Text = "toolStripDropDownButton6";
-            // 
-            // AddEmloyeebtn
-            // 
-            this.AddEmloyeebtn.Name = "AddEmloyeebtn";
-            this.AddEmloyeebtn.Size = new System.Drawing.Size(200, 22);
-            this.AddEmloyeebtn.Text = "Add Employee";
-            // 
-            // managementEmployeeToolStripMenuItem
-            // 
-            this.managementEmployeeToolStripMenuItem.Name = "managementEmployeeToolStripMenuItem";
-            this.managementEmployeeToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.managementEmployeeToolStripMenuItem.Text = "Management Employee";
-            // 
-            // addBranchBtn
-            // 
-            this.addBranchBtn.Name = "addBranchBtn";
-            this.addBranchBtn.Size = new System.Drawing.Size(152, 22);
-            this.addBranchBtn.Text = "Add Branch";
-            // 
-            // addProductCategoryToolStripMenuItem
-            // 
-            this.addProductCategoryToolStripMenuItem.Name = "addProductCategoryToolStripMenuItem";
-            this.addProductCategoryToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.addProductCategoryToolStripMenuItem.Text = "Add Product Category";
-            // 
-            // addProductToolStripMenuItem
-            // 
-            this.addProductToolStripMenuItem.Name = "addProductToolStripMenuItem";
-            this.addProductToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.addProductToolStripMenuItem.Text = "Add Product";
             // 
             // toolStrip2
             // 
@@ -186,11 +187,20 @@
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 584);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(936, 22);
+            this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 606);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MainForm";
@@ -222,6 +232,7 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton6;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
 
     }
 }

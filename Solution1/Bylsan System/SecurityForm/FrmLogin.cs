@@ -87,8 +87,8 @@ namespace Bylsan_System.SecurityForm
         {
 
 
-            var q = RadMessageBox.Show("Sure to Exit ?", "System Message", MessageBoxButtons.YesNo, null);
-            if (q == System.Windows.Forms.DialogResult.Yes)
+            //var q = RadMessageBox.Show("Sure to Exit ?", "System Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            //if (q == System.Windows.Forms.DialogResult.Yes)
                 Application.Exit();
         }
     }
