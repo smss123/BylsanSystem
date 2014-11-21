@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label product_DescriptionLabel;
             System.Windows.Forms.Label product_NameLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddProduct));
             this.ProductgroupBox = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.product_DescriptionTextBox = new System.Windows.Forms.TextBox();
             this.product_NameTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             product_DescriptionLabel = new System.Windows.Forms.Label();
             product_NameLabel = new System.Windows.Forms.Label();
             this.ProductgroupBox.SuspendLayout();
@@ -56,7 +58,7 @@
             // product_DescriptionLabel
             // 
             product_DescriptionLabel.AutoSize = true;
-            product_DescriptionLabel.Location = new System.Drawing.Point(4, 84);
+            product_DescriptionLabel.Location = new System.Drawing.Point(6, 61);
             product_DescriptionLabel.Name = "product_DescriptionLabel";
             product_DescriptionLabel.Size = new System.Drawing.Size(104, 13);
             product_DescriptionLabel.TabIndex = 4;
@@ -65,7 +67,7 @@
             // product_NameLabel
             // 
             product_NameLabel.AutoSize = true;
-            product_NameLabel.Location = new System.Drawing.Point(28, 44);
+            product_NameLabel.Location = new System.Drawing.Point(30, 21);
             product_NameLabel.Name = "product_NameLabel";
             product_NameLabel.Size = new System.Drawing.Size(78, 13);
             product_NameLabel.TabIndex = 6;
@@ -83,9 +85,9 @@
             this.ProductgroupBox.Controls.Add(this.product_DescriptionTextBox);
             this.ProductgroupBox.Controls.Add(product_NameLabel);
             this.ProductgroupBox.Controls.Add(this.product_NameTextBox);
-            this.ProductgroupBox.Location = new System.Drawing.Point(12, 25);
+            this.ProductgroupBox.Location = new System.Drawing.Point(12, 7);
             this.ProductgroupBox.Name = "ProductgroupBox";
-            this.ProductgroupBox.Size = new System.Drawing.Size(332, 393);
+            this.ProductgroupBox.Size = new System.Drawing.Size(332, 360);
             this.ProductgroupBox.TabIndex = 0;
             this.ProductgroupBox.TabStop = false;
             this.ProductgroupBox.Text = "Add Product";
@@ -93,7 +95,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 222);
+            this.label2.Location = new System.Drawing.Point(62, 199);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 11;
@@ -102,7 +104,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 170);
+            this.label1.Location = new System.Drawing.Point(50, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 10;
@@ -131,44 +133,48 @@
             this.CategoryComboBox.EditorControl.ShowGroupPanel = false;
             this.CategoryComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.CategoryComboBox.EditorControl.TabIndex = 0;
-            this.CategoryComboBox.Location = new System.Drawing.Point(107, 167);
+            this.CategoryComboBox.Location = new System.Drawing.Point(109, 144);
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(203, 20);
-            this.CategoryComboBox.TabIndex = 9;
+            this.CategoryComboBox.TabIndex = 2;
             this.CategoryComboBox.TabStop = false;
             this.CategoryComboBox.ThemeName = "Windows8";
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(7, 330);
+            this.AddBtn.Location = new System.Drawing.Point(13, 307);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(122, 37);
             this.AddBtn.TabIndex = 4;
             this.AddBtn.Text = "Add";
+            this.AddBtn.ThemeName = "Windows8";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // BrowseBtn
             // 
-            this.BrowseBtn.Location = new System.Drawing.Point(260, 211);
+            this.BrowseBtn.Location = new System.Drawing.Point(262, 188);
             this.BrowseBtn.Name = "BrowseBtn";
             this.BrowseBtn.Size = new System.Drawing.Size(45, 24);
             this.BrowseBtn.TabIndex = 3;
             this.BrowseBtn.Text = "...";
+            this.BrowseBtn.ThemeName = "Windows8";
             this.BrowseBtn.Click += new System.EventHandler(this.BrowseBtn_Click);
             // 
             // productpictureBox
             // 
-            this.productpictureBox.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.productpictureBox.Location = new System.Drawing.Point(107, 208);
+            this.productpictureBox.BackColor = System.Drawing.SystemColors.Info;
+            this.productpictureBox.Image = ((System.Drawing.Image)(resources.GetObject("productpictureBox.Image")));
+            this.productpictureBox.Location = new System.Drawing.Point(109, 185);
             this.productpictureBox.Name = "productpictureBox";
             this.productpictureBox.Size = new System.Drawing.Size(149, 99);
+            this.productpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.productpictureBox.TabIndex = 8;
             this.productpictureBox.TabStop = false;
             // 
             // product_DescriptionTextBox
             // 
             this.product_DescriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.product_DescriptionTextBox.Location = new System.Drawing.Point(109, 79);
+            this.product_DescriptionTextBox.Location = new System.Drawing.Point(111, 56);
             this.product_DescriptionTextBox.Multiline = true;
             this.product_DescriptionTextBox.Name = "product_DescriptionTextBox";
             this.product_DescriptionTextBox.Size = new System.Drawing.Size(204, 75);
@@ -177,7 +183,7 @@
             // product_NameTextBox
             // 
             this.product_NameTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.product_NameTextBox.Location = new System.Drawing.Point(109, 42);
+            this.product_NameTextBox.Location = new System.Drawing.Point(111, 19);
             this.product_NameTextBox.Name = "product_NameTextBox";
             this.product_NameTextBox.Size = new System.Drawing.Size(204, 20);
             this.product_NameTextBox.TabIndex = 0;
@@ -190,10 +196,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 430);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(356, 378);
             this.Controls.Add(this.ProductgroupBox);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(372, 417);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(372, 417);
             this.Name = "frmAddProduct";
-            this.Text = "frmAddProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Add Product";
             this.ProductgroupBox.ResumeLayout(false);
             this.ProductgroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox.EditorControl.MasterTemplate)).EndInit();
@@ -219,5 +231,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Telerik.WinControls.UI.RadMultiColumnComboBox CategoryComboBox;
+        private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
     }
 }

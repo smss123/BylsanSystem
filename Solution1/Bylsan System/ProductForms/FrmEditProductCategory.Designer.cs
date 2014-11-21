@@ -43,6 +43,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(37, 68);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(64, 13);
+            descriptionLabel.TabIndex = 2;
+            descriptionLabel.Text = "Description:";
+            // 
+            // productCategoryNameLabel
+            // 
+            productCategoryNameLabel.AutoSize = true;
+            productCategoryNameLabel.Location = new System.Drawing.Point(17, 30);
+            productCategoryNameLabel.Name = "productCategoryNameLabel";
+            productCategoryNameLabel.Size = new System.Drawing.Size(86, 13);
+            productCategoryNameLabel.TabIndex = 0;
+            productCategoryNameLabel.Text = "Category Name:";
+            // 
             // ProductCategorygroupBox
             // 
             this.ProductCategorygroupBox.Controls.Add(this.SaveBtn);
@@ -50,51 +68,36 @@
             this.ProductCategorygroupBox.Controls.Add(this.descriptionTextBox);
             this.ProductCategorygroupBox.Controls.Add(productCategoryNameLabel);
             this.ProductCategorygroupBox.Controls.Add(this.productCategoryNameTextBox);
-            this.ProductCategorygroupBox.Location = new System.Drawing.Point(7, 15);
+            this.ProductCategorygroupBox.Location = new System.Drawing.Point(15, 14);
             this.ProductCategorygroupBox.Name = "ProductCategorygroupBox";
-            this.ProductCategorygroupBox.Size = new System.Drawing.Size(356, 207);
+            this.ProductCategorygroupBox.Size = new System.Drawing.Size(356, 187);
             this.ProductCategorygroupBox.TabIndex = 1;
             this.ProductCategorygroupBox.TabStop = false;
             this.ProductCategorygroupBox.Text = "Edit Category";
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(14, 164);
+            this.SaveBtn.Location = new System.Drawing.Point(14, 143);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(126, 33);
             this.SaveBtn.TabIndex = 3;
             this.SaveBtn.Text = "Save";
+            this.SaveBtn.ThemeName = "Windows8";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
-            // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(34, 80);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(64, 13);
-            descriptionLabel.TabIndex = 2;
-            descriptionLabel.Text = "Description:";
             // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(104, 77);
+            this.descriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.descriptionTextBox.Location = new System.Drawing.Point(104, 65);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(218, 61);
             this.descriptionTextBox.TabIndex = 2;
             // 
-            // productCategoryNameLabel
-            // 
-            productCategoryNameLabel.AutoSize = true;
-            productCategoryNameLabel.Location = new System.Drawing.Point(12, 42);
-            productCategoryNameLabel.Name = "productCategoryNameLabel";
-            productCategoryNameLabel.Size = new System.Drawing.Size(86, 13);
-            productCategoryNameLabel.TabIndex = 0;
-            productCategoryNameLabel.Text = "Category Name:";
-            // 
             // productCategoryNameTextBox
             // 
-            this.productCategoryNameTextBox.Location = new System.Drawing.Point(105, 39);
+            this.productCategoryNameTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.productCategoryNameTextBox.Location = new System.Drawing.Point(105, 27);
             this.productCategoryNameTextBox.Name = "productCategoryNameTextBox";
             this.productCategoryNameTextBox.Size = new System.Drawing.Size(218, 20);
             this.productCategoryNameTextBox.TabIndex = 1;
@@ -107,10 +110,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 245);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(385, 214);
             this.Controls.Add(this.ProductCategorygroupBox);
             this.Name = "FrmEditProductCategory";
-            this.Text = "FrmEditProductCategory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Edit Product Category";
             this.ProductCategorygroupBox.ResumeLayout(false);
             this.ProductCategorygroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
