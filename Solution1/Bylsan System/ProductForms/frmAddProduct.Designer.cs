@@ -32,25 +32,25 @@
             System.Windows.Forms.Label product_DescriptionLabel;
             System.Windows.Forms.Label product_NameLabel;
             this.ProductgroupBox = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CategoryComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.BrowseBtn = new Telerik.WinControls.UI.RadButton();
             this.productpictureBox = new System.Windows.Forms.PictureBox();
             this.product_DescriptionTextBox = new System.Windows.Forms.TextBox();
             this.product_NameTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.CategoryComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             product_DescriptionLabel = new System.Windows.Forms.Label();
             product_NameLabel = new System.Windows.Forms.Label();
             this.ProductgroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrowseBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox.EditorControl.MasterTemplate)).BeginInit();
             this.SuspendLayout();
             // 
             // product_DescriptionLabel
@@ -90,6 +90,54 @@
             this.ProductgroupBox.TabStop = false;
             this.ProductgroupBox.Text = "Add Product";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(60, 222);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Image:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(48, 170);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Category:";
+            // 
+            // CategoryComboBox
+            // 
+            this.CategoryComboBox.BackColor = System.Drawing.SystemColors.Info;
+            // 
+            // CategoryComboBox.NestedRadGridView
+            // 
+            this.CategoryComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.CategoryComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.CategoryComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CategoryComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
+            // 
+            // 
+            // 
+            this.CategoryComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.CategoryComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.CategoryComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.CategoryComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.CategoryComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.CategoryComboBox.EditorControl.Name = "NestedRadGridView";
+            this.CategoryComboBox.EditorControl.ReadOnly = true;
+            this.CategoryComboBox.EditorControl.ShowGroupPanel = false;
+            this.CategoryComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.CategoryComboBox.EditorControl.TabIndex = 0;
+            this.CategoryComboBox.Location = new System.Drawing.Point(107, 167);
+            this.CategoryComboBox.Name = "CategoryComboBox";
+            this.CategoryComboBox.Size = new System.Drawing.Size(203, 20);
+            this.CategoryComboBox.TabIndex = 9;
+            this.CategoryComboBox.TabStop = false;
+            this.CategoryComboBox.ThemeName = "Windows8";
+            // 
             // AddBtn
             // 
             this.AddBtn.Location = new System.Drawing.Point(7, 330);
@@ -106,6 +154,7 @@
             this.BrowseBtn.Size = new System.Drawing.Size(45, 24);
             this.BrowseBtn.TabIndex = 3;
             this.BrowseBtn.Text = "...";
+            this.BrowseBtn.Click += new System.EventHandler(this.BrowseBtn_Click);
             // 
             // productpictureBox
             // 
@@ -137,54 +186,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // CategoryComboBox
-            // 
-            this.CategoryComboBox.BackColor = System.Drawing.SystemColors.Info;
-            // 
-            // CategoryComboBox.NestedRadGridView
-            // 
-            this.CategoryComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.CategoryComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.CategoryComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.CategoryComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
-            // 
-            // CategoryComboBox.NestedRadGridView
-            // 
-            this.CategoryComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.CategoryComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.CategoryComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.CategoryComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.CategoryComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.CategoryComboBox.EditorControl.Name = "NestedRadGridView";
-            this.CategoryComboBox.EditorControl.ReadOnly = true;
-            this.CategoryComboBox.EditorControl.ShowGroupPanel = false;
-            this.CategoryComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.CategoryComboBox.EditorControl.TabIndex = 0;
-            this.CategoryComboBox.Location = new System.Drawing.Point(107, 167);
-            this.CategoryComboBox.Name = "CategoryComboBox";
-            this.CategoryComboBox.Size = new System.Drawing.Size(203, 20);
-            this.CategoryComboBox.TabIndex = 9;
-            this.CategoryComboBox.TabStop = false;
-            this.CategoryComboBox.ThemeName = "Windows8";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 170);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Category:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 222);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Image:";
-            // 
             // frmAddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,13 +196,13 @@
             this.Text = "frmAddProduct";
             this.ProductgroupBox.ResumeLayout(false);
             this.ProductgroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrowseBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox)).EndInit();
             this.ResumeLayout(false);
 
         }

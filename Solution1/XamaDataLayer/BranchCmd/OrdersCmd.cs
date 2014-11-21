@@ -34,6 +34,8 @@ namespace XamaDataLayer.BranchCmd
            ord.TotalAmount = tb.TotalAmount;
            ord.OrderAccount = tb.OrderAccount;
            ord.OrderDate = tb.OrderDate;
+           ord.OrderDeliveryDate = tb.OrderDeliveryDate;
+           ord.DeliverdToBranch = tb.DeliverdToBranch;
 
            db.SubmitChanges();
            return ord;

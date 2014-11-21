@@ -13,7 +13,7 @@ namespace XamaDataLayer.Helper_Classes
        static  AccountDaily tb = new AccountDaily();
        //=====================================================
 
-       #region " ^^^ Active's Accounts ^^^  "
+       #region " ^^^ Active Account ^^^  "
 
        public static AccountDaily GetMaxTotalInAccount()
        {
@@ -39,7 +39,7 @@ namespace XamaDataLayer.Helper_Classes
 
        #endregion 
 
-        #region "   ^^^   Weekly Accounts ^^^    "
+        #region "   ^^^   Weak Account ^^^    "
        public static AccountDaily GetMinTotalInAccount()
        {
            db = new DbDataContext();
