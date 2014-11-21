@@ -16,5 +16,22 @@ namespace Bylsan_System.BranchForms
         {
             InitializeComponent();
         }
+
+        private void FrmManageBranch_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BranchGridView_CommandCellClick(object sender, EventArgs e)
+        {
+             var col = BranchGridView.CurrentColumn.Index;
+
+             if (col == 5)
+             {
+                 FrmEditBranch frm = new FrmEditBranch();
+                 frm.ShowDialog();
+             
+             }
+        }
     }
 }

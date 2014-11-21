@@ -37,7 +37,19 @@ namespace Bylsan_System.BranchForms
                 errorProvider1.Clear();
 
             }
+            if (EmployeeManagerComboBox.SelectedValue == null)
+            {
 
+                EmployeeManagerComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                EmployeeManagerComboBox.Focus();
+                errorProvider1.SetError(this.EmployeeManagerComboBox, "Please Manager Branch name");
+                return;
+            }
+            else
+            {
+                EmployeeManagerComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
             #endregion
         }
     }

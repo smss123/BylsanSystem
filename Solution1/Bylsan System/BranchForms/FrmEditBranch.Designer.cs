@@ -56,9 +56,9 @@
             this.BranchgroupBox.Controls.Add(this.label1);
             this.BranchgroupBox.Controls.Add(this.txtBranchDescription);
             this.BranchgroupBox.Controls.Add(this.txtBranchName);
-            this.BranchgroupBox.Location = new System.Drawing.Point(13, 15);
+            this.BranchgroupBox.Location = new System.Drawing.Point(12, 14);
             this.BranchgroupBox.Name = "BranchgroupBox";
-            this.BranchgroupBox.Size = new System.Drawing.Size(328, 253);
+            this.BranchgroupBox.Size = new System.Drawing.Size(328, 247);
             this.BranchgroupBox.TabIndex = 0;
             this.BranchgroupBox.TabStop = false;
             this.BranchgroupBox.Text = "Edit Data";
@@ -97,7 +97,7 @@
             this.EmployeeManagerComboBox.Location = new System.Drawing.Point(117, 134);
             this.EmployeeManagerComboBox.Name = "EmployeeManagerComboBox";
             this.EmployeeManagerComboBox.Size = new System.Drawing.Size(195, 20);
-            this.EmployeeManagerComboBox.TabIndex = 9;
+            this.EmployeeManagerComboBox.TabIndex = 2;
             this.EmployeeManagerComboBox.TabStop = false;
             this.EmployeeManagerComboBox.ThemeName = "Windows8";
             // 
@@ -106,7 +106,7 @@
             this.AddBtn.Location = new System.Drawing.Point(19, 194);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(122, 37);
-            this.AddBtn.TabIndex = 7;
+            this.AddBtn.TabIndex = 3;
             this.AddBtn.Text = "Save";
             this.AddBtn.ThemeName = "Windows8";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
@@ -136,7 +136,7 @@
             this.txtBranchDescription.Multiline = true;
             this.txtBranchDescription.Name = "txtBranchDescription";
             this.txtBranchDescription.Size = new System.Drawing.Size(195, 61);
-            this.txtBranchDescription.TabIndex = 5;
+            this.txtBranchDescription.TabIndex = 1;
             // 
             // txtBranchName
             // 
@@ -144,7 +144,7 @@
             this.txtBranchName.Location = new System.Drawing.Point(117, 37);
             this.txtBranchName.Name = "txtBranchName";
             this.txtBranchName.Size = new System.Drawing.Size(195, 20);
-            this.txtBranchName.TabIndex = 4;
+            this.txtBranchName.TabIndex = 0;
             // 
             // errorProvider1
             // 
@@ -155,10 +155,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(353, 291);
+            this.ClientSize = new System.Drawing.Size(353, 278);
             this.Controls.Add(this.BranchgroupBox);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(369, 317);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(369, 317);
             this.Name = "FrmEditBranch";
-            this.Text = "FrmEditBranch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Edit Branch";
             this.BranchgroupBox.ResumeLayout(false);
             this.BranchgroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl.MasterTemplate)).EndInit();

@@ -245,7 +245,7 @@
             this.Name = "FrmAddBranch";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Branch";
+            this.Text = "Add Branch";
             this.Load += new System.EventHandler(this.FrmAddBranch_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

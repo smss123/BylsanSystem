@@ -125,6 +125,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Controls.Add(this.AddBtn);
             this.groupBox1.Controls.Add(nationaltyLabel);
             this.groupBox1.Controls.Add(this.nationaltyComboBox);
@@ -142,28 +143,33 @@
             this.groupBox1.Controls.Add(this.phoneNumberTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(370, 340);
+            this.groupBox1.Size = new System.Drawing.Size(370, 324);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Add Data";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(33, 289);
+            this.AddBtn.Location = new System.Drawing.Point(26, 271);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(126, 36);
-            this.AddBtn.TabIndex = 18;
+            this.AddBtn.TabIndex = 7;
             this.AddBtn.Text = "Add";
+            this.AddBtn.ThemeName = "Windows8";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // nationaltyComboBox
             // 
+            this.nationaltyComboBox.BackColor = System.Drawing.SystemColors.Info;
             this.nationaltyComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "Nationalty", true));
             this.nationaltyComboBox.FormattingEnabled = true;
+            this.nationaltyComboBox.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
             this.nationaltyComboBox.Location = new System.Drawing.Point(99, 92);
             this.nationaltyComboBox.Name = "nationaltyComboBox";
-            this.nationaltyComboBox.Size = new System.Drawing.Size(121, 21);
+            this.nationaltyComboBox.Size = new System.Drawing.Size(109, 21);
             this.nationaltyComboBox.TabIndex = 2;
             // 
             // employeeBindingSource
@@ -172,6 +178,7 @@
             // 
             // emp_NameTextBox
             // 
+            this.emp_NameTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.emp_NameTextBox.Location = new System.Drawing.Point(99, 32);
             this.emp_NameTextBox.Name = "emp_NameTextBox";
             this.emp_NameTextBox.Size = new System.Drawing.Size(255, 20);
@@ -179,6 +186,7 @@
             // 
             // hereDateDateTimePicker
             // 
+            this.hereDateDateTimePicker.CalendarMonthBackground = System.Drawing.SystemColors.Info;
             this.hereDateDateTimePicker.Location = new System.Drawing.Point(99, 58);
             this.hereDateDateTimePicker.Name = "hereDateDateTimePicker";
             this.hereDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
@@ -186,6 +194,7 @@
             // 
             // homeAddressTextBox
             // 
+            this.homeAddressTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.homeAddressTextBox.Location = new System.Drawing.Point(100, 225);
             this.homeAddressTextBox.Name = "homeAddressTextBox";
             this.homeAddressTextBox.Size = new System.Drawing.Size(254, 20);
@@ -193,6 +202,7 @@
             // 
             // jobTextBox
             // 
+            this.jobTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.jobTextBox.Location = new System.Drawing.Point(100, 190);
             this.jobTextBox.Name = "jobTextBox";
             this.jobTextBox.Size = new System.Drawing.Size(200, 20);
@@ -200,6 +210,7 @@
             // 
             // personalty_IDTextBox
             // 
+            this.personalty_IDTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.personalty_IDTextBox.Location = new System.Drawing.Point(99, 158);
             this.personalty_IDTextBox.Name = "personalty_IDTextBox";
             this.personalty_IDTextBox.Size = new System.Drawing.Size(200, 20);
@@ -207,6 +218,7 @@
             // 
             // phoneNumberTextBox
             // 
+            this.phoneNumberTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.phoneNumberTextBox.Location = new System.Drawing.Point(99, 123);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(200, 20);
@@ -220,8 +232,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 366);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(394, 350);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(410, 389);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(410, 389);
             this.Name = "FrmAddEmployee";
             this.Text = "FrmAddEmployee";
             this.groupBox1.ResumeLayout(false);

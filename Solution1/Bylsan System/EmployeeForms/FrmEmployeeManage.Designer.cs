@@ -44,8 +44,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.EmplyeegroupBox = new System.Windows.Forms.GroupBox();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
-            this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.EmplyeegroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
@@ -177,7 +177,7 @@
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.radGridView1.Size = new System.Drawing.Size(924, 521);
             this.radGridView1.TabIndex = 0;
-            this.radGridView1.Text = "EmployeeGrid";
+            this.radGridView1.Text = "EmployeeGridView";
             this.radGridView1.ThemeName = "Windows8";
             // 
             // employeeBindingSource
@@ -188,11 +188,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(930, 587);
             this.Controls.Add(this.EmplyeegroupBox);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FrmEmployeeManage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEmployeeManage";
             this.EmplyeegroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();

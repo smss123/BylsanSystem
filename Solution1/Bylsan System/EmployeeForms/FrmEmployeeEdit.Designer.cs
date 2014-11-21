@@ -46,6 +46,7 @@
             this.personalty_IDTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             nationaltyLabel = new System.Windows.Forms.Label();
             emp_NameLabel = new System.Windows.Forms.Label();
             hereDateLabel = new System.Windows.Forms.Label();
@@ -138,24 +139,26 @@
             this.groupBox1.Controls.Add(this.personalty_IDTextBox);
             this.groupBox1.Controls.Add(phoneNumberLabel);
             this.groupBox1.Controls.Add(this.phoneNumberTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(21, 21);
+            this.groupBox1.Location = new System.Drawing.Point(12, 9);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(370, 368);
+            this.groupBox1.Size = new System.Drawing.Size(370, 330);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Edit Employee";
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(33, 289);
+            this.SaveBtn.Location = new System.Drawing.Point(20, 272);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(126, 36);
             this.SaveBtn.TabIndex = 18;
             this.SaveBtn.Text = "Save";
+            this.SaveBtn.ThemeName = "Windows8";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // nationaltyComboBox
             // 
+            this.nationaltyComboBox.BackColor = System.Drawing.SystemColors.Info;
             this.nationaltyComboBox.FormattingEnabled = true;
             this.nationaltyComboBox.Location = new System.Drawing.Point(99, 92);
             this.nationaltyComboBox.Name = "nationaltyComboBox";
@@ -164,6 +167,7 @@
             // 
             // emp_NameTextBox
             // 
+            this.emp_NameTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.emp_NameTextBox.Location = new System.Drawing.Point(99, 32);
             this.emp_NameTextBox.Name = "emp_NameTextBox";
             this.emp_NameTextBox.Size = new System.Drawing.Size(255, 20);
@@ -178,6 +182,7 @@
             // 
             // homeAddressTextBox
             // 
+            this.homeAddressTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.homeAddressTextBox.Location = new System.Drawing.Point(100, 225);
             this.homeAddressTextBox.Name = "homeAddressTextBox";
             this.homeAddressTextBox.Size = new System.Drawing.Size(254, 20);
@@ -185,6 +190,7 @@
             // 
             // jobTextBox
             // 
+            this.jobTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.jobTextBox.Location = new System.Drawing.Point(100, 190);
             this.jobTextBox.Name = "jobTextBox";
             this.jobTextBox.Size = new System.Drawing.Size(200, 20);
@@ -192,6 +198,7 @@
             // 
             // personalty_IDTextBox
             // 
+            this.personalty_IDTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.personalty_IDTextBox.Location = new System.Drawing.Point(99, 158);
             this.personalty_IDTextBox.Name = "personalty_IDTextBox";
             this.personalty_IDTextBox.Size = new System.Drawing.Size(200, 20);
@@ -199,6 +206,7 @@
             // 
             // phoneNumberTextBox
             // 
+            this.phoneNumberTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.phoneNumberTextBox.Location = new System.Drawing.Point(99, 123);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(200, 20);
@@ -212,8 +220,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 401);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(394, 350);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(410, 389);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(410, 389);
             this.Name = "FrmEmployeeEdit";
             this.Text = "FrmEmployeeEdit";
             this.groupBox1.ResumeLayout(false);
@@ -236,5 +249,6 @@
         private System.Windows.Forms.TextBox personalty_IDTextBox;
         private System.Windows.Forms.TextBox phoneNumberTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
     }
 }
