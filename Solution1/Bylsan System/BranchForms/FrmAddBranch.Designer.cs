@@ -41,20 +41,20 @@
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.label3 = new System.Windows.Forms.Label();
             this.EmployeeManagerComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBranchDescription = new System.Windows.Forms.TextBox();
             this.txtBranchName = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -190,10 +190,6 @@
             this.EmployeeManagerComboBox.TabStop = false;
             this.EmployeeManagerComboBox.ThemeName = "Windows8";
             // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(XamaDataLayer.Employee);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -233,6 +229,10 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(XamaDataLayer.Employee);
+            // 
             // FrmAddBranch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,7 +240,9 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(349, 274);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(365, 313);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(365, 313);
             this.Name = "FrmAddBranch";
             this.ShowIcon = false;
@@ -253,8 +255,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -194,6 +194,10 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(356, 378);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(372, 417);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(372, 417);
             this.Name = "frmEditProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditProduct";

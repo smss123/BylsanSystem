@@ -56,7 +56,7 @@
             this.BranchgroupBox.Controls.Add(this.label1);
             this.BranchgroupBox.Controls.Add(this.txtBranchDescription);
             this.BranchgroupBox.Controls.Add(this.txtBranchName);
-            this.BranchgroupBox.Location = new System.Drawing.Point(12, 14);
+            this.BranchgroupBox.Location = new System.Drawing.Point(12, 13);
             this.BranchgroupBox.Name = "BranchgroupBox";
             this.BranchgroupBox.Size = new System.Drawing.Size(328, 247);
             this.BranchgroupBox.TabIndex = 0;

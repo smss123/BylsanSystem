@@ -113,6 +113,10 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(385, 214);
             this.Controls.Add(this.ProductCategorygroupBox);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(401, 253);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(401, 253);
             this.Name = "FrmEditProductCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Product Category";
