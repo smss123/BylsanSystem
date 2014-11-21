@@ -31,15 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label customerNameLabel;
             System.Windows.Forms.Label phoneNumberLabel;
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerNameTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Addbtn = new Telerik.WinControls.UI.RadButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             customerNameLabel = new System.Windows.Forms.Label();
             phoneNumberLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Addbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -63,13 +62,9 @@
             phoneNumberLabel.TabIndex = 3;
             phoneNumberLabel.Text = "Phone Number:";
             // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataSource = typeof(XamaDataLayer.Customer);
-            // 
             // customerNameTextBox
             // 
-            this.customerNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "CustomerName", true));
+            this.customerNameTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.customerNameTextBox.Location = new System.Drawing.Point(110, 22);
             this.customerNameTextBox.Name = "customerNameTextBox";
             this.customerNameTextBox.Size = new System.Drawing.Size(193, 20);
@@ -77,7 +72,7 @@
             // 
             // phoneNumberTextBox
             // 
-            this.phoneNumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerBindingSource, "PhoneNumber", true));
+            this.phoneNumberTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.phoneNumberTextBox.Location = new System.Drawing.Point(110, 55);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(193, 20);
@@ -90,20 +85,21 @@
             this.groupBox1.Controls.Add(phoneNumberLabel);
             this.groupBox1.Controls.Add(this.customerNameTextBox);
             this.groupBox1.Controls.Add(this.phoneNumberTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(12, 22);
+            this.groupBox1.Location = new System.Drawing.Point(12, 9);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(345, 180);
+            this.groupBox1.Size = new System.Drawing.Size(345, 154);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Add Customer";
             // 
             // Addbtn
             // 
-            this.Addbtn.Location = new System.Drawing.Point(23, 116);
+            this.Addbtn.Location = new System.Drawing.Point(20, 104);
             this.Addbtn.Name = "Addbtn";
             this.Addbtn.Size = new System.Drawing.Size(127, 37);
             this.Addbtn.TabIndex = 2;
             this.Addbtn.Text = "Add";
+            this.Addbtn.ThemeName = "Windows8";
             this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
             // errorProvider1
@@ -114,11 +110,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 222);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(369, 174);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(385, 213);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(385, 213);
             this.Name = "FrmAddCustomer";
             this.Text = "FrmAddCustomer";
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Addbtn)).EndInit();
@@ -129,11 +129,11 @@
 
         #endregion
 
-        private System.Windows.Forms.BindingSource customerBindingSource;
         private System.Windows.Forms.TextBox customerNameTextBox;
         private System.Windows.Forms.TextBox phoneNumberTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private Telerik.WinControls.UI.RadButton Addbtn;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
     }
 }
