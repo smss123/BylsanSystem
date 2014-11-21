@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using XamaDataLayer;
+using XamaDataLayer.BranchCmd;
+
 namespace Bylsan_System.ProductForms
 {
     public partial class FrmAddProductCategory : Form
@@ -38,6 +41,10 @@ namespace Bylsan_System.ProductForms
 
             }
             #endregion
+            ProductCategory tb = new ProductCategory()
+            { ProductCategoryName = productCategoryNameTextBox.Text, Description = descriptionTextBox.Text };
+            CategoriesCmd.AddCategory(tb);
+            MessageBox.Show("Saved ");
         }
     }
 }

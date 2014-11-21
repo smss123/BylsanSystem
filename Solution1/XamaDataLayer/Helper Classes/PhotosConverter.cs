@@ -28,7 +28,7 @@ namespace XamaDataLayer.Helper_Classes
         }
 
         //=========================================================
-        public byte[] ImageToByteArray(Image img)
+        public  static byte[] ImageToByteArray(Image img)
         {
             System.IO.MemoryStream ms = new System.IO.MemoryStream();
             img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
