@@ -20,6 +20,7 @@ namespace XamaDataLayer
 	using System.Linq.Expressions;
 	using System.ComponentModel;
 	using System;
+    using System.Drawing;
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="soft_Bylsan")]
@@ -3067,7 +3068,7 @@ namespace XamaDataLayer
 		
 		private System.Nullable<int> _CateogryID;
 		
-		private System.Data.Linq.Binary _Img;
+		private Image _Img;
 		
 		private EntitySet<OrderProduct> _OrderProducts;
 		
@@ -3085,7 +3086,7 @@ namespace XamaDataLayer
     partial void OnProduct_DescriptionChanged();
     partial void OnCateogryIDChanging(System.Nullable<int> value);
     partial void OnCateogryIDChanged();
-    partial void OnImgChanging(System.Data.Linq.Binary value);
+    partial void OnImgChanging(Image   value);
     partial void OnImgChanged();
     #endregion
 		
@@ -3181,7 +3182,7 @@ namespace XamaDataLayer
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Img", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary Img
+		public Image Img
 		{
 			get
 			{

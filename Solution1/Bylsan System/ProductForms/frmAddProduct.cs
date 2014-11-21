@@ -60,7 +60,7 @@ namespace Bylsan_System.ProductForms
            Product tb = new Product (){
                Product_Name = product_NameTextBox.Text,
                Product_Description = product_DescriptionTextBox.Text,
-               Img = byteImg1,
+               Img = (productpictureBox.Image!=null? productpictureBox.Image: null),//اضيف صورة في الريسورس عشن في حاله المستخدم ما اضاف صورة نضع الصور الافتراضيه  
                CateogryID = int.Parse(CategoryComboBox.SelectedValue.ToString()),
             };
            ProductsCmd .AddProduct (tb);

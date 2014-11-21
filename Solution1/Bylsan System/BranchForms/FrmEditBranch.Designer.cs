@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.BranchgroupBox = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.EmployeeManagerComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
@@ -37,11 +38,13 @@
             this.txtBranchDescription = new System.Windows.Forms.TextBox();
             this.txtBranchName = new System.Windows.Forms.TextBox();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.BranchgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // BranchgroupBox
@@ -105,6 +108,8 @@
             this.AddBtn.Size = new System.Drawing.Size(122, 37);
             this.AddBtn.TabIndex = 7;
             this.AddBtn.Text = "Save";
+            this.AddBtn.ThemeName = "Windows8";
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // label2
             // 
@@ -141,10 +146,15 @@
             this.txtBranchName.Size = new System.Drawing.Size(195, 20);
             this.txtBranchName.TabIndex = 4;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FrmEditBranch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(353, 291);
             this.Controls.Add(this.BranchgroupBox);
             this.Name = "FrmEditBranch";
@@ -155,6 +165,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,5 +181,6 @@
         private System.Windows.Forms.TextBox txtBranchName;
         private System.Windows.Forms.Label label3;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
