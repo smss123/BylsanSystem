@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Bylsan_System.BranchForms;
+using Bylsan_System.CustomerForms;
+using Bylsan_System.EmployeeForms;
+using Bylsan_System.ProductForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +19,68 @@ namespace Bylsan_System
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void AddEmloyeebtn_Click(object sender, EventArgs e)
+        {
+            FrmAddEmployee frm = new FrmAddEmployee();
+            frm.ShowDialog();
+        }
+
+        private void managementEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEmployeeManage empfrm = new FrmEmployeeManage();
+            empfrm.ShowDialog();
+        }
+
+        private void addBranchBtn_Click(object sender, EventArgs e)
+        {
+            FrmAddBranch frm = new FrmAddBranch();
+            frm.ShowDialog();
+        }
+
+        private void ManagementBranchBtn_Click(object sender, EventArgs e)
+        {
+            FrmManageBranch frm = new FrmManageBranch();
+            frm.ShowDialog();
+        }
+
+        private void addProductCategoryBtn_Click(object sender, EventArgs e)
+        {
+            FrmAddProductCategory frm = new FrmAddProductCategory();
+            frm.ShowDialog();
+        }
+
+        private void MangeProductCategoryBtn_Click(object sender, EventArgs e)
+        {
+            FrmManageProductCategory frm = new FrmManageProductCategory();
+            frm.ShowDialog();
+        }
+
+        private void addProductBtn_Click(object sender, EventArgs e)
+        {
+            frmAddProduct frm = new frmAddProduct();
+            frm.ShowDialog();
+
+        }
+
+        private void managementProductBtn_Click(object sender, EventArgs e)
+        {
+            frmManageProduct frm = new frmManageProduct();
+            frm.ShowDialog();
+        }
+
+        private void addCustomerbtn_Click(object sender, EventArgs e)
+        {
+            FrmAddCustomer frm = new FrmAddCustomer();
+            frm.ShowDialog();
+
+        }
+
+        private void customerManagementBtn_Click(object sender, EventArgs e)
+        {
+            FrmCustomerManage frm = new FrmCustomerManage();
+            frm.ShowDialog();
         }
     }
 }
