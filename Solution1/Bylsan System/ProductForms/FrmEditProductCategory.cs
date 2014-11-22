@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using XamaDataLayer;
+using XamaDataLayer.BranchCmd;
+
 namespace Bylsan_System.ProductForms
 {
     public partial class FrmEditProductCategory : Form
@@ -17,6 +20,7 @@ namespace Bylsan_System.ProductForms
             InitializeComponent();
         }
 
+        public int CategID { get; set; }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
@@ -38,6 +42,16 @@ namespace Bylsan_System.ProductForms
 
             }
             #endregion
+
+
+            CategID = CategoriesCmd.GetCategoryIDByName(productCategoryNameTextBox.Text );
+            if (CategID != 0)
+            {
+                ProductCategory tb = new ProductCategory() 
+                { ProductCategoryName = productCategoryNameTextBox.Text, Description = descriptionTextBox.Text };
+                CategoriesCmd.EditCategory(tb, CategID);
+                MessageBox.Show("Updated ... ");
+            }
         }
         }
     }

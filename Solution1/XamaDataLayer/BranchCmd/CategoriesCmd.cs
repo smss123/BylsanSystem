@@ -17,6 +17,15 @@ namespace XamaDataLayer.BranchCmd
            return true;
        }
 
+
+       public static int  GetCategoryIDByName(string CategName)
+       {
+           db = new DbDataContext();
+           var   categ = db.ProductCategories.Where(cat => cat.ProductCategoryName == CategName ).SingleOrDefault();
+           int xCategId = 0;
+           xCategId = categ.ID;
+           return xCategId;
+       }
        public static ProductCategory EditCategory(ProductCategory tb, int xid)
        {
            db = new DbDataContext();
@@ -41,5 +50,8 @@ namespace XamaDataLayer.BranchCmd
            db.SubmitChanges();
            
        }
+
+      
+
     }
 }

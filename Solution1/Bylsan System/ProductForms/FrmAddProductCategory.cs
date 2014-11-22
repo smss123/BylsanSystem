@@ -41,6 +41,7 @@ namespace Bylsan_System.ProductForms
 
             }
             #endregion
+
             ProductCategory tb = new ProductCategory()
             { ProductCategoryName = productCategoryNameTextBox.Text, Description = descriptionTextBox.Text };
             CategoriesCmd.AddCategory(tb);
