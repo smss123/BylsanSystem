@@ -61,6 +61,7 @@
     </Compile>
     <Compile Include="Helper Classes\AccountantWatcher.cs" />
     <Compile Include="Helper Classes\CalculatorClass.cs" />
+    <Compile Include="Helper Classes\CustomerInformations.cs" />
     <Compile Include="Helper Classes\PhotosConverter.cs" />
     <Compile Include="MailServer\InBoxCmd.cs" />
     <Compile Include="MailServer\OutBoxCmd.cs" />
