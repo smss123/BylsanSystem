@@ -28,6 +28,15 @@ namespace XamaDataLayer.BranchCmd
 
        }
 
+
+       public static int GetCustomerIDByName(string nam)
+       {
+           db = new DbDataContext();
+           var cust = db.Customers.Where(c => c.CustomerName == nam).SingleOrDefault();
+           int xCustID = cust.ID;
+           return xCustID;
+
+       }
        public static List<Customer> GetAllCustmerByID( int CustId)
        {
            db = new DbDataContext();
