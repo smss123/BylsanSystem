@@ -197,7 +197,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(356, 378);
+            this.ClientSize = new System.Drawing.Size(356, 379);
             this.Controls.Add(this.ProductgroupBox);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(372, 417);
@@ -206,6 +206,7 @@
             this.Name = "frmAddProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Product";
+            this.Load += new System.EventHandler(this.frmAddProduct_Load);
             this.ProductgroupBox.ResumeLayout(false);
             this.ProductgroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox.EditorControl.MasterTemplate)).EndInit();

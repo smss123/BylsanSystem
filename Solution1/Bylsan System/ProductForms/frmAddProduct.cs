@@ -21,12 +21,12 @@ namespace Bylsan_System.ProductForms
             InitializeComponent();
         }
 
-        private void FillEmployeeCombo()
+        private void FillCategoreisCombo()
         {
 
             this.CategoryComboBox.AutoFilter = true;
             this.CategoryComboBox.ValueMember = "ID";
-            this.CategoryComboBox.DisplayMember = "EmployeeName";
+            this.CategoryComboBox.DisplayMember = "Product_Name";
 
 
 
@@ -103,6 +103,11 @@ namespace Bylsan_System.ProductForms
 
 
         #endregion 
+
+         private void frmAddProduct_Load(object sender, EventArgs e)
+         {
+             FillCategoreisCombo();
+         }
 
     }
 }
