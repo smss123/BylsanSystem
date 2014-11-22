@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using XamaDataLayer;
+using XamaDataLayer.BranchCmd;
+
+
 namespace Bylsan_System.CustomerForms
 {
     public partial class FrmCustomerEdit : Form
