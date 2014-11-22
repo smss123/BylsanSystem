@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using XamaDataLayer;
+using XamaDataLayer.BranchCmd;
+
 namespace Bylsan_System.EmployeeForms
 {
     public partial class FrmAddEmployee : Form
@@ -44,6 +47,22 @@ namespace Bylsan_System.EmployeeForms
             }
 
             #endregion
+
+            Employee tb = new Employee() {
+            
+            Emp_Name = emp_NameTextBox .Text ,
+            HereDate = hereDateDateTimePicker .Value,
+            Personalty_ID = personalty_IDTextBox .Text ,
+            Nationalty = nationaltyComboBox .Text ,
+            HomeAddress = homeAddressTextBox .Text ,
+            PhoneNumber = phoneNumberTextBox .Text ,
+            CreateDate = DateTime .Now ,
+            Job = jobTextBox .Text ,            
+            };
+           
+            EmployeesCmd.AddEmployee(tb);
+            MessageBox.Show("Saved ... ");
+            this.Hide();
         }
     }
 }
