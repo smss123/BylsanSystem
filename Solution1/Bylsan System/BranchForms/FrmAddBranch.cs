@@ -101,9 +101,10 @@ namespace Bylsan_System.BranchForms
             }))
             {
                 Operation.ShowToustOk("Branch Has Been Saved", this);
+                txtBranchName.Clear();
+                txtBranchDescription.Clear();
             }
-            this.Enabled = true;
-            this.Cursor = Cursors.Default; 
+           
             Operation.EndOperation(this);
         }
     }
