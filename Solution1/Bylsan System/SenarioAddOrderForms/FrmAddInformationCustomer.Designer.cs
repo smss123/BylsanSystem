@@ -94,9 +94,9 @@
             this.NormalOrdercheckBox.AutoSize = true;
             this.NormalOrdercheckBox.Location = new System.Drawing.Point(29, 243);
             this.NormalOrdercheckBox.Name = "NormalOrdercheckBox";
-            this.NormalOrdercheckBox.Size = new System.Drawing.Size(88, 17);
+            this.NormalOrdercheckBox.Size = new System.Drawing.Size(90, 17);
             this.NormalOrdercheckBox.TabIndex = 5;
-            this.NormalOrdercheckBox.Text = "Normal order";
+            this.NormalOrdercheckBox.Text = "Normal Order";
             this.NormalOrdercheckBox.UseVisualStyleBackColor = true;
             // 
             // NextBtn
