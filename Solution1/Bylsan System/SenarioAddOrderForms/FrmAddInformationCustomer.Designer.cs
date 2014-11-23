@@ -38,16 +38,18 @@
             this.customerNameTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             customerNameLabel = new System.Windows.Forms.Label();
             phoneNumberLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NextBtn)).BeginInit();
+            this.InformationgroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // customerNameLabel
             // 
             customerNameLabel.AutoSize = true;
-            customerNameLabel.Location = new System.Drawing.Point(8, 67);
+            customerNameLabel.Location = new System.Drawing.Point(17, 69);
             customerNameLabel.Name = "customerNameLabel";
             customerNameLabel.Size = new System.Drawing.Size(87, 13);
             customerNameLabel.TabIndex = 1;
@@ -56,7 +58,7 @@
             // phoneNumberLabel
             // 
             phoneNumberLabel.AutoSize = true;
-            phoneNumberLabel.Location = new System.Drawing.Point(8, 33);
+            phoneNumberLabel.Location = new System.Drawing.Point(23, 31);
             phoneNumberLabel.Name = "phoneNumberLabel";
             phoneNumberLabel.Size = new System.Drawing.Size(81, 13);
             phoneNumberLabel.TabIndex = 3;
@@ -92,7 +94,7 @@
             // NormalOrdercheckBox
             // 
             this.NormalOrdercheckBox.AutoSize = true;
-            this.NormalOrdercheckBox.Location = new System.Drawing.Point(29, 243);
+            this.NormalOrdercheckBox.Location = new System.Drawing.Point(11, 243);
             this.NormalOrdercheckBox.Name = "NormalOrdercheckBox";
             this.NormalOrdercheckBox.Size = new System.Drawing.Size(90, 17);
             this.NormalOrdercheckBox.TabIndex = 5;
@@ -111,6 +113,7 @@
             // 
             // InformationgroupBox
             // 
+            this.InformationgroupBox.Controls.Add(this.textBox1);
             this.InformationgroupBox.Location = new System.Drawing.Point(11, 97);
             this.InformationgroupBox.Name = "InformationgroupBox";
             this.InformationgroupBox.Size = new System.Drawing.Size(477, 129);
@@ -121,7 +124,7 @@
             // customerNameTextBox
             // 
             this.customerNameTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.customerNameTextBox.Location = new System.Drawing.Point(96, 64);
+            this.customerNameTextBox.Location = new System.Drawing.Point(110, 66);
             this.customerNameTextBox.Name = "customerNameTextBox";
             this.customerNameTextBox.Size = new System.Drawing.Size(193, 20);
             this.customerNameTextBox.TabIndex = 0;
@@ -129,10 +132,20 @@
             // phoneNumberTextBox
             // 
             this.phoneNumberTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.phoneNumberTextBox.Location = new System.Drawing.Point(94, 30);
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(110, 28);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(193, 20);
             this.phoneNumberTextBox.TabIndex = 1;
+            this.phoneNumberTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.phoneNumberTextBox_KeyDown);
+            this.phoneNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneNumberTextBox_KeyPress);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(13, 18);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(462, 110);
+            this.textBox1.TabIndex = 0;
             // 
             // FrmAddInformationCustomer
             // 
@@ -147,6 +160,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NextBtn)).EndInit();
+            this.InformationgroupBox.ResumeLayout(false);
+            this.InformationgroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -161,5 +176,6 @@
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
         private System.Windows.Forms.CheckBox SpecialOrderCheckBox;
         private System.Windows.Forms.CheckBox NormalOrdercheckBox;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -21,5 +21,18 @@ namespace Bylsan_System.SenarioAddOrderForms
         {
 
         }
+
+        private void phoneNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
+
+        private void phoneNumberTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                MessageBox.Show(phoneNumberTextBox.Text);
+            }
+        }
     }
 }
