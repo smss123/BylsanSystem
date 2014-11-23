@@ -22,14 +22,7 @@ namespace Bylsan_System.SenarioAddOrderForms
 
         private void NextBtn_Click(object sender, EventArgs e)
         {
-            Form frm = new FrmAddOrderProduct();
-            frm.Show();
-            this.Hide();
-            Operation.EndOperation(this);
-        }
 
-        private void phoneNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
             try
             {
                 if (phoneNumberTextBox.Text != null)
@@ -49,21 +42,41 @@ namespace Bylsan_System.SenarioAddOrderForms
                         CustomerInformations.WatingCustomer.CreateDate = GetCurrentCustomerInfor.CreateDate;
                         CustomerInformations.WatingCustomer.Points = GetCurrentCustomerInfor.Points;
                         //=======================================================================================
-                        InformationsBox.Text  = GetCurrentCustomerInfor.AccountID + " " + Environment.NewLine;
-                        InformationsBox.Text = GetCurrentCustomerInfor.CreateDate + " " + Environment.NewLine;
-                        InformationsBox.Text = GetCurrentCustomerInfor.Points  + " " + Environment.NewLine;
+                        InformationsBox.Text = string .Format ("Customer Account : {0} ", GetCurrentCustomerInfor.AccountID + " " + Environment.NewLine);
+                        InformationsBox.Text = string .Format ("Customer Created Date : {0} ", GetCurrentCustomerInfor.CreateDate + " " + Environment.NewLine);
+                        InformationsBox.Text = string .Format ("Customer Points : {0} ", GetCurrentCustomerInfor.Points + " " + Environment.NewLine);
                     } // End If 2
-                 
+
                 }// End If 1
 
             }
             catch (Exception)
             {
-                // Not Found { He Is New Customer }
-                CustomerInformations.WatingCustomer.PhoneNumber = phoneNumberTextBox.Text.ToString();
-                CustomerInformations.WatingCustomer.CustomerName = customerNameTextBox.Text.ToString();
-                
+                // Not Found { He Is a New Customer }
+                CustomerInformations.CustmrPhone = phoneNumberTextBox.Text;
+                CustomerInformations.CustmrName = customerNameTextBox.Text;
+
             }
+
+            //===================================================================
+                 FrmAddOrderProduct frm = new FrmAddOrderProduct ();
+
+                 if (SpecialOrderCheckBox.CheckState == CheckState.Checked)
+                 { frm.OrderTypeCheckLab.Text = string.Format("Special Order"); }
+
+                 if (NormalOrdercheckBox.CheckState == CheckState.Checked)
+                 { frm.OrderTypeCheckLab.Text = string.Format("Normal Order"); }
+            //======================================================================
+
+          
+            frm.Show();
+            this.Hide();
+            Operation.EndOperation(this);
+        }
+
+        private void phoneNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
         }
 
         private void phoneNumberTextBox_KeyDown(object sender, KeyEventArgs e)
