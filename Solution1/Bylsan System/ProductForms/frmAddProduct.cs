@@ -25,14 +25,13 @@ namespace Bylsan_System.ProductForms
         private void FillCategoreisCombo()
         {
 
+       
+            CategoryComboBox.DataSource =  CategoriesCmd .GetAllCategories ();
+
             this.CategoryComboBox.AutoFilter = true;
             this.CategoryComboBox.ValueMember = "ID";
-            this.CategoryComboBox.DisplayMember = "Product_Name";
+            this.CategoryComboBox.DisplayMember = "ProductCategoryName";
 
-
-
-
-            CategoryComboBox.DataSource = ProductsCmd.GetAllProducts();
         }
 
 
