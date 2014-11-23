@@ -44,8 +44,20 @@ namespace Bylsan_System.ProductForms
 
             ProductCategory tb = new ProductCategory()
             { ProductCategoryName = productCategoryNameTextBox.Text, Description = descriptionTextBox.Text };
-            CategoriesCmd.AddCategory(tb);
-            MessageBox.Show("Saved ");
+            Operation.BeginOperation(this);
+            if (CategoriesCmd.AddCategory(tb))
+            {
+                Operation.ShowToustOk("Category Has Been Saved", this);
+                productCategoryNameTextBox.Clear();
+                descriptionTextBox.Clear();
+            }
+            Operation.EndOperation(this);
+          
+        }
+
+        private void FrmAddProductCategory_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

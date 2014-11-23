@@ -21,6 +21,7 @@ namespace Bylsan_System.ProductForms
         }
 
         public int CategID { get; set; }
+        public ProductCategory TragetCategory { get; set; }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
@@ -44,14 +45,24 @@ namespace Bylsan_System.ProductForms
             #endregion
 
 
-            CategID = CategoriesCmd.GetCategoryIDByName(productCategoryNameTextBox.Text );
-            if (CategID != 0)
-            {
+           
                 ProductCategory tb = new ProductCategory() 
                 { ProductCategoryName = productCategoryNameTextBox.Text, Description = descriptionTextBox.Text };
-                CategoriesCmd.EditCategory(tb, CategID);
-                MessageBox.Show("Updated ... ");
-            }
+                Operation.BeginOperation(this);
+                if ( CategoriesCmd.EditCategory(tb, TragetCategory.ID))
+                {
+                    Operation.ShowToustOk("Category Has Been saved", this);
+                    productCategoryNameTextBox.Clear();
+                    descriptionTextBox.Clear();
+                }
+                Operation.EndOperation(this);
+                 
+        }
+
+        private void FrmEditProductCategory_Load(object sender, EventArgs e)
+        {
+            productCategoryNameTextBox.Text = TragetCategory.ProductCategoryName;
+            descriptionTextBox.Text = TragetCategory.Description;
         }
         }
     }

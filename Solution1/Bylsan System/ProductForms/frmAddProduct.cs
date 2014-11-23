@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd ;
 using XamaDataLayer.Helper_Classes;
+using Xprema.XExtention;
 
 namespace Bylsan_System.ProductForms
 {
@@ -60,10 +61,16 @@ namespace Bylsan_System.ProductForms
            Product tb = new Product (){
                Product_Name = product_NameTextBox.Text,
                Product_Description = product_DescriptionTextBox.Text,
-               Img = null,
-               CateogryID = int.Parse(CategoryComboBox.SelectedValue.ToString()),
+               Img = productpictureBox.Image,
+               CateogryID = CategoryComboBox.SelectedValue.ToString().ToInt(),
             };
-           ProductsCmd .AddProduct (tb);
+            Operation.BeginOperation(this);
+            if (ProductsCmd.AddProduct(tb)){
+
+                Operation.ShowToustOk("Product Has Been Saved", this);
+            }
+            Operation.EndOperation(this);
+          
         }
 
 
