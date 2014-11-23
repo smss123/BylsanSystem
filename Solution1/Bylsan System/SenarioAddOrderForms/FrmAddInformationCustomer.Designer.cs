@@ -35,10 +35,10 @@
             this.NormalOrdercheckBox = new System.Windows.Forms.CheckBox();
             this.NextBtn = new Telerik.WinControls.UI.RadButton();
             this.InformationgroupBox = new System.Windows.Forms.GroupBox();
+            this.InformationsBox = new System.Windows.Forms.TextBox();
             this.customerNameTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             customerNameLabel = new System.Windows.Forms.Label();
             phoneNumberLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -113,13 +113,21 @@
             // 
             // InformationgroupBox
             // 
-            this.InformationgroupBox.Controls.Add(this.textBox1);
+            this.InformationgroupBox.Controls.Add(this.InformationsBox);
             this.InformationgroupBox.Location = new System.Drawing.Point(11, 97);
             this.InformationgroupBox.Name = "InformationgroupBox";
             this.InformationgroupBox.Size = new System.Drawing.Size(477, 129);
             this.InformationgroupBox.TabIndex = 4;
             this.InformationgroupBox.TabStop = false;
             this.InformationgroupBox.Text = "Information";
+            // 
+            // InformationsBox
+            // 
+            this.InformationsBox.Location = new System.Drawing.Point(13, 18);
+            this.InformationsBox.Multiline = true;
+            this.InformationsBox.Name = "InformationsBox";
+            this.InformationsBox.Size = new System.Drawing.Size(462, 110);
+            this.InformationsBox.TabIndex = 0;
             // 
             // customerNameTextBox
             // 
@@ -138,14 +146,6 @@
             this.phoneNumberTextBox.TabIndex = 1;
             this.phoneNumberTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.phoneNumberTextBox_KeyDown);
             this.phoneNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneNumberTextBox_KeyPress);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(13, 18);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(462, 110);
-            this.textBox1.TabIndex = 0;
             // 
             // FrmAddInformationCustomer
             // 
@@ -174,8 +174,8 @@
         private System.Windows.Forms.TextBox phoneNumberTextBox;
         private System.Windows.Forms.GroupBox InformationgroupBox;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
-        private System.Windows.Forms.CheckBox SpecialOrderCheckBox;
-        private System.Windows.Forms.CheckBox NormalOrdercheckBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox InformationsBox;
+        public System.Windows.Forms.CheckBox SpecialOrderCheckBox;
+        public System.Windows.Forms.CheckBox NormalOrdercheckBox;
     }
 }
