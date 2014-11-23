@@ -31,13 +31,13 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.nextBtn = new Telerik.WinControls.UI.RadButton();
             this.CategoryListView = new Telerik.WinControls.UI.RadListView();
             this.radListView2 = new Telerik.WinControls.UI.RadListView();
-            this.nextBtn = new Telerik.WinControls.UI.RadButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nextBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryListView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radListView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nextBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -65,6 +65,14 @@
             this.panel1.Size = new System.Drawing.Size(734, 55);
             this.panel1.TabIndex = 3;
             // 
+            // nextBtn
+            // 
+            this.nextBtn.Location = new System.Drawing.Point(586, 4);
+            this.nextBtn.Name = "nextBtn";
+            this.nextBtn.Size = new System.Drawing.Size(144, 46);
+            this.nextBtn.TabIndex = 0;
+            this.nextBtn.Text = "Next";
+            // 
             // CategoryListView
             // 
             this.CategoryListView.Dock = System.Windows.Forms.DockStyle.Right;
@@ -83,14 +91,6 @@
             this.radListView2.TabIndex = 5;
             this.radListView2.Text = "radListView2";
             // 
-            // nextBtn
-            // 
-            this.nextBtn.Location = new System.Drawing.Point(587, 5);
-            this.nextBtn.Name = "nextBtn";
-            this.nextBtn.Size = new System.Drawing.Size(144, 46);
-            this.nextBtn.TabIndex = 0;
-            this.nextBtn.Text = "Next";
-            // 
             // FrmAddOrderProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -104,9 +104,9 @@
             this.Name = "FrmAddOrderProduct";
             this.Text = "FrmAddOrderProduct";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nextBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryListView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radListView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nextBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
