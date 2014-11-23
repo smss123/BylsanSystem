@@ -192,11 +192,11 @@
     <Compile Include="SenarioAddOrderForms\FrmAddOrderProduct.Designer.cs">
       <DependentUpon>FrmAddOrderProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="SenarioAddOrderForms\FrmTypeOfOrder.cs">
+    <Compile Include="SenarioAddOrderForms\FrmTotalOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SenarioAddOrderForms\FrmTypeOfOrder.Designer.cs">
-      <DependentUpon>FrmTypeOfOrder.cs</DependentUpon>
+    <Compile Include="SenarioAddOrderForms\FrmTotalOrder.Designer.cs">
+      <DependentUpon>FrmTotalOrder.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="BranchForms\FrmAddBranch.resx">
       <DependentUpon>FrmAddBranch.cs</DependentUpon>
@@ -270,8 +270,8 @@
     <EmbeddedResource Include="SenarioAddOrderForms\FrmAddOrderProduct.resx">
       <DependentUpon>FrmAddOrderProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SenarioAddOrderForms\FrmTypeOfOrder.resx">
-      <DependentUpon>FrmTypeOfOrder.cs</DependentUpon>
+    <EmbeddedResource Include="SenarioAddOrderForms\FrmTotalOrder.resx">
+      <DependentUpon>FrmTotalOrder.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Lib\Xprema.dll.config" />
     <None Include="Properties\DataSources\XamaDataLayer.Account.datasource" />
