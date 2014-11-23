@@ -12,9 +12,15 @@ namespace XamaDataLayer.BranchCmd
        public static bool AddNewBranch(Branch tb)
        {
            db = new DbDataContext();
-           db.Branches.InsertOnSubmit(tb);
-           db.SubmitChanges();
-           return true;
+           var MyTable =  db.Branches .Where (b=> b.Branch_Name .Contains (tb.Branch_Name )).SingleOrDefault () ;
+           if (MyTable.Branch_Name == null)
+           {
+               db.Branches.InsertOnSubmit(tb);
+               db.SubmitChanges();
+               return true;
+           }
+           else { return false; }
+          
        }
        public static List<Branch> GetAllBranchs()
        {
@@ -54,7 +60,7 @@ namespace XamaDataLayer.BranchCmd
                       select b).ToList();
            return lst;
        }
-       public static Branch EditBranch(Branch tb, int xid)
+       public static bool EditBranch(Branch tb, int xid)
        {
            db = new DbDataContext();
            var b = db.Branches.Where(n => n.ID == xid).SingleOrDefault();
@@ -64,7 +70,7 @@ namespace XamaDataLayer.BranchCmd
            b.Manager_ID = tb.Manager_ID;
            b.AccountID = tb.AccountID;
            db.SubmitChanges();
-           return b;
+           return true;
        }
 
        public static void DeleteBranch(int xid)

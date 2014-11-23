@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace XamaDataLayer.BranchCmd
 {
@@ -28,6 +29,15 @@ namespace XamaDataLayer.BranchCmd
 
        }
 
+
+       public static int GetCustomerIDByName(string nam)
+       {
+           db = new DbDataContext();
+           var cust = db.Customers.Where(c => c.CustomerName == nam).SingleOrDefault();
+           int xCustID = cust.ID;
+           return xCustID;
+
+       }
        public static List<Customer> GetAllCustmerByID( int CustId)
        {
            db = new DbDataContext();
@@ -49,16 +59,15 @@ namespace XamaDataLayer.BranchCmd
            return lst;
 
        }
-       public static Customer EditCustomer( Customer tb ,int xid) {
+       public static bool EditCustomer(Customer tb, int xid)
+       {
            db = new DbDataContext();
            var c = db.Customers.Where(cc => cc.ID == xid).SingleOrDefault();
+           MessageBox.Show(c.CustomerName);
            c.CustomerName = tb.CustomerName;
            c.PhoneNumber = tb.PhoneNumber;
-           c.CreateDate = tb.CreateDate;
-           c.AccountID = tb.AccountID;
-           c.Points = tb.Points;
            db.SubmitChanges();
-           return c;
+           return true;
        }
 
        public static void DeleteCustomer( int xid )

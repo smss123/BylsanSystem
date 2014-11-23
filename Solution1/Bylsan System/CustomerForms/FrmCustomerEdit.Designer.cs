@@ -36,11 +36,13 @@
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerNameTextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             customerNameLabel = new System.Windows.Forms.Label();
             phoneNumberLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // customerNameLabel
@@ -106,12 +108,16 @@
             this.customerNameTextBox.Size = new System.Drawing.Size(201, 20);
             this.customerNameTextBox.TabIndex = 0;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FrmCustomerEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(369, 174);
+            this.ClientSize = new System.Drawing.Size(369, 175);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(385, 213);
@@ -120,10 +126,12 @@
             this.Name = "FrmCustomerEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCustomerEdit";
+            this.Load += new System.EventHandler(this.FrmCustomerEdit_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -135,5 +143,6 @@
         private System.Windows.Forms.TextBox phoneNumberTextBox;
         private System.Windows.Forms.BindingSource customerBindingSource;
         private System.Windows.Forms.TextBox customerNameTextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

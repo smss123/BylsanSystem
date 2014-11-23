@@ -117,12 +117,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="MailForms\frmMailServer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MailForms\frmMailServer.Designer.cs">
-      <DependentUpon>frmMailServer.cs</DependentUpon>
-    </Compile>
     <Compile Include="MailForms\FrmSendMail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,24 +174,6 @@
     <Compile Include="SecurityForm\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="SenarioAddOrderForms\FrmAddInformationCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SenarioAddOrderForms\FrmAddInformationCustomer.Designer.cs">
-      <DependentUpon>FrmAddInformationCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SenarioAddOrderForms\FrmAddOrderProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SenarioAddOrderForms\FrmAddOrderProduct.Designer.cs">
-      <DependentUpon>FrmAddOrderProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SenarioAddOrderForms\FrmTypeOfOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SenarioAddOrderForms\FrmTypeOfOrder.Designer.cs">
-      <DependentUpon>FrmTypeOfOrder.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="BranchForms\FrmAddBranch.resx">
       <DependentUpon>FrmAddBranch.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,9 +200,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeForms\FrmEmployeeManage.resx">
       <DependentUpon>FrmEmployeeManage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MailForms\frmMailServer.resx">
-      <DependentUpon>frmMailServer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MailForms\FrmSendMail.resx">
       <DependentUpon>FrmSendMail.cs</DependentUpon>
@@ -263,15 +236,6 @@
     </Compile>
     <EmbeddedResource Include="SecurityForm\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SenarioAddOrderForms\FrmAddInformationCustomer.resx">
-      <DependentUpon>FrmAddInformationCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SenarioAddOrderForms\FrmAddOrderProduct.resx">
-      <DependentUpon>FrmAddOrderProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SenarioAddOrderForms\FrmTypeOfOrder.resx">
-      <DependentUpon>FrmTypeOfOrder.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Lib\Xprema.dll.config" />
     <None Include="Properties\DataSources\XamaDataLayer.Account.datasource" />

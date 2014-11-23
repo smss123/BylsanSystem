@@ -8,7 +8,7 @@ namespace XamaDataLayer.Helper_Classes
 {
    public static  class CalculatorClass
    {
-
+      
        #region "  Totals , Max , Min  ,Average    "
 
        public static double ComputeAverage(params double[] ListOfNumbers)

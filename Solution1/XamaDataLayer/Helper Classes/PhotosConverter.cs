@@ -10,7 +10,7 @@ namespace XamaDataLayer.Helper_Classes
 {
     public  class PhotosConverter
     {
-        public byte[] ConvertImageToByteArray(System.Drawing.Image
+        public static  byte[] ConvertImageToByteArray(System.Drawing.Image
           imageToConvert, System.Drawing.Imaging.ImageFormat formatOfImage)
         {
 

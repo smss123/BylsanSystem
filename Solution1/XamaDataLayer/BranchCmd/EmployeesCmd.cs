@@ -25,6 +25,16 @@ namespace XamaDataLayer.BranchCmd
                        select m).ToList();
             return emp;
         }
+
+
+        public static int GetEmployeeIdByHisName(string nam)
+        {
+            db = new DbDataContext();
+            var emp = db.Employees.Where(m => m.Emp_Name == nam ).SingleOrDefault();
+            int xid = 0;
+            xid = emp.ID;
+            return xid;
+        }
         public static Employee EditEmployee(Employee tb, int xid)
         {
             db = new DbDataContext();

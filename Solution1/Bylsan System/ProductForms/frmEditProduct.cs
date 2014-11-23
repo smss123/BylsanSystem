@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using XamaDataLayer;
+using XamaDataLayer.BranchCmd;
+using XamaDataLayer.Helper_Classes;
 namespace Bylsan_System.ProductForms
 {
     public partial class frmEditProduct : Form
@@ -16,6 +18,21 @@ namespace Bylsan_System.ProductForms
         {
             InitializeComponent();
         }
+
+        private void FillCategoreisCombo()
+        {
+
+            this.CategoryComboBox.AutoFilter = true;
+            this.CategoryComboBox.ValueMember = "ID";
+            this.CategoryComboBox.DisplayMember = "Product_Name";
+
+
+
+
+            CategoryComboBox.DataSource = ProductsCmd.GetAllProducts();
+        }
+
+
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
@@ -27,7 +44,7 @@ namespace Bylsan_System.ProductForms
                 product_NameTextBox.BackColor = Color.OrangeRed;
 
                 product_NameTextBox.Focus();
-                errorProvider1.SetError(this.product_NameTextBox, "Please Enter product name");
+                errorProvider1.SetError(this.product_NameTextBox, "Please Select  product name");
 
                 return;
             }
@@ -38,6 +55,64 @@ namespace Bylsan_System.ProductForms
 
             }
             #endregion
+
+            if (int.Parse(CategoryComboBox.SelectedValue.ToString()) != 0)
+            {
+                Product tb = new Product()
+                {
+                    Product_Name = product_NameTextBox.Text,
+                    Product_Description = product_DescriptionTextBox.Text,
+                    Img = null,
+                    CateogryID = int.Parse(CategoryComboBox.SelectedValue.ToString()),
+                };
+                ProductsCmd.EditProduct(tb, int.Parse(CategoryComboBox.SelectedValue.ToString()));
+            }
+        }
+
+
+
+        #region "    ^^^ Brwose Photo    "
+
+        OpenFileDialog Op = new OpenFileDialog();
+
+        private void BrowseBtn_Click(object sender, EventArgs e)
+        {
+            Op = new OpenFileDialog();
+            if (Op.ShowDialog() == DialogResult.OK)
+            {
+                this.Cursor = Cursors.WaitCursor;
+                Op.Filter = "Image Files(*.png; *.jpg; *.bmp)|*.png; *.jpg; *.bmp";
+                productpictureBox.Image = Image.FromFile(Op.FileName);
+                this.Cursor = Cursors.Default;
+
+            }
+        }
+        byte[] byteImg1;
+        private void ConvertCarsPhotoes()
+        {
+
+            if (Op.FileName != "")
+            {
+
+                this.Cursor = Cursors.WaitCursor;
+                Image img = Image.FromFile(Op.FileName);
+                byteImg1 = PhotosConverter.ImageToByteArray(img);
+                this.Cursor = Cursors.Default;
+
+            }
+            else
+            {
+                byteImg1 = null;
+            }
+
+        }
+
+
+        #endregion 
+
+        private void frmEditProduct_Load(object sender, EventArgs e)
+        {
+            FillCategoreisCombo();
         }
     }
 }
