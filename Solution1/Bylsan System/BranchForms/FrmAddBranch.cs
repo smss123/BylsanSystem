@@ -92,6 +92,7 @@ namespace Bylsan_System.BranchForms
             }
 
             #endregion
+
             Operation.BeginOperation(this);
             if (BranchsCmd.AddNewBranch(new XamaDataLayer.Branch()
             {

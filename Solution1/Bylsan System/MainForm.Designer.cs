@@ -39,20 +39,20 @@
             this.managementEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BranchDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.addBranchBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.ManagementBranchBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.addProductCategoryBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.MangeProductCategoryBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.addProductBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.managementProductBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton5 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripDropDownButton6 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.addCustomerbtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerManagementBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.MailBtn = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.ManagementBranchBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.MangeProductCategoryBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.addProductBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.managementProductBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.addCustomerbtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.customerManagementBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +66,7 @@
             this.BranchDropDownButton,
             this.ProductDropDownButton,
             this.toolStripDropDownButton5,
-            this.toolStripDropDownButton6});
+            this.MailBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(936, 25);
@@ -144,6 +144,13 @@
             this.addBranchBtn.Text = "Add Branch";
             this.addBranchBtn.Click += new System.EventHandler(this.addBranchBtn_Click);
             // 
+            // ManagementBranchBtn
+            // 
+            this.ManagementBranchBtn.Name = "ManagementBranchBtn";
+            this.ManagementBranchBtn.Size = new System.Drawing.Size(188, 22);
+            this.ManagementBranchBtn.Text = " Branch Management";
+            this.ManagementBranchBtn.Click += new System.EventHandler(this.ManagementBranchBtn_Click);
+            // 
             // ProductDropDownButton
             // 
             this.ProductDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -165,6 +172,32 @@
             this.addProductCategoryBtn.Text = "Add Product Category";
             this.addProductCategoryBtn.Click += new System.EventHandler(this.addProductCategoryBtn_Click);
             // 
+            // MangeProductCategoryBtn
+            // 
+            this.MangeProductCategoryBtn.Name = "MangeProductCategoryBtn";
+            this.MangeProductCategoryBtn.Size = new System.Drawing.Size(244, 22);
+            this.MangeProductCategoryBtn.Text = " Product Category Management";
+            this.MangeProductCategoryBtn.Click += new System.EventHandler(this.MangeProductCategoryBtn_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(241, 6);
+            // 
+            // addProductBtn
+            // 
+            this.addProductBtn.Name = "addProductBtn";
+            this.addProductBtn.Size = new System.Drawing.Size(244, 22);
+            this.addProductBtn.Text = "Add Product";
+            this.addProductBtn.Click += new System.EventHandler(this.addProductBtn_Click);
+            // 
+            // managementProductBtn
+            // 
+            this.managementProductBtn.Name = "managementProductBtn";
+            this.managementProductBtn.Size = new System.Drawing.Size(244, 22);
+            this.managementProductBtn.Text = "Product Management ";
+            this.managementProductBtn.Click += new System.EventHandler(this.managementProductBtn_Click);
+            // 
             // toolStripDropDownButton5
             // 
             this.toolStripDropDownButton5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -176,14 +209,28 @@
             this.toolStripDropDownButton5.Size = new System.Drawing.Size(93, 22);
             this.toolStripDropDownButton5.Text = "Customers";
             // 
-            // toolStripDropDownButton6
+            // addCustomerbtn
             // 
-            this.toolStripDropDownButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton6.Image")));
-            this.toolStripDropDownButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton6.Name = "toolStripDropDownButton6";
-            this.toolStripDropDownButton6.Size = new System.Drawing.Size(29, 22);
-            this.toolStripDropDownButton6.Text = "toolStripDropDownButton6";
+            this.addCustomerbtn.Name = "addCustomerbtn";
+            this.addCustomerbtn.Size = new System.Drawing.Size(200, 22);
+            this.addCustomerbtn.Text = "Add Customer";
+            this.addCustomerbtn.Click += new System.EventHandler(this.addCustomerbtn_Click);
+            // 
+            // customerManagementBtn
+            // 
+            this.customerManagementBtn.Name = "customerManagementBtn";
+            this.customerManagementBtn.Size = new System.Drawing.Size(200, 22);
+            this.customerManagementBtn.Text = "Customer Management";
+            this.customerManagementBtn.Click += new System.EventHandler(this.customerManagementBtn_Click);
+            // 
+            // MailBtn
+            // 
+            this.MailBtn.Image = ((System.Drawing.Image)(resources.GetObject("MailBtn.Image")));
+            this.MailBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.MailBtn.Name = "MailBtn";
+            this.MailBtn.Size = new System.Drawing.Size(59, 22);
+            this.MailBtn.Text = "Mail";
+            this.MailBtn.Click += new System.EventHandler(this.MailBtn_Click);
             // 
             // toolStrip2
             // 
@@ -211,53 +258,6 @@
             this.statusStrip1.Size = new System.Drawing.Size(936, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // ManagementBranchBtn
-            // 
-            this.ManagementBranchBtn.Name = "ManagementBranchBtn";
-            this.ManagementBranchBtn.Size = new System.Drawing.Size(188, 22);
-            this.ManagementBranchBtn.Text = " Branch Management";
-            this.ManagementBranchBtn.Click += new System.EventHandler(this.ManagementBranchBtn_Click);
-            // 
-            // MangeProductCategoryBtn
-            // 
-            this.MangeProductCategoryBtn.Name = "MangeProductCategoryBtn";
-            this.MangeProductCategoryBtn.Size = new System.Drawing.Size(244, 22);
-            this.MangeProductCategoryBtn.Text = " Product Category Management";
-            this.MangeProductCategoryBtn.Click += new System.EventHandler(this.MangeProductCategoryBtn_Click);
-            // 
-            // addProductBtn
-            // 
-            this.addProductBtn.Name = "addProductBtn";
-            this.addProductBtn.Size = new System.Drawing.Size(244, 22);
-            this.addProductBtn.Text = "Add Product";
-            this.addProductBtn.Click += new System.EventHandler(this.addProductBtn_Click);
-            // 
-            // managementProductBtn
-            // 
-            this.managementProductBtn.Name = "managementProductBtn";
-            this.managementProductBtn.Size = new System.Drawing.Size(244, 22);
-            this.managementProductBtn.Text = "Product Management ";
-            this.managementProductBtn.Click += new System.EventHandler(this.managementProductBtn_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(241, 6);
-            // 
-            // addCustomerbtn
-            // 
-            this.addCustomerbtn.Name = "addCustomerbtn";
-            this.addCustomerbtn.Size = new System.Drawing.Size(200, 22);
-            this.addCustomerbtn.Text = "Add Customer";
-            this.addCustomerbtn.Click += new System.EventHandler(this.addCustomerbtn_Click);
-            // 
-            // customerManagementBtn
-            // 
-            this.customerManagementBtn.Name = "customerManagementBtn";
-            this.customerManagementBtn.Size = new System.Drawing.Size(200, 22);
-            this.customerManagementBtn.Text = "Customer Management";
-            this.customerManagementBtn.Click += new System.EventHandler(this.customerManagementBtn_Click);
             // 
             // MainForm
             // 
@@ -292,7 +292,7 @@
         private System.Windows.Forms.ToolStripDropDownButton ProductDropDownButton;
         private System.Windows.Forms.ToolStripMenuItem addProductCategoryBtn;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton5;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton6;
+        private System.Windows.Forms.ToolStripDropDownButton MailBtn;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.StatusStrip statusStrip1;

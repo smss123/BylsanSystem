@@ -1,6 +1,7 @@
 ﻿using Bylsan_System.BranchForms;
 using Bylsan_System.CustomerForms;
 using Bylsan_System.EmployeeForms;
+using Bylsan_System.MailForms;
 using Bylsan_System.ProductForms;
 using System;
 using System.Collections.Generic;
@@ -80,6 +81,12 @@ namespace Bylsan_System
         private void customerManagementBtn_Click(object sender, EventArgs e)
         {
             FrmCustomerManage frm = new FrmCustomerManage();
+            frm.ShowDialog();
+        }
+
+        private void MailBtn_Click(object sender, EventArgs e)
+        {
+            frmMailServer frm = new frmMailServer();
             frm.ShowDialog();
         }
     }

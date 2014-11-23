@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SendBtn = new Telerik.WinControls.UI.RadButton();
+            this.SubjectTexyBox = new System.Windows.Forms.TextBox();
+            this.SubjectLabl = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TitletextBox = new System.Windows.Forms.TextBox();
+            this.UsersAutoCompleteBox = new Telerik.WinControls.UI.RadAutoCompleteBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.label1 = new System.Windows.Forms.Label();
-            this.radAutoCompleteBox1 = new Telerik.WinControls.UI.RadAutoCompleteBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.SendBtn = new Telerik.WinControls.UI.RadButton();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radAutoCompleteBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SendBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsersAutoCompleteBox)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.SendBtn);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.SubjectTexyBox);
+            this.groupBox1.Controls.Add(this.SubjectLabl);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.radAutoCompleteBox1);
+            this.groupBox1.Controls.Add(this.TitletextBox);
+            this.groupBox1.Controls.Add(this.UsersAutoCompleteBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 41);
             this.groupBox1.Name = "groupBox1";
@@ -59,6 +59,70 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Send Message";
+            // 
+            // SendBtn
+            // 
+            this.SendBtn.Location = new System.Drawing.Point(10, 293);
+            this.SendBtn.Name = "SendBtn";
+            this.SendBtn.Size = new System.Drawing.Size(144, 31);
+            this.SendBtn.TabIndex = 7;
+            this.SendBtn.Text = "Send";
+            this.SendBtn.ThemeName = "Windows8";
+            // 
+            // SubjectTexyBox
+            // 
+            this.SubjectTexyBox.BackColor = System.Drawing.SystemColors.Info;
+            this.SubjectTexyBox.Location = new System.Drawing.Point(56, 104);
+            this.SubjectTexyBox.Multiline = true;
+            this.SubjectTexyBox.Name = "SubjectTexyBox";
+            this.SubjectTexyBox.Size = new System.Drawing.Size(411, 174);
+            this.SubjectTexyBox.TabIndex = 6;
+            // 
+            // SubjectLabl
+            // 
+            this.SubjectLabl.AutoSize = true;
+            this.SubjectLabl.Location = new System.Drawing.Point(7, 107);
+            this.SubjectLabl.Name = "SubjectLabl";
+            this.SubjectLabl.Size = new System.Drawing.Size(46, 13);
+            this.SubjectLabl.TabIndex = 5;
+            this.SubjectLabl.Text = "subject:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Title:";
+            // 
+            // TitletextBox
+            // 
+            this.TitletextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.TitletextBox.Location = new System.Drawing.Point(54, 72);
+            this.TitletextBox.Name = "TitletextBox";
+            this.TitletextBox.Size = new System.Drawing.Size(414, 20);
+            this.TitletextBox.TabIndex = 3;
+            // 
+            // UsersAutoCompleteBox
+            // 
+            this.UsersAutoCompleteBox.BackColor = System.Drawing.SystemColors.Info;
+            this.UsersAutoCompleteBox.Location = new System.Drawing.Point(49, 30);
+            this.UsersAutoCompleteBox.Name = "UsersAutoCompleteBox";
+            this.UsersAutoCompleteBox.Size = new System.Drawing.Size(419, 26);
+            this.UsersAutoCompleteBox.TabIndex = 2;
+            this.UsersAutoCompleteBox.Text = "Select Users;";
+            this.UsersAutoCompleteBox.ThemeName = "Windows8";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "To:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // toolStrip1
             // 
@@ -76,70 +140,6 @@
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "To:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // radAutoCompleteBox1
-            // 
-            this.radAutoCompleteBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.radAutoCompleteBox1.Location = new System.Drawing.Point(49, 30);
-            this.radAutoCompleteBox1.Name = "radAutoCompleteBox1";
-            this.radAutoCompleteBox1.Size = new System.Drawing.Size(419, 26);
-            this.radAutoCompleteBox1.TabIndex = 2;
-            this.radAutoCompleteBox1.Text = "Select Users;";
-            this.radAutoCompleteBox1.ThemeName = "Windows8";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Location = new System.Drawing.Point(54, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(414, 20);
-            this.textBox1.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Title:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 107);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "subject:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox2.Location = new System.Drawing.Point(56, 104);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(411, 174);
-            this.textBox2.TabIndex = 6;
-            // 
-            // SendBtn
-            // 
-            this.SendBtn.Location = new System.Drawing.Point(10, 293);
-            this.SendBtn.Name = "SendBtn";
-            this.SendBtn.Size = new System.Drawing.Size(144, 31);
-            this.SendBtn.TabIndex = 7;
-            this.SendBtn.Text = "Send";
-            this.SendBtn.ThemeName = "Windows8";
-            // 
             // FrmSendMail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,8 +153,8 @@
             this.Text = "Send Mail";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radAutoCompleteBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SendBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsersAutoCompleteBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,11 +167,11 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private Telerik.WinControls.UI.RadButton SendBtn;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox SubjectTexyBox;
+        private System.Windows.Forms.Label SubjectLabl;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private Telerik.WinControls.UI.RadAutoCompleteBox radAutoCompleteBox1;
+        private System.Windows.Forms.TextBox TitletextBox;
+        private Telerik.WinControls.UI.RadAutoCompleteBox UsersAutoCompleteBox;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
     }
 }
