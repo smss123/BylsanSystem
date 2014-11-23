@@ -26,14 +26,14 @@ namespace XamaDataLayer.BranchCmd
            xCategId = categ.ID;
            return xCategId;
        }
-       public static ProductCategory EditCategory(ProductCategory tb, int xid)
+       public static bool EditCategory(ProductCategory tb, int xid)
        {
            db = new DbDataContext();
            var categ = db.ProductCategories.Where(cat => cat.ID == xid).SingleOrDefault();
            categ.ProductCategoryName = tb.ProductCategoryName;
            categ.Description = tb.Description;
            db.SubmitChanges();
-           return categ;
+           return true;
        }
        public static List<ProductCategory> GetAllCategories()
        {
