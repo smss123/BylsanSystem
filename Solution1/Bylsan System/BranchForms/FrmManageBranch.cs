@@ -38,7 +38,7 @@ namespace Bylsan_System.BranchForms
 
             try
             {
-
+                //branchBindingSource.DataSource= BranchsCmd.GetAllBranchs();
                 BranchGridView.DataSource = BranchsCmd.GetAllBranchs();
             }
             catch (System.InvalidOperationException ex)
