@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Bylsan_System.SenarioAddOrderForms
 {
-    public partial class FrmTypeOfOrder : Form
+    public partial class FrmTotalOrder : Form
     {
-        public FrmTypeOfOrder()
+        public FrmTotalOrder()
         {
             InitializeComponent();
         }
