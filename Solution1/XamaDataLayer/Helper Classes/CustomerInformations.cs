@@ -11,5 +11,12 @@ namespace XamaDataLayer.Helper_Classes
         public static  Customer  WatingCustomer  { get; set; }
         public static   Order WaitingOrder { get; set; }
 
+
+       //========================================================
+       // if not Exiest :
+        public static string CustmrName { get; set; }
+        public static string CustmrPhone { get; set; }
+
+       //=========================================================
     }
 }
