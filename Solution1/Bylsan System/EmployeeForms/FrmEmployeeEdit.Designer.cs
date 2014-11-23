@@ -162,7 +162,7 @@
             this.nationaltyComboBox.FormattingEnabled = true;
             this.nationaltyComboBox.Location = new System.Drawing.Point(99, 92);
             this.nationaltyComboBox.Name = "nationaltyComboBox";
-            this.nationaltyComboBox.Size = new System.Drawing.Size(121, 21);
+            this.nationaltyComboBox.Size = new System.Drawing.Size(255, 21);
             this.nationaltyComboBox.TabIndex = 2;
             // 
             // emp_NameTextBox
@@ -177,7 +177,7 @@
             // 
             this.hereDateDateTimePicker.Location = new System.Drawing.Point(99, 58);
             this.hereDateDateTimePicker.Name = "hereDateDateTimePicker";
-            this.hereDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.hereDateDateTimePicker.Size = new System.Drawing.Size(255, 20);
             this.hereDateDateTimePicker.TabIndex = 1;
             // 
             // homeAddressTextBox
@@ -193,7 +193,7 @@
             this.jobTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.jobTextBox.Location = new System.Drawing.Point(100, 190);
             this.jobTextBox.Name = "jobTextBox";
-            this.jobTextBox.Size = new System.Drawing.Size(200, 20);
+            this.jobTextBox.Size = new System.Drawing.Size(254, 20);
             this.jobTextBox.TabIndex = 5;
             // 
             // personalty_IDTextBox
@@ -201,7 +201,7 @@
             this.personalty_IDTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.personalty_IDTextBox.Location = new System.Drawing.Point(99, 158);
             this.personalty_IDTextBox.Name = "personalty_IDTextBox";
-            this.personalty_IDTextBox.Size = new System.Drawing.Size(200, 20);
+            this.personalty_IDTextBox.Size = new System.Drawing.Size(255, 20);
             this.personalty_IDTextBox.TabIndex = 4;
             // 
             // phoneNumberTextBox
@@ -209,7 +209,7 @@
             this.phoneNumberTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.phoneNumberTextBox.Location = new System.Drawing.Point(99, 123);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
-            this.phoneNumberTextBox.Size = new System.Drawing.Size(200, 20);
+            this.phoneNumberTextBox.Size = new System.Drawing.Size(255, 20);
             this.phoneNumberTextBox.TabIndex = 3;
             // 
             // errorProvider1
@@ -221,14 +221,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(394, 350);
+            this.ClientSize = new System.Drawing.Size(394, 351);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(410, 389);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(410, 389);
             this.Name = "FrmEmployeeEdit";
-            this.Text = "FrmEmployeeEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Employee Edit";
+            this.Load += new System.EventHandler(this.FrmEmployeeEdit_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();

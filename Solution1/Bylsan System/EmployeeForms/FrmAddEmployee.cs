@@ -48,6 +48,8 @@ namespace Bylsan_System.EmployeeForms
 
             #endregion
 
+            Operation.BeginOperation(this);
+
             Employee tb = new Employee() {
             
             Emp_Name = emp_NameTextBox .Text ,
@@ -59,10 +61,21 @@ namespace Bylsan_System.EmployeeForms
             CreateDate = DateTime .Now ,
             Job = jobTextBox .Text ,            
             };
-           
-            EmployeesCmd.AddEmployee(tb);
-            MessageBox.Show("Saved ... ");
-            this.Hide();
+
+
+            if (EmployeesCmd.AddEmployee(tb)) {
+
+                Operation.ShowToustOk("Employee Has Been Saved", this);
+                foreach (Control item in groupBox1.Controls)
+                {
+                    if (item is TextBox)
+                    {
+                        ((TextBox)item).Clear();
+                    }
+                }
+            
+            }
+            Operation.EndOperation(this);
         }
     }
 }

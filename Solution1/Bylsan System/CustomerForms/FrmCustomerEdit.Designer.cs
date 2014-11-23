@@ -85,6 +85,7 @@
             this.SaveBtn.TabIndex = 3;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.ThemeName = "Windows8";
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // phoneNumberTextBox
             // 

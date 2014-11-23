@@ -27,6 +27,22 @@ namespace Bylsan_System.CustomerForms
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
+          
+
+         
+        }
+
+    
+
+        private void FrmCustomerEdit_Load(object sender, EventArgs e)
+        {
+            customerNameTextBox.Text = TragetCustomer.CustomerName;
+            phoneNumberTextBox.Text = TragetCustomer.PhoneNumber;
+        }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+
             #region "  CheckFillTextBox "
 
             if (customerNameTextBox.Text == "")
@@ -51,7 +67,7 @@ namespace Bylsan_System.CustomerForms
                 phoneNumberTextBox.BackColor = Color.OrangeRed;
 
                 phoneNumberTextBox.Focus();
-                errorProvider1.SetError(this.customerNameTextBox, "Please Enter PhoneNumber");
+                errorProvider1.SetError(this.phoneNumberTextBox, "Please Enter PhoneNumber");
 
                 return;
             }
@@ -64,21 +80,17 @@ namespace Bylsan_System.CustomerForms
 
             #endregion
 
-            if (CustomersCmd.EditCustomer(new Customer(){ CustomerName= customerNameTextBox.Text,
-                 PhoneNumber= phoneNumberTextBox.Text} , TragetCustomer.ID))
+
+            if (CustomersCmd.EditCustomer(new Customer()
+            {
+                CustomerName = customerNameTextBox.Text,
+                PhoneNumber = phoneNumberTextBox.Text
+            }, TragetCustomer.ID))
             {
                 Operation.ShowToustOk("Customer Has Been Saved", this);
+                customerNameTextBox.Clear();
+                phoneNumberTextBox.Clear();
             }
-
-         
-        }
-
-    
-
-        private void FrmCustomerEdit_Load(object sender, EventArgs e)
-        {
-            customerNameTextBox.Text = TragetCustomer.CustomerName;
-            phoneNumberTextBox.Text = TragetCustomer.PhoneNumber;
         }
     }
 }

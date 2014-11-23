@@ -59,5 +59,22 @@ namespace Bylsan_System.CustomerForms
         {
 
         }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            FrmAddCustomer frm = new FrmAddCustomer();
+            frm.ShowDialog();
+            LoadCustomers();
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            LoadCustomers();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            //Show report Option
+        }
     }
 }

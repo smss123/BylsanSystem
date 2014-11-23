@@ -35,7 +35,7 @@ namespace XamaDataLayer.BranchCmd
             xid = emp.ID;
             return xid;
         }
-        public static Employee EditEmployee(Employee tb, int xid)
+        public static bool EditEmployee(Employee tb, int xid)
         {
             db = new DbDataContext();
             var emp = db.Employees.Where(m => m.ID == xid).SingleOrDefault();
@@ -45,10 +45,10 @@ namespace XamaDataLayer.BranchCmd
             emp.Personalty_ID = tb.Personalty_ID;
             emp.Nationalty = tb.Nationalty;
             emp.HomeAddress = tb.HomeAddress;
-            emp.CreateDate = tb.CreateDate;
+          
             emp.Job = tb.Job;
             db.SubmitChanges();
-            return emp;
+            return true;
 
         }
         public static void DeleteEmployee(int xid)

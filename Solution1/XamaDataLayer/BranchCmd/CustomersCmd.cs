@@ -63,7 +63,7 @@ namespace XamaDataLayer.BranchCmd
        {
            db = new DbDataContext();
            var c = db.Customers.Where(cc => cc.ID == xid).SingleOrDefault();
-           MessageBox.Show(c.CustomerName);
+           
            c.CustomerName = tb.CustomerName;
            c.PhoneNumber = tb.PhoneNumber;
            db.SubmitChanges();

@@ -19,8 +19,8 @@ namespace Bylsan_System.EmployeeForms
         {
             InitializeComponent();
         }
-       
-        public int EmpId { get; set; }
+
+        public Employee TragetEmployee { get; set; }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
@@ -44,29 +44,42 @@ namespace Bylsan_System.EmployeeForms
 
             #endregion
 
-            EmpId = EmployeesCmd.GetEmployeeIdByHisName(emp_NameTextBox.Text);
-
-            if (EmpId != 0)
+            Operation.BeginOperation(this);
+            if (EmployeesCmd.EditEmployee(new Employee(){ Emp_Name=emp_NameTextBox.Text,
+             HomeAddress= homeAddressTextBox.Text,
+             Job= jobTextBox.Text,
+             HereDate = hereDateDateTimePicker.Value ,
+             Nationalty = nationaltyComboBox.Text,
+             Personalty_ID= personalty_IDTextBox.Text,
+             PhoneNumber= phoneNumberTextBox.Text},TragetEmployee.ID))
             {
-
-                Employee tb = new Employee()
+                Operation.ShowToustOk("Employee Has Ben Saved", this);
+                foreach (Control item in groupBox1.Controls)
                 {
-
-                    Emp_Name = emp_NameTextBox.Text,
-                    HereDate = hereDateDateTimePicker.Value,
-                    Personalty_ID = personalty_IDTextBox.Text,
-                    Nationalty = nationaltyComboBox.Text,
-                    HomeAddress = homeAddressTextBox.Text,
-                    PhoneNumber = phoneNumberTextBox.Text,
-                    CreateDate = DateTime.Now,
-                    Job = jobTextBox.Text,
-                };
-
-                EmployeesCmd.EditEmployee (tb,EmpId );
-                MessageBox.Show("Updated... ");
-                this.Hide();
-
+                    if (item is TextBox)
+                    {
+                        ((TextBox)item).Clear();
+                    }
+                    else if (item is ComboBox)
+                    {
+                        ((ComboBox)item).SelectedIndex = -1;
+                    }
+                }
             }
+            Operation.EndOperation(this);
+           
+        }
+
+        private void FrmEmployeeEdit_Load(object sender, EventArgs e)
+        {
+            emp_NameTextBox.Text = TragetEmployee.Emp_Name;
+            homeAddressTextBox.Text = TragetEmployee.HomeAddress;
+            jobTextBox.Text = TragetEmployee.Job;
+            nationaltyComboBox.SelectedText = TragetEmployee.Nationalty;
+            personalty_IDTextBox.Text = TragetEmployee.Personalty_ID;
+            phoneNumberTextBox.Text = TragetEmployee.PhoneNumber;
+            hereDateDateTimePicker.Value = TragetEmployee.HereDate.Value;
+         
         }
     }
 }
