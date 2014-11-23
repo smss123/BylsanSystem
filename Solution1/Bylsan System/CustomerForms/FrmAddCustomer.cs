@@ -44,12 +44,29 @@ namespace Bylsan_System.CustomerForms
 
             #endregion
 
-            Customer tb = new Customer();
-            tb.CustomerName = customerNameTextBox.Text;
-            tb.PhoneNumber = phoneNumberTextBox.Text;
-            CustomersCmd.AddCustomer(tb);
-            MessageBox.Show("Saved ..");
-            this. Hide ();
+
+            Operation.BeginOperation(this);
+           
+           
+         
+
+            if ( CustomersCmd.AddCustomer(new XamaDataLayer.Customer()
+            {
+                CustomerName = customerNameTextBox.Text,
+                PhoneNumber = phoneNumberTextBox.Text,
+                 Points=0
+                  
+               
+            }))
+            {
+                Operation.ShowToustOk("Customer Has Been Saved", this);
+                customerNameTextBox.Clear();
+                phoneNumberTextBox.Clear();
+            }
+
+            Operation.EndOperation(this);
+           
+          
 
         }
     }

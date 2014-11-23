@@ -43,13 +43,15 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.CoustomerGridView = new Telerik.WinControls.UI.RadGridView();
+            this.CustomerGridView = new Telerik.WinControls.UI.RadGridView();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
+            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CoustomerGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CoustomerGridView.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerGridView.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,6 +93,8 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblStatus});
             this.statusStrip1.Location = new System.Drawing.Point(0, 501);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(848, 22);
@@ -99,7 +103,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.CoustomerGridView);
+            this.groupBox1.Controls.Add(this.CustomerGridView);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 25);
             this.groupBox1.Name = "groupBox1";
@@ -108,22 +112,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CustomerData";
             // 
-            // CoustomerGridView
+            // CustomerGridView
             // 
-            this.CoustomerGridView.BackColor = System.Drawing.SystemColors.Control;
-            this.CoustomerGridView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CoustomerGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CoustomerGridView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.CoustomerGridView.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.CoustomerGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.CoustomerGridView.Location = new System.Drawing.Point(3, 16);
+            this.CustomerGridView.BackColor = System.Drawing.SystemColors.Control;
+            this.CustomerGridView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CustomerGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CustomerGridView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.CustomerGridView.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CustomerGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.CustomerGridView.Location = new System.Drawing.Point(3, 16);
             // 
-            // CoustomerGridView
+            // CustomerGridView
             // 
-            this.CoustomerGridView.MasterTemplate.AllowAddNewRow = false;
-            this.CoustomerGridView.MasterTemplate.AllowColumnReorder = false;
-            this.CoustomerGridView.MasterTemplate.AutoGenerateColumns = false;
-            this.CoustomerGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.CustomerGridView.MasterTemplate.AllowAddNewRow = false;
+            this.CustomerGridView.MasterTemplate.AllowColumnReorder = false;
+            this.CustomerGridView.MasterTemplate.AutoGenerateColumns = false;
+            this.CustomerGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewDecimalColumn1.DataType = typeof(int);
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "ID";
@@ -166,7 +170,7 @@
             gridViewCommandColumn2.HeaderText = "Delete";
             gridViewCommandColumn2.Name = "DeleteCol";
             gridViewCommandColumn2.Width = 63;
-            this.CoustomerGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            this.CustomerGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -174,19 +178,26 @@
             gridViewDecimalColumn2,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
-            this.CoustomerGridView.MasterTemplate.DataSource = this.customerBindingSource;
-            this.CoustomerGridView.MasterTemplate.EnableFiltering = true;
-            this.CoustomerGridView.Name = "CoustomerGridView";
-            this.CoustomerGridView.ReadOnly = true;
-            this.CoustomerGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.CoustomerGridView.Size = new System.Drawing.Size(842, 457);
-            this.CoustomerGridView.TabIndex = 0;
-            this.CoustomerGridView.Text = "radGridView1";
-            this.CoustomerGridView.ThemeName = "Windows8";
+            this.CustomerGridView.MasterTemplate.DataSource = this.customerBindingSource;
+            this.CustomerGridView.MasterTemplate.EnableFiltering = true;
+            this.CustomerGridView.Name = "CustomerGridView";
+            this.CustomerGridView.ReadOnly = true;
+            this.CustomerGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.CustomerGridView.Size = new System.Drawing.Size(842, 457);
+            this.CustomerGridView.TabIndex = 0;
+            this.CustomerGridView.Text = "radGridView1";
+            this.CustomerGridView.ThemeName = "Windows8";
+            this.CustomerGridView.Click += new System.EventHandler(this.CustomerGridView_Click);
             // 
             // customerBindingSource
             // 
             this.customerBindingSource.DataSource = typeof(XamaDataLayer.Customer);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(12, 17);
+            this.lblStatus.Text = "_";
             // 
             // FrmCustomerManage
             // 
@@ -200,11 +211,14 @@
             this.Name = "FrmCustomerManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCustomerManage";
+            this.Load += new System.EventHandler(this.FrmCustomerManage_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CoustomerGridView.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CoustomerGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerGridView.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -216,11 +230,12 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private Telerik.WinControls.UI.RadGridView CoustomerGridView;
+        private Telerik.WinControls.UI.RadGridView CustomerGridView;
         private System.Windows.Forms.ToolStripButton AddBtn;
         private System.Windows.Forms.ToolStripButton RefreshBtn;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.BindingSource customerBindingSource;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
+        private System.Windows.Forms.ToolStripStatusLabel lblStatus;
     }
 }

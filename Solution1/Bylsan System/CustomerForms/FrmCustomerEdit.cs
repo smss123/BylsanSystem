@@ -23,43 +23,62 @@ namespace Bylsan_System.CustomerForms
 
 
         public int CustmrID { get; set; }
+        public Customer TragetCustomer { get; set; }
+
         private void Addbtn_Click(object sender, EventArgs e)
         {
-            //#region "  CheckFillTextBox "
+            #region "  CheckFillTextBox "
 
-            //if (customerNameTextBox.Text == "")
-            //{
+            if (customerNameTextBox.Text == "")
+            {
 
-            //    customerNameTextBox.BackColor = Color.OrangeRed;
+                customerNameTextBox.BackColor = Color.OrangeRed;
 
-            //    customerNameTextBox.Focus();
-            //    errorProvider1.SetError(this.customerNameTextBox, "Please Enter Branch name");
+                customerNameTextBox.Focus();
+                errorProvider1.SetError(this.customerNameTextBox, "Please Enter Customer Name");
 
-            //    return;
-            //}
-            //else
-            //{
-            //    customerNameTextBox.BackColor = Color.White;
-            //    errorProvider1.Clear();
+                return;
+            }
+            else
+            {
+                customerNameTextBox.BackColor = Color.White;
+                errorProvider1.Clear();
 
-            //}
+            }
+            if (phoneNumberTextBox.Text == "")
+            {
 
-            //#endregion
+                phoneNumberTextBox.BackColor = Color.OrangeRed;
 
-          CustmrID = 0;
-          CustmrID = CustomersCmd.GetCustomerIDByName(customerNameTextBox.Text);
-          if(CustmrID != 0){
+                phoneNumberTextBox.Focus();
+                errorProvider1.SetError(this.customerNameTextBox, "Please Enter PhoneNumber");
 
-            Customer tb = new Customer();
-            tb.CustomerName = customerNameTextBox.Text;
-            tb.PhoneNumber = phoneNumberTextBox.Text;
-            CustomersCmd.EditCustomer (tb,CustmrID );
-            MessageBox.Show("Updated ...");
-            this.Hide();
+                return;
+            }
+            else
+            {
+                phoneNumberTextBox.BackColor = Color.White;
+                errorProvider1.Clear();
 
+            }
 
-          }
+            #endregion
 
+            if (CustomersCmd.EditCustomer(new Customer(){ CustomerName= customerNameTextBox.Text,
+                 PhoneNumber= phoneNumberTextBox.Text} , TragetCustomer.ID))
+            {
+                Operation.ShowToustOk("Customer Has Been Saved", this);
+            }
+
+         
+        }
+
+    
+
+        private void FrmCustomerEdit_Load(object sender, EventArgs e)
+        {
+            customerNameTextBox.Text = TragetCustomer.CustomerName;
+            phoneNumberTextBox.Text = TragetCustomer.PhoneNumber;
         }
     }
 }
