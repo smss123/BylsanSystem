@@ -192,6 +192,12 @@
     <Compile Include="SenarioAddOrderForms\FrmAddOrderProduct.Designer.cs">
       <DependentUpon>FrmAddOrderProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="SenarioAddOrderForms\FrmOrderDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SenarioAddOrderForms\FrmOrderDate.Designer.cs">
+      <DependentUpon>FrmOrderDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="SenarioAddOrderForms\FrmTotalOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SenarioAddOrderForms\FrmAddOrderProduct.resx">
       <DependentUpon>FrmAddOrderProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SenarioAddOrderForms\FrmOrderDate.resx">
+      <DependentUpon>FrmOrderDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SenarioAddOrderForms\FrmTotalOrder.resx">
       <DependentUpon>FrmTotalOrder.cs</DependentUpon>
