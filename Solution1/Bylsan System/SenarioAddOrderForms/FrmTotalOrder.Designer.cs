@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.CustomerInfomationGroupBox = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.NameLab = new System.Windows.Forms.Label();
             this.PhoneLab = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.OkeyBtn = new Telerik.WinControls.UI.RadButton();
             this.ListViewProductes = new System.Windows.Forms.ListView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.CustomerInfomationGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OkeyBtn)).BeginInit();
@@ -55,6 +55,24 @@
             this.CustomerInfomationGroupBox.TabIndex = 7;
             this.CustomerInfomationGroupBox.TabStop = false;
             this.CustomerInfomationGroupBox.Text = "Customer Infomation";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(23, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Customer Phone";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(23, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Customer Name ";
             // 
             // NameLab
             // 
@@ -100,6 +118,7 @@
             this.OkeyBtn.Size = new System.Drawing.Size(132, 33);
             this.OkeyBtn.TabIndex = 0;
             this.OkeyBtn.Text = "Ok";
+            this.OkeyBtn.Click += new System.EventHandler(this.OkeyBtn_Click);
             // 
             // ListViewProductes
             // 
@@ -111,24 +130,6 @@
             this.ListViewProductes.Size = new System.Drawing.Size(479, 308);
             this.ListViewProductes.TabIndex = 10;
             this.ListViewProductes.UseCompatibleStateImageBehavior = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Customer Name ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Customer Phone";
             // 
             // FrmTotalOrder
             // 

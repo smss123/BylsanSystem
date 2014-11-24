@@ -42,6 +42,14 @@ namespace Bylsan_System.SenarioAddOrderForms
         private void FrmTotalOrder_Load_1(object sender, EventArgs e)
         {
             CreateListViewProducts();
+            label1.Text = string.Format("Orders Count = {0}", ListViewProductes.Items.Count.ToString());
+        }
+
+        private void OkeyBtn_Click(object sender, EventArgs e)
+        {
+            FrmOrderDate frm = new FrmOrderDate();
+            frm.Show();
+            this.Hide();
         }
 
 
