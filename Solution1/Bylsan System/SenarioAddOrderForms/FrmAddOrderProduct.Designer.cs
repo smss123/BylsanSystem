@@ -33,7 +33,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.nextBtn = new Telerik.WinControls.UI.RadButton();
-            this.ListViewProductes = new Telerik.WinControls.UI.RadListView();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.CustomerInfomationGroupBox = new System.Windows.Forms.GroupBox();
             this.OrderTypeCheckLab = new System.Windows.Forms.Label();
@@ -44,11 +43,15 @@
             this.ExpandAll = new System.Windows.Forms.Button();
             this.TreeCategories = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.PhotoBox = new System.Windows.Forms.PictureBox();
+            this.ProductNameLab = new System.Windows.Forms.Label();
+            this.ProductDescriotionLab = new System.Windows.Forms.Label();
+            this.ListViewProductes = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nextBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ListViewProductes)).BeginInit();
             this.CustomerInfomationGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -61,6 +64,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ProductDescriotionLab);
+            this.panel1.Controls.Add(this.ProductNameLab);
+            this.panel1.Controls.Add(this.PhotoBox);
             this.panel1.Controls.Add(this.nextBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 398);
@@ -76,15 +82,6 @@
             this.nextBtn.TabIndex = 0;
             this.nextBtn.Text = "Next";
             this.nextBtn.ThemeName = "Windows8";
-            // 
-            // ListViewProductes
-            // 
-            this.ListViewProductes.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ListViewProductes.Location = new System.Drawing.Point(170, 16);
-            this.ListViewProductes.Name = "ListViewProductes";
-            this.ListViewProductes.Size = new System.Drawing.Size(845, 293);
-            this.ListViewProductes.TabIndex = 4;
-            this.ListViewProductes.Text = "radListView1";
             // 
             // CustomerInfomationGroupBox
             // 
@@ -102,9 +99,11 @@
             // OrderTypeCheckLab
             // 
             this.OrderTypeCheckLab.AutoSize = true;
-            this.OrderTypeCheckLab.Location = new System.Drawing.Point(721, 50);
+            this.OrderTypeCheckLab.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrderTypeCheckLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.OrderTypeCheckLab.Location = new System.Drawing.Point(701, 50);
             this.OrderTypeCheckLab.Name = "OrderTypeCheckLab";
-            this.OrderTypeCheckLab.Size = new System.Drawing.Size(35, 13);
+            this.OrderTypeCheckLab.Size = new System.Drawing.Size(60, 22);
             this.OrderTypeCheckLab.TabIndex = 2;
             this.OrderTypeCheckLab.Text = "label1";
             // 
@@ -128,10 +127,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ListViewProductes);
             this.groupBox1.Controls.Add(this.CollapseBtn);
             this.groupBox1.Controls.Add(this.ExpandAll);
             this.groupBox1.Controls.Add(this.TreeCategories);
-            this.groupBox1.Controls.Add(this.ListViewProductes);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 86);
             this.groupBox1.Name = "groupBox1";
@@ -162,6 +161,8 @@
             // 
             // TreeCategories
             // 
+            this.TreeCategories.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TreeCategories.LineColor = System.Drawing.Color.Blue;
             this.TreeCategories.Location = new System.Drawing.Point(12, 19);
             this.TreeCategories.Name = "TreeCategories";
             this.TreeCategories.Size = new System.Drawing.Size(152, 260);
@@ -174,6 +175,52 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "eye.png");
             this.imageList1.Images.SetKeyName(1, "award_star_bronze_2.png");
+            // 
+            // PhotoBox
+            // 
+            this.PhotoBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PhotoBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PhotoBox.Location = new System.Drawing.Point(22, 17);
+            this.PhotoBox.Name = "PhotoBox";
+            this.PhotoBox.Size = new System.Drawing.Size(142, 125);
+            this.PhotoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PhotoBox.TabIndex = 1;
+            this.PhotoBox.TabStop = false;
+            // 
+            // ProductNameLab
+            // 
+            this.ProductNameLab.AutoSize = true;
+            this.ProductNameLab.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductNameLab.ForeColor = System.Drawing.Color.Red;
+            this.ProductNameLab.Location = new System.Drawing.Point(195, 17);
+            this.ProductNameLab.Name = "ProductNameLab";
+            this.ProductNameLab.Size = new System.Drawing.Size(49, 19);
+            this.ProductNameLab.TabIndex = 2;
+            this.ProductNameLab.Text = "label1";
+            // 
+            // ProductDescriotionLab
+            // 
+            this.ProductDescriotionLab.AutoSize = true;
+            this.ProductDescriotionLab.Location = new System.Drawing.Point(196, 48);
+            this.ProductDescriotionLab.Name = "ProductDescriotionLab";
+            this.ProductDescriotionLab.Size = new System.Drawing.Size(35, 13);
+            this.ProductDescriotionLab.TabIndex = 3;
+            this.ProductDescriotionLab.Text = "label2";
+            // 
+            // ListViewProductes
+            // 
+            this.ListViewProductes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ListViewProductes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ListViewProductes.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListViewProductes.ForeColor = System.Drawing.Color.Blue;
+            this.ListViewProductes.FullRowSelect = true;
+            this.ListViewProductes.GridLines = true;
+            this.ListViewProductes.Location = new System.Drawing.Point(186, 19);
+            this.ListViewProductes.Name = "ListViewProductes";
+            this.ListViewProductes.Size = new System.Drawing.Size(795, 287);
+            this.ListViewProductes.TabIndex = 7;
+            this.ListViewProductes.UseCompatibleStateImageBehavior = false;
+            this.ListViewProductes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListViewProductes_MouseClick);
             // 
             // FrmAddOrderProduct
             // 
@@ -189,11 +236,12 @@
             this.Text = " ";
             this.Load += new System.EventHandler(this.FrmAddOrderProduct_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nextBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ListViewProductes)).EndInit();
             this.CustomerInfomationGroupBox.ResumeLayout(false);
             this.CustomerInfomationGroupBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,7 +252,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Panel panel1;
         private Telerik.WinControls.UI.RadButton nextBtn;
-        private Telerik.WinControls.UI.RadListView ListViewProductes;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
         private System.Windows.Forms.GroupBox CustomerInfomationGroupBox;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -215,5 +262,9 @@
         private System.Windows.Forms.Button CollapseBtn;
         private System.Windows.Forms.Button ExpandAll;
         public System.Windows.Forms.Label OrderTypeCheckLab;
+        private System.Windows.Forms.Label ProductDescriotionLab;
+        private System.Windows.Forms.Label ProductNameLab;
+        private System.Windows.Forms.PictureBox PhotoBox;
+        private System.Windows.Forms.ListView ListViewProductes;
     }
 }

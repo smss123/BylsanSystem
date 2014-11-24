@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
+using System.IO;
 using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Helper_Classes;
 
@@ -81,15 +81,37 @@ namespace Bylsan_System.SenarioAddOrderForms
         }
 
         #endregion
+
+        #region "Populate ListProducts " 
+
         void CreateListViewProducts()
         {
-            ListViewProductes.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView;
-            
-            ListViewProductes.Columns.Add( "ID");
-            ListViewProductes.Columns.Add("Product");
-            ListViewProductes.Columns.Add( "Descriptoin");
-            ListViewProductes.Columns.Add( "Image");
+
+            ListViewProductes.View = View.Details;
+            ListViewProductes.Columns.Add( "ID",30, HorizontalAlignment.Center);
+            ListViewProductes.Columns.Add("Product", 230, HorizontalAlignment.Center);
+            ListViewProductes.Columns.Add("Descriptoin", 300, HorizontalAlignment.Center);
+          
         }
+
+
+        void PopulateListProducts()
+        {
+            if (CategID != 0)
+            {
+                ListViewProductes.Items.Clear();
+                var AllProducts = ProductsCmd.GetProductByCategID(CategID);
+                foreach (var item in AllProducts )
+                {
+                    ListViewItem Itm = new ListViewItem(item .ID .ToString ());
+                    Itm.SubItems.Add( item .Product_Name .ToString ());
+                    Itm.SubItems.Add(item .Product_Description .ToString ());
+
+                    ListViewProductes.Items.Add(Itm);
+                }
+            }
+        }
+      
 
         private int CategID = 0;
         private void TreeCategories_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -101,7 +123,7 @@ namespace Bylsan_System.SenarioAddOrderForms
                         CategID = (from c in CategoriesCmd.GetAllCategories()
                                    where c.ProductCategoryName.Contains (  e.Node.Text)
                                    select c.ID).Single();
-                        
+                        PopulateListProducts();
                     }
             }
             catch (Exception)
@@ -110,5 +132,50 @@ namespace Bylsan_System.SenarioAddOrderForms
              
             }
         }
+        #endregion
+
+        int PrdID = 0;
+        private void ListViewProductes_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                if (ListViewProductes.Items.Count != 0)
+                {
+                    PrdID = 0;
+                    PrdID = ListViewProductes.SelectedItems[0].Index;
+                  
+                    var MyProdctut = ProductsCmd.GetProductByID(int.Parse(ListViewProductes.Items[PrdID].SubItems[0].Text));
+                    foreach (var item in MyProdctut )
+                    {
+                        ProductNameLab.Text = string.Format("Product Name : {0}", item.Product_Name.ToString());
+                        ProductDescriotionLab.Text = string.Format("Description  : {0} ", item.Product_Description.ToString());
+
+
+                        if (item .Img != null)
+                        {
+
+                            byte[] buffer = null;
+
+                            //buffer = (byte[])item.Img ;
+                            //MemoryStream MS = new MemoryStream(buffer);
+                            //PhotoBox.Image = Image.FromStream(MS);
+                          
+                            this.Cursor = Cursors.Default;
+                        }
+
+                  
+                        
+
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+        }
+
+
     }
 }
