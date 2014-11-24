@@ -138,6 +138,7 @@
             this.BrowseBtn.TabIndex = 14;
             this.BrowseBtn.Text = "...";
             this.BrowseBtn.ThemeName = "Windows8";
+            this.BrowseBtn.Click += new System.EventHandler(this.BrowseBtn_Click_1);
             // 
             // productpictureBox
             // 
@@ -145,6 +146,7 @@
             this.productpictureBox.Location = new System.Drawing.Point(106, 202);
             this.productpictureBox.Name = "productpictureBox";
             this.productpictureBox.Size = new System.Drawing.Size(149, 99);
+            this.productpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.productpictureBox.TabIndex = 18;
             this.productpictureBox.TabStop = false;
             // 

@@ -18,6 +18,7 @@ namespace Bylsan_System.ProductForms
         {
             InitializeComponent();
         }
+        public Product TragetProduct { get; set; }
 
         private void FillCategoreisCombo()
         {
@@ -31,8 +32,6 @@ namespace Bylsan_System.ProductForms
 
             CategoryComboBox.DataSource = ProductsCmd.GetAllProducts();
         }
-
-
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
@@ -62,7 +61,7 @@ namespace Bylsan_System.ProductForms
                 {
                     Product_Name = product_NameTextBox.Text,
                     Product_Description = product_DescriptionTextBox.Text,
-                    Img = null,
+                    Img = productpictureBox.Image,
                     CateogryID = int.Parse(CategoryComboBox.SelectedValue.ToString()),
                 };
                 ProductsCmd.EditProduct(tb, int.Parse(CategoryComboBox.SelectedValue.ToString()));
@@ -112,7 +111,27 @@ namespace Bylsan_System.ProductForms
 
         private void frmEditProduct_Load(object sender, EventArgs e)
         {
+            Operation.BeginOperation(this);
             FillCategoreisCombo();
+            product_NameTextBox.Text = TragetProduct.Product_Name;
+            product_DescriptionTextBox.Text = TragetProduct.Product_Description;
+            productpictureBox.Image = TragetProduct.Img;
+            CategoryComboBox.SelectedValue = TragetProduct.CateogryID;
+            Operation.EndOperation(this);
+
+        }
+
+        private void BrowseBtn_Click_1(object sender, EventArgs e)
+        {
+            Op = new OpenFileDialog();
+            if (Op.ShowDialog() == DialogResult.OK)
+            {
+                this.Cursor = Cursors.WaitCursor;
+                Op.Filter = "Image Files(*.png; *.jpg; *.bmp)|*.png; *.jpg; *.bmp";
+                productpictureBox.Image = Image.FromFile(Op.FileName);
+                this.Cursor = Cursors.Default;
+
+            }
         }
     }
 }
