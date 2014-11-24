@@ -35,6 +35,9 @@
             this.NormalOrdercheckBox = new System.Windows.Forms.CheckBox();
             this.NextBtn = new Telerik.WinControls.UI.RadButton();
             this.InformationgroupBox = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.InformationsBox = new System.Windows.Forms.TextBox();
             this.customerNameTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
@@ -113,6 +116,9 @@
             // 
             // InformationgroupBox
             // 
+            this.InformationgroupBox.Controls.Add(this.label3);
+            this.InformationgroupBox.Controls.Add(this.label2);
+            this.InformationgroupBox.Controls.Add(this.label1);
             this.InformationgroupBox.Controls.Add(this.InformationsBox);
             this.InformationgroupBox.Location = new System.Drawing.Point(11, 97);
             this.InformationgroupBox.Name = "InformationgroupBox";
@@ -120,6 +126,33 @@
             this.InformationgroupBox.TabIndex = 4;
             this.InformationgroupBox.TabStop = false;
             this.InformationgroupBox.Text = "Information";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(46, 102);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "label3";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(46, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "label2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(46, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "label1";
             // 
             // InformationsBox
             // 
@@ -144,6 +177,7 @@
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(193, 20);
             this.phoneNumberTextBox.TabIndex = 1;
+            this.phoneNumberTextBox.TextChanged += new System.EventHandler(this.phoneNumberTextBox_TextChanged_1);
             this.phoneNumberTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.phoneNumberTextBox_KeyDown);
             this.phoneNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneNumberTextBox_KeyPress);
             // 
@@ -177,5 +211,8 @@
         private System.Windows.Forms.TextBox InformationsBox;
         public System.Windows.Forms.CheckBox SpecialOrderCheckBox;
         public System.Windows.Forms.CheckBox NormalOrdercheckBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
