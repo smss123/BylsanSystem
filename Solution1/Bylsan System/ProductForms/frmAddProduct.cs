@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Telerik.WinControls.Data;
 using XamaDataLayer;
-using XamaDataLayer.BranchCmd ;
+using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Helper_Classes;
 using Xprema.XExtention;
 
@@ -25,12 +25,38 @@ namespace Bylsan_System.ProductForms
         private void FillCategoreisCombo()
         {
 
-       
-            CategoryComboBox.DataSource =  CategoriesCmd .GetAllCategories ();
-
+            this.CategoryComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
             this.CategoryComboBox.AutoFilter = true;
-            this.CategoryComboBox.ValueMember = "ID";
             this.CategoryComboBox.DisplayMember = "ProductCategoryName";
+            this.CategoryComboBox.ValueMember = "ID";
+
+            this.Enabled = false;
+
+
+
+            this.Cursor = Cursors.WaitCursor;
+            CategoryComboBox.DataSource = CategoriesCmd.GetAllCategories();
+            this.Cursor = Cursors.Default;
+            this.Enabled = true;
+
+
+
+          
+            CompositeFilterDescriptor compositeFilter = new CompositeFilterDescriptor();
+            FilterDescriptor prodName = new FilterDescriptor("ProductCategoryName", FilterOperator.Contains, "");
+            //FilterDescriptor prodQuantity = new FilterDescriptor("ID", FilterOperator.Contains, "");
+            compositeFilter.FilterDescriptors.Add(prodName);
+            //compositeFilter.FilterDescriptors.Add(prodQuantity);
+            compositeFilter.LogicalOperator = FilterLogicalOperator.Or;
+
+            this.CategoryComboBox.EditorControl.FilterDescriptors.Add(compositeFilter);
+
+       
+           
+
+            
+          
+           
 
         }
 
@@ -67,6 +93,11 @@ namespace Bylsan_System.ProductForms
             if (ProductsCmd.AddProduct(tb)){
 
                 Operation.ShowToustOk("Product Has Been Saved", this);
+                product_DescriptionTextBox.Clear();
+                product_NameTextBox.Clear();
+                productpictureBox.Image = null;
+
+
             }
             Operation.EndOperation(this);
           
