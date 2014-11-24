@@ -93,6 +93,12 @@
     <Compile Include="CustomerForms\FrmCustomerManage.Designer.cs">
       <DependentUpon>FrmCustomerManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="designerForms\FrmOrderShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="designerForms\FrmOrderShow.Designer.cs">
+      <DependentUpon>FrmOrderShow.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeForms\FrmAddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,12 @@
     <Compile Include="SenarioAddOrderForms\FrmAddOrderProduct.Designer.cs">
       <DependentUpon>FrmAddOrderProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="SenarioAddOrderForms\FrmOrderDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SenarioAddOrderForms\FrmOrderDate.Designer.cs">
+      <DependentUpon>FrmOrderDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="SenarioAddOrderForms\FrmTotalOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerForms\FrmCustomerManage.resx">
       <DependentUpon>FrmCustomerManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="designerForms\FrmOrderShow.resx">
+      <DependentUpon>FrmOrderShow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeForms\FrmAddEmployee.resx">
       <DependentUpon>FrmAddEmployee.cs</DependentUpon>
@@ -269,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SenarioAddOrderForms\FrmAddOrderProduct.resx">
       <DependentUpon>FrmAddOrderProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SenarioAddOrderForms\FrmOrderDate.resx">
+      <DependentUpon>FrmOrderDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SenarioAddOrderForms\FrmTotalOrder.resx">
       <DependentUpon>FrmTotalOrder.cs</DependentUpon>
