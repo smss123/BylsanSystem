@@ -18,7 +18,7 @@ namespace XamaDataLayer.BranchCmd
        }
 
 
-       public static Product EditProduct(Product tb, int xid) {
+       public static bool EditProduct(Product tb, int xid) {
            db = new DbDataContext();
            var prd = db.Products.Where(pp => pp.ID == xid).SingleOrDefault();
            prd.Product_Name = tb.Product_Name;
@@ -26,7 +26,7 @@ namespace XamaDataLayer.BranchCmd
            prd.CateogryID = tb.CateogryID;
            prd.Img = tb.Img;
            db.SubmitChanges();
-           return prd;
+           return true;
            }
        public static void DeleteProduct(int xid)
        {
