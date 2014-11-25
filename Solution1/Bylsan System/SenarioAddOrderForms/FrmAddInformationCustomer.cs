@@ -107,6 +107,7 @@ namespace Bylsan_System.SenarioAddOrderForms
         {
             try
             {
+                Operation.BeginOperation(this);
                 if (phoneNumberTextBox.Text != null)
                 {
                     var GetCurrentCustomerInfor = (from c in CustomersCmd.GetAllCustmers()
@@ -119,10 +120,10 @@ namespace Bylsan_System.SenarioAddOrderForms
                         customerNameTextBox.Text = GetCurrentCustomerInfor.CustomerName;
 
 
-                        label1.Text = string.Format("Customer Account : {0} ", GetCurrentCustomerInfor.AccountID + " " + Environment.NewLine); ;
-                        label2.Text = string.Format("Customer Created Date : {0} ", GetCurrentCustomerInfor.CreateDate + " " + Environment.NewLine);
+                        label1.Text = string.Format("Customer Account : {0} ", String.Format("{0} {1}", GetCurrentCustomerInfor.AccountID, Environment.NewLine)); ;
+                        label2.Text = string.Format("Customer Created Date : {0} ", String.Format("{0} {1}", GetCurrentCustomerInfor.CreateDate, Environment.NewLine));
 
-                        label3.Text = string.Format("Customer Points : {0} ", GetCurrentCustomerInfor.Points + " " + Environment.NewLine);
+                        label3.Text = string.Format("Customer Points : {0} ", String.Format("{0} {1}", GetCurrentCustomerInfor.Points, Environment.NewLine));
 
                         CustomerInformations.WatingCustomer.ID = GetCurrentCustomerInfor.ID;
                         CustomerInformations.WatingCustomer.PhoneNumber = GetCurrentCustomerInfor.PhoneNumber;
@@ -132,6 +133,7 @@ namespace Bylsan_System.SenarioAddOrderForms
                         CustomerInformations.WatingCustomer.Points = GetCurrentCustomerInfor.Points;
 
                     } // End If 2
+                    Operation.EndOperation(this);
 
                 }
                 else
