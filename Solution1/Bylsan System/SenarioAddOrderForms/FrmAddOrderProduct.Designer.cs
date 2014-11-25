@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddOrderProduct));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ProductDescriotionLab = new System.Windows.Forms.Label();
+            this.ProductNameLab = new System.Windows.Forms.Label();
+            this.PhotoBox = new System.Windows.Forms.PictureBox();
             this.nextBtn = new Telerik.WinControls.UI.RadButton();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.CustomerInfomationGroupBox = new System.Windows.Forms.GroupBox();
@@ -39,19 +42,22 @@
             this.CustomerPhoneLab = new System.Windows.Forms.Label();
             this.CustomerNameLab = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ListViewProductes = new System.Windows.Forms.ListView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.titleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.largeIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CollapseBtn = new System.Windows.Forms.Button();
             this.ExpandAll = new System.Windows.Forms.Button();
             this.TreeCategories = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.PhotoBox = new System.Windows.Forms.PictureBox();
-            this.ProductNameLab = new System.Windows.Forms.Label();
-            this.ProductDescriotionLab = new System.Windows.Forms.Label();
-            this.ListViewProductes = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nextBtn)).BeginInit();
             this.CustomerInfomationGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -74,6 +80,37 @@
             this.panel1.Size = new System.Drawing.Size(1018, 192);
             this.panel1.TabIndex = 3;
             // 
+            // ProductDescriotionLab
+            // 
+            this.ProductDescriotionLab.AutoSize = true;
+            this.ProductDescriotionLab.Location = new System.Drawing.Point(196, 48);
+            this.ProductDescriotionLab.Name = "ProductDescriotionLab";
+            this.ProductDescriotionLab.Size = new System.Drawing.Size(35, 13);
+            this.ProductDescriotionLab.TabIndex = 3;
+            this.ProductDescriotionLab.Text = "label2";
+            // 
+            // ProductNameLab
+            // 
+            this.ProductNameLab.AutoSize = true;
+            this.ProductNameLab.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductNameLab.ForeColor = System.Drawing.Color.Red;
+            this.ProductNameLab.Location = new System.Drawing.Point(195, 17);
+            this.ProductNameLab.Name = "ProductNameLab";
+            this.ProductNameLab.Size = new System.Drawing.Size(49, 19);
+            this.ProductNameLab.TabIndex = 2;
+            this.ProductNameLab.Text = "label1";
+            // 
+            // PhotoBox
+            // 
+            this.PhotoBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PhotoBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PhotoBox.Location = new System.Drawing.Point(22, 17);
+            this.PhotoBox.Name = "PhotoBox";
+            this.PhotoBox.Size = new System.Drawing.Size(142, 125);
+            this.PhotoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PhotoBox.TabIndex = 1;
+            this.PhotoBox.TabStop = false;
+            // 
             // nextBtn
             // 
             this.nextBtn.Location = new System.Drawing.Point(871, 133);
@@ -82,6 +119,7 @@
             this.nextBtn.TabIndex = 0;
             this.nextBtn.Text = "Next";
             this.nextBtn.ThemeName = "Windows8";
+            this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click_1);
             // 
             // CustomerInfomationGroupBox
             // 
@@ -139,6 +177,60 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order";
             // 
+            // ListViewProductes
+            // 
+            this.ListViewProductes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ListViewProductes.ContextMenuStrip = this.contextMenuStrip1;
+            this.ListViewProductes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ListViewProductes.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListViewProductes.ForeColor = System.Drawing.Color.Blue;
+            this.ListViewProductes.FullRowSelect = true;
+            this.ListViewProductes.GridLines = true;
+            this.ListViewProductes.Location = new System.Drawing.Point(186, 19);
+            this.ListViewProductes.Name = "ListViewProductes";
+            this.ListViewProductes.Size = new System.Drawing.Size(795, 287);
+            this.ListViewProductes.TabIndex = 7;
+            this.ListViewProductes.UseCompatibleStateImageBehavior = false;
+            this.ListViewProductes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListViewProductes_MouseClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.titleToolStripMenuItem,
+            this.listToolStripMenuItem,
+            this.detailsToolStripMenuItem,
+            this.largeIconToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(127, 92);
+            // 
+            // titleToolStripMenuItem
+            // 
+            this.titleToolStripMenuItem.Name = "titleToolStripMenuItem";
+            this.titleToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.titleToolStripMenuItem.Text = "Title";
+            this.titleToolStripMenuItem.Click += new System.EventHandler(this.titleToolStripMenuItem_Click);
+            // 
+            // listToolStripMenuItem
+            // 
+            this.listToolStripMenuItem.Name = "listToolStripMenuItem";
+            this.listToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.listToolStripMenuItem.Text = "List";
+            this.listToolStripMenuItem.Click += new System.EventHandler(this.listToolStripMenuItem_Click);
+            // 
+            // detailsToolStripMenuItem
+            // 
+            this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
+            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.detailsToolStripMenuItem.Text = "Details";
+            this.detailsToolStripMenuItem.Click += new System.EventHandler(this.detailsToolStripMenuItem_Click);
+            // 
+            // largeIconToolStripMenuItem
+            // 
+            this.largeIconToolStripMenuItem.Name = "largeIconToolStripMenuItem";
+            this.largeIconToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.largeIconToolStripMenuItem.Text = "LargeIcon";
+            this.largeIconToolStripMenuItem.Click += new System.EventHandler(this.largeIconToolStripMenuItem_Click);
+            // 
             // CollapseBtn
             // 
             this.CollapseBtn.Location = new System.Drawing.Point(89, 283);
@@ -167,6 +259,7 @@
             this.TreeCategories.Name = "TreeCategories";
             this.TreeCategories.Size = new System.Drawing.Size(152, 260);
             this.TreeCategories.TabIndex = 5;
+            this.TreeCategories.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeCategories_AfterSelect);
             this.TreeCategories.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeCategories_NodeMouseClick);
             // 
             // imageList1
@@ -175,52 +268,6 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "eye.png");
             this.imageList1.Images.SetKeyName(1, "award_star_bronze_2.png");
-            // 
-            // PhotoBox
-            // 
-            this.PhotoBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PhotoBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PhotoBox.Location = new System.Drawing.Point(22, 17);
-            this.PhotoBox.Name = "PhotoBox";
-            this.PhotoBox.Size = new System.Drawing.Size(142, 125);
-            this.PhotoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PhotoBox.TabIndex = 1;
-            this.PhotoBox.TabStop = false;
-            // 
-            // ProductNameLab
-            // 
-            this.ProductNameLab.AutoSize = true;
-            this.ProductNameLab.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductNameLab.ForeColor = System.Drawing.Color.Red;
-            this.ProductNameLab.Location = new System.Drawing.Point(195, 17);
-            this.ProductNameLab.Name = "ProductNameLab";
-            this.ProductNameLab.Size = new System.Drawing.Size(49, 19);
-            this.ProductNameLab.TabIndex = 2;
-            this.ProductNameLab.Text = "label1";
-            // 
-            // ProductDescriotionLab
-            // 
-            this.ProductDescriotionLab.AutoSize = true;
-            this.ProductDescriotionLab.Location = new System.Drawing.Point(196, 48);
-            this.ProductDescriotionLab.Name = "ProductDescriotionLab";
-            this.ProductDescriotionLab.Size = new System.Drawing.Size(35, 13);
-            this.ProductDescriotionLab.TabIndex = 3;
-            this.ProductDescriotionLab.Text = "label2";
-            // 
-            // ListViewProductes
-            // 
-            this.ListViewProductes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ListViewProductes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ListViewProductes.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListViewProductes.ForeColor = System.Drawing.Color.Blue;
-            this.ListViewProductes.FullRowSelect = true;
-            this.ListViewProductes.GridLines = true;
-            this.ListViewProductes.Location = new System.Drawing.Point(186, 19);
-            this.ListViewProductes.Name = "ListViewProductes";
-            this.ListViewProductes.Size = new System.Drawing.Size(795, 287);
-            this.ListViewProductes.TabIndex = 7;
-            this.ListViewProductes.UseCompatibleStateImageBehavior = false;
-            this.ListViewProductes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListViewProductes_MouseClick);
             // 
             // FrmAddOrderProduct
             // 
@@ -237,11 +284,12 @@
             this.Load += new System.EventHandler(this.FrmAddOrderProduct_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nextBtn)).EndInit();
             this.CustomerInfomationGroupBox.ResumeLayout(false);
             this.CustomerInfomationGroupBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,5 +314,10 @@
         private System.Windows.Forms.Label ProductNameLab;
         private System.Windows.Forms.PictureBox PhotoBox;
         private System.Windows.Forms.ListView ListViewProductes;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem titleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem detailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem largeIconToolStripMenuItem;
     }
 }

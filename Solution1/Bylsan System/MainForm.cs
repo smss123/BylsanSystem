@@ -89,5 +89,11 @@ namespace Bylsan_System
             frmMailServer frm = new frmMailServer();
             frm.ShowDialog();
         }
+
+        private void newOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bylsan_System.SenarioAddOrderForms.FrmAddInformationCustomer frm = new SenarioAddOrderForms.FrmAddInformationCustomer();
+            frm.Show();
+        }
     }
 }

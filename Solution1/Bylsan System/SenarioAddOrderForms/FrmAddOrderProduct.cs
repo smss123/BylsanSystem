@@ -19,47 +19,59 @@ namespace Bylsan_System.SenarioAddOrderForms
         public FrmAddOrderProduct()
         {
             InitializeComponent();
+            ProductImageList.ImageSize =new Size(70,70);
         }
+        ImageList ProductImageList = new ImageList();
         public int CustomerID { get; set; }
-
+        FrmTotalOrder frm = new FrmTotalOrder();
         #region " Loading Customer Informations  "
         private void ImportCustomerData()
         {
 
-         try 
-	     {	        
-		  
-            if ((int)CustomerInformations.WatingCustomer.ID != 0 ) 
+            try
+            {
 
-            { 
-                CustomerID = CustomerInformations.WatingCustomer.ID;
-                CustomerNameLab.Text = string.Format ("Customer Name is : {0} " ,CustomerInformations.WatingCustomer.CustomerName);
-                CustomerPhoneLab.Text = string.Format ("Customer Phone  is : {0} " , CustomerInformations.WatingCustomer.PhoneNumber);
+                if ((int)CustomerInformations.WatingCustomer.ID != 0)
+                {
+                    CustomerID = CustomerInformations.WatingCustomer.ID;
+                    CustomerNameLab.Text = string.Format("Customer Name is : {0} ", CustomerInformations.WatingCustomer.CustomerName);
+                    CustomerPhoneLab.Text = string.Format("Customer Phone  is : {0} ", CustomerInformations.WatingCustomer.PhoneNumber);
+
+                    frm.NameLab.Text = CustomerInformations.WatingCustomer.CustomerName;
+                    frm.PhoneLab.Text = CustomerInformations.WatingCustomer.PhoneNumber;
+                }
             }
-	      }
-	      catch (Exception)
-	       {
+            catch (Exception)
+            {
 
-                CustomerNameLab.Text = string.Format ("Customer Name is : {0} " ,CustomerInformations.CustmrName);
-                CustomerPhoneLab.Text = string .Format ("Customer Phone  is : {0} " , CustomerInformations.CustmrPhone);
-	          }
-          
+                CustomerNameLab.Text = string.Format("Customer Name is : {0} ", CustomerInformations.CustmrName);
+                CustomerPhoneLab.Text = string.Format("Customer Phone  is : {0} ", CustomerInformations.CustmrPhone);
+                frm.NameLab.Text = CustomerInformations.CustmrName;
+                frm.PhoneLab.Text = CustomerInformations.CustmrPhone;
+
+            }
+
         }
         #endregion
 
         #region "   Populate Categories Tree   "
-        private void PopulateCategoreisTree() {
+        private void PopulateCategoreisTree()
+        {
+            PhotoBox.Image = null;
+            ProductDescriotionLab.Text = "";
+            ProductNameLab.Text = "";
+
             this.TreeCategories.Nodes.Clear();
             this.TreeCategories.ImageList = imageList1;
-            this.TreeCategories.Nodes.Add("Xprema", "All Categories",0);
+            this.TreeCategories.Nodes.Add("Xprema", "All Categories", 0);
             var ListOfCategores = CategoriesCmd.GetAllCategories();
-            foreach (var item in ListOfCategores )
+            foreach (var item in ListOfCategores)
             {
                 this.TreeCategories.Nodes[0].Nodes.Add("", item.ProductCategoryName, 1);
             }
 
         }
-        #endregion 
+        #endregion
 
         private void FrmAddOrderProduct_Load(object sender, EventArgs e)
         {
@@ -82,100 +94,139 @@ namespace Bylsan_System.SenarioAddOrderForms
 
         #endregion
 
-        #region "Populate ListProducts " 
+        #region "Populate ListProducts "
 
         void CreateListViewProducts()
         {
 
-            ListViewProductes.View = View.Details;
-            ListViewProductes.Columns.Add( "ID",30, HorizontalAlignment.Center);
+            ListViewProductes.View = View.Tile;
+            ListViewProductes.Columns.Add("ID", 30, HorizontalAlignment.Center);
             ListViewProductes.Columns.Add("Product", 230, HorizontalAlignment.Center);
             ListViewProductes.Columns.Add("Descriptoin", 300, HorizontalAlignment.Center);
-          
+
         }
 
 
         void PopulateListProducts()
         {
+            ListViewProductes.Items.Clear();
+            int ImgIndx = 0;
+
+
             if (CategID != 0)
             {
-                ListViewProductes.Items.Clear();
                 var AllProducts = ProductsCmd.GetProductByCategID(CategID);
-                foreach (var item in AllProducts )
+                foreach (var item in AllProducts)
                 {
-                    ListViewItem Itm = new ListViewItem(item .ID .ToString ());
-                    Itm.SubItems.Add( item .Product_Name .ToString ());
-                    Itm.SubItems.Add(item .Product_Description .ToString ());
+                    ListViewProductes.LargeImageList = ProductImageList;
+                    ListViewItem Itm = new ListViewItem(item.ID.ToString(), ImgIndx);
+                    Itm.SubItems[0].ForeColor = Color.Green;
+                    Itm.SubItems.Add(item.Product_Name.ToString());
+                    Itm.SubItems.Add(item.Product_Description.ToString());
 
+                    ProductImageList.Images.Add(item.Img);
                     ListViewProductes.Items.Add(Itm);
+                    ImgIndx++;
                 }
             }
         }
-      
+
 
         private int CategID = 0;
         private void TreeCategories_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             try
             {
-                   if (this.TreeCategories.Nodes.Count != 0)
-                    {
-                        CategID = (from c in CategoriesCmd.GetAllCategories()
-                                   where c.ProductCategoryName.Contains (  e.Node.Text)
-                                   select c.ID).Single();
-                        PopulateListProducts();
-                    }
+                if (this.TreeCategories.Nodes.Count != 0)
+                {
+                    CategID = (from c in CategoriesCmd.GetAllCategories()
+                               where c.ProductCategoryName.Contains(e.Node.Text)
+                               select c.ID).Single();
+                    PopulateListProducts();
+                }
             }
             catch (Exception)
             {
-                
-             
+
+
             }
         }
         #endregion
 
-        int PrdID = 0;
+        public int PrdID { get; set; }
         private void ListViewProductes_MouseClick(object sender, MouseEventArgs e)
         {
+            Operation.BeginOperation(this);
             try
             {
                 if (ListViewProductes.Items.Count != 0)
                 {
                     PrdID = 0;
                     PrdID = ListViewProductes.SelectedItems[0].Index;
-                  
+
                     var MyProdctut = ProductsCmd.GetProductByID(int.Parse(ListViewProductes.Items[PrdID].SubItems[0].Text));
-                    foreach (var item in MyProdctut )
+
+                    foreach (var item in MyProdctut)
                     {
                         ProductNameLab.Text = string.Format("Product Name : {0}", item.Product_Name.ToString());
                         ProductDescriotionLab.Text = string.Format("Description  : {0} ", item.Product_Description.ToString());
-
-
-                        if (item .Img != null)
+                        if (item.Img != null)
                         {
-
-                            byte[] buffer = null;
-
-                            //buffer = (byte[])item.Img ;
-                            //MemoryStream MS = new MemoryStream(buffer);
-                            //PhotoBox.Image = Image.FromStream(MS);
-                          
+                            PhotoBox.Image = item.Img;
                             this.Cursor = Cursors.Default;
                         }
+                        //=======================================
 
-                  
-                        
 
+                        ListViewItem Itm = new ListViewItem(item.ID.ToString());
+                        Itm.SubItems[0].ForeColor = Color.Green;
+                        Itm.SubItems.Add(item.Product_Name.ToString());
+                        Itm.SubItems.Add(item.Product_Description.ToString());
+
+                        ProductImageList.Images.Add(item.Img);
+                        frm.ListViewProductes.Items.Add(Itm);
+                        //========================================
                     }
                 }
             }
             catch (Exception)
             {
-                
-                
+
+
             }
+            Operation.EndOperation(this);
         }
 
+       
+        private void nextBtn_Click_1(object sender, EventArgs e)
+        {
+            frm.Show();
+            this.Hide();
+        }
 
+        private void titleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListViewProductes.View = View.Tile;
+        }
+
+        private void listToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListViewProductes.View = View.List ;
+        }
+
+        private void detailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListViewProductes.View = View.Details ;
+        }
+
+        private void largeIconToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListViewProductes.View = View.LargeIcon ;
+        }
+
+        private void TreeCategories_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
     }
 }

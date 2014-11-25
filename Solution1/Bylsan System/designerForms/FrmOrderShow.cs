@@ -16,5 +16,10 @@ namespace Bylsan_System.designerForms
         {
             InitializeComponent();
         }
+
+        private void FrmOrderShow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
