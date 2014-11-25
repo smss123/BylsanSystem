@@ -34,9 +34,21 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.AttachmentGridView = new Telerik.WinControls.UI.RadGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AttachmentGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AttachmentGridView.MasterTemplate)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -44,7 +56,7 @@
             this.groupBox1.Controls.Add(this.radGridView1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(378, 425);
+            this.groupBox1.Size = new System.Drawing.Size(398, 537);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "OrderProduct";
@@ -66,16 +78,16 @@
             gridViewTextBoxColumn1.FieldName = "ID";
             gridViewTextBoxColumn1.HeaderText = "ID";
             gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn1.Width = 38;
+            gridViewTextBoxColumn1.Width = 40;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "Product.Product_Name";
             gridViewTextBoxColumn2.HeaderText = "Product Name";
             gridViewTextBoxColumn2.Name = "Product_Name";
-            gridViewTextBoxColumn2.Width = 250;
+            gridViewTextBoxColumn2.Width = 264;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Add Image";
             gridViewCommandColumn1.Name = "AddColm";
-            gridViewCommandColumn1.Width = 65;
+            gridViewCommandColumn1.Width = 69;
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -83,22 +95,106 @@
             this.radGridView1.MasterTemplate.EnableFiltering = true;
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radGridView1.Size = new System.Drawing.Size(372, 406);
+            this.radGridView1.Size = new System.Drawing.Size(392, 518);
             this.radGridView1.TabIndex = 0;
             this.radGridView1.Text = "OrdeProductGridView";
             this.radGridView1.ThemeName = "Windows8";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Location = new System.Drawing.Point(416, 17);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(381, 107);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Customer Information";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Customer Name:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Customer Phone:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Description:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 150);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Attachments:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(9, 46);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(366, 93);
+            this.textBox1.TabIndex = 2;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.AttachmentGridView);
+            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Location = new System.Drawing.Point(413, 130);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(381, 419);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Product Information";
+            // 
+            // AttachmentGridView
+            // 
+            this.AttachmentGridView.Location = new System.Drawing.Point(6, 167);
+            this.AttachmentGridView.Name = "AttachmentGridView";
+            this.AttachmentGridView.Size = new System.Drawing.Size(369, 246);
+            this.AttachmentGridView.TabIndex = 3;
+            this.AttachmentGridView.Text = "radGridView2";
             // 
             // FrmOrderProductShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 449);
+            this.ClientSize = new System.Drawing.Size(808, 544);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmOrderProductShow";
             this.Text = "FrmOrderProductShow";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AttachmentGridView.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AttachmentGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -108,5 +204,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private Telerik.WinControls.UI.RadGridView radGridView1;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private Telerik.WinControls.UI.RadGridView AttachmentGridView;
     }
 }
