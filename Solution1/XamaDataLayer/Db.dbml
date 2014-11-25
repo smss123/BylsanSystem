@@ -238,17 +238,6 @@
       <Association Name="Supplier_Store_Sell" Member="Store_Sells" ThisKey="ID" OtherKey="SupplierID" Type="Store_Sell" />
     </Type>
   </Table>
-  <Table Name="Security.History" Member="Histories">
-    <Type Name="History">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="HistoryAction" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
-      <Column Name="DateOfProcess" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ActionName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="User_History" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" />
-    </Type>
-  </Table>
   <Table Name="Security.SystemPermession" Member="SystemPermessions">
     <Type Name="SystemPermession">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -274,9 +263,9 @@
       <Column Name="Passwords" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="User_Store_Sell" Member="Store_Sells" ThisKey="ID" OtherKey="UserID" Type="Store_Sell" />
       <Association Name="User_StoreWithDrawal" Member="StoreWithDrawals" ThisKey="ID" OtherKey="UserID" Type="StoreWithDrawal" />
-      <Association Name="User_History" Member="Histories" ThisKey="ID" OtherKey="UserID" Type="History" />
       <Association Name="User_UserPermession" Member="UserPermessions" ThisKey="ID" OtherKey="UserID" Type="UserPermession" />
       <Association Name="User_StoreOperationManager" Member="StoreOperationManagers" ThisKey="ID" OtherKey="UserID" Type="StoreOperationManager" />
+      <Association Name="User_History" Member="Histories" ThisKey="ID" OtherKey="UserID" Type="History" />
     </Type>
   </Table>
   <Table Name="SellSystem.Bill" Member="Bills">
@@ -329,6 +318,17 @@
       <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="SellStore_StoreOperationManager" Member="SellStore" ThisKey="StoreID" OtherKey="ID" Type="SellStore" IsForeignKey="true" />
       <Association Name="User_StoreOperationManager" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Security.History" Member="Histories">
+    <Type Name="History">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HistoryAction" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="DateOfProcess" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ActionName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="User_History" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
 </Database>
