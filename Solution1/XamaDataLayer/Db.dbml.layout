@@ -274,7 +274,7 @@
         <classShapeMoniker Id="48625f79-028a-4e77-97b9-01270f690a2e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(16.75 : 14.8517976888021); (17.5 : 14.8517976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(16.75 : 14.8517976888021); (17.0416666666667 : 14.8517976888021 : JumpStart); (17.2083333333333 : 14.8517976888021 : JumpEnd); (17.5 : 14.8517976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DbDataContext/Item/Item_StoreWithDrawal" />
       <nodes>
         <classShapeMoniker Id="db000657-7fba-43ff-a2a6-bc71aa3791cb" />
@@ -309,7 +309,7 @@
         <classShapeMoniker Id="3e87a372-fa0e-4978-8dd9-537a2eaaf655" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(13.75 : 17.875); (14.125 : 17.5); (14.125 : 16.2514521780599); (17.5 : 16.2514521780599)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(13.75 : 17.875); (14.125 : 17.5); (14.125 : 16.2514521780599); (14.5104166666667 : 16.2514521780599 : JumpStart); (14.6770833333333 : 16.2514521780599 : JumpEnd); (17.5 : 16.2514521780599)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DbDataContext/User/User_StoreWithDrawal" />
       <nodes>
         <classShapeMoniker Id="7807e4c8-fbea-429f-a901-a3339111874c" />
@@ -358,7 +358,7 @@
         <classShapeMoniker Id="be5b549d-ff95-4b5b-a686-4d0afea7844f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(13.75 : 18.62787109375); (16.5729166666667 : 18.62787109375 : JumpStart); (16.7395833333333 : 18.62787109375 : JumpEnd); (17.5 : 18.62787109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(13.75 : 18.62787109375); (17.5 : 18.62787109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DbDataContext/User/User_StoreOperationManager" />
       <nodes>
         <classShapeMoniker Id="7807e4c8-fbea-429f-a901-a3339111874c" />
