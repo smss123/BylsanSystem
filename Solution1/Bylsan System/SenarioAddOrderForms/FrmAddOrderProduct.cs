@@ -19,6 +19,7 @@ namespace Bylsan_System.SenarioAddOrderForms
         public FrmAddOrderProduct()
         {
             InitializeComponent();
+            ProductImageList.ImageSize =new Size(70,70);
         }
         ImageList ProductImageList = new ImageList();
         public int CustomerID { get; set; }
@@ -155,6 +156,7 @@ namespace Bylsan_System.SenarioAddOrderForms
         public int PrdID { get; set; }
         private void ListViewProductes_MouseClick(object sender, MouseEventArgs e)
         {
+            Operation.BeginOperation(this);
             try
             {
                 if (ListViewProductes.Items.Count != 0)
@@ -192,6 +194,7 @@ namespace Bylsan_System.SenarioAddOrderForms
 
 
             }
+            Operation.EndOperation(this);
         }
 
        
@@ -219,6 +222,11 @@ namespace Bylsan_System.SenarioAddOrderForms
         private void largeIconToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListViewProductes.View = View.LargeIcon ;
+        }
+
+        private void TreeCategories_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
         }
     }
 }

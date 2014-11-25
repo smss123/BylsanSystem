@@ -105,9 +105,10 @@ namespace Bylsan_System.SenarioAddOrderForms
 
         private void phoneNumberTextBox_TextChanged_1(object sender, EventArgs e)
         {
+            Operation.BeginOperation(this);
             try
             {
-                Operation.BeginOperation(this);
+              
                 if (phoneNumberTextBox.Text != null)
                 {
                     var GetCurrentCustomerInfor = (from c in CustomersCmd.GetAllCustmers()
@@ -133,7 +134,7 @@ namespace Bylsan_System.SenarioAddOrderForms
                         CustomerInformations.WatingCustomer.Points = GetCurrentCustomerInfor.Points;
 
                     } // End If 2
-                    Operation.EndOperation(this);
+               
 
                 }
                 else
@@ -152,6 +153,7 @@ namespace Bylsan_System.SenarioAddOrderForms
                 CustomerInformations.CustmrName = customerNameTextBox.Text;
 
             }
+            Operation.EndOperation(this);
         }
     }
 }
