@@ -106,6 +106,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmOrderShow";
             this.Text = "FrmOrderShow";
+            this.Load += new System.EventHandler(this.FrmOrderShow_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridView.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).EndInit();
