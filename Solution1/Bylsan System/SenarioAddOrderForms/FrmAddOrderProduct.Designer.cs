@@ -52,6 +52,7 @@
             this.ExpandAll = new System.Windows.Forms.Button();
             this.TreeCategories = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.CustomerOrderListView = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nextBtn)).BeginInit();
@@ -165,6 +166,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.CustomerOrderListView);
             this.groupBox1.Controls.Add(this.ListViewProductes);
             this.groupBox1.Controls.Add(this.CollapseBtn);
             this.groupBox1.Controls.Add(this.ExpandAll);
@@ -188,7 +190,7 @@
             this.ListViewProductes.GridLines = true;
             this.ListViewProductes.Location = new System.Drawing.Point(186, 19);
             this.ListViewProductes.Name = "ListViewProductes";
-            this.ListViewProductes.Size = new System.Drawing.Size(795, 287);
+            this.ListViewProductes.Size = new System.Drawing.Size(663, 287);
             this.ListViewProductes.TabIndex = 7;
             this.ListViewProductes.UseCompatibleStateImageBehavior = false;
             this.ListViewProductes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListViewProductes_MouseClick);
@@ -269,6 +271,14 @@
             this.imageList1.Images.SetKeyName(0, "eye.png");
             this.imageList1.Images.SetKeyName(1, "award_star_bronze_2.png");
             // 
+            // CustomerOrderListView
+            // 
+            this.CustomerOrderListView.Location = new System.Drawing.Point(855, 19);
+            this.CustomerOrderListView.Name = "CustomerOrderListView";
+            this.CustomerOrderListView.Size = new System.Drawing.Size(157, 287);
+            this.CustomerOrderListView.TabIndex = 8;
+            this.CustomerOrderListView.UseCompatibleStateImageBehavior = false;
+            // 
             // FrmAddOrderProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -319,5 +329,6 @@
         private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem largeIconToolStripMenuItem;
+        private System.Windows.Forms.ListView CustomerOrderListView;
     }
 }

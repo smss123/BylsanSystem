@@ -47,9 +47,7 @@ namespace Bylsan_System.SenarioAddOrderForms
 
         private void OkeyBtn_Click(object sender, EventArgs e)
         {
-            FrmOrderDate frm = new FrmOrderDate();
-            frm.Show();
-            this.Hide();
+           
         }
 
 
