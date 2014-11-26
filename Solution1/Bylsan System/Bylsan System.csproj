@@ -204,6 +204,12 @@
     <Compile Include="SenarioAddOrderForms\FrmAddOrderProduct.Designer.cs">
       <DependentUpon>FrmAddOrderProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="SenarioAddOrderForms\FrmPrintQuotation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SenarioAddOrderForms\FrmPrintQuotation.Designer.cs">
+      <DependentUpon>FrmPrintQuotation.cs</DependentUpon>
+    </Compile>
     <Compile Include="SenarioAddOrderForms\FrmTotalOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +294,9 @@
     <EmbeddedResource Include="SenarioAddOrderForms\FrmAddOrderProduct.resx">
       <DependentUpon>FrmAddOrderProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SenarioAddOrderForms\FrmPrintQuotation.resx">
+      <DependentUpon>FrmPrintQuotation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SenarioAddOrderForms\FrmTotalOrder.resx">
       <DependentUpon>FrmTotalOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +309,7 @@
     <None Include="Properties\DataSources\XamaDataLayer.Branch.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.Customer.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.DbDataContext.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.Debtor.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.Employee.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.Expenss.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.ExpenssesMovment.datasource" />
@@ -308,9 +318,13 @@
     <None Include="Properties\DataSources\XamaDataLayer.Item.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.Order.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.OrderProduct.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.OrderProuctAttachment.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.OutBox.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.Product.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.ProductCategory.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.ProductContent.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.Quotation.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.QuotationProduct.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.SellItem.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.SellStore.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.Store.datasource" />
