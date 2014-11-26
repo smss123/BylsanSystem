@@ -25,6 +25,9 @@ namespace XamaDataLayer.BranchCmd
            prd.Product_Description = tb.Product_Description;
            prd.CateogryID = tb.CateogryID;
            prd.Img = tb.Img;
+           prd.PublicName = tb.PublicName;
+           prd.ProductPrice = tb.ProductPrice;
+           prd.ProductUnit = tb.ProductUnit;
            db.SubmitChanges();
            return true;
            }
