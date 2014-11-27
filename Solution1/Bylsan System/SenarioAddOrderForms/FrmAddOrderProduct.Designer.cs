@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddOrderProduct));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Publicnamelab = new System.Windows.Forms.Label();
             this.ProductDescriotionLab = new System.Windows.Forms.Label();
             this.ProductNameLab = new System.Windows.Forms.Label();
             this.PhotoBox = new System.Windows.Forms.PictureBox();
@@ -42,6 +43,11 @@
             this.CustomerPhoneLab = new System.Windows.Forms.Label();
             this.CustomerNameLab = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.OrdersCountBox = new System.Windows.Forms.TextBox();
+            this.TotalCostBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.OrdersListView = new System.Windows.Forms.ListView();
             this.ListViewProductes = new System.Windows.Forms.ListView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.titleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +58,6 @@
             this.ExpandAll = new System.Windows.Forms.Button();
             this.TreeCategories = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.CustomerOrderListView = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nextBtn)).BeginInit();
@@ -71,6 +76,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.Publicnamelab);
             this.panel1.Controls.Add(this.ProductDescriotionLab);
             this.panel1.Controls.Add(this.ProductNameLab);
             this.panel1.Controls.Add(this.PhotoBox);
@@ -80,6 +86,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1018, 192);
             this.panel1.TabIndex = 3;
+            // 
+            // Publicnamelab
+            // 
+            this.Publicnamelab.AutoSize = true;
+            this.Publicnamelab.Location = new System.Drawing.Point(196, 84);
+            this.Publicnamelab.Name = "Publicnamelab";
+            this.Publicnamelab.Size = new System.Drawing.Size(35, 13);
+            this.Publicnamelab.TabIndex = 4;
+            this.Publicnamelab.Text = "label1";
             // 
             // ProductDescriotionLab
             // 
@@ -103,7 +118,6 @@
             // 
             // PhotoBox
             // 
-            this.PhotoBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PhotoBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PhotoBox.Location = new System.Drawing.Point(22, 17);
             this.PhotoBox.Name = "PhotoBox";
@@ -166,7 +180,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.CustomerOrderListView);
+            this.groupBox1.Controls.Add(this.OrdersCountBox);
+            this.groupBox1.Controls.Add(this.TotalCostBox);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.OrdersListView);
             this.groupBox1.Controls.Add(this.ListViewProductes);
             this.groupBox1.Controls.Add(this.CollapseBtn);
             this.groupBox1.Controls.Add(this.ExpandAll);
@@ -179,6 +197,55 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order";
             // 
+            // OrdersCountBox
+            // 
+            this.OrdersCountBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrdersCountBox.Location = new System.Drawing.Point(276, 283);
+            this.OrdersCountBox.Name = "OrdersCountBox";
+            this.OrdersCountBox.ReadOnly = true;
+            this.OrdersCountBox.Size = new System.Drawing.Size(100, 22);
+            this.OrdersCountBox.TabIndex = 12;
+            this.OrdersCountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TotalCostBox
+            // 
+            this.TotalCostBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalCostBox.Location = new System.Drawing.Point(643, 283);
+            this.TotalCostBox.Name = "TotalCostBox";
+            this.TotalCostBox.ReadOnly = true;
+            this.TotalCostBox.Size = new System.Drawing.Size(100, 22);
+            this.TotalCostBox.TabIndex = 11;
+            this.TotalCostBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(555, 288);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Total Cost Price : ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(196, 283);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = " Orders Count :  ";
+            // 
+            // OrdersListView
+            // 
+            this.OrdersListView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.OrdersListView.FullRowSelect = true;
+            this.OrdersListView.GridLines = true;
+            this.OrdersListView.Location = new System.Drawing.Point(186, 160);
+            this.OrdersListView.Name = "OrdersListView";
+            this.OrdersListView.Size = new System.Drawing.Size(575, 119);
+            this.OrdersListView.TabIndex = 8;
+            this.OrdersListView.UseCompatibleStateImageBehavior = false;
+            // 
             // ListViewProductes
             // 
             this.ListViewProductes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -190,7 +257,7 @@
             this.ListViewProductes.GridLines = true;
             this.ListViewProductes.Location = new System.Drawing.Point(186, 19);
             this.ListViewProductes.Name = "ListViewProductes";
-            this.ListViewProductes.Size = new System.Drawing.Size(663, 287);
+            this.ListViewProductes.Size = new System.Drawing.Size(575, 135);
             this.ListViewProductes.TabIndex = 7;
             this.ListViewProductes.UseCompatibleStateImageBehavior = false;
             this.ListViewProductes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListViewProductes_MouseClick);
@@ -271,14 +338,6 @@
             this.imageList1.Images.SetKeyName(0, "eye.png");
             this.imageList1.Images.SetKeyName(1, "award_star_bronze_2.png");
             // 
-            // CustomerOrderListView
-            // 
-            this.CustomerOrderListView.Location = new System.Drawing.Point(855, 19);
-            this.CustomerOrderListView.Name = "CustomerOrderListView";
-            this.CustomerOrderListView.Size = new System.Drawing.Size(157, 287);
-            this.CustomerOrderListView.TabIndex = 8;
-            this.CustomerOrderListView.UseCompatibleStateImageBehavior = false;
-            // 
             // FrmAddOrderProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,6 +358,7 @@
             this.CustomerInfomationGroupBox.ResumeLayout(false);
             this.CustomerInfomationGroupBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -329,6 +389,11 @@
         private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem largeIconToolStripMenuItem;
-        private System.Windows.Forms.ListView CustomerOrderListView;
+        private System.Windows.Forms.ListView OrdersListView;
+        private System.Windows.Forms.Label Publicnamelab;
+        private System.Windows.Forms.TextBox OrdersCountBox;
+        private System.Windows.Forms.TextBox TotalCostBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

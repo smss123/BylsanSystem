@@ -104,6 +104,14 @@ namespace Bylsan_System.SenarioAddOrderForms
             ListViewProductes.Columns.Add("Product", 230, HorizontalAlignment.Center);
             ListViewProductes.Columns.Add("Descriptoin", 300, HorizontalAlignment.Center);
 
+            //==============================================================================
+
+            OrdersListView.View = View.Details;
+            OrdersListView.Columns.Add("ID", 30, HorizontalAlignment.Center);
+            OrdersListView.Columns.Add("Product", 170, HorizontalAlignment.Center);
+            OrdersListView.Columns.Add("Description", 170, HorizontalAlignment.Center);
+            OrdersListView.Columns.Add("Quantity", 100, HorizontalAlignment.Center);
+            OrdersListView.Columns.Add("Price", 70, HorizontalAlignment.Center);
         }
 
 
@@ -170,24 +178,59 @@ namespace Bylsan_System.SenarioAddOrderForms
                     {
                         ProductNameLab.Text = string.Format("Product Name : {0}", item.Product_Name.ToString());
                         ProductDescriotionLab.Text = string.Format("Description  : {0} ", item.Product_Description.ToString());
+                        Publicnamelab.Text = string.Format("Public Name  : {0} ", item.PublicName.ToString());
                         if (item.Img != null)
                         {
                             PhotoBox.Image = item.Img;
                             this.Cursor = Cursors.Default;
                         }
                         //=======================================
-
+             
 
                         ListViewItem Itm = new ListViewItem(item.ID.ToString());
                         Itm.SubItems[0].ForeColor = Color.Green;
                         Itm.SubItems.Add(item.Product_Name.ToString());
+                       
                         Itm.SubItems.Add(item.Product_Description.ToString());
 
                         ProductImageList.Images.Add(item.Img);
-                        frm.ListViewProductes.Items.Add(Itm);
+                      //  frm.OrdersListView.Items.Add(Itm);
                         //========================================
+                        // start Work With Orders :
+
+                        int QtyCount = 1;
+                        ListViewItem SelectedProduct = new ListViewItem(item.ID.ToString());
+
+                        SelectedProduct.SubItems.Add(item.Product_Name.ToString());
+                        SelectedProduct.SubItems.Add(item.Product_Description .ToString());
+                        SelectedProduct.SubItems.Add(QtyCount.ToString());
+                        SelectedProduct.SubItems.Add(item.ProductPrice .ToString());
+                        OrdersListView.Items.Add(SelectedProduct);
+
+                        for (int i = 0; i < OrdersListView.Items.Count; i++)
+                        {
+                            if (OrdersListView.Items[i].SubItems[0].Text == SelectedProduct.SubItems[0].Text)
+                            {
+                                int x = OrdersListView.Items[i].Index;
+
+                                QtyCount++;
+                                OrdersListView.Items.RemoveAt(x);
+                                OrdersListView.Items.Add(SelectedProduct);
+
+                            }
+                            // ===== Compute Total Cost Price
+                            double TotalCostPrice = (from ListViewItem li in OrdersListView.Items
+                                                     select
+                                                         Convert.ToDouble(li.SubItems[4].Text.ToString())).Sum();
+                            //==  Display Total Cost Price Of Orders
+                            TotalCostBox.Text = TotalCostPrice.ToString();
+                            // == Display  Orders Count
+                            OrdersCountBox.Text = OrdersListView.Items.Count.ToString();
+                        }
                     }
                 }
+                    
+               
             }
             catch (Exception)
             {
@@ -200,6 +243,18 @@ namespace Bylsan_System.SenarioAddOrderForms
        
         private void nextBtn_Click_1(object sender, EventArgs e)
         {
+           
+	
+
+                ListViewItem itemClone;
+                ListView.ListViewItemCollection coll = OrdersListView.Items;
+                foreach (ListViewItem item in coll)
+                {
+                itemClone = item.Clone() as ListViewItem;
+                OrdersListView.Items.Remove(item);
+                frm .OrdersListView.Items.Add(itemClone);
+                }
+
             frm.Show();
             this.Hide();
         }
