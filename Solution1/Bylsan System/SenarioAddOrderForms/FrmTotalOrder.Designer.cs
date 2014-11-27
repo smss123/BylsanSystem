@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.CustomerInfomationGroupBox = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.NameLab = new System.Windows.Forms.Label();
-            this.PhoneLab = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.OkeyBtn = new Telerik.WinControls.UI.RadButton();
-            this.ListViewProductes = new System.Windows.Forms.ListView();
+            this.TotalPriceBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.receiptdateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.AdresstextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.NameLab = new System.Windows.Forms.Label();
+            this.PhoneLab = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TotalCostTextBox = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.OrdersCountLab = new System.Windows.Forms.Label();
+            this.OkeyBtn = new Telerik.WinControls.UI.RadButton();
+            this.OrdersListView = new System.Windows.Forms.ListView();
             this.CustomerInfomationGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OkeyBtn)).BeginInit();
@@ -50,7 +50,7 @@
             // 
             // CustomerInfomationGroupBox
             // 
-            this.CustomerInfomationGroupBox.Controls.Add(this.TotalCostTextBox);
+            this.CustomerInfomationGroupBox.Controls.Add(this.TotalPriceBox);
             this.CustomerInfomationGroupBox.Controls.Add(this.label6);
             this.CustomerInfomationGroupBox.Controls.Add(this.receiptdateTimePicker);
             this.CustomerInfomationGroupBox.Controls.Add(this.AdresstextBox);
@@ -67,6 +67,38 @@
             this.CustomerInfomationGroupBox.TabIndex = 7;
             this.CustomerInfomationGroupBox.TabStop = false;
             this.CustomerInfomationGroupBox.Text = "Customer Infomation";
+            // 
+            // TotalPriceBox
+            // 
+            this.TotalPriceBox.Location = new System.Drawing.Point(299, 83);
+            this.TotalPriceBox.Name = "TotalPriceBox";
+            this.TotalPriceBox.Size = new System.Drawing.Size(213, 20);
+            this.TotalPriceBox.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(235, 86);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Total Cost:";
+            // 
+            // receiptdateTimePicker
+            // 
+            this.receiptdateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.receiptdateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.receiptdateTimePicker.Location = new System.Drawing.Point(299, 25);
+            this.receiptdateTimePicker.Name = "receiptdateTimePicker";
+            this.receiptdateTimePicker.Size = new System.Drawing.Size(107, 20);
+            this.receiptdateTimePicker.TabIndex = 5;
+            // 
+            // AdresstextBox
+            // 
+            this.AdresstextBox.Location = new System.Drawing.Point(299, 54);
+            this.AdresstextBox.Name = "AdresstextBox";
+            this.AdresstextBox.Size = new System.Drawing.Size(213, 20);
+            this.AdresstextBox.TabIndex = 7;
             // 
             // label3
             // 
@@ -86,6 +118,15 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Customer Name ";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(245, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Address:";
+            // 
             // NameLab
             // 
             this.NameLab.AutoSize = true;
@@ -104,9 +145,18 @@
             this.PhoneLab.TabIndex = 0;
             this.PhoneLab.Text = "label2";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(215, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Date of receipt:";
+            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.OrdersCountLab);
             this.panel1.Controls.Add(this.OkeyBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 394);
@@ -114,14 +164,14 @@
             this.panel1.Size = new System.Drawing.Size(524, 44);
             this.panel1.TabIndex = 9;
             // 
-            // label1
+            // OrdersCountLab
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.OrdersCountLab.AutoSize = true;
+            this.OrdersCountLab.Location = new System.Drawing.Point(23, 15);
+            this.OrdersCountLab.Name = "OrdersCountLab";
+            this.OrdersCountLab.Size = new System.Drawing.Size(75, 13);
+            this.OrdersCountLab.TabIndex = 1;
+            this.OrdersCountLab.Text = "Orders Count ";
             // 
             // OkeyBtn
             // 
@@ -132,73 +182,23 @@
             this.OkeyBtn.Text = "Ok";
             this.OkeyBtn.Click += new System.EventHandler(this.OkeyBtn_Click);
             // 
-            // ListViewProductes
+            // OrdersListView
             // 
-            this.ListViewProductes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListViewProductes.FullRowSelect = true;
-            this.ListViewProductes.GridLines = true;
-            this.ListViewProductes.Location = new System.Drawing.Point(0, 133);
-            this.ListViewProductes.Name = "ListViewProductes";
-            this.ListViewProductes.Size = new System.Drawing.Size(524, 261);
-            this.ListViewProductes.TabIndex = 10;
-            this.ListViewProductes.UseCompatibleStateImageBehavior = false;
-            // 
-            // receiptdateTimePicker
-            // 
-            this.receiptdateTimePicker.CustomFormat = "dd/MM/yyyy";
-            this.receiptdateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.receiptdateTimePicker.Location = new System.Drawing.Point(299, 25);
-            this.receiptdateTimePicker.Name = "receiptdateTimePicker";
-            this.receiptdateTimePicker.Size = new System.Drawing.Size(107, 20);
-            this.receiptdateTimePicker.TabIndex = 5;
-            // 
-            // AdresstextBox
-            // 
-            this.AdresstextBox.Location = new System.Drawing.Point(299, 54);
-            this.AdresstextBox.Name = "AdresstextBox";
-            this.AdresstextBox.Size = new System.Drawing.Size(213, 20);
-            this.AdresstextBox.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(245, 58);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Address:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(215, 27);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Date of receipt:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(235, 86);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Total Cost:";
-            // 
-            // TotalCostTextBox
-            // 
-            this.TotalCostTextBox.Location = new System.Drawing.Point(299, 83);
-            this.TotalCostTextBox.Name = "TotalCostTextBox";
-            this.TotalCostTextBox.Size = new System.Drawing.Size(213, 20);
-            this.TotalCostTextBox.TabIndex = 9;
+            this.OrdersListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OrdersListView.FullRowSelect = true;
+            this.OrdersListView.GridLines = true;
+            this.OrdersListView.Location = new System.Drawing.Point(0, 133);
+            this.OrdersListView.Name = "OrdersListView";
+            this.OrdersListView.Size = new System.Drawing.Size(524, 261);
+            this.OrdersListView.TabIndex = 10;
+            this.OrdersListView.UseCompatibleStateImageBehavior = false;
             // 
             // FrmTotalOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 438);
-            this.Controls.Add(this.ListViewProductes);
+            this.Controls.Add(this.OrdersListView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CustomerInfomationGroupBox);
             this.Name = "FrmTotalOrder";
@@ -219,13 +219,13 @@
         private System.Windows.Forms.GroupBox CustomerInfomationGroupBox;
         private System.Windows.Forms.Panel panel1;
         private Telerik.WinControls.UI.RadButton OkeyBtn;
-        private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.ListView ListViewProductes;
+        private System.Windows.Forms.Label OrdersCountLab;
+        public System.Windows.Forms.ListView OrdersListView;
         public System.Windows.Forms.Label NameLab;
         public System.Windows.Forms.Label PhoneLab;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TotalCostTextBox;
+        private System.Windows.Forms.TextBox TotalPriceBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker receiptdateTimePicker;
         private System.Windows.Forms.TextBox AdresstextBox;
