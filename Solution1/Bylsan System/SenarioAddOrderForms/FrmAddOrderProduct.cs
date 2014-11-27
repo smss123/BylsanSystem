@@ -77,7 +77,7 @@ namespace Bylsan_System.SenarioAddOrderForms
         {
             ImportCustomerData();
             PopulateCategoreisTree();
-            CreateListViewProducts();
+            CreateOrdersListView();
         }
 
 
@@ -96,7 +96,7 @@ namespace Bylsan_System.SenarioAddOrderForms
 
         #region "Populate ListProducts "
 
-        void CreateListViewProducts()
+        void CreateOrdersListView()
         {
 
             ListViewProductes.View = View.Tile;
@@ -169,63 +169,73 @@ namespace Bylsan_System.SenarioAddOrderForms
             {
                 if (ListViewProductes.Items.Count != 0)
                 {
-                    PrdID = 0;
-                    PrdID = ListViewProductes.SelectedItems[0].Index;
 
-                    var MyProdctut = ProductsCmd.GetProductByID(int.Parse(ListViewProductes.Items[PrdID].SubItems[0].Text));
-
-                    foreach (var item in MyProdctut)
+                    if (OrderTypeCheckLab.Text == "Special Order")
                     {
-                        ProductNameLab.Text = string.Format("Product Name : {0}", item.Product_Name.ToString());
-                        ProductDescriotionLab.Text = string.Format("Description  : {0} ", item.Product_Description.ToString());
-                        Publicnamelab.Text = string.Format("Public Name  : {0} ", item.PublicName.ToString());
-                        if (item.Img != null)
+                        FrmSpecialOrder SFrm = new FrmSpecialOrder();
+                        SFrm.ShowDialog();
+                    }
+                    else
+                    {
+
+                        PrdID = 0;
+                        PrdID = ListViewProductes.SelectedItems[0].Index;
+
+                        var MyProdctut = ProductsCmd.GetProductByID(int.Parse(ListViewProductes.Items[PrdID].SubItems[0].Text));
+
+                        foreach (var item in MyProdctut)
                         {
-                            PhotoBox.Image = item.Img;
-                            this.Cursor = Cursors.Default;
-                        }
-                        //=======================================
-             
-
-                        ListViewItem Itm = new ListViewItem(item.ID.ToString());
-                        Itm.SubItems[0].ForeColor = Color.Green;
-                        Itm.SubItems.Add(item.Product_Name.ToString());
-                       
-                        Itm.SubItems.Add(item.Product_Description.ToString());
-
-                        ProductImageList.Images.Add(item.Img);
-                      //  frm.OrdersListView.Items.Add(Itm);
-                        //========================================
-                        // start Work With Orders :
-
-                        int QtyCount = 1;
-                        ListViewItem SelectedProduct = new ListViewItem(item.ID.ToString());
-
-                        SelectedProduct.SubItems.Add(item.Product_Name.ToString());
-                        SelectedProduct.SubItems.Add(item.Product_Description .ToString());
-                        SelectedProduct.SubItems.Add(QtyCount.ToString());
-                        SelectedProduct.SubItems.Add(item.ProductPrice .ToString());
-                        OrdersListView.Items.Add(SelectedProduct);
-
-                        for (int i = 0; i < OrdersListView.Items.Count; i++)
-                        {
-                            if (OrdersListView.Items[i].SubItems[0].Text == SelectedProduct.SubItems[0].Text)
+                            ProductNameLab.Text = string.Format("Product Name : {0}", item.Product_Name.ToString());
+                            ProductDescriotionLab.Text = string.Format("Description  : {0} ", item.Product_Description.ToString());
+                            Publicnamelab.Text = string.Format("Public Name  : {0} ", item.PublicName.ToString());
+                            if (item.Img != null)
                             {
-                                int x = OrdersListView.Items[i].Index;
-
-                                QtyCount++;
-                                OrdersListView.Items.RemoveAt(x);
-                                OrdersListView.Items.Add(SelectedProduct);
-
+                                PhotoBox.Image = item.Img;
+                                this.Cursor = Cursors.Default;
                             }
-                            // ===== Compute Total Cost Price
-                            double TotalCostPrice = (from ListViewItem li in OrdersListView.Items
-                                                     select
-                                                         Convert.ToDouble(li.SubItems[4].Text.ToString())).Sum();
-                            //==  Display Total Cost Price Of Orders
-                            TotalCostBox.Text = TotalCostPrice.ToString();
-                            // == Display  Orders Count
-                            OrdersCountBox.Text = OrdersListView.Items.Count.ToString();
+                            //=======================================
+
+
+                            ListViewItem Itm = new ListViewItem(item.ID.ToString());
+                            Itm.SubItems[0].ForeColor = Color.Green;
+                            Itm.SubItems.Add(item.Product_Name.ToString());
+
+                            Itm.SubItems.Add(item.Product_Description.ToString());
+
+                            ProductImageList.Images.Add(item.Img);
+                            //  frm.OrdersListView.Items.Add(Itm);
+                            //========================================
+                            // start Work With Orders :
+
+                            int QtyCount = 1;
+                            ListViewItem SelectedProduct = new ListViewItem(item.ID.ToString());
+
+                            SelectedProduct.SubItems.Add(item.Product_Name.ToString());
+                            SelectedProduct.SubItems.Add(item.Product_Description.ToString());
+                            SelectedProduct.SubItems.Add(QtyCount.ToString());
+                            SelectedProduct.SubItems.Add(item.ProductPrice.ToString());
+                            OrdersListView.Items.Add(SelectedProduct);
+
+                            for (int i = 0; i < OrdersListView.Items.Count; i++)
+                            {
+                                if (OrdersListView.Items[i].SubItems[0].Text == SelectedProduct.SubItems[0].Text)
+                                {
+                                    int x = OrdersListView.Items[i].Index;
+
+                                    QtyCount++;
+                                    OrdersListView.Items.RemoveAt(x);
+                                    OrdersListView.Items.Add(SelectedProduct);
+
+                                }
+                                // ===== Compute Total Cost Price
+                                double TotalCostPrice = (from ListViewItem li in OrdersListView.Items
+                                                         select
+                                                             Convert.ToDouble(li.SubItems[4].Text.ToString())).Sum();
+                                //==  Display Total Cost Price Of Orders
+                                TotalCostBox.Text = TotalCostPrice.ToString();
+                                // == Display  Orders Count
+                                OrdersCountBox.Text = OrdersListView.Items.Count.ToString();
+                            }
                         }
                     }
                 }

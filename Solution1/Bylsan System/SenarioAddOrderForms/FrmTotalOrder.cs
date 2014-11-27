@@ -22,7 +22,7 @@ namespace Bylsan_System.SenarioAddOrderForms
 
         #region "Populate ListProducts "
 
-        void CreateListViewProducts()
+        void CreateOrdersListView()
         {
 
 
@@ -42,7 +42,7 @@ namespace Bylsan_System.SenarioAddOrderForms
 
         private void FrmTotalOrder_Load_1(object sender, EventArgs e)
         {
-            CreateListViewProducts();
+            CreateOrdersListView();
             OrdersCountLab.Text = string.Format("Orders Count = {0}", OrdersListView.Items.Count.ToString());
             // ===== جاهز لغاية ما يتم أضافة حقل السعر قي الجدول
             double TotalCostPrice = (from ListViewItem li in OrdersListView.Items
