@@ -124,6 +124,10 @@ namespace Bylsan_System.SenarioAddOrderForms
                         };
                         QuotationProductCmd.AddQuotationProduct(qptb);
                     }
+                    MessageBox.Show("Saved");
+                    ListViewProducts.Items.Clear();
+                    TreeCategories.CollapseAll();
+                    quotationForTextBox.Focus();
                 }
             }
             catch (Exception)
