@@ -35,7 +35,7 @@ namespace Bylsan_System.SenarioAddOrderForms
             {
                 this.Cursor = Cursors.WaitCursor;
                 Op.Filter = "Image Files(*.png; *.jpg; *.bmp)|*.png; *.jpg; *.bmp";
-                productpictureBox.Image = Image.FromFile(Op.FileName);
+            ///  XXXXX.Image = Image.FromFile(Op.FileName);
                 this.Cursor = Cursors.Default;
 
             }
