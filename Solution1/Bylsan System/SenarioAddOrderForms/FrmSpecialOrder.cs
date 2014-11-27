@@ -26,16 +26,27 @@ namespace Bylsan_System.SenarioAddOrderForms
    
 
         #region "    ^^^ Brwose Photo    "
-
+        int i = 0;
+    
         OpenFileDialog Op = new OpenFileDialog();
         private void BrwoseBtn_Click(object sender, EventArgs e)
         {
+            PictureBox pic = new PictureBox();
+            pic.Tag = i;
+            pic.Size = new Size(80, 80);
+            pic.BorderStyle = BorderStyle.FixedSingle;
+            pic.SizeMode = PictureBoxSizeMode.StretchImage;
+            flowLayoutPanel1.Controls.Add(pic);
+            i++;
+            //======================================
             Op = new OpenFileDialog();
             if (Op.ShowDialog() == DialogResult.OK)
             {
                 this.Cursor = Cursors.WaitCursor;
                 Op.Filter = "Image Files(*.png; *.jpg; *.bmp)|*.png; *.jpg; *.bmp";
-            ///  XXXXX.Image = Image.FromFile(Op.FileName);
+                pic.Image = Image.FromFile(Op.FileName);
+                ImageListProducuts.Images.Add(pic.Image );
+            
                 this.Cursor = Cursors.Default;
 
             }

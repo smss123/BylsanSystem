@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.OkyBtn = new Telerik.WinControls.UI.RadButton();
             this.label2 = new System.Windows.Forms.Label();
             this.BrwoseBtn = new Telerik.WinControls.UI.RadButton();
@@ -38,6 +38,8 @@
             this.BrowseBtn = new Telerik.WinControls.UI.RadButton();
             this.label1 = new System.Windows.Forms.Label();
             this.DescriptiontextBox = new System.Windows.Forms.TextBox();
+            this.ImageListProducuts = new System.Windows.Forms.ImageList(this.components);
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OkyBtn)).BeginInit();
@@ -63,20 +65,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Location = new System.Drawing.Point(1, 249);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(460, 118);
+            this.panel1.Size = new System.Drawing.Size(460, 95);
             this.panel1.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(191, 46);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(263, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "هان شوف الاداة المناسبة اللي  تتبين الصور اللي ارتفعت";
             // 
             // OkyBtn
             // 
@@ -137,6 +130,22 @@
             this.DescriptiontextBox.Size = new System.Drawing.Size(368, 115);
             this.DescriptiontextBox.TabIndex = 0;
             // 
+            // ImageListProducuts
+            // 
+            this.ImageListProducuts.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.ImageListProducuts.ImageSize = new System.Drawing.Size(16, 16);
+            this.ImageListProducuts.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(452, 92);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
             // FrmSpecialOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,7 +158,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OkyBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrwoseBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrowseBtn)).EndInit();
@@ -165,9 +173,10 @@
         private System.Windows.Forms.TextBox DescriptiontextBox;
         private System.Windows.Forms.TextBox PathTextBox;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
         private Telerik.WinControls.UI.RadButton OkyBtn;
         private System.Windows.Forms.Label label2;
         private Telerik.WinControls.UI.RadButton BrwoseBtn;
+        private System.Windows.Forms.ImageList ImageListProducuts;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
