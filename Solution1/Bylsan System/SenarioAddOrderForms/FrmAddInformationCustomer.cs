@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using XamaDataLayer.BranchCmd;
 using Bylsan_System.SenarioAddOrderForms;
 using XamaDataLayer.Helper_Classes;
+using XamaDataLayer;
 namespace Bylsan_System.SenarioAddOrderForms
 {
     public partial class FrmAddInformationCustomer : Form
@@ -25,6 +26,8 @@ namespace Bylsan_System.SenarioAddOrderForms
 
 
         }
+        private List<Customer> Cust = new List<Customer>();
+        private Customer CurrnetCust = new Customer();
 
         private void NextBtn_Click(object sender, EventArgs e)
         {
@@ -33,20 +36,22 @@ namespace Bylsan_System.SenarioAddOrderForms
             {
                 if (phoneNumberTextBox.Text != null)
                 {
-                    var GetCurrentCustomerInfor = (from c in CustomersCmd.GetAllCustmers()
+                    var GetCurrentCustomerInfor = (from c in Cust
                                                    where c.PhoneNumber == phoneNumberTextBox.Text
                                                    select c).Single();
                     if (GetCurrentCustomerInfor.ID != 0)
                     {
                         // if Found 
                         //  أنا رحلت بيانات العميل الى الكلاس لأنه ممكن نستخدمها في الفورم التاني
-                        customerNameTextBox.Text = GetCurrentCustomerInfor.CustomerName;
-                        CustomerInformations.WatingCustomer.ID = GetCurrentCustomerInfor.ID;
-                        CustomerInformations.WatingCustomer.PhoneNumber = GetCurrentCustomerInfor.PhoneNumber;
-                        CustomerInformations.WatingCustomer.CustomerName = GetCurrentCustomerInfor.CustomerName;
-                        CustomerInformations.WatingCustomer.AccountID = GetCurrentCustomerInfor.AccountID;
-                        CustomerInformations.WatingCustomer.CreateDate = GetCurrentCustomerInfor.CreateDate;
-                        CustomerInformations.WatingCustomer.Points = GetCurrentCustomerInfor.Points;
+                        CustomerInformations.WatingCustomer = CurrnetCust;
+
+                        //customerNameTextBox.Text = GetCurrentCustomerInfor.CustomerName;
+                        //CustomerInformations.WatingCustomer.ID = GetCurrentCustomerInfor.ID;
+                        //CustomerInformations.WatingCustomer.PhoneNumber = GetCurrentCustomerInfor.PhoneNumber;
+                        //CustomerInformations.WatingCustomer.CustomerName = GetCurrentCustomerInfor.CustomerName;
+                        //CustomerInformations.WatingCustomer.AccountID = GetCurrentCustomerInfor.AccountID;
+                        //CustomerInformations.WatingCustomer.CreateDate = GetCurrentCustomerInfor.CreateDate;
+                        //CustomerInformations.WatingCustomer.Points = GetCurrentCustomerInfor.Points;
                         //=======================================================================================
 
 
@@ -59,8 +64,11 @@ namespace Bylsan_System.SenarioAddOrderForms
             catch (Exception)
             {
                 // Not Found { He Is a New Customer }
-                CustomerInformations.CustmrPhone = phoneNumberTextBox.Text;
-                CustomerInformations.CustmrName = customerNameTextBox.Text;
+                CustomerInformations.CustIni();
+                CustomerInformations.WatingCustomer.PhoneNumber = phoneNumberTextBox.Text;
+                CustomerInformations.WatingCustomer.CustomerName = customerNameTextBox.Text;
+                CustomerInformations.WatingCustomer.CreateDate = DateTime.Now;
+                CustomerInformations.WatingCustomer.Points = 0;
 
             }
 
@@ -111,9 +119,10 @@ namespace Bylsan_System.SenarioAddOrderForms
               
                 if (phoneNumberTextBox.Text != null)
                 {
-                    var GetCurrentCustomerInfor = (from c in CustomersCmd.GetAllCustmers()
+                    var GetCurrentCustomerInfor = (from c in Cust
                                                    where c.PhoneNumber == phoneNumberTextBox.Text
                                                    select c).Single();
+                    this.CurrnetCust = GetCurrentCustomerInfor;
                     if (GetCurrentCustomerInfor.ID != 0)
                     {
                         // if Found 
@@ -153,6 +162,13 @@ namespace Bylsan_System.SenarioAddOrderForms
                 CustomerInformations.CustmrName = customerNameTextBox.Text;
 
             }
+            Operation.EndOperation(this);
+        }
+
+        private void FrmAddInformationCustomer_Load(object sender, EventArgs e)
+        {
+            Operation.BeginOperation(this);
+            Cust = CustomersCmd.GetAllCustmers();
             Operation.EndOperation(this);
         }
     }

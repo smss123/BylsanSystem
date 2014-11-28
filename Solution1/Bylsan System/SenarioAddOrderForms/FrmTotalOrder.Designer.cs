@@ -28,11 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.CustomerInfomationGroupBox = new System.Windows.Forms.GroupBox();
+            this.txtPayment = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.TotalPriceBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.receiptdateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.AdresstextBox = new System.Windows.Forms.TextBox();
+            this.AddresstextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,18 +48,26 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.OrdersCountLab = new System.Windows.Forms.Label();
             this.OkeyBtn = new Telerik.WinControls.UI.RadButton();
-            this.OrdersListView = new System.Windows.Forms.ListView();
+            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
+            this.txtBranches = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.CustomerInfomationGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OkeyBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
             this.SuspendLayout();
             // 
             // CustomerInfomationGroupBox
             // 
+            this.CustomerInfomationGroupBox.Controls.Add(this.txtBranches);
+            this.CustomerInfomationGroupBox.Controls.Add(this.txtPayment);
+            this.CustomerInfomationGroupBox.Controls.Add(this.label1);
             this.CustomerInfomationGroupBox.Controls.Add(this.TotalPriceBox);
             this.CustomerInfomationGroupBox.Controls.Add(this.label6);
             this.CustomerInfomationGroupBox.Controls.Add(this.receiptdateTimePicker);
-            this.CustomerInfomationGroupBox.Controls.Add(this.AdresstextBox);
+            this.CustomerInfomationGroupBox.Controls.Add(this.AddresstextBox);
+            this.CustomerInfomationGroupBox.Controls.Add(this.label7);
             this.CustomerInfomationGroupBox.Controls.Add(this.label3);
             this.CustomerInfomationGroupBox.Controls.Add(this.label2);
             this.CustomerInfomationGroupBox.Controls.Add(this.label4);
@@ -68,11 +82,27 @@
             this.CustomerInfomationGroupBox.TabStop = false;
             this.CustomerInfomationGroupBox.Text = "Customer Infomation";
             // 
+            // txtPayment
+            // 
+            this.txtPayment.Location = new System.Drawing.Point(299, 111);
+            this.txtPayment.Name = "txtPayment";
+            this.txtPayment.Size = new System.Drawing.Size(213, 22);
+            this.txtPayment.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(243, 114);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Payment:";
+            // 
             // TotalPriceBox
             // 
             this.TotalPriceBox.Location = new System.Drawing.Point(299, 83);
             this.TotalPriceBox.Name = "TotalPriceBox";
-            this.TotalPriceBox.Size = new System.Drawing.Size(213, 20);
+            this.TotalPriceBox.Size = new System.Drawing.Size(213, 22);
             this.TotalPriceBox.TabIndex = 9;
             // 
             // label6
@@ -80,7 +110,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(235, 86);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 13);
+            this.label6.Size = new System.Drawing.Size(61, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "Total Cost:";
             // 
@@ -90,22 +120,22 @@
             this.receiptdateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.receiptdateTimePicker.Location = new System.Drawing.Point(299, 25);
             this.receiptdateTimePicker.Name = "receiptdateTimePicker";
-            this.receiptdateTimePicker.Size = new System.Drawing.Size(107, 20);
+            this.receiptdateTimePicker.Size = new System.Drawing.Size(213, 22);
             this.receiptdateTimePicker.TabIndex = 5;
             // 
-            // AdresstextBox
+            // AddresstextBox
             // 
-            this.AdresstextBox.Location = new System.Drawing.Point(299, 54);
-            this.AdresstextBox.Name = "AdresstextBox";
-            this.AdresstextBox.Size = new System.Drawing.Size(213, 20);
-            this.AdresstextBox.TabIndex = 7;
+            this.AddresstextBox.Location = new System.Drawing.Point(299, 54);
+            this.AddresstextBox.Name = "AddresstextBox";
+            this.AddresstextBox.Size = new System.Drawing.Size(213, 22);
+            this.AddresstextBox.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(23, 54);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
+            this.label3.Size = new System.Drawing.Size(92, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Customer Phone";
             // 
@@ -114,25 +144,25 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(23, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 13);
+            this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Customer Name ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(245, 58);
+            this.label4.Location = new System.Drawing.Point(202, 57);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 13);
+            this.label4.Size = new System.Drawing.Size(94, 13);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Address:";
+            this.label4.Text = "Delivery Address:";
             // 
             // NameLab
             // 
             this.NameLab.AutoSize = true;
             this.NameLab.Location = new System.Drawing.Point(127, 31);
             this.NameLab.Name = "NameLab";
-            this.NameLab.Size = new System.Drawing.Size(35, 13);
+            this.NameLab.Size = new System.Drawing.Size(38, 13);
             this.NameLab.TabIndex = 1;
             this.NameLab.Text = "label3";
             // 
@@ -141,18 +171,18 @@
             this.PhoneLab.AutoSize = true;
             this.PhoneLab.Location = new System.Drawing.Point(127, 54);
             this.PhoneLab.Name = "PhoneLab";
-            this.PhoneLab.Size = new System.Drawing.Size(35, 13);
+            this.PhoneLab.Size = new System.Drawing.Size(38, 13);
             this.PhoneLab.TabIndex = 0;
             this.PhoneLab.Text = "label2";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(215, 27);
+            this.label5.Location = new System.Drawing.Point(219, 28);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 13);
+            this.label5.Size = new System.Drawing.Size(77, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Date of receipt:";
+            this.label5.Text = "Delivery Date:";
             // 
             // panel1
             // 
@@ -169,7 +199,7 @@
             this.OrdersCountLab.AutoSize = true;
             this.OrdersCountLab.Location = new System.Drawing.Point(23, 15);
             this.OrdersCountLab.Name = "OrdersCountLab";
-            this.OrdersCountLab.Size = new System.Drawing.Size(75, 13);
+            this.OrdersCountLab.Size = new System.Drawing.Size(80, 13);
             this.OrdersCountLab.TabIndex = 1;
             this.OrdersCountLab.Text = "Orders Count ";
             // 
@@ -182,23 +212,70 @@
             this.OkeyBtn.Text = "Ok";
             this.OkeyBtn.Click += new System.EventHandler(this.OkeyBtn_Click);
             // 
-            // OrdersListView
+            // radGridView1
             // 
-            this.OrdersListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OrdersListView.FullRowSelect = true;
-            this.OrdersListView.GridLines = true;
-            this.OrdersListView.Location = new System.Drawing.Point(0, 133);
-            this.OrdersListView.Name = "OrdersListView";
-            this.OrdersListView.Size = new System.Drawing.Size(524, 261);
-            this.OrdersListView.TabIndex = 10;
-            this.OrdersListView.UseCompatibleStateImageBehavior = false;
+            this.radGridView1.BackColor = System.Drawing.SystemColors.Control;
+            this.radGridView1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.radGridView1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.radGridView1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.radGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.radGridView1.Location = new System.Drawing.Point(0, 139);
+            // 
+            // radGridView1
+            // 
+            this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn5.FieldName = "Product.Product_Name";
+            gridViewTextBoxColumn5.HeaderText = "Name";
+            gridViewTextBoxColumn5.Name = "ColName";
+            gridViewTextBoxColumn5.Width = 126;
+            gridViewTextBoxColumn6.Expression = "";
+            gridViewTextBoxColumn6.FieldName = "Qty";
+            gridViewTextBoxColumn6.HeaderText = "Qty";
+            gridViewTextBoxColumn6.Name = "ColQty";
+            gridViewTextBoxColumn6.Width = 126;
+            gridViewTextBoxColumn7.FieldName = "Product.ProductPrice";
+            gridViewTextBoxColumn7.HeaderText = "Product Price";
+            gridViewTextBoxColumn7.Name = "ColProductPrice";
+            gridViewTextBoxColumn7.Width = 126;
+            gridViewTextBoxColumn8.EnableExpressionEditor = true;
+            gridViewTextBoxColumn8.Expression = "ColProductPrice * ColQty";
+            gridViewTextBoxColumn8.HeaderText = "Price";
+            gridViewTextBoxColumn8.Name = "ColPrice";
+            gridViewTextBoxColumn8.Width = 128;
+            this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8});
+            this.radGridView1.Name = "radGridView1";
+            this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.radGridView1.Size = new System.Drawing.Size(524, 253);
+            this.radGridView1.TabIndex = 14;
+            this.radGridView1.Text = "radGridView1";
+            // 
+            // txtBranches
+            // 
+            this.txtBranches.FormattingEnabled = true;
+            this.txtBranches.Location = new System.Drawing.Point(108, 86);
+            this.txtBranches.Name = "txtBranches";
+            this.txtBranches.Size = new System.Drawing.Size(121, 21);
+            this.txtBranches.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(10, 89);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Delivery Branch:";
             // 
             // FrmTotalOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 438);
-            this.Controls.Add(this.OrdersListView);
+            this.Controls.Add(this.radGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CustomerInfomationGroupBox);
             this.Name = "FrmTotalOrder";
@@ -210,6 +287,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OkeyBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -220,7 +299,6 @@
         private System.Windows.Forms.Panel panel1;
         private Telerik.WinControls.UI.RadButton OkeyBtn;
         private System.Windows.Forms.Label OrdersCountLab;
-        public System.Windows.Forms.ListView OrdersListView;
         public System.Windows.Forms.Label NameLab;
         public System.Windows.Forms.Label PhoneLab;
         private System.Windows.Forms.Label label3;
@@ -228,8 +306,13 @@
         private System.Windows.Forms.TextBox TotalPriceBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker receiptdateTimePicker;
-        private System.Windows.Forms.TextBox AdresstextBox;
+        private System.Windows.Forms.TextBox AddresstextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private Telerik.WinControls.UI.RadGridView radGridView1;
+        private System.Windows.Forms.TextBox txtPayment;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox txtBranches;
+        private System.Windows.Forms.Label label7;
     }
 }

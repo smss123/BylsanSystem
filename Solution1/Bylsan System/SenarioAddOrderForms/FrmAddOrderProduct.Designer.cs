@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddOrderProduct));
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Publicnamelab = new System.Windows.Forms.Label();
@@ -43,11 +47,6 @@
             this.CustomerPhoneLab = new System.Windows.Forms.Label();
             this.CustomerNameLab = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.OrdersCountBox = new System.Windows.Forms.TextBox();
-            this.TotalCostBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.OrdersListView = new System.Windows.Forms.ListView();
             this.ListViewProductes = new System.Windows.Forms.ListView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.titleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,19 +57,22 @@
             this.ExpandAll = new System.Windows.Forms.Button();
             this.TreeCategories = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nextBtn)).BeginInit();
             this.CustomerInfomationGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 590);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1018, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1174, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -82,9 +84,9 @@
             this.panel1.Controls.Add(this.PhotoBox);
             this.panel1.Controls.Add(this.nextBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 398);
+            this.panel1.Location = new System.Drawing.Point(0, 458);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1018, 192);
+            this.panel1.Size = new System.Drawing.Size(1174, 132);
             this.panel1.TabIndex = 3;
             // 
             // Publicnamelab
@@ -92,7 +94,7 @@
             this.Publicnamelab.AutoSize = true;
             this.Publicnamelab.Location = new System.Drawing.Point(196, 84);
             this.Publicnamelab.Name = "Publicnamelab";
-            this.Publicnamelab.Size = new System.Drawing.Size(35, 13);
+            this.Publicnamelab.Size = new System.Drawing.Size(38, 13);
             this.Publicnamelab.TabIndex = 4;
             this.Publicnamelab.Text = "label1";
             // 
@@ -101,7 +103,7 @@
             this.ProductDescriotionLab.AutoSize = true;
             this.ProductDescriotionLab.Location = new System.Drawing.Point(196, 48);
             this.ProductDescriotionLab.Name = "ProductDescriotionLab";
-            this.ProductDescriotionLab.Size = new System.Drawing.Size(35, 13);
+            this.ProductDescriotionLab.Size = new System.Drawing.Size(38, 13);
             this.ProductDescriotionLab.TabIndex = 3;
             this.ProductDescriotionLab.Text = "label2";
             // 
@@ -121,14 +123,14 @@
             this.PhotoBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PhotoBox.Location = new System.Drawing.Point(22, 17);
             this.PhotoBox.Name = "PhotoBox";
-            this.PhotoBox.Size = new System.Drawing.Size(142, 125);
+            this.PhotoBox.Size = new System.Drawing.Size(142, 103);
             this.PhotoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PhotoBox.TabIndex = 1;
             this.PhotoBox.TabStop = false;
             // 
             // nextBtn
             // 
-            this.nextBtn.Location = new System.Drawing.Point(871, 133);
+            this.nextBtn.Location = new System.Drawing.Point(871, 83);
             this.nextBtn.Name = "nextBtn";
             this.nextBtn.Size = new System.Drawing.Size(144, 46);
             this.nextBtn.TabIndex = 0;
@@ -144,7 +146,7 @@
             this.CustomerInfomationGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.CustomerInfomationGroupBox.Location = new System.Drawing.Point(0, 0);
             this.CustomerInfomationGroupBox.Name = "CustomerInfomationGroupBox";
-            this.CustomerInfomationGroupBox.Size = new System.Drawing.Size(1018, 86);
+            this.CustomerInfomationGroupBox.Size = new System.Drawing.Size(1174, 86);
             this.CustomerInfomationGroupBox.TabIndex = 6;
             this.CustomerInfomationGroupBox.TabStop = false;
             this.CustomerInfomationGroupBox.Text = "Customer Infomation";
@@ -165,7 +167,7 @@
             this.CustomerPhoneLab.AutoSize = true;
             this.CustomerPhoneLab.Location = new System.Drawing.Point(58, 50);
             this.CustomerPhoneLab.Name = "CustomerPhoneLab";
-            this.CustomerPhoneLab.Size = new System.Drawing.Size(35, 13);
+            this.CustomerPhoneLab.Size = new System.Drawing.Size(38, 13);
             this.CustomerPhoneLab.TabIndex = 1;
             this.CustomerPhoneLab.Text = "label2";
             // 
@@ -174,17 +176,13 @@
             this.CustomerNameLab.AutoSize = true;
             this.CustomerNameLab.Location = new System.Drawing.Point(58, 26);
             this.CustomerNameLab.Name = "CustomerNameLab";
-            this.CustomerNameLab.Size = new System.Drawing.Size(35, 13);
+            this.CustomerNameLab.Size = new System.Drawing.Size(38, 13);
             this.CustomerNameLab.TabIndex = 0;
             this.CustomerNameLab.Text = "label1";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.OrdersCountBox);
-            this.groupBox1.Controls.Add(this.TotalCostBox);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.OrdersListView);
+            this.groupBox1.Controls.Add(this.radGridView1);
             this.groupBox1.Controls.Add(this.ListViewProductes);
             this.groupBox1.Controls.Add(this.CollapseBtn);
             this.groupBox1.Controls.Add(this.ExpandAll);
@@ -192,59 +190,10 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 86);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1018, 312);
+            this.groupBox1.Size = new System.Drawing.Size(1174, 372);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order";
-            // 
-            // OrdersCountBox
-            // 
-            this.OrdersCountBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrdersCountBox.Location = new System.Drawing.Point(276, 283);
-            this.OrdersCountBox.Name = "OrdersCountBox";
-            this.OrdersCountBox.ReadOnly = true;
-            this.OrdersCountBox.Size = new System.Drawing.Size(100, 22);
-            this.OrdersCountBox.TabIndex = 12;
-            this.OrdersCountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TotalCostBox
-            // 
-            this.TotalCostBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalCostBox.Location = new System.Drawing.Point(643, 283);
-            this.TotalCostBox.Name = "TotalCostBox";
-            this.TotalCostBox.ReadOnly = true;
-            this.TotalCostBox.Size = new System.Drawing.Size(100, 22);
-            this.TotalCostBox.TabIndex = 11;
-            this.TotalCostBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(555, 288);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Total Cost Price : ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(196, 283);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = " Orders Count :  ";
-            // 
-            // OrdersListView
-            // 
-            this.OrdersListView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.OrdersListView.FullRowSelect = true;
-            this.OrdersListView.GridLines = true;
-            this.OrdersListView.Location = new System.Drawing.Point(186, 160);
-            this.OrdersListView.Name = "OrdersListView";
-            this.OrdersListView.Size = new System.Drawing.Size(575, 119);
-            this.OrdersListView.TabIndex = 8;
-            this.OrdersListView.UseCompatibleStateImageBehavior = false;
             // 
             // ListViewProductes
             // 
@@ -257,9 +206,10 @@
             this.ListViewProductes.GridLines = true;
             this.ListViewProductes.Location = new System.Drawing.Point(186, 19);
             this.ListViewProductes.Name = "ListViewProductes";
-            this.ListViewProductes.Size = new System.Drawing.Size(575, 135);
+            this.ListViewProductes.Size = new System.Drawing.Size(575, 347);
             this.ListViewProductes.TabIndex = 7;
             this.ListViewProductes.UseCompatibleStateImageBehavior = false;
+            this.ListViewProductes.SelectedIndexChanged += new System.EventHandler(this.ListViewProductes_SelectedIndexChanged);
             this.ListViewProductes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListViewProductes_MouseClick);
             // 
             // contextMenuStrip1
@@ -338,11 +288,52 @@
             this.imageList1.Images.SetKeyName(0, "eye.png");
             this.imageList1.Images.SetKeyName(1, "award_star_bronze_2.png");
             // 
+            // radGridView1
+            // 
+            this.radGridView1.BackColor = System.Drawing.SystemColors.Control;
+            this.radGridView1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.radGridView1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.radGridView1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.radGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.radGridView1.Location = new System.Drawing.Point(768, 20);
+            // 
+            // radGridView1
+            // 
+            this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn1.FieldName = "Product.Product_Name";
+            gridViewTextBoxColumn1.HeaderText = "Name";
+            gridViewTextBoxColumn1.Name = "ColName";
+            gridViewTextBoxColumn1.Width = 97;
+            gridViewTextBoxColumn2.Expression = "";
+            gridViewTextBoxColumn2.FieldName = "Qty";
+            gridViewTextBoxColumn2.HeaderText = "Qty";
+            gridViewTextBoxColumn2.Name = "ColQty";
+            gridViewTextBoxColumn2.Width = 97;
+            gridViewTextBoxColumn3.FieldName = "Product.ProductPrice";
+            gridViewTextBoxColumn3.HeaderText = "Product Price";
+            gridViewTextBoxColumn3.Name = "ColProductPrice";
+            gridViewTextBoxColumn3.Width = 97;
+            gridViewTextBoxColumn4.EnableExpressionEditor = true;
+            gridViewTextBoxColumn4.Expression = "ColProductPrice * ColQty";
+            gridViewTextBoxColumn4.HeaderText = "Price";
+            gridViewTextBoxColumn4.Name = "ColPrice";
+            gridViewTextBoxColumn4.Width = 97;
+            this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4});
+            this.radGridView1.Name = "radGridView1";
+            this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.radGridView1.Size = new System.Drawing.Size(406, 346);
+            this.radGridView1.TabIndex = 13;
+            this.radGridView1.Text = "radGridView1";
+            // 
             // FrmAddOrderProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 612);
+            this.ClientSize = new System.Drawing.Size(1174, 612);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CustomerInfomationGroupBox);
             this.Controls.Add(this.panel1);
@@ -358,8 +349,9 @@
             this.CustomerInfomationGroupBox.ResumeLayout(false);
             this.CustomerInfomationGroupBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,11 +381,7 @@
         private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem largeIconToolStripMenuItem;
-        private System.Windows.Forms.ListView OrdersListView;
         private System.Windows.Forms.Label Publicnamelab;
-        private System.Windows.Forms.TextBox OrdersCountBox;
-        private System.Windows.Forms.TextBox TotalCostBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private Telerik.WinControls.UI.RadGridView radGridView1;
     }
 }

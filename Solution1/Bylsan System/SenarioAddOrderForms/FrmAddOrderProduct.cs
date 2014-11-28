@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using System.IO;
 using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Helper_Classes;
+using XamaDataLayer;
+using System.Data.Linq;
 
 namespace Bylsan_System.SenarioAddOrderForms
 {
@@ -19,7 +21,7 @@ namespace Bylsan_System.SenarioAddOrderForms
         public FrmAddOrderProduct()
         {
             InitializeComponent();
-            ProductImageList.ImageSize =new Size(70,70);
+            ProductImageList.ImageSize = new Size(70, 70);
         }
         ImageList ProductImageList = new ImageList();
         public int CustomerID { get; set; }
@@ -78,6 +80,7 @@ namespace Bylsan_System.SenarioAddOrderForms
             ImportCustomerData();
             PopulateCategoreisTree();
             CreateOrdersListView();
+            CustomerInformations.Orderini();
         }
 
 
@@ -106,12 +109,12 @@ namespace Bylsan_System.SenarioAddOrderForms
 
             //==============================================================================
 
-            OrdersListView.View = View.Details;
-            OrdersListView.Columns.Add("ID", 30, HorizontalAlignment.Center);
-            OrdersListView.Columns.Add("Product", 170, HorizontalAlignment.Center);
-            OrdersListView.Columns.Add("Description", 170, HorizontalAlignment.Center);
-            OrdersListView.Columns.Add("Quantity", 100, HorizontalAlignment.Center);
-            OrdersListView.Columns.Add("Price", 70, HorizontalAlignment.Center);
+            //OrdersListView.View = View.Details;
+            //OrdersListView.Columns.Add("ID", 30, HorizontalAlignment.Center);
+            //OrdersListView.Columns.Add("Product", 170, HorizontalAlignment.Center);
+            //OrdersListView.Columns.Add("Description", 170, HorizontalAlignment.Center);
+            //OrdersListView.Columns.Add("Quantity", 100, HorizontalAlignment.Center);
+            //OrdersListView.Columns.Add("Price", 70, HorizontalAlignment.Center);
         }
 
 
@@ -162,8 +165,11 @@ namespace Bylsan_System.SenarioAddOrderForms
         #endregion
 
         public int PrdID { get; set; }
+        public List<OrderProduct> selectedProductX { get; set; }
+        private int QtyCounter = 0;
         private void ListViewProductes_MouseClick(object sender, MouseEventArgs e)
         {
+            QtyCounter++;
             Operation.BeginOperation(this);
             try
             {
@@ -197,7 +203,7 @@ namespace Bylsan_System.SenarioAddOrderForms
 
 
                             ListViewItem Itm = new ListViewItem(item.ID.ToString());
-                            Itm.SubItems[0].ForeColor = Color.Green;
+                            //Itm.SubItems[0].ForeColor = Color.Green;
                             Itm.SubItems.Add(item.Product_Name.ToString());
 
                             Itm.SubItems.Add(item.Product_Description.ToString());
@@ -207,41 +213,43 @@ namespace Bylsan_System.SenarioAddOrderForms
                             //========================================
                             // start Work With Orders :
 
-                            int QtyCount = 1;
-                            ListViewItem SelectedProduct = new ListViewItem(item.ID.ToString());
-
-                            SelectedProduct.SubItems.Add(item.Product_Name.ToString());
-                            SelectedProduct.SubItems.Add(item.Product_Description.ToString());
-                            SelectedProduct.SubItems.Add(QtyCount.ToString());
-                            SelectedProduct.SubItems.Add(item.ProductPrice.ToString());
-                            OrdersListView.Items.Add(SelectedProduct);
-
-                            for (int i = 0; i < OrdersListView.Items.Count; i++)
+                            var q = CustomerInformations.WaitingOrder.OrderProducts.Where(p => p.ProductID == MyProdctut[0].ID).SingleOrDefault();
+                            if (q == null)
                             {
-                                if (OrdersListView.Items[i].SubItems[0].Text == SelectedProduct.SubItems[0].Text)
+                                CustomerInformations.WaitingOrder.OrderProducts.Add(new OrderProduct()
                                 {
-                                    int x = OrdersListView.Items[i].Index;
+                                    Product = MyProdctut[0],
+                                    Qty = QtyCounter,
+                                    Status = "Created"
 
-                                    QtyCount++;
-                                    OrdersListView.Items.RemoveAt(x);
-                                    OrdersListView.Items.Add(SelectedProduct);
+                                });
+                                QtyCounter=0;
+                            }
+                            else
+                            {
+                                q.Qty = q.Qty + 1;
+                                
+                            }
+                           
+                           radGridView1.DataSource = CustomerInformations.WaitingOrder.OrderProducts.ToList();
 
-                                }
-                                // ===== Compute Total Cost Price
-                                double TotalCostPrice = (from ListViewItem li in OrdersListView.Items
-                                                         select
-                                                             Convert.ToDouble(li.SubItems[4].Text.ToString())).Sum();
-                                //==  Display Total Cost Price Of Orders
-                                TotalCostBox.Text = TotalCostPrice.ToString();
-                                // == Display  Orders Count
-                                OrdersCountBox.Text = OrdersListView.Items.Count.ToString();
+                          
+                            
+                            //// ===== Compute Total Cost Price
+                            //    ////double TotalCostPrice = (from ListViewItem li in OrdersListView.Items
+                            //    ////                         select
+                            //    ////                             Convert.ToDouble(li.SubItems[4].Text.ToString())).Sum();
+                            //    ////==  Display Total Cost Price Of Orders
+                            //    //TotalCostBox.Text = TotalCostPrice.ToString();
+                            //    //// == Display  Orders Count
+                            //    //OrdersCountBox.Text = OrdersListView.Items.Count.ToString();
                             }
                         }
                     }
                 }
-                    
-               
-            }
+
+
+            
             catch (Exception)
             {
 
@@ -250,20 +258,14 @@ namespace Bylsan_System.SenarioAddOrderForms
             Operation.EndOperation(this);
         }
 
-       
+
         private void nextBtn_Click_1(object sender, EventArgs e)
         {
-           
-	
 
-                ListViewItem itemClone;
-                ListView.ListViewItemCollection coll = OrdersListView.Items;
-                foreach (ListViewItem item in coll)
-                {
-                itemClone = item.Clone() as ListViewItem;
-                OrdersListView.Items.Remove(item);
-                frm .OrdersListView.Items.Add(itemClone);
-                }
+
+
+
+            frm.TragetOrderType = OrderTypeCheckLab.Text;
 
             frm.Show();
             this.Hide();
@@ -276,20 +278,25 @@ namespace Bylsan_System.SenarioAddOrderForms
 
         private void listToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListViewProductes.View = View.List ;
+            ListViewProductes.View = View.List;
         }
 
         private void detailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListViewProductes.View = View.Details ;
+            ListViewProductes.View = View.Details;
         }
 
         private void largeIconToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListViewProductes.View = View.LargeIcon ;
+            ListViewProductes.View = View.LargeIcon;
         }
 
         private void TreeCategories_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void ListViewProductes_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

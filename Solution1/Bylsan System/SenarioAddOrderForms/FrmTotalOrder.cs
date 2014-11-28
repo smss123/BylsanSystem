@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Helper_Classes;
-
+using XamaDataLayer.Security;
+using Xprema.XExtention;
 namespace Bylsan_System.SenarioAddOrderForms
 { // 1
     public partial class FrmTotalOrder : Form
@@ -19,43 +20,51 @@ namespace Bylsan_System.SenarioAddOrderForms
         {
             InitializeComponent();
         }
-
-        #region "Populate ListProducts "
-
-        void CreateOrdersListView()
-        {
-
-
-
-
-            OrdersListView.View = View.Details;
-            OrdersListView.Columns.Add("ID", 30, HorizontalAlignment.Center);
-            OrdersListView.Columns.Add("Product", 170, HorizontalAlignment.Center);
-            OrdersListView.Columns.Add("Description", 170, HorizontalAlignment.Center);
-            OrdersListView.Columns.Add("Quantity", 100, HorizontalAlignment.Center);
-            OrdersListView.Columns.Add("Price", 70, HorizontalAlignment.Center);
-
-        }
-
-        #endregion
+        public string  TragetOrderType { get; set; }
+      
 
 
         private void FrmTotalOrder_Load_1(object sender, EventArgs e)
         {
-            CreateOrdersListView();
-            OrdersCountLab.Text = string.Format("Orders Count = {0}", OrdersListView.Items.Count.ToString());
-            // ===== جاهز لغاية ما يتم أضافة حقل السعر قي الجدول
-            double TotalCostPrice = (from ListViewItem li in OrdersListView.Items
-                                     select
-                                         Convert.ToDouble(li.SubItems[4].Text.ToString())).Sum();
-            TotalPriceBox.Text = TotalCostPrice.ToString();
-            OrdersCountLab.Text = OrdersListView.Items.Count.ToString();
+            Operation.BeginOperation(this);
+            txtBranches.DataSource = BranchsCmd.GetAllBranchs();
+            txtBranches.DisplayMember = "Branch_Name";
+            txtBranches.ValueMember = "ID";
+            radGridView1.DataSource = CustomerInformations.WaitingOrder.OrderProducts.ToList();
 
+            float TotalPrice = 0f;
+           
+            foreach (var item in radGridView1.Rows)
+            {
+
+
+                TotalPrice += item.Cells[3].Value.ToString().ToFloat();
+            }
+            TotalPriceBox.Text = TotalPrice.ToString();
+
+            Operation.EndOperation(this);
         }
 
         private void OkeyBtn_Click(object sender, EventArgs e)
         {
-           
+            CustomerInformations.WaitingOrder.Customer = CustomerInformations.WatingCustomer;
+            CustomerInformations.WaitingOrder.Branch_ID = UserInfo.CurrnetUser.Branch_ID;
+            CustomerInformations.WaitingOrder.DeliverdToBranch =  txtBranches.SelectedValue.ToString().ToInt();
+            CustomerInformations.WaitingOrder.OrderDate = DateTime.Now;
+            CustomerInformations.WaitingOrder.OrderDelivery = AddresstextBox.Text;
+            CustomerInformations.WaitingOrder.OrderDeliveryDate = receiptdateTimePicker.Value;
+            CustomerInformations.WaitingOrder.OrderName=CustomerInformations.WatingCustomer.CustomerName+"_"+DateTime.Now.ToString();
+            CustomerInformations.WaitingOrder.OrderStatus="Designer";
+            CustomerInformations.WaitingOrder.OrderType=this.TragetOrderType;
+            CustomerInformations.WaitingOrder.OrderVerify="from Branch";
+            CustomerInformations.WaitingOrder.TotalAmount = TotalPriceBox.Text.Todouble();
+            //OrdersCmd.AddNewOrder(CustomerInformations.WaitingOrder);
+            DbDataContext db = new DbDataContext();
+            db.DeferredLoadingEnabled = false;
+            db.Orders.InsertOnSubmit(CustomerInformations.WaitingOrder);
+            db.SubmitChanges();
+            
+
         }
 
 
