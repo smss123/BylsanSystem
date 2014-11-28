@@ -51,12 +51,12 @@ namespace XamaDataLayer.BranchCmd
                       select b).ToList();
            return lst;
        }
-       public static List<Branch> GetAllBranchByBarnchID(int BranId)
+       public static List<Branch> GetBranchByBarnchID(int xid)
        {
            db = new DbDataContext();
            var lst = (from b in db.Branches
                       orderby b.CreatedDate ascending
-                      where b.ID == BranId 
+                      where b.ID ==  xid 
                       select b).ToList();
            return lst;
        }
