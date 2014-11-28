@@ -8,6 +8,14 @@ namespace XamaDataLayer.Helper_Classes
 {
    public   class CustomerInformations
     {
+       public static void Orderini()
+       {
+           WaitingOrder = new Order();
+       }
+       public static void CustIni()
+       {
+           WatingCustomer = new Customer();
+       }
         public static  Customer  WatingCustomer  { get; set; }
         public static   Order WaitingOrder { get; set; }
 

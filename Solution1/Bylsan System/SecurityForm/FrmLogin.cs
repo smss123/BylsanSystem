@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using XamaDataLayer;
+using XamaDataLayer.Helper_Classes;
 using XamaDataLayer.Security; 
 namespace Bylsan_System.SecurityForm
 {
@@ -66,15 +67,22 @@ namespace Bylsan_System.SecurityForm
 
             }
             #endregion
-            
+
+            Operation.BeginOperation(this);
           var  q =   UserCmd.Login(UserNameTextBox.Text, PasswordTextBox.Text);
             if (q != null)
             {
+                UserInfo.CurrnetUser = q;
               this.Text=   UserInfo.CurrentUserName;
-                //Continue Login;
+              MainForm frm = new MainForm();
+              frm.Show();
+              this.Hide();
+              Operation.EndOperation(this);
+
             }
             else
             {
+                Operation.EndOperation(this);
                 RadMessageBox.Show("Error in Login Info");//Load msg from Opertation Class
             }
         }
