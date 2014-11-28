@@ -42,17 +42,8 @@ namespace Bylsan_System.SenarioAddOrderForms
                     if (GetCurrentCustomerInfor.ID != 0)
                     {
                         // if Found 
-                        //  أنا رحلت بيانات العميل الى الكلاس لأنه ممكن نستخدمها في الفورم التاني
+                       
                         CustomerInformations.WatingCustomer = CurrnetCust;
-
-                        //customerNameTextBox.Text = GetCurrentCustomerInfor.CustomerName;
-                        //CustomerInformations.WatingCustomer.ID = GetCurrentCustomerInfor.ID;
-                        //CustomerInformations.WatingCustomer.PhoneNumber = GetCurrentCustomerInfor.PhoneNumber;
-                        //CustomerInformations.WatingCustomer.CustomerName = GetCurrentCustomerInfor.CustomerName;
-                        //CustomerInformations.WatingCustomer.AccountID = GetCurrentCustomerInfor.AccountID;
-                        //CustomerInformations.WatingCustomer.CreateDate = GetCurrentCustomerInfor.CreateDate;
-                        //CustomerInformations.WatingCustomer.Points = GetCurrentCustomerInfor.Points;
-                        //=======================================================================================
 
 
 
@@ -74,12 +65,12 @@ namespace Bylsan_System.SenarioAddOrderForms
 
             //===================================================================
             FrmAddOrderProduct frm = new FrmAddOrderProduct();
-
+         
             if (SpecialOrderCheckBox.CheckState == CheckState.Checked)
-            { frm.OrderTypeCheckLab.Text = string.Format("Special Order"); }
+            { frm.OrderTypeCheckLab.Text = string.Format("Special Order");  }
 
             if (NormalOrdercheckBox.CheckState == CheckState.Checked)
-            { frm.OrderTypeCheckLab.Text = string.Format("Normal Order"); }
+            { frm.OrderTypeCheckLab.Text = string.Format("Normal Order");  }
             //======================================================================
 
 
