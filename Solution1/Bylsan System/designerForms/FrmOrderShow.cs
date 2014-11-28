@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using XamaDataLayer;
+using XamaDataLayer.BranchCmd;
 namespace Bylsan_System.designerForms
 {
     public partial class FrmOrderShow : Form
@@ -19,7 +21,7 @@ namespace Bylsan_System.designerForms
 
         private void FrmOrderShow_Load(object sender, EventArgs e)
         {
-
+            DGVOrders.DataSource = OrdersCmd.GetAllOrdersInDesigner();
         }
     }
 }
