@@ -11,6 +11,7 @@ namespace XamaDataLayer.Security
        public static int CurrentUserID = 0;
        public static string CurrentUserName = "";
        public static string CurrentUserPassword = "";
+       public static User CurrnetUser { get; set; }
 
     }
 }
