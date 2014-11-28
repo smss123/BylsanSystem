@@ -8,8 +8,10 @@ namespace XamaDataLayer.BranchCmd
 {
    public static  class OrdersCmd
     {
-
+      
        static DbDataContext db = new DbDataContext();
+
+       //  ^^^ UnUsed =====================================
        public static bool AddNewOrder(Order tb)
        {
            db = new DbDataContext();
@@ -17,7 +19,7 @@ namespace XamaDataLayer.BranchCmd
            db.SubmitChanges();
            return true;
        }
-
+       //================================================
        public static Order EditOrder(Order tb, int xid)
        {
            db = new DbDataContext();
