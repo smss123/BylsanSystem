@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.CustomerInfomationGroupBox = new System.Windows.Forms.GroupBox();
             this.txtBranches = new System.Windows.Forms.ComboBox();
             this.txtPayment = new System.Windows.Forms.TextBox();
@@ -49,9 +49,10 @@
             this.PhoneLab = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.OrdersCountLab = new System.Windows.Forms.Label();
+            this.OrderTypeLab = new System.Windows.Forms.Label();
             this.OkeyBtn = new Telerik.WinControls.UI.RadButton();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
+            this.label8 = new System.Windows.Forms.Label();
             this.CustomerInfomationGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OkeyBtn)).BeginInit();
@@ -61,6 +62,8 @@
             // 
             // CustomerInfomationGroupBox
             // 
+            this.CustomerInfomationGroupBox.Controls.Add(this.OrderTypeLab);
+            this.CustomerInfomationGroupBox.Controls.Add(this.label8);
             this.CustomerInfomationGroupBox.Controls.Add(this.txtBranches);
             this.CustomerInfomationGroupBox.Controls.Add(this.txtPayment);
             this.CustomerInfomationGroupBox.Controls.Add(this.label1);
@@ -207,7 +210,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.OrdersCountLab);
             this.panel1.Controls.Add(this.OkeyBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 394);
@@ -215,14 +217,14 @@
             this.panel1.Size = new System.Drawing.Size(524, 44);
             this.panel1.TabIndex = 9;
             // 
-            // OrdersCountLab
+            // OrderTypeLab
             // 
-            this.OrdersCountLab.AutoSize = true;
-            this.OrdersCountLab.Location = new System.Drawing.Point(23, 15);
-            this.OrdersCountLab.Name = "OrdersCountLab";
-            this.OrdersCountLab.Size = new System.Drawing.Size(75, 13);
-            this.OrdersCountLab.TabIndex = 1;
-            this.OrdersCountLab.Text = "Orders Count ";
+            this.OrderTypeLab.AutoSize = true;
+            this.OrderTypeLab.Location = new System.Drawing.Point(105, 114);
+            this.OrderTypeLab.Name = "OrderTypeLab";
+            this.OrderTypeLab.Size = new System.Drawing.Size(23, 13);
+            this.OrderTypeLab.TabIndex = 1;
+            this.OrderTypeLab.Text = "....";
             // 
             // OkeyBtn
             // 
@@ -245,40 +247,49 @@
             // radGridView1
             // 
             this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn6.FieldName = "Product.Product_Name";
-            gridViewTextBoxColumn6.HeaderText = "Name";
-            gridViewTextBoxColumn6.Name = "ColName";
-            gridViewTextBoxColumn6.Width = 126;
-            gridViewTextBoxColumn7.Expression = "";
-            gridViewTextBoxColumn7.FieldName = "Qty";
-            gridViewTextBoxColumn7.HeaderText = "Qty";
-            gridViewTextBoxColumn7.Name = "ColQty";
-            gridViewTextBoxColumn7.Width = 126;
-            gridViewTextBoxColumn8.FieldName = "Product.ProductPrice";
-            gridViewTextBoxColumn8.HeaderText = "Product Price";
-            gridViewTextBoxColumn8.Name = "ColProductPrice";
-            gridViewTextBoxColumn8.Width = 126;
-            gridViewTextBoxColumn9.EnableExpressionEditor = true;
-            gridViewTextBoxColumn9.Expression = "ColProductPrice * ColQty";
-            gridViewTextBoxColumn9.HeaderText = "Price";
-            gridViewTextBoxColumn9.Name = "ColPrice";
-            gridViewTextBoxColumn9.Width = 128;
-            gridViewTextBoxColumn10.FieldName = "ProductID";
-            gridViewTextBoxColumn10.HeaderText = "ProductID";
-            gridViewTextBoxColumn10.IsVisible = false;
-            gridViewTextBoxColumn10.Name = "ColID";
-            gridViewTextBoxColumn10.Width = 45;
+            gridViewTextBoxColumn1.FieldName = "Product.Product_Name";
+            gridViewTextBoxColumn1.HeaderText = "Name";
+            gridViewTextBoxColumn1.Name = "ColName";
+            gridViewTextBoxColumn1.Width = 126;
+            gridViewTextBoxColumn2.Expression = "";
+            gridViewTextBoxColumn2.FieldName = "Qty";
+            gridViewTextBoxColumn2.HeaderText = "Qty";
+            gridViewTextBoxColumn2.Name = "ColQty";
+            gridViewTextBoxColumn2.Width = 126;
+            gridViewTextBoxColumn3.FieldName = "Product.ProductPrice";
+            gridViewTextBoxColumn3.HeaderText = "Product Price";
+            gridViewTextBoxColumn3.Name = "ColProductPrice";
+            gridViewTextBoxColumn3.Width = 126;
+            gridViewTextBoxColumn4.EnableExpressionEditor = true;
+            gridViewTextBoxColumn4.Expression = "ColProductPrice * ColQty";
+            gridViewTextBoxColumn4.HeaderText = "Price";
+            gridViewTextBoxColumn4.Name = "ColPrice";
+            gridViewTextBoxColumn4.Width = 128;
+            gridViewTextBoxColumn5.FieldName = "ProductID";
+            gridViewTextBoxColumn5.HeaderText = "ProductID";
+            gridViewTextBoxColumn5.IsVisible = false;
+            gridViewTextBoxColumn5.Name = "ColID";
+            gridViewTextBoxColumn5.Width = 45;
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9,
-            gridViewTextBoxColumn10});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5});
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.radGridView1.Size = new System.Drawing.Size(524, 253);
             this.radGridView1.TabIndex = 14;
             this.radGridView1.Text = "radGridView1";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 114);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Order Type : ";
             // 
             // FrmTotalOrder
             // 
@@ -295,7 +306,6 @@
             this.CustomerInfomationGroupBox.ResumeLayout(false);
             this.CustomerInfomationGroupBox.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OkeyBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
@@ -308,7 +318,6 @@
         private System.Windows.Forms.GroupBox CustomerInfomationGroupBox;
         private System.Windows.Forms.Panel panel1;
         private Telerik.WinControls.UI.RadButton OkeyBtn;
-        private System.Windows.Forms.Label OrdersCountLab;
         public System.Windows.Forms.Label NameLab;
         public System.Windows.Forms.Label PhoneLab;
         private System.Windows.Forms.Label label3;
@@ -324,5 +333,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox txtBranches;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.Label OrderTypeLab;
     }
 }

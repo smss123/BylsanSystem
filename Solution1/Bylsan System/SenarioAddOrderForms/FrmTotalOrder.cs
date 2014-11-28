@@ -79,7 +79,9 @@ namespace Bylsan_System.SenarioAddOrderForms
             DbDataContext db = new DbDataContext();
             otb.OrderName = CustomerInformations.WatingCustomer.CustomerName + "_" + DateTime.Now.ToString();
             otb.OrderDelivery = AddresstextBox.Text;
-            otb.OrderStatus = "Designer";
+             
+             otb.OrderStatus = "In Designer"; 
+  
             otb.OrderDate = DateTime.Now;
             otb.TotalAmount = Convert.ToDouble (TotalPriceBox.Text);
             otb.Branch_ID = UserInfo.CurrnetUser.Branch_ID;
@@ -105,7 +107,7 @@ namespace Bylsan_System.SenarioAddOrderForms
                    ProductID = int.Parse(rw.Cells[4].Value.ToString()),
                    Qty =  int .Parse (rw.Cells [1].Value .ToString ()),
                    Status = "Normal Order",
-
+                   
                 };
                 OrderProductsCmd.AddOrderProduct(ordtb);
           
@@ -117,11 +119,13 @@ namespace Bylsan_System.SenarioAddOrderForms
                 TotalIn = Convert .ToDouble ( TotalPriceBox.Text ),
                 DateOfProcess = DateTime .Now ,
                 Description = "It;s  A Normal Order",
+                
             };
             AccountDailyCmd.AddAccountDaily(DyTb);
             //=========================================
+            // Get Branch AccountID
             var CurrentBranch = BranchsCmd.GetBranchByBarnchID(int.Parse (txtBranches.SelectedValue.ToString ()));
-
+            
             AccountDaily xDyTb = new AccountDaily()
             {
                 AccountID = CurrentBranch [1].AccountID ,
@@ -130,6 +134,9 @@ namespace Bylsan_System.SenarioAddOrderForms
                 Description = "It;s  A Normal Order",
             };
             AccountDailyCmd.AddAccountDaily(xDyTb);
+            //==========================================================
+
+
 
 
             MessageBox.Show("Saved ");
