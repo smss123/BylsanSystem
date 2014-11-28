@@ -60,6 +60,16 @@ namespace XamaDataLayer.BranchCmd
            return db.Orders.ToList();
        }
 
+       public static List<Order> GetAllOrdersInDesigner()
+       {
+           db = new DbDataContext();
+           var Lst = (from o in db.Orders
+                      orderby o.OrderDate ascending
+                      where
+                          o.OrderStatus == "In Designer"
+                      select o).ToList();
+           return Lst;
+       }
 
        public static List<Order> GetAllOrderByID( int xid  )
        {
