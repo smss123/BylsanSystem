@@ -120,8 +120,16 @@ namespace Bylsan_System.SenarioAddOrderForms
             };
             AccountDailyCmd.AddAccountDaily(DyTb);
             //=========================================
+            var CurrentBranch = BranchsCmd.GetBranchByBarnchID(int.Parse (txtBranches.SelectedValue.ToString ()));
 
-
+            AccountDaily xDyTb = new AccountDaily()
+            {
+                AccountID = CurrentBranch [1].AccountID ,
+                TotalIn = Convert.ToDouble(TotalPriceBox.Text),
+                DateOfProcess = DateTime.Now,
+                Description = "It;s  A Normal Order",
+            };
+            AccountDailyCmd.AddAccountDaily(xDyTb);
 
 
             MessageBox.Show("Saved ");
@@ -129,6 +137,12 @@ namespace Bylsan_System.SenarioAddOrderForms
         }
 
 
+      
 
+        private void txtBranches_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+         
+        }
     }
 }

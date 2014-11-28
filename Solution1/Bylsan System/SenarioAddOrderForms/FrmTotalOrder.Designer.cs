@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.CustomerInfomationGroupBox = new System.Windows.Forms.GroupBox();
             this.txtBranches = new System.Windows.Forms.ComboBox();
             this.txtPayment = new System.Windows.Forms.TextBox();
@@ -85,11 +85,14 @@
             // 
             // txtBranches
             // 
+            this.txtBranches.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtBranches.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.txtBranches.FormattingEnabled = true;
             this.txtBranches.Location = new System.Drawing.Point(108, 86);
             this.txtBranches.Name = "txtBranches";
             this.txtBranches.Size = new System.Drawing.Size(121, 21);
             this.txtBranches.TabIndex = 10;
+            this.txtBranches.SelectedIndexChanged += new System.EventHandler(this.txtBranches_SelectedIndexChanged);
             // 
             // txtPayment
             // 
@@ -242,35 +245,35 @@
             // radGridView1
             // 
             this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.FieldName = "Product.Product_Name";
-            gridViewTextBoxColumn1.HeaderText = "Name";
-            gridViewTextBoxColumn1.Name = "ColName";
-            gridViewTextBoxColumn1.Width = 126;
-            gridViewTextBoxColumn2.Expression = "";
-            gridViewTextBoxColumn2.FieldName = "Qty";
-            gridViewTextBoxColumn2.HeaderText = "Qty";
-            gridViewTextBoxColumn2.Name = "ColQty";
-            gridViewTextBoxColumn2.Width = 126;
-            gridViewTextBoxColumn3.FieldName = "Product.ProductPrice";
-            gridViewTextBoxColumn3.HeaderText = "Product Price";
-            gridViewTextBoxColumn3.Name = "ColProductPrice";
-            gridViewTextBoxColumn3.Width = 126;
-            gridViewTextBoxColumn4.EnableExpressionEditor = true;
-            gridViewTextBoxColumn4.Expression = "ColProductPrice * ColQty";
-            gridViewTextBoxColumn4.HeaderText = "Price";
-            gridViewTextBoxColumn4.Name = "ColPrice";
-            gridViewTextBoxColumn4.Width = 128;
-            gridViewTextBoxColumn5.FieldName = "ProductID";
-            gridViewTextBoxColumn5.HeaderText = "ProductID";
-            gridViewTextBoxColumn5.IsVisible = false;
-            gridViewTextBoxColumn5.Name = "ColID";
-            gridViewTextBoxColumn5.Width = 45;
+            gridViewTextBoxColumn6.FieldName = "Product.Product_Name";
+            gridViewTextBoxColumn6.HeaderText = "Name";
+            gridViewTextBoxColumn6.Name = "ColName";
+            gridViewTextBoxColumn6.Width = 126;
+            gridViewTextBoxColumn7.Expression = "";
+            gridViewTextBoxColumn7.FieldName = "Qty";
+            gridViewTextBoxColumn7.HeaderText = "Qty";
+            gridViewTextBoxColumn7.Name = "ColQty";
+            gridViewTextBoxColumn7.Width = 126;
+            gridViewTextBoxColumn8.FieldName = "Product.ProductPrice";
+            gridViewTextBoxColumn8.HeaderText = "Product Price";
+            gridViewTextBoxColumn8.Name = "ColProductPrice";
+            gridViewTextBoxColumn8.Width = 126;
+            gridViewTextBoxColumn9.EnableExpressionEditor = true;
+            gridViewTextBoxColumn9.Expression = "ColProductPrice * ColQty";
+            gridViewTextBoxColumn9.HeaderText = "Price";
+            gridViewTextBoxColumn9.Name = "ColPrice";
+            gridViewTextBoxColumn9.Width = 128;
+            gridViewTextBoxColumn10.FieldName = "ProductID";
+            gridViewTextBoxColumn10.HeaderText = "ProductID";
+            gridViewTextBoxColumn10.IsVisible = false;
+            gridViewTextBoxColumn10.Name = "ColID";
+            gridViewTextBoxColumn10.Width = 45;
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5});
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10});
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.radGridView1.Size = new System.Drawing.Size(524, 253);
