@@ -31,20 +31,20 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.OkyBtn = new Telerik.WinControls.UI.RadButton();
             this.label2 = new System.Windows.Forms.Label();
             this.BrwoseBtn = new Telerik.WinControls.UI.RadButton();
             this.PathTextBox = new System.Windows.Forms.TextBox();
-            this.BrowseBtn = new Telerik.WinControls.UI.RadButton();
+            this.RemoveBtn = new Telerik.WinControls.UI.RadButton();
             this.label1 = new System.Windows.Forms.Label();
             this.DescriptiontextBox = new System.Windows.Forms.TextBox();
             this.ImageListProducuts = new System.Windows.Forms.ImageList(this.components);
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OkyBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrwoseBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BrowseBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RemoveBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -54,28 +54,39 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.BrwoseBtn);
             this.groupBox1.Controls.Add(this.PathTextBox);
-            this.groupBox1.Controls.Add(this.BrowseBtn);
+            this.groupBox1.Controls.Add(this.RemoveBtn);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.DescriptiontextBox);
             this.groupBox1.Location = new System.Drawing.Point(11, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(461, 403);
+            this.groupBox1.Size = new System.Drawing.Size(299, 419);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Location = new System.Drawing.Point(1, 249);
+            this.panel1.Location = new System.Drawing.Point(1, 156);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(460, 95);
+            this.panel1.Size = new System.Drawing.Size(281, 219);
             this.panel1.TabIndex = 7;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(269, 213);
+            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseClick);
             // 
             // OkyBtn
             // 
-            this.OkyBtn.Location = new System.Drawing.Point(345, 373);
+            this.OkyBtn.Location = new System.Drawing.Point(215, 381);
             this.OkyBtn.Name = "OkyBtn";
-            this.OkyBtn.Size = new System.Drawing.Size(110, 24);
+            this.OkyBtn.Size = new System.Drawing.Size(60, 24);
             this.OkyBtn.TabIndex = 6;
             this.OkyBtn.Text = "Oky";
             this.OkyBtn.Click += new System.EventHandler(this.OkyBtn_Click);
@@ -83,7 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 166);
+            this.label2.Location = new System.Drawing.Point(431, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 5;
@@ -91,7 +102,7 @@
             // 
             // BrwoseBtn
             // 
-            this.BrwoseBtn.Location = new System.Drawing.Point(324, 205);
+            this.BrwoseBtn.Location = new System.Drawing.Point(6, 381);
             this.BrwoseBtn.Name = "BrwoseBtn";
             this.BrwoseBtn.Size = new System.Drawing.Size(110, 24);
             this.BrwoseBtn.TabIndex = 4;
@@ -100,18 +111,19 @@
             // 
             // PathTextBox
             // 
-            this.PathTextBox.Location = new System.Drawing.Point(82, 163);
+            this.PathTextBox.Location = new System.Drawing.Point(505, 49);
             this.PathTextBox.Name = "PathTextBox";
-            this.PathTextBox.Size = new System.Drawing.Size(287, 20);
+            this.PathTextBox.Size = new System.Drawing.Size(114, 20);
             this.PathTextBox.TabIndex = 3;
             // 
-            // BrowseBtn
+            // RemoveBtn
             // 
-            this.BrowseBtn.Location = new System.Drawing.Point(375, 163);
-            this.BrowseBtn.Name = "BrowseBtn";
-            this.BrowseBtn.Size = new System.Drawing.Size(59, 24);
-            this.BrowseBtn.TabIndex = 2;
-            this.BrowseBtn.Text = "...";
+            this.RemoveBtn.Location = new System.Drawing.Point(150, 381);
+            this.RemoveBtn.Name = "RemoveBtn";
+            this.RemoveBtn.Size = new System.Drawing.Size(59, 24);
+            this.RemoveBtn.TabIndex = 2;
+            this.RemoveBtn.Text = "<<";
+            this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
             // 
             // label1
             // 
@@ -124,10 +136,10 @@
             // 
             // DescriptiontextBox
             // 
-            this.DescriptiontextBox.Location = new System.Drawing.Point(76, 19);
+            this.DescriptiontextBox.Location = new System.Drawing.Point(6, 49);
             this.DescriptiontextBox.Multiline = true;
             this.DescriptiontextBox.Name = "DescriptiontextBox";
-            this.DescriptiontextBox.Size = new System.Drawing.Size(368, 115);
+            this.DescriptiontextBox.Size = new System.Drawing.Size(276, 85);
             this.DescriptiontextBox.TabIndex = 0;
             // 
             // ImageListProducuts
@@ -136,21 +148,11 @@
             this.ImageListProducuts.ImageSize = new System.Drawing.Size(16, 16);
             this.ImageListProducuts.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(452, 92);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
             // FrmSpecialOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 427);
+            this.ClientSize = new System.Drawing.Size(329, 443);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmSpecialOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -160,7 +162,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.OkyBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrwoseBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BrowseBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RemoveBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -168,7 +170,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private Telerik.WinControls.UI.RadButton BrowseBtn;
+        private Telerik.WinControls.UI.RadButton RemoveBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox DescriptiontextBox;
         private System.Windows.Forms.TextBox PathTextBox;
