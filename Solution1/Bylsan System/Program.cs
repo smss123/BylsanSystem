@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Bylsan_System.SenarioAddOrderForms;
 namespace Bylsan_System
 {
     static class Program
@@ -18,7 +18,7 @@ namespace Bylsan_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new FrmAddInformationCustomer());
         }
     }
 }

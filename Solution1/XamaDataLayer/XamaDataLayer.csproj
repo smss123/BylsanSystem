@@ -45,6 +45,7 @@
     <Compile Include="Accountant\AccountCategoryCmd.cs" />
     <Compile Include="Accountant\AccountDailyCmd.cs" />
     <Compile Include="Accountant\AccountsCmd.cs" />
+    <Compile Include="Accountant\DebtorsCmd.cs" />
     <Compile Include="Accountant\ExpenssesCmd.cs" />
     <Compile Include="Accountant\ExpenssesMovmentCmd.cs" />
     <Compile Include="BranchCmd\BranchsCmd.cs" />
@@ -52,8 +53,12 @@
     <Compile Include="BranchCmd\CustomersCmd.cs" />
     <Compile Include="BranchCmd\EmployeesCmd.cs" />
     <Compile Include="BranchCmd\OrderProductsCmd.cs" />
+    <Compile Include="BranchCmd\OrderProuctAttachmentCmd.cs" />
     <Compile Include="BranchCmd\OrdersCmd.cs" />
+    <Compile Include="BranchCmd\ProductContentsCmd.cs" />
     <Compile Include="BranchCmd\ProductsCmd.cs" />
+    <Compile Include="BranchCmd\QuotationCmd.cs" />
+    <Compile Include="BranchCmd\QuotationProductCmd.cs" />
     <Compile Include="Db.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
