@@ -79,5 +79,15 @@ namespace XamaDataLayer.BranchCmd
                db.SubmitChanges();
           
        }
+       public static List<Customer> GetCustmerByID(int CustId)
+       {
+           db = new DbDataContext();
+           var lst = (from c in db.Customers
+                      orderby c.CustomerName ascending
+                      where c.ID == CustId
+                      select c).ToList ();
+           return lst;
+
+       }
     }
 }
