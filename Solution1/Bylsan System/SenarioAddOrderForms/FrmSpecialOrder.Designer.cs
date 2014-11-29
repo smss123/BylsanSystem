@@ -157,6 +157,7 @@
             this.Name = "FrmSpecialOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSpecialOrder";
+            this.Load += new System.EventHandler(this.FrmSpecialOrder_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);

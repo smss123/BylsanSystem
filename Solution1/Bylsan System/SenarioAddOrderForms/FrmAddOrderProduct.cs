@@ -82,6 +82,7 @@ namespace Bylsan_System.SenarioAddOrderForms
         {
           Thread th = new Thread(LoadingProduct);
           th.Start();
+          CustomerInformations.AttachIni();
 
          
         }

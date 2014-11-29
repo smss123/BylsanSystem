@@ -3688,7 +3688,7 @@ namespace XamaDataLayer
 		
 		private int _ID;
 		
-		private System.Data.Linq.Binary _imageX;
+		private Image _imageX;
 		
 		private System.Nullable<int> _OrderProductID;
 		
@@ -3702,7 +3702,7 @@ namespace XamaDataLayer
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnimageXChanging(System.Data.Linq.Binary value);
+    partial void OnimageXChanging(Image value);
     partial void OnimageXChanged();
     partial void OnOrderProductIDChanging(System.Nullable<int> value);
     partial void OnOrderProductIDChanged();
@@ -3737,7 +3737,7 @@ namespace XamaDataLayer
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imageX", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary imageX
+		public Image imageX
 		{
 			get
 			{

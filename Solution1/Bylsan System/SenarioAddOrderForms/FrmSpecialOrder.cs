@@ -23,8 +23,8 @@ namespace Bylsan_System.SenarioAddOrderForms
             InitializeComponent();
         }
 
-   
 
+        public OrderProduct TragetOrderproduct { get; set; }
         #region "    ^^^ Brwose Photo    "
         int i = 0;
 
@@ -51,6 +51,12 @@ namespace Bylsan_System.SenarioAddOrderForms
                 pic.Image = Image.FromFile(Op.FileName);
                 ImageListProducuts.Images.Add(pic.Image );
                 ImgIndx.Add(i) ;
+                CustomerInformations.WaitingAttachment.Add(new OrderProuctAttachment() { 
+                 Description= DescriptiontextBox.Text,
+                  imageX = pic.Image
+                
+                
+                });
                 this.Cursor = Cursors.Default;
                 i++;
             }
@@ -84,6 +90,7 @@ namespace Bylsan_System.SenarioAddOrderForms
             // Starting Save :
 
 
+       // CustomerInformations.WaitingAttachment.AddRange()
 
             //=====================================
             this.Hide();
@@ -103,6 +110,11 @@ namespace Bylsan_System.SenarioAddOrderForms
         private void flowLayoutPanel1_MouseClick(object sender, MouseEventArgs e)
         {
          
+        }
+
+        private void FrmSpecialOrder_Load(object sender, EventArgs e)
+        {
+
         }
 
 

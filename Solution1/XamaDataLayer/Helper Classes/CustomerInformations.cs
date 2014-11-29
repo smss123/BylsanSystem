@@ -16,8 +16,13 @@ namespace XamaDataLayer.Helper_Classes
        {
            WatingCustomer = new Customer();
        }
+       public static void AttachIni()
+       {
+           WaitingAttachment = new List<OrderProuctAttachment>();
+       }
         public static  Customer  WatingCustomer  { get; set; }
         public static   Order WaitingOrder { get; set; }
+        public static List<OrderProuctAttachment> WaitingAttachment { get; set; }
 
 
        //========================================================
