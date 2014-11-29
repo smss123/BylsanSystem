@@ -38,13 +38,13 @@ namespace XamaDataLayer.BranchCmd
            return xCustID;
 
        }
-       public static List<Customer> GetAllCustmerByID( int CustId)
+       public static Customer GetAllCustmerByID( int CustId)
        {
            db = new DbDataContext();
            var lst = (from c in db.Customers
                       orderby c.CustomerName ascending
                       where c.ID == CustId 
-                      select c).ToList();
+                      select c).Single();
            return lst;
 
        }

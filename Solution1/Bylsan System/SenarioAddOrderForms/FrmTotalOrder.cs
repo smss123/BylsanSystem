@@ -65,9 +65,10 @@ namespace Bylsan_System.SenarioAddOrderForms
                 };
                 CustomersCmd.AddCustomer(ctb);
                 // === Get New Customer ID  & AccountID :
-                CustId = (from i in CustomersCmd.GetAllCustmers() select i.ID).Max();
-                CustmerAccountID = (from i in CustomersCmd.GetAllCustmers() select i.AccountID ).Max();
-            
+                var q = CustomersCmd.GetAllCustmerByID(ctb.ID);
+                CustId = ctb.ID;
+             
+                CustmerAccountID = q.AccountID;
             }
             else
             {
@@ -91,42 +92,42 @@ namespace Bylsan_System.SenarioAddOrderForms
              }
            
             otb.OrderDate = DateTime.Now;
-            otb.TotalAmount = Convert.ToDouble (TotalPriceBox.Text);
+            otb.TotalAmount =  (TotalPriceBox.Text).Todouble();
             otb.Branch_ID = UserInfo.CurrnetUser.Branch_ID;
-            otb.Comment = "Xprema";
+            otb.Comment = "";
             otb.OrderVerify = "from Branch";
             otb.CustomerID = CustId;
             otb.OrderDeliveryDate = receiptdateTimePicker.Value;
-            otb.DeliverdToBranch = int .Parse (txtBranches.SelectedValue.ToString());
+            otb.DeliverdToBranch =  (txtBranches.SelectedValue.ToString()).ToInt();
 
             db.Orders.InsertOnSubmit(otb);
             db.SubmitChanges();
 
             //=========================================================================
-            int xLastOrderID = (from o in OrdersCmd.GetAllOrders() select o.ID).Max ();
+            int xLastOrderID = otb.ID;
             //==========================================================================
             //=== Save At OrderProduct
             OrderProduct ordtb = new OrderProduct();
-            foreach (var   rw in radGridView1 .Rows )
-            {
-       
-                 ordtb = new OrderProduct() { 
-                   OrderID  = xLastOrderID ,
-                   ProductID = int.Parse(rw.Cells[4].Value.ToString()),
-                   Qty =  int .Parse (rw.Cells [1].Value .ToString ()),
-                   Status = "Normal Order",
-                   
-                };
+            foreach (var item in CustomerInformations.WaitingOrder.OrderProducts.ToList())
+	        {
+                ordtb = new OrderProduct();
+                ordtb.OrderID = otb.ID;
+                ordtb.Description = "Not Found";
+                ordtb.ImageX = item.ImageX;
+                ordtb.ProductID = item.ProductID;
+                ordtb.Qty = item.Qty;
+                ordtb.Status = item.Status;
                 OrderProductsCmd.AddOrderProduct(ordtb);
                 db = new DbDataContext();
             }
+         
             //=========================================
             // == Save At AccountDaily :
             AccountDaily DyTb = new AccountDaily() { 
                 AccountID = CustmerAccountID ,
                 TotalIn = Convert .ToDouble ( TotalPriceBox.Text ),
                 DateOfProcess = DateTime .Now ,
-                Description = "It;s  A Normal Order",
+                Description = "Payment Of  A Normal Order",
                 
             };
             AccountDailyCmd.AddAccountDaily(DyTb);
@@ -135,10 +136,10 @@ namespace Bylsan_System.SenarioAddOrderForms
             
            AccountDaily  RDyTb = new AccountDaily()
             {
-                AccountID = CurrentBranch [1].AccountID ,
+                AccountID = CurrentBranch .AccountID ,
                 TotalIn = Convert.ToDouble(TotalPriceBox.Text),
                 DateOfProcess = DateTime.Now,
-                Description = "It;s  A Normal Order",
+                Description = "Income payment  A Normal Order",
             };
             AccountDailyCmd.AddAccountDaily(RDyTb);
             //==========================================================
