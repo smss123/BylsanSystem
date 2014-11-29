@@ -42,6 +42,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblstatus = new System.Windows.Forms.ToolStripStatusLabel();
             product_DescriptionLabel = new System.Windows.Forms.Label();
             product_NameLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -52,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BrowseBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // product_DescriptionLabel
@@ -59,7 +62,7 @@
             product_DescriptionLabel.AutoSize = true;
             product_DescriptionLabel.Location = new System.Drawing.Point(3, 78);
             product_DescriptionLabel.Name = "product_DescriptionLabel";
-            product_DescriptionLabel.Size = new System.Drawing.Size(104, 13);
+            product_DescriptionLabel.Size = new System.Drawing.Size(112, 13);
             product_DescriptionLabel.TabIndex = 16;
             product_DescriptionLabel.Text = "Product Description:";
             // 
@@ -68,7 +71,7 @@
             product_NameLabel.AutoSize = true;
             product_NameLabel.Location = new System.Drawing.Point(27, 38);
             product_NameLabel.Name = "product_NameLabel";
-            product_NameLabel.Size = new System.Drawing.Size(78, 13);
+            product_NameLabel.Size = new System.Drawing.Size(82, 13);
             product_NameLabel.TabIndex = 17;
             product_NameLabel.Text = "Product Name:";
             // 
@@ -164,7 +167,7 @@
             this.product_NameTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.product_NameTextBox.Location = new System.Drawing.Point(108, 36);
             this.product_NameTextBox.Name = "product_NameTextBox";
-            this.product_NameTextBox.Size = new System.Drawing.Size(213, 20);
+            this.product_NameTextBox.Size = new System.Drawing.Size(213, 22);
             this.product_NameTextBox.TabIndex = 12;
             // 
             // label2
@@ -189,12 +192,29 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblstatus});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 364);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(364, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblstatus
+            // 
+            this.lblstatus.Name = "lblstatus";
+            this.lblstatus.Size = new System.Drawing.Size(12, 17);
+            this.lblstatus.Text = "_";
+            // 
             // frmEditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(356, 379);
+            this.ClientSize = new System.Drawing.Size(364, 386);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(372, 417);
@@ -213,7 +233,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.BrowseBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -230,6 +253,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblstatus;
 
     }
 }

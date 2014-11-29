@@ -50,7 +50,7 @@ namespace Bylsan_System.SenarioAddOrderForms
         {
 
 
-
+            Operation.BeginOperation(this);
 
             // Get Branch 
             var CurrentBranch = BranchsCmd.GetBranchByBarnchID(int.Parse(txtBranches.SelectedValue.ToString()));
@@ -145,7 +145,7 @@ namespace Bylsan_System.SenarioAddOrderForms
             //==========================================================
 
 
-
+            Operation.EndOperation(this);
 
             MessageBox.Show("Saved ");
 

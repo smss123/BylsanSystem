@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using XamaDataLayer;
@@ -35,7 +36,8 @@ namespace Bylsan_System.ProductForms
 
         private void frmManageProduct_Load(object sender, EventArgs e)
         {
-            LoadProduct();
+          Thread th = new Thread(LoadProduct);
+          th.Start();
         }
 
         private void LoadProduct()
@@ -49,6 +51,12 @@ namespace Bylsan_System.ProductForms
             Operation.BeginOperation(this);
             ProductGridView.DataSource = ProductsCmd.GetAllProducts();
             Operation.EndOperation(this);
+            statusStrip1.Invoke((MethodInvoker)delegate
+            {
+
+                toolStripStatusLabel1.Text = "Compelete...";
+
+            });
         }
 
         private void ProductGridView_Click(object sender, EventArgs e)

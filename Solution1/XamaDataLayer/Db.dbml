@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="soft_Bylsan" Class="DbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SAMER\SQL2008;Initial Catalog=soft_Bylsan;Integrated Security=True" SettingsObjectName="XamaDataLayer.Properties.Settings" SettingsPropertyName="soft_BylsanConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=jasmine.arvixe.com;Initial Catalog=Cloud_Bylsan;User ID=xama" SettingsObjectName="XamaDataLayer.Properties.Settings" SettingsPropertyName="soft_BylsanConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="Accountant.Account" Member="Accounts">
     <Type Name="Account">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

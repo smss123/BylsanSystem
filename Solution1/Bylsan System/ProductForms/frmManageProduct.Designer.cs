@@ -94,7 +94,7 @@ namespace Bylsan_System.ProductForms
             this.ProductGridView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.ProductGridView.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ProductGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ProductGridView.Location = new System.Drawing.Point(3, 16);
+            this.ProductGridView.Location = new System.Drawing.Point(3, 18);
             // 
             // ProductGridView
             // 
@@ -154,7 +154,7 @@ namespace Bylsan_System.ProductForms
             this.ProductGridView.MasterTemplate.EnableFiltering = true;
             this.ProductGridView.Name = "ProductGridView";
             this.ProductGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ProductGridView.Size = new System.Drawing.Size(1014, 539);
+            this.ProductGridView.Size = new System.Drawing.Size(1014, 537);
             this.ProductGridView.TabIndex = 0;
             this.ProductGridView.Text = "radGridView1";
             this.ProductGridView.ThemeName = "Windows8";
@@ -173,6 +173,7 @@ namespace Bylsan_System.ProductForms
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmManageProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Product";
             this.Load += new System.EventHandler(this.frmManageProduct_Load);
             this.statusStrip1.ResumeLayout(false);

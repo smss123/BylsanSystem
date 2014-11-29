@@ -12,7 +12,7 @@ namespace XamaDataLayer.BranchCmd
        public static bool AddNewBranch(Branch tb)
        {
            db = new DbDataContext();
-           var MyTable =  db.Branches .Where (b=> b.Branch_Name .Contains (tb.Branch_Name )).SingleOrDefault () ;
+           var MyTable =  db.Branches .Where (b=> b.Branch_Name .Contains (tb.Branch_Name )).Take(1).SingleOrDefault () ;
            if (MyTable == null)
            {
                db.Branches.InsertOnSubmit(tb);

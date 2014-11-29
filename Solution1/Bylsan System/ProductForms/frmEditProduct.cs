@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using XamaDataLayer;
@@ -22,15 +23,23 @@ namespace Bylsan_System.ProductForms
 
         private void FillCategoreisCombo()
         {
+            Operation.BeginOperation(this);
+            this.Invoke((MethodInvoker)delegate {
 
-            this.CategoryComboBox.AutoFilter = true;
-            this.CategoryComboBox.ValueMember = "ID";
-            this.CategoryComboBox.DisplayMember = "Product_Name";
+                this.CategoryComboBox.AutoFilter = true;
+                this.CategoryComboBox.ValueMember = "ID";
+                this.CategoryComboBox.DisplayMember = "Product_Name";
+                this.lblstatus.Text = "Loading ...";
+            });
+           
+          var q = ProductsCmd.GetAllProducts();
+          this.Invoke((MethodInvoker)delegate {
 
-
-
-
-            CategoryComboBox.DataSource = ProductsCmd.GetAllProducts();
+              CategoryComboBox.DataSource = q;
+              CategoryComboBox.SelectedValue = TragetProduct.CateogryID;
+              this.lblstatus.Text = "Compelete ..";
+          });
+          Operation.EndOperation(this);
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
@@ -57,15 +66,37 @@ namespace Bylsan_System.ProductForms
 
             if (int.Parse(CategoryComboBox.SelectedValue.ToString()) != 0)
             {
-                Product tb = new Product()
+              Thread th = new Thread(EditProdoct);
+              th.Start();
+            }
+        }
+
+        private void EditProdoct()
+        {
+            Operation.BeginOperation(this);
+            Product tb = new Product();
+            this.Invoke((MethodInvoker)delegate{
+                lblstatus.Text = "Editing...";
+                tb = new Product
                 {
                     Product_Name = product_NameTextBox.Text,
                     Product_Description = product_DescriptionTextBox.Text,
                     Img = productpictureBox.Image,
                     CateogryID = int.Parse(CategoryComboBox.SelectedValue.ToString()),
-                };
-                ProductsCmd.EditProduct(tb, int.Parse(CategoryComboBox.SelectedValue.ToString()));
-            }
+                }; 
+            
+            });
+
+           
+            ProductsCmd.EditProduct(tb, TragetProduct.ID);
+            Operation.EndOperation(this);
+            this.Invoke((MethodInvoker)delegate {
+
+                Operation.ShowToustOk("Product Has Been Edited..", this);
+
+                this.lblstatus.Text = "Complete Edited ..";
+            
+            });
         }
 
 
@@ -112,11 +143,12 @@ namespace Bylsan_System.ProductForms
         private void frmEditProduct_Load(object sender, EventArgs e)
         {
             Operation.BeginOperation(this);
-            FillCategoreisCombo();
+          Thread th = new Thread(FillCategoreisCombo);
+          th.Start();
             product_NameTextBox.Text = TragetProduct.Product_Name;
             product_DescriptionTextBox.Text = TragetProduct.Product_Description;
             productpictureBox.Image = TragetProduct.Img;
-            CategoryComboBox.SelectedValue = TragetProduct.CateogryID;
+            
             Operation.EndOperation(this);
 
         }

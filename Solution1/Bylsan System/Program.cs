@@ -18,7 +18,7 @@ namespace Bylsan_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmAddInformationCustomer());
+            Application.Run(new FrmLogin());
         }
     }
 }
