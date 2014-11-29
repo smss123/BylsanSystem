@@ -50,11 +50,12 @@ namespace XamaDataLayer.BranchCmd
 
        }
 
-       public static OrderProuctAttachment GetOneAttachmentByOrderProductID(int xid)
+       public static  List <OrderProuctAttachment> GetOneAttachmentByOrderProductID(int xid)
        {
            db = new DbDataContext();
-           var q = db.OrderProuctAttachments.Where(c => c.OrderProductID  == xid).SingleOrDefault();
+           var q = (from p in db.OrderProuctAttachments where p.OrderProductID == xid select p).ToList();
            return q;
+          
 
        }
 
