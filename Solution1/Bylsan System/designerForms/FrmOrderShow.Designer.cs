@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DGVOrders = new Telerik.WinControls.UI.RadGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -63,31 +63,33 @@
             // DGVOrders
             // 
             this.DGVOrders.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "ID";
-            gridViewTextBoxColumn1.HeaderText = "ID";
-            gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn1.Width = 66;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "OrderName";
-            gridViewTextBoxColumn2.HeaderText = "Order Name";
-            gridViewTextBoxColumn2.Name = "OrderName";
-            gridViewTextBoxColumn2.Width = 361;
-            gridViewCommandColumn1.EnableExpressionEditor = false;
-            gridViewCommandColumn1.HeaderText = "Enter";
-            gridViewCommandColumn1.Name = "EnterColm";
-            gridViewCommandColumn1.Width = 99;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "ID";
+            gridViewTextBoxColumn3.HeaderText = "ID";
+            gridViewTextBoxColumn3.Name = "ID";
+            gridViewTextBoxColumn3.Width = 66;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "OrderName";
+            gridViewTextBoxColumn4.HeaderText = "Order Name";
+            gridViewTextBoxColumn4.Name = "OrderName";
+            gridViewTextBoxColumn4.Width = 361;
+            gridViewCommandColumn2.EnableExpressionEditor = false;
+            gridViewCommandColumn2.HeaderText = "Enter";
+            gridViewCommandColumn2.Name = "EnterColm";
+            gridViewCommandColumn2.Width = 99;
             this.DGVOrders.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewCommandColumn1});
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewCommandColumn2});
             this.DGVOrders.MasterTemplate.EnableFiltering = true;
             this.DGVOrders.Name = "DGVOrders";
+            this.DGVOrders.ReadOnly = true;
             this.DGVOrders.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DGVOrders.Size = new System.Drawing.Size(545, 471);
             this.DGVOrders.TabIndex = 1;
             this.DGVOrders.Text = "radGridView1";
             this.DGVOrders.ThemeName = "Windows8";
+            this.DGVOrders.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DGVOrders_MouseDoubleClick);
             // 
             // statusStrip1
             // 
