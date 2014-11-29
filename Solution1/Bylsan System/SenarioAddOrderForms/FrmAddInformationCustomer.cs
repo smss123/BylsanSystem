@@ -67,10 +67,10 @@ namespace Bylsan_System.SenarioAddOrderForms
             FrmAddOrderProduct frm = new FrmAddOrderProduct();
          
             if (SpecialOrderCheckBox.CheckState == CheckState.Checked)
-            { frm.OrderTypeCheckLab.Text = string.Format("Special Order");  }
+            { frm.OrderTypeCheckLab.Text = string.Format("Special Order"); CustomerInformations.OrdrType = "Special"; }
 
             if (NormalOrdercheckBox.CheckState == CheckState.Checked)
-            { frm.OrderTypeCheckLab.Text = string.Format("Normal Order");  }
+            { frm.OrderTypeCheckLab.Text = string.Format("Normal Order"); CustomerInformations.OrdrType = "Normal"; }
             //======================================================================
 
 

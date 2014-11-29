@@ -176,13 +176,13 @@ namespace Bylsan_System.SenarioAddOrderForms
                 if (ListViewProductes.Items.Count != 0)
                 {
 
-                    if (OrderTypeCheckLab.Text == "Special Order")
+                    if (CustomerInformations.OrdrType == "Special")
                     {
                         FrmSpecialOrder SFrm = new FrmSpecialOrder();
                         SFrm.ShowDialog();
                     }
-                    else
-                    {
+                    //else
+                    //{
 
                         PrdID = 0;
                         PrdID = ListViewProductes.SelectedItems[0].Index;
@@ -244,7 +244,7 @@ namespace Bylsan_System.SenarioAddOrderForms
                             //    //// == Display  Orders Count
                             //    //OrdersCountBox.Text = OrdersListView.Items.Count.ToString();
                             }
-                        }
+                        //}
                     }
                 }
 

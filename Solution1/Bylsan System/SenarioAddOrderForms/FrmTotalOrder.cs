@@ -48,11 +48,12 @@ namespace Bylsan_System.SenarioAddOrderForms
 
         private void OkeyBtn_Click(object sender, EventArgs e)
         {
-        
-           
-        
 
-            
+
+
+
+            // Get Branch 
+            var CurrentBranch = BranchsCmd.GetBranchByBarnchID(int.Parse(txtBranches.SelectedValue.ToString()));
             int CustId = 0;
             int? CustmerAccountID = 0;
             if(CustomerInformations.WatingCustomer.ID == 0 ){
@@ -79,9 +80,16 @@ namespace Bylsan_System.SenarioAddOrderForms
             DbDataContext db = new DbDataContext();
             otb.OrderName = CustomerInformations.WatingCustomer.CustomerName + "_" + DateTime.Now.ToString();
             otb.OrderDelivery = AddresstextBox.Text;
-             
-             otb.OrderStatus = "In Designer"; 
-  
+       
+             switch  (  CustomerInformations .OrdrType) {
+                 case "Special":
+                     otb.OrderStatus = "In Designer";   otb.OrderType = "Special";
+                     break;
+                 case "Normal":
+                     otb.OrderStatus = "Printing";   otb.OrderType = "Normal";
+                     break;
+             }
+           
             otb.OrderDate = DateTime.Now;
             otb.TotalAmount = Convert.ToDouble (TotalPriceBox.Text);
             otb.Branch_ID = UserInfo.CurrnetUser.Branch_ID;
@@ -98,11 +106,11 @@ namespace Bylsan_System.SenarioAddOrderForms
             int xLastOrderID = (from o in OrdersCmd.GetAllOrders() select o.ID).Max ();
             //==========================================================================
             //=== Save At OrderProduct
-            
+            OrderProduct ordtb = new OrderProduct();
             foreach (var   rw in radGridView1 .Rows )
             {
        
-                OrderProduct ordtb = new OrderProduct() { 
+                 ordtb = new OrderProduct() { 
                    OrderID  = xLastOrderID ,
                    ProductID = int.Parse(rw.Cells[4].Value.ToString()),
                    Qty =  int .Parse (rw.Cells [1].Value .ToString ()),
@@ -110,7 +118,7 @@ namespace Bylsan_System.SenarioAddOrderForms
                    
                 };
                 OrderProductsCmd.AddOrderProduct(ordtb);
-          
+                db = new DbDataContext();
             }
             //=========================================
             // == Save At AccountDaily :
@@ -123,17 +131,16 @@ namespace Bylsan_System.SenarioAddOrderForms
             };
             AccountDailyCmd.AddAccountDaily(DyTb);
             //=========================================
-            // Get Branch AccountID
-            var CurrentBranch = BranchsCmd.GetBranchByBarnchID(int.Parse (txtBranches.SelectedValue.ToString ()));
             
-            AccountDaily xDyTb = new AccountDaily()
+            
+           AccountDaily  RDyTb = new AccountDaily()
             {
                 AccountID = CurrentBranch [1].AccountID ,
                 TotalIn = Convert.ToDouble(TotalPriceBox.Text),
                 DateOfProcess = DateTime.Now,
                 Description = "It;s  A Normal Order",
             };
-            AccountDailyCmd.AddAccountDaily(xDyTb);
+            AccountDailyCmd.AddAccountDaily(RDyTb);
             //==========================================================
 
 
