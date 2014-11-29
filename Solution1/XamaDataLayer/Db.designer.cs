@@ -31,12 +31,12 @@ namespace XamaDataLayer
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertStoreOperationManager(StoreOperationManager instance);
-    partial void UpdateStoreOperationManager(StoreOperationManager instance);
-    partial void DeleteStoreOperationManager(StoreOperationManager instance);
     partial void InsertAccount(Account instance);
     partial void UpdateAccount(Account instance);
     partial void DeleteAccount(Account instance);
+    partial void InsertStoreOperationManager(StoreOperationManager instance);
+    partial void UpdateStoreOperationManager(StoreOperationManager instance);
+    partial void DeleteStoreOperationManager(StoreOperationManager instance);
     partial void InsertAccountCategory(AccountCategory instance);
     partial void UpdateAccountCategory(AccountCategory instance);
     partial void DeleteAccountCategory(AccountCategory instance);
@@ -118,6 +118,9 @@ namespace XamaDataLayer
     partial void InsertUserPermession(UserPermession instance);
     partial void UpdateUserPermession(UserPermession instance);
     partial void DeleteUserPermession(UserPermession instance);
+    partial void InsertUser(User instance);
+    partial void UpdateUser(User instance);
+    partial void DeleteUser(User instance);
     partial void InsertBill(Bill instance);
     partial void UpdateBill(Bill instance);
     partial void DeleteBill(Bill instance);
@@ -130,9 +133,6 @@ namespace XamaDataLayer
     partial void InsertSellStore(SellStore instance);
     partial void UpdateSellStore(SellStore instance);
     partial void DeleteSellStore(SellStore instance);
-    partial void InsertUser(User instance);
-    partial void UpdateUser(User instance);
-    partial void DeleteUser(User instance);
     #endregion
 		
 		public DbDataContext() : 
@@ -165,19 +165,19 @@ namespace XamaDataLayer
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<StoreOperationManager> StoreOperationManagers
-		{
-			get
-			{
-				return this.GetTable<StoreOperationManager>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Account> Accounts
 		{
 			get
 			{
 				return this.GetTable<Account>();
+			}
+		}
+		
+		public System.Data.Linq.Table<StoreOperationManager> StoreOperationManagers
+		{
+			get
+			{
+				return this.GetTable<StoreOperationManager>();
 			}
 		}
 		
@@ -397,6 +397,14 @@ namespace XamaDataLayer
 			}
 		}
 		
+		public System.Data.Linq.Table<User> Users
+		{
+			get
+			{
+				return this.GetTable<User>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Bill> Bills
 		{
 			get
@@ -426,278 +434,6 @@ namespace XamaDataLayer
 			get
 			{
 				return this.GetTable<SellStore>();
-			}
-		}
-		
-		public System.Data.Linq.Table<User> Users
-		{
-			get
-			{
-				return this.GetTable<User>();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="SellSystem.StoreOperationManager")]
-	public partial class StoreOperationManager : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private System.Nullable<int> _StoreID;
-		
-		private string _ProcessType;
-		
-		private System.Nullable<System.DateTime> _ProcessDate;
-		
-		private System.Nullable<long> _Qty;
-		
-		private System.Nullable<int> _UserID;
-		
-		private EntityRef<SellStore> _SellStore;
-		
-		private EntityRef<User> _User;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnStoreIDChanging(System.Nullable<int> value);
-    partial void OnStoreIDChanged();
-    partial void OnProcessTypeChanging(string value);
-    partial void OnProcessTypeChanged();
-    partial void OnProcessDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnProcessDateChanged();
-    partial void OnQtyChanging(System.Nullable<long> value);
-    partial void OnQtyChanged();
-    partial void OnUserIDChanging(System.Nullable<int> value);
-    partial void OnUserIDChanged();
-    #endregion
-		
-		public StoreOperationManager()
-		{
-			this._SellStore = default(EntityRef<SellStore>);
-			this._User = default(EntityRef<User>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StoreID", DbType="Int")]
-		public System.Nullable<int> StoreID
-		{
-			get
-			{
-				return this._StoreID;
-			}
-			set
-			{
-				if ((this._StoreID != value))
-				{
-					if (this._SellStore.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnStoreIDChanging(value);
-					this.SendPropertyChanging();
-					this._StoreID = value;
-					this.SendPropertyChanged("StoreID");
-					this.OnStoreIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProcessType", DbType="NVarChar(50)")]
-		public string ProcessType
-		{
-			get
-			{
-				return this._ProcessType;
-			}
-			set
-			{
-				if ((this._ProcessType != value))
-				{
-					this.OnProcessTypeChanging(value);
-					this.SendPropertyChanging();
-					this._ProcessType = value;
-					this.SendPropertyChanged("ProcessType");
-					this.OnProcessTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProcessDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> ProcessDate
-		{
-			get
-			{
-				return this._ProcessDate;
-			}
-			set
-			{
-				if ((this._ProcessDate != value))
-				{
-					this.OnProcessDateChanging(value);
-					this.SendPropertyChanging();
-					this._ProcessDate = value;
-					this.SendPropertyChanged("ProcessDate");
-					this.OnProcessDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Qty", DbType="BigInt")]
-		public System.Nullable<long> Qty
-		{
-			get
-			{
-				return this._Qty;
-			}
-			set
-			{
-				if ((this._Qty != value))
-				{
-					this.OnQtyChanging(value);
-					this.SendPropertyChanging();
-					this._Qty = value;
-					this.SendPropertyChanged("Qty");
-					this.OnQtyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int")]
-		public System.Nullable<int> UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SellStore_StoreOperationManager", Storage="_SellStore", ThisKey="StoreID", OtherKey="ID", IsForeignKey=true)]
-		public SellStore SellStore
-		{
-			get
-			{
-				return this._SellStore.Entity;
-			}
-			set
-			{
-				SellStore previousValue = this._SellStore.Entity;
-				if (((previousValue != value) 
-							|| (this._SellStore.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._SellStore.Entity = null;
-						previousValue.StoreOperationManagers.Remove(this);
-					}
-					this._SellStore.Entity = value;
-					if ((value != null))
-					{
-						value.StoreOperationManagers.Add(this);
-						this._StoreID = value.ID;
-					}
-					else
-					{
-						this._StoreID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("SellStore");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_StoreOperationManager", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.StoreOperationManagers.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.StoreOperationManagers.Add(this);
-						this._UserID = value.ID;
-					}
-					else
-					{
-						this._UserID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -1042,6 +778,270 @@ namespace XamaDataLayer
 		{
 			this.SendPropertyChanging();
 			entity.Account = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="SellSystem.StoreOperationManager")]
+	public partial class StoreOperationManager : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _StoreID;
+		
+		private string _ProcessType;
+		
+		private System.Nullable<System.DateTime> _ProcessDate;
+		
+		private System.Nullable<long> _Qty;
+		
+		private System.Nullable<int> _UserID;
+		
+		private EntityRef<User> _User;
+		
+		private EntityRef<SellStore> _SellStore;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnStoreIDChanging(System.Nullable<int> value);
+    partial void OnStoreIDChanged();
+    partial void OnProcessTypeChanging(string value);
+    partial void OnProcessTypeChanged();
+    partial void OnProcessDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnProcessDateChanged();
+    partial void OnQtyChanging(System.Nullable<long> value);
+    partial void OnQtyChanged();
+    partial void OnUserIDChanging(System.Nullable<int> value);
+    partial void OnUserIDChanged();
+    #endregion
+		
+		public StoreOperationManager()
+		{
+			this._User = default(EntityRef<User>);
+			this._SellStore = default(EntityRef<SellStore>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StoreID", DbType="Int")]
+		public System.Nullable<int> StoreID
+		{
+			get
+			{
+				return this._StoreID;
+			}
+			set
+			{
+				if ((this._StoreID != value))
+				{
+					if (this._SellStore.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnStoreIDChanging(value);
+					this.SendPropertyChanging();
+					this._StoreID = value;
+					this.SendPropertyChanged("StoreID");
+					this.OnStoreIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProcessType", DbType="NVarChar(50)")]
+		public string ProcessType
+		{
+			get
+			{
+				return this._ProcessType;
+			}
+			set
+			{
+				if ((this._ProcessType != value))
+				{
+					this.OnProcessTypeChanging(value);
+					this.SendPropertyChanging();
+					this._ProcessType = value;
+					this.SendPropertyChanged("ProcessType");
+					this.OnProcessTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProcessDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ProcessDate
+		{
+			get
+			{
+				return this._ProcessDate;
+			}
+			set
+			{
+				if ((this._ProcessDate != value))
+				{
+					this.OnProcessDateChanging(value);
+					this.SendPropertyChanging();
+					this._ProcessDate = value;
+					this.SendPropertyChanged("ProcessDate");
+					this.OnProcessDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Qty", DbType="BigInt")]
+		public System.Nullable<long> Qty
+		{
+			get
+			{
+				return this._Qty;
+			}
+			set
+			{
+				if ((this._Qty != value))
+				{
+					this.OnQtyChanging(value);
+					this.SendPropertyChanging();
+					this._Qty = value;
+					this.SendPropertyChanged("Qty");
+					this.OnQtyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int")]
+		public System.Nullable<int> UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_StoreOperationManager", Storage="_User", ThisKey="UserID", OtherKey="ID", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.StoreOperationManagers.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.StoreOperationManagers.Add(this);
+						this._UserID = value.ID;
+					}
+					else
+					{
+						this._UserID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SellStore_StoreOperationManager", Storage="_SellStore", ThisKey="StoreID", OtherKey="ID", IsForeignKey=true)]
+		public SellStore SellStore
+		{
+			get
+			{
+				return this._SellStore.Entity;
+			}
+			set
+			{
+				SellStore previousValue = this._SellStore.Entity;
+				if (((previousValue != value) 
+							|| (this._SellStore.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._SellStore.Entity = null;
+						previousValue.StoreOperationManagers.Remove(this);
+					}
+					this._SellStore.Entity = value;
+					if ((value != null))
+					{
+						value.StoreOperationManagers.Add(this);
+						this._StoreID = value.ID;
+					}
+					else
+					{
+						this._StoreID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("SellStore");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -3418,7 +3418,7 @@ namespace XamaDataLayer
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID
 		{
 			get
@@ -7433,6 +7433,321 @@ namespace XamaDataLayer
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Security.Users")]
+	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _UserName;
+		
+		private string _Passwords;
+		
+		private System.Nullable<int> _Branch_ID;
+		
+		private EntitySet<StoreOperationManager> _StoreOperationManagers;
+		
+		private EntitySet<Store_Sell> _Store_Sells;
+		
+		private EntitySet<StoreWithDrawal> _StoreWithDrawals;
+		
+		private EntitySet<History> _Histories;
+		
+		private EntitySet<UserPermession> _UserPermessions;
+		
+		private EntityRef<Branch> _Branch;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnPasswordsChanging(string value);
+    partial void OnPasswordsChanged();
+    partial void OnBranch_IDChanging(System.Nullable<int> value);
+    partial void OnBranch_IDChanged();
+    #endregion
+		
+		public User()
+		{
+			this._StoreOperationManagers = new EntitySet<StoreOperationManager>(new Action<StoreOperationManager>(this.attach_StoreOperationManagers), new Action<StoreOperationManager>(this.detach_StoreOperationManagers));
+			this._Store_Sells = new EntitySet<Store_Sell>(new Action<Store_Sell>(this.attach_Store_Sells), new Action<Store_Sell>(this.detach_Store_Sells));
+			this._StoreWithDrawals = new EntitySet<StoreWithDrawal>(new Action<StoreWithDrawal>(this.attach_StoreWithDrawals), new Action<StoreWithDrawal>(this.detach_StoreWithDrawals));
+			this._Histories = new EntitySet<History>(new Action<History>(this.attach_Histories), new Action<History>(this.detach_Histories));
+			this._UserPermessions = new EntitySet<UserPermession>(new Action<UserPermession>(this.attach_UserPermessions), new Action<UserPermession>(this.detach_UserPermessions));
+			this._Branch = default(EntityRef<Branch>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(50)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Passwords", DbType="NVarChar(50)")]
+		public string Passwords
+		{
+			get
+			{
+				return this._Passwords;
+			}
+			set
+			{
+				if ((this._Passwords != value))
+				{
+					this.OnPasswordsChanging(value);
+					this.SendPropertyChanging();
+					this._Passwords = value;
+					this.SendPropertyChanged("Passwords");
+					this.OnPasswordsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Branch_ID", DbType="Int")]
+		public System.Nullable<int> Branch_ID
+		{
+			get
+			{
+				return this._Branch_ID;
+			}
+			set
+			{
+				if ((this._Branch_ID != value))
+				{
+					if (this._Branch.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnBranch_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Branch_ID = value;
+					this.SendPropertyChanged("Branch_ID");
+					this.OnBranch_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_StoreOperationManager", Storage="_StoreOperationManagers", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<StoreOperationManager> StoreOperationManagers
+		{
+			get
+			{
+				return this._StoreOperationManagers;
+			}
+			set
+			{
+				this._StoreOperationManagers.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Store_Sell", Storage="_Store_Sells", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<Store_Sell> Store_Sells
+		{
+			get
+			{
+				return this._Store_Sells;
+			}
+			set
+			{
+				this._Store_Sells.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_StoreWithDrawal", Storage="_StoreWithDrawals", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<StoreWithDrawal> StoreWithDrawals
+		{
+			get
+			{
+				return this._StoreWithDrawals;
+			}
+			set
+			{
+				this._StoreWithDrawals.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_History", Storage="_Histories", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<History> Histories
+		{
+			get
+			{
+				return this._Histories;
+			}
+			set
+			{
+				this._Histories.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UserPermession", Storage="_UserPermessions", ThisKey="ID", OtherKey="UserID")]
+		public EntitySet<UserPermession> UserPermessions
+		{
+			get
+			{
+				return this._UserPermessions;
+			}
+			set
+			{
+				this._UserPermessions.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Branch_User", Storage="_Branch", ThisKey="Branch_ID", OtherKey="ID", IsForeignKey=true)]
+		public Branch Branch
+		{
+			get
+			{
+				return this._Branch.Entity;
+			}
+			set
+			{
+				Branch previousValue = this._Branch.Entity;
+				if (((previousValue != value) 
+							|| (this._Branch.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Branch.Entity = null;
+						previousValue.Users.Remove(this);
+					}
+					this._Branch.Entity = value;
+					if ((value != null))
+					{
+						value.Users.Add(this);
+						this._Branch_ID = value.ID;
+					}
+					else
+					{
+						this._Branch_ID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Branch");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_StoreOperationManagers(StoreOperationManager entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_StoreOperationManagers(StoreOperationManager entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_Store_Sells(Store_Sell entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Store_Sells(Store_Sell entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_StoreWithDrawals(StoreWithDrawal entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_StoreWithDrawals(StoreWithDrawal entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_Histories(History entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Histories(History entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_UserPermessions(UserPermession entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_UserPermessions(UserPermession entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="SellSystem.Bill")]
 	public partial class Bill : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -8225,321 +8540,6 @@ namespace XamaDataLayer
 		{
 			this.SendPropertyChanging();
 			entity.SellStore = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Security.Users")]
-	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _UserName;
-		
-		private string _Passwords;
-		
-		private System.Nullable<int> _Branch_ID;
-		
-		private EntitySet<StoreOperationManager> _StoreOperationManagers;
-		
-		private EntitySet<Store_Sell> _Store_Sells;
-		
-		private EntitySet<StoreWithDrawal> _StoreWithDrawals;
-		
-		private EntitySet<History> _Histories;
-		
-		private EntitySet<UserPermession> _UserPermessions;
-		
-		private EntityRef<Branch> _Branch;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnUserNameChanging(string value);
-    partial void OnUserNameChanged();
-    partial void OnPasswordsChanging(string value);
-    partial void OnPasswordsChanged();
-    partial void OnBranch_IDChanging(System.Nullable<int> value);
-    partial void OnBranch_IDChanged();
-    #endregion
-		
-		public User()
-		{
-			this._StoreOperationManagers = new EntitySet<StoreOperationManager>(new Action<StoreOperationManager>(this.attach_StoreOperationManagers), new Action<StoreOperationManager>(this.detach_StoreOperationManagers));
-			this._Store_Sells = new EntitySet<Store_Sell>(new Action<Store_Sell>(this.attach_Store_Sells), new Action<Store_Sell>(this.detach_Store_Sells));
-			this._StoreWithDrawals = new EntitySet<StoreWithDrawal>(new Action<StoreWithDrawal>(this.attach_StoreWithDrawals), new Action<StoreWithDrawal>(this.detach_StoreWithDrawals));
-			this._Histories = new EntitySet<History>(new Action<History>(this.attach_Histories), new Action<History>(this.detach_Histories));
-			this._UserPermessions = new EntitySet<UserPermession>(new Action<UserPermession>(this.attach_UserPermessions), new Action<UserPermession>(this.detach_UserPermessions));
-			this._Branch = default(EntityRef<Branch>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(50)")]
-		public string UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this.OnUserNameChanging(value);
-					this.SendPropertyChanging();
-					this._UserName = value;
-					this.SendPropertyChanged("UserName");
-					this.OnUserNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Passwords", DbType="NVarChar(50)")]
-		public string Passwords
-		{
-			get
-			{
-				return this._Passwords;
-			}
-			set
-			{
-				if ((this._Passwords != value))
-				{
-					this.OnPasswordsChanging(value);
-					this.SendPropertyChanging();
-					this._Passwords = value;
-					this.SendPropertyChanged("Passwords");
-					this.OnPasswordsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Branch_ID", DbType="Int")]
-		public System.Nullable<int> Branch_ID
-		{
-			get
-			{
-				return this._Branch_ID;
-			}
-			set
-			{
-				if ((this._Branch_ID != value))
-				{
-					if (this._Branch.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnBranch_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Branch_ID = value;
-					this.SendPropertyChanged("Branch_ID");
-					this.OnBranch_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_StoreOperationManager", Storage="_StoreOperationManagers", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<StoreOperationManager> StoreOperationManagers
-		{
-			get
-			{
-				return this._StoreOperationManagers;
-			}
-			set
-			{
-				this._StoreOperationManagers.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Store_Sell", Storage="_Store_Sells", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<Store_Sell> Store_Sells
-		{
-			get
-			{
-				return this._Store_Sells;
-			}
-			set
-			{
-				this._Store_Sells.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_StoreWithDrawal", Storage="_StoreWithDrawals", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<StoreWithDrawal> StoreWithDrawals
-		{
-			get
-			{
-				return this._StoreWithDrawals;
-			}
-			set
-			{
-				this._StoreWithDrawals.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_History", Storage="_Histories", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<History> Histories
-		{
-			get
-			{
-				return this._Histories;
-			}
-			set
-			{
-				this._Histories.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_UserPermession", Storage="_UserPermessions", ThisKey="ID", OtherKey="UserID")]
-		public EntitySet<UserPermession> UserPermessions
-		{
-			get
-			{
-				return this._UserPermessions;
-			}
-			set
-			{
-				this._UserPermessions.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Branch_User", Storage="_Branch", ThisKey="Branch_ID", OtherKey="ID", IsForeignKey=true)]
-		public Branch Branch
-		{
-			get
-			{
-				return this._Branch.Entity;
-			}
-			set
-			{
-				Branch previousValue = this._Branch.Entity;
-				if (((previousValue != value) 
-							|| (this._Branch.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Branch.Entity = null;
-						previousValue.Users.Remove(this);
-					}
-					this._Branch.Entity = value;
-					if ((value != null))
-					{
-						value.Users.Add(this);
-						this._Branch_ID = value.ID;
-					}
-					else
-					{
-						this._Branch_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Branch");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_StoreOperationManagers(StoreOperationManager entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_StoreOperationManagers(StoreOperationManager entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_Store_Sells(Store_Sell entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Store_Sells(Store_Sell entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_StoreWithDrawals(StoreWithDrawal entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_StoreWithDrawals(StoreWithDrawal entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_Histories(History entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Histories(History entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_UserPermessions(UserPermession entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_UserPermessions(UserPermession entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
 		}
 	}
 }
