@@ -34,6 +34,8 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.CustomerInfomationGroupBox = new System.Windows.Forms.GroupBox();
+            this.OrderTypeLab = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtBranches = new System.Windows.Forms.ComboBox();
             this.txtPayment = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,10 +51,8 @@
             this.PhoneLab = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.OrderTypeLab = new System.Windows.Forms.Label();
             this.OkeyBtn = new Telerik.WinControls.UI.RadButton();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
-            this.label8 = new System.Windows.Forms.Label();
             this.CustomerInfomationGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OkeyBtn)).BeginInit();
@@ -85,6 +85,24 @@
             this.CustomerInfomationGroupBox.TabIndex = 7;
             this.CustomerInfomationGroupBox.TabStop = false;
             this.CustomerInfomationGroupBox.Text = "Customer Infomation";
+            // 
+            // OrderTypeLab
+            // 
+            this.OrderTypeLab.AutoSize = true;
+            this.OrderTypeLab.Location = new System.Drawing.Point(105, 114);
+            this.OrderTypeLab.Name = "OrderTypeLab";
+            this.OrderTypeLab.Size = new System.Drawing.Size(23, 13);
+            this.OrderTypeLab.TabIndex = 1;
+            this.OrderTypeLab.Text = "....";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 114);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Order Type : ";
             // 
             // txtBranches
             // 
@@ -217,15 +235,6 @@
             this.panel1.Size = new System.Drawing.Size(524, 44);
             this.panel1.TabIndex = 9;
             // 
-            // OrderTypeLab
-            // 
-            this.OrderTypeLab.AutoSize = true;
-            this.OrderTypeLab.Location = new System.Drawing.Point(105, 114);
-            this.OrderTypeLab.Name = "OrderTypeLab";
-            this.OrderTypeLab.Size = new System.Drawing.Size(23, 13);
-            this.OrderTypeLab.TabIndex = 1;
-            this.OrderTypeLab.Text = "....";
-            // 
             // OkeyBtn
             // 
             this.OkeyBtn.Location = new System.Drawing.Point(384, 6);
@@ -281,15 +290,6 @@
             this.radGridView1.Size = new System.Drawing.Size(524, 253);
             this.radGridView1.TabIndex = 14;
             this.radGridView1.Text = "radGridView1";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 114);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 13);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Order Type : ";
             // 
             // FrmTotalOrder
             // 

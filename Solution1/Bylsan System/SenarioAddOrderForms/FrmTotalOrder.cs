@@ -87,7 +87,7 @@ namespace Bylsan_System.SenarioAddOrderForms
                      otb.OrderStatus = "In Designer";   otb.OrderType = "Special";
                      break;
                  case "Normal":
-                     otb.OrderStatus = "Printing";   otb.OrderType = "Normal";
+                     otb.OrderStatus = "In Designer";   otb.OrderType = "Normal";
                      break;
              }
            
@@ -123,25 +123,30 @@ namespace Bylsan_System.SenarioAddOrderForms
          
             //=========================================
             // == Save At AccountDaily :
-            AccountDaily DyTb = new AccountDaily() { 
+            AccountDaily DyTb = new AccountDaily() { //500
                 AccountID = CustmerAccountID ,
                 TotalIn = Convert .ToDouble ( TotalPriceBox.Text ),
+                TotalOut=0f,
                 DateOfProcess = DateTime .Now ,
-                Description = "Payment Of  A Normal Order",
+                Description = string.Format( "Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}",otb.OrderName,DateTime.Now.ToString(),CurrentBranch.Branch_Name),
                 
             };
-            AccountDailyCmd.AddAccountDaily(DyTb);
+            AccountDaily Cu = new AccountDaily()//250
+            {
+                AccountID = CustmerAccountID,
+                TotalIn = 0f,
+                TotalOut =txtPayment.Text.ToFloat(),
+                DateOfProcess = DateTime.Now,
+                Description = "Payment Of  A Normal Order",
+
+            };
+            AccountDailyCmd.AddAccountDaily(Cu);
             //=========================================
             
+
+           //==================================================
             
-           AccountDaily  RDyTb = new AccountDaily()
-            {
-                AccountID = CurrentBranch .AccountID ,
-                TotalIn = Convert.ToDouble(TotalPriceBox.Text),
-                DateOfProcess = DateTime.Now,
-                Description = "Income payment  A Normal Order",
-            };
-            AccountDailyCmd.AddAccountDaily(RDyTb);
+          
             //==========================================================
 
 

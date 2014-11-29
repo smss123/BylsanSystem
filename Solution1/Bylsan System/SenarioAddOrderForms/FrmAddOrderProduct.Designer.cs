@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddOrderProduct));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Publicnamelab = new System.Windows.Forms.Label();
             this.ProductDescriotionLab = new System.Windows.Forms.Label();
@@ -58,7 +59,11 @@
             this.ExpandAll = new System.Windows.Forms.Button();
             this.TreeCategories = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).BeginInit();
@@ -68,6 +73,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -80,17 +88,24 @@
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // lblStatus
+            // 
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(12, 17);
+            this.lblStatus.Text = "_";
+            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.Publicnamelab);
             this.panel1.Controls.Add(this.ProductDescriotionLab);
             this.panel1.Controls.Add(this.ProductNameLab);
             this.panel1.Controls.Add(this.PhotoBox);
             this.panel1.Controls.Add(this.nextBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 458);
+            this.panel1.Location = new System.Drawing.Point(0, 369);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1174, 132);
+            this.panel1.Size = new System.Drawing.Size(1174, 221);
             this.panel1.TabIndex = 3;
             // 
             // Publicnamelab
@@ -98,7 +113,7 @@
             this.Publicnamelab.AutoSize = true;
             this.Publicnamelab.Location = new System.Drawing.Point(196, 84);
             this.Publicnamelab.Name = "Publicnamelab";
-            this.Publicnamelab.Size = new System.Drawing.Size(38, 13);
+            this.Publicnamelab.Size = new System.Drawing.Size(35, 13);
             this.Publicnamelab.TabIndex = 4;
             this.Publicnamelab.Text = "label1";
             // 
@@ -107,7 +122,7 @@
             this.ProductDescriotionLab.AutoSize = true;
             this.ProductDescriotionLab.Location = new System.Drawing.Point(196, 48);
             this.ProductDescriotionLab.Name = "ProductDescriotionLab";
-            this.ProductDescriotionLab.Size = new System.Drawing.Size(38, 13);
+            this.ProductDescriotionLab.Size = new System.Drawing.Size(35, 13);
             this.ProductDescriotionLab.TabIndex = 3;
             this.ProductDescriotionLab.Text = "label2";
             // 
@@ -134,9 +149,9 @@
             // 
             // nextBtn
             // 
-            this.nextBtn.Location = new System.Drawing.Point(871, 83);
+            this.nextBtn.Location = new System.Drawing.Point(1018, 182);
             this.nextBtn.Name = "nextBtn";
-            this.nextBtn.Size = new System.Drawing.Size(144, 46);
+            this.nextBtn.Size = new System.Drawing.Size(144, 36);
             this.nextBtn.TabIndex = 0;
             this.nextBtn.Text = "Next";
             this.nextBtn.ThemeName = "Windows8";
@@ -171,7 +186,7 @@
             this.CustomerPhoneLab.AutoSize = true;
             this.CustomerPhoneLab.Location = new System.Drawing.Point(58, 50);
             this.CustomerPhoneLab.Name = "CustomerPhoneLab";
-            this.CustomerPhoneLab.Size = new System.Drawing.Size(38, 13);
+            this.CustomerPhoneLab.Size = new System.Drawing.Size(35, 13);
             this.CustomerPhoneLab.TabIndex = 1;
             this.CustomerPhoneLab.Text = "label2";
             // 
@@ -180,7 +195,7 @@
             this.CustomerNameLab.AutoSize = true;
             this.CustomerNameLab.Location = new System.Drawing.Point(58, 26);
             this.CustomerNameLab.Name = "CustomerNameLab";
-            this.CustomerNameLab.Size = new System.Drawing.Size(38, 13);
+            this.CustomerNameLab.Size = new System.Drawing.Size(35, 13);
             this.CustomerNameLab.TabIndex = 0;
             this.CustomerNameLab.Text = "label1";
             // 
@@ -194,7 +209,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 86);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1174, 372);
+            this.groupBox1.Size = new System.Drawing.Size(1174, 283);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order";
@@ -212,32 +227,32 @@
             // radGridView1
             // 
             this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn5.FieldName = "Product.Product_Name";
-            gridViewTextBoxColumn5.HeaderText = "Name";
-            gridViewTextBoxColumn5.Name = "ColName";
-            gridViewTextBoxColumn5.Width = 97;
-            gridViewTextBoxColumn6.Expression = "";
-            gridViewTextBoxColumn6.FieldName = "Qty";
-            gridViewTextBoxColumn6.HeaderText = "Qty";
-            gridViewTextBoxColumn6.Name = "ColQty";
-            gridViewTextBoxColumn6.Width = 97;
-            gridViewTextBoxColumn7.FieldName = "Product.ProductPrice";
-            gridViewTextBoxColumn7.HeaderText = "Product Price";
-            gridViewTextBoxColumn7.Name = "ColProductPrice";
-            gridViewTextBoxColumn7.Width = 97;
-            gridViewTextBoxColumn8.EnableExpressionEditor = true;
-            gridViewTextBoxColumn8.Expression = "ColProductPrice * ColQty";
-            gridViewTextBoxColumn8.HeaderText = "Price";
-            gridViewTextBoxColumn8.Name = "ColPrice";
-            gridViewTextBoxColumn8.Width = 97;
+            gridViewTextBoxColumn1.FieldName = "Product.Product_Name";
+            gridViewTextBoxColumn1.HeaderText = "Name";
+            gridViewTextBoxColumn1.Name = "ColName";
+            gridViewTextBoxColumn1.Width = 97;
+            gridViewTextBoxColumn2.Expression = "";
+            gridViewTextBoxColumn2.FieldName = "Qty";
+            gridViewTextBoxColumn2.HeaderText = "Qty";
+            gridViewTextBoxColumn2.Name = "ColQty";
+            gridViewTextBoxColumn2.Width = 97;
+            gridViewTextBoxColumn3.FieldName = "Product.ProductPrice";
+            gridViewTextBoxColumn3.HeaderText = "Product Price";
+            gridViewTextBoxColumn3.Name = "ColProductPrice";
+            gridViewTextBoxColumn3.Width = 97;
+            gridViewTextBoxColumn4.EnableExpressionEditor = true;
+            gridViewTextBoxColumn4.Expression = "ColProductPrice * ColQty";
+            gridViewTextBoxColumn4.HeaderText = "Price";
+            gridViewTextBoxColumn4.Name = "ColPrice";
+            gridViewTextBoxColumn4.Width = 97;
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4});
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radGridView1.Size = new System.Drawing.Size(406, 346);
+            this.radGridView1.Size = new System.Drawing.Size(406, 259);
             this.radGridView1.TabIndex = 13;
             this.radGridView1.Text = "radGridView1";
             // 
@@ -252,7 +267,7 @@
             this.ListViewProductes.GridLines = true;
             this.ListViewProductes.Location = new System.Drawing.Point(186, 19);
             this.ListViewProductes.Name = "ListViewProductes";
-            this.ListViewProductes.Size = new System.Drawing.Size(575, 347);
+            this.ListViewProductes.Size = new System.Drawing.Size(575, 260);
             this.ListViewProductes.TabIndex = 7;
             this.ListViewProductes.UseCompatibleStateImageBehavior = false;
             this.ListViewProductes.SelectedIndexChanged += new System.EventHandler(this.ListViewProductes_SelectedIndexChanged);
@@ -334,11 +349,47 @@
             this.imageList1.Images.SetKeyName(0, "eye.png");
             this.imageList1.Images.SetKeyName(1, "award_star_bronze_2.png");
             // 
-            // lblStatus
+            // groupBox2
             // 
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(12, 17);
-            this.lblStatus.Text = "_";
+            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.radButton1);
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Location = new System.Drawing.Point(768, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(403, 170);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(190, 42);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(204, 94);
+            this.textBox1.TabIndex = 3;
+            // 
+            // radButton1
+            // 
+            this.radButton1.Location = new System.Drawing.Point(6, 140);
+            this.radButton1.Name = "radButton1";
+            this.radButton1.Size = new System.Drawing.Size(50, 24);
+            this.radButton1.TabIndex = 4;
+            this.radButton1.Text = "..";
+            // 
+            // imageList2
+            // 
+            this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(6, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(178, 116);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmAddOrderProduct
             // 
@@ -365,6 +416,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,5 +452,10 @@
         private System.Windows.Forms.Label Publicnamelab;
         private Telerik.WinControls.UI.RadGridView radGridView1;
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Telerik.WinControls.UI.RadButton radButton1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ImageList imageList2;
     }
 }
