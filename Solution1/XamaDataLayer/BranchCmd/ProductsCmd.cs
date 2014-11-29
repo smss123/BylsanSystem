@@ -42,7 +42,7 @@ namespace XamaDataLayer.BranchCmd
        }
        public static List<Product> GetAllProducts()
        {
-           db = new DbDataContext();
+           db = new DbDataContext(Properties.Settings.Default.soft_BylsanConnectionString);
            return db.Products.ToList();
 
        }

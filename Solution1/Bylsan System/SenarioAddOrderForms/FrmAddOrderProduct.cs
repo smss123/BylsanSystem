@@ -77,10 +77,10 @@ namespace Bylsan_System.SenarioAddOrderForms
 
         }
         #endregion
-
+        Thread th; 
         private void FrmAddOrderProduct_Load(object sender, EventArgs e)
         {
-          Thread th = new Thread(LoadingProduct);
+          th  = new Thread(LoadingProduct);
           th.Start();
           CustomerInformations.AttachIni();
 
@@ -108,6 +108,8 @@ namespace Bylsan_System.SenarioAddOrderForms
                 CustomerInformations.Orderini();
             });
             Operation.EndOperation(this);
+            th.Abort();
+
         }
 
 
