@@ -49,10 +49,11 @@ namespace Bylsan_System.ProductForms
 
             });
             Operation.BeginOperation(this);
-            ProductGridView.DataSource = ProductsCmd.GetAllProducts();
+            var q = ProductsCmd.GetAllProducts();
             Operation.EndOperation(this);
             statusStrip1.Invoke((MethodInvoker)delegate
             {
+                ProductGridView.DataSource = q;
 
                 toolStripStatusLabel1.Text = "Compelete...";
 

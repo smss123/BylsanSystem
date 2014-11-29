@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.Data;
@@ -24,39 +25,32 @@ namespace Bylsan_System.ProductForms
 
         private void FillCategoreisCombo()
         {
+            Operation.BeginOperation(this);
+            this.Invoke((MethodInvoker)delegate {
+                this.CategoryComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
+                this.CategoryComboBox.AutoFilter = true;
+                this.CategoryComboBox.DisplayMember = "ProductCategoryName";
+                this.CategoryComboBox.ValueMember = "ID";
+            });
+           
+           
+          var q  = CategoriesCmd.GetAllCategories();
 
-            this.CategoryComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
-            this.CategoryComboBox.AutoFilter = true;
-            this.CategoryComboBox.DisplayMember = "ProductCategoryName";
-            this.CategoryComboBox.ValueMember = "ID";
+          this.Invoke((MethodInvoker)delegate {
 
-            this.Enabled = false;
+              CategoryComboBox.DataSource = q;
 
-
-
-            this.Cursor = Cursors.WaitCursor;
-            CategoryComboBox.DataSource = CategoriesCmd.GetAllCategories();
-            this.Cursor = Cursors.Default;
-            this.Enabled = true;
-
+              CompositeFilterDescriptor compositeFilter = new CompositeFilterDescriptor();
+              FilterDescriptor prodName = new FilterDescriptor("ProductCategoryName", FilterOperator.Contains, "");
+               compositeFilter.FilterDescriptors.Add(prodName);
+               compositeFilter.LogicalOperator = FilterLogicalOperator.Or;
+              this.CategoryComboBox.EditorControl.FilterDescriptors.Add(compositeFilter);
 
 
           
-            CompositeFilterDescriptor compositeFilter = new CompositeFilterDescriptor();
-            FilterDescriptor prodName = new FilterDescriptor("ProductCategoryName", FilterOperator.Contains, "");
-            //FilterDescriptor prodQuantity = new FilterDescriptor("ID", FilterOperator.Contains, "");
-            compositeFilter.FilterDescriptors.Add(prodName);
-            //compositeFilter.FilterDescriptors.Add(prodQuantity);
-            compositeFilter.LogicalOperator = FilterLogicalOperator.Or;
+          });
 
-            this.CategoryComboBox.EditorControl.FilterDescriptors.Add(compositeFilter);
-
-       
-           
-
-            
-          
-           
+          Operation.EndOperation(this);   
 
         }
 
@@ -83,24 +77,44 @@ namespace Bylsan_System.ProductForms
 
             }
             #endregion
-           Product tb = new Product (){
-               Product_Name = product_NameTextBox.Text,
-               Product_Description = product_DescriptionTextBox.Text,
-               Img = productpictureBox.Image,
-               CateogryID = CategoryComboBox.SelectedValue.ToString().ToInt(),
-            };
-            Operation.BeginOperation(this);
-            if (ProductsCmd.AddProduct(tb)){
+           Thread th = new Thread(AddPro);
+           th.Start();
+          
+        }
 
-                Operation.ShowToustOk("Product Has Been Saved", this);
-                product_DescriptionTextBox.Clear();
-                product_NameTextBox.Clear();
-                productpictureBox.Image = null;
+        private void AddPro()
+        {
+            Product tb=null;
+
+            this.Invoke((MethodInvoker)delegate {
+
+                tb = new Product()
+                {
+                    Product_Name = product_NameTextBox.Text,
+                    Product_Description = product_DescriptionTextBox.Text,
+                    Img = productpictureBox.Image,
+                    CateogryID = CategoryComboBox.SelectedValue.ToString().ToInt(),
+                };
+            
+            
+            });
+            Operation.BeginOperation(this);
+
+            if (ProductsCmd.AddProduct(tb))
+            {
+                this.Invoke((MethodInvoker)delegate {
+
+                    Operation.ShowToustOk("Product Has Been Saved", this);
+                    product_DescriptionTextBox.Clear();
+                    product_NameTextBox.Clear();
+                    productpictureBox.Image = null;
+                
+                });
+               
 
 
             }
             Operation.EndOperation(this);
-          
         }
 
 
@@ -143,7 +157,8 @@ namespace Bylsan_System.ProductForms
 
          private void frmAddProduct_Load(object sender, EventArgs e)
          {
-             FillCategoreisCombo();
+           Thread th = new Thread(FillCategoreisCombo);
+           th.Start();
          }
 
     }

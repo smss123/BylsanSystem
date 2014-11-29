@@ -26,13 +26,14 @@ namespace Bylsan_System.ProductForms
             Operation.BeginOperation(this);
             this.Invoke((MethodInvoker)delegate {
 
+                this.CategoryComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
                 this.CategoryComboBox.AutoFilter = true;
+                this.CategoryComboBox.DisplayMember = "ProductCategoryName";
                 this.CategoryComboBox.ValueMember = "ID";
-                this.CategoryComboBox.DisplayMember = "Product_Name";
                 this.lblstatus.Text = "Loading ...";
             });
            
-          var q = ProductsCmd.GetAllProducts();
+          var q = CategoriesCmd.GetAllCategories();
           this.Invoke((MethodInvoker)delegate {
 
               CategoryComboBox.DataSource = q;

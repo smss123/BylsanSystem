@@ -13,11 +13,15 @@ using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Helper_Classes;
 using XamaDataLayer;
 using System.Data.Linq;
+using System.Threading;
+using Xprema.XExtention;
 
 namespace Bylsan_System.SenarioAddOrderForms
 {
     public partial class FrmAddOrderProduct : Form
     {
+        public List<Product> Products { get; set; }
+        public List<ProductCategory> ProductCategories { get; set; }
         public FrmAddOrderProduct()
         {
             InitializeComponent();
@@ -33,22 +37,21 @@ namespace Bylsan_System.SenarioAddOrderForms
             try
             {
 
-                if ((int)CustomerInformations.WatingCustomer.ID != 0)
-                {
+               
                     CustomerID = CustomerInformations.WatingCustomer.ID;
                     CustomerNameLab.Text = string.Format("Customer Name is : {0} ", CustomerInformations.WatingCustomer.CustomerName);
                     CustomerPhoneLab.Text = string.Format("Customer Phone  is : {0} ", CustomerInformations.WatingCustomer.PhoneNumber);
 
                     frm.NameLab.Text = CustomerInformations.WatingCustomer.CustomerName;
                     frm.PhoneLab.Text = CustomerInformations.WatingCustomer.PhoneNumber;
-                }
+               
             }
             catch (Exception)
             {
 
                 CustomerNameLab.Text = string.Format("Customer Name is : {0} ", CustomerInformations.CustmrName);
                 CustomerPhoneLab.Text = string.Format("Customer Phone  is : {0} ", CustomerInformations.CustmrPhone);
-                frm.NameLab.Text = CustomerInformations.CustmrName;
+                frm.NameLab.Text = CustomerInformations.WatingCustomer.CustomerName;
                 frm.PhoneLab.Text = CustomerInformations.CustmrPhone;
 
             }
@@ -66,10 +69,10 @@ namespace Bylsan_System.SenarioAddOrderForms
             this.TreeCategories.Nodes.Clear();
             this.TreeCategories.ImageList = imageList1;
             this.TreeCategories.Nodes.Add("Xprema", "All Categories", 0);
-            var ListOfCategores = CategoriesCmd.GetAllCategories();
-            foreach (var item in ListOfCategores)
+           
+            foreach (var item in this.ProductCategories)
             {
-                this.TreeCategories.Nodes[0].Nodes.Add("", item.ProductCategoryName, 1);
+                this.TreeCategories.Nodes[0].Nodes.Add(item.ID.ToString(), item.ProductCategoryName, 1);
             }
 
         }
@@ -77,10 +80,33 @@ namespace Bylsan_System.SenarioAddOrderForms
 
         private void FrmAddOrderProduct_Load(object sender, EventArgs e)
         {
-            ImportCustomerData();
-            PopulateCategoreisTree();
-            CreateOrdersListView();
-            CustomerInformations.Orderini();
+          Thread th = new Thread(LoadingProduct);
+          th.Start();
+
+         
+        }
+
+        private void LoadingProduct()
+        {
+            Operation.BeginOperation(this);
+            this.Invoke((MethodInvoker)delegate
+            {
+
+                lblStatus.Text = "Loading ...";
+            });
+            this.Products = ProductsCmd.GetAllProducts();
+            this.ProductCategories = CategoriesCmd.GetAllCategories();
+
+            this.Invoke((MethodInvoker)delegate
+            {
+
+                lblStatus.Text = "Complete Loading  ...";
+                ImportCustomerData();
+                PopulateCategoreisTree();
+                CreateOrdersListView();
+                CustomerInformations.Orderini();
+            });
+            Operation.EndOperation(this);
         }
 
 
@@ -109,12 +135,7 @@ namespace Bylsan_System.SenarioAddOrderForms
 
             //==============================================================================
 
-            //OrdersListView.View = View.Details;
-            //OrdersListView.Columns.Add("ID", 30, HorizontalAlignment.Center);
-            //OrdersListView.Columns.Add("Product", 170, HorizontalAlignment.Center);
-            //OrdersListView.Columns.Add("Description", 170, HorizontalAlignment.Center);
-            //OrdersListView.Columns.Add("Quantity", 100, HorizontalAlignment.Center);
-            //OrdersListView.Columns.Add("Price", 70, HorizontalAlignment.Center);
+          
         }
 
 
@@ -126,7 +147,7 @@ namespace Bylsan_System.SenarioAddOrderForms
 
             if (CategID != 0)
             {
-                var AllProducts = ProductsCmd.GetProductByCategID(CategID);
+                var AllProducts = this.Products.Where(p => p.CateogryID == CategID); // ProductsCmd.GetProductByCategID(CategID);
                 foreach (var item in AllProducts)
                 {
                     ListViewProductes.LargeImageList = ProductImageList;
@@ -150,7 +171,7 @@ namespace Bylsan_System.SenarioAddOrderForms
             {
                 if (this.TreeCategories.Nodes.Count != 0)
                 {
-                    CategID = (from c in CategoriesCmd.GetAllCategories()
+                    CategID = (from c in ProductCategories
                                where c.ProductCategoryName.Contains(e.Node.Text)
                                select c.ID).Single();
                     PopulateListProducts();
@@ -187,7 +208,7 @@ namespace Bylsan_System.SenarioAddOrderForms
                         PrdID = 0;
                         PrdID = ListViewProductes.SelectedItems[0].Index;
 
-                        var MyProdctut = ProductsCmd.GetProductByID(int.Parse(ListViewProductes.Items[PrdID].SubItems[0].Text));
+                        var MyProdctut =  this.Products.Where(p=>p.ID==ListViewProductes.Items[PrdID].SubItems[0].Text.ToInt()).ToList();//ProductsCmd.GetProductByID(int.Parse(ListViewProductes.Items[PrdID].SubItems[0].Text));
 
                         foreach (var item in MyProdctut)
                         {
@@ -235,16 +256,9 @@ namespace Bylsan_System.SenarioAddOrderForms
 
                           
                             
-                            //// ===== Compute Total Cost Price
-                            //    ////double TotalCostPrice = (from ListViewItem li in OrdersListView.Items
-                            //    ////                         select
-                            //    ////                             Convert.ToDouble(li.SubItems[4].Text.ToString())).Sum();
-                            //    ////==  Display Total Cost Price Of Orders
-                            //    //TotalCostBox.Text = TotalCostPrice.ToString();
-                            //    //// == Display  Orders Count
-                            //    //OrdersCountBox.Text = OrdersListView.Items.Count.ToString();
+                           
                             }
-                        //}
+                        
                     }
                 }
 
@@ -297,6 +311,11 @@ namespace Bylsan_System.SenarioAddOrderForms
         }
 
         private void ListViewProductes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

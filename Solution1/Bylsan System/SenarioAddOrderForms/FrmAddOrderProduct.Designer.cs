@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddOrderProduct));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Publicnamelab = new System.Windows.Forms.Label();
@@ -47,6 +47,7 @@
             this.CustomerPhoneLab = new System.Windows.Forms.Label();
             this.CustomerNameLab = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.ListViewProductes = new System.Windows.Forms.ListView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.titleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,19 +58,22 @@
             this.ExpandAll = new System.Windows.Forms.Button();
             this.TreeCategories = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
+            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nextBtn)).BeginInit();
             this.CustomerInfomationGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblStatus});
             this.statusStrip1.Location = new System.Drawing.Point(0, 590);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1174, 22);
@@ -194,6 +198,48 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // radGridView1
+            // 
+            this.radGridView1.BackColor = System.Drawing.SystemColors.Control;
+            this.radGridView1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.radGridView1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.radGridView1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.radGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.radGridView1.Location = new System.Drawing.Point(768, 20);
+            // 
+            // radGridView1
+            // 
+            this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn5.FieldName = "Product.Product_Name";
+            gridViewTextBoxColumn5.HeaderText = "Name";
+            gridViewTextBoxColumn5.Name = "ColName";
+            gridViewTextBoxColumn5.Width = 97;
+            gridViewTextBoxColumn6.Expression = "";
+            gridViewTextBoxColumn6.FieldName = "Qty";
+            gridViewTextBoxColumn6.HeaderText = "Qty";
+            gridViewTextBoxColumn6.Name = "ColQty";
+            gridViewTextBoxColumn6.Width = 97;
+            gridViewTextBoxColumn7.FieldName = "Product.ProductPrice";
+            gridViewTextBoxColumn7.HeaderText = "Product Price";
+            gridViewTextBoxColumn7.Name = "ColProductPrice";
+            gridViewTextBoxColumn7.Width = 97;
+            gridViewTextBoxColumn8.EnableExpressionEditor = true;
+            gridViewTextBoxColumn8.Expression = "ColProductPrice * ColQty";
+            gridViewTextBoxColumn8.HeaderText = "Price";
+            gridViewTextBoxColumn8.Name = "ColPrice";
+            gridViewTextBoxColumn8.Width = 97;
+            this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8});
+            this.radGridView1.Name = "radGridView1";
+            this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.radGridView1.Size = new System.Drawing.Size(406, 346);
+            this.radGridView1.TabIndex = 13;
+            this.radGridView1.Text = "radGridView1";
             // 
             // ListViewProductes
             // 
@@ -288,46 +334,11 @@
             this.imageList1.Images.SetKeyName(0, "eye.png");
             this.imageList1.Images.SetKeyName(1, "award_star_bronze_2.png");
             // 
-            // radGridView1
+            // lblStatus
             // 
-            this.radGridView1.BackColor = System.Drawing.SystemColors.Control;
-            this.radGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.radGridView1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.radGridView1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radGridView1.Location = new System.Drawing.Point(768, 20);
-            // 
-            // radGridView1
-            // 
-            this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.FieldName = "Product.Product_Name";
-            gridViewTextBoxColumn1.HeaderText = "Name";
-            gridViewTextBoxColumn1.Name = "ColName";
-            gridViewTextBoxColumn1.Width = 97;
-            gridViewTextBoxColumn2.Expression = "";
-            gridViewTextBoxColumn2.FieldName = "Qty";
-            gridViewTextBoxColumn2.HeaderText = "Qty";
-            gridViewTextBoxColumn2.Name = "ColQty";
-            gridViewTextBoxColumn2.Width = 97;
-            gridViewTextBoxColumn3.FieldName = "Product.ProductPrice";
-            gridViewTextBoxColumn3.HeaderText = "Product Price";
-            gridViewTextBoxColumn3.Name = "ColProductPrice";
-            gridViewTextBoxColumn3.Width = 97;
-            gridViewTextBoxColumn4.EnableExpressionEditor = true;
-            gridViewTextBoxColumn4.Expression = "ColProductPrice * ColQty";
-            gridViewTextBoxColumn4.HeaderText = "Price";
-            gridViewTextBoxColumn4.Name = "ColPrice";
-            gridViewTextBoxColumn4.Width = 97;
-            this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4});
-            this.radGridView1.Name = "radGridView1";
-            this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radGridView1.Size = new System.Drawing.Size(406, 346);
-            this.radGridView1.TabIndex = 13;
-            this.radGridView1.Text = "radGridView1";
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(12, 17);
+            this.lblStatus.Text = "_";
             // 
             // FrmAddOrderProduct
             // 
@@ -342,6 +353,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.FrmAddOrderProduct_Load);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).EndInit();
@@ -349,9 +362,9 @@
             this.CustomerInfomationGroupBox.ResumeLayout(false);
             this.CustomerInfomationGroupBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,5 +396,6 @@
         private System.Windows.Forms.ToolStripMenuItem largeIconToolStripMenuItem;
         private System.Windows.Forms.Label Publicnamelab;
         private Telerik.WinControls.UI.RadGridView radGridView1;
+        private System.Windows.Forms.ToolStripStatusLabel lblStatus;
     }
 }
