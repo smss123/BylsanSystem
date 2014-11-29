@@ -53,8 +53,8 @@ namespace Bylsan_System.SenarioAddOrderForms
                 ImgIndx.Add(i) ;
                 CustomerInformations.WaitingAttachment.Add(new OrderProuctAttachment() { 
                  Description= DescriptiontextBox.Text,
-                  imageX = pic.Image
-                
+                  imageX = pic.Image,
+                  
                 
                 });
                 this.Cursor = Cursors.Default;

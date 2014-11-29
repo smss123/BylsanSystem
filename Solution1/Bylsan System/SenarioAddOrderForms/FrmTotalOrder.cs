@@ -118,6 +118,7 @@ namespace Bylsan_System.SenarioAddOrderForms
                 ordtb.Qty = item.Qty;
                 ordtb.Status = item.Status;
                 OrderProductsCmd.AddOrderProduct(ordtb);
+  
                 db = new DbDataContext();
             }
          
@@ -141,13 +142,22 @@ namespace Bylsan_System.SenarioAddOrderForms
 
             };
             AccountDailyCmd.AddAccountDaily(Cu);
-            //=========================================
-            
+            //=============================================================================
+            // Save Order Prouct Attachment :
+             int OrdPrd  = ( from o in OrderProductsCmd .GetAll ()  select o.ID ).Max ();
 
-           //==================================================
-            
+             OrderProuctAttachment attb = new OrderProuctAttachment();
+             foreach (var item in CustomerInformations .WaitingAttachment )
+             {
+                 attb = new OrderProuctAttachment() { 
+                 Description = item .Description ,
+                 imageX = item .imageX ,
+                 OrderProductID = OrdPrd ,
+                 };
+                 OrderProuctAttachmentCmd.AddOrderProductAttachment(attb);
+             }
           
-            //==========================================================
+            //============================================================================
 
 
             Operation.EndOperation(this);
