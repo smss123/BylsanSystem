@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using XamaDataLayer.Helper_Classes;
 
 using System.Threading;
 using XamaDataLayer;
@@ -20,6 +21,7 @@ namespace Bylsan_System.designerForms
             InitializeComponent();
         }
 
+        public int IDImageAddress { get; set; }
         public int TaregtOrder { get; set; }
 
         Thread Thr;
@@ -36,8 +38,10 @@ namespace Bylsan_System.designerForms
         }
         private void FrmOrderProductShow_Load(object sender, EventArgs e)
         {
-
-           
+            SizeLab.Text = "";
+            UploadBtn.Visible = false; // UnUsed
+            pictureBox1.Image = null;
+           //================================
             Thr = new Thread(PopulateGrd);
             Thr.Start();
         }
@@ -70,6 +74,8 @@ namespace Bylsan_System.designerForms
                     TxtDescription.Text = item.Description;
                     pictureBox1.Image = item.imageX;
                     imageList1.Images.Add(item.imageX);
+                    SizeLab.Text = item.imageX.Size.ToString () ;
+                    IDImageAddress = item.ID;
                 }
                
             });
@@ -93,6 +99,7 @@ namespace Bylsan_System.designerForms
                
                 pictureBox1.Image = null;
                 pictureBox1.Image = imageList1.Images[i];
+                SizeLab.Text = imageList1.Images[i].Size.ToString();
                 i++;
             }
             else
@@ -100,45 +107,77 @@ namespace Bylsan_System.designerForms
                 i = 0; 
                 pictureBox1.Image = null;
                 pictureBox1.Image = imageList1.Images[i];
+                SizeLab.Text = imageList1.Images[i].Size.ToString () ;
             }
         }
-        SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+        public static Image ResizeImage(Image imgToResize, Size size)
+        {
+           return (Image)(new Bitmap(imgToResize, size));
+        }
+
+    
         private void SaveBtn_Click(object sender, EventArgs e)
+        {     
+                     
+            int  w = int .Parse (WthBox.Text); int h = int .Parse (HghtBox.Text);    
+            Image Img = pictureBox1.Image;
+            Img = ResizeImage(Img , new Size(w, h));
+            byteImg1 = PhotosConverter.ImageToByteArray(Img);
+
+            OrderProduct tb = new OrderProduct() { 
+            OrderID = TaregtOrder,
+            Description = TxtDescription .Text ,
+            Qty = int.Parse(DGVProducts.CurrentRow.Cells[2].Value.ToString()),
+            ProductID = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString()),
+             ImageX = byteImg1 ,
+            Status = "in producting ",
+            };
+            OrderProductsCmd.EditOrderProduct(tb, IDImageAddress);
+            MessageBox.Show("Changes Was Saved ...");
+            this.Hide();
+        }
+
+
+        #region "    ^^^ Brwose Photo    "
+
+        OpenFileDialog Op = new OpenFileDialog();
+
+        private void UploadBtn_Click(object sender, EventArgs e)
+        {
+            Op = new OpenFileDialog();
+            if (Op.ShowDialog() == DialogResult.OK)
+            {
+                this.Cursor = Cursors.WaitCursor;
+                Op.Filter = "Image Files(*.png; *.jpg; *.bmp)|*.png; *.jpg; *.bmp";
+                pictureBox1.Image = Image.FromFile(Op.FileName);
+               
+                this.Cursor = Cursors.Default;
+
+            }
+        }
+        byte[] byteImg1;
+        private void ConvertCarsPhotoes()
         {
 
-            saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
-            saveFileDialog1.Title = "Save an Image File";
-            saveFileDialog1.ShowDialog();
-
-          
-            if (saveFileDialog1.FileName != "")
+            if (Op.FileName != "")
             {
-              
-                System.IO.FileStream fs =
-                   (System.IO.FileStream)saveFileDialog1.OpenFile();
-                
-                switch (saveFileDialog1.FilterIndex)
-                {
-                    case 1:
-                        pictureBox1.Image.Save(fs,
-                           System.Drawing.Imaging.ImageFormat.Jpeg);
-                        break;
 
-                    case 2:
-                        pictureBox1.Image.Save(fs,
-                           System.Drawing.Imaging.ImageFormat.Bmp);
-                        break;
+                this.Cursor = Cursors.WaitCursor;
+                Image img = Image.FromFile(Op.FileName);
+                byteImg1 = PhotosConverter.ImageToByteArray(img);
+                this.Cursor = Cursors.Default;
 
-                    case 3:
-                        pictureBox1.Image.Save(fs,
-                           System.Drawing.Imaging.ImageFormat.Gif);
-                        break;
-                }
-
-                fs.Close();
             }
+            else
+            {
+                byteImg1 = null;
+            }
+
         }
+
+
+        #endregion 
 
     }
 }
