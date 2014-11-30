@@ -31,7 +31,7 @@ namespace Bylsan_System.CustomerForms
                 customerNameTextBox.BackColor = Color.OrangeRed;
 
                 customerNameTextBox.Focus();
-                errorProvider1.SetError(this.customerNameTextBox, "Please Enter Branch name");
+                errorProvider1.SetError(this.customerNameTextBox, "Please Enter Customer name");
 
                 return;
             }

@@ -148,6 +148,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainStoreForms\FrmAddMainStore_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainStoreForms\FrmAddMainStore_Item.Designer.cs">
+      <DependentUpon>FrmAddMainStore_Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="Operation.cs" />
     <Compile Include="ProductForms\frmAddProduct.cs">
       <SubType>Form</SubType>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainStoreForms\FrmAddMainStore_Item.resx">
+      <DependentUpon>FrmAddMainStore_Item.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForms\frmAddProduct.resx">
       <DependentUpon>frmAddProduct.cs</DependentUpon>
