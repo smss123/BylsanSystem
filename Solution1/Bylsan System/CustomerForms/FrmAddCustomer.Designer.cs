@@ -119,6 +119,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(385, 213);
             this.Name = "FrmAddCustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddCustomer";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
