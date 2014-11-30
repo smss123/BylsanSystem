@@ -47,24 +47,15 @@ namespace Bylsan_System.EmployeeForms
 
             });
             Operation.BeginOperation(this);
-            try
-            {
+          
                 Application.DoEvents();
-                radGridView1.DataSource = EmployeesCmd.GetAllEmployees();
+               var q = EmployeesCmd.GetAllEmployees();
                 Application.DoEvents();
-            }
-            catch (System.InvalidOperationException ex)
-            {
-
-                Application.DoEvents();
-                radGridView1.DataSource = EmployeesCmd.GetAllEmployees();
-                Application.DoEvents();
-            }
            
             Operation.EndOperation(this);
             statusStrip1.Invoke((MethodInvoker)delegate
             {
-
+                radGridView1.DataSource = q;
                 toolStrip1.Text = "Compelete Load .... ";
 
             });
