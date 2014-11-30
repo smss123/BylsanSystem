@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            this.components = new System.ComponentModel.Container();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DGVProducts = new Telerik.WinControls.UI.RadGridView();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
@@ -43,7 +44,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TxtDescription = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.CloseBtn = new System.Windows.Forms.Button();
+            this.SaveBtn = new System.Windows.Forms.Button();
+            this.NextPhotoBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts.MasterTemplate)).BeginInit();
@@ -75,24 +80,24 @@
             // DGVProducts
             // 
             this.DGVProducts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "ID";
-            gridViewTextBoxColumn1.HeaderText = "ID";
-            gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn1.Width = 43;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "ProductID";
-            gridViewTextBoxColumn2.HeaderText = "Product Name";
-            gridViewTextBoxColumn2.Name = "Product_Name";
-            gridViewTextBoxColumn2.Width = 215;
-            gridViewTextBoxColumn3.FieldName = "Qty";
-            gridViewTextBoxColumn3.HeaderText = "Quantity";
-            gridViewTextBoxColumn3.Name = "Quantity";
-            gridViewTextBoxColumn3.Width = 115;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "ID";
+            gridViewTextBoxColumn4.HeaderText = "ID";
+            gridViewTextBoxColumn4.Name = "ID";
+            gridViewTextBoxColumn4.Width = 43;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "ProductID";
+            gridViewTextBoxColumn5.HeaderText = "Product Name";
+            gridViewTextBoxColumn5.Name = "Product_Name";
+            gridViewTextBoxColumn5.Width = 215;
+            gridViewTextBoxColumn6.FieldName = "Qty";
+            gridViewTextBoxColumn6.HeaderText = "Quantity";
+            gridViewTextBoxColumn6.Name = "Quantity";
+            gridViewTextBoxColumn6.Width = 115;
             this.DGVProducts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3});
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6});
             this.DGVProducts.MasterTemplate.EnableFiltering = true;
             this.DGVProducts.Name = "DGVProducts";
             this.DGVProducts.ReadOnly = true;
@@ -168,7 +173,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 150);
+            this.label3.Location = new System.Drawing.Point(34, 151);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 13);
             this.label3.TabIndex = 1;
@@ -184,6 +189,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.CloseBtn);
+            this.groupBox3.Controls.Add(this.SaveBtn);
+            this.groupBox3.Controls.Add(this.NextPhotoBtn);
             this.groupBox3.Controls.Add(this.pictureBox1);
             this.groupBox3.Controls.Add(this.TxtDescription);
             this.groupBox3.Controls.Add(this.label3);
@@ -195,14 +203,51 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Product Information";
             // 
+            // CloseBtn
+            // 
+            this.CloseBtn.Location = new System.Drawing.Point(281, 379);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(66, 23);
+            this.CloseBtn.TabIndex = 6;
+            this.CloseBtn.Text = "Close";
+            this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            // 
+            // SaveBtn
+            // 
+            this.SaveBtn.Location = new System.Drawing.Point(31, 380);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(75, 23);
+            this.SaveBtn.TabIndex = 5;
+            this.SaveBtn.Text = "Save Photo";
+            this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
+            // NextPhotoBtn
+            // 
+            this.NextPhotoBtn.Location = new System.Drawing.Point(112, 380);
+            this.NextPhotoBtn.Name = "NextPhotoBtn";
+            this.NextPhotoBtn.Size = new System.Drawing.Size(66, 23);
+            this.NextPhotoBtn.TabIndex = 4;
+            this.NextPhotoBtn.Text = ">>";
+            this.NextPhotoBtn.UseVisualStyleBackColor = true;
+            this.NextPhotoBtn.Click += new System.EventHandler(this.NextPhotoBtn_Click);
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(9, 166);
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(31, 167);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(167, 143);
+            this.pictureBox1.Size = new System.Drawing.Size(316, 207);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(200, 200);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // FrmOrderProductShow
             // 
@@ -242,5 +287,9 @@
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button CloseBtn;
+        private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.Button NextPhotoBtn;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
