@@ -98,10 +98,10 @@ namespace Bylsan_System.SenarioAddOrderForms
 
         private void RemoveBtn_Click(object sender, EventArgs e)
         {
-           
-               
-                flowLayoutPanel1.Controls.RemoveAt(ImgIndx .Max ());
 
+            int xIndex = ImgIndx.Max();
+                flowLayoutPanel1.Controls.RemoveAt(ImgIndx .Max ());
+                CustomerInformations.WaitingAttachment.RemoveAt(xIndex );
                 ImageListProducuts.Images.RemoveAt(ImgIndx.Max());
                 ImgIndx.RemoveAt(ImgIndx.Max());
 
