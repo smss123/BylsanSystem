@@ -33,11 +33,11 @@
             System.Windows.Forms.Label itemDescriptionLabel;
             System.Windows.Forms.Label itemTypeLabel;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.itemNameTextBox = new System.Windows.Forms.TextBox();
-            this.itemDescriptionTextBox = new System.Windows.Forms.TextBox();
-            this.Addbtn = new Telerik.WinControls.UI.RadButton();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.ItemTypecomboBox = new System.Windows.Forms.ComboBox();
+            this.Addbtn = new Telerik.WinControls.UI.RadButton();
+            this.itemDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.itemNameTextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             itemNameLabel = new System.Windows.Forms.Label();
             itemDescriptionLabel = new System.Windows.Forms.Label();
             itemTypeLabel = new System.Windows.Forms.Label();
@@ -45,6 +45,33 @@
             ((System.ComponentModel.ISupportInitialize)(this.Addbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // itemNameLabel
+            // 
+            itemNameLabel.AutoSize = true;
+            itemNameLabel.Location = new System.Drawing.Point(32, 35);
+            itemNameLabel.Name = "itemNameLabel";
+            itemNameLabel.Size = new System.Drawing.Size(63, 13);
+            itemNameLabel.TabIndex = 0;
+            itemNameLabel.Text = "Item Name:";
+            // 
+            // itemDescriptionLabel
+            // 
+            itemDescriptionLabel.AutoSize = true;
+            itemDescriptionLabel.Location = new System.Drawing.Point(6, 70);
+            itemDescriptionLabel.Name = "itemDescriptionLabel";
+            itemDescriptionLabel.Size = new System.Drawing.Size(89, 13);
+            itemDescriptionLabel.TabIndex = 2;
+            itemDescriptionLabel.Text = "Item Description:";
+            // 
+            // itemTypeLabel
+            // 
+            itemTypeLabel.AutoSize = true;
+            itemTypeLabel.Location = new System.Drawing.Point(35, 151);
+            itemTypeLabel.Name = "itemTypeLabel";
+            itemTypeLabel.Size = new System.Drawing.Size(60, 13);
+            itemTypeLabel.TabIndex = 4;
+            itemTypeLabel.Text = "Item Type:";
             // 
             // groupBox1
             // 
@@ -65,49 +92,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Item";
             // 
-            // itemNameLabel
+            // ItemTypecomboBox
             // 
-            itemNameLabel.AutoSize = true;
-            itemNameLabel.Location = new System.Drawing.Point(32, 35);
-            itemNameLabel.Name = "itemNameLabel";
-            itemNameLabel.Size = new System.Drawing.Size(63, 13);
-            itemNameLabel.TabIndex = 0;
-            itemNameLabel.Text = "Item Name:";
-            // 
-            // itemNameTextBox
-            // 
-            this.itemNameTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.itemNameTextBox.Location = new System.Drawing.Point(97, 32);
-            this.itemNameTextBox.Name = "itemNameTextBox";
-            this.itemNameTextBox.Size = new System.Drawing.Size(234, 20);
-            this.itemNameTextBox.TabIndex = 1;
-            // 
-            // itemDescriptionLabel
-            // 
-            itemDescriptionLabel.AutoSize = true;
-            itemDescriptionLabel.Location = new System.Drawing.Point(6, 70);
-            itemDescriptionLabel.Name = "itemDescriptionLabel";
-            itemDescriptionLabel.Size = new System.Drawing.Size(89, 13);
-            itemDescriptionLabel.TabIndex = 2;
-            itemDescriptionLabel.Text = "Item Description:";
-            // 
-            // itemDescriptionTextBox
-            // 
-            this.itemDescriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.itemDescriptionTextBox.Location = new System.Drawing.Point(97, 67);
-            this.itemDescriptionTextBox.Multiline = true;
-            this.itemDescriptionTextBox.Name = "itemDescriptionTextBox";
-            this.itemDescriptionTextBox.Size = new System.Drawing.Size(234, 69);
-            this.itemDescriptionTextBox.TabIndex = 3;
-            // 
-            // itemTypeLabel
-            // 
-            itemTypeLabel.AutoSize = true;
-            itemTypeLabel.Location = new System.Drawing.Point(35, 151);
-            itemTypeLabel.Name = "itemTypeLabel";
-            itemTypeLabel.Size = new System.Drawing.Size(60, 13);
-            itemTypeLabel.TabIndex = 4;
-            itemTypeLabel.Text = "Item Type:";
+            this.ItemTypecomboBox.FormattingEnabled = true;
+            this.ItemTypecomboBox.Items.AddRange(new object[] {
+            "item product",
+            "item row material"});
+            this.ItemTypecomboBox.Location = new System.Drawing.Point(101, 148);
+            this.ItemTypecomboBox.Name = "ItemTypecomboBox";
+            this.ItemTypecomboBox.Size = new System.Drawing.Size(230, 21);
+            this.ItemTypecomboBox.TabIndex = 0;
             // 
             // Addbtn
             // 
@@ -119,20 +113,26 @@
             this.Addbtn.ThemeName = "Windows8";
             this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
+            // itemDescriptionTextBox
+            // 
+            this.itemDescriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.itemDescriptionTextBox.Location = new System.Drawing.Point(97, 67);
+            this.itemDescriptionTextBox.Multiline = true;
+            this.itemDescriptionTextBox.Name = "itemDescriptionTextBox";
+            this.itemDescriptionTextBox.Size = new System.Drawing.Size(234, 69);
+            this.itemDescriptionTextBox.TabIndex = 3;
+            // 
+            // itemNameTextBox
+            // 
+            this.itemNameTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.itemNameTextBox.Location = new System.Drawing.Point(97, 32);
+            this.itemNameTextBox.Name = "itemNameTextBox";
+            this.itemNameTextBox.Size = new System.Drawing.Size(234, 20);
+            this.itemNameTextBox.TabIndex = 1;
+            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // ItemTypecomboBox
-            // 
-            this.ItemTypecomboBox.FormattingEnabled = true;
-            this.ItemTypecomboBox.Items.AddRange(new object[] {
-            "item product",
-            "item row material"});
-            this.ItemTypecomboBox.Location = new System.Drawing.Point(101, 148);
-            this.ItemTypecomboBox.Name = "ItemTypecomboBox";
-            this.ItemTypecomboBox.Size = new System.Drawing.Size(230, 21);
-            this.ItemTypecomboBox.TabIndex = 0;
             // 
             // FrmAddMainStore_Item
             // 
