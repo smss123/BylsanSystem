@@ -54,8 +54,8 @@ namespace Bylsan_System.designerForms
                     FrmProdShow.TaregtOrder = SelectedOrderID;
 
                    
-                    FrmProdShow.Show();
-                    this.Hide();
+                    FrmProdShow.ShowDialog ();
+                 
                 }
             }
             catch (Exception)
