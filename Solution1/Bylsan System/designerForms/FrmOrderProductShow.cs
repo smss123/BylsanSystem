@@ -49,7 +49,7 @@ namespace Bylsan_System.designerForms
         Thread AttachThread;
         private void DGVProducts_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            
+            Operation.BeginOperation(this);
                 if (DGVProducts.Rows.Count != 0)
                 {
                     this.Cursor = Cursors.WaitCursor;
@@ -58,7 +58,7 @@ namespace Bylsan_System.designerForms
 
                     this.Cursor = Cursors.Default;
                 }
-           
+                Operation.EndOperation (this);
         }
 
         void LoadAttachments()
@@ -67,7 +67,10 @@ namespace Bylsan_System.designerForms
             imageList1.Images.Clear();
             this.Invoke((MethodInvoker)delegate
             {
-                
+                SizeLab.Text = "";
+                pictureBox1.Image = null;
+                WthBox.Text = ""; HghtBox.Text = "";
+                //============================================
                 var lst = (from p in OrderProuctAttachmentCmd.GetOneAttachmentByOrderProductID(int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString())) select p).ToList ();
                 foreach (var item in lst )
                 {
