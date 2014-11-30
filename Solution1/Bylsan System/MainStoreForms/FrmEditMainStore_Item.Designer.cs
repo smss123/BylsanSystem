@@ -34,10 +34,10 @@
             System.Windows.Forms.Label itemNameLabel;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
-            this.itemTypeTextBox = new System.Windows.Forms.TextBox();
             this.itemDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.itemNameTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ItemTypecomboBox = new System.Windows.Forms.ComboBox();
             itemTypeLabel = new System.Windows.Forms.Label();
             itemDescriptionLabel = new System.Windows.Forms.Label();
             itemNameLabel = new System.Windows.Forms.Label();
@@ -51,9 +51,9 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.ItemTypecomboBox);
             this.groupBox1.Controls.Add(this.SaveBtn);
             this.groupBox1.Controls.Add(itemTypeLabel);
-            this.groupBox1.Controls.Add(this.itemTypeTextBox);
             this.groupBox1.Controls.Add(itemDescriptionLabel);
             this.groupBox1.Controls.Add(this.itemDescriptionTextBox);
             this.groupBox1.Controls.Add(itemNameLabel);
@@ -63,7 +63,7 @@
             this.groupBox1.Size = new System.Drawing.Size(355, 243);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Add Item";
+            this.groupBox1.Text = "Edit Item";
             // 
             // SaveBtn
             // 
@@ -83,14 +83,6 @@
             itemTypeLabel.Size = new System.Drawing.Size(60, 13);
             itemTypeLabel.TabIndex = 4;
             itemTypeLabel.Text = "Item Type:";
-            // 
-            // itemTypeTextBox
-            // 
-            this.itemTypeTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.itemTypeTextBox.Location = new System.Drawing.Point(97, 145);
-            this.itemTypeTextBox.Name = "itemTypeTextBox";
-            this.itemTypeTextBox.Size = new System.Drawing.Size(234, 20);
-            this.itemTypeTextBox.TabIndex = 5;
             // 
             // itemDescriptionLabel
             // 
@@ -131,13 +123,27 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // ItemTypecomboBox
+            // 
+            this.ItemTypecomboBox.BackColor = System.Drawing.SystemColors.Info;
+            this.ItemTypecomboBox.FormattingEnabled = true;
+            this.ItemTypecomboBox.Items.AddRange(new object[] {
+            "item product",
+            "item row material"});
+            this.ItemTypecomboBox.Location = new System.Drawing.Point(97, 148);
+            this.ItemTypecomboBox.Name = "ItemTypecomboBox";
+            this.ItemTypecomboBox.Size = new System.Drawing.Size(230, 21);
+            this.ItemTypecomboBox.TabIndex = 1;
+            // 
             // FrmEditMainStore_Item
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(379, 267);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmEditMainStore_Item";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditMainStore_Item";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -151,9 +157,9 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private Telerik.WinControls.UI.RadButton SaveBtn;
-        private System.Windows.Forms.TextBox itemTypeTextBox;
         private System.Windows.Forms.TextBox itemDescriptionTextBox;
         private System.Windows.Forms.TextBox itemNameTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox ItemTypecomboBox;
     }
 }

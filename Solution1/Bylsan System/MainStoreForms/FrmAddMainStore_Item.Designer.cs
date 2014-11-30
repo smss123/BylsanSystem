@@ -35,9 +35,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.itemNameTextBox = new System.Windows.Forms.TextBox();
             this.itemDescriptionTextBox = new System.Windows.Forms.TextBox();
-            this.itemTypeTextBox = new System.Windows.Forms.TextBox();
             this.Addbtn = new Telerik.WinControls.UI.RadButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ItemTypecomboBox = new System.Windows.Forms.ComboBox();
             itemNameLabel = new System.Windows.Forms.Label();
             itemDescriptionLabel = new System.Windows.Forms.Label();
             itemTypeLabel = new System.Windows.Forms.Label();
@@ -51,9 +51,9 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.ItemTypecomboBox);
             this.groupBox1.Controls.Add(this.Addbtn);
             this.groupBox1.Controls.Add(itemTypeLabel);
-            this.groupBox1.Controls.Add(this.itemTypeTextBox);
             this.groupBox1.Controls.Add(itemDescriptionLabel);
             this.groupBox1.Controls.Add(this.itemDescriptionTextBox);
             this.groupBox1.Controls.Add(itemNameLabel);
@@ -109,14 +109,6 @@
             itemTypeLabel.TabIndex = 4;
             itemTypeLabel.Text = "Item Type:";
             // 
-            // itemTypeTextBox
-            // 
-            this.itemTypeTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.itemTypeTextBox.Location = new System.Drawing.Point(97, 145);
-            this.itemTypeTextBox.Name = "itemTypeTextBox";
-            this.itemTypeTextBox.Size = new System.Drawing.Size(234, 20);
-            this.itemTypeTextBox.TabIndex = 5;
-            // 
             // Addbtn
             // 
             this.Addbtn.Location = new System.Drawing.Point(204, 194);
@@ -130,6 +122,17 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // ItemTypecomboBox
+            // 
+            this.ItemTypecomboBox.FormattingEnabled = true;
+            this.ItemTypecomboBox.Items.AddRange(new object[] {
+            "item product",
+            "item row material"});
+            this.ItemTypecomboBox.Location = new System.Drawing.Point(101, 148);
+            this.ItemTypecomboBox.Name = "ItemTypecomboBox";
+            this.ItemTypecomboBox.Size = new System.Drawing.Size(230, 21);
+            this.ItemTypecomboBox.TabIndex = 0;
             // 
             // FrmAddMainStore_Item
             // 
@@ -152,10 +155,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox itemTypeTextBox;
         private System.Windows.Forms.TextBox itemDescriptionTextBox;
         private System.Windows.Forms.TextBox itemNameTextBox;
         private Telerik.WinControls.UI.RadButton Addbtn;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox ItemTypecomboBox;
     }
 }
