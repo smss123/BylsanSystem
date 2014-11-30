@@ -154,6 +154,18 @@
     <Compile Include="MainStoreForms\FrmAddMainStore_Item.Designer.cs">
       <DependentUpon>FrmAddMainStore_Item.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainStoreForms\FrmEditMainStore_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainStoreForms\FrmEditMainStore_Item.Designer.cs">
+      <DependentUpon>FrmEditMainStore_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainStoreForms\FrmManageMainStore_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainStoreForms\FrmManageMainStore_Item.Designer.cs">
+      <DependentUpon>FrmManageMainStore_Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="Operation.cs" />
     <Compile Include="ProductForms\frmAddProduct.cs">
       <SubType>Form</SubType>
@@ -273,6 +285,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainStoreForms\FrmAddMainStore_Item.resx">
       <DependentUpon>FrmAddMainStore_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainStoreForms\FrmEditMainStore_Item.resx">
+      <DependentUpon>FrmEditMainStore_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainStoreForms\FrmManageMainStore_Item.resx">
+      <DependentUpon>FrmManageMainStore_Item.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForms\frmAddProduct.resx">
       <DependentUpon>frmAddProduct.cs</DependentUpon>
