@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CloseBtn = new System.Windows.Forms.Button();
             this.DGVProducts = new Telerik.WinControls.UI.RadGridView();
@@ -97,24 +97,24 @@
             // DGVProducts
             // 
             this.DGVProducts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "ID";
-            gridViewTextBoxColumn4.HeaderText = "ID";
-            gridViewTextBoxColumn4.Name = "ID";
-            gridViewTextBoxColumn4.Width = 43;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "ProductID";
-            gridViewTextBoxColumn5.HeaderText = "Product Name";
-            gridViewTextBoxColumn5.Name = "Product_Name";
-            gridViewTextBoxColumn5.Width = 215;
-            gridViewTextBoxColumn6.FieldName = "Qty";
-            gridViewTextBoxColumn6.HeaderText = "Quantity";
-            gridViewTextBoxColumn6.Name = "Quantity";
-            gridViewTextBoxColumn6.Width = 115;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "ID";
+            gridViewTextBoxColumn7.HeaderText = "ID";
+            gridViewTextBoxColumn7.Name = "ID";
+            gridViewTextBoxColumn7.Width = 43;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "ProductID";
+            gridViewTextBoxColumn8.HeaderText = "Product Name";
+            gridViewTextBoxColumn8.Name = "Product_Name";
+            gridViewTextBoxColumn8.Width = 215;
+            gridViewTextBoxColumn9.FieldName = "Qty";
+            gridViewTextBoxColumn9.HeaderText = "Quantity";
+            gridViewTextBoxColumn9.Name = "Quantity";
+            gridViewTextBoxColumn9.Width = 115;
             this.DGVProducts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6});
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9});
             this.DGVProducts.MasterTemplate.EnableFiltering = true;
             this.DGVProducts.Name = "DGVProducts";
             this.DGVProducts.ReadOnly = true;
@@ -276,7 +276,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 317);
+            this.label5.Location = new System.Drawing.Point(20, 255);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 9;
@@ -285,7 +285,7 @@
             // SizeLab
             // 
             this.SizeLab.AutoSize = true;
-            this.SizeLab.Location = new System.Drawing.Point(107, 317);
+            this.SizeLab.Location = new System.Drawing.Point(236, 255);
             this.SizeLab.Name = "SizeLab";
             this.SizeLab.Size = new System.Drawing.Size(43, 13);
             this.SizeLab.TabIndex = 10;
@@ -333,7 +333,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 544);
+            this.ClientSize = new System.Drawing.Size(712, 544);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

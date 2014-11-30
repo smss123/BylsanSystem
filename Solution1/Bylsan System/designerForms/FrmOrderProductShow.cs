@@ -38,7 +38,7 @@ namespace Bylsan_System.designerForms
         }
         private void FrmOrderProductShow_Load(object sender, EventArgs e)
         {
-            SizeLab.Text = "";
+            SizeLab.Visible = false; // UnUsed
             UploadBtn.Visible = false; // UnUsed
             pictureBox1.Image = null;
            //================================
