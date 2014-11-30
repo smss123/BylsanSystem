@@ -172,6 +172,12 @@
     <Compile Include="MainStoreForms\FrmAddMainStore_StoreWithDrawal.Designer.cs">
       <DependentUpon>FrmAddMainStore_StoreWithDrawal.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainStoreForms\FrmAddMainStore_Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainStoreForms\FrmAddMainStore_Supplier.Designer.cs">
+      <DependentUpon>FrmAddMainStore_Supplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainStoreForms\FrmEditMainStore_Item.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,12 @@
     <Compile Include="MainStoreForms\FrmEditMainStore_StoreWithDrawal.Designer.cs">
       <DependentUpon>FrmEditMainStore_StoreWithDrawal.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainStoreForms\FrmEditMainStore_Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainStoreForms\FrmEditMainStore_Supplier.Designer.cs">
+      <DependentUpon>FrmEditMainStore_Supplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainStoreForms\FrmManageMainStore_Item.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +231,12 @@
     </Compile>
     <Compile Include="MainStoreForms\FrmManageMainStore_StoreWithDrawal.Designer.cs">
       <DependentUpon>FrmManageMainStore_StoreWithDrawal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainStoreForms\FrmManageMainStore_Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainStoreForms\FrmManageMainStore_Supplier.Designer.cs">
+      <DependentUpon>FrmManageMainStore_Supplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Operation.cs" />
     <Compile Include="ProductForms\frmAddProduct.cs">
@@ -349,6 +367,9 @@
     <EmbeddedResource Include="MainStoreForms\FrmAddMainStore_StoreWithDrawal.resx">
       <DependentUpon>FrmAddMainStore_StoreWithDrawal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainStoreForms\FrmAddMainStore_Supplier.resx">
+      <DependentUpon>FrmAddMainStore_Supplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainStoreForms\FrmEditMainStore_Item.resx">
       <DependentUpon>FrmEditMainStore_Item.cs</DependentUpon>
     </EmbeddedResource>
@@ -361,6 +382,9 @@
     <EmbeddedResource Include="MainStoreForms\FrmEditMainStore_StoreWithDrawal.resx">
       <DependentUpon>FrmEditMainStore_StoreWithDrawal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainStoreForms\FrmEditMainStore_Supplier.resx">
+      <DependentUpon>FrmEditMainStore_Supplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainStoreForms\FrmManageMainStore_Item.resx">
       <DependentUpon>FrmManageMainStore_Item.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,6 +396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainStoreForms\FrmManageMainStore_StoreWithDrawal.resx">
       <DependentUpon>FrmManageMainStore_StoreWithDrawal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainStoreForms\FrmManageMainStore_Supplier.resx">
+      <DependentUpon>FrmManageMainStore_Supplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForms\frmAddProduct.resx">
       <DependentUpon>frmAddProduct.cs</DependentUpon>

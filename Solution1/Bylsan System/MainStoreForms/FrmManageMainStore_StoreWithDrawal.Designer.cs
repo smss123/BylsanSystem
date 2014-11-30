@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageMainStore_StoreWithDrawal));
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
@@ -38,17 +39,16 @@
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn5 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageMainStore_StoreWithDrawal));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.AddBtn = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
+            this.StoreWithDrawalGridView = new Telerik.WinControls.UI.RadGridView();
             this.storeWithDrawalBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.AddBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StoreWithDrawalGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StoreWithDrawalGridView.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storeWithDrawalBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +62,14 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // AddBtn
+            // 
+            this.AddBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddBtn.Image")));
+            this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(49, 22);
+            this.AddBtn.Text = "Add";
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 576);
@@ -72,7 +80,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radGridView1);
+            this.groupBox1.Controls.Add(this.StoreWithDrawalGridView);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 25);
             this.groupBox1.Name = "groupBox1";
@@ -81,21 +89,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "---";
             // 
-            // radGridView1
+            // StoreWithDrawalGridView
             // 
-            this.radGridView1.BackColor = System.Drawing.SystemColors.Control;
-            this.radGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.radGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGridView1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.radGridView1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radGridView1.Location = new System.Drawing.Point(3, 16);
+            this.StoreWithDrawalGridView.BackColor = System.Drawing.SystemColors.Control;
+            this.StoreWithDrawalGridView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.StoreWithDrawalGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StoreWithDrawalGridView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.StoreWithDrawalGridView.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.StoreWithDrawalGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.StoreWithDrawalGridView.Location = new System.Drawing.Point(3, 16);
             // 
-            // radGridView1
+            // StoreWithDrawalGridView
             // 
-            this.radGridView1.MasterTemplate.AllowAddNewRow = false;
-            this.radGridView1.MasterTemplate.AutoGenerateColumns = false;
-            this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.StoreWithDrawalGridView.MasterTemplate.AllowAddNewRow = false;
+            this.StoreWithDrawalGridView.MasterTemplate.AutoGenerateColumns = false;
+            this.StoreWithDrawalGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewDecimalColumn1.DataType = typeof(int);
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "ID";
@@ -153,7 +161,7 @@
             gridViewCommandColumn2.HeaderText = "Delete";
             gridViewCommandColumn2.Name = "DeleteCol";
             gridViewCommandColumn2.Width = 98;
-            this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            this.StoreWithDrawalGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewDecimalColumn2,
             gridViewDecimalColumn3,
@@ -163,25 +171,17 @@
             gridViewDecimalColumn5,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
-            this.radGridView1.MasterTemplate.DataSource = this.storeWithDrawalBindingSource;
-            this.radGridView1.Name = "radGridView1";
-            this.radGridView1.ReadOnly = true;
-            this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radGridView1.Size = new System.Drawing.Size(903, 532);
-            this.radGridView1.TabIndex = 0;
-            this.radGridView1.Text = "radGridView1";
+            this.StoreWithDrawalGridView.MasterTemplate.DataSource = this.storeWithDrawalBindingSource;
+            this.StoreWithDrawalGridView.Name = "StoreWithDrawalGridView";
+            this.StoreWithDrawalGridView.ReadOnly = true;
+            this.StoreWithDrawalGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.StoreWithDrawalGridView.Size = new System.Drawing.Size(903, 532);
+            this.StoreWithDrawalGridView.TabIndex = 0;
+            this.StoreWithDrawalGridView.Text = "StoreWithDrawalGridView";
             // 
             // storeWithDrawalBindingSource
             // 
             this.storeWithDrawalBindingSource.DataSource = typeof(XamaDataLayer.StoreWithDrawal);
-            // 
-            // AddBtn
-            // 
-            this.AddBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddBtn.Image")));
-            this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(49, 22);
-            this.AddBtn.Text = "Add";
             // 
             // FrmManageMainStore_StoreWithDrawal
             // 
@@ -196,8 +196,8 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StoreWithDrawalGridView.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StoreWithDrawalGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storeWithDrawalBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -209,7 +209,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private Telerik.WinControls.UI.RadGridView radGridView1;
+        private Telerik.WinControls.UI.RadGridView StoreWithDrawalGridView;
         private System.Windows.Forms.ToolStripButton AddBtn;
         private System.Windows.Forms.BindingSource storeWithDrawalBindingSource;
     }

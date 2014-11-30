@@ -36,13 +36,13 @@
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.Addbtn = new System.Windows.Forms.ToolStripButton();
-            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.ItemGridView = new Telerik.WinControls.UI.RadGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemGridView.MasterTemplate)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,14 +56,6 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 418);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(610, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
             // Addbtn
             // 
             this.Addbtn.Image = ((System.Drawing.Image)(resources.GetObject("Addbtn.Image")));
@@ -72,20 +64,28 @@
             this.Addbtn.Size = new System.Drawing.Size(76, 22);
             this.Addbtn.Text = "Add item";
             // 
-            // radGridView1
+            // statusStrip1
             // 
-            this.radGridView1.BackColor = System.Drawing.SystemColors.Control;
-            this.radGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.radGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGridView1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.radGridView1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radGridView1.Location = new System.Drawing.Point(3, 16);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 418);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(610, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // radGridView1
+            // ItemGridView
             // 
-            this.radGridView1.MasterTemplate.AllowAddNewRow = false;
-            this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.ItemGridView.BackColor = System.Drawing.SystemColors.Control;
+            this.ItemGridView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ItemGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ItemGridView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.ItemGridView.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ItemGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ItemGridView.Location = new System.Drawing.Point(3, 16);
+            // 
+            // ItemGridView
+            // 
+            this.ItemGridView.MasterTemplate.AllowAddNewRow = false;
+            this.ItemGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "ID";
             gridViewTextBoxColumn1.HeaderText = "ID";
@@ -114,24 +114,24 @@
             gridViewCommandColumn2.HeaderText = "Delete";
             gridViewCommandColumn2.Name = "DeleteCol";
             gridViewCommandColumn2.Width = 61;
-            this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            this.ItemGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
             gridViewTextBoxColumn4,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
-            this.radGridView1.MasterTemplate.EnableFiltering = true;
-            this.radGridView1.Name = "radGridView1";
-            this.radGridView1.ReadOnly = true;
-            this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radGridView1.Size = new System.Drawing.Size(604, 374);
-            this.radGridView1.TabIndex = 2;
-            this.radGridView1.Text = "ItemsGridView";
+            this.ItemGridView.MasterTemplate.EnableFiltering = true;
+            this.ItemGridView.Name = "ItemGridView";
+            this.ItemGridView.ReadOnly = true;
+            this.ItemGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ItemGridView.Size = new System.Drawing.Size(604, 374);
+            this.ItemGridView.TabIndex = 2;
+            this.ItemGridView.Text = "ItemsGridView";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radGridView1);
+            this.groupBox1.Controls.Add(this.ItemGridView);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 25);
             this.groupBox1.Name = "groupBox1";
@@ -152,8 +152,8 @@
             this.Text = "FrmManageMainStore_Item";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemGridView.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,7 +165,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton Addbtn;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private Telerik.WinControls.UI.RadGridView radGridView1;
+        private Telerik.WinControls.UI.RadGridView ItemGridView;
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }
