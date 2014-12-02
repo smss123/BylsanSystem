@@ -34,16 +34,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerNameTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             customerNameLabel = new System.Windows.Forms.Label();
             phoneNumberLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,10 +101,7 @@
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(201, 20);
             this.phoneNumberTextBox.TabIndex = 1;
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataSource = typeof(XamaDataLayer.Customer);
+            this.phoneNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneNumberTextBox_KeyPress);
             // 
             // customerNameTextBox
             // 
@@ -118,6 +115,10 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(XamaDataLayer.Customer);
             // 
             // FrmCustomerEdit
             // 
@@ -143,8 +144,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

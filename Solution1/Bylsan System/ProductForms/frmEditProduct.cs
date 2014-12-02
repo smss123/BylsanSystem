@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Helper_Classes;
 namespace Bylsan_System.ProductForms
 {
-    public partial class frmEditProduct : Form
+    public partial class frmEditProduct : RadForm
     {
         public frmEditProduct()
         {

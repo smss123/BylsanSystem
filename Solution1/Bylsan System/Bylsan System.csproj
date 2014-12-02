@@ -126,6 +126,12 @@
     <Compile Include="EmployeeForms\FrmEmployeeManage.Designer.cs">
       <DependentUpon>FrmEmployeeManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FactoryForms\FrmFactoryOrderShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FactoryForms\FrmFactoryOrderShow.Designer.cs">
+      <DependentUpon>FrmFactoryOrderShow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -348,6 +354,9 @@
     <EmbeddedResource Include="EmployeeForms\FrmEmployeeManage.resx">
       <DependentUpon>FrmEmployeeManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FactoryForms\FrmFactoryOrderShow.resx">
+      <DependentUpon>FrmFactoryOrderShow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MailForms\frmMailServer.resx">
       <DependentUpon>frmMailServer.cs</DependentUpon>
     </EmbeddedResource>
@@ -505,6 +514,7 @@
     <Content Include="Lib\EntityFramework.xml" />
     <Content Include="Lib\Xprema.dll" />
     <Content Include="Lib\Xprema.pdb" />
+    <None Include="Resources\ImagePreview.png" />
     <None Include="Resources\Refrech.png" />
     <None Include="Resources\Save.png" />
     <None Include="Resources\Add.png" />
