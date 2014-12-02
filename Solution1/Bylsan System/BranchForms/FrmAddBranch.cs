@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.Data;
+using Telerik.WinControls.UI;
 using XamaDataLayer.BranchCmd;
 using XamaDataLayer.BranchCmd;
 using Xprema.XExtention;
 namespace Bylsan_System.BranchForms
 {
     
-    public partial class FrmAddBranch : Form
+    public partial class FrmAddBranch : RadForm
     {
         public FrmAddBranch()
         {

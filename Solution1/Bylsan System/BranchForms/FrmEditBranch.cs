@@ -11,9 +11,10 @@ using XamaDataLayer.BranchCmd;
 using XamaDataLayer;
 using Xprema.XExtention;
 using Telerik.WinControls.Data;
+using Telerik.WinControls.UI;
 namespace Bylsan_System.BranchForms
 {
-    public partial class FrmEditBranch : Form
+    public partial class FrmEditBranch : RadForm
     {
         public FrmEditBranch()
         {

@@ -428,6 +428,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SecurityForm\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -504,6 +505,9 @@
     <Content Include="Lib\EntityFramework.xml" />
     <Content Include="Lib\Xprema.dll" />
     <Content Include="Lib\Xprema.pdb" />
+    <None Include="Resources\Refrech.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\Add.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XamaDataLayer\XamaDataLayer.csproj">
