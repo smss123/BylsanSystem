@@ -32,6 +32,7 @@
             System.Windows.Forms.Label product_DescriptionLabel;
             System.Windows.Forms.Label product_NameLabel;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtprice = new System.Windows.Forms.TextBox();
             this.CategoryComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.BrowseBtn = new Telerik.WinControls.UI.RadButton();
@@ -39,13 +40,12 @@
             this.product_DescriptionTextBox = new System.Windows.Forms.TextBox();
             this.product_NameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblstatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtprice = new System.Windows.Forms.TextBox();
             product_DescriptionLabel = new System.Windows.Forms.Label();
             product_NameLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -57,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.productpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // product_DescriptionLabel
@@ -98,6 +99,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit Prodct";
             // 
+            // txtprice
+            // 
+            this.txtprice.Location = new System.Drawing.Point(117, 193);
+            this.txtprice.Name = "txtprice";
+            this.txtprice.Size = new System.Drawing.Size(240, 22);
+            this.txtprice.TabIndex = 22;
+            // 
             // CategoryComboBox
             // 
             // 
@@ -108,7 +116,7 @@
             this.CategoryComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CategoryComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // CategoryComboBox.NestedRadGridView
+            // 
             // 
             this.CategoryComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.CategoryComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -183,6 +191,15 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "Image:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(77, 196);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Price:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -212,22 +229,6 @@
             this.lblstatus.Size = new System.Drawing.Size(12, 17);
             this.lblstatus.Text = "_";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(77, 196);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Price:";
-            // 
-            // txtprice
-            // 
-            this.txtprice.Location = new System.Drawing.Point(117, 193);
-            this.txtprice.Name = "txtprice";
-            this.txtprice.Size = new System.Drawing.Size(240, 22);
-            this.txtprice.TabIndex = 22;
-            // 
             // frmEditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,8 +241,13 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(372, 417);
             this.Name = "frmEditProduct";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditProduct";
+            this.ThemeName = "VisualStudio2012Light";
             this.Load += new System.EventHandler(this.frmEditProduct_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -254,6 +260,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
