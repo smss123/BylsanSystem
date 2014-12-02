@@ -126,6 +126,12 @@
     <Compile Include="EmployeeForms\FrmEmployeeManage.Designer.cs">
       <DependentUpon>FrmEmployeeManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FactoryForms\FrmFactoryOrderProductShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FactoryForms\FrmFactoryOrderProductShow.Designer.cs">
+      <DependentUpon>FrmFactoryOrderProductShow.cs</DependentUpon>
+    </Compile>
     <Compile Include="FactoryForms\FrmFactoryOrderShow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -353,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeForms\FrmEmployeeManage.resx">
       <DependentUpon>FrmEmployeeManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactoryForms\FrmFactoryOrderProductShow.resx">
+      <DependentUpon>FrmFactoryOrderProductShow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FactoryForms\FrmFactoryOrderShow.resx">
       <DependentUpon>FrmFactoryOrderShow.cs</DependentUpon>
