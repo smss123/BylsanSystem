@@ -55,6 +55,11 @@
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -65,26 +70,34 @@
             this.UserDropDownButton,
             this.toolStripSeparator1,
             this.EmployeeDropDownButton,
+            this.toolStripSeparator3,
             this.BranchDropDownButton,
+            this.toolStripSeparator4,
             this.ProductDropDownButton,
+            this.toolStripSeparator5,
             this.toolStripDropDownButton5,
+            this.toolStripSeparator6,
             this.MailBtn,
+            this.toolStripSeparator7,
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(936, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(936, 37);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // UserDropDownButton
             // 
+            this.UserDropDownButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("UserDropDownButton.BackgroundImage")));
+            this.UserDropDownButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.UserDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addUserToolStripMenuItem,
             this.manToolStripMenuItem});
             this.UserDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("UserDropDownButton.Image")));
+            this.UserDropDownButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.UserDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.UserDropDownButton.Name = "UserDropDownButton";
-            this.UserDropDownButton.Size = new System.Drawing.Size(64, 22);
+            this.UserDropDownButton.Size = new System.Drawing.Size(80, 34);
             this.UserDropDownButton.Text = "Users";
             // 
             // addUserToolStripMenuItem
@@ -102,17 +115,20 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 37);
             // 
             // EmployeeDropDownButton
             // 
+            this.EmployeeDropDownButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("EmployeeDropDownButton.BackgroundImage")));
+            this.EmployeeDropDownButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.EmployeeDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AddEmloyeebtn,
             this.managementEmployeeToolStripMenuItem});
             this.EmployeeDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("EmployeeDropDownButton.Image")));
+            this.EmployeeDropDownButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.EmployeeDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.EmployeeDropDownButton.Name = "EmployeeDropDownButton";
-            this.EmployeeDropDownButton.Size = new System.Drawing.Size(88, 22);
+            this.EmployeeDropDownButton.Size = new System.Drawing.Size(96, 34);
             this.EmployeeDropDownButton.Text = "Employee";
             // 
             // AddEmloyeebtn
@@ -137,7 +153,7 @@
             this.BranchDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("BranchDropDownButton.Image")));
             this.BranchDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BranchDropDownButton.Name = "BranchDropDownButton";
-            this.BranchDropDownButton.Size = new System.Drawing.Size(73, 22);
+            this.BranchDropDownButton.Size = new System.Drawing.Size(73, 34);
             this.BranchDropDownButton.Text = "Branch";
             // 
             // addBranchBtn
@@ -165,7 +181,7 @@
             this.ProductDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("ProductDropDownButton.Image")));
             this.ProductDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ProductDropDownButton.Name = "ProductDropDownButton";
-            this.ProductDropDownButton.Size = new System.Drawing.Size(78, 22);
+            this.ProductDropDownButton.Size = new System.Drawing.Size(78, 34);
             this.ProductDropDownButton.Text = "Product";
             // 
             // addProductCategoryBtn
@@ -209,7 +225,7 @@
             this.toolStripDropDownButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton5.Image")));
             this.toolStripDropDownButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton5.Name = "toolStripDropDownButton5";
-            this.toolStripDropDownButton5.Size = new System.Drawing.Size(93, 22);
+            this.toolStripDropDownButton5.Size = new System.Drawing.Size(93, 34);
             this.toolStripDropDownButton5.Text = "Customers";
             // 
             // addCustomerbtn
@@ -231,7 +247,7 @@
             this.MailBtn.Image = ((System.Drawing.Image)(resources.GetObject("MailBtn.Image")));
             this.MailBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MailBtn.Name = "MailBtn";
-            this.MailBtn.Size = new System.Drawing.Size(59, 22);
+            this.MailBtn.Size = new System.Drawing.Size(59, 34);
             this.MailBtn.Text = "Mail";
             this.MailBtn.Click += new System.EventHandler(this.MailBtn_Click);
             // 
@@ -242,13 +258,13 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(71, 22);
+            this.toolStripButton2.Size = new System.Drawing.Size(71, 34);
             this.toolStripButton2.Text = "Orders";
             // 
             // newOrderToolStripMenuItem
             // 
             this.newOrderToolStripMenuItem.Name = "newOrderToolStripMenuItem";
-            this.newOrderToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.newOrderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newOrderToolStripMenuItem.Text = "New Order";
             this.newOrderToolStripMenuItem.Click += new System.EventHandler(this.newOrderToolStripMenuItem_Click);
             // 
@@ -256,7 +272,7 @@
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 25);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 37);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(936, 25);
             this.toolStrip2.TabIndex = 2;
@@ -278,6 +294,31 @@
             this.statusStrip1.Size = new System.Drawing.Size(936, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 37);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 37);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 37);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 37);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 37);
             // 
             // MainForm
             // 
@@ -328,6 +369,11 @@
         private System.Windows.Forms.ToolStripMenuItem customerManagementBtn;
         private System.Windows.Forms.ToolStripDropDownButton toolStripButton2;
         private System.Windows.Forms.ToolStripMenuItem newOrderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
 
     }
 }
