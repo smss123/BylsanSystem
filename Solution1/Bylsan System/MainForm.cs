@@ -103,5 +103,11 @@ namespace Bylsan_System
             frm.ShowDialog();
 
         }
+
+        private void addItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainStoreForms.FrmAddMainStore_Item frm = new MainStoreForms.FrmAddMainStore_Item();
+            frm.ShowDialog();
+        }
     }
 }

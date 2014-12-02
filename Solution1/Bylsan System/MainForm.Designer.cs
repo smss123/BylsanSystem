@@ -52,10 +52,17 @@
             this.MailBtn = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.newOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnDesinger = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.BtnDesinger = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.itemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.storeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.withDrowlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +78,8 @@
             this.toolStripDropDownButton5,
             this.MailBtn,
             this.toolStripButton2,
-            this.BtnDesinger});
+            this.BtnDesinger,
+            this.toolStripButton3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(936, 25);
@@ -254,6 +262,15 @@
             this.newOrderToolStripMenuItem.Text = "New Order";
             this.newOrderToolStripMenuItem.Click += new System.EventHandler(this.newOrderToolStripMenuItem_Click);
             // 
+            // BtnDesinger
+            // 
+            this.BtnDesinger.Image = ((System.Drawing.Image)(resources.GetObject("BtnDesinger.Image")));
+            this.BtnDesinger.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnDesinger.Name = "BtnDesinger";
+            this.BtnDesinger.Size = new System.Drawing.Size(73, 22);
+            this.BtnDesinger.Text = "Desinger";
+            this.BtnDesinger.Click += new System.EventHandler(this.BtnDesinger_Click);
+            // 
             // toolStrip2
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -281,14 +298,58 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // BtnDesinger
+            // toolStripButton3
             // 
-            this.BtnDesinger.Image = ((System.Drawing.Image)(resources.GetObject("BtnDesinger.Image")));
-            this.BtnDesinger.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnDesinger.Name = "BtnDesinger";
-            this.BtnDesinger.Size = new System.Drawing.Size(73, 22);
-            this.BtnDesinger.Text = "Desinger";
-            this.BtnDesinger.Click += new System.EventHandler(this.BtnDesinger_Click);
+            this.toolStripButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.itemsToolStripMenuItem,
+            this.storeToolStripMenuItem,
+            this.withDrowlToolStripMenuItem,
+            this.addToolStripMenuItem});
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(63, 22);
+            this.toolStripButton3.Text = "Store";
+            // 
+            // itemsToolStripMenuItem
+            // 
+            this.itemsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addItemsToolStripMenuItem,
+            this.manageItemsToolStripMenuItem});
+            this.itemsToolStripMenuItem.Name = "itemsToolStripMenuItem";
+            this.itemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.itemsToolStripMenuItem.Text = "Items";
+            // 
+            // addItemsToolStripMenuItem
+            // 
+            this.addItemsToolStripMenuItem.Name = "addItemsToolStripMenuItem";
+            this.addItemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addItemsToolStripMenuItem.Text = "Add items";
+            this.addItemsToolStripMenuItem.Click += new System.EventHandler(this.addItemsToolStripMenuItem_Click);
+            // 
+            // manageItemsToolStripMenuItem
+            // 
+            this.manageItemsToolStripMenuItem.Name = "manageItemsToolStripMenuItem";
+            this.manageItemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.manageItemsToolStripMenuItem.Text = "Manage items";
+            // 
+            // storeToolStripMenuItem
+            // 
+            this.storeToolStripMenuItem.Name = "storeToolStripMenuItem";
+            this.storeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.storeToolStripMenuItem.Text = "Store";
+            // 
+            // withDrowlToolStripMenuItem
+            // 
+            this.withDrowlToolStripMenuItem.Name = "withDrowlToolStripMenuItem";
+            this.withDrowlToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.withDrowlToolStripMenuItem.Text = "WithDrowl";
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem.Text = "Add";
             // 
             // MainForm
             // 
@@ -340,5 +401,12 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripButton2;
         private System.Windows.Forms.ToolStripMenuItem newOrderToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton BtnDesinger;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripButton3;
+        private System.Windows.Forms.ToolStripMenuItem itemsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addItemsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageItemsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem storeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem withDrowlToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
     }
 }
