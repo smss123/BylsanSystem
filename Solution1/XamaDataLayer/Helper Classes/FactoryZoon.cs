@@ -10,7 +10,7 @@ using System.Drawing;
 
 namespace XamaDataLayer.Helper_Classes
 {
-    public  class FactoryZoon 
+    public  class FactoryZoon : IDisposable 
     {
         static DbDataContext db = new DbDataContext();
 
