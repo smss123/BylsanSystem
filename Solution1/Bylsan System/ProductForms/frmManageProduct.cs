@@ -32,6 +32,14 @@ namespace Bylsan_System.ProductForms
                 LoadProduct();
 
             }
+            if (col==5)
+            {
+                Operation.BeginOperation(this);
+                var q = (Product)ProductGridView.CurrentRow.DataBoundItem;
+                ProductsCmd.DeleteProduct(q.ID);
+                Operation.EndOperation(this);
+                Operation.ShowToustOk("Product Deleted", this);
+            }
         }
 
         private void frmManageProduct_Load(object sender, EventArgs e)
