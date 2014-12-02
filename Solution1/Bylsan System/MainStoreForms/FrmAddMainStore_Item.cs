@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using XamaDataLayer.Main_Store;
 namespace Bylsan_System.MainStoreForms
 {
     public partial class FrmAddMainStore_Item : Form
@@ -39,6 +39,20 @@ namespace Bylsan_System.MainStoreForms
             }
 
             #endregion
+            Operation.BeginOperation(this);
+         if(   XamaDataLayer.Main_Store.ItemsCmd.AddNewItem(new XamaDataLayer.Item() { 
+            
+             ItemDescription = itemDescriptionTextBox.Text,
+              ItemName= itemNameTextBox.Text,
+               ItemType = ItemTypecomboBox.SelectedText
+            
+            }))
+            {
+                Operation.ShowToustOk("Item Saved", this);
+            }
+
+         Operation.EndOperation(this);
+
         }
     }
 }

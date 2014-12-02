@@ -1,5 +1,6 @@
 ﻿using Bylsan_System.BranchForms;
 using Bylsan_System.CustomerForms;
+using Bylsan_System.designerForms;
 using Bylsan_System.EmployeeForms;
 using Bylsan_System.MailForms;
 using Bylsan_System.ProductForms;
@@ -94,6 +95,19 @@ namespace Bylsan_System
         {
             Bylsan_System.SenarioAddOrderForms.FrmAddInformationCustomer frm = new SenarioAddOrderForms.FrmAddInformationCustomer();
             frm.Show();
+        }
+
+        private void BtnDesinger_Click(object sender, EventArgs e)
+        {
+            FrmOrderShow frm = new FrmOrderShow();
+            frm.ShowDialog();
+
+        }
+
+        private void addItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainStoreForms.FrmAddMainStore_Item frm = new MainStoreForms.FrmAddMainStore_Item();
+            frm.ShowDialog();
         }
     }
 }
