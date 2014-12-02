@@ -213,7 +213,7 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+           // this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // radGridView1
             // 
@@ -270,7 +270,7 @@
             this.ListViewProductes.Size = new System.Drawing.Size(575, 260);
             this.ListViewProductes.TabIndex = 7;
             this.ListViewProductes.UseCompatibleStateImageBehavior = false;
-            this.ListViewProductes.SelectedIndexChanged += new System.EventHandler(this.ListViewProductes_SelectedIndexChanged);
+            //this.ListViewProductes.SelectedIndexChanged += new System.EventHandler(this.ListViewProductes_SelectedIndexChanged);
             this.ListViewProductes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListViewProductes_MouseClick);
             // 
             // contextMenuStrip1
@@ -339,7 +339,7 @@
             this.TreeCategories.Name = "TreeCategories";
             this.TreeCategories.Size = new System.Drawing.Size(152, 260);
             this.TreeCategories.TabIndex = 5;
-            this.TreeCategories.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeCategories_AfterSelect);
+           // this.TreeCategories.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeCategories_AfterSelect);
             this.TreeCategories.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeCategories_NodeMouseClick);
             // 
             // imageList1

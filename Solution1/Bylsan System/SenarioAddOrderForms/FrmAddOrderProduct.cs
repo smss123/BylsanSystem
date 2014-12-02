@@ -205,36 +205,29 @@ namespace Bylsan_System.SenarioAddOrderForms
                         FrmSpecialOrder SFrm = new FrmSpecialOrder();
                         SFrm.ShowDialog();
                     }
-                    //else
-                    //{
+                 
 
                         PrdID = 0;
                         PrdID = ListViewProductes.SelectedItems[0].Index;
                       
-                        // this.Products.Where(p=>p.ID==ListViewProductes.Items[PrdID].SubItems[0].Text.ToInt()).ToList();//
+                    
                         var MyProdctut =  ProductsCmd.GetProductByID(int.Parse(ListViewProductes.Items[PrdID].SubItems[0].Text));
-
+                        Application.DoEvents();
                         foreach (var item in MyProdctut)
                         {
                             ProductNameLab.Text = string.Format("Product Name : {0}", item.Product_Name.ToString());
                             ProductDescriotionLab.Text = string.Format("Description  : {0} ", item.Product_Description.ToString());
-                            Publicnamelab.Text = string.Format("Public Name  : {0} ", item.PublicName.ToString());
-                            //if (item.Img != null)
-                            //{
-                                PhotoBox.Image =  item.Img;
-                                this.Cursor = Cursors.Default;
-                            //}
-                            //=======================================
-
-
+                         
+                            PhotoBox.Image =  item.Img;
+   
                             ListViewItem Itm = new ListViewItem(item.ID.ToString());
-                            //Itm.SubItems[0].ForeColor = Color.Green;
+                       
                             Itm.SubItems.Add(item.Product_Name.ToString());
 
                             Itm.SubItems.Add(item.Product_Description.ToString());
 
                             ProductImageList.Images.Add(item.Img);
-                            //  frm.OrdersListView.Items.Add(Itm);
+                       
                             //========================================
                             // start Work With Orders :
 
@@ -280,15 +273,12 @@ namespace Bylsan_System.SenarioAddOrderForms
         private void nextBtn_Click_1(object sender, EventArgs e)
         {
 
-
-
-
             frm.TragetOrderType = OrderTypeCheckLab.Text;
-
             frm.Show();
             this.Hide();
         }
 
+        #region "       Context     "
         private void titleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListViewProductes.View = View.Tile;
@@ -309,19 +299,7 @@ namespace Bylsan_System.SenarioAddOrderForms
             ListViewProductes.View = View.LargeIcon;
         }
 
-        private void TreeCategories_AfterSelect(object sender, TreeViewEventArgs e)
-        {
+        #endregion
 
-        }
-
-        private void ListViewProductes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }
