@@ -24,7 +24,7 @@ namespace Bylsan_System.ProductForms
         {
             var col = ProductGridView.CurrentColumn.Index;
 
-            if (col == 4)
+            if (col == 5)
             {
                 frmEditProduct frm = new frmEditProduct();
                 frm.TragetProduct = (Product)ProductGridView.CurrentRow.DataBoundItem;
@@ -32,7 +32,7 @@ namespace Bylsan_System.ProductForms
                 LoadProduct();
 
             }
-            if (col==5)
+            if (col==6)
             {
                 Operation.BeginOperation(this);
                 var q = (Product)ProductGridView.CurrentRow.DataBoundItem;

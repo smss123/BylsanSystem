@@ -44,8 +44,8 @@
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblstatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.txtPrice = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtprice = new System.Windows.Forms.TextBox();
             product_DescriptionLabel = new System.Windows.Forms.Label();
             product_NameLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -57,7 +57,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.productpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // product_DescriptionLabel
@@ -80,7 +79,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtPrice);
+            this.groupBox1.Controls.Add(this.txtprice);
             this.groupBox1.Controls.Add(this.CategoryComboBox);
             this.groupBox1.Controls.Add(this.AddBtn);
             this.groupBox1.Controls.Add(this.BrowseBtn);
@@ -213,31 +212,21 @@
             this.lblstatus.Size = new System.Drawing.Size(12, 17);
             this.lblstatus.Text = "_";
             // 
-            // txtPrice
-            // 
-            this.txtPrice.Increment = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.txtPrice.Location = new System.Drawing.Point(117, 191);
-            this.txtPrice.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(240, 22);
-            this.txtPrice.TabIndex = 22;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(77, 193);
+            this.label3.Location = new System.Drawing.Point(77, 196);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 19;
             this.label3.Text = "Price:";
+            // 
+            // txtprice
+            // 
+            this.txtprice.Location = new System.Drawing.Point(117, 193);
+            this.txtprice.Name = "txtprice";
+            this.txtprice.Size = new System.Drawing.Size(240, 22);
+            this.txtprice.TabIndex = 22;
             // 
             // frmEditProduct
             // 
@@ -265,7 +254,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,8 +274,8 @@
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblstatus;
-        private System.Windows.Forms.NumericUpDown txtPrice;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtprice;
 
     }
 }
