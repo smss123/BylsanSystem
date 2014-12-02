@@ -297,6 +297,42 @@
     <Compile Include="SecurityForm\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="SellSystemForms\FrmAddSellIStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellSystemForms\FrmAddSellIStore.Designer.cs">
+      <DependentUpon>FrmAddSellIStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellSystemForms\FrmAddSellItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellSystemForms\FrmAddSellItem.Designer.cs">
+      <DependentUpon>FrmAddSellItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellSystemForms\FrmEditSellIStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellSystemForms\FrmEditSellIStore.Designer.cs">
+      <DependentUpon>FrmEditSellIStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellSystemForms\FrmEditSellItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellSystemForms\FrmEditSellItem.Designer.cs">
+      <DependentUpon>FrmEditSellItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellSystemForms\FrmManageSellIStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellSystemForms\FrmManageSellIStore.Designer.cs">
+      <DependentUpon>FrmManageSellIStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellSystemForms\FrmManageSellItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellSystemForms\FrmManageSellItem.Designer.cs">
+      <DependentUpon>FrmManageSellItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="SenarioAddOrderForms\FrmAddInformationCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -450,6 +486,24 @@
     </Compile>
     <EmbeddedResource Include="SecurityForm\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellSystemForms\FrmAddSellIStore.resx">
+      <DependentUpon>FrmAddSellIStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellSystemForms\FrmAddSellItem.resx">
+      <DependentUpon>FrmAddSellItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellSystemForms\FrmEditSellIStore.resx">
+      <DependentUpon>FrmEditSellIStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellSystemForms\FrmEditSellItem.resx">
+      <DependentUpon>FrmEditSellItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellSystemForms\FrmManageSellIStore.resx">
+      <DependentUpon>FrmManageSellIStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellSystemForms\FrmManageSellItem.resx">
+      <DependentUpon>FrmManageSellItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SenarioAddOrderForms\FrmAddInformationCustomer.resx">
       <DependentUpon>FrmAddInformationCustomer.cs</DependentUpon>
