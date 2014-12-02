@@ -54,6 +54,42 @@
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(24, 154);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(57, 13);
+            label1.TabIndex = 9;
+            label1.Text = "Item Icon:";
+            // 
+            // itemPriceLabel
+            // 
+            itemPriceLabel.AutoSize = true;
+            itemPriceLabel.Location = new System.Drawing.Point(24, 126);
+            itemPriceLabel.Name = "itemPriceLabel";
+            itemPriceLabel.Size = new System.Drawing.Size(59, 13);
+            itemPriceLabel.TabIndex = 4;
+            itemPriceLabel.Text = "Item Price:";
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(14, 58);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(69, 13);
+            descriptionLabel.TabIndex = 2;
+            descriptionLabel.Text = "Description:";
+            // 
+            // itemNameLabel
+            // 
+            itemNameLabel.AutoSize = true;
+            itemNameLabel.Location = new System.Drawing.Point(19, 32);
+            itemNameLabel.Name = "itemNameLabel";
+            itemNameLabel.Size = new System.Drawing.Size(64, 13);
+            itemNameLabel.TabIndex = 0;
+            itemNameLabel.Text = "Item Name:";
+            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -75,16 +111,7 @@
             this.groupBox1.Size = new System.Drawing.Size(336, 287);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Add";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(24, 154);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(57, 13);
-            label1.TabIndex = 9;
-            label1.Text = "Item Icon:";
+            this.groupBox1.Text = "Edit";
             // 
             // SaveBtn
             // 
@@ -94,17 +121,18 @@
             this.SaveBtn.Location = new System.Drawing.Point(17, 225);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(109, 37);
-            this.SaveBtn.TabIndex = 8;
+            this.SaveBtn.TabIndex = 5;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SaveBtn.ThemeName = "VisualStudio2012Light";
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // BrowseBtn
             // 
             this.BrowseBtn.Location = new System.Drawing.Point(173, 154);
             this.BrowseBtn.Name = "BrowseBtn";
             this.BrowseBtn.Size = new System.Drawing.Size(51, 24);
-            this.BrowseBtn.TabIndex = 7;
+            this.BrowseBtn.TabIndex = 4;
             this.BrowseBtn.Text = "...";
             this.BrowseBtn.ThemeName = "VisualStudio2012Light";
             // 
@@ -117,31 +145,13 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // itemPriceLabel
-            // 
-            itemPriceLabel.AutoSize = true;
-            itemPriceLabel.Location = new System.Drawing.Point(24, 126);
-            itemPriceLabel.Name = "itemPriceLabel";
-            itemPriceLabel.Size = new System.Drawing.Size(59, 13);
-            itemPriceLabel.TabIndex = 4;
-            itemPriceLabel.Text = "Item Price:";
-            // 
             // itemPriceTextBox
             // 
             this.itemPriceTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.itemPriceTextBox.Location = new System.Drawing.Point(89, 123);
             this.itemPriceTextBox.Name = "itemPriceTextBox";
             this.itemPriceTextBox.Size = new System.Drawing.Size(156, 20);
-            this.itemPriceTextBox.TabIndex = 5;
-            // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(14, 58);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(69, 13);
-            descriptionLabel.TabIndex = 2;
-            descriptionLabel.Text = "Description:";
+            this.itemPriceTextBox.TabIndex = 3;
             // 
             // descriptionTextBox
             // 
@@ -150,16 +160,7 @@
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(217, 60);
-            this.descriptionTextBox.TabIndex = 3;
-            // 
-            // itemNameLabel
-            // 
-            itemNameLabel.AutoSize = true;
-            itemNameLabel.Location = new System.Drawing.Point(19, 32);
-            itemNameLabel.Name = "itemNameLabel";
-            itemNameLabel.Size = new System.Drawing.Size(64, 13);
-            itemNameLabel.TabIndex = 0;
-            itemNameLabel.Text = "Item Name:";
+            this.descriptionTextBox.TabIndex = 2;
             // 
             // itemNameTextBox
             // 

@@ -9,9 +9,9 @@ using Telerik.WinControls;
 
 namespace Bylsan_System.SellSystemForms
 {
-    public partial class FrmAddSellItem : Telerik.WinControls.UI.RadForm
+    public partial class FrmAddSellIStore : Telerik.WinControls.UI.RadForm
     {
-        public FrmAddSellItem()
+        public FrmAddSellIStore()
         {
             InitializeComponent();
         }
@@ -19,38 +19,33 @@ namespace Bylsan_System.SellSystemForms
         private void AddBtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
-
-
-            if (itemNameTextBox.Text == "")
+            if (ItemComboBox.SelectedValue == null)
             {
 
-                itemNameTextBox.BackColor = Color.OrangeRed;
-
-                itemNameTextBox.Focus();
-                errorProvider1.SetError(this.itemNameTextBox, "Please Enter Name");
-
+                ItemComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                ItemComboBox.Focus();
+                errorProvider1.SetError(this.ItemComboBox, "Please Enter Item");
                 return;
             }
             else
             {
-                itemNameTextBox.BackColor = Color.White;
+                ItemComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
-            //
-            if (itemPriceTextBox.Text == "")
+
+            if (qtyTextBox.Text == "")
             {
 
-                itemPriceTextBox.BackColor = Color.OrangeRed;
+                qtyTextBox.BackColor = Color.OrangeRed;
 
-                itemPriceTextBox.Focus();
-                errorProvider1.SetError(this.itemPriceTextBox, "Please Enter item Price");
+                qtyTextBox.Focus();
+                errorProvider1.SetError(this.qtyTextBox, "Please Enter Qty");
 
                 return;
             }
             else
             {
-                itemPriceTextBox.BackColor = Color.White;
+                qtyTextBox.BackColor = Color.White;
                 errorProvider1.Clear();
 
             }
