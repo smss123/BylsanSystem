@@ -15,33 +15,40 @@ namespace XamaDataLayer.Helper_Classes
     {
         static DbDataContext db = new DbDataContext();
 
-    public List<OrderProduct> GetAllInDesigner(){
-
-              var lst = ( from c in db.OrderProducts 
-                             where c.Status == "In Designer" 
-                             select c).ToList ();            
-              return lst ;
-         
-        
-        }
 
 
-    public List<OrderProduct> GetAllInProducting() {
+    public  List<Order> GetAllOrdersInDesigner()
+    {
+        db = new DbDataContext();
+        var Lst = (from o in db.Orders
+                   orderby o.OrderDate ascending
+                   where
+                       o.OrderStatus == "In Designer"
+                   select o).ToList();
+        return Lst;
+    }
 
-        var lst = (from c in db.OrderProducts
-                   where c.Status == "In Producting"
-                   select c).ToList();
-        return lst; 
+    public List<Order> GetAllInProducting() {
+        db = new DbDataContext();
+        var Lst = (from o in db.Orders
+                   orderby o.OrderDate ascending
+                   where
+                       o.OrderStatus == "In Producting"
+                   select o).ToList();
+        return Lst;
     }
 
 
-    public  List<OrderProduct> GetAllToDeliver()
+    public  List<Order> GetAllToDeliver()
     {
-
-        var lst = (from c in db.OrderProducts
-                   where c.Status == "To Deliver"
-                   select c).ToList();
-        return lst;
+        db = new DbDataContext();
+        var Lst = (from o in db.Orders
+                   orderby o.OrderDate ascending
+                   where
+                       o.OrderStatus == "To Deliver"
+                   select o).ToList();
+        return Lst;
+    
     }
 
 

@@ -26,13 +26,17 @@ namespace Bylsan_System.designerForms
         Thread CustomerThread;
         private void PopulateGrd()
         {
+            
             Operation.BeginOperation(this);
             var q = new object();
             using (FactoryZoon FactoryZoonCmd = new FactoryZoon())
-            {  q = FactoryZoonCmd.GetAllInDesigner(); }
+            { 
+                q = FactoryZoonCmd.GetAllOrdersInDesigner(); 
+                
+            }
             this.Invoke((MethodInvoker)delegate 
             {
-               
+
                 DGVOrders.DataSource = q; 
             });
             Operation.EndOperation (this);
@@ -61,7 +65,7 @@ namespace Bylsan_System.designerForms
 
                     FrmProdShow.TaregtOrder = SelectedOrderID;
 
-                   
+                  
                     FrmProdShow.ShowDialog ();
                  
                 }

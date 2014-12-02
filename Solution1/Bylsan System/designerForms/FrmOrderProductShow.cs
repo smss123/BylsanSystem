@@ -39,8 +39,8 @@ namespace Bylsan_System.designerForms
         private void FrmOrderProductShow_Load(object sender, EventArgs e)
         {
             SizeLab.Visible = false; // UnUsed
-            UploadBtn.Visible = false; // UnUsed
-            pictureBox1.Image = null;
+            MessageBox.Show("" + TaregtOrder.ToString());
+            PhotoBox.Image = null;
            //================================
             Thr = new Thread(PopulateGrd);
             Thr.Start();
@@ -68,14 +68,14 @@ namespace Bylsan_System.designerForms
             this.Invoke((MethodInvoker)delegate
             {
                 SizeLab.Text = "";
-                pictureBox1.Image = null;
+                PhotoBox.Image = null;
                 WthBox.Text = ""; HghtBox.Text = "";
                 //============================================
                 var lst = (from p in OrderProuctAttachmentCmd.GetOneAttachmentByOrderProductID(int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString())) select p).ToList ();
                 foreach (var item in lst )
                 {
                     TxtDescription.Text = item.Description;
-                    pictureBox1.Image = item.imageX;
+                    PhotoBox.Image = item.imageX;
                     imageList1.Images.Add(item.imageX);
                     SizeLab.Text = item.imageX.Size.ToString () ;
                     IDImageAddress = item.ID;
@@ -88,10 +88,7 @@ namespace Bylsan_System.designerForms
 
         }
 
-        private void CloseBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
+   
 
         int i = 0;
         private void NextPhotoBtn_Click(object sender, EventArgs e)
@@ -100,34 +97,27 @@ namespace Bylsan_System.designerForms
             if (i != imageList1.Images.Count ) 
             {
                
-                pictureBox1.Image = null;
-                pictureBox1.Image = imageList1.Images[i];
+                PhotoBox.Image = null;
+                PhotoBox.Image = imageList1.Images[i];
                 SizeLab.Text = imageList1.Images[i].Size.ToString();
                 i++;
             }
             else
             {
                 i = 0; 
-                pictureBox1.Image = null;
-                pictureBox1.Image = imageList1.Images[i];
+                PhotoBox.Image = null;
+                PhotoBox.Image = imageList1.Images[i];
                 SizeLab.Text = imageList1.Images[i].Size.ToString () ;
             }
         }
 
-        public static Image ResizeImage(Image imgToResize, Size size)
-        {
-           return (Image)(new Bitmap(imgToResize, size));
-        }
+ 
 
     
         private void SaveBtn_Click(object sender, EventArgs e)
         {     
                      
-            int  w = int .Parse (WthBox.Text); int h = int .Parse (HghtBox.Text);    
-            Image Img = pictureBox1.Image;
-            Img = ResizeImage(Img , new Size(w, h));
-            byteImg1 = PhotosConverter.ImageToByteArray(Img);
-
+          
             OrderProduct tb = new OrderProduct() { 
             OrderID = TaregtOrder,
             Description = TxtDescription .Text ,
@@ -142,7 +132,7 @@ namespace Bylsan_System.designerForms
         }
 
 
-        #region "    ^^^ Brwose Photo    "
+        #region "   Upload  Photo    "
 
         OpenFileDialog Op = new OpenFileDialog();
 
@@ -153,7 +143,7 @@ namespace Bylsan_System.designerForms
             {
                 this.Cursor = Cursors.WaitCursor;
                 Op.Filter = "Image Files(*.png; *.jpg; *.bmp)|*.png; *.jpg; *.bmp";
-                pictureBox1.Image = Image.FromFile(Op.FileName);
+                PhotoBox.Image = Image.FromFile(Op.FileName);
                
                 this.Cursor = Cursors.Default;
 
@@ -181,6 +171,62 @@ namespace Bylsan_System.designerForms
 
 
         #endregion 
+
+        #region "      Save Photo At Computer         "
+        SaveFileDialog SvDialog = new SaveFileDialog();
+        private void SavePhotoBtn_Click(object sender, EventArgs e)
+        {
+            SvDialog = new SaveFileDialog();
+            SvDialog.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
+            SvDialog.Title = "Save an Image File";
+            SvDialog.ShowDialog();
+
+
+            if (SvDialog.FileName != "" && PhotoBox.Image != null)
+            {
+
+                System.IO.FileStream fs =
+                   (System.IO.FileStream)SvDialog.OpenFile();
+
+                switch (SvDialog.FilterIndex)
+                {
+                    case 1:
+                        PhotoBox.Image.Save(fs,
+                           System.Drawing.Imaging.ImageFormat.Jpeg);
+                        break;
+
+                    case 2:
+                        PhotoBox.Image.Save(fs,
+                           System.Drawing.Imaging.ImageFormat.Bmp);
+                        break;
+
+                    case 3:
+                        PhotoBox.Image.Save(fs,
+                           System.Drawing.Imaging.ImageFormat.Gif);
+                        break;
+                }
+
+                fs.Close();
+            }
+        }
+        #endregion
+        private void CloseBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        #region " UnUsed  "
+
+        public static Image ResizeImage(Image imgToResize, Size size)
+        {
+            return (Image)(new Bitmap(imgToResize, size));
+        }
+
+        //int  w = int .Parse (WthBox.Text); int h = int .Parse (HghtBox.Text);    
+        //Image Img = pictureBox1.Image;
+        //Img = ResizeImage(Img , new Size(w, h));
+        //byteImg1 = PhotosConverter.ImageToByteArray(Img);
+        #endregion
 
     }
 }

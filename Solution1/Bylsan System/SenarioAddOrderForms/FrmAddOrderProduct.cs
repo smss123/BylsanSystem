@@ -210,19 +210,20 @@ namespace Bylsan_System.SenarioAddOrderForms
 
                         PrdID = 0;
                         PrdID = ListViewProductes.SelectedItems[0].Index;
-
-                        var MyProdctut =  this.Products.Where(p=>p.ID==ListViewProductes.Items[PrdID].SubItems[0].Text.ToInt()).ToList();//ProductsCmd.GetProductByID(int.Parse(ListViewProductes.Items[PrdID].SubItems[0].Text));
+                      
+                        // this.Products.Where(p=>p.ID==ListViewProductes.Items[PrdID].SubItems[0].Text.ToInt()).ToList();//
+                        var MyProdctut =  ProductsCmd.GetProductByID(int.Parse(ListViewProductes.Items[PrdID].SubItems[0].Text));
 
                         foreach (var item in MyProdctut)
                         {
                             ProductNameLab.Text = string.Format("Product Name : {0}", item.Product_Name.ToString());
                             ProductDescriotionLab.Text = string.Format("Description  : {0} ", item.Product_Description.ToString());
                             Publicnamelab.Text = string.Format("Public Name  : {0} ", item.PublicName.ToString());
-                            if (item.Img != null)
-                            {
-                                PhotoBox.Image = item.Img;
+                            //if (item.Img != null)
+                            //{
+                                PhotoBox.Image =  item.Img;
                                 this.Cursor = Cursors.Default;
-                            }
+                            //}
                             //=======================================
 
 
