@@ -55,6 +55,7 @@
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.BtnDesinger = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +70,8 @@
             this.ProductDropDownButton,
             this.toolStripDropDownButton5,
             this.MailBtn,
-            this.toolStripButton2});
+            this.toolStripButton2,
+            this.BtnDesinger});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(936, 25);
@@ -279,6 +281,15 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // BtnDesinger
+            // 
+            this.BtnDesinger.Image = ((System.Drawing.Image)(resources.GetObject("BtnDesinger.Image")));
+            this.BtnDesinger.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnDesinger.Name = "BtnDesinger";
+            this.BtnDesinger.Size = new System.Drawing.Size(73, 22);
+            this.BtnDesinger.Text = "Desinger";
+            this.BtnDesinger.Click += new System.EventHandler(this.BtnDesinger_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,6 +339,6 @@
         private System.Windows.Forms.ToolStripMenuItem customerManagementBtn;
         private System.Windows.Forms.ToolStripDropDownButton toolStripButton2;
         private System.Windows.Forms.ToolStripMenuItem newOrderToolStripMenuItem;
-
+        private System.Windows.Forms.ToolStripButton BtnDesinger;
     }
 }
