@@ -10,32 +10,33 @@ using System.Drawing;
 
 namespace XamaDataLayer.Helper_Classes
 {
-    public class FactoryZoon 
+    public  class FactoryZoon : IDisposable 
     {
         static DbDataContext db = new DbDataContext();
 
-        public static List<OrderProduct> GetAllPrinting()
+        public List<OrderProduct> GetAllPrinting()
         {
 
             var lst = (from c in db.OrderProducts
                        where c.Status == "Printing"
                        select c).ToList();
             return lst;
-
+            
         }
-    public static List<OrderProduct> GetAllInDesigner(){
+    public List<OrderProduct> GetAllInDesigner(){
 
               var lst = ( from c in db.OrderProducts 
                              where c.Status == "In Designer" 
                              select c).ToList ();            
-              return lst ; 
-
+              return lst ;
+         
+        
         }
 
 
 
 
-    public static List<OrderProduct> GetAllInDesigner() {
+    public List<OrderProduct> GetAllInDesigner() {
 
         var lst = (from c in db.OrderProducts
                    where c.Status == "In Producting"
@@ -44,7 +45,7 @@ namespace XamaDataLayer.Helper_Classes
     }
 
 
-    public static List<OrderProduct> GetAllToDeliver()
+    public  List<OrderProduct> GetAllToDeliver()
     {
 
         var lst = (from c in db.OrderProducts
