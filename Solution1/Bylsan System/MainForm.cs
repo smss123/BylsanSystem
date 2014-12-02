@@ -13,10 +13,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 
 namespace Bylsan_System
 {
-    public partial class MainForm : Form
+    public partial class MainForm : RadForm
+
     {
         public MainForm()
         {
