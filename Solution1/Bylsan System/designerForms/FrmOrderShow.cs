@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
+using XamaDataLayer.Helper_Classes;
 namespace Bylsan_System.designerForms
 {
     public partial class FrmOrderShow : Form
@@ -26,7 +27,14 @@ namespace Bylsan_System.designerForms
         private void PopulateGrd()
         {
             Operation.BeginOperation(this);
-            this.Invoke((MethodInvoker)delegate { DGVOrders.DataSource = OrdersCmd.GetAllOrdersInDesigner(); });
+            var q = new object();
+            using (FactoryZoon FactoryZoonCmd = new FactoryZoon())
+            {  q = FactoryZoonCmd.GetAllInDesigner(); }
+            this.Invoke((MethodInvoker)delegate 
+            {
+               
+                DGVOrders.DataSource = q; 
+            });
             Operation.EndOperation (this);
             this.Thr.Abort();
         }
