@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.Data;
+using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Helper_Classes;
@@ -16,7 +17,7 @@ using Xprema.XExtention;
 
 namespace Bylsan_System.ProductForms
 {
-    public partial class frmAddProduct : Form
+    public partial class frmAddProduct : RadForm
     {
         public frmAddProduct()
         {

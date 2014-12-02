@@ -208,6 +208,7 @@
             this.personalty_IDTextBox.Name = "personalty_IDTextBox";
             this.personalty_IDTextBox.Size = new System.Drawing.Size(255, 20);
             this.personalty_IDTextBox.TabIndex = 4;
+            this.personalty_IDTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.personalty_IDTextBox_KeyPress);
             // 
             // phoneNumberTextBox
             // 
@@ -216,6 +217,7 @@
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(255, 20);
             this.phoneNumberTextBox.TabIndex = 3;
+            this.phoneNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneNumberTextBox_KeyPress);
             // 
             // errorProvider1
             // 

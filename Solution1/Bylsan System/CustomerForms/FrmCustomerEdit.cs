@@ -92,5 +92,10 @@ namespace Bylsan_System.CustomerForms
                 phoneNumberTextBox.Clear();
             }
         }
+
+        private void phoneNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }
