@@ -67,9 +67,9 @@ namespace Bylsan_System.designerForms
             imageList1.Images.Clear();
             this.Invoke((MethodInvoker)delegate
             {
-                SizeLab.Text = "";
+              
                 PhotoBox.Image = null;
-                WthBox.Text = ""; HghtBox.Text = "";
+               
                 //============================================
                 var lst = (from p in OrderProuctAttachmentCmd.GetOneAttachmentByOrderProductID(int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString())) select p).ToList ();
                 foreach (var item in lst )
@@ -77,8 +77,9 @@ namespace Bylsan_System.designerForms
                     TxtDescription.Text = item.Description;
                     PhotoBox.Image = item.imageX;
                     imageList1.Images.Add(item.imageX);
-                    SizeLab.Text = item.imageX.Size.ToString () ;
+                   
                     IDImageAddress = item.ID;
+                  
                 }
                
             });
@@ -126,7 +127,7 @@ namespace Bylsan_System.designerForms
              ImageX = byteImg1 ,
             Status = "in producting ",
             };
-            OrderProductsCmd.EditOrderProduct(tb, IDImageAddress);
+            OrderProductsCmd.EditOrderProduct(tb, int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString()));
             MessageBox.Show("Changes Was Saved ...");
             this.Hide();
         }
