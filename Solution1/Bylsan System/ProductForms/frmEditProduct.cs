@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Helper_Classes;
+using Xprema.XExtention;
 namespace Bylsan_System.ProductForms
 {
     public partial class frmEditProduct : Form
@@ -84,6 +85,7 @@ namespace Bylsan_System.ProductForms
                     Product_Description = product_DescriptionTextBox.Text,
                     Img = productpictureBox.Image,
                     CateogryID = int.Parse(CategoryComboBox.SelectedValue.ToString()),
+                     ProductPrice = txtPrice.Value.ToString().Todouble()
                 }; 
             
             });
@@ -149,6 +151,7 @@ namespace Bylsan_System.ProductForms
             product_NameTextBox.Text = TragetProduct.Product_Name;
             product_DescriptionTextBox.Text = TragetProduct.Product_Description;
             productpictureBox.Image = TragetProduct.Img;
+            txtPrice.Value = TragetProduct.ProductPrice.ToString().Todouble();
             
             Operation.EndOperation(this);
 
