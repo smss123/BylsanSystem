@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 
 
 namespace Bylsan_System.CustomerForms
 {
-    public partial class FrmCustomerManage : Form
+    public partial class FrmCustomerManage : RadForm
     {
         public FrmCustomerManage()
         {

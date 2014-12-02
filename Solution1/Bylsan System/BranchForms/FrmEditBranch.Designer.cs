@@ -41,21 +41,21 @@
             this.BranchgroupBox = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.EmployeeManagerComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBranchDescription = new System.Windows.Forms.TextBox();
             this.txtBranchName = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.BranchgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,9 +68,9 @@
             this.BranchgroupBox.Controls.Add(this.label1);
             this.BranchgroupBox.Controls.Add(this.txtBranchDescription);
             this.BranchgroupBox.Controls.Add(this.txtBranchName);
-            this.BranchgroupBox.Location = new System.Drawing.Point(12, 13);
+            this.BranchgroupBox.Location = new System.Drawing.Point(12, 12);
             this.BranchgroupBox.Name = "BranchgroupBox";
-            this.BranchgroupBox.Size = new System.Drawing.Size(328, 247);
+            this.BranchgroupBox.Size = new System.Drawing.Size(333, 219);
             this.BranchgroupBox.TabIndex = 0;
             this.BranchgroupBox.TabStop = false;
             this.BranchgroupBox.Text = "Edit Data";
@@ -97,7 +97,7 @@
             this.EmployeeManagerComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.EmployeeManagerComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // EmployeeManagerComboBox.NestedRadGridView
             // 
             this.EmployeeManagerComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.EmployeeManagerComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -187,10 +187,29 @@
             this.EmployeeManagerComboBox.TabStop = false;
             this.EmployeeManagerComboBox.ThemeName = "VisualStudio2012Light";
             // 
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataSource = typeof(XamaDataLayer.Employee);
+            // 
+            // AddBtn
+            // 
+            this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddBtn.Image = global::Bylsan_System.Properties.Resources.Save;
+            this.AddBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.AddBtn.Location = new System.Drawing.Point(12, 169);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(109, 37);
+            this.AddBtn.TabIndex = 3;
+            this.AddBtn.TabStop = false;
+            this.AddBtn.Text = "Save";
+            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddBtn.ThemeName = "VisualStudio2012Light";
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 79);
+            this.label2.Location = new System.Drawing.Point(9, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 13);
             this.label2.TabIndex = 8;
@@ -208,7 +227,7 @@
             // txtBranchDescription
             // 
             this.txtBranchDescription.BackColor = System.Drawing.SystemColors.Info;
-            this.txtBranchDescription.Location = new System.Drawing.Point(117, 66);
+            this.txtBranchDescription.Location = new System.Drawing.Point(117, 65);
             this.txtBranchDescription.Multiline = true;
             this.txtBranchDescription.Name = "txtBranchDescription";
             this.txtBranchDescription.Size = new System.Drawing.Size(195, 61);
@@ -226,40 +245,23 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataSource = typeof(XamaDataLayer.Employee);
-            // 
-            // AddBtn
-            // 
-            this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddBtn.Image = global::Bylsan_System.Properties.Resources.Save;
-            this.AddBtn.Location = new System.Drawing.Point(19, 194);
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(98, 37);
-            this.AddBtn.TabIndex = 3;
-            this.AddBtn.Text = "Save";
-            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddBtn.ThemeName = "VisualStudio2012Light";
-            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
-            // 
             // FrmEditBranch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(361, 284);
+            this.ClientSize = new System.Drawing.Size(357, 243);
             this.Controls.Add(this.BranchgroupBox);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(369, 317);
+            this.MaximumSize = new System.Drawing.Size(365, 276);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(369, 317);
+            this.MinimumSize = new System.Drawing.Size(365, 276);
             this.Name = "FrmEditBranch";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.RootElement.MaxSize = new System.Drawing.Size(369, 317);
+            this.RootElement.MaxSize = new System.Drawing.Size(365, 276);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Branch";
             this.ThemeName = "VisualStudio2012Light";
@@ -269,9 +271,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

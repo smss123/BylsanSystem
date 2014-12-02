@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-
+using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 
 namespace Bylsan_System.CustomerForms
 {
-    public partial class FrmAddCustomer : Form
+    public partial class FrmAddCustomer : RadForm
     {
         public FrmAddCustomer()
         {

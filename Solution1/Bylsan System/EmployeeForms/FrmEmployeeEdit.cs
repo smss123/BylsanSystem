@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 
 namespace Bylsan_System.EmployeeForms
 {
-    public partial class FrmEmployeeEdit : Form
+    public partial class FrmEmployeeEdit : RadForm
     {
         public FrmEmployeeEdit()
         {
@@ -80,6 +80,11 @@ namespace Bylsan_System.EmployeeForms
             phoneNumberTextBox.Text = TragetEmployee.PhoneNumber;
             hereDateDateTimePicker.Value = TragetEmployee.HereDate.Value;
          
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

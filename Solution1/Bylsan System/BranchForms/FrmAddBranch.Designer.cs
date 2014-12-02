@@ -41,20 +41,20 @@
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.label3 = new System.Windows.Forms.Label();
             this.EmployeeManagerComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBranchDescription = new System.Windows.Forms.TextBox();
             this.txtBranchName = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +69,7 @@
             this.groupBox1.Controls.Add(this.txtBranchName);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(325, 245);
+            this.groupBox1.Size = new System.Drawing.Size(333, 219);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "AddBranch";
@@ -79,9 +79,9 @@
             this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddBtn.Image = global::Bylsan_System.Properties.Resources.Add;
             this.AddBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.AddBtn.Location = new System.Drawing.Point(13, 190);
+            this.AddBtn.Location = new System.Drawing.Point(20, 169);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(98, 37);
+            this.AddBtn.Size = new System.Drawing.Size(109, 37);
             this.AddBtn.TabIndex = 3;
             this.AddBtn.Text = "Add";
             this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -91,7 +91,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 132);
+            this.label3.Location = new System.Drawing.Point(46, 130);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 5;
@@ -187,7 +187,7 @@
             this.EmployeeManagerComboBox.EditorControl.ShowGroupPanel = false;
             this.EmployeeManagerComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.EmployeeManagerComboBox.EditorControl.TabIndex = 0;
-            this.EmployeeManagerComboBox.Location = new System.Drawing.Point(111, 128);
+            this.EmployeeManagerComboBox.Location = new System.Drawing.Point(111, 126);
             this.EmployeeManagerComboBox.Name = "EmployeeManagerComboBox";
             this.EmployeeManagerComboBox.NullText = "Enter Manager";
             this.EmployeeManagerComboBox.Size = new System.Drawing.Size(195, 20);
@@ -195,10 +195,14 @@
             this.EmployeeManagerComboBox.TabStop = false;
             this.EmployeeManagerComboBox.ThemeName = "VisualStudio2012Light";
             // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(XamaDataLayer.Employee);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 73);
+            this.label2.Location = new System.Drawing.Point(3, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 13);
             this.label2.TabIndex = 3;
@@ -216,7 +220,7 @@
             // txtBranchDescription
             // 
             this.txtBranchDescription.BackColor = System.Drawing.SystemColors.Info;
-            this.txtBranchDescription.Location = new System.Drawing.Point(111, 60);
+            this.txtBranchDescription.Location = new System.Drawing.Point(111, 58);
             this.txtBranchDescription.Multiline = true;
             this.txtBranchDescription.Name = "txtBranchDescription";
             this.txtBranchDescription.Size = new System.Drawing.Size(195, 61);
@@ -234,27 +238,23 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(XamaDataLayer.Employee);
-            // 
             // FrmAddBranch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(357, 280);
+            this.ClientSize = new System.Drawing.Size(357, 243);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(365, 313);
+            this.MaximumSize = new System.Drawing.Size(365, 276);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(365, 313);
+            this.MinimumSize = new System.Drawing.Size(365, 276);
             this.Name = "FrmAddBranch";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.RootElement.MaxSize = new System.Drawing.Size(365, 313);
+            this.RootElement.MaxSize = new System.Drawing.Size(365, 276);
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Branch";
@@ -266,8 +266,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeManagerComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

@@ -8,25 +8,26 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 namespace Bylsan_System.EmployeeForms
 {
-    public partial class FrmEmployeeManage : Form
+    public partial class FrmEmployeeManage : RadForm
     {
         public FrmEmployeeManage()
         {
             InitializeComponent();
-            radGridView1.CommandCellClick += radGridView1_CommandCellClick;
+            EmployeeGridView.CommandCellClick += radGridView1_CommandCellClick;
         }
 
         void radGridView1_CommandCellClick(object sender, EventArgs e)
         {
-            var col = radGridView1.CurrentColumn.Index;
+            var col = EmployeeGridView.CurrentColumn.Index;
             if (col == 9)
             {
                 FrmEmployeeEdit frm = new FrmEmployeeEdit();
-                frm.TragetEmployee = (Employee)radGridView1.CurrentRow.DataBoundItem;
+                frm.TragetEmployee = (Employee)EmployeeGridView.CurrentRow.DataBoundItem;
                 frm.ShowDialog();
                 LoadEmployee();
             }
@@ -55,7 +56,7 @@ namespace Bylsan_System.EmployeeForms
             Operation.EndOperation(this);
             statusStrip1.Invoke((MethodInvoker)delegate
             {
-                radGridView1.DataSource = q;
+                EmployeeGridView.DataSource = q;
                 toolStrip1.Text = "Compelete Load .... ";
 
             });

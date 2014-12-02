@@ -46,7 +46,7 @@
             this.personalty_IDTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
+            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             nationaltyLabel = new System.Windows.Forms.Label();
             emp_NameLabel = new System.Windows.Forms.Label();
             hereDateLabel = new System.Windows.Forms.Label();
@@ -57,14 +57,15 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // nationaltyLabel
             // 
             nationaltyLabel.AutoSize = true;
-            nationaltyLabel.Location = new System.Drawing.Point(32, 95);
+            nationaltyLabel.Location = new System.Drawing.Point(32, 92);
             nationaltyLabel.Name = "nationaltyLabel";
-            nationaltyLabel.Size = new System.Drawing.Size(60, 13);
+            nationaltyLabel.Size = new System.Drawing.Size(63, 13);
             nationaltyLabel.TabIndex = 17;
             nationaltyLabel.Text = "Nationalty:";
             // 
@@ -73,32 +74,32 @@
             emp_NameLabel.AutoSize = true;
             emp_NameLabel.Location = new System.Drawing.Point(31, 35);
             emp_NameLabel.Name = "emp_NameLabel";
-            emp_NameLabel.Size = new System.Drawing.Size(61, 13);
+            emp_NameLabel.Size = new System.Drawing.Size(64, 13);
             emp_NameLabel.TabIndex = 2;
             emp_NameLabel.Text = "Emp Name:";
             // 
             // hereDateLabel
             // 
             hereDateLabel.AutoSize = true;
-            hereDateLabel.Location = new System.Drawing.Point(31, 62);
+            hereDateLabel.Location = new System.Drawing.Point(30, 64);
             hereDateLabel.Name = "hereDateLabel";
-            hereDateLabel.Size = new System.Drawing.Size(60, 13);
+            hereDateLabel.Size = new System.Drawing.Size(61, 13);
             hereDateLabel.TabIndex = 4;
             hereDateLabel.Text = "Here Date:";
             // 
             // homeAddressLabel
             // 
             homeAddressLabel.AutoSize = true;
-            homeAddressLabel.Location = new System.Drawing.Point(20, 228);
+            homeAddressLabel.Location = new System.Drawing.Point(15, 205);
             homeAddressLabel.Name = "homeAddressLabel";
-            homeAddressLabel.Size = new System.Drawing.Size(80, 13);
+            homeAddressLabel.Size = new System.Drawing.Size(84, 13);
             homeAddressLabel.TabIndex = 6;
             homeAddressLabel.Text = "Home Address:";
             // 
             // jobLabel
             // 
             jobLabel.AutoSize = true;
-            jobLabel.Location = new System.Drawing.Point(68, 196);
+            jobLabel.Location = new System.Drawing.Point(67, 177);
             jobLabel.Name = "jobLabel";
             jobLabel.Size = new System.Drawing.Size(28, 13);
             jobLabel.TabIndex = 10;
@@ -107,18 +108,18 @@
             // personalty_IDLabel
             // 
             personalty_IDLabel.AutoSize = true;
-            personalty_IDLabel.Location = new System.Drawing.Point(23, 161);
+            personalty_IDLabel.Location = new System.Drawing.Point(18, 149);
             personalty_IDLabel.Name = "personalty_IDLabel";
-            personalty_IDLabel.Size = new System.Drawing.Size(76, 13);
+            personalty_IDLabel.Size = new System.Drawing.Size(77, 13);
             personalty_IDLabel.TabIndex = 14;
             personalty_IDLabel.Text = "Personalty ID:";
             // 
             // phoneNumberLabel
             // 
             phoneNumberLabel.AutoSize = true;
-            phoneNumberLabel.Location = new System.Drawing.Point(17, 126);
+            phoneNumberLabel.Location = new System.Drawing.Point(12, 121);
             phoneNumberLabel.Name = "phoneNumberLabel";
-            phoneNumberLabel.Size = new System.Drawing.Size(81, 13);
+            phoneNumberLabel.Size = new System.Drawing.Size(87, 13);
             phoneNumberLabel.TabIndex = 16;
             phoneNumberLabel.Text = "Phone Number:";
             // 
@@ -141,26 +142,30 @@
             this.groupBox1.Controls.Add(this.phoneNumberTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 9);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(370, 330);
+            this.groupBox1.Size = new System.Drawing.Size(370, 298);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit Employee";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(20, 272);
+            this.SaveBtn.Image = global::Bylsan_System.Properties.Resources.Save;
+            this.SaveBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SaveBtn.Location = new System.Drawing.Point(13, 247);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(126, 36);
+            this.SaveBtn.Size = new System.Drawing.Size(109, 37);
             this.SaveBtn.TabIndex = 18;
             this.SaveBtn.Text = "Save";
-            this.SaveBtn.ThemeName = "Windows8";
+            this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SaveBtn.ThemeName = "VisualStudio2012Light";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // nationaltyComboBox
             // 
             this.nationaltyComboBox.BackColor = System.Drawing.SystemColors.Info;
             this.nationaltyComboBox.FormattingEnabled = true;
-            this.nationaltyComboBox.Location = new System.Drawing.Point(99, 92);
+            this.nationaltyComboBox.Location = new System.Drawing.Point(99, 89);
             this.nationaltyComboBox.Name = "nationaltyComboBox";
             this.nationaltyComboBox.Size = new System.Drawing.Size(255, 21);
             this.nationaltyComboBox.TabIndex = 2;
@@ -175,7 +180,7 @@
             // 
             // hereDateDateTimePicker
             // 
-            this.hereDateDateTimePicker.Location = new System.Drawing.Point(99, 58);
+            this.hereDateDateTimePicker.Location = new System.Drawing.Point(99, 60);
             this.hereDateDateTimePicker.Name = "hereDateDateTimePicker";
             this.hereDateDateTimePicker.Size = new System.Drawing.Size(255, 20);
             this.hereDateDateTimePicker.TabIndex = 1;
@@ -183,7 +188,7 @@
             // homeAddressTextBox
             // 
             this.homeAddressTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.homeAddressTextBox.Location = new System.Drawing.Point(100, 225);
+            this.homeAddressTextBox.Location = new System.Drawing.Point(100, 202);
             this.homeAddressTextBox.Name = "homeAddressTextBox";
             this.homeAddressTextBox.Size = new System.Drawing.Size(254, 20);
             this.homeAddressTextBox.TabIndex = 6;
@@ -191,7 +196,7 @@
             // jobTextBox
             // 
             this.jobTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.jobTextBox.Location = new System.Drawing.Point(100, 190);
+            this.jobTextBox.Location = new System.Drawing.Point(100, 174);
             this.jobTextBox.Name = "jobTextBox";
             this.jobTextBox.Size = new System.Drawing.Size(254, 20);
             this.jobTextBox.TabIndex = 5;
@@ -199,7 +204,7 @@
             // personalty_IDTextBox
             // 
             this.personalty_IDTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.personalty_IDTextBox.Location = new System.Drawing.Point(99, 158);
+            this.personalty_IDTextBox.Location = new System.Drawing.Point(99, 146);
             this.personalty_IDTextBox.Name = "personalty_IDTextBox";
             this.personalty_IDTextBox.Size = new System.Drawing.Size(255, 20);
             this.personalty_IDTextBox.TabIndex = 4;
@@ -207,7 +212,7 @@
             // phoneNumberTextBox
             // 
             this.phoneNumberTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.phoneNumberTextBox.Location = new System.Drawing.Point(99, 123);
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(99, 118);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(255, 20);
             this.phoneNumberTextBox.TabIndex = 3;
@@ -221,20 +226,26 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(394, 351);
+            this.ClientSize = new System.Drawing.Size(394, 317);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(410, 389);
+            this.MaximumSize = new System.Drawing.Size(402, 350);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(410, 389);
+            this.MinimumSize = new System.Drawing.Size(402, 350);
             this.Name = "FrmEmployeeEdit";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Employee Edit";
+            this.Text = "Edit Employee";
+            this.ThemeName = "VisualStudio2012Light";
             this.Load += new System.EventHandler(this.FrmEmployeeEdit_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -251,6 +262,6 @@
         private System.Windows.Forms.TextBox personalty_IDTextBox;
         private System.Windows.Forms.TextBox phoneNumberTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
+        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     }
 }
