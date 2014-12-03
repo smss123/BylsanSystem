@@ -162,5 +162,17 @@ namespace Bylsan_System.SenarioAddOrderForms
             Cust = CustomersCmd.GetAllCustmers();
             Operation.EndOperation(this);
         }
+
+        private void SpecialOrderCheckBox_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (SpecialOrderCheckBox.CheckState == CheckState.Checked) { NormalOrdercheckBox.CheckState = CheckState.Unchecked; }
+        }
+
+        private void NormalOrdercheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (NormalOrdercheckBox.CheckState == CheckState.Checked) { SpecialOrderCheckBox.CheckState = CheckState.Unchecked; }
+
+        }
     }
 }

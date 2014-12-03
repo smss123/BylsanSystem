@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DGVProducts = new Telerik.WinControls.UI.RadGridView();
             this.CloseBtn = new System.Windows.Forms.Button();
@@ -88,24 +88,24 @@
             // DGVProducts
             // 
             this.DGVProducts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "ID";
-            gridViewTextBoxColumn1.HeaderText = "ID";
-            gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn1.Width = 43;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "ProductID";
-            gridViewTextBoxColumn2.HeaderText = "Product Name";
-            gridViewTextBoxColumn2.Name = "Product_Name";
-            gridViewTextBoxColumn2.Width = 215;
-            gridViewTextBoxColumn3.FieldName = "Qty";
-            gridViewTextBoxColumn3.HeaderText = "Quantity";
-            gridViewTextBoxColumn3.Name = "Quantity";
-            gridViewTextBoxColumn3.Width = 115;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "ID";
+            gridViewTextBoxColumn7.HeaderText = "ID";
+            gridViewTextBoxColumn7.Name = "ID";
+            gridViewTextBoxColumn7.Width = 43;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "ProductID";
+            gridViewTextBoxColumn8.HeaderText = "Product Name";
+            gridViewTextBoxColumn8.Name = "Product_Name";
+            gridViewTextBoxColumn8.Width = 215;
+            gridViewTextBoxColumn9.FieldName = "Qty";
+            gridViewTextBoxColumn9.HeaderText = "Quantity";
+            gridViewTextBoxColumn9.Name = "Quantity";
+            gridViewTextBoxColumn9.Width = 115;
             this.DGVProducts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3});
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9});
             this.DGVProducts.MasterTemplate.EnableFiltering = true;
             this.DGVProducts.Name = "DGVProducts";
             this.DGVProducts.ReadOnly = true;

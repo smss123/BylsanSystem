@@ -15,10 +15,11 @@ using XamaDataLayer;
 using System.Data.Linq;
 using System.Threading;
 using Xprema.XExtention;
+using Telerik.WinControls.UI;
 
 namespace Bylsan_System.SenarioAddOrderForms
 {
-    public partial class FrmAddOrderProduct : Form
+    public partial class FrmAddOrderProduct : RadForm
     {
         public List<Product> Products { get; set; }
         public List<ProductCategory> ProductCategories { get; set; }

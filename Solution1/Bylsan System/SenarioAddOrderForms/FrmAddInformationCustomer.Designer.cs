@@ -57,7 +57,7 @@
             customerNameLabel.AutoSize = true;
             customerNameLabel.Location = new System.Drawing.Point(17, 69);
             customerNameLabel.Name = "customerNameLabel";
-            customerNameLabel.Size = new System.Drawing.Size(91, 13);
+            customerNameLabel.Size = new System.Drawing.Size(87, 13);
             customerNameLabel.TabIndex = 1;
             customerNameLabel.Text = "Customer Name:";
             // 
@@ -66,7 +66,7 @@
             phoneNumberLabel.AutoSize = true;
             phoneNumberLabel.Location = new System.Drawing.Point(23, 31);
             phoneNumberLabel.Name = "phoneNumberLabel";
-            phoneNumberLabel.Size = new System.Drawing.Size(87, 13);
+            phoneNumberLabel.Size = new System.Drawing.Size(81, 13);
             phoneNumberLabel.TabIndex = 3;
             phoneNumberLabel.Text = "Phone Number:";
             // 
@@ -92,20 +92,22 @@
             this.SpecialOrderCheckBox.AutoSize = true;
             this.SpecialOrderCheckBox.Location = new System.Drawing.Point(176, 243);
             this.SpecialOrderCheckBox.Name = "SpecialOrderCheckBox";
-            this.SpecialOrderCheckBox.Size = new System.Drawing.Size(95, 17);
+            this.SpecialOrderCheckBox.Size = new System.Drawing.Size(90, 17);
             this.SpecialOrderCheckBox.TabIndex = 6;
             this.SpecialOrderCheckBox.Text = "Special Order";
             this.SpecialOrderCheckBox.UseVisualStyleBackColor = true;
+            this.SpecialOrderCheckBox.CheckedChanged += new System.EventHandler(this.SpecialOrderCheckBox_CheckedChanged_1);
             // 
             // NormalOrdercheckBox
             // 
             this.NormalOrdercheckBox.AutoSize = true;
             this.NormalOrdercheckBox.Location = new System.Drawing.Point(11, 243);
             this.NormalOrdercheckBox.Name = "NormalOrdercheckBox";
-            this.NormalOrdercheckBox.Size = new System.Drawing.Size(96, 17);
+            this.NormalOrdercheckBox.Size = new System.Drawing.Size(90, 17);
             this.NormalOrdercheckBox.TabIndex = 5;
             this.NormalOrdercheckBox.Text = "Normal Order";
             this.NormalOrdercheckBox.UseVisualStyleBackColor = true;
+            this.NormalOrdercheckBox.CheckedChanged += new System.EventHandler(this.NormalOrdercheckBox_CheckedChanged);
             // 
             // NextBtn
             // 
@@ -135,7 +137,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(46, 102);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "label3";
             // 
@@ -144,7 +146,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(46, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "label2";
             // 
@@ -153,7 +155,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(46, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
@@ -170,7 +172,7 @@
             this.customerNameTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.customerNameTextBox.Location = new System.Drawing.Point(110, 66);
             this.customerNameTextBox.Name = "customerNameTextBox";
-            this.customerNameTextBox.Size = new System.Drawing.Size(193, 22);
+            this.customerNameTextBox.Size = new System.Drawing.Size(193, 20);
             this.customerNameTextBox.TabIndex = 0;
             // 
             // phoneNumberTextBox
@@ -178,7 +180,7 @@
             this.phoneNumberTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.phoneNumberTextBox.Location = new System.Drawing.Point(110, 28);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
-            this.phoneNumberTextBox.Size = new System.Drawing.Size(193, 22);
+            this.phoneNumberTextBox.Size = new System.Drawing.Size(193, 20);
             this.phoneNumberTextBox.TabIndex = 1;
             this.phoneNumberTextBox.TextChanged += new System.EventHandler(this.phoneNumberTextBox_TextChanged_1);
             this.phoneNumberTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.phoneNumberTextBox_KeyDown);
