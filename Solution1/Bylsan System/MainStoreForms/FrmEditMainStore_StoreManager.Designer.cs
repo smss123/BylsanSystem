@@ -34,25 +34,62 @@
             System.Windows.Forms.Label processTypeLabel;
             System.Windows.Forms.Label qtyInOrOutLabel;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.StoreComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.processTypeComboBox = new System.Windows.Forms.ComboBox();
             this.qtyInOrOutTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
-            this.StoreComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             descriptionLabel = new System.Windows.Forms.Label();
             priceLabel = new System.Windows.Forms.Label();
             processTypeLabel = new System.Windows.Forms.Label();
             qtyInOrOutLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StoreComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StoreComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StoreComboBox.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(20, 128);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(69, 13);
+            descriptionLabel.TabIndex = 18;
+            descriptionLabel.Text = "Description:";
+            // 
+            // priceLabel
+            // 
+            priceLabel.AutoSize = true;
+            priceLabel.Location = new System.Drawing.Point(50, 107);
+            priceLabel.Name = "priceLabel";
+            priceLabel.Size = new System.Drawing.Size(34, 13);
+            priceLabel.TabIndex = 16;
+            priceLabel.Text = "Price:";
+            // 
+            // processTypeLabel
+            // 
+            processTypeLabel.AutoSize = true;
+            processTypeLabel.Location = new System.Drawing.Point(13, 76);
+            processTypeLabel.Name = "processTypeLabel";
+            processTypeLabel.Size = new System.Drawing.Size(74, 13);
+            processTypeLabel.TabIndex = 14;
+            processTypeLabel.Text = "Process Type:";
+            // 
+            // qtyInOrOutLabel
+            // 
+            qtyInOrOutLabel.AutoSize = true;
+            qtyInOrOutLabel.Location = new System.Drawing.Point(6, 49);
+            qtyInOrOutLabel.Name = "qtyInOrOutLabel";
+            qtyInOrOutLabel.Size = new System.Drawing.Size(80, 13);
+            qtyInOrOutLabel.TabIndex = 12;
+            qtyInOrOutLabel.Text = "Qty In Or Out:";
             // 
             // groupBox1
             // 
@@ -73,100 +110,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit";
-            // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(20, 128);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(64, 13);
-            descriptionLabel.TabIndex = 18;
-            descriptionLabel.Text = "Description:";
-            // 
-            // descriptionTextBox
-            // 
-            this.descriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.descriptionTextBox.Location = new System.Drawing.Point(88, 128);
-            this.descriptionTextBox.Multiline = true;
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(246, 72);
-            this.descriptionTextBox.TabIndex = 4;
-            // 
-            // priceLabel
-            // 
-            priceLabel.AutoSize = true;
-            priceLabel.Location = new System.Drawing.Point(50, 107);
-            priceLabel.Name = "priceLabel";
-            priceLabel.Size = new System.Drawing.Size(34, 13);
-            priceLabel.TabIndex = 16;
-            priceLabel.Text = "Price:";
-            // 
-            // priceTextBox
-            // 
-            this.priceTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.priceTextBox.Location = new System.Drawing.Point(88, 100);
-            this.priceTextBox.Name = "priceTextBox";
-            this.priceTextBox.Size = new System.Drawing.Size(116, 20);
-            this.priceTextBox.TabIndex = 3;
-            // 
-            // processTypeLabel
-            // 
-            processTypeLabel.AutoSize = true;
-            processTypeLabel.Location = new System.Drawing.Point(13, 76);
-            processTypeLabel.Name = "processTypeLabel";
-            processTypeLabel.Size = new System.Drawing.Size(75, 13);
-            processTypeLabel.TabIndex = 14;
-            processTypeLabel.Text = "Process Type:";
-            // 
-            // processTypeComboBox
-            // 
-            this.processTypeComboBox.BackColor = System.Drawing.SystemColors.Info;
-            this.processTypeComboBox.FormattingEnabled = true;
-            this.processTypeComboBox.ItemHeight = 13;
-            this.processTypeComboBox.Location = new System.Drawing.Point(88, 73);
-            this.processTypeComboBox.Name = "processTypeComboBox";
-            this.processTypeComboBox.Size = new System.Drawing.Size(175, 21);
-            this.processTypeComboBox.TabIndex = 15;
-            // 
-            // qtyInOrOutLabel
-            // 
-            qtyInOrOutLabel.AutoSize = true;
-            qtyInOrOutLabel.Location = new System.Drawing.Point(6, 49);
-            qtyInOrOutLabel.Name = "qtyInOrOutLabel";
-            qtyInOrOutLabel.Size = new System.Drawing.Size(78, 13);
-            qtyInOrOutLabel.TabIndex = 12;
-            qtyInOrOutLabel.Text = "Qty In Or Out:";
-            // 
-            // qtyInOrOutTextBox
-            // 
-            this.qtyInOrOutTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.qtyInOrOutTextBox.Location = new System.Drawing.Point(88, 46);
-            this.qtyInOrOutTextBox.Name = "qtyInOrOutTextBox";
-            this.qtyInOrOutTextBox.Size = new System.Drawing.Size(116, 20);
-            this.qtyInOrOutTextBox.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Stor:";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // SaveBtn
-            // 
-            this.SaveBtn.Location = new System.Drawing.Point(256, 217);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(127, 37);
-            this.SaveBtn.TabIndex = 5;
-            this.SaveBtn.Text = "Save";
-            this.SaveBtn.ThemeName = "Windows8";
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // StoreComboBox
             // 
@@ -190,11 +133,70 @@
             this.StoreComboBox.EditorControl.ShowGroupPanel = false;
             this.StoreComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.StoreComboBox.EditorControl.TabIndex = 0;
-            this.StoreComboBox.Location = new System.Drawing.Point(88, 20);
+            this.StoreComboBox.Location = new System.Drawing.Point(95, 20);
             this.StoreComboBox.Name = "StoreComboBox";
-            this.StoreComboBox.Size = new System.Drawing.Size(246, 20);
+            this.StoreComboBox.Size = new System.Drawing.Size(239, 20);
             this.StoreComboBox.TabIndex = 0;
             this.StoreComboBox.TabStop = false;
+            this.StoreComboBox.ThemeName = "VisualStudio2012Light";
+            // 
+            // descriptionTextBox
+            // 
+            this.descriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.descriptionTextBox.Location = new System.Drawing.Point(95, 128);
+            this.descriptionTextBox.Multiline = true;
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(239, 72);
+            this.descriptionTextBox.TabIndex = 4;
+            // 
+            // priceTextBox
+            // 
+            this.priceTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.priceTextBox.Location = new System.Drawing.Point(95, 100);
+            this.priceTextBox.Name = "priceTextBox";
+            this.priceTextBox.Size = new System.Drawing.Size(239, 20);
+            this.priceTextBox.TabIndex = 3;
+            // 
+            // processTypeComboBox
+            // 
+            this.processTypeComboBox.BackColor = System.Drawing.SystemColors.Info;
+            this.processTypeComboBox.FormattingEnabled = true;
+            this.processTypeComboBox.ItemHeight = 13;
+            this.processTypeComboBox.Location = new System.Drawing.Point(95, 73);
+            this.processTypeComboBox.Name = "processTypeComboBox";
+            this.processTypeComboBox.Size = new System.Drawing.Size(239, 21);
+            this.processTypeComboBox.TabIndex = 15;
+            // 
+            // qtyInOrOutTextBox
+            // 
+            this.qtyInOrOutTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.qtyInOrOutTextBox.Location = new System.Drawing.Point(95, 46);
+            this.qtyInOrOutTextBox.Name = "qtyInOrOutTextBox";
+            this.qtyInOrOutTextBox.Size = new System.Drawing.Size(239, 20);
+            this.qtyInOrOutTextBox.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(53, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Stor:";
+            // 
+            // SaveBtn
+            // 
+            this.SaveBtn.Location = new System.Drawing.Point(256, 217);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(127, 37);
+            this.SaveBtn.TabIndex = 5;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.ThemeName = "Windows8";
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FrmEditMainStore_StoreManager
             // 
@@ -203,16 +205,25 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(412, 296);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(420, 329);
+            this.MinimumSize = new System.Drawing.Size(420, 329);
             this.Name = "FrmEditMainStore_StoreManager";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditMainStore_StoreManager";
+            this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmEditMainStore_StoreManager_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StoreComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StoreComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StoreComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
         }

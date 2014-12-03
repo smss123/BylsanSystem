@@ -33,18 +33,46 @@
             System.Windows.Forms.Label itemDescriptionLabel;
             System.Windows.Forms.Label itemNameLabel;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ItemTypecomboBox = new System.Windows.Forms.ComboBox();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.itemDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.itemNameTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ItemTypecomboBox = new System.Windows.Forms.ComboBox();
             itemTypeLabel = new System.Windows.Forms.Label();
             itemDescriptionLabel = new System.Windows.Forms.Label();
             itemNameLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
+            // 
+            // itemTypeLabel
+            // 
+            itemTypeLabel.AutoSize = true;
+            itemTypeLabel.Location = new System.Drawing.Point(39, 151);
+            itemTypeLabel.Name = "itemTypeLabel";
+            itemTypeLabel.Size = new System.Drawing.Size(58, 13);
+            itemTypeLabel.TabIndex = 4;
+            itemTypeLabel.Text = "Item Type:";
+            // 
+            // itemDescriptionLabel
+            // 
+            itemDescriptionLabel.AutoSize = true;
+            itemDescriptionLabel.Location = new System.Drawing.Point(10, 70);
+            itemDescriptionLabel.Name = "itemDescriptionLabel";
+            itemDescriptionLabel.Size = new System.Drawing.Size(94, 13);
+            itemDescriptionLabel.TabIndex = 2;
+            itemDescriptionLabel.Text = "Item Description:";
+            // 
+            // itemNameLabel
+            // 
+            itemNameLabel.AutoSize = true;
+            itemNameLabel.Location = new System.Drawing.Point(36, 35);
+            itemNameLabel.Name = "itemNameLabel";
+            itemNameLabel.Size = new System.Drawing.Size(64, 13);
+            itemNameLabel.TabIndex = 0;
+            itemNameLabel.Text = "Item Name:";
             // 
             // groupBox1
             // 
@@ -65,64 +93,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit Item";
             // 
-            // SaveBtn
-            // 
-            this.SaveBtn.Location = new System.Drawing.Point(204, 194);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(127, 37);
-            this.SaveBtn.TabIndex = 6;
-            this.SaveBtn.Text = "Save";
-            this.SaveBtn.ThemeName = "Windows8";
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
-            // 
-            // itemTypeLabel
-            // 
-            itemTypeLabel.AutoSize = true;
-            itemTypeLabel.Location = new System.Drawing.Point(35, 151);
-            itemTypeLabel.Name = "itemTypeLabel";
-            itemTypeLabel.Size = new System.Drawing.Size(60, 13);
-            itemTypeLabel.TabIndex = 4;
-            itemTypeLabel.Text = "Item Type:";
-            // 
-            // itemDescriptionLabel
-            // 
-            itemDescriptionLabel.AutoSize = true;
-            itemDescriptionLabel.Location = new System.Drawing.Point(6, 70);
-            itemDescriptionLabel.Name = "itemDescriptionLabel";
-            itemDescriptionLabel.Size = new System.Drawing.Size(89, 13);
-            itemDescriptionLabel.TabIndex = 2;
-            itemDescriptionLabel.Text = "Item Description:";
-            // 
-            // itemDescriptionTextBox
-            // 
-            this.itemDescriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.itemDescriptionTextBox.Location = new System.Drawing.Point(97, 67);
-            this.itemDescriptionTextBox.Multiline = true;
-            this.itemDescriptionTextBox.Name = "itemDescriptionTextBox";
-            this.itemDescriptionTextBox.Size = new System.Drawing.Size(234, 69);
-            this.itemDescriptionTextBox.TabIndex = 3;
-            // 
-            // itemNameLabel
-            // 
-            itemNameLabel.AutoSize = true;
-            itemNameLabel.Location = new System.Drawing.Point(32, 35);
-            itemNameLabel.Name = "itemNameLabel";
-            itemNameLabel.Size = new System.Drawing.Size(63, 13);
-            itemNameLabel.TabIndex = 0;
-            itemNameLabel.Text = "Item Name:";
-            // 
-            // itemNameTextBox
-            // 
-            this.itemNameTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.itemNameTextBox.Location = new System.Drawing.Point(97, 32);
-            this.itemNameTextBox.Name = "itemNameTextBox";
-            this.itemNameTextBox.Size = new System.Drawing.Size(234, 20);
-            this.itemNameTextBox.TabIndex = 1;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // ItemTypecomboBox
             // 
             this.ItemTypecomboBox.BackColor = System.Drawing.SystemColors.Info;
@@ -130,10 +100,41 @@
             this.ItemTypecomboBox.Items.AddRange(new object[] {
             "item product",
             "item row material"});
-            this.ItemTypecomboBox.Location = new System.Drawing.Point(97, 148);
+            this.ItemTypecomboBox.Location = new System.Drawing.Point(106, 148);
             this.ItemTypecomboBox.Name = "ItemTypecomboBox";
-            this.ItemTypecomboBox.Size = new System.Drawing.Size(230, 21);
+            this.ItemTypecomboBox.Size = new System.Drawing.Size(225, 21);
             this.ItemTypecomboBox.TabIndex = 1;
+            // 
+            // SaveBtn
+            // 
+            this.SaveBtn.Location = new System.Drawing.Point(204, 194);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(127, 37);
+            this.SaveBtn.TabIndex = 6;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.ThemeName = "VisualStudio2012Light";
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
+            // itemDescriptionTextBox
+            // 
+            this.itemDescriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.itemDescriptionTextBox.Location = new System.Drawing.Point(106, 67);
+            this.itemDescriptionTextBox.Multiline = true;
+            this.itemDescriptionTextBox.Name = "itemDescriptionTextBox";
+            this.itemDescriptionTextBox.Size = new System.Drawing.Size(225, 69);
+            this.itemDescriptionTextBox.TabIndex = 3;
+            // 
+            // itemNameTextBox
+            // 
+            this.itemNameTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.itemNameTextBox.Location = new System.Drawing.Point(106, 32);
+            this.itemNameTextBox.Name = "itemNameTextBox";
+            this.itemNameTextBox.Size = new System.Drawing.Size(225, 20);
+            this.itemNameTextBox.TabIndex = 1;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FrmEditMainStore_Item
             // 
@@ -143,12 +144,19 @@
             this.ClientSize = new System.Drawing.Size(379, 267);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmEditMainStore_Item";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditMainStore_Item";
+            this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmEditMainStore_Item_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
         }

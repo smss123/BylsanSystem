@@ -44,6 +44,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Addbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // itemNameLabel
@@ -51,25 +52,25 @@
             itemNameLabel.AutoSize = true;
             itemNameLabel.Location = new System.Drawing.Point(32, 35);
             itemNameLabel.Name = "itemNameLabel";
-            itemNameLabel.Size = new System.Drawing.Size(63, 13);
+            itemNameLabel.Size = new System.Drawing.Size(64, 13);
             itemNameLabel.TabIndex = 0;
             itemNameLabel.Text = "Item Name:";
             // 
             // itemDescriptionLabel
             // 
             itemDescriptionLabel.AutoSize = true;
-            itemDescriptionLabel.Location = new System.Drawing.Point(6, 70);
+            itemDescriptionLabel.Location = new System.Drawing.Point(2, 70);
             itemDescriptionLabel.Name = "itemDescriptionLabel";
-            itemDescriptionLabel.Size = new System.Drawing.Size(89, 13);
+            itemDescriptionLabel.Size = new System.Drawing.Size(94, 13);
             itemDescriptionLabel.TabIndex = 2;
             itemDescriptionLabel.Text = "Item Description:";
             // 
             // itemTypeLabel
             // 
             itemTypeLabel.AutoSize = true;
-            itemTypeLabel.Location = new System.Drawing.Point(35, 151);
+            itemTypeLabel.Location = new System.Drawing.Point(38, 151);
             itemTypeLabel.Name = "itemTypeLabel";
-            itemTypeLabel.Size = new System.Drawing.Size(60, 13);
+            itemTypeLabel.Size = new System.Drawing.Size(58, 13);
             itemTypeLabel.TabIndex = 4;
             itemTypeLabel.Text = "Item Type:";
             // 
@@ -110,7 +111,7 @@
             this.Addbtn.Size = new System.Drawing.Size(127, 37);
             this.Addbtn.TabIndex = 6;
             this.Addbtn.Text = "Add";
-            this.Addbtn.ThemeName = "Windows8";
+            this.Addbtn.ThemeName = "VisualStudio2012Light";
             this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
             // itemDescriptionTextBox
@@ -142,12 +143,19 @@
             this.ClientSize = new System.Drawing.Size(379, 267);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAddMainStore_Item";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddMainStore_Item";
+            this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmAddMainStore_Item_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Addbtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
         }

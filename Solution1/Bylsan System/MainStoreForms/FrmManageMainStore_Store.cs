@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 
 namespace Bylsan_System.MainStoreForms
 {
-    public partial class FrmManageMainStore_Store : Form
+    public partial class FrmManageMainStore_Store : RadForm
     {
         public FrmManageMainStore_Store()
         {
             InitializeComponent();
+        }
+
+        private void FrmManageMainStore_Store_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

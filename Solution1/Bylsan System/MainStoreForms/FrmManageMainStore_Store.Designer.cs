@@ -41,6 +41,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StoreGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StoreGridView.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -78,7 +79,7 @@
             this.StoreGridView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.StoreGridView.ForeColor = System.Drawing.SystemColors.ControlText;
             this.StoreGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.StoreGridView.Location = new System.Drawing.Point(3, 16);
+            this.StoreGridView.Location = new System.Drawing.Point(3, 18);
             // 
             // StoreGridView
             // 
@@ -103,7 +104,7 @@
             gridViewTextBoxColumn4.FieldName = "Description";
             gridViewTextBoxColumn4.HeaderText = "Description";
             gridViewTextBoxColumn4.Name = "Description";
-            gridViewTextBoxColumn4.Width = 343;
+            gridViewTextBoxColumn4.Width = 344;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.HeaderText = "Edit";
             gridViewTextBoxColumn5.Name = "EditCol";
@@ -111,7 +112,7 @@
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.HeaderText = "Delete";
             gridViewTextBoxColumn6.Name = "DeleteCol";
-            gridViewTextBoxColumn6.Width = 69;
+            gridViewTextBoxColumn6.Width = 70;
             this.StoreGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -122,9 +123,10 @@
             this.StoreGridView.Name = "StoreGridView";
             this.StoreGridView.ReadOnly = true;
             this.StoreGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.StoreGridView.Size = new System.Drawing.Size(930, 486);
+            this.StoreGridView.Size = new System.Drawing.Size(930, 484);
             this.StoreGridView.TabIndex = 0;
             this.StoreGridView.Text = "MainStorGridView";
+            this.StoreGridView.ThemeName = "VisualStudio2012Light";
             // 
             // FrmManageMainStore_Store
             // 
@@ -135,10 +137,17 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FrmManageMainStore_Store";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.Text = "FrmManageMainStore_Store";
+            this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmManageMainStore_Store_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.StoreGridView.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StoreGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

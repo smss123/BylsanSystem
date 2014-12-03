@@ -21,6 +21,7 @@ namespace Bylsan_System
             Application.SetCompatibleTextRenderingDefault(false);
             Application.ThreadException += Application_ThreadException;
             Application.Run(new FrmLogin());
+            //Application.Run(new Form1());
         }
 
         static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)

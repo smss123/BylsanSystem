@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Synchronization, Version=2.1.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Synchronization.Data, Version=3.1.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Sync Framework\2.1\Runtime\ADO.NET\V3.1\x86\Microsoft.Synchronization.Data.dll</HintPath>
@@ -83,6 +84,7 @@
     <Compile Include="Helper Classes\AccountantWatcher.cs" />
     <Compile Include="Helper Classes\CalculatorClass.cs" />
     <Compile Include="Helper Classes\CustomerInformations.cs" />
+    <Compile Include="Helper Classes\DataBaseSynic.cs" />
     <Compile Include="Helper Classes\FactoryZoon.cs" />
     <Compile Include="Helper Classes\PhotosConverter.cs" />
     <Compile Include="MailServer\InBoxCmd.cs" />

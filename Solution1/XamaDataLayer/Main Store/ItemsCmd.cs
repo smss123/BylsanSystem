@@ -17,7 +17,7 @@ namespace XamaDataLayer.Main_Store
            return true;
        }
 
-       public  Item  EditItem(Item tb , int xid )
+       public  static bool  EditItem(Item tb , int xid )
        {
            db = new DbDataContext();
            var q = db.Items.Where(i => i.ID == xid).SingleOrDefault();
@@ -25,11 +25,11 @@ namespace XamaDataLayer.Main_Store
            q.ItemDescription = tb.ItemDescription;
            q.ItemType = tb.ItemType;
            db.SubmitChanges();
-           return q;
+           return true;
        }
 
 
-       public void DeleteItemAt(int xid)
+       public static void DeleteItemAt(int xid)
        {
            try
            {

@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 
 namespace Bylsan_System.MainStoreForms
 {
-    public partial class FrmEditMainStore_Supplier : Form
+    public partial class FrmEditMainStore_Supplier : RadForm
     {
         public FrmEditMainStore_Supplier()
         {
@@ -40,6 +41,11 @@ namespace Bylsan_System.MainStoreForms
             }
 
             #endregion
+        }
+
+        private void FrmEditMainStore_Supplier_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

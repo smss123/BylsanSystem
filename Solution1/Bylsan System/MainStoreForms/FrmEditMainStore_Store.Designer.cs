@@ -33,21 +33,49 @@
             System.Windows.Forms.Label AvailableQtyLabel;
             System.Windows.Forms.Label itemNameLabel;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ItemColumnComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Addbtn = new Telerik.WinControls.UI.RadButton();
             this.AvailableQtyTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ItemColumnComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             DescriptionLabel = new System.Windows.Forms.Label();
             AvailableQtyLabel = new System.Windows.Forms.Label();
             itemNameLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Addbtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Addbtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DescriptionLabel
+            // 
+            DescriptionLabel.AutoSize = true;
+            DescriptionLabel.Location = new System.Drawing.Point(32, 121);
+            DescriptionLabel.Name = "DescriptionLabel";
+            DescriptionLabel.Size = new System.Drawing.Size(69, 13);
+            DescriptionLabel.TabIndex = 10;
+            DescriptionLabel.Text = "Description:";
+            // 
+            // AvailableQtyLabel
+            // 
+            AvailableQtyLabel.AutoSize = true;
+            AvailableQtyLabel.Location = new System.Drawing.Point(22, 91);
+            AvailableQtyLabel.Name = "AvailableQtyLabel";
+            AvailableQtyLabel.Size = new System.Drawing.Size(74, 13);
+            AvailableQtyLabel.TabIndex = 6;
+            AvailableQtyLabel.Text = "AvailableQty:";
+            // 
+            // itemNameLabel
+            // 
+            itemNameLabel.AutoSize = true;
+            itemNameLabel.Location = new System.Drawing.Point(33, 58);
+            itemNameLabel.Name = "itemNameLabel";
+            itemNameLabel.Size = new System.Drawing.Size(64, 13);
+            itemNameLabel.TabIndex = 5;
+            itemNameLabel.Text = "Item Name:";
             // 
             // groupBox1
             // 
@@ -60,67 +88,10 @@
             this.groupBox1.Controls.Add(itemNameLabel);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(355, 243);
+            this.groupBox1.Size = new System.Drawing.Size(390, 270);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit Main Store";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Location = new System.Drawing.Point(98, 84);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 75);
-            this.textBox1.TabIndex = 8;
-            // 
-            // Addbtn
-            // 
-            this.Addbtn.Location = new System.Drawing.Point(205, 184);
-            this.Addbtn.Name = "Addbtn";
-            this.Addbtn.Size = new System.Drawing.Size(127, 37);
-            this.Addbtn.TabIndex = 9;
-            this.Addbtn.Text = "Add";
-            this.Addbtn.ThemeName = "Windows8";
-            // 
-            // DescriptionLabel
-            // 
-            DescriptionLabel.AutoSize = true;
-            DescriptionLabel.Location = new System.Drawing.Point(32, 88);
-            DescriptionLabel.Name = "DescriptionLabel";
-            DescriptionLabel.Size = new System.Drawing.Size(64, 13);
-            DescriptionLabel.TabIndex = 10;
-            DescriptionLabel.Text = "Description:";
-            // 
-            // AvailableQtyLabel
-            // 
-            AvailableQtyLabel.AutoSize = true;
-            AvailableQtyLabel.Location = new System.Drawing.Point(22, 58);
-            AvailableQtyLabel.Name = "AvailableQtyLabel";
-            AvailableQtyLabel.Size = new System.Drawing.Size(72, 13);
-            AvailableQtyLabel.TabIndex = 6;
-            AvailableQtyLabel.Text = "AvailableQty:";
-            // 
-            // AvailableQtyTextBox
-            // 
-            this.AvailableQtyTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.AvailableQtyTextBox.Location = new System.Drawing.Point(98, 54);
-            this.AvailableQtyTextBox.Name = "AvailableQtyTextBox";
-            this.AvailableQtyTextBox.Size = new System.Drawing.Size(234, 20);
-            this.AvailableQtyTextBox.TabIndex = 7;
-            // 
-            // itemNameLabel
-            // 
-            itemNameLabel.AutoSize = true;
-            itemNameLabel.Location = new System.Drawing.Point(33, 25);
-            itemNameLabel.Name = "itemNameLabel";
-            itemNameLabel.Size = new System.Drawing.Size(63, 13);
-            itemNameLabel.TabIndex = 5;
-            itemNameLabel.Text = "Item Name:";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // ItemColumnComboBox
             // 
@@ -144,29 +115,70 @@
             this.ItemColumnComboBox.EditorControl.ShowGroupPanel = false;
             this.ItemColumnComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.ItemColumnComboBox.EditorControl.TabIndex = 0;
-            this.ItemColumnComboBox.Location = new System.Drawing.Point(98, 25);
+            this.ItemColumnComboBox.Location = new System.Drawing.Point(98, 58);
             this.ItemColumnComboBox.Name = "ItemColumnComboBox";
-            this.ItemColumnComboBox.Size = new System.Drawing.Size(234, 20);
+            this.ItemColumnComboBox.Size = new System.Drawing.Size(274, 20);
             this.ItemColumnComboBox.TabIndex = 11;
             this.ItemColumnComboBox.TabStop = false;
+            this.ItemColumnComboBox.ThemeName = "VisualStudio2012Light";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox1.Location = new System.Drawing.Point(98, 117);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(274, 75);
+            this.textBox1.TabIndex = 8;
+            // 
+            // Addbtn
+            // 
+            this.Addbtn.Location = new System.Drawing.Point(245, 212);
+            this.Addbtn.Name = "Addbtn";
+            this.Addbtn.Size = new System.Drawing.Size(127, 37);
+            this.Addbtn.TabIndex = 9;
+            this.Addbtn.Text = "Add";
+            this.Addbtn.ThemeName = "Windows8";
+            // 
+            // AvailableQtyTextBox
+            // 
+            this.AvailableQtyTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.AvailableQtyTextBox.Location = new System.Drawing.Point(98, 87);
+            this.AvailableQtyTextBox.Name = "AvailableQtyTextBox";
+            this.AvailableQtyTextBox.Size = new System.Drawing.Size(274, 20);
+            this.AvailableQtyTextBox.TabIndex = 7;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FrmEditMainStore_Store
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(379, 267);
+            this.ClientSize = new System.Drawing.Size(414, 294);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(422, 327);
+            this.MinimumSize = new System.Drawing.Size(422, 327);
             this.Name = "FrmEditMainStore_Store";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(422, 327);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditMainStore_Store";
+            this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmEditMainStore_Store_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Addbtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Addbtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using XamaDataLayer.Helper_Classes;
 namespace Bylsan_System
 {
     public partial class Form1 : Form
@@ -15,6 +15,11 @@ namespace Bylsan_System
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataBaseSynic.Begin();
         }
     }
 }

@@ -53,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemComboBox.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // itemNameLabel
@@ -60,7 +61,7 @@
             itemNameLabel.AutoSize = true;
             itemNameLabel.Location = new System.Drawing.Point(7, 28);
             itemNameLabel.Name = "itemNameLabel";
-            itemNameLabel.Size = new System.Drawing.Size(63, 13);
+            itemNameLabel.Size = new System.Drawing.Size(64, 13);
             itemNameLabel.TabIndex = 1;
             itemNameLabel.Text = "Item Name:";
             // 
@@ -69,7 +70,7 @@
             qtyLabel.AutoSize = true;
             qtyLabel.Location = new System.Drawing.Point(38, 54);
             qtyLabel.Name = "qtyLabel";
-            qtyLabel.Size = new System.Drawing.Size(29, 13);
+            qtyLabel.Size = new System.Drawing.Size(28, 13);
             qtyLabel.TabIndex = 2;
             qtyLabel.Text = "Qty:";
             // 
@@ -78,7 +79,7 @@
             commentLabel.AutoSize = true;
             commentLabel.Location = new System.Drawing.Point(11, 80);
             commentLabel.Name = "commentLabel";
-            commentLabel.Size = new System.Drawing.Size(56, 13);
+            commentLabel.Size = new System.Drawing.Size(59, 13);
             commentLabel.TabIndex = 4;
             commentLabel.Text = "Comment:";
             // 
@@ -146,6 +147,7 @@
             this.StoreComboBox.Size = new System.Drawing.Size(232, 20);
             this.StoreComboBox.TabIndex = 3;
             this.StoreComboBox.TabStop = false;
+            this.StoreComboBox.ThemeName = "VisualStudio2012Light";
             // 
             // commentTextBox
             // 
@@ -191,6 +193,7 @@
             this.ItemComboBox.Size = new System.Drawing.Size(232, 20);
             this.ItemComboBox.TabIndex = 0;
             this.ItemComboBox.TabStop = false;
+            this.ItemComboBox.ThemeName = "VisualStudio2012Light";
             // 
             // errorProvider1
             // 
@@ -204,8 +207,14 @@
             this.ClientSize = new System.Drawing.Size(350, 255);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAddMainStore_StoreWithDrawal";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddMainStore_StoreWithDrawal";
+            this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmAddMainStore_StoreWithDrawal_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Addbtn)).EndInit();
@@ -216,6 +225,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
         }

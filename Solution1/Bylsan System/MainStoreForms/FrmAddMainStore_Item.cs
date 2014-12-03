@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 using XamaDataLayer.Main_Store;
 namespace Bylsan_System.MainStoreForms
 {
-    public partial class FrmAddMainStore_Item : Form
+    public partial class FrmAddMainStore_Item : RadForm
     {
         public FrmAddMainStore_Item()
         {
@@ -44,7 +45,7 @@ namespace Bylsan_System.MainStoreForms
             
              ItemDescription = itemDescriptionTextBox.Text,
               ItemName= itemNameTextBox.Text,
-               ItemType = ItemTypecomboBox.SelectedText
+               ItemType = ItemTypecomboBox.Text
             
             }))
             {
@@ -52,6 +53,11 @@ namespace Bylsan_System.MainStoreForms
             }
 
          Operation.EndOperation(this);
+
+        }
+
+        private void FrmAddMainStore_Item_Load(object sender, EventArgs e)
+        {
 
         }
     }

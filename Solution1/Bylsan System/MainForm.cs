@@ -3,6 +3,7 @@ using Bylsan_System.CustomerForms;
 using Bylsan_System.designerForms;
 using Bylsan_System.EmployeeForms;
 using Bylsan_System.MailForms;
+using Bylsan_System.MainStoreForms;
 using Bylsan_System.ProductForms;
 using System;
 using System.Collections.Generic;
@@ -115,6 +116,31 @@ namespace Bylsan_System
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void storeItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+          
+        
+        }
+
+        private void addItemsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmAddMainStore_Item frm = new FrmAddMainStore_Item();
+            frm.ShowDialog();
+        }
+
+        private void manageItemsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmManageMainStore_Item frm = new MainStoreForms.FrmManageMainStore_Item();
+            frm.ShowDialog();
+        }
+
+        private void storeManagerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmManageMainStore_Store frm = new FrmManageMainStore_Store();
+            frm.ShowDialog();
         }
     }
 }

@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
+using XamaDataLayer;
+using XamaDataLayer.Main_Store;
 
 namespace Bylsan_System.MainStoreForms
 {
-    public partial class FrmEditMainStore_Item : Form
+    public partial class FrmEditMainStore_Item : RadForm
     {
         public FrmEditMainStore_Item()
         {
             InitializeComponent();
         }
+        public Item TragetItem { get; set; }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
@@ -39,6 +43,28 @@ namespace Bylsan_System.MainStoreForms
             }
 
             #endregion
+
+            Operation.BeginOperation(this);
+           if( ItemsCmd.EditItem(new Item() {
+             ItemName= itemNameTextBox.Text,
+              ItemDescription= itemDescriptionTextBox.Text,
+               ItemType = ItemTypecomboBox.Text
+           }, this.TragetItem.ID))
+           {
+               Operation.ShowToustOk("Item Has Been Saved..", this);
+           }
+           itemNameTextBox.Clear();
+           itemDescriptionTextBox.Clear();
+           ItemTypecomboBox.SelectedIndex = -1;
+            Operation.EndOperation(this);
+
+        }
+
+        private void FrmEditMainStore_Item_Load(object sender, EventArgs e)
+        {
+            itemNameTextBox.Text = this.TragetItem.ItemName;
+            itemDescriptionTextBox.Text = this.TragetItem.ItemDescription;
+            ItemTypecomboBox.SelectedText = this.TragetItem.ItemType;
         }
     }
 }

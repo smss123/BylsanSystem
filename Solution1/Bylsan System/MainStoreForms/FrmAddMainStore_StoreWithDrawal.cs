@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 
 namespace Bylsan_System.MainStoreForms
 {
-    public partial class FrmAddMainStore_StoreWithDrawal : Form
+    public partial class FrmAddMainStore_StoreWithDrawal : RadForm
     {
         public FrmAddMainStore_StoreWithDrawal()
         {
@@ -76,6 +77,11 @@ namespace Bylsan_System.MainStoreForms
 
 
             #endregion
+        }
+
+        private void FrmAddMainStore_StoreWithDrawal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

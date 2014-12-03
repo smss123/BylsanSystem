@@ -402,6 +402,9 @@
     <EmbeddedResource Include="FactoryForms\FrmFactoryOrderShow.resx">
       <DependentUpon>FrmFactoryOrderShow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MailForms\frmMailServer.resx">
       <DependentUpon>frmMailServer.cs</DependentUpon>
     </EmbeddedResource>
