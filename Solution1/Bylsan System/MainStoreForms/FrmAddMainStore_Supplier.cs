@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Telerik.WinControls.UI;
+using XamaDataLayer.Main_Store;
 namespace Bylsan_System.MainStoreForms
 {
-    public partial class FrmAddMainStore_Supplier : Form
+    public partial class FrmAddMainStore_Supplier : RadForm
     {
         public FrmAddMainStore_Supplier()
         {
@@ -39,6 +40,23 @@ namespace Bylsan_System.MainStoreForms
             }
 
             #endregion
+            Operation.BeginOperation(this);
+           if( SuppliersCmd.AddNewSupplier(new XamaDataLayer.Supplier() { 
+             Address = addressTextBox.Text,
+              Description= descriptionTextBox.Text,
+               SupplierName= supplierNameTextBox.Text,
+                SupplierPhone = supplierPhoneTextBox.Text
+
+           }))
+           {
+               Operation.ShowToustOk("Supplier has been Saved ..", this);
+           }
+           Operation.EndOperation(this);
+        }
+
+        private void FrmAddMainStore_Supplier_Load(object sender, EventArgs e)
+        {
+
         }
         }
     }

@@ -142,5 +142,17 @@ namespace Bylsan_System
             FrmManageMainStore_Store frm = new FrmManageMainStore_Store();
             frm.ShowDialog();
         }
+
+        private void addSupplierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAddMainStore_Supplier frm = new FrmAddMainStore_Supplier();
+            frm.ShowDialog();
+        }
+
+        private void manageSupplierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmManageMainStore_Supplier frm = new FrmManageMainStore_Supplier();
+            frm.ShowDialog();
+        }
     }
 }

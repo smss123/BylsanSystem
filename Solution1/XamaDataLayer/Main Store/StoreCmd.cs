@@ -32,18 +32,12 @@ namespace XamaDataLayer.Main_Store
 
        public void DeleteStoreAt(int xid)
        {
-           try
-           {
+          
 
                var q = db.Stores .Where(p => p.ID == xid).SingleOrDefault();
                db.Stores .DeleteOnSubmit(q);
                db.SubmitChanges();
-           }
-           catch (Exception)
-           {
-
-
-           }
+          
        }
 
 

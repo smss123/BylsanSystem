@@ -34,11 +34,11 @@
             System.Windows.Forms.Label addressLabel;
             System.Windows.Forms.Label descriptionLabel;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.supplierNameTextBox = new System.Windows.Forms.TextBox();
-            this.supplierPhoneTextBox = new System.Windows.Forms.TextBox();
-            this.addressTextBox = new System.Windows.Forms.TextBox();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.Addbtn = new Telerik.WinControls.UI.RadButton();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.addressTextBox = new System.Windows.Forms.TextBox();
+            this.supplierPhoneTextBox = new System.Windows.Forms.TextBox();
+            this.supplierNameTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             supplierNameLabel = new System.Windows.Forms.Label();
             supplierPhoneLabel = new System.Windows.Forms.Label();
@@ -47,7 +47,44 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Addbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
+            // 
+            // supplierNameLabel
+            // 
+            supplierNameLabel.AutoSize = true;
+            supplierNameLabel.Location = new System.Drawing.Point(6, 30);
+            supplierNameLabel.Name = "supplierNameLabel";
+            supplierNameLabel.Size = new System.Drawing.Size(85, 13);
+            supplierNameLabel.TabIndex = 0;
+            supplierNameLabel.Text = "Supplier Name:";
+            // 
+            // supplierPhoneLabel
+            // 
+            supplierPhoneLabel.AutoSize = true;
+            supplierPhoneLabel.Location = new System.Drawing.Point(3, 56);
+            supplierPhoneLabel.Name = "supplierPhoneLabel";
+            supplierPhoneLabel.Size = new System.Drawing.Size(89, 13);
+            supplierPhoneLabel.TabIndex = 2;
+            supplierPhoneLabel.Text = "Supplier Phone:";
+            // 
+            // addressLabel
+            // 
+            addressLabel.AutoSize = true;
+            addressLabel.Location = new System.Drawing.Point(35, 82);
+            addressLabel.Name = "addressLabel";
+            addressLabel.Size = new System.Drawing.Size(51, 13);
+            addressLabel.TabIndex = 4;
+            addressLabel.Text = "Address:";
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(21, 108);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(69, 13);
+            descriptionLabel.TabIndex = 6;
+            descriptionLabel.Text = "Description:";
             // 
             // groupBox1
             // 
@@ -67,75 +104,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
             // 
-            // supplierNameLabel
-            // 
-            supplierNameLabel.AutoSize = true;
-            supplierNameLabel.Location = new System.Drawing.Point(6, 30);
-            supplierNameLabel.Name = "supplierNameLabel";
-            supplierNameLabel.Size = new System.Drawing.Size(79, 13);
-            supplierNameLabel.TabIndex = 0;
-            supplierNameLabel.Text = "Supplier Name:";
-            // 
-            // supplierNameTextBox
-            // 
-            this.supplierNameTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.supplierNameTextBox.Location = new System.Drawing.Point(86, 27);
-            this.supplierNameTextBox.Name = "supplierNameTextBox";
-            this.supplierNameTextBox.Size = new System.Drawing.Size(267, 20);
-            this.supplierNameTextBox.TabIndex = 1;
-            // 
-            // supplierPhoneLabel
-            // 
-            supplierPhoneLabel.AutoSize = true;
-            supplierPhoneLabel.Location = new System.Drawing.Point(3, 56);
-            supplierPhoneLabel.Name = "supplierPhoneLabel";
-            supplierPhoneLabel.Size = new System.Drawing.Size(82, 13);
-            supplierPhoneLabel.TabIndex = 2;
-            supplierPhoneLabel.Text = "Supplier Phone:";
-            // 
-            // supplierPhoneTextBox
-            // 
-            this.supplierPhoneTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.supplierPhoneTextBox.Location = new System.Drawing.Point(86, 53);
-            this.supplierPhoneTextBox.Name = "supplierPhoneTextBox";
-            this.supplierPhoneTextBox.Size = new System.Drawing.Size(224, 20);
-            this.supplierPhoneTextBox.TabIndex = 2;
-            // 
-            // addressLabel
-            // 
-            addressLabel.AutoSize = true;
-            addressLabel.Location = new System.Drawing.Point(35, 82);
-            addressLabel.Name = "addressLabel";
-            addressLabel.Size = new System.Drawing.Size(50, 13);
-            addressLabel.TabIndex = 4;
-            addressLabel.Text = "Address:";
-            // 
-            // addressTextBox
-            // 
-            this.addressTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.addressTextBox.Location = new System.Drawing.Point(86, 79);
-            this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(267, 20);
-            this.addressTextBox.TabIndex = 3;
-            // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(21, 108);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(64, 13);
-            descriptionLabel.TabIndex = 6;
-            descriptionLabel.Text = "Description:";
-            // 
-            // descriptionTextBox
-            // 
-            this.descriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.descriptionTextBox.Location = new System.Drawing.Point(86, 105);
-            this.descriptionTextBox.Multiline = true;
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(267, 80);
-            this.descriptionTextBox.TabIndex = 4;
-            // 
             // Addbtn
             // 
             this.Addbtn.Location = new System.Drawing.Point(237, 209);
@@ -143,8 +111,41 @@
             this.Addbtn.Size = new System.Drawing.Size(127, 37);
             this.Addbtn.TabIndex = 5;
             this.Addbtn.Text = "Add";
-            this.Addbtn.ThemeName = "Windows8";
+            this.Addbtn.ThemeName = "VisualStudio2012Light";
             this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
+            // 
+            // descriptionTextBox
+            // 
+            this.descriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.descriptionTextBox.Location = new System.Drawing.Point(97, 105);
+            this.descriptionTextBox.Multiline = true;
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(267, 80);
+            this.descriptionTextBox.TabIndex = 4;
+            // 
+            // addressTextBox
+            // 
+            this.addressTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.addressTextBox.Location = new System.Drawing.Point(97, 79);
+            this.addressTextBox.Name = "addressTextBox";
+            this.addressTextBox.Size = new System.Drawing.Size(267, 20);
+            this.addressTextBox.TabIndex = 3;
+            // 
+            // supplierPhoneTextBox
+            // 
+            this.supplierPhoneTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.supplierPhoneTextBox.Location = new System.Drawing.Point(97, 53);
+            this.supplierPhoneTextBox.Name = "supplierPhoneTextBox";
+            this.supplierPhoneTextBox.Size = new System.Drawing.Size(267, 20);
+            this.supplierPhoneTextBox.TabIndex = 2;
+            // 
+            // supplierNameTextBox
+            // 
+            this.supplierNameTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.supplierNameTextBox.Location = new System.Drawing.Point(97, 27);
+            this.supplierNameTextBox.Name = "supplierNameTextBox";
+            this.supplierNameTextBox.Size = new System.Drawing.Size(267, 20);
+            this.supplierNameTextBox.TabIndex = 1;
             // 
             // errorProvider1
             // 
@@ -158,12 +159,19 @@
             this.ClientSize = new System.Drawing.Size(400, 285);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAddMainStore_Supplier";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddMainStore_Supplier";
+            this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmAddMainStore_Supplier_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Addbtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
         }
