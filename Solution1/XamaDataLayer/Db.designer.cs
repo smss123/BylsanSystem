@@ -3380,7 +3380,7 @@ namespace XamaDataLayer
 		
 		private string _Description;
 		
-		private System.Data.Linq.Binary _ImageX;
+		private Image _ImageX;
 		
 		private string _Status;
 		
@@ -3404,7 +3404,7 @@ namespace XamaDataLayer
     partial void OnQtyChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
-    partial void OnImageXChanging(System.Data.Linq.Binary value);
+    partial void OnImageXChanging(Image value);
     partial void OnImageXChanged();
     partial void OnStatusChanging(string value);
     partial void OnStatusChanged();
@@ -3527,7 +3527,7 @@ namespace XamaDataLayer
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageX", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary ImageX
+		public Image ImageX
 		{
 			get
 			{

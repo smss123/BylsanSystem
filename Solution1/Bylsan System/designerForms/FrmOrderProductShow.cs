@@ -123,7 +123,7 @@ namespace Bylsan_System.designerForms
             Description = TxtDescription .Text ,
             Qty = int.Parse(DGVProducts.CurrentRow.Cells[2].Value.ToString()),
             ProductID = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString()),
-             ImageX = byteImg1 ,
+             ImageX = PhotoBox .Image  ,
             Status = "in producting ",
             };
             OrderProductsCmd.EditOrderProduct(tb, int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString()));

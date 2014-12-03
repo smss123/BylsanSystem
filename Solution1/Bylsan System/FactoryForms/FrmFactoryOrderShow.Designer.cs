@@ -101,8 +101,9 @@
             this.DGVOrders.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DGVOrders.Size = new System.Drawing.Size(652, 471);
             this.DGVOrders.TabIndex = 1;
-            this.DGVOrders.Text = "OrderGridView";
+            this.DGVOrders.Text = "DGVOrders";
             this.DGVOrders.ThemeName = "VisualStudio2012Light";
+            this.DGVOrders.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DGVOrders_MouseDoubleClick_1);
             // 
             // FrmFactoryOrderShow
             // 

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -41,14 +41,16 @@
             this.labCustomerPhone = new System.Windows.Forms.Label();
             this.labCustomerName = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TxtDescription = new System.Windows.Forms.TextBox();
+            this.PhotoBox = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts.MasterTemplate)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,24 +85,24 @@
             // DGVProducts
             // 
             this.DGVProducts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn13.EnableExpressionEditor = false;
-            gridViewTextBoxColumn13.FieldName = "ID";
-            gridViewTextBoxColumn13.HeaderText = "ID";
-            gridViewTextBoxColumn13.Name = "ID";
-            gridViewTextBoxColumn13.Width = 43;
-            gridViewTextBoxColumn14.EnableExpressionEditor = false;
-            gridViewTextBoxColumn14.FieldName = "ProductID";
-            gridViewTextBoxColumn14.HeaderText = "Product Name";
-            gridViewTextBoxColumn14.Name = "Product_Name";
-            gridViewTextBoxColumn14.Width = 215;
-            gridViewTextBoxColumn15.FieldName = "Qty";
-            gridViewTextBoxColumn15.HeaderText = "Quantity";
-            gridViewTextBoxColumn15.Name = "Quantity";
-            gridViewTextBoxColumn15.Width = 115;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.Name = "ID";
+            gridViewTextBoxColumn1.Width = 43;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "ProductID";
+            gridViewTextBoxColumn2.HeaderText = "Product Name";
+            gridViewTextBoxColumn2.Name = "Product_Name";
+            gridViewTextBoxColumn2.Width = 215;
+            gridViewTextBoxColumn3.FieldName = "Qty";
+            gridViewTextBoxColumn3.HeaderText = "Quantity";
+            gridViewTextBoxColumn3.Name = "Quantity";
+            gridViewTextBoxColumn3.Width = 115;
             this.DGVProducts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn13,
-            gridViewTextBoxColumn14,
-            gridViewTextBoxColumn15});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3});
             this.DGVProducts.MasterTemplate.EnableFiltering = true;
             this.DGVProducts.Name = "DGVProducts";
             this.DGVProducts.ReadOnly = true;
@@ -109,6 +111,7 @@
             this.DGVProducts.TabIndex = 0;
             this.DGVProducts.Text = "OrdeProductGridView";
             this.DGVProducts.ThemeName = "Windows8";
+            this.DGVProducts.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DGVProducts_MouseDoubleClick);
             // 
             // groupBox2
             // 
@@ -165,7 +168,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.pictureBox1);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.TxtDescription);
+            this.groupBox3.Controls.Add(this.PhotoBox);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Location = new System.Drawing.Point(404, 119);
             this.groupBox3.Name = "groupBox3";
@@ -174,15 +179,33 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Attachments:";
             // 
-            // pictureBox1
+            // label4
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(271, 179);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 219);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Description:";
+            // 
+            // TxtDescription
+            // 
+            this.TxtDescription.Location = new System.Drawing.Point(9, 234);
+            this.TxtDescription.Multiline = true;
+            this.TxtDescription.Name = "TxtDescription";
+            this.TxtDescription.ReadOnly = true;
+            this.TxtDescription.Size = new System.Drawing.Size(274, 96);
+            this.TxtDescription.TabIndex = 5;
+            // 
+            // PhotoBox
+            // 
+            this.PhotoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PhotoBox.Location = new System.Drawing.Point(12, 33);
+            this.PhotoBox.Name = "PhotoBox";
+            this.PhotoBox.Size = new System.Drawing.Size(271, 179);
+            this.PhotoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PhotoBox.TabIndex = 3;
+            this.PhotoBox.TabStop = false;
             // 
             // label3
             // 
@@ -191,7 +214,6 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 1;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // FrmFactoryOrderProductShow
             // 
@@ -210,6 +232,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmFactoryOrderProductShow";
             this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmFactoryOrderProductShow_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).EndInit();
@@ -217,7 +240,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -236,7 +259,9 @@
         public System.Windows.Forms.Label labCustomerPhone;
         public System.Windows.Forms.Label labCustomerName;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox PhotoBox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox TxtDescription;
     }
 }
