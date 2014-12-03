@@ -238,8 +238,8 @@ namespace Bylsan_System.SenarioAddOrderForms
                                 {
                                     Product = MyProdctut[0],
                                     Qty = QtyCounter,
-                                    Status = "Created"
-
+                                    Status = "Created",
+                                    ImageX =  item .Img 
                                 });
                                 QtyCounter=0;
                             }

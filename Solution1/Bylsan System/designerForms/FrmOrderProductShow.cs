@@ -93,21 +93,24 @@ namespace Bylsan_System.designerForms
         int i = 0;
         private void NextPhotoBtn_Click(object sender, EventArgs e)
         {
-           
-            if (i != imageList1.Images.Count ) 
+
+            if (PhotoBox.Image != null)
             {
-               
-                PhotoBox.Image = null;
-                PhotoBox.Image = imageList1.Images[i];
-                SizeLab.Text = imageList1.Images[i].Size.ToString();
-                i++;
-            }
-            else
-            {
-                i = 0; 
-                PhotoBox.Image = null;
-                PhotoBox.Image = imageList1.Images[i];
-                SizeLab.Text = imageList1.Images[i].Size.ToString () ;
+                if (i != imageList1.Images.Count)
+                {
+
+                    PhotoBox.Image = null;
+                    PhotoBox.Image = imageList1.Images[i];
+                    SizeLab.Text = imageList1.Images[i].Size.ToString();
+                    i++;
+                }
+                else
+                {
+                    i = 0;
+                    PhotoBox.Image = null;
+                    PhotoBox.Image = imageList1.Images[i];
+                    SizeLab.Text = imageList1.Images[i].Size.ToString();
+                }
             }
         }
 

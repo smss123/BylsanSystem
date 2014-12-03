@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Synchronization;
-using Microsoft.Synchronization.Data.SqlServer;
+//using Microsoft.Synchronization.Data.SqlServer;
 using System.Data.SqlClient;
 using Microsoft.Synchronization.Data;
 
@@ -21,16 +21,16 @@ namespace XamaDataLayer.Helper_Classes
             SqlConnection serverConn = new SqlConnection(sServerConnection);
             SqlConnection clientConn = new SqlConnection(sClientConnection);
 
-            SyncOrchestrator syncOrchestrator = new SyncOrchestrator();
+            //SyncOrchestrator syncOrchestrator = new SyncOrchestrator();
 
-            syncOrchestrator.LocalProvider = new SqlSyncProvider(sScope, clientConn,"",".dbo");
-            syncOrchestrator.RemoteProvider = new SqlSyncProvider(sScope, serverConn,"",".dbo");
+            //syncOrchestrator.LocalProvider = new SqlSyncProvider(sScope, clientConn,"",".dbo");
+            //syncOrchestrator.RemoteProvider = new SqlSyncProvider(sScope, serverConn,"",".dbo");
            
-            syncOrchestrator.Direction = SyncDirectionOrder.UploadAndDownload;
+            //syncOrchestrator.Direction = SyncDirectionOrder.UploadAndDownload;
 
-            ((SqlSyncProvider)syncOrchestrator.LocalProvider).ApplyChangeFailed += new EventHandler<DbApplyChangeFailedEventArgs>(Program_ApplyChangeFailed);
+            //((SqlSyncProvider)syncOrchestrator.LocalProvider).ApplyChangeFailed += new EventHandler<DbApplyChangeFailedEventArgs>(Program_ApplyChangeFailed);
 
-            SyncOperationStatistics syncStats = syncOrchestrator.Synchronize();
+            //SyncOperationStatistics syncStats = syncOrchestrator.Synchronize();
 
             //Console.WriteLine("Start Time: " + syncStats.SyncStartTime);
             //Console.WriteLine("Total Changes Uploaded: " + syncStats.UploadChangesTotal);
@@ -42,15 +42,15 @@ namespace XamaDataLayer.Helper_Classes
         {
             SqlConnection serverConn = new SqlConnection(sServerConnection);
 
-            DbSyncScopeDescription scopeDesc = new DbSyncScopeDescription(sScope);
+            //DbSyncScopeDescription scopeDesc = new DbSyncScopeDescription(sScope);
            
-            DbSyncTableDescription tableDesc = SqlSyncDescriptionBuilder.GetDescriptionForTable("Product", serverConn);
+            //DbSyncTableDescription tableDesc = SqlSyncDescriptionBuilder.GetDescriptionForTable("Product", serverConn);
           
-            scopeDesc.Tables.Add(tableDesc);
+            //scopeDesc.Tables.Add(tableDesc);
 
-            SqlSyncScopeProvisioning serverProvision = new SqlSyncScopeProvisioning(serverConn, scopeDesc);
-            serverProvision.SetCreateTableDefault(DbSyncCreationOption.Skip);
-            serverProvision.Apply();
+            //SqlSyncScopeProvisioning serverProvision = new SqlSyncScopeProvisioning(serverConn, scopeDesc);
+            //serverProvision.SetCreateTableDefault(DbSyncCreationOption.Skip);
+            //serverProvision.Apply();
         }
         //public static void ProvisionClient()
         //{
@@ -72,10 +72,10 @@ namespace XamaDataLayer.Helper_Classes
             SqlConnection serverConn = new SqlConnection(sServerConnection);
             SqlConnection clientConn = new SqlConnection(sClientConnection);
 
-            DbSyncScopeDescription scopeDesc = SqlSyncDescriptionBuilder.GetDescriptionForScope(sScope, serverConn);
-            SqlSyncScopeProvisioning clientProvision = new SqlSyncScopeProvisioning(clientConn, scopeDesc);
+            //DbSyncScopeDescription scopeDesc = SqlSyncDescriptionBuilder.GetDescriptionForScope(sScope, serverConn);
+            //SqlSyncScopeProvisioning clientProvision = new SqlSyncScopeProvisioning(clientConn, scopeDesc);
 
-            clientProvision.Apply();
+           // clientProvision.Apply();
         }
  
         public static void Begin()
