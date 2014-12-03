@@ -20,7 +20,20 @@ namespace XamaDataLayer.BranchCmd
            return true;
        }
        //================================================
-       public static Order EditOrder(Order tb, int xid)
+       public static Order EditOrderStatusOnly(Order tb, int xid)
+       {
+           db = new DbDataContext();
+           var ord = db.Orders.Where(oo => oo.ID == xid).SingleOrDefault();
+
+
+           ord.OrderStatus = tb.OrderStatus;
+      
+
+           db.SubmitChanges();
+           return ord;
+       }
+
+       public static Order EditFullOrder(Order tb, int xid)
        {
            db = new DbDataContext();
            var ord = db.Orders.Where(oo => oo.ID == xid).SingleOrDefault();
@@ -42,6 +55,7 @@ namespace XamaDataLayer.BranchCmd
            db.SubmitChanges();
            return ord;
        }
+
 
        public static void DeleteOrder(int xid)
        {

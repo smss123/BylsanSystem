@@ -130,7 +130,7 @@ namespace Bylsan_System.designerForms
             Order Otb = new Order() {
                 OrderStatus = "in producting "
             };
-            OrdersCmd.EditOrder(Otb, TaregtOrder);
+            OrdersCmd.EditOrderStatusOnly (Otb, TaregtOrder);
             MessageBox.Show("Changes Was Saved ...");
             this.Hide();
         }
