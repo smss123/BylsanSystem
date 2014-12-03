@@ -43,7 +43,12 @@ namespace XamaDataLayer.BranchCmd
            
        }
 
-       public static List<OrderProduct> GetAll() { db = new DbDataContext(); return db.OrderProducts.ToList(); }
+       public static List<OrderProduct> GetAll()
+       {
+           db = new DbDataContext();
+           var lst = (from c in db.OrderProducts where c.ID != 0 select c).ToList();
+           return lst;
+       }
 
        public static List<OrderProduct> GetAllByOrderID( int XID ) {
            db = new DbDataContext();
