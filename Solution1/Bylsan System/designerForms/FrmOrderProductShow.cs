@@ -38,8 +38,7 @@ namespace Bylsan_System.designerForms
         }
         private void FrmOrderProductShow_Load(object sender, EventArgs e)
         {
-            SizeLab.Visible = false; // UnUsed
-            MessageBox.Show("" + TaregtOrder.ToString());
+          
             PhotoBox.Image = null;
            //================================
             Thr = new Thread(PopulateGrd);
@@ -79,7 +78,7 @@ namespace Bylsan_System.designerForms
                     imageList1.Images.Add(item.imageX);
                    
                     IDImageAddress = item.ID;
-                  
+                    MessageBox.Show(DGVProducts.CurrentRow.Cells[0].Value.ToString());
                 }
                
             });
@@ -128,6 +127,10 @@ namespace Bylsan_System.designerForms
             Status = "in producting ",
             };
             OrderProductsCmd.EditOrderProduct(tb, int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString()));
+            Order Otb = new Order() {
+                OrderStatus = "in producting "
+            };
+            OrdersCmd.EditOrder(Otb, TaregtOrder);
             MessageBox.Show("Changes Was Saved ...");
             this.Hide();
         }
@@ -221,6 +224,11 @@ namespace Bylsan_System.designerForms
         public static Image ResizeImage(Image imgToResize, Size size)
         {
             return (Image)(new Bitmap(imgToResize, size));
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
 
         //int  w = int .Parse (WthBox.Text); int h = int .Parse (HghtBox.Text);    

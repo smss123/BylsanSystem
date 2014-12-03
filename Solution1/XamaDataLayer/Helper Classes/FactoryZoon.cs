@@ -33,7 +33,7 @@ namespace XamaDataLayer.Helper_Classes
         var Lst = (from o in db.Orders
                    orderby o.OrderDate ascending
                    where
-                       o.OrderStatus == "In Producting"
+                       o.OrderStatus == "in producting "
                    select o).ToList();
         return Lst;
     }

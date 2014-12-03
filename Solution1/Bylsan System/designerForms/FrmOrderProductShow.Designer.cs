@@ -47,17 +47,17 @@
             this.labCustomerPhone = new System.Windows.Forms.Label();
             this.labCustomerName = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.HghtBox = new System.Windows.Forms.TextBox();
-            this.WthBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.SavePhotoBtn = new System.Windows.Forms.Button();
             this.UploadBtn = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.SizeLab = new System.Windows.Forms.Label();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.HghtBox = new System.Windows.Forms.TextBox();
+            this.WthBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.SavePhotoBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts.MasterTemplate)).BeginInit();
@@ -245,29 +245,17 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Designing Zoon";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
-            // HghtBox
+            // SavePhotoBtn
             // 
-            this.HghtBox.Location = new System.Drawing.Point(852, 385);
-            this.HghtBox.Name = "HghtBox";
-            this.HghtBox.Size = new System.Drawing.Size(43, 20);
-            this.HghtBox.TabIndex = 14;
-            // 
-            // WthBox
-            // 
-            this.WthBox.Location = new System.Drawing.Point(852, 424);
-            this.WthBox.Name = "WthBox";
-            this.WthBox.Size = new System.Drawing.Size(43, 20);
-            this.WthBox.TabIndex = 13;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(865, 408);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(13, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "X";
+            this.SavePhotoBtn.Location = new System.Drawing.Point(17, 326);
+            this.SavePhotoBtn.Name = "SavePhotoBtn";
+            this.SavePhotoBtn.Size = new System.Drawing.Size(130, 34);
+            this.SavePhotoBtn.TabIndex = 11;
+            this.SavePhotoBtn.Text = "Save Photo ";
+            this.SavePhotoBtn.UseVisualStyleBackColor = true;
+            this.SavePhotoBtn.Click += new System.EventHandler(this.SavePhotoBtn_Click);
             // 
             // UploadBtn
             // 
@@ -278,15 +266,6 @@
             this.UploadBtn.Text = "Upload New Image";
             this.UploadBtn.UseVisualStyleBackColor = true;
             this.UploadBtn.Click += new System.EventHandler(this.UploadBtn_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(840, 472);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "New Size    :";
             // 
             // SizeLab
             // 
@@ -316,6 +295,38 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Image Size :";
             // 
+            // HghtBox
+            // 
+            this.HghtBox.Location = new System.Drawing.Point(852, 385);
+            this.HghtBox.Name = "HghtBox";
+            this.HghtBox.Size = new System.Drawing.Size(43, 20);
+            this.HghtBox.TabIndex = 14;
+            // 
+            // WthBox
+            // 
+            this.WthBox.Location = new System.Drawing.Point(852, 424);
+            this.WthBox.Name = "WthBox";
+            this.WthBox.Size = new System.Drawing.Size(43, 20);
+            this.WthBox.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(865, 408);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(13, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "X";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(840, 472);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(66, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "New Size    :";
+            // 
             // imageList1
             // 
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
@@ -327,16 +338,6 @@
             this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList2.ImageSize = new System.Drawing.Size(200, 200);
             this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // SavePhotoBtn
-            // 
-            this.SavePhotoBtn.Location = new System.Drawing.Point(17, 326);
-            this.SavePhotoBtn.Name = "SavePhotoBtn";
-            this.SavePhotoBtn.Size = new System.Drawing.Size(130, 34);
-            this.SavePhotoBtn.TabIndex = 11;
-            this.SavePhotoBtn.Text = "Save Photo ";
-            this.SavePhotoBtn.UseVisualStyleBackColor = true;
-            this.SavePhotoBtn.Click += new System.EventHandler(this.SavePhotoBtn_Click);
             // 
             // FrmOrderProductShow
             // 
