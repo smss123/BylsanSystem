@@ -26,6 +26,7 @@ namespace Bylsan_System.FactoryForms
         {
             Thr = new Thread(PopulateDGVOrders);
             Thr.Start();
+            //
         }
 
         void PopulateDGVOrders()

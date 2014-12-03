@@ -46,6 +46,7 @@ namespace Bylsan_System.FactoryForms
             //================================
             Thr = new Thread(PopulateGrd);
             Thr.Start();
+            //
         }
 
         public int PrdID { get; set; }
