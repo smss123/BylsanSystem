@@ -297,6 +297,12 @@
     <Compile Include="SecurityForm\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="SellSystemForms\FrmAddSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellSystemForms\FrmAddSales.Designer.cs">
+      <DependentUpon>FrmAddSales.cs</DependentUpon>
+    </Compile>
     <Compile Include="SellSystemForms\FrmAddSellIStore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -489,6 +495,9 @@
     </Compile>
     <EmbeddedResource Include="SecurityForm\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellSystemForms\FrmAddSales.resx">
+      <DependentUpon>FrmAddSales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SellSystemForms\FrmAddSellIStore.resx">
       <DependentUpon>FrmAddSellIStore.cs</DependentUpon>
