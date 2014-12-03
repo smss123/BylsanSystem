@@ -575,6 +575,10 @@
     <Content Include="Lib\EntityFramework.SqlServer.dll" />
     <Content Include="Lib\EntityFramework.SqlServer.xml" />
     <Content Include="Lib\EntityFramework.xml" />
+    <Content Include="Lib\Microsoft.Synchronization.Data.dll" />
+    <Content Include="Lib\Microsoft.Synchronization.Data.Server.dll" />
+    <Content Include="Lib\Microsoft.Synchronization.Data.SqlServer.dll" />
+    <Content Include="Lib\Microsoft.Synchronization.Data.SqlServerCe.dll" />
     <Content Include="Lib\Xprema.dll" />
     <Content Include="Lib\Xprema.pdb" />
     <None Include="Resources\ImagePreview.png" />
