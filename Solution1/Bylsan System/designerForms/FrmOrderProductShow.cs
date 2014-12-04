@@ -28,9 +28,10 @@ namespace Bylsan_System.designerForms
         private void PopulateGrd()
         {
             Operation.BeginOperation(this);
+            var q = OrderProductsCmd.GetAllByOrderID(TaregtOrder);
             this.Invoke((MethodInvoker)delegate 
             {
-                DGVProducts.DataSource = OrderProductsCmd.GetAllByOrderID(TaregtOrder);
+                DGVProducts.DataSource = q; 
        
             });
             Operation.EndOperation(this);
@@ -62,7 +63,11 @@ namespace Bylsan_System.designerForms
 
         void LoadAttachments()
         {
-           
+            //SelectedProductPhotoBox.Image =null;
+            //lblPoductName.Text = "";
+            //lblPrice.Text = "";
+
+            int prdid = int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString());
             imageList1.Images.Clear();
             this.Invoke((MethodInvoker)delegate
             {
@@ -70,7 +75,8 @@ namespace Bylsan_System.designerForms
                 PhotoBox.Image = null;
                
                 //============================================
-                var lst = (from p in OrderProuctAttachmentCmd.GetOneAttachmentByOrderProductID(int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString())) select p).ToList ();
+                
+                var lst = (from p in OrderProuctAttachmentCmd.GetOneAttachmentByOrderProductID(prdid ) select p).ToList ();
                 foreach (var item in lst )
                 {
                     TxtDescription.Text = item.Description;
@@ -78,9 +84,19 @@ namespace Bylsan_System.designerForms
                     imageList1.Images.Add(item.imageX);
                    
                     IDImageAddress = item.ID;
-                    MessageBox.Show(DGVProducts.CurrentRow.Cells[0].Value.ToString());
+                   
                 }
-               
+               //==============================================
+                //-- Display Selected Product Information : 
+                var getcurrentProductInfo = ProductsCmd.GetProductByID(prdid);
+                foreach (var prd in getcurrentProductInfo )
+                {
+                    SelectedProductPhotoBox.Image = prd.Img;
+                    lblPoductName.Text = prd.Product_Name;
+                    lblPrice.Text = prd.ProductPrice.ToString();
+                }
+
+                //=============================================
             });
           
             AttachThread.Abort();

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DGVProducts = new Telerik.WinControls.UI.RadGridView();
             this.CloseBtn = new System.Windows.Forms.Button();
@@ -58,16 +58,29 @@
             this.label7 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.SelectedProductPhotoBox = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblPoductName = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SelectedProductPhotoBox)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblPrice);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.lblPoductName);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.SelectedProductPhotoBox);
             this.groupBox1.Controls.Add(this.DGVProducts);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -88,29 +101,29 @@
             // DGVProducts
             // 
             this.DGVProducts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "ID";
-            gridViewTextBoxColumn7.HeaderText = "ID";
-            gridViewTextBoxColumn7.Name = "ID";
-            gridViewTextBoxColumn7.Width = 43;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "ProductID";
-            gridViewTextBoxColumn8.HeaderText = "Product Name";
-            gridViewTextBoxColumn8.Name = "Product_Name";
-            gridViewTextBoxColumn8.Width = 215;
-            gridViewTextBoxColumn9.FieldName = "Qty";
-            gridViewTextBoxColumn9.HeaderText = "Quantity";
-            gridViewTextBoxColumn9.Name = "Quantity";
-            gridViewTextBoxColumn9.Width = 115;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.Name = "ID";
+            gridViewTextBoxColumn1.Width = 43;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "ProductID";
+            gridViewTextBoxColumn2.HeaderText = "Product Name";
+            gridViewTextBoxColumn2.Name = "Product_Name";
+            gridViewTextBoxColumn2.Width = 215;
+            gridViewTextBoxColumn3.FieldName = "Qty";
+            gridViewTextBoxColumn3.HeaderText = "Quantity";
+            gridViewTextBoxColumn3.Name = "Quantity";
+            gridViewTextBoxColumn3.Width = 115;
             this.DGVProducts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3});
             this.DGVProducts.MasterTemplate.EnableFiltering = true;
             this.DGVProducts.Name = "DGVProducts";
             this.DGVProducts.ReadOnly = true;
             this.DGVProducts.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DGVProducts.Size = new System.Drawing.Size(392, 504);
+            this.DGVProducts.Size = new System.Drawing.Size(392, 370);
             this.DGVProducts.TabIndex = 0;
             this.DGVProducts.Text = "OrdeProductGridView";
             this.DGVProducts.ThemeName = "Windows8";
@@ -339,6 +352,61 @@
             this.imageList2.ImageSize = new System.Drawing.Size(200, 200);
             this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // SelectedProductPhotoBox
+            // 
+            this.SelectedProductPhotoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SelectedProductPhotoBox.Location = new System.Drawing.Point(6, 429);
+            this.SelectedProductPhotoBox.Name = "SelectedProductPhotoBox";
+            this.SelectedProductPhotoBox.Size = new System.Drawing.Size(126, 91);
+            this.SelectedProductPhotoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SelectedProductPhotoBox.TabIndex = 4;
+            this.SelectedProductPhotoBox.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 409);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(159, 13);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Selected Product Informations :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(138, 430);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(84, 13);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Product Name : ";
+            // 
+            // lblPoductName
+            // 
+            this.lblPoductName.AutoSize = true;
+            this.lblPoductName.Location = new System.Drawing.Point(242, 430);
+            this.lblPoductName.Name = "lblPoductName";
+            this.lblPoductName.Size = new System.Drawing.Size(39, 13);
+            this.lblPoductName.TabIndex = 7;
+            this.lblPoductName.Text = "........";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(152, 471);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(67, 13);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Price           :";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(242, 471);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(35, 13);
+            this.lblPrice.TabIndex = 9;
+            this.lblPrice.Text = ".......";
+            // 
             // FrmOrderProductShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,6 +424,7 @@
             this.Text = "FrmOrderProductShow";
             this.Load += new System.EventHandler(this.FrmOrderProductShow_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).EndInit();
@@ -363,6 +432,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SelectedProductPhotoBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,5 +466,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.Button SavePhotoBtn;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblPoductName;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox SelectedProductPhotoBox;
     }
 }
