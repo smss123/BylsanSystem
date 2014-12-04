@@ -148,6 +148,24 @@
     <Compile Include="EmployeeForms\FrmEmployeeManage.Designer.cs">
       <DependentUpon>FrmEmployeeManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="expensesFroms\FrmAddExpensses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="expensesFroms\FrmAddExpensses.Designer.cs">
+      <DependentUpon>FrmAddExpensses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="expensesFroms\FrmEditExpensses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="expensesFroms\FrmEditExpensses.Designer.cs">
+      <DependentUpon>FrmEditExpensses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="expensesFroms\FrmexpensesShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="expensesFroms\FrmexpensesShow.Designer.cs">
+      <DependentUpon>FrmexpensesShow.cs</DependentUpon>
+    </Compile>
     <Compile Include="FactoryForms\FrmFactoryOrderProductShow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -427,6 +445,15 @@
     <EmbeddedResource Include="EmployeeForms\FrmEmployeeManage.resx">
       <DependentUpon>FrmEmployeeManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="expensesFroms\FrmAddExpensses.resx">
+      <DependentUpon>FrmAddExpensses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="expensesFroms\FrmEditExpensses.resx">
+      <DependentUpon>FrmEditExpensses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="expensesFroms\FrmexpensesShow.resx">
+      <DependentUpon>FrmexpensesShow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FactoryForms\FrmFactoryOrderProductShow.resx">
       <DependentUpon>FrmFactoryOrderProductShow.cs</DependentUpon>
     </EmbeddedResource>
@@ -629,9 +656,7 @@
       <Name>XamaDataLayer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="expensesFroms\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
