@@ -170,6 +170,7 @@
             this.qtyTextBox.Name = "qtyTextBox";
             this.qtyTextBox.Size = new System.Drawing.Size(232, 20);
             this.qtyTextBox.TabIndex = 1;
+            this.qtyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qtyTextBox_KeyPress);
             // 
             // ItemComboBox
             // 

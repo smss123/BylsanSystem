@@ -82,5 +82,10 @@ namespace Bylsan_System.MainStoreForms
         {
 
         }
+
+        private void SaveBtn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }

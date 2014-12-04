@@ -201,6 +201,7 @@
             this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SaveBtn.ThemeName = "VisualStudio2012Light";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            this.SaveBtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SaveBtn_KeyPress);
             // 
             // errorProvider1
             // 

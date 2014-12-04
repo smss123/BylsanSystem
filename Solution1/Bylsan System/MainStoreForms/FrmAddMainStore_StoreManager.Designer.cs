@@ -162,6 +162,7 @@
             this.qtyInOrOutTextBox.Name = "qtyInOrOutTextBox";
             this.qtyInOrOutTextBox.Size = new System.Drawing.Size(116, 20);
             this.qtyInOrOutTextBox.TabIndex = 2;
+            this.qtyInOrOutTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qtyInOrOutTextBox_KeyPress);
             // 
             // label1
             // 

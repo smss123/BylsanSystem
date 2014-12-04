@@ -37,7 +37,23 @@ namespace Bylsan_System.MainStoreForms
                 ItemColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
                 errorProvider1.Clear();
             }
-        
+
+            if (AvailableQtyTextBox.Text == "")
+            {
+
+                AvailableQtyTextBox.BackColor = Color.OrangeRed;
+
+                AvailableQtyTextBox.Focus();
+                errorProvider1.SetError(this.AvailableQtyTextBox, "Please Enter Qty");
+
+                return;
+            }
+            else
+            {
+                AvailableQtyTextBox.BackColor = Color.White;
+                errorProvider1.Clear();
+
+            }
             #endregion
         }
         
@@ -47,6 +63,11 @@ namespace Bylsan_System.MainStoreForms
             var q = ItemsCmd.GetAllItems();
             ItemColumnComboBox.DataSource = q;
             Operation.EndOperation(this);
+        }
+
+        private void AvailableQtyTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

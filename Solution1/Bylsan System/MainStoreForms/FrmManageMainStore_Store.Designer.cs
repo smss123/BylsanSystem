@@ -46,6 +46,7 @@
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.StoreGridView = new Telerik.WinControls.UI.RadGridView();
+            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -171,7 +172,7 @@
             gridViewTextBoxColumn4.FieldName = "Description";
             gridViewTextBoxColumn4.HeaderText = "Description";
             gridViewTextBoxColumn4.Name = "Description";
-            gridViewTextBoxColumn4.Width = 344;
+            gridViewTextBoxColumn4.Width = 343;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.HeaderText = "Edit";
             gridViewTextBoxColumn5.Name = "EditCol";
@@ -179,7 +180,7 @@
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.HeaderText = "Delete";
             gridViewTextBoxColumn6.Name = "DeleteCol";
-            gridViewTextBoxColumn6.Width = 70;
+            gridViewTextBoxColumn6.Width = 69;
             this.StoreGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -237,5 +238,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton ReportBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     }
 }

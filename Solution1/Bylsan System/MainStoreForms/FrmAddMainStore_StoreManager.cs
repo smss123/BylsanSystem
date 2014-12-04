@@ -78,6 +78,11 @@ namespace Bylsan_System.MainStoreForms
             #endregion
         }
 
+        private void qtyInOrOutTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
        
     }
 }

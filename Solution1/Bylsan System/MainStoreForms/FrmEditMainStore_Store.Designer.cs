@@ -107,7 +107,7 @@
             this.ItemColumnComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ItemColumnComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // ItemColumnComboBox.NestedRadGridView
+            // 
             // 
             this.ItemColumnComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.ItemColumnComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -156,6 +156,7 @@
             this.AvailableQtyTextBox.Name = "AvailableQtyTextBox";
             this.AvailableQtyTextBox.Size = new System.Drawing.Size(152, 20);
             this.AvailableQtyTextBox.TabIndex = 2;
+            this.AvailableQtyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AvailableQtyTextBox_KeyPress);
             // 
             // errorProvider1
             // 

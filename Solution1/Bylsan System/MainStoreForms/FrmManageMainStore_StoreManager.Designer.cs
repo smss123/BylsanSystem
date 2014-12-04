@@ -182,7 +182,7 @@
             gridViewTextBoxColumn7.FieldName = "Description";
             gridViewTextBoxColumn7.HeaderText = "Description";
             gridViewTextBoxColumn7.Name = "Description";
-            gridViewTextBoxColumn7.Width = 163;
+            gridViewTextBoxColumn7.Width = 161;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Edit";
             gridViewCommandColumn1.MaxWidth = 45;
