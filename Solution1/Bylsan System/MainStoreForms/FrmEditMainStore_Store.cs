@@ -22,5 +22,10 @@ namespace Bylsan_System.MainStoreForms
         {
 
         }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

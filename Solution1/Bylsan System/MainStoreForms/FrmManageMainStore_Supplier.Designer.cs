@@ -36,12 +36,20 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageMainStore_Supplier));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.lblStatus = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Addbtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ReportBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStrip1.SuspendLayout();
             this.lblStatus.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
@@ -52,9 +60,16 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Addbtn,
+            this.toolStripSeparator1,
+            this.RefreshBtn,
+            this.toolStripSeparator2,
+            this.ReportBtn,
+            this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(788, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(788, 39);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -78,9 +93,9 @@
             // 
             this.groupBox1.Controls.Add(this.radGridView1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 25);
+            this.groupBox1.Location = new System.Drawing.Point(0, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(788, 461);
+            this.groupBox1.Size = new System.Drawing.Size(788, 447);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "---";
@@ -152,7 +167,7 @@
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.ReadOnly = true;
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radGridView1.Size = new System.Drawing.Size(782, 440);
+            this.radGridView1.Size = new System.Drawing.Size(782, 426);
             this.radGridView1.TabIndex = 0;
             this.radGridView1.Text = "SupplierGridView";
             this.radGridView1.ThemeName = "VisualStudio2012Light";
@@ -160,6 +175,48 @@
             // supplierBindingSource
             // 
             this.supplierBindingSource.DataSource = typeof(XamaDataLayer.Supplier);
+            // 
+            // Addbtn
+            // 
+            this.Addbtn.Image = global::Bylsan_System.Properties.Resources.Add;
+            this.Addbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.Addbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Addbtn.Name = "Addbtn";
+            this.Addbtn.Size = new System.Drawing.Size(92, 36);
+            this.Addbtn.Text = "Add item";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // RefreshBtn
+            // 
+            this.RefreshBtn.Image = global::Bylsan_System.Properties.Resources.Refrech;
+            this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Size = new System.Drawing.Size(103, 36);
+            this.RefreshBtn.Text = "RefreshData";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            // 
+            // ReportBtn
+            // 
+            this.ReportBtn.Image = ((System.Drawing.Image)(resources.GetObject("ReportBtn.Image")));
+            this.ReportBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ReportBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ReportBtn.Name = "ReportBtn";
+            this.ReportBtn.Size = new System.Drawing.Size(90, 36);
+            this.ReportBtn.Text = "Print Report";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
             // 
             // FrmManageMainStore_Supplier
             // 
@@ -177,6 +234,8 @@
             this.Text = "FrmManageMainStore_Supplier";
             this.ThemeName = "VisualStudio2012Light";
             this.Load += new System.EventHandler(this.FrmManageMainStore_Supplier_Load);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.lblStatus.ResumeLayout(false);
             this.lblStatus.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -197,5 +256,11 @@
         private Telerik.WinControls.UI.RadGridView radGridView1;
         private System.Windows.Forms.BindingSource supplierBindingSource;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripButton Addbtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton RefreshBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton ReportBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }

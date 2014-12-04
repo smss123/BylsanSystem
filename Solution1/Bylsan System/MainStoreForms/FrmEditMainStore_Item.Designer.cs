@@ -38,6 +38,7 @@
             this.itemDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.itemNameTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             itemTypeLabel = new System.Windows.Forms.Label();
             itemDescriptionLabel = new System.Windows.Forms.Label();
             itemNameLabel = new System.Windows.Forms.Label();
@@ -50,7 +51,7 @@
             // itemTypeLabel
             // 
             itemTypeLabel.AutoSize = true;
-            itemTypeLabel.Location = new System.Drawing.Point(39, 151);
+            itemTypeLabel.Location = new System.Drawing.Point(39, 140);
             itemTypeLabel.Name = "itemTypeLabel";
             itemTypeLabel.Size = new System.Drawing.Size(58, 13);
             itemTypeLabel.TabIndex = 4;
@@ -59,7 +60,7 @@
             // itemDescriptionLabel
             // 
             itemDescriptionLabel.AutoSize = true;
-            itemDescriptionLabel.Location = new System.Drawing.Point(10, 70);
+            itemDescriptionLabel.Location = new System.Drawing.Point(10, 63);
             itemDescriptionLabel.Name = "itemDescriptionLabel";
             itemDescriptionLabel.Size = new System.Drawing.Size(94, 13);
             itemDescriptionLabel.TabIndex = 2;
@@ -100,29 +101,33 @@
             this.ItemTypecomboBox.Items.AddRange(new object[] {
             "item product",
             "item row material"});
-            this.ItemTypecomboBox.Location = new System.Drawing.Point(106, 148);
+            this.ItemTypecomboBox.Location = new System.Drawing.Point(106, 137);
             this.ItemTypecomboBox.Name = "ItemTypecomboBox";
             this.ItemTypecomboBox.Size = new System.Drawing.Size(225, 21);
-            this.ItemTypecomboBox.TabIndex = 1;
+            this.ItemTypecomboBox.TabIndex = 3;
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(204, 194);
+            this.SaveBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveBtn.Image = global::Bylsan_System.Properties.Resources.Save;
+            this.SaveBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SaveBtn.Location = new System.Drawing.Point(13, 185);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(127, 37);
+            this.SaveBtn.Size = new System.Drawing.Size(109, 37);
             this.SaveBtn.TabIndex = 6;
             this.SaveBtn.Text = "Save";
+            this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SaveBtn.ThemeName = "VisualStudio2012Light";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // itemDescriptionTextBox
             // 
             this.itemDescriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.itemDescriptionTextBox.Location = new System.Drawing.Point(106, 67);
+            this.itemDescriptionTextBox.Location = new System.Drawing.Point(106, 60);
             this.itemDescriptionTextBox.Multiline = true;
             this.itemDescriptionTextBox.Name = "itemDescriptionTextBox";
             this.itemDescriptionTextBox.Size = new System.Drawing.Size(225, 69);
-            this.itemDescriptionTextBox.TabIndex = 3;
+            this.itemDescriptionTextBox.TabIndex = 2;
             // 
             // itemNameTextBox
             // 
@@ -169,5 +174,6 @@
         private System.Windows.Forms.TextBox itemNameTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ComboBox ItemTypecomboBox;
+        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     }
 }

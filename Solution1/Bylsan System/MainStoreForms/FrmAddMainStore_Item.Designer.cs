@@ -59,7 +59,7 @@
             // itemDescriptionLabel
             // 
             itemDescriptionLabel.AutoSize = true;
-            itemDescriptionLabel.Location = new System.Drawing.Point(2, 70);
+            itemDescriptionLabel.Location = new System.Drawing.Point(2, 63);
             itemDescriptionLabel.Name = "itemDescriptionLabel";
             itemDescriptionLabel.Size = new System.Drawing.Size(94, 13);
             itemDescriptionLabel.TabIndex = 2;
@@ -68,7 +68,7 @@
             // itemTypeLabel
             // 
             itemTypeLabel.AutoSize = true;
-            itemTypeLabel.Location = new System.Drawing.Point(38, 151);
+            itemTypeLabel.Location = new System.Drawing.Point(38, 142);
             itemTypeLabel.Name = "itemTypeLabel";
             itemTypeLabel.Size = new System.Drawing.Size(58, 13);
             itemTypeLabel.TabIndex = 4;
@@ -99,29 +99,33 @@
             this.ItemTypecomboBox.Items.AddRange(new object[] {
             "item product",
             "item row material"});
-            this.ItemTypecomboBox.Location = new System.Drawing.Point(101, 148);
+            this.ItemTypecomboBox.Location = new System.Drawing.Point(97, 139);
             this.ItemTypecomboBox.Name = "ItemTypecomboBox";
-            this.ItemTypecomboBox.Size = new System.Drawing.Size(230, 21);
-            this.ItemTypecomboBox.TabIndex = 0;
+            this.ItemTypecomboBox.Size = new System.Drawing.Size(234, 21);
+            this.ItemTypecomboBox.TabIndex = 3;
             // 
             // Addbtn
             // 
-            this.Addbtn.Location = new System.Drawing.Point(204, 194);
+            this.Addbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.Addbtn.Image = global::Bylsan_System.Properties.Resources.Add;
+            this.Addbtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Addbtn.Location = new System.Drawing.Point(10, 187);
             this.Addbtn.Name = "Addbtn";
-            this.Addbtn.Size = new System.Drawing.Size(127, 37);
-            this.Addbtn.TabIndex = 6;
+            this.Addbtn.Size = new System.Drawing.Size(109, 37);
+            this.Addbtn.TabIndex = 4;
             this.Addbtn.Text = "Add";
+            this.Addbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Addbtn.ThemeName = "VisualStudio2012Light";
             this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
             // itemDescriptionTextBox
             // 
             this.itemDescriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.itemDescriptionTextBox.Location = new System.Drawing.Point(97, 67);
+            this.itemDescriptionTextBox.Location = new System.Drawing.Point(97, 60);
             this.itemDescriptionTextBox.Multiline = true;
             this.itemDescriptionTextBox.Name = "itemDescriptionTextBox";
             this.itemDescriptionTextBox.Size = new System.Drawing.Size(234, 69);
-            this.itemDescriptionTextBox.TabIndex = 3;
+            this.itemDescriptionTextBox.TabIndex = 2;
             // 
             // itemNameTextBox
             // 
@@ -142,6 +146,8 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(379, 267);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmAddMainStore_Item";
             // 
             // 

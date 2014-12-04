@@ -40,6 +40,7 @@
             this.supplierPhoneTextBox = new System.Windows.Forms.TextBox();
             this.supplierNameTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             descriptionLabel = new System.Windows.Forms.Label();
             addressLabel = new System.Windows.Forms.Label();
             supplierPhoneLabel = new System.Windows.Forms.Label();
@@ -88,6 +89,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.SaveBtn);
             this.groupBox1.Controls.Add(descriptionLabel);
             this.groupBox1.Controls.Add(this.descriptionTextBox);
@@ -99,19 +103,23 @@
             this.groupBox1.Controls.Add(this.supplierNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(397, 260);
+            this.groupBox1.Size = new System.Drawing.Size(390, 260);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit";
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(237, 209);
+            this.SaveBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveBtn.Image = global::Bylsan_System.Properties.Resources.Save;
+            this.SaveBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SaveBtn.Location = new System.Drawing.Point(24, 204);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(127, 37);
+            this.SaveBtn.Size = new System.Drawing.Size(109, 37);
             this.SaveBtn.TabIndex = 5;
             this.SaveBtn.Text = "Save";
-            this.SaveBtn.ThemeName = "Windows8";
+            this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SaveBtn.ThemeName = "VisualStudio2012Light";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // descriptionTextBox
@@ -136,7 +144,7 @@
             this.supplierPhoneTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.supplierPhoneTextBox.Location = new System.Drawing.Point(97, 53);
             this.supplierPhoneTextBox.Name = "supplierPhoneTextBox";
-            this.supplierPhoneTextBox.Size = new System.Drawing.Size(267, 20);
+            this.supplierPhoneTextBox.Size = new System.Drawing.Size(210, 20);
             this.supplierPhoneTextBox.TabIndex = 2;
             // 
             // supplierNameTextBox
@@ -156,10 +164,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(422, 285);
+            this.ClientSize = new System.Drawing.Size(415, 285);
             this.Controls.Add(this.groupBox1);
-            this.MaximumSize = new System.Drawing.Size(430, 318);
-            this.MinimumSize = new System.Drawing.Size(430, 318);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmEditMainStore_Supplier";
             // 
             // 
@@ -187,5 +195,6 @@
         private System.Windows.Forms.TextBox supplierPhoneTextBox;
         private System.Windows.Forms.TextBox supplierNameTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     }
 }

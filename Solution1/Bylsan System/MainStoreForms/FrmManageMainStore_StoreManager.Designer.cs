@@ -40,33 +40,79 @@
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.Addbtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ReportBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.StoreManager = new Telerik.WinControls.UI.RadGridView();
+            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StoreManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StoreManager.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
+            this.Addbtn,
+            this.toolStripSeparator1,
+            this.RefreshBtn,
+            this.toolStripSeparator2,
+            this.ReportBtn,
+            this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(846, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(846, 39);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // Addbtn
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(49, 22);
-            this.toolStripButton1.Text = "Add";
+            this.Addbtn.Image = global::Bylsan_System.Properties.Resources.Add;
+            this.Addbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.Addbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Addbtn.Name = "Addbtn";
+            this.Addbtn.Size = new System.Drawing.Size(92, 36);
+            this.Addbtn.Text = "Add item";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // RefreshBtn
+            // 
+            this.RefreshBtn.Image = global::Bylsan_System.Properties.Resources.Refrech;
+            this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Size = new System.Drawing.Size(103, 36);
+            this.RefreshBtn.Text = "RefreshData";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            // 
+            // ReportBtn
+            // 
+            this.ReportBtn.Image = ((System.Drawing.Image)(resources.GetObject("ReportBtn.Image")));
+            this.ReportBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ReportBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ReportBtn.Name = "ReportBtn";
+            this.ReportBtn.Size = new System.Drawing.Size(90, 36);
+            this.ReportBtn.Text = "Print Report";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
             // 
             // statusStrip1
             // 
@@ -81,9 +127,9 @@
             this.groupBox1.Controls.Add(this.StoreManager);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 25);
+            this.groupBox1.Location = new System.Drawing.Point(0, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(846, 486);
+            this.groupBox1.Size = new System.Drawing.Size(846, 472);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -96,7 +142,7 @@
             this.StoreManager.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.StoreManager.ForeColor = System.Drawing.SystemColors.ControlText;
             this.StoreManager.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.StoreManager.Location = new System.Drawing.Point(3, 16);
+            this.StoreManager.Location = new System.Drawing.Point(3, 18);
             // 
             // StoreManager
             // 
@@ -106,45 +152,49 @@
             gridViewTextBoxColumn1.FieldName = "ID";
             gridViewTextBoxColumn1.HeaderText = "ID";
             gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn1.Width = 100;
+            gridViewTextBoxColumn1.Width = 93;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "StoreID";
             gridViewTextBoxColumn2.HeaderText = "StoreID";
             gridViewTextBoxColumn2.Name = "StoreID";
-            gridViewTextBoxColumn2.Width = 110;
+            gridViewTextBoxColumn2.Width = 117;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "QtyInOrOut";
             gridViewTextBoxColumn3.HeaderText = "QtyInOrOut";
             gridViewTextBoxColumn3.Name = "QtyInOrOut";
-            gridViewTextBoxColumn3.Width = 88;
+            gridViewTextBoxColumn3.Width = 94;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "DateOfProcess";
             gridViewTextBoxColumn4.HeaderText = "DateOfProcess";
             gridViewTextBoxColumn4.Name = "DateOfProcess";
-            gridViewTextBoxColumn4.Width = 88;
+            gridViewTextBoxColumn4.Width = 94;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.FieldName = "ProcessType";
             gridViewTextBoxColumn5.HeaderText = "ProcessType";
             gridViewTextBoxColumn5.Name = "ProcessType";
-            gridViewTextBoxColumn5.Width = 76;
+            gridViewTextBoxColumn5.Width = 81;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.FieldName = "Price";
             gridViewTextBoxColumn6.HeaderText = "Price";
             gridViewTextBoxColumn6.Name = "Price";
-            gridViewTextBoxColumn6.Width = 91;
+            gridViewTextBoxColumn6.Width = 97;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
             gridViewTextBoxColumn7.FieldName = "Description";
             gridViewTextBoxColumn7.HeaderText = "Description";
             gridViewTextBoxColumn7.Name = "Description";
-            gridViewTextBoxColumn7.Width = 132;
+            gridViewTextBoxColumn7.Width = 163;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Edit";
+            gridViewCommandColumn1.MaxWidth = 45;
+            gridViewCommandColumn1.MinWidth = 45;
             gridViewCommandColumn1.Name = "EditCol";
-            gridViewCommandColumn1.Width = 86;
+            gridViewCommandColumn1.Width = 45;
             gridViewCommandColumn2.EnableExpressionEditor = false;
             gridViewCommandColumn2.HeaderText = "Delete";
+            gridViewCommandColumn2.MaxWidth = 45;
+            gridViewCommandColumn2.MinWidth = 45;
             gridViewCommandColumn2.Name = "DeleteCol";
-            gridViewCommandColumn2.Width = 56;
+            gridViewCommandColumn2.Width = 45;
             this.StoreManager.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -161,9 +211,10 @@
             this.StoreManager.Name = "StoreManager";
             this.StoreManager.ReadOnly = true;
             this.StoreManager.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.StoreManager.Size = new System.Drawing.Size(840, 467);
+            this.StoreManager.Size = new System.Drawing.Size(840, 451);
             this.StoreManager.TabIndex = 0;
             this.StoreManager.Text = "radGridView1";
+            this.StoreManager.ThemeName = "VisualStudio2012Light";
             // 
             // FrmManageMainStore_StoreManager
             // 
@@ -174,12 +225,19 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FrmManageMainStore_StoreManager";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmManageMainStore_StoreManager";
+            this.ThemeName = "VisualStudio2012Light";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.StoreManager.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StoreManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,9 +246,15 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.GroupBox groupBox1;
         private Telerik.WinControls.UI.RadGridView StoreManager;
+        private System.Windows.Forms.ToolStripButton Addbtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton RefreshBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton ReportBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     }
 }

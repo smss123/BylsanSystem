@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 using XamaDataLayer.Main_Store;
 
 namespace Bylsan_System.MainStoreForms
 {
-    public partial class FrmAddMainStore_Store : Form
+    public partial class FrmAddMainStore_Store : RadForm
     {
         public FrmAddMainStore_Store()
         {
@@ -44,7 +45,7 @@ namespace Bylsan_System.MainStoreForms
         {
             Operation.BeginOperation(this);
             var q = ItemsCmd.GetAllItems();
-            itemBindingSource.DataSource = q;
+            ItemColumnComboBox.DataSource = q;
             Operation.EndOperation(this);
         }
     }

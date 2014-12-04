@@ -40,6 +40,7 @@
             this.supplierPhoneTextBox = new System.Windows.Forms.TextBox();
             this.supplierNameTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             supplierNameLabel = new System.Windows.Forms.Label();
             supplierPhoneLabel = new System.Windows.Forms.Label();
             addressLabel = new System.Windows.Forms.Label();
@@ -88,6 +89,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.Addbtn);
             this.groupBox1.Controls.Add(descriptionLabel);
             this.groupBox1.Controls.Add(this.descriptionTextBox);
@@ -106,11 +110,15 @@
             // 
             // Addbtn
             // 
-            this.Addbtn.Location = new System.Drawing.Point(237, 209);
+            this.Addbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Addbtn.Image = global::Bylsan_System.Properties.Resources.Add;
+            this.Addbtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Addbtn.Location = new System.Drawing.Point(22, 204);
             this.Addbtn.Name = "Addbtn";
-            this.Addbtn.Size = new System.Drawing.Size(127, 37);
+            this.Addbtn.Size = new System.Drawing.Size(109, 37);
             this.Addbtn.TabIndex = 5;
             this.Addbtn.Text = "Add";
+            this.Addbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Addbtn.ThemeName = "VisualStudio2012Light";
             this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
@@ -120,7 +128,7 @@
             this.descriptionTextBox.Location = new System.Drawing.Point(97, 105);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(267, 80);
+            this.descriptionTextBox.Size = new System.Drawing.Size(256, 80);
             this.descriptionTextBox.TabIndex = 4;
             // 
             // addressTextBox
@@ -128,7 +136,7 @@
             this.addressTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.addressTextBox.Location = new System.Drawing.Point(97, 79);
             this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(267, 20);
+            this.addressTextBox.Size = new System.Drawing.Size(256, 20);
             this.addressTextBox.TabIndex = 3;
             // 
             // supplierPhoneTextBox
@@ -136,7 +144,7 @@
             this.supplierPhoneTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.supplierPhoneTextBox.Location = new System.Drawing.Point(97, 53);
             this.supplierPhoneTextBox.Name = "supplierPhoneTextBox";
-            this.supplierPhoneTextBox.Size = new System.Drawing.Size(267, 20);
+            this.supplierPhoneTextBox.Size = new System.Drawing.Size(209, 20);
             this.supplierPhoneTextBox.TabIndex = 2;
             // 
             // supplierNameTextBox
@@ -144,7 +152,7 @@
             this.supplierNameTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.supplierNameTextBox.Location = new System.Drawing.Point(97, 27);
             this.supplierNameTextBox.Name = "supplierNameTextBox";
-            this.supplierNameTextBox.Size = new System.Drawing.Size(267, 20);
+            this.supplierNameTextBox.Size = new System.Drawing.Size(256, 20);
             this.supplierNameTextBox.TabIndex = 1;
             // 
             // errorProvider1
@@ -158,6 +166,8 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(400, 285);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmAddMainStore_Supplier";
             // 
             // 
@@ -185,5 +195,6 @@
         private System.Windows.Forms.TextBox supplierNameTextBox;
         private Telerik.WinControls.UI.RadButton Addbtn;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     }
 }

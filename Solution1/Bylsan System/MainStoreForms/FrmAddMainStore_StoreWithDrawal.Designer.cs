@@ -40,6 +40,7 @@
             this.qtyTextBox = new System.Windows.Forms.TextBox();
             this.ItemComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             itemNameLabel = new System.Windows.Forms.Label();
             qtyLabel = new System.Windows.Forms.Label();
             commentLabel = new System.Windows.Forms.Label();
@@ -68,16 +69,16 @@
             // qtyLabel
             // 
             qtyLabel.AutoSize = true;
-            qtyLabel.Location = new System.Drawing.Point(38, 54);
+            qtyLabel.Location = new System.Drawing.Point(41, 54);
             qtyLabel.Name = "qtyLabel";
-            qtyLabel.Size = new System.Drawing.Size(28, 13);
+            qtyLabel.Size = new System.Drawing.Size(27, 13);
             qtyLabel.TabIndex = 2;
             qtyLabel.Text = "Qty:";
             // 
             // commentLabel
             // 
             commentLabel.AutoSize = true;
-            commentLabel.Location = new System.Drawing.Point(11, 80);
+            commentLabel.Location = new System.Drawing.Point(12, 80);
             commentLabel.Name = "commentLabel";
             commentLabel.Size = new System.Drawing.Size(59, 13);
             commentLabel.TabIndex = 4;
@@ -86,7 +87,7 @@
             // storeIDLabel
             // 
             storeIDLabel.AutoSize = true;
-            storeIDLabel.Location = new System.Drawing.Point(18, 133);
+            storeIDLabel.Location = new System.Drawing.Point(20, 131);
             storeIDLabel.Name = "storeIDLabel";
             storeIDLabel.Size = new System.Drawing.Size(51, 13);
             storeIDLabel.TabIndex = 6;
@@ -112,12 +113,16 @@
             // 
             // Addbtn
             // 
-            this.Addbtn.Location = new System.Drawing.Point(178, 175);
+            this.Addbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Addbtn.Image = global::Bylsan_System.Properties.Resources.Add;
+            this.Addbtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Addbtn.Location = new System.Drawing.Point(12, 175);
             this.Addbtn.Name = "Addbtn";
-            this.Addbtn.Size = new System.Drawing.Size(127, 37);
+            this.Addbtn.Size = new System.Drawing.Size(109, 37);
             this.Addbtn.TabIndex = 4;
             this.Addbtn.Text = "Add";
-            this.Addbtn.ThemeName = "Windows8";
+            this.Addbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Addbtn.ThemeName = "VisualStudio2012Light";
             this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
             // StoreComboBox
@@ -142,7 +147,7 @@
             this.StoreComboBox.EditorControl.ShowGroupPanel = false;
             this.StoreComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.StoreComboBox.EditorControl.TabIndex = 0;
-            this.StoreComboBox.Location = new System.Drawing.Point(73, 130);
+            this.StoreComboBox.Location = new System.Drawing.Point(73, 128);
             this.StoreComboBox.Name = "StoreComboBox";
             this.StoreComboBox.Size = new System.Drawing.Size(232, 20);
             this.StoreComboBox.TabIndex = 3;
@@ -206,6 +211,8 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(350, 255);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmAddMainStore_StoreWithDrawal";
             // 
             // 
@@ -239,5 +246,6 @@
         private System.Windows.Forms.TextBox qtyTextBox;
         private Telerik.WinControls.UI.RadButton Addbtn;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     }
 }

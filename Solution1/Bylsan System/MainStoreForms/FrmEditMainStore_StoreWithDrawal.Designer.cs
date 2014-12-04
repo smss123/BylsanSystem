@@ -79,7 +79,7 @@
             qtyLabel.AutoSize = true;
             qtyLabel.Location = new System.Drawing.Point(44, 52);
             qtyLabel.Name = "qtyLabel";
-            qtyLabel.Size = new System.Drawing.Size(28, 13);
+            qtyLabel.Size = new System.Drawing.Size(27, 13);
             qtyLabel.TabIndex = 13;
             qtyLabel.Text = "Qty:";
             // 
@@ -94,6 +94,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.ItemComboBox);
             this.groupBox1.Controls.Add(this.StoreComboBox);
             this.groupBox1.Controls.Add(this.SaveBtn);
@@ -105,7 +108,7 @@
             this.groupBox1.Controls.Add(itemNameLabel);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(325, 230);
+            this.groupBox1.Size = new System.Drawing.Size(337, 227);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -170,12 +173,16 @@
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(184, 170);
+            this.SaveBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveBtn.Image = global::Bylsan_System.Properties.Resources.Save;
+            this.SaveBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SaveBtn.Location = new System.Drawing.Point(16, 167);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(127, 37);
+            this.SaveBtn.Size = new System.Drawing.Size(109, 37);
             this.SaveBtn.TabIndex = 4;
             this.SaveBtn.Text = "Save";
-            this.SaveBtn.ThemeName = "Windows8";
+            this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SaveBtn.ThemeName = "VisualStudio2012Light";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // commentTextBox
@@ -192,7 +199,7 @@
             this.qtyTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.qtyTextBox.Location = new System.Drawing.Point(79, 49);
             this.qtyTextBox.Name = "qtyTextBox";
-            this.qtyTextBox.Size = new System.Drawing.Size(232, 20);
+            this.qtyTextBox.Size = new System.Drawing.Size(125, 20);
             this.qtyTextBox.TabIndex = 1;
             // 
             // errorProvider1
@@ -204,15 +211,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(350, 255);
+            this.ClientSize = new System.Drawing.Size(362, 255);
             this.Controls.Add(this.groupBox1);
-            this.MaximumSize = new System.Drawing.Size(358, 288);
-            this.MinimumSize = new System.Drawing.Size(358, 288);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmEditMainStore_StoreWithDrawal";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(358, 288);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditMainStore_StoreWithDrawal";
             this.ThemeName = "VisualStudio2012Light";
