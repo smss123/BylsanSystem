@@ -15,5 +15,28 @@ namespace Bylsan_System.expensesFroms
         {
             InitializeComponent();
         }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+
+            #region "  CheckFillTextBox "
+            if (expenssesNameTextBox.Text == "")
+            {
+
+                expenssesNameTextBox.BackColor = Color.OrangeRed;
+
+                expenssesNameTextBox.Focus();
+                errorProvider1.SetError(this.expenssesNameTextBox, "Please Enter Expensses Name");
+
+                return;
+            }
+            else
+            {
+                expenssesNameTextBox.BackColor = Color.White;
+                errorProvider1.Clear();
+
+            }
+            #endregion
+        }
     }
 }
