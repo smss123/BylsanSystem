@@ -82,6 +82,12 @@
     <Compile Include="BranchForms\FrmAddBranch.Designer.cs">
       <DependentUpon>FrmAddBranch.cs</DependentUpon>
     </Compile>
+    <Compile Include="BranchForms\FrmDeliveryOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BranchForms\FrmDeliveryOrder.Designer.cs">
+      <DependentUpon>FrmDeliveryOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="BranchForms\FrmEditBranch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,6 +394,9 @@
     <EmbeddedResource Include="BranchForms\FrmAddBranch.resx">
       <DependentUpon>FrmAddBranch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BranchForms\FrmDeliveryOrder.resx">
+      <DependentUpon>FrmDeliveryOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BranchForms\FrmEditBranch.resx">
       <DependentUpon>FrmEditBranch.cs</DependentUpon>
     </EmbeddedResource>
@@ -619,6 +628,9 @@
       <Project>{4bedeea4-6c5c-492d-8c7b-0366d5bb9c41}</Project>
       <Name>XamaDataLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="expensesFroms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
