@@ -7,6 +7,7 @@ using XamaDataLayer;
 using System.Threading;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Diagnostics;
 
 
 namespace XamaDataLayer.Helper_Classes
@@ -14,6 +15,12 @@ namespace XamaDataLayer.Helper_Classes
     public  class FactoryZoon  : IDisposable 
     {
         static DbDataContext db = new DbDataContext();
+        ~FactoryZoon()
+        {
+            GC.Collect();
+            Application.DoEvents();
+           Debug.Write(this);
+        }
 
 
 
@@ -61,5 +68,6 @@ namespace XamaDataLayer.Helper_Classes
         this.MemberwiseClone();
         GC.SuppressFinalize(this);
     }
+        
     }
 }
