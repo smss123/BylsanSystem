@@ -21,50 +21,24 @@ namespace Bylsan_System.SellSystemForms
 
         public SellItem  TargetItem { get; set; }
 
-        private void FillItemsCombo()
-        {
-            Operation.BeginOperation(this);
-            this.Invoke((MethodInvoker)delegate
-            {
-
-                this.itemNameTextBox.MultiColumnComboBoxElement.DropDownWidth = 550;
-                this.itemNameTextBox.AutoFilter = true;
-                this.itemNameTextBox.DisplayMember = "ItemName";
-                this.itemNameTextBox.ValueMember = "ID";
-                this.lblstatus.Text = "Loading ...";
-            });
-
-            var q = SellItemsCmd.GetAllSellItems();
-            this.Invoke((MethodInvoker)delegate
-            {
-
-                itemNameTextBox.DataSource = q;
-                itemNameTextBox.SelectedValue = TargetItem.ID;
-                this.lblstatus.Text = "Compelete ..";
-            });
-            Operation.EndOperation(this);
-        }
-
-
-
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
 
 
-            if (itemNameTextBox.Text == "")
+            if (SellItemBox.Text == "")
             {
 
-                itemNameTextBox.BackColor = Color.OrangeRed;
+                SellItemBox.BackColor = Color.OrangeRed;
 
-                itemNameTextBox.Focus();
-                errorProvider1.SetError(this.itemNameTextBox, "Please Enter Name");
+                SellItemBox.Focus();
+                errorProvider1.SetError(this.SellItemBox, "Please Enter Name");
 
                 return;
             }
             else
             {
-                itemNameTextBox.BackColor = Color.White;
+                SellItemBox.BackColor = Color.White;
                 errorProvider1.Clear();
 
             }
@@ -87,12 +61,11 @@ namespace Bylsan_System.SellSystemForms
             }
             #endregion
 
-            if (int.Parse(itemNameTextBox.SelectedValue.ToString()) != 0)
-            {
+      
 
                 Thread th = new Thread(EditSellItem );
                 th.Start();
-            }
+          
         }
 
 
@@ -106,10 +79,10 @@ namespace Bylsan_System.SellSystemForms
                 lblstatus.Text = "Editing...";
                 tb = new  SellItem 
                 {
-               ItemName =  itemNameTextBox .Text ,
-               Description = descriptionTextBox .Text ,
-               ItemPrice =  int .Parse (itemPriceTextBox .Text) ,
-               ItemIcon = pictureBox1 .Image ,
+                   ItemName = SellItemBox .Text ,
+                   Description = descriptionTextBox .Text ,
+                   ItemPrice =  int .Parse (itemPriceTextBox .Text) ,
+                   ItemIcon = pictureBox1 .Image ,
                 };
 
             });
@@ -158,10 +131,8 @@ namespace Bylsan_System.SellSystemForms
         {
             Operation.BeginOperation(this);
 
-            Thread ItemThread = new Thread(FillItemsCombo);
-            ItemThread.Start();
 
-            itemNameTextBox.Text = TargetItem.ItemName;
+            SellItemBox.Text = TargetItem.ItemName;
             itemPriceTextBox.Text =  TargetItem.ItemPrice.ToString () ;
             descriptionTextBox.Text = TargetItem.Description;
             pictureBox1.Image = TargetItem.ItemIcon;
