@@ -62,7 +62,7 @@
             qtyLabel.AutoSize = true;
             qtyLabel.Location = new System.Drawing.Point(11, 60);
             qtyLabel.Name = "qtyLabel";
-            qtyLabel.Size = new System.Drawing.Size(27, 13);
+            qtyLabel.Size = new System.Drawing.Size(28, 13);
             qtyLabel.TabIndex = 2;
             qtyLabel.Text = "Qty:";
             // 
@@ -130,6 +130,7 @@
             this.qtyTextBox.Name = "qtyTextBox";
             this.qtyTextBox.Size = new System.Drawing.Size(100, 20);
             this.qtyTextBox.TabIndex = 2;
+            this.qtyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qtyTextBox_KeyPress);
             // 
             // errorProvider1
             // 
@@ -152,6 +153,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddSellIStore";
             this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmAddSellIStore_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();

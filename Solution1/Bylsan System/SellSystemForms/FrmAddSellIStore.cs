@@ -6,7 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
-
+using Telerik.WinControls.UI;
+using XamaDataLayer;
+using XamaDataLayer.SellSystem;
+using Bylsan_System.SellSystemForms;
+using System.Threading;
 namespace Bylsan_System.SellSystemForms
 {
     public partial class FrmAddSellIStore : Telerik.WinControls.UI.RadForm
@@ -15,7 +19,31 @@ namespace Bylsan_System.SellSystemForms
         {
             InitializeComponent();
         }
+        public SellItem TargetItem { get; set; }
 
+        private void FillItemsCombo()
+        {
+            Operation.BeginOperation(this);
+            this.Invoke((MethodInvoker)delegate
+            {
+
+                this.ItemComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
+                this.ItemComboBox.AutoFilter = true;
+                this.ItemComboBox.DisplayMember = "ItemName";
+                this.ItemComboBox.ValueMember = "ID";
+            
+            });
+
+            var q = SellItemsCmd.GetAllSellItems();
+            this.Invoke((MethodInvoker)delegate
+            {
+
+                ItemComboBox.DataSource = q;
+                ItemComboBox.SelectedValue = TargetItem.ID;
+           
+            });
+            Operation.EndOperation(this);
+        }
         private void AddBtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
@@ -50,6 +78,36 @@ namespace Bylsan_System.SellSystemForms
 
             }
             #endregion
+
+            Operation.BeginOperation(this);
+            SellStore tb = new SellStore() { 
+                ItemID =  int .Parse (ItemComboBox .SelectedValue .ToString ()) , ID = int .Parse (qtyTextBox .Text ),
+            };
+            if (SellStoreCmd.AddSellStore(tb))
+            {
+                Operation.ShowToustOk("Item Sell  Has Been Saved", this);
+                foreach (Control item in groupBox1.Controls)
+                {
+                    if (item is TextBox)
+                    {
+                        ((TextBox)item).Clear();
+                    }
+                }
+            }
+            Operation.EndOperation(this);
         }
+
+
+
+        private void qtyTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void FrmAddSellIStore_Load(object sender, EventArgs e)
+        {
+            Thread thr = new Thread(FillItemsCombo); thr.Start();
+        }
+
     }
 }
