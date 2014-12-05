@@ -81,7 +81,7 @@ namespace Bylsan_System.expensesFroms
 
         private void frmAddExpenssesMovment_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("" + ExpenssId.ToString());
+           
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

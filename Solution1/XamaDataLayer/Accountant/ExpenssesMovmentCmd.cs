@@ -23,7 +23,7 @@ namespace XamaDataLayer.Accountant
             exp.ID = tb.ID;
          //   exp .ExpenssesID = tb .ExpenssesID ;
             exp .Amount = tb .Amount ;
-            exp .DateOfProcess = tb .DateOfProcess ;
+        //    exp .DateOfProcess = tb .DateOfProcess ;
             exp .Description = tb .Description  ;
 
 
