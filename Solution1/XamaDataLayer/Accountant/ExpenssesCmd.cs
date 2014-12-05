@@ -18,13 +18,14 @@ namespace XamaDataLayer.Accountant
         }
 
 
-        public static Expenss EditExpenss(Expenss tb, int xid)
+        public static Expenss EditExpenss(Expenss tb)
         {
             db = new DbDataContext();
-            var exp = db.Expensses.Where(x => x.ID == xid).SingleOrDefault();
+            var exp = db.Expensses.Where(p => p.ID == tb.ID).SingleOrDefault();
+            exp.ID = tb.ID;
             exp.ExpenssesName = tb.ExpenssesName;
             exp.Description = tb.Description;
-            exp.AccountID = tb.AccountID;
+           // exp.AccountID = tb.AccountID;
 
             db.SubmitChanges();
             return exp;

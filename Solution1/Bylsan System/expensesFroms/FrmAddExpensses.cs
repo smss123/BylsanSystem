@@ -45,7 +45,7 @@ namespace Bylsan_System.expensesFroms
 
             if (ExpenssesCmd.AddExpensses(extb))
             {
-
+                
                 Operation.ShowToustOk("Expenss Has Been Saved", this);
                 foreach (Control item in groupBox1.Controls)
                 {
@@ -57,6 +57,7 @@ namespace Bylsan_System.expensesFroms
 
             }
             Operation.EndOperation(this);
+         
 
         }
     }

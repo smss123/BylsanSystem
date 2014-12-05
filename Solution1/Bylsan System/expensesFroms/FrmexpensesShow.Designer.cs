@@ -41,14 +41,14 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
-            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
+            this.expensesGridView = new Telerik.WinControls.UI.RadGridView();
             this.expenssBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expensesGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expensesGridView.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expenssBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -99,7 +99,7 @@
             // radGroupBox1
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox1.Controls.Add(this.radGridView1);
+            this.radGroupBox1.Controls.Add(this.expensesGridView);
             this.radGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radGroupBox1.HeaderText = "expenses Data";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 39);
@@ -109,21 +109,21 @@
             this.radGroupBox1.Text = "expenses Data";
             this.radGroupBox1.ThemeName = "VisualStudio2012Light";
             // 
-            // radGridView1
+            // expensesGridView
             // 
-            this.radGridView1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.radGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGridView1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.radGridView1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radGridView1.Location = new System.Drawing.Point(2, 18);
+            this.expensesGridView.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.expensesGridView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.expensesGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.expensesGridView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.expensesGridView.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.expensesGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.expensesGridView.Location = new System.Drawing.Point(2, 18);
             // 
-            // radGridView1
+            // expensesGridView
             // 
-            this.radGridView1.MasterTemplate.AllowAddNewRow = false;
-            this.radGridView1.MasterTemplate.AutoGenerateColumns = false;
-            this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.expensesGridView.MasterTemplate.AllowAddNewRow = false;
+            this.expensesGridView.MasterTemplate.AutoGenerateColumns = false;
+            this.expensesGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewDecimalColumn1.DataType = typeof(int);
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "ID";
@@ -151,20 +151,21 @@
             gridViewTextBoxColumn4.HeaderText = "ExpenssesMovment";
             gridViewTextBoxColumn4.Name = "column2";
             gridViewTextBoxColumn4.Width = 109;
-            this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            this.expensesGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
             gridViewTextBoxColumn4});
-            this.radGridView1.MasterTemplate.DataSource = this.expenssBindingSource;
-            this.radGridView1.Name = "radGridView1";
-            this.radGridView1.ReadOnly = true;
-            this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radGridView1.Size = new System.Drawing.Size(955, 512);
-            this.radGridView1.TabIndex = 0;
-            this.radGridView1.Text = "radGridView1";
-            this.radGridView1.ThemeName = "VisualStudio2012Light";
+            this.expensesGridView.MasterTemplate.DataSource = this.expenssBindingSource;
+            this.expensesGridView.Name = "expensesGridView";
+            this.expensesGridView.ReadOnly = true;
+            this.expensesGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.expensesGridView.Size = new System.Drawing.Size(955, 512);
+            this.expensesGridView.TabIndex = 0;
+            this.expensesGridView.Text = "radGridView1";
+            this.expensesGridView.ThemeName = "VisualStudio2012Light";
+            this.expensesGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.expensesGridView_CommandCellClick);
             // 
             // expenssBindingSource
             // 
@@ -187,12 +188,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmexpensesShow";
             this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmexpensesShow_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expensesGridView.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expensesGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.expenssBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -208,7 +210,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox1;
-        private Telerik.WinControls.UI.RadGridView radGridView1;
+        private Telerik.WinControls.UI.RadGridView expensesGridView;
         private System.Windows.Forms.BindingSource expenssBindingSource;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     }
