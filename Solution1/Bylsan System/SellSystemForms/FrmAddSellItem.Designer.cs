@@ -135,6 +135,7 @@
             this.BrowseBtn.TabIndex = 4;
             this.BrowseBtn.Text = "...";
             this.BrowseBtn.ThemeName = "VisualStudio2012Light";
+            this.BrowseBtn.Click += new System.EventHandler(this.BrowseBtn_Click);
             // 
             // pictureBox1
             // 
@@ -152,6 +153,7 @@
             this.itemPriceTextBox.Name = "itemPriceTextBox";
             this.itemPriceTextBox.Size = new System.Drawing.Size(156, 20);
             this.itemPriceTextBox.TabIndex = 3;
+            this.itemPriceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.itemPriceTextBox_KeyPress);
             // 
             // descriptionTextBox
             // 

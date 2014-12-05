@@ -36,21 +36,27 @@
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.itemNameTextBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.BrowseBtn = new Telerik.WinControls.UI.RadButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.itemPriceTextBox = new System.Windows.Forms.TextBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.itemNameTextBox = new System.Windows.Forms.TextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblstatus = new System.Windows.Forms.ToolStripStatusLabel();
             label1 = new System.Windows.Forms.Label();
             itemPriceLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
             itemNameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itemNameTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemNameTextBox.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemNameTextBox.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrowseBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,6 +102,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.itemNameTextBox);
             this.groupBox1.Controls.Add(label1);
             this.groupBox1.Controls.Add(this.SaveBtn);
             this.groupBox1.Controls.Add(this.BrowseBtn);
@@ -105,13 +112,41 @@
             this.groupBox1.Controls.Add(descriptionLabel);
             this.groupBox1.Controls.Add(this.descriptionTextBox);
             this.groupBox1.Controls.Add(itemNameLabel);
-            this.groupBox1.Controls.Add(this.itemNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 14);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(336, 287);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit";
+            // 
+            // itemNameTextBox
+            // 
+            // 
+            // itemNameTextBox.NestedRadGridView
+            // 
+            this.itemNameTextBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.itemNameTextBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.itemNameTextBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.itemNameTextBox.EditorControl.Location = new System.Drawing.Point(0, 0);
+            // 
+            // 
+            // 
+            this.itemNameTextBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.itemNameTextBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.itemNameTextBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.itemNameTextBox.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.itemNameTextBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.itemNameTextBox.EditorControl.Name = "NestedRadGridView";
+            this.itemNameTextBox.EditorControl.ReadOnly = true;
+            this.itemNameTextBox.EditorControl.ShowGroupPanel = false;
+            this.itemNameTextBox.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.itemNameTextBox.EditorControl.TabIndex = 0;
+            this.itemNameTextBox.Location = new System.Drawing.Point(89, 32);
+            this.itemNameTextBox.Name = "itemNameTextBox";
+            this.itemNameTextBox.Size = new System.Drawing.Size(217, 20);
+            this.itemNameTextBox.TabIndex = 23;
+            this.itemNameTextBox.TabStop = false;
+            this.itemNameTextBox.ThemeName = "Windows8";
             // 
             // SaveBtn
             // 
@@ -135,6 +170,7 @@
             this.BrowseBtn.TabIndex = 4;
             this.BrowseBtn.Text = "...";
             this.BrowseBtn.ThemeName = "VisualStudio2012Light";
+            this.BrowseBtn.Click += new System.EventHandler(this.BrowseBtn_Click);
             // 
             // pictureBox1
             // 
@@ -152,6 +188,7 @@
             this.itemPriceTextBox.Name = "itemPriceTextBox";
             this.itemPriceTextBox.Size = new System.Drawing.Size(156, 20);
             this.itemPriceTextBox.TabIndex = 3;
+            this.itemPriceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.itemPriceTextBox_KeyPress);
             // 
             // descriptionTextBox
             // 
@@ -162,20 +199,29 @@
             this.descriptionTextBox.Size = new System.Drawing.Size(217, 60);
             this.descriptionTextBox.TabIndex = 2;
             // 
-            // itemNameTextBox
+            // statusStrip1
             // 
-            this.itemNameTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.itemNameTextBox.Location = new System.Drawing.Point(89, 29);
-            this.itemNameTextBox.Name = "itemNameTextBox";
-            this.itemNameTextBox.Size = new System.Drawing.Size(217, 20);
-            this.itemNameTextBox.TabIndex = 1;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblstatus});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 363);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(360, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblstatus
+            // 
+            this.lblstatus.Name = "lblstatus";
+            this.lblstatus.Size = new System.Drawing.Size(12, 17);
+            this.lblstatus.Text = "_";
             // 
             // FrmEditSellItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(360, 314);
+            this.ClientSize = new System.Drawing.Size(360, 385);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -187,14 +233,21 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditSellItem";
             this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmEditSellItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itemNameTextBox.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemNameTextBox.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemNameTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrowseBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -208,6 +261,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox itemPriceTextBox;
         private System.Windows.Forms.TextBox descriptionTextBox;
-        private System.Windows.Forms.TextBox itemNameTextBox;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblstatus;
+        private Telerik.WinControls.UI.RadMultiColumnComboBox itemNameTextBox;
     }
 }

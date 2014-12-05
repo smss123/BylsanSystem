@@ -7,6 +7,10 @@ using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
+
+using XamaDataLayer;
+using XamaDataLayer.SellSystem;
+using Bylsan_System.SellSystemForms;
 namespace Bylsan_System.SellSystemForms
 {
     public partial class FrmAddSellItem : Telerik.WinControls.UI.RadForm
@@ -16,6 +20,7 @@ namespace Bylsan_System.SellSystemForms
             InitializeComponent();
         }
 
+        #region "    ^^^ Save Process  "
         private void AddBtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
@@ -55,6 +60,56 @@ namespace Bylsan_System.SellSystemForms
 
             }
             #endregion
+
+            Operation.BeginOperation(this);
+            SellItem tb = new SellItem() { 
+                ItemName = itemNameTextBox .Text ,
+                ItemIcon =  pictureBox1 .Image  ,
+                Description = descriptionTextBox .Text ,
+                ItemPrice = int .Parse (itemPriceTextBox.Text ),
+            };
+            if (SellItemsCmd.AddSellItems(tb))
+            {
+
+                Operation.ShowToustOk("Item Sell  Has Been Saved", this);
+                foreach (Control item in groupBox1.Controls)
+                {
+                    if (item is TextBox)
+                    {
+                        ((TextBox)item).Clear();
+                    }
+                }
+
+            }
+            Operation.EndOperation(this);
         }
+
+        #endregion 
+
+        #region "    ^^^ Brwose Photo    "
+
+        OpenFileDialog Op = new OpenFileDialog();
+        private void BrowseBtn_Click(object sender, EventArgs e)
+        {
+            Op = new OpenFileDialog();
+            if (Op.ShowDialog() == DialogResult.OK)
+            {
+                this.Cursor = Cursors.WaitCursor;
+                Op.Filter = "Image Files(*.png; *.jpg; *.bmp)|*.png; *.jpg; *.bmp";
+                pictureBox1.Image = Image.FromFile(Op.FileName);
+                this.Cursor = Cursors.Default;
+
+            }
+        }
+
+
+        #endregion
+
+        #region "  ^^^ Item Price _ KeyPress     "
+        private void itemPriceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+        #endregion
     }
 }
