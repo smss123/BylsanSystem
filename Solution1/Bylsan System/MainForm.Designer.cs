@@ -69,14 +69,15 @@
             this.addItemsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.manageItemsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.storeManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.suppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.suppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expensesShowBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -99,7 +100,8 @@
             this.toolStripButton2,
             this.BtnDesinger,
             this.toolStripButton3,
-            this.toolStripButton4});
+            this.toolStripButton4,
+            this.expensesShowBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(936, 37);
@@ -397,7 +399,7 @@
             this.addItemsToolStripMenuItem1,
             this.manageItemsToolStripMenuItem1});
             this.storeItemsToolStripMenuItem.Name = "storeItemsToolStripMenuItem";
-            this.storeItemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.storeItemsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.storeItemsToolStripMenuItem.Text = "Store Items";
             this.storeItemsToolStripMenuItem.Click += new System.EventHandler(this.storeItemsToolStripMenuItem_Click);
             // 
@@ -418,9 +420,32 @@
             // storeManagerToolStripMenuItem
             // 
             this.storeManagerToolStripMenuItem.Name = "storeManagerToolStripMenuItem";
-            this.storeManagerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.storeManagerToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.storeManagerToolStripMenuItem.Text = "Store Manager";
             this.storeManagerToolStripMenuItem.Click += new System.EventHandler(this.storeManagerToolStripMenuItem_Click);
+            // 
+            // suppliersToolStripMenuItem
+            // 
+            this.suppliersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addSupplierToolStripMenuItem,
+            this.manageSupplierToolStripMenuItem});
+            this.suppliersToolStripMenuItem.Name = "suppliersToolStripMenuItem";
+            this.suppliersToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.suppliersToolStripMenuItem.Text = "Suppliers";
+            // 
+            // addSupplierToolStripMenuItem
+            // 
+            this.addSupplierToolStripMenuItem.Name = "addSupplierToolStripMenuItem";
+            this.addSupplierToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.addSupplierToolStripMenuItem.Text = "Add Supplier";
+            this.addSupplierToolStripMenuItem.Click += new System.EventHandler(this.addSupplierToolStripMenuItem_Click);
+            // 
+            // manageSupplierToolStripMenuItem
+            // 
+            this.manageSupplierToolStripMenuItem.Name = "manageSupplierToolStripMenuItem";
+            this.manageSupplierToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.manageSupplierToolStripMenuItem.Text = "Manage Supplier";
+            this.manageSupplierToolStripMenuItem.Click += new System.EventHandler(this.manageSupplierToolStripMenuItem_Click);
             // 
             // toolStrip2
             // 
@@ -449,28 +474,14 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // suppliersToolStripMenuItem
+            // expensesShowBtn
             // 
-            this.suppliersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addSupplierToolStripMenuItem,
-            this.manageSupplierToolStripMenuItem});
-            this.suppliersToolStripMenuItem.Name = "suppliersToolStripMenuItem";
-            this.suppliersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.suppliersToolStripMenuItem.Text = "Suppliers";
-            // 
-            // addSupplierToolStripMenuItem
-            // 
-            this.addSupplierToolStripMenuItem.Name = "addSupplierToolStripMenuItem";
-            this.addSupplierToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.addSupplierToolStripMenuItem.Text = "Add Supplier";
-            this.addSupplierToolStripMenuItem.Click += new System.EventHandler(this.addSupplierToolStripMenuItem_Click);
-            // 
-            // manageSupplierToolStripMenuItem
-            // 
-            this.manageSupplierToolStripMenuItem.Name = "manageSupplierToolStripMenuItem";
-            this.manageSupplierToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.manageSupplierToolStripMenuItem.Text = "Manage Supplier";
-            this.manageSupplierToolStripMenuItem.Click += new System.EventHandler(this.manageSupplierToolStripMenuItem_Click);
+            this.expensesShowBtn.Image = ((System.Drawing.Image)(resources.GetObject("expensesShowBtn.Image")));
+            this.expensesShowBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.expensesShowBtn.Name = "expensesShowBtn";
+            this.expensesShowBtn.Size = new System.Drawing.Size(74, 34);
+            this.expensesShowBtn.Text = "Expenses";
+            this.expensesShowBtn.Click += new System.EventHandler(this.expensesShowBtn_Click);
             // 
             // MainForm
             // 
@@ -551,5 +562,6 @@
         private System.Windows.Forms.ToolStripMenuItem suppliersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addSupplierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageSupplierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton expensesShowBtn;
     }
 }

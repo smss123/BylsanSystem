@@ -48,7 +48,7 @@ namespace Bylsan_System.expensesFroms
         }
         private void frmExpenssesMovment_Load(object sender, EventArgs e)
         {
-            tragetExp.ID = ExpID;
+             ExpID= tragetExp.ID;
             Thread th = new Thread(FillData);
             th.Start();
         }
@@ -57,8 +57,8 @@ namespace Bylsan_System.expensesFroms
         {
             Operation.BeginOperation(this);
             frmAddExpenssesMovment frm = new frmAddExpenssesMovment();
-            ExpenssesMovment tb = (ExpenssesMovment)ExpenssesMovmentGridView.CurrentRow.DataBoundItem;
-            frm.TragetExpenssesMovment = tb;
+
+            frm.ExpenssId = ExpID;
             frm.ShowDialog();
             Operation.EndOperation(this);
         }
@@ -66,7 +66,7 @@ namespace Bylsan_System.expensesFroms
         private void ExpenssesMovmentGridView_CommandCellClick(object sender, EventArgs e)
         {
             var col = ExpenssesMovmentGridView.CurrentColumn.Index;
-        if (col == 4)
+        if (col == 5)
         {
             Operation.BeginOperation(this);
             frmEditExpenssesMovment frm = new frmEditExpenssesMovment();
@@ -75,6 +75,11 @@ namespace Bylsan_System.expensesFroms
             frm.ShowDialog();
             Operation.EndOperation(this);
         }
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            frmExpenssesMovment_Load(sender, e);
         }
     }
 }

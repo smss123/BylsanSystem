@@ -18,6 +18,7 @@ namespace Bylsan_System.expensesFroms
         public frmEditExpenssesMovment()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("VisualStudio2012Light");
         }
 
         private void Savebtn_Click(object sender, EventArgs e)
@@ -41,15 +42,20 @@ namespace Bylsan_System.expensesFroms
 
             }
             #endregion
-
-            ExpenssesMovment tb = new ExpenssesMovment()
+            if (RadMessageBox.Show(this, "Do you Want To Save", "Save Changes", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
-                ID=XId,
-                Amount=double.Parse(amountTextBox.Text),
-                Description=descriptionTextBox.Text,
+                Operation.BeginOperation(this);
+                ExpenssesMovment tb = new ExpenssesMovment()
+                {
+                    ID = XId,
+                    Amount = double.Parse(amountTextBox.Text),
+                    Description = descriptionTextBox.Text,
 
-            };
-            ExpenssesMovmentCmd.EditExpMovment(tb);
+                };
+                ExpenssesMovmentCmd.EditExpMovment(tb);
+            }
+             Operation.EndOperation(this);
+             Operation.ShowToustOk("Expenss Has Been Saved", this);
         }
 
         private void amountTextBox_KeyPress(object sender, KeyPressEventArgs e)

@@ -78,5 +78,16 @@ namespace Bylsan_System.expensesFroms
 
              }
         }
+
+        private void Addbtn_Click(object sender, EventArgs e)
+        {
+            FrmAddExpensses frm = new FrmAddExpensses();
+            frm.ShowDialog();
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            FrmexpensesShow_Load(sender, e);
+        }
     }
 }

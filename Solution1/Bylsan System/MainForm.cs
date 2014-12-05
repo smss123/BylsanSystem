@@ -2,6 +2,7 @@
 using Bylsan_System.CustomerForms;
 using Bylsan_System.designerForms;
 using Bylsan_System.EmployeeForms;
+using Bylsan_System.expensesFroms;
 using Bylsan_System.MailForms;
 using Bylsan_System.MainStoreForms;
 using Bylsan_System.ProductForms;
@@ -152,6 +153,12 @@ namespace Bylsan_System
         private void manageSupplierToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmManageMainStore_Supplier frm = new FrmManageMainStore_Supplier();
+            frm.ShowDialog();
+        }
+
+        private void expensesShowBtn_Click(object sender, EventArgs e)
+        {
+            FrmexpensesShow frm = new FrmexpensesShow();
             frm.ShowDialog();
         }
     }

@@ -17,8 +17,7 @@ namespace Bylsan_System.expensesFroms
         {
             InitializeComponent();
         }
-        public ExpenssesMovment TragetExpenssesMovment { get; set; }
-        public int ExpenssId { get; set; }
+         public int ExpenssId { get; set; }
         private void AddBtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
@@ -60,7 +59,7 @@ namespace Bylsan_System.expensesFroms
                     ((TextBox)item).Clear();
                 }
                 amountTextBox.Focus();
-                Operation.BeginOperation(this);
+                Operation.EndOperation(this);
             }
         }
 
@@ -82,7 +81,7 @@ namespace Bylsan_System.expensesFroms
 
         private void frmAddExpenssesMovment_Load(object sender, EventArgs e)
         {
-            ExpenssId = TragetExpenssesMovment.ExpenssesID.Value;
+            MessageBox.Show("" + ExpenssId.ToString());
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

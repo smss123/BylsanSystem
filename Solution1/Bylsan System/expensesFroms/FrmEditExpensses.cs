@@ -41,15 +41,18 @@ namespace Bylsan_System.expensesFroms
             }
             #endregion
 
-             Operation.BeginOperation(this);
+             
             Expenss extb = new Expenss() {ID=ExpenssID, ExpenssesName = expenssesNameTextBox.Text, Description = descriptionTextBox.Text };
             if (RadMessageBox.Show(this, "Do you Want To Save", "Save Changes", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
+                Operation.BeginOperation(this);
                 ExpenssesCmd.EditExpenss(extb);
+                Operation.EndOperation(this);
             
             }
 
-            Operation.EndOperation(this);
+
+            Operation.ShowToustOk("Expenss Has Been Saved", this);
 
 
 
