@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using XamaDataLayer;
+using XamaDataLayer.Accountant;
 
 namespace Bylsan_System.expensesFroms
 {
@@ -15,7 +17,8 @@ namespace Bylsan_System.expensesFroms
         {
             InitializeComponent();
         }
-
+        public ExpenssesMovment TragetExpenssesMovment { get; set; }
+        public int ExpenssId { get; set; }
         private void AddBtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
@@ -37,6 +40,28 @@ namespace Bylsan_System.expensesFroms
 
             }
             #endregion
+            Operation.BeginOperation(this);
+            ExpenssesMovment tb = new ExpenssesMovment
+            {
+                ExpenssesID=ExpenssId,
+                Amount=double.Parse(amountTextBox.Text),
+                DateOfProcess=DateTime.Now,
+                Description=descriptionTextBox.Text,
+
+
+            };
+
+            ExpenssesMovmentCmd.AddExpenssesMovment(tb);
+            Operation.ShowToustOk("Expenss Has Been Saved", this);
+            foreach (Control item in groupBox1.Controls)
+            {
+                if (item is TextBox)
+                {
+                    ((TextBox)item).Clear();
+                }
+                amountTextBox.Focus();
+                Operation.BeginOperation(this);
+            }
         }
 
         private void amountTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -53,6 +78,16 @@ namespace Bylsan_System.expensesFroms
             {
                 e.Handled = true;
             }
+        }
+
+        private void frmAddExpenssesMovment_Load(object sender, EventArgs e)
+        {
+            ExpenssId = TragetExpenssesMovment.ExpenssesID.Value;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -18,6 +18,7 @@ namespace Bylsan_System.expensesFroms
         {
             InitializeComponent();
         }
+      
         private void FillData()
         {
 
@@ -47,6 +48,7 @@ namespace Bylsan_System.expensesFroms
         private void FrmexpensesShow_Load(object sender, EventArgs e)
         {
             Thread th = new Thread(FillData);
+            th.Start();
           
         }
 
@@ -61,6 +63,19 @@ namespace Bylsan_System.expensesFroms
                  frm.TragetExpenss = tb;
                  frm.ShowDialog();
                  Operation.EndOperation(this);
+             }
+
+             if (col == 4)
+             {
+
+
+                 Operation.BeginOperation(this);
+                 frmExpenssesMovment frm = new frmExpenssesMovment();
+                 Expenss tb = (Expenss)expensesGridView.CurrentRow.DataBoundItem;
+                 frm.tragetExp = tb;
+                 frm.ShowDialog();
+                 Operation.EndOperation(this);
+
              }
         }
     }

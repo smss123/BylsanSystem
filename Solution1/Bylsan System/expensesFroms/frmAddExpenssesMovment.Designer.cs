@@ -79,6 +79,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // AddBtn
             // 
@@ -133,6 +134,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddExpenssesMovment";
             this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.frmAddExpenssesMovment_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();

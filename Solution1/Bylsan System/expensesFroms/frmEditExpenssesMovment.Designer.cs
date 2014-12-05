@@ -133,6 +133,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditExpenssesMovment";
             this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.frmEditExpenssesMovment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -16,11 +16,12 @@ namespace XamaDataLayer.Accountant
             db.SubmitChanges();
             return true;
         }
-        public static ExpenssesMovment EditExpMovment(ExpenssesMovment tb, int xid)
+        public static ExpenssesMovment EditExpMovment(ExpenssesMovment tb)
         {
             db = new DbDataContext();
-            var exp = db .ExpenssesMovments .Where (x=> x.ID == xid ).SingleOrDefault ();
-            exp .ExpenssesID = tb .ExpenssesID ;
+            var exp = db .ExpenssesMovments .Where (x=> x.ID == tb.ID ).SingleOrDefault ();
+            exp.ID = tb.ID;
+         //   exp .ExpenssesID = tb .ExpenssesID ;
             exp .Amount = tb .Amount ;
             exp .DateOfProcess = tb .DateOfProcess ;
             exp .Description = tb .Description  ;
@@ -56,7 +57,15 @@ namespace XamaDataLayer.Accountant
             return db.ExpenssesMovments.ToList();
         }
 
+        public static List<ExpenssesMovment> GetAllExpenssesMovmentByExpID(int expID)
+        {
+            db = new DbDataContext();
 
+            var LST = (from c in db.ExpenssesMovments
+                       where c.ExpenssesID == expID
+                       select c).ToList();
+            return LST;
+        }
         public static List<ExpenssesMovment> GetAllExpnssesMovmentsByDate( DateTime dat )
         {
             db = new DbDataContext();

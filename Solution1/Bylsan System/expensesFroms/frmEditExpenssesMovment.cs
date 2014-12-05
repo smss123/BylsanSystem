@@ -6,11 +6,15 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using XamaDataLayer;
+using XamaDataLayer.Accountant;
 
 namespace Bylsan_System.expensesFroms
 {
     public partial class frmEditExpenssesMovment : Telerik.WinControls.UI.RadForm
     {
+        public ExpenssesMovment TragetExpenssesMovment { get; set; }
+        public int XId { get; set; }
         public frmEditExpenssesMovment()
         {
             InitializeComponent();
@@ -37,6 +41,15 @@ namespace Bylsan_System.expensesFroms
 
             }
             #endregion
+
+            ExpenssesMovment tb = new ExpenssesMovment()
+            {
+                ID=XId,
+                Amount=double.Parse(amountTextBox.Text),
+                Description=descriptionTextBox.Text,
+
+            };
+            ExpenssesMovmentCmd.EditExpMovment(tb);
         }
 
         private void amountTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -53,6 +66,13 @@ namespace Bylsan_System.expensesFroms
             {
                 e.Handled = true;
             }
+        }
+
+        private void frmEditExpenssesMovment_Load(object sender, EventArgs e)
+        {
+            XId = TragetExpenssesMovment.ID;
+            amountTextBox.Text = TragetExpenssesMovment.Amount.Value.ToString();
+            descriptionTextBox.Text = TragetExpenssesMovment.Description;
         }
     }
 }
