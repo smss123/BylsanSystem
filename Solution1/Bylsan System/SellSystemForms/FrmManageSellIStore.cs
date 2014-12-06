@@ -73,6 +73,16 @@ namespace Bylsan_System.SellSystemForms
                 frm.ShowDialog();
                 Operation.EndOperation(this);
             }
+            if(col == 4)
+            {
+
+                Operation.BeginOperation(this);
+                    
+                SellStoreCmd.DeleteSellStore(int.Parse(SellStoreGridView.CurrentRow.Cells[0].Value.ToString()));
+                FrmManageSellIStore_Load(sender, e);
+
+                Operation.EndOperation(this);
+            }
         }
 
 

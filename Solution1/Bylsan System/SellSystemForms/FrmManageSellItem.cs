@@ -64,6 +64,16 @@ namespace Bylsan_System.SellSystemForms
                 frm.ShowDialog();
                 Operation.EndOperation(this);
             }
+
+            if (col == 6)
+            {
+                Operation.BeginOperation(this);
+
+                SellItemsCmd.DeleteSellItem(int.Parse(SellitmeGridView.CurrentRow.Cells [0].Value .ToString ()));
+                FrmManageSellItem_Load(sender, e);
+
+                Operation.EndOperation(this);
+            }
         }
 
         private void RefreshBtn_Click(object sender, EventArgs e)
