@@ -81,7 +81,7 @@ namespace Bylsan_System.SellSystemForms
 
             Operation.BeginOperation(this);
             SellStore tb = new SellStore() { 
-                ItemID =  int .Parse (ItemComboBox .SelectedValue .ToString ()) , ID = int .Parse (qtyTextBox .Text ),
+                ItemID =  int .Parse (ItemComboBox .SelectedValue .ToString ()) , Qty  = int .Parse (qtyTextBox .Text ),
             };
             if (SellStoreCmd.AddSellStore(tb))
             {

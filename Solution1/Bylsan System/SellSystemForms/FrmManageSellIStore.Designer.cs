@@ -43,14 +43,14 @@
             this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.SellStoreGridView = new Telerik.WinControls.UI.RadGridView();
+            this.sellStoreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.sellStoreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SellStoreGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SellStoreGridView.MasterTemplate)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sellStoreBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,6 +97,7 @@
             this.RefreshBtn.Name = "RefreshBtn";
             this.RefreshBtn.Size = new System.Drawing.Size(106, 36);
             this.RefreshBtn.Text = "Refresh Data";
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // toolStripSeparator2
             // 
@@ -176,6 +177,11 @@
             this.SellStoreGridView.TabIndex = 5;
             this.SellStoreGridView.Text = "radGridView1";
             this.SellStoreGridView.ThemeName = "VisualStudio2012Light";
+            this.SellStoreGridView.CellClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.SellStoreGridView_CellClick);
+            // 
+            // sellStoreBindingSource
+            // 
+            this.sellStoreBindingSource.DataSource = typeof(XamaDataLayer.SellStore);
             // 
             // groupBox1
             // 
@@ -187,10 +193,6 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data";
-            // 
-            // sellStoreBindingSource
-            // 
-            this.sellStoreBindingSource.DataSource = typeof(XamaDataLayer.SellStore);
             // 
             // FrmManageSellIStore
             // 
@@ -209,12 +211,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmManageSellIStore";
             this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmManageSellIStore_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SellStoreGridView.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SellStoreGridView)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sellStoreBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

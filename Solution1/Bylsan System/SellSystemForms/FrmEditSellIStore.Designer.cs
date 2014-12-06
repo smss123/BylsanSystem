@@ -54,7 +54,7 @@
             qtyLabel.AutoSize = true;
             qtyLabel.Location = new System.Drawing.Point(21, 54);
             qtyLabel.Name = "qtyLabel";
-            qtyLabel.Size = new System.Drawing.Size(27, 13);
+            qtyLabel.Size = new System.Drawing.Size(28, 13);
             qtyLabel.TabIndex = 11;
             qtyLabel.Text = "Qty:";
             // 
@@ -162,6 +162,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditSellIStore";
             this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmEditSellIStore_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
