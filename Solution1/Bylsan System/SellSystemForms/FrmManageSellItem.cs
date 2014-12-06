@@ -69,6 +69,7 @@ namespace Bylsan_System.SellSystemForms
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
             FrmManageSellItem_Load(sender, e);
+
         }
 
        
