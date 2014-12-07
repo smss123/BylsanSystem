@@ -95,6 +95,7 @@ namespace Bylsan_System.MainStoreForms
                 ItemID=int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
                 AvailableQty=int.Parse(AvailableQtyTextBox.Text),
                 Description = DescriptiontextBox.Text
+               
 
             };
             StoreCmd.AddNewStore(tb);

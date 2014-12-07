@@ -5,9 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.Data;
 using Telerik.WinControls.UI;
+using XamaDataLayer;
+using XamaDataLayer.Main_Store;
 
 namespace Bylsan_System.MainStoreForms
 {
@@ -76,6 +80,26 @@ namespace Bylsan_System.MainStoreForms
             }
 
             #endregion
+
+            Operation.BeginOperation(this);
+            StoreManager tb = new StoreManager()
+            {
+                StoreID=int.Parse(StoreComboBox.SelectedValue.ToString()),
+                DateOfProcess=DateTime.Now,
+                QtyInOrOut=int.Parse(qtyInOrOutTextBox.Text),
+                ProcessType=processTypeComboBox.Text,
+                Price=double.Parse (priceTextBox.Text),
+                Description=descriptionTextBox.Text,
+            };
+            StoreManagerCmd.AddStoreManager(tb);
+            Operation.ShowToustOk("StoreManager Saved", this);
+            StoreComboBox.ResetText();
+            qtyInOrOutTextBox.Clear();
+            processTypeComboBox.ResetText();
+            priceTextBox.Clear();
+            StoreComboBox.Focus();
+            descriptionTextBox.Clear();
+            Operation.EndOperation(this);
         }
 
         private void qtyInOrOutTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -97,6 +121,41 @@ namespace Bylsan_System.MainStoreForms
             {
                 e.Handled = true;
             }
+        }
+
+        private void FillComboBoxStor()
+        {
+
+            this.StoreComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
+            Operation.BeginOperation(this);
+
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.StoreComboBox.AutoFilter = true;
+                this.StoreComboBox.ValueMember = "ID";
+                this.StoreComboBox.DisplayMember = "ItemID";
+            });
+
+
+            var q = StoreCmd.GetAllStores();
+            this.Invoke((MethodInvoker)delegate
+            {
+                StoreComboBox.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.StoreComboBox.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.StoreComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+
+
+
+
+            });
+            Operation.EndOperation(this);
+        }
+        private void FrmAddMainStore_StoreManager_Load(object sender, EventArgs e)
+        {
+            Thread th = new Thread(FillComboBoxStor);
+            th.Start();
         }
 
        

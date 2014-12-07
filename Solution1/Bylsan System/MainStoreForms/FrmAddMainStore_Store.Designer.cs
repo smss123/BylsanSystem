@@ -39,7 +39,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DescriptiontextBox = new System.Windows.Forms.TextBox();
             this.ItemColumnComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Addbtn = new Telerik.WinControls.UI.RadButton();
             this.AvailableQtyTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -51,7 +50,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Addbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -114,7 +112,6 @@
             // 
             // ItemColumnComboBox
             // 
-            this.ItemColumnComboBox.DataSource = this.itemBindingSource;
             this.ItemColumnComboBox.DisplayMember = "ItemName";
             // 
             // ItemColumnComboBox.NestedRadGridView
@@ -163,7 +160,6 @@
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3});
-            this.ItemColumnComboBox.EditorControl.MasterTemplate.DataSource = this.itemBindingSource;
             this.ItemColumnComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ItemColumnComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
             this.ItemColumnComboBox.EditorControl.Name = "NestedRadGridView";
@@ -179,10 +175,6 @@
             this.ItemColumnComboBox.TabStop = false;
             this.ItemColumnComboBox.Text = "Choose Item";
             this.ItemColumnComboBox.ThemeName = "VisualStudio2012Light";
-            // 
-            // itemBindingSource
-            // 
-            this.itemBindingSource.DataSource = typeof(XamaDataLayer.Item);
             // 
             // Addbtn
             // 
@@ -234,7 +226,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Addbtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -251,6 +242,5 @@
         private System.Windows.Forms.TextBox DescriptiontextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
-        private System.Windows.Forms.BindingSource itemBindingSource;
     }
 }
