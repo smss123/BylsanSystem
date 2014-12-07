@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
+using XamaDataLayer;
 using XamaDataLayer.Main_Store;
 namespace Bylsan_System.MainStoreForms
 {
@@ -51,13 +52,23 @@ namespace Bylsan_System.MainStoreForms
            {
                Operation.ShowToustOk("Supplier has been Saved ..", this);
            }
+           foreach (Control item in groupBox1.Controls)
+           {
+               if (item is TextBox)
+               {
+                   ((TextBox)item).Clear();
+               }
+           }
+            
            Operation.EndOperation(this);
         }
 
         private void FrmAddMainStore_Supplier_Load(object sender, EventArgs e)
         {
-
+           
         }
+
+
         }
     }
 

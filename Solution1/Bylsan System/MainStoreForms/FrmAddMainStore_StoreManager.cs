@@ -101,28 +101,6 @@ namespace Bylsan_System.MainStoreForms
             descriptionTextBox.Clear();
             Operation.EndOperation(this);
         }
-
-        private void qtyInOrOutTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
-        private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char ch = e.KeyChar;
-            if (ch == 46 && priceTextBox.Text.IndexOf(".") != -1)
-            {
-
-                e.Handled = true;
-                return;
-            }
-
-            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
-            {
-                e.Handled = true;
-            }
-        }
-
         private void FillComboBoxStor()
         {
 
@@ -152,6 +130,28 @@ namespace Bylsan_System.MainStoreForms
             });
             Operation.EndOperation(this);
         }
+        private void qtyInOrOutTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void priceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 46 && priceTextBox.Text.IndexOf(".") != -1)
+            {
+
+                e.Handled = true;
+                return;
+            }
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+        }
+
+
         private void FrmAddMainStore_StoreManager_Load(object sender, EventArgs e)
         {
             Thread th = new Thread(FillComboBoxStor);
