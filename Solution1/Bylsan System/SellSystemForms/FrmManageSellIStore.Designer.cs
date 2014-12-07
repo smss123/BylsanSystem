@@ -170,14 +170,15 @@
             gridViewCommandColumn1,
             gridViewCommandColumn2});
             this.SellStoreGridView.MasterTemplate.DataSource = this.sellStoreBindingSource;
+            this.SellStoreGridView.MasterTemplate.SelectionMode = Telerik.WinControls.UI.GridViewSelectionMode.CellSelect;
             this.SellStoreGridView.Name = "SellStoreGridView";
-            this.SellStoreGridView.ReadOnly = true;
             this.SellStoreGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.SellStoreGridView.Size = new System.Drawing.Size(605, 361);
             this.SellStoreGridView.TabIndex = 5;
             this.SellStoreGridView.Text = "radGridView1";
             this.SellStoreGridView.ThemeName = "VisualStudio2012Light";
             this.SellStoreGridView.CellClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.SellStoreGridView_CellClick);
+            this.SellStoreGridView.Click += new System.EventHandler(this.MasterTemplate_Click);
             // 
             // sellStoreBindingSource
             // 

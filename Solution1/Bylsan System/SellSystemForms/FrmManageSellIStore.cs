@@ -61,6 +61,7 @@ namespace Bylsan_System.SellSystemForms
 
         private void SellStoreGridView_CellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
+       
             var col = SellStoreGridView.CurrentColumn.Index;
             if (col == 3)
             {
@@ -83,6 +84,11 @@ namespace Bylsan_System.SellSystemForms
 
                 Operation.EndOperation(this);
             }
+        }
+
+        private void MasterTemplate_Click(object sender, EventArgs e)
+        {
+
         }
 
 

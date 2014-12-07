@@ -9,6 +9,7 @@ namespace XamaDataLayer.SellSystem
    public static  class SellItemsCmd
     {
        static DbDataContext db = new DbDataContext();
+      
        public static bool AddSellItems(SellItem tb)
        {
            db = new DbDataContext();
@@ -64,7 +65,7 @@ namespace XamaDataLayer.SellSystem
            return lst;
        }
 
-       public static List<SellItem> GetAllSellItemName(int  ItmId)
+       public static List<SellItem> GetSellItemByID(int  ItmId)
        {
            db = new DbDataContext();
            var lst = (from i in db.SellItems

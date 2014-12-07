@@ -39,7 +39,7 @@ namespace Bylsan_System.SellSystemForms
             {
 
                 ItemComboBox.DataSource = q;
-                ItemComboBox.SelectedValue = TargetItem.ID;
+                //ItemComboBox.SelectedValue = TargetItem.ID;
            
             });
             Operation.EndOperation(this);

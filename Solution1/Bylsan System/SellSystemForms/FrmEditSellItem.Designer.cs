@@ -36,6 +36,7 @@
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SellItemBox = new System.Windows.Forms.TextBox();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.BrowseBtn = new Telerik.WinControls.UI.RadButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -43,7 +44,6 @@
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblstatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.SellItemBox = new System.Windows.Forms.TextBox();
             label1 = new System.Windows.Forms.Label();
             itemPriceLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
@@ -116,6 +116,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit";
             // 
+            // SellItemBox
+            // 
+            this.SellItemBox.Location = new System.Drawing.Point(89, 25);
+            this.SellItemBox.Name = "SellItemBox";
+            this.SellItemBox.Size = new System.Drawing.Size(217, 20);
+            this.SellItemBox.TabIndex = 10;
+            // 
             // SaveBtn
             // 
             this.SaveBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,6 +153,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(89, 153);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(77, 54);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -182,13 +190,6 @@
             this.lblstatus.Name = "lblstatus";
             this.lblstatus.Size = new System.Drawing.Size(12, 17);
             this.lblstatus.Text = "_";
-            // 
-            // SellItemBox
-            // 
-            this.SellItemBox.Location = new System.Drawing.Point(89, 25);
-            this.SellItemBox.Name = "SellItemBox";
-            this.SellItemBox.Size = new System.Drawing.Size(217, 20);
-            this.SellItemBox.TabIndex = 10;
             // 
             // FrmEditSellItem
             // 

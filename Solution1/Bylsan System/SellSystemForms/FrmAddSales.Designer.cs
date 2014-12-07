@@ -28,19 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ProductlistView = new System.Windows.Forms.ListView();
-            this.OrderGridView = new Telerik.WinControls.UI.RadGridView();
-            this.Okybtn = new Telerik.WinControls.UI.RadButton();
+            this.Okeybtn = new Telerik.WinControls.UI.RadButton();
+            this.DGVSellItems = new Telerik.WinControls.UI.RadGridView();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.ListItems = new System.Windows.Forms.ListView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OrderGridView.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Okybtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Okeybtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVSellItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVSellItems.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +67,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.ProductlistView);
+            this.groupBox1.Controls.Add(this.ListItems);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 25);
             this.groupBox1.Name = "groupBox1";
@@ -73,8 +78,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.Okybtn);
-            this.groupBox2.Controls.Add(this.OrderGridView);
+            this.groupBox2.Controls.Add(this.Okeybtn);
+            this.groupBox2.Controls.Add(this.DGVSellItems);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 321);
             this.groupBox2.Name = "groupBox2";
@@ -83,33 +88,79 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order";
             // 
-            // ProductlistView
+            // Okeybtn
             // 
-            this.ProductlistView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductlistView.Location = new System.Drawing.Point(3, 18);
-            this.ProductlistView.Name = "ProductlistView";
-            this.ProductlistView.Size = new System.Drawing.Size(821, 275);
-            this.ProductlistView.TabIndex = 0;
-            this.ProductlistView.UseCompatibleStateImageBehavior = false;
+            this.Okeybtn.Location = new System.Drawing.Point(692, 235);
+            this.Okeybtn.Name = "Okeybtn";
+            this.Okeybtn.Size = new System.Drawing.Size(129, 38);
+            this.Okeybtn.TabIndex = 1;
+            this.Okeybtn.Text = "Ok Save Bill";
+            this.Okeybtn.ThemeName = "VisualStudio2012Light";
             // 
-            // OrderGridView
+            // DGVSellItems
             // 
-            this.OrderGridView.Dock = System.Windows.Forms.DockStyle.Left;
-            this.OrderGridView.Location = new System.Drawing.Point(3, 18);
-            this.OrderGridView.Name = "OrderGridView";
-            this.OrderGridView.Size = new System.Drawing.Size(602, 258);
-            this.OrderGridView.TabIndex = 0;
-            this.OrderGridView.Text = "radGridView1";
-            this.OrderGridView.ThemeName = "VisualStudio2012Light";
+            this.DGVSellItems.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DGVSellItems.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DGVSellItems.Dock = System.Windows.Forms.DockStyle.Left;
+            this.DGVSellItems.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.DGVSellItems.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DGVSellItems.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.DGVSellItems.Location = new System.Drawing.Point(3, 18);
             // 
-            // Okybtn
+            // DGVSellItems
             // 
-            this.Okybtn.Location = new System.Drawing.Point(692, 235);
-            this.Okybtn.Name = "Okybtn";
-            this.Okybtn.Size = new System.Drawing.Size(129, 38);
-            this.Okybtn.TabIndex = 1;
-            this.Okybtn.Text = "Oky";
-            this.Okybtn.ThemeName = "VisualStudio2012Light";
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "ID";
+            gridViewTextBoxColumn6.HeaderText = "ID";
+            gridViewTextBoxColumn6.Name = "ID";
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "ItemName";
+            gridViewTextBoxColumn7.HeaderText = "Item Name";
+            gridViewTextBoxColumn7.Name = "ItemName";
+            gridViewTextBoxColumn7.Width = 150;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "Description";
+            gridViewTextBoxColumn8.HeaderText = "Description";
+            gridViewTextBoxColumn8.Name = "Description";
+            gridViewTextBoxColumn8.Width = 200;
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "ItemPrice";
+            gridViewTextBoxColumn9.HeaderText = "Item Price";
+            gridViewTextBoxColumn9.Name = "ItemPrice";
+            gridViewTextBoxColumn9.ReadOnly = true;
+            gridViewTextBoxColumn9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn9.Width = 100;
+            gridViewTextBoxColumn10.EnableExpressionEditor = false;
+            gridViewTextBoxColumn10.FieldName = "ItemIcon";
+            gridViewTextBoxColumn10.HeaderText = "Item Icon";
+            gridViewTextBoxColumn10.Name = "ItemIcon";
+            gridViewTextBoxColumn10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn10.Width = 130;
+            this.DGVSellItems.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10});
+            this.DGVSellItems.Name = "DGVSellItems";
+            this.DGVSellItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DGVSellItems.Size = new System.Drawing.Size(669, 258);
+            this.DGVSellItems.TabIndex = 0;
+            this.DGVSellItems.Text = "DGVItems";
+            this.DGVSellItems.ThemeName = "VisualStudio2012Light";
+            // 
+            // ListItems
+            // 
+            this.ListItems.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ListItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListItems.FullRowSelect = true;
+            this.ListItems.GridLines = true;
+            this.ListItems.Location = new System.Drawing.Point(3, 18);
+            this.ListItems.Name = "ListItems";
+            this.ListItems.Size = new System.Drawing.Size(821, 275);
+            this.ListItems.TabIndex = 0;
+            this.ListItems.UseCompatibleStateImageBehavior = false;
+            this.ListItems.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListItems_MouseClick);
             // 
             // FrmAddSales
             // 
@@ -128,11 +179,12 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "FrmAddSales";
             this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmAddSales_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.OrderGridView.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OrderGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Okybtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Okeybtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVSellItems.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVSellItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -144,10 +196,10 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListView ProductlistView;
         private System.Windows.Forms.GroupBox groupBox2;
-        private Telerik.WinControls.UI.RadButton Okybtn;
-        private Telerik.WinControls.UI.RadGridView OrderGridView;
+        private Telerik.WinControls.UI.RadButton Okeybtn;
+        private Telerik.WinControls.UI.RadGridView DGVSellItems;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
+        private System.Windows.Forms.ListView ListItems;
     }
 }
