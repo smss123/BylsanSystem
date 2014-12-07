@@ -179,9 +179,11 @@
             gridViewCheckBoxColumn1.MinWidth = 20;
             gridViewCheckBoxColumn1.Name = "CheckOreder";
             gridViewCheckBoxColumn1.Width = 73;
+            gridViewCommandColumn1.DefaultText = "Show this Order";
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "ShowOrder";
             gridViewCommandColumn1.Name = "ShowOrderCol";
+            gridViewCommandColumn1.UseDefaultText = true;
             gridViewCommandColumn1.Width = 82;
             this.DGVDelivery.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,

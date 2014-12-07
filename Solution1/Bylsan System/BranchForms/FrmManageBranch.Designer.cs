@@ -178,13 +178,17 @@
             gridViewDecimalColumn2.Name = "ManagerName";
             gridViewDecimalColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             gridViewDecimalColumn2.Width = 186;
+            gridViewCommandColumn1.DefaultText = "Edit";
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Edit";
             gridViewCommandColumn1.Name = "EditCol";
+            gridViewCommandColumn1.UseDefaultText = true;
             gridViewCommandColumn1.Width = 44;
+            gridViewCommandColumn2.DefaultText = "Delete";
             gridViewCommandColumn2.EnableExpressionEditor = false;
             gridViewCommandColumn2.HeaderText = "Delete";
             gridViewCommandColumn2.Name = "DeleteCol";
+            gridViewCommandColumn2.UseDefaultText = true;
             gridViewCommandColumn2.Width = 43;
             this.BranchGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,

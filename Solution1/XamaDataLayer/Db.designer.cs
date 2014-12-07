@@ -8164,7 +8164,7 @@ namespace XamaDataLayer
 		
 		private System.Nullable<double> _ItemPrice;
 		
-		private System.Data.Linq.Binary _ItemIcon;
+		private  Image _ItemIcon;//System.Data.Linq.Binary
 		
 		private EntitySet<BillItem> _BillItems;
 		
@@ -8182,7 +8182,7 @@ namespace XamaDataLayer
     partial void OnDescriptionChanged();
     partial void OnItemPriceChanging(System.Nullable<double> value);
     partial void OnItemPriceChanged();
-    partial void OnItemIconChanging(System.Data.Linq.Binary value);
+    partial void OnItemIconChanging(Image value);
     partial void OnItemIconChanged();
     #endregion
 		
@@ -8274,7 +8274,7 @@ namespace XamaDataLayer
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemIcon", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary ItemIcon
+		public Image ItemIcon
 		{
 			get
 			{
