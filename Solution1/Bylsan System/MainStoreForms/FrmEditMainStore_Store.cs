@@ -7,7 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.Data;
 using Telerik.WinControls.UI;
+using XamaDataLayer;
+using XamaDataLayer.Main_Store;
 
 namespace Bylsan_System.MainStoreForms
 {
@@ -17,10 +20,42 @@ namespace Bylsan_System.MainStoreForms
         {
             InitializeComponent();
         }
-
-        private void FrmEditMainStore_Store_Load(object sender, EventArgs e)
+        public int XStorId { get; set; }
+        public Store treagtStore { get; set; }
+        private void FillComboBoxItme()
         {
 
+            this.ItemColumnComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
+            Operation.BeginOperation(this);
+
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.ItemColumnComboBox.AutoFilter = true;
+                this.ItemColumnComboBox.ValueMember = "ID";
+                this.ItemColumnComboBox.DisplayMember = "ItemName";
+            });
+
+
+            var q = ItemsCmd.GetAllItems();
+            this.Invoke((MethodInvoker)delegate
+            {
+                ItemColumnComboBox.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.ItemColumnComboBox.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.ItemColumnComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+
+
+
+
+            });
+            Operation.EndOperation(this);
+        }
+        private void FrmEditMainStore_Store_Load(object sender, EventArgs e)
+        {
+            FillComboBoxItme();
+            XStorId = treagtStore.ID;
+       //     ItemColumnComboBox.Text=treagtStore.
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -59,6 +94,27 @@ namespace Bylsan_System.MainStoreForms
 
             }
             #endregion
+
+          
+            Operation.BeginOperation(this);
+
+
+            Store tb = new Store
+            {
+                ID =XStorId,
+                ItemID = int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
+                AvailableQty = int.Parse(AvailableQtyTextBox.Text),
+                Description = DescriptiontextBox.Text
+
+
+            };
+            StoreCmd.EditStore(tb);
+
+            Operation.ShowToustOk("Store Saved", this);
+           
+            Operation.EndOperation(this);
+
+
         }
 
         private void AvailableQtyTextBox_KeyPress(object sender, KeyPressEventArgs e)

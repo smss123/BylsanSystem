@@ -34,7 +34,7 @@
             System.Windows.Forms.Label itemNameLabel;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ItemColumnComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DescriptiontextBox = new System.Windows.Forms.TextBox();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.AvailableQtyTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -84,7 +84,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.ItemColumnComboBox);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.DescriptiontextBox);
             this.groupBox1.Controls.Add(this.SaveBtn);
             this.groupBox1.Controls.Add(DescriptionLabel);
             this.groupBox1.Controls.Add(AvailableQtyLabel);
@@ -126,14 +126,14 @@
             this.ItemColumnComboBox.TabStop = false;
             this.ItemColumnComboBox.ThemeName = "VisualStudio2012Light";
             // 
-            // textBox1
+            // DescriptiontextBox
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Location = new System.Drawing.Point(81, 90);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(274, 75);
-            this.textBox1.TabIndex = 3;
+            this.DescriptiontextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.DescriptiontextBox.Location = new System.Drawing.Point(81, 90);
+            this.DescriptiontextBox.Multiline = true;
+            this.DescriptiontextBox.Name = "DescriptiontextBox";
+            this.DescriptiontextBox.Size = new System.Drawing.Size(274, 75);
+            this.DescriptiontextBox.TabIndex = 3;
             // 
             // SaveBtn
             // 
@@ -196,7 +196,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox DescriptiontextBox;
         private Telerik.WinControls.UI.RadButton SaveBtn;
         private System.Windows.Forms.TextBox AvailableQtyTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;

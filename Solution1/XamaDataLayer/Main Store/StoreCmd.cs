@@ -18,10 +18,11 @@ namespace XamaDataLayer.Main_Store
            return true;
        }
 
-       public  Store  EditStore(Store tb, int xid)
+       public static Store EditStore(Store tb)
        {
            db = new DbDataContext();
-           var q = db.Stores .Where(i => i.ID == xid).SingleOrDefault();
+           var q = db.Stores .Where(i => i.ID == tb.ID).SingleOrDefault();
+           q.ID = tb.ID;
            q.AvailableQty = tb.AvailableQty;
            q.Description = tb.Description;
            q.ItemID = tb.ItemID;
@@ -30,7 +31,7 @@ namespace XamaDataLayer.Main_Store
        }
 
 
-       public void DeleteStoreAt(int xid)
+       public static void DeleteStoreAt(int xid)
        {
           
 

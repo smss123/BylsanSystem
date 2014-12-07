@@ -18,12 +18,12 @@ namespace XamaDataLayer.Main_Store
             return  true ;
         }
 
-        public StoreManager EditStoreManager(StoreManager tb, int xid)
+        public StoreManager EditStoreManager(StoreManager tb)
         {
             db = new DbDataContext();
 
-            var q = db.StoreManagers.Where(p => p.ID == xid).SingleOrDefault();
-
+            var q = db.StoreManagers.Where(p => p.ID == tb.ID).SingleOrDefault();
+            q.ID = tb.ID;
             q.Price = tb.Price;
             q.QtyInOrOut = tb.QtyInOrOut;
             q.StoreID = tb.StoreID;
