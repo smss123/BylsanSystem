@@ -5,9 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.Data;
 using Telerik.WinControls.UI;
+using XamaDataLayer;
 using XamaDataLayer.Main_Store;
 
 namespace Bylsan_System.MainStoreForms
@@ -18,7 +21,35 @@ namespace Bylsan_System.MainStoreForms
         {
             InitializeComponent();
         }
+        private void FillComboBoxItme()
+        {
 
+            this.ItemColumnComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
+            Operation.BeginOperation(this);
+
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.ItemColumnComboBox.AutoFilter = true;
+                this.ItemColumnComboBox.ValueMember = "ID";
+                this.ItemColumnComboBox.DisplayMember = "ItemName";
+            });
+
+
+            var q = ItemsCmd.GetAllItems();
+            this.Invoke((MethodInvoker)delegate
+            {
+                ItemColumnComboBox.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.ItemColumnComboBox.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.ItemColumnComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+
+
+
+
+            });
+            Operation.EndOperation(this);
+        }
         private void Addbtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
@@ -55,16 +86,33 @@ namespace Bylsan_System.MainStoreForms
 
             }
             #endregion
-        }
-        
-        private void FrmAddMainStore_Store_Load(object sender, EventArgs e)
-        {
+
             Operation.BeginOperation(this);
-            var q = ItemsCmd.GetAllItems();
-            ItemColumnComboBox.DataSource = q;
+          
+
+            Store tb=new Store
+            {
+                ItemID=int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
+                AvailableQty=int.Parse(AvailableQtyTextBox.Text),
+                Description = DescriptiontextBox.Text
+
+            };
+            StoreCmd.AddNewStore(tb);
+
+            Operation.ShowToustOk("Item Saved", this);
+            ItemColumnComboBox.ResetText();
+            AvailableQtyTextBox.Clear();
+            DescriptiontextBox.Clear();
+            ItemColumnComboBox.Focus();
             Operation.EndOperation(this);
+          
         }
 
+        private void FrmAddMainStore_Store_Load(object sender, EventArgs e)
+        {
+            Thread th = new Thread(FillComboBoxItme);
+            th.Start();
+        }
         private void AvailableQtyTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
