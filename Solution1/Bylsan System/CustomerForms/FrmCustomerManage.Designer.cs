@@ -192,13 +192,17 @@
             gridViewDecimalColumn2.Name = "Points";
             gridViewDecimalColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewDecimalColumn2.Width = 105;
+            gridViewCommandColumn1.DefaultText = "Edit";
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Edit";
             gridViewCommandColumn1.Name = "EditCol";
             gridViewCommandColumn1.Width = 59;
+            gridViewCommandColumn1.WrapText = true;
+            gridViewCommandColumn2.DefaultText = "Delete";
             gridViewCommandColumn2.EnableExpressionEditor = false;
             gridViewCommandColumn2.HeaderText = "Delete";
             gridViewCommandColumn2.Name = "DeleteCol";
+            gridViewCommandColumn2.UseDefaultText = true;
             gridViewCommandColumn2.Width = 65;
             this.CustomerGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
