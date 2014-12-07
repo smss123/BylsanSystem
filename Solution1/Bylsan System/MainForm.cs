@@ -16,6 +16,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
+
+using Bylsan_System.SellSystemForms;
 using Bylsan_System.SellSystemForms;
 namespace Bylsan_System
 {
@@ -189,6 +191,18 @@ namespace Bylsan_System
         private void button2_Click(object sender, EventArgs e)
         {
             FrmAddSales frm = new FrmAddSales();
+            frm.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FrmAddSales frm = new FrmAddSales();
+            frm.Show();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            FrmAddSellItem frm = new FrmAddSellItem();
             frm.Show();
         }
     }

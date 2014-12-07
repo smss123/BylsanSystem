@@ -19,19 +19,22 @@ namespace Bylsan_System.SellSystemForms
         public FrmAddSales()
         {
             InitializeComponent();
+            imageList1.ImageSize = new Size(70, 70);
         }
 
         #region " ^^^ Populate ListView Items "
         void PopulateListItems()
         {
-            ListItems.View = View.Details;
+            ListItems.View = View.Tile ;
             ListItems.Columns.Add("ID", 50, HorizontalAlignment.Center);
             ListItems.Columns.Add("Item Name ", 270, HorizontalAlignment.Center);
             ListItems.Columns.Add("Description", 300, HorizontalAlignment.Center);
             ListItems.Columns.Add("Price", 100, HorizontalAlignment.Center);
 
-            Operation.BeginOperation(this);
+            ListItems.LargeImageList = imageList1;
 
+            Operation.BeginOperation(this);
+            int ImgIndx = 0;
             var AllSellItems = SellItemsCmd.GetAllSellItems();
 
             ListItems.Items.Clear();
@@ -40,11 +43,13 @@ namespace Bylsan_System.SellSystemForms
 
                 foreach (var item in AllSellItems)
                 {
-                     ListViewItem Itm = new ListViewItem(item .ID .ToString ());
+                     ListViewItem Itm = new ListViewItem(item .ID .ToString () , ImgIndx );
                      Itm.SubItems.Add(item.ItemName.ToString());
                      Itm.SubItems.Add(item.Description.ToString());
                      Itm.SubItems.Add(item.ItemPrice.ToString());
+                     imageList1.Images.Add(item.ItemIcon);
                      ListItems.Items.Add(Itm);
+                     ImgIndx++;
                 }
             });
 
@@ -54,41 +59,41 @@ namespace Bylsan_System.SellSystemForms
 
         private void FrmAddSales_Load(object sender, EventArgs e)
        {
-        //    Thread thr = new Thread(PopulateListItems);
-        //    thr.Start();
+     
            PopulateListItems();
         }
 
-        //public static Bill WaitingBill { get; set; }
-        //public static BillItem WaitingBillItem { get; set; }
-        //public  static SellItem WaitingSellItems { get; set; }
         private  int xItemID { get; set; }
 
-        private int QtyCounter = 0;
         private void ListItems_MouseClick(object sender, MouseEventArgs e)
         {
            
-            Operation.BeginOperation(this);
-           QtyCounter = 1 ;
             try
             {
-               
+
                 if (ListItems.Items.Count != 0)
                 {
                     xItemID = 0;
-                    xItemID = int .Parse (ListItems .SelectedItems[0].Text ) ;
+                    xItemID = int.Parse(ListItems.SelectedItems[0].Text);
 
-                    Application.DoEvents();
+                    Application.DoEvents(); 
+                    //==================================================
 
-                    //foreach (var rw  in  DGVSellItems .Rows )
-                    //{
-                       
-                    //    if(int .Parse (rw.Cells [0].Value.ToString ()) != xItemID )
-                    //    {
-                             // Add New Item :
-                         
-               
-                            DGVSellItems.Rows.Add(new string[] 
+                    if (DGVSellItems.Rows.Count != 0)
+                    {
+                        for (int i = 0; i < DGVSellItems.Rows.Count; i++)
+                        {
+                            if (int.Parse(DGVSellItems.Rows[i].Cells[0].Value.ToString()) == xItemID)
+                            {
+                                DGVSellItems.Rows[i].Cells[4].Value = int.Parse(DGVSellItems.Rows[i].Cells[4].Value.ToString()) + 1;
+                                DGVSellItems.Rows[i].Cells[3].Value = (int.Parse(ListItems.SelectedItems[0].SubItems[3].Text) + int.Parse(DGVSellItems.Rows[i].Cells[3].Value.ToString()));
+                                return;
+                            }
+                        }
+                    }
+            
+
+                        DGVSellItems.Rows.Add(new string[] 
                             {
                                 xItemID.ToString(),
                                 ListItems.SelectedItems[0].SubItems[1].Text,
@@ -96,25 +101,9 @@ namespace Bylsan_System.SellSystemForms
                                 ListItems.SelectedItems[0].SubItems[3].Text,
                                 "1"
                             });
-                      
-                        //}
-                        //else
-                        //{
-                        //    rw.Cells[4].Value = QtyCounter++;
-                        //    rw.Cells[3].Value  =  (int .Parse ( ListItems.SelectedItems[0].SubItems[3].Text) + int .Parse (rw.Cells[3].Value.ToString () ));
-                        //}
-
-
-
-
-                   // }
-                
-
-                    
-
-                    
-                }          
-           Operation.EndOperation(this);
+                }       
+                                                
+       
             }
             catch (Exception ex )
             {
@@ -122,12 +111,22 @@ namespace Bylsan_System.SellSystemForms
             }
         }
       
+
+
+
+
         private void Okeybtn_Click(object sender, EventArgs e)
         {
             try
             {
                 if (DGVSellItems.Rows.Count != 0)
                 {
+
+                    if (TxtBillNumber.Text == "")
+                    {
+                        Operation.ShowToustOk("Insert Bill Number ", this);
+                        return;
+                    }
                     // Compute Total Bill Cost :
                     double tot = 0;
                     foreach (var rw  in DGVSellItems .Rows )
@@ -142,7 +141,7 @@ namespace Bylsan_System.SellSystemForms
                     Bill btb = new Bill()
                     {
                         BillDate = DateTime.Now,
-                        BillNumber = "111111",// شوف طريقة لأدخال رقم الفاتورة سواء كان يدوي  أو تلقائي يعني عداد 
+                        BillNumber =  TxtBillNumber.Text ,// شوف طريقة لأدخال رقم الفاتورة سواء كان يدوي  أو تلقائي يعني عداد 
                         UserID = UserInfo.CurrentUserID,
                         BillTotal =  tot ,
 
@@ -170,6 +169,11 @@ namespace Bylsan_System.SellSystemForms
                 
                 
             }
+        }
+
+        private void TxtBillNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
     }
