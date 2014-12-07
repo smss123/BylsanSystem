@@ -207,13 +207,17 @@
             gridViewTextBoxColumn6.Name = "Job";
             gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn6.Width = 116;
+            gridViewCommandColumn1.DefaultText = "Edit";
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Edit";
             gridViewCommandColumn1.Name = "EditCol";
+            gridViewCommandColumn1.UseDefaultText = true;
             gridViewCommandColumn1.Width = 79;
+            gridViewCommandColumn2.DefaultText = "Delete";
             gridViewCommandColumn2.EnableExpressionEditor = false;
             gridViewCommandColumn2.HeaderText = "Delete";
             gridViewCommandColumn2.Name = "DelteCol";
+            gridViewCommandColumn2.UseDefaultText = true;
             gridViewCommandColumn2.Width = 90;
             this.EmployeeGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,

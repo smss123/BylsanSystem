@@ -172,7 +172,7 @@
             gridViewTextBoxColumn4.FieldName = "Description";
             gridViewTextBoxColumn4.HeaderText = "Description";
             gridViewTextBoxColumn4.Name = "Description";
-            gridViewTextBoxColumn4.Width = 343;
+            gridViewTextBoxColumn4.Width = 344;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.HeaderText = "Edit";
             gridViewTextBoxColumn5.Name = "EditCol";
@@ -180,7 +180,7 @@
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.HeaderText = "Delete";
             gridViewTextBoxColumn6.Name = "DeleteCol";
-            gridViewTextBoxColumn6.Width = 69;
+            gridViewTextBoxColumn6.Width = 70;
             this.StoreGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,

@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 
 namespace Bylsan_System.ProductForms
 {
-    public partial class FrmManageProductCategory : Form
+    public partial class FrmManageProductCategory : RadForm
     {
         public FrmManageProductCategory()
         {

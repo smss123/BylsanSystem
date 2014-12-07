@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -41,17 +41,17 @@
             this.labCustomerPhone = new System.Windows.Forms.Label();
             this.labCustomerName = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TxtDescription = new System.Windows.Forms.TextBox();
-            this.PhotoBox = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.CloseBtn = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.ChkToDeliver = new System.Windows.Forms.CheckBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lblPoductName = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.ChkToDeliver = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.CloseBtn = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TxtDescription = new System.Windows.Forms.TextBox();
+            this.PhotoBox = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts.MasterTemplate)).BeginInit();
@@ -92,24 +92,24 @@
             // DGVProducts
             // 
             this.DGVProducts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "ID";
-            gridViewTextBoxColumn7.HeaderText = "ID";
-            gridViewTextBoxColumn7.Name = "ID";
-            gridViewTextBoxColumn7.Width = 43;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "ProductID";
-            gridViewTextBoxColumn8.HeaderText = "Product Name";
-            gridViewTextBoxColumn8.Name = "Product_Name";
-            gridViewTextBoxColumn8.Width = 215;
-            gridViewTextBoxColumn9.FieldName = "Qty";
-            gridViewTextBoxColumn9.HeaderText = "Quantity";
-            gridViewTextBoxColumn9.Name = "Quantity";
-            gridViewTextBoxColumn9.Width = 115;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.Name = "ID";
+            gridViewTextBoxColumn1.Width = 43;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "ProductID";
+            gridViewTextBoxColumn2.HeaderText = "Product Name";
+            gridViewTextBoxColumn2.Name = "Product_Name";
+            gridViewTextBoxColumn2.Width = 215;
+            gridViewTextBoxColumn3.FieldName = "Qty";
+            gridViewTextBoxColumn3.HeaderText = "Quantity";
+            gridViewTextBoxColumn3.Name = "Quantity";
+            gridViewTextBoxColumn3.Width = 115;
             this.DGVProducts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3});
             this.DGVProducts.MasterTemplate.EnableFiltering = true;
             this.DGVProducts.Name = "DGVProducts";
             this.DGVProducts.ReadOnly = true;
@@ -193,42 +193,35 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Product Information";
             // 
-            // label4
+            // CloseBtn
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 289);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Description:";
+            this.CloseBtn.Location = new System.Drawing.Point(208, 363);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(75, 23);
+            this.CloseBtn.TabIndex = 18;
+            this.CloseBtn.Text = "Close";
+            this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
             // 
-            // TxtDescription
+            // label8
             // 
-            this.TxtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtDescription.Location = new System.Drawing.Point(6, 305);
-            this.TxtDescription.Multiline = true;
-            this.TxtDescription.Name = "TxtDescription";
-            this.TxtDescription.ReadOnly = true;
-            this.TxtDescription.Size = new System.Drawing.Size(277, 52);
-            this.TxtDescription.TabIndex = 5;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(168, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Selected Product Informations :";
             // 
-            // PhotoBox
+            // ChkToDeliver
             // 
-            this.PhotoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PhotoBox.Location = new System.Drawing.Point(12, 58);
-            this.PhotoBox.Name = "PhotoBox";
-            this.PhotoBox.Size = new System.Drawing.Size(271, 179);
-            this.PhotoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PhotoBox.TabIndex = 3;
-            this.PhotoBox.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 13);
-            this.label3.TabIndex = 1;
+            this.ChkToDeliver.AutoSize = true;
+            this.ChkToDeliver.Location = new System.Drawing.Point(12, 367);
+            this.ChkToDeliver.Name = "ChkToDeliver";
+            this.ChkToDeliver.Size = new System.Drawing.Size(89, 17);
+            this.ChkToDeliver.TabIndex = 16;
+            this.ChkToDeliver.Text = "Ready-made";
+            this.ChkToDeliver.UseVisualStyleBackColor = true;
+            this.ChkToDeliver.CheckedChanged += new System.EventHandler(this.ChkToDeliver_CheckedChanged);
             // 
             // lblPrice
             // 
@@ -266,35 +259,42 @@
             this.label9.TabIndex = 12;
             this.label9.Text = "Product Name : ";
             // 
-            // ChkToDeliver
+            // label4
             // 
-            this.ChkToDeliver.AutoSize = true;
-            this.ChkToDeliver.Location = new System.Drawing.Point(12, 367);
-            this.ChkToDeliver.Name = "ChkToDeliver";
-            this.ChkToDeliver.Size = new System.Drawing.Size(89, 17);
-            this.ChkToDeliver.TabIndex = 16;
-            this.ChkToDeliver.Text = "Ready-made";
-            this.ChkToDeliver.UseVisualStyleBackColor = true;
-            this.ChkToDeliver.CheckedChanged += new System.EventHandler(this.ChkToDeliver_CheckedChanged);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 289);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Description:";
             // 
-            // label8
+            // TxtDescription
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 42);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(168, 13);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Selected Product Informations :";
+            this.TxtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtDescription.Location = new System.Drawing.Point(6, 305);
+            this.TxtDescription.Multiline = true;
+            this.TxtDescription.Name = "TxtDescription";
+            this.TxtDescription.ReadOnly = true;
+            this.TxtDescription.Size = new System.Drawing.Size(277, 52);
+            this.TxtDescription.TabIndex = 5;
             // 
-            // CloseBtn
+            // PhotoBox
             // 
-            this.CloseBtn.Location = new System.Drawing.Point(208, 363);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(75, 23);
-            this.CloseBtn.TabIndex = 18;
-            this.CloseBtn.Text = "Close";
-            this.CloseBtn.UseVisualStyleBackColor = true;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            this.PhotoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PhotoBox.Location = new System.Drawing.Point(12, 58);
+            this.PhotoBox.Name = "PhotoBox";
+            this.PhotoBox.Size = new System.Drawing.Size(271, 179);
+            this.PhotoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PhotoBox.TabIndex = 3;
+            this.PhotoBox.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.TabIndex = 1;
             // 
             // FrmFactoryOrderProductShow
             // 
