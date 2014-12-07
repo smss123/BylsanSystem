@@ -79,6 +79,14 @@ namespace XamaDataLayer.SellSystem
            return lst;
        }
 
+       public static int  GetMaxBill()
+       {
+           int xid;
+           db = new DbDataContext();
+          xid  = (from b in db.Bills
+                      select b.ID).Max();
+           return xid ;
+       }
 
 
     }

@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ListItems = new System.Windows.Forms.ListView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Okeybtn = new Telerik.WinControls.UI.RadButton();
             this.DGVSellItems = new Telerik.WinControls.UI.RadGridView();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.ListItems = new System.Windows.Forms.ListView();
+            this.BillCostBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Okeybtn)).BeginInit();
@@ -53,7 +55,7 @@
             // 
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(827, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(729, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -61,7 +63,7 @@
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 600);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(827, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(729, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -71,31 +73,47 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(827, 296);
+            this.groupBox1.Size = new System.Drawing.Size(729, 296);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "product Show";
             // 
+            // ListItems
+            // 
+            this.ListItems.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ListItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ListItems.FullRowSelect = true;
+            this.ListItems.GridLines = true;
+            this.ListItems.Location = new System.Drawing.Point(3, 18);
+            this.ListItems.Name = "ListItems";
+            this.ListItems.Size = new System.Drawing.Size(723, 275);
+            this.ListItems.TabIndex = 0;
+            this.ListItems.UseCompatibleStateImageBehavior = false;
+            this.ListItems.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListItems_MouseClick);
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.BillCostBox);
             this.groupBox2.Controls.Add(this.Okeybtn);
             this.groupBox2.Controls.Add(this.DGVSellItems);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 321);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(827, 279);
+            this.groupBox2.Size = new System.Drawing.Size(729, 279);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order";
             // 
             // Okeybtn
             // 
-            this.Okeybtn.Location = new System.Drawing.Point(692, 235);
+            this.Okeybtn.Location = new System.Drawing.Point(635, 235);
             this.Okeybtn.Name = "Okeybtn";
-            this.Okeybtn.Size = new System.Drawing.Size(129, 38);
+            this.Okeybtn.Size = new System.Drawing.Size(87, 38);
             this.Okeybtn.TabIndex = 1;
             this.Okeybtn.Text = "Ok Save Bill";
             this.Okeybtn.ThemeName = "VisualStudio2012Light";
+            this.Okeybtn.Click += new System.EventHandler(this.Okeybtn_Click);
             // 
             // DGVSellItems
             // 
@@ -109,65 +127,67 @@
             // 
             // DGVSellItems
             // 
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "ID";
-            gridViewTextBoxColumn6.HeaderText = "ID";
-            gridViewTextBoxColumn6.Name = "ID";
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "ItemName";
-            gridViewTextBoxColumn7.HeaderText = "Item Name";
-            gridViewTextBoxColumn7.Name = "ItemName";
-            gridViewTextBoxColumn7.Width = 150;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "Description";
-            gridViewTextBoxColumn8.HeaderText = "Description";
-            gridViewTextBoxColumn8.Name = "Description";
-            gridViewTextBoxColumn8.Width = 200;
-            gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "ItemPrice";
-            gridViewTextBoxColumn9.HeaderText = "Item Price";
-            gridViewTextBoxColumn9.Name = "ItemPrice";
-            gridViewTextBoxColumn9.ReadOnly = true;
-            gridViewTextBoxColumn9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn9.Width = 100;
-            gridViewTextBoxColumn10.EnableExpressionEditor = false;
-            gridViewTextBoxColumn10.FieldName = "ItemIcon";
-            gridViewTextBoxColumn10.HeaderText = "Item Icon";
-            gridViewTextBoxColumn10.Name = "ItemIcon";
-            gridViewTextBoxColumn10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn10.Width = 130;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.Name = "ID";
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "ItemName";
+            gridViewTextBoxColumn2.HeaderText = "Item Name";
+            gridViewTextBoxColumn2.Name = "ItemName";
+            gridViewTextBoxColumn2.Width = 150;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "Description";
+            gridViewTextBoxColumn3.HeaderText = "Description";
+            gridViewTextBoxColumn3.Name = "Description";
+            gridViewTextBoxColumn3.Width = 200;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "ItemPrice";
+            gridViewTextBoxColumn4.HeaderText = "Item Price";
+            gridViewTextBoxColumn4.Name = "ItemPrice";
+            gridViewTextBoxColumn4.ReadOnly = true;
+            gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn4.Width = 100;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.HeaderText = "Ouantity";
+            gridViewTextBoxColumn5.Name = "Quantity";
+            gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn5.Width = 100;
             this.DGVSellItems.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9,
-            gridViewTextBoxColumn10});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5});
             this.DGVSellItems.Name = "DGVSellItems";
             this.DGVSellItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DGVSellItems.Size = new System.Drawing.Size(669, 258);
+            this.DGVSellItems.Size = new System.Drawing.Size(626, 258);
             this.DGVSellItems.TabIndex = 0;
             this.DGVSellItems.Text = "DGVItems";
             this.DGVSellItems.ThemeName = "VisualStudio2012Light";
             // 
-            // ListItems
+            // BillCostBox
             // 
-            this.ListItems.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ListItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListItems.FullRowSelect = true;
-            this.ListItems.GridLines = true;
-            this.ListItems.Location = new System.Drawing.Point(3, 18);
-            this.ListItems.Name = "ListItems";
-            this.ListItems.Size = new System.Drawing.Size(821, 275);
-            this.ListItems.TabIndex = 0;
-            this.ListItems.UseCompatibleStateImageBehavior = false;
-            this.ListItems.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListItems_MouseClick);
+            this.BillCostBox.Location = new System.Drawing.Point(635, 69);
+            this.BillCostBox.Name = "BillCostBox";
+            this.BillCostBox.Size = new System.Drawing.Size(82, 20);
+            this.BillCostBox.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(652, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Bill Cost";
             // 
             // FrmAddSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(827, 622);
+            this.ClientSize = new System.Drawing.Size(729, 622);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.statusStrip1);
@@ -177,11 +197,13 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddSales";
             this.ThemeName = "VisualStudio2012Light";
             this.Load += new System.EventHandler(this.FrmAddSales_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Okeybtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVSellItems.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVSellItems)).EndInit();
@@ -201,5 +223,7 @@
         private Telerik.WinControls.UI.RadGridView DGVSellItems;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private System.Windows.Forms.ListView ListItems;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox BillCostBox;
     }
 }
