@@ -8,6 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using XamaDataLayer;
+
+using System.Threading;
+
+using XamaDataLayer.Security;
+using XamaDataLayer.MailServer;
+using Telerik.WinControls.UI;
+
+
 namespace Bylsan_System.MailForms
 {
     public partial class frmMailServer : Form
@@ -19,10 +27,14 @@ namespace Bylsan_System.MailForms
         List<Inbox> ls = new List<Inbox>();
         private void frmMailServer_Load(object sender, EventArgs e)
         {
-            LoadEmail();
+           // LoadEmail();
+            CreateListView();
+            PopulateMessagesListView();
 
         }
 
+
+        #region "    ^^^ UnUsed    "
         private void LoadEmail()
         {
             ls.Add(new Inbox()
@@ -109,11 +121,49 @@ namespace Bylsan_System.MailForms
                 Subject = "Hi This subject 8"
             });
         }
+        #endregion 
 
         private void NewBtn_Click(object sender, EventArgs e)
         {
             FrmSendMail frm = new FrmSendMail();
             frm.ShowDialog();
         }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            frmMailServer_Load(sender, e);
+        }
+
+
+        #region "    ^^^ Create MessagesListView   "
+        void CreateListView()
+        {
+            MessagesListView.View = View.Details;
+            MessagesListView.Columns.Add("SenderID", 50, HorizontalAlignment.Center); 
+            MessagesListView.Columns.Add("From", 150, HorizontalAlignment.Center);
+            MessagesListView.Columns.Add("Subject", 300, HorizontalAlignment.Center);
+            MessagesListView.Columns.Add("Status", 100, HorizontalAlignment.Center);
+        }
+
+        void PopulateMessagesListView()
+        {
+            var GetAllInBoxMessages = ( from u in  InBoxCmd.GetAllMessages() 
+                                        where u.ReciverUserID  == XamaDataLayer .Security .UserInfo .CurrentUserID
+                                        select u ).ToList ();
+            MessagesListView.Items.Clear();
+            foreach (var item in GetAllInBoxMessages )
+            {
+                ListViewItem Itm = new ListViewItem(item.ID.ToString());
+                
+                Itm.SubItems.Add(( from u in  UserCmd .GetAllUsers() where u.ID == item .SenderUserID select u.UserName ).First () );
+                Itm.SubItems.Add(item .Subject .ToString ());
+                Itm.SubItems.Add(item .Status .ToString ());
+
+                MessagesListView.Items.Add(Itm);
+            }
+        }
+
+        #endregion 
+
     }
 }

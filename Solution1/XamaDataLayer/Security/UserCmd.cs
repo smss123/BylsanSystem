@@ -21,6 +21,19 @@ namespace XamaDataLayer.Security
        }
 
 
+    public List<User> GetUserByID( int xid)
+    {
+
+        var q = db.Users.Where(p => p.ID == xid).ToList ();
+
+      
+        db.SubmitChanges();
+        return q;
+    }
+
+
+
+
        public User  EditUser(User tb, int xid)
        {
         
@@ -96,6 +109,8 @@ namespace XamaDataLayer.Security
        }
 
         #endregion 
+
+
 
     }
 }

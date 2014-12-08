@@ -349,38 +349,38 @@
             this.addItemsToolStripMenuItem,
             this.manageItemsToolStripMenuItem});
             this.itemsToolStripMenuItem.Name = "itemsToolStripMenuItem";
-            this.itemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.itemsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.itemsToolStripMenuItem.Text = "Items";
             // 
             // addItemsToolStripMenuItem
             // 
             this.addItemsToolStripMenuItem.Name = "addItemsToolStripMenuItem";
-            this.addItemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addItemsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.addItemsToolStripMenuItem.Text = "Add items";
             this.addItemsToolStripMenuItem.Click += new System.EventHandler(this.addItemsToolStripMenuItem_Click);
             // 
             // manageItemsToolStripMenuItem
             // 
             this.manageItemsToolStripMenuItem.Name = "manageItemsToolStripMenuItem";
-            this.manageItemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.manageItemsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.manageItemsToolStripMenuItem.Text = "Manage items";
             // 
             // storeToolStripMenuItem
             // 
             this.storeToolStripMenuItem.Name = "storeToolStripMenuItem";
-            this.storeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.storeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.storeToolStripMenuItem.Text = "Store";
             // 
             // withDrowlToolStripMenuItem
             // 
             this.withDrowlToolStripMenuItem.Name = "withDrowlToolStripMenuItem";
-            this.withDrowlToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.withDrowlToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.withDrowlToolStripMenuItem.Text = "WithDrowl";
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // toolStripButton4
