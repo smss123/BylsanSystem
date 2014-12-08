@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMailServer));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.NewBtn = new System.Windows.Forms.ToolStripButton();
@@ -37,13 +38,31 @@
             this.SentBtn = new Telerik.WinControls.UI.RadButton();
             this.DraftsBtn = new Telerik.WinControls.UI.RadButton();
             this.InBoxBtn = new Telerik.WinControls.UI.RadButton();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.OpenBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.MoveBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.ClearBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.DeleteBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.MessagesListView = new System.Windows.Forms.ListView();
+            this.GroupDisplayMessage = new System.Windows.Forms.GroupBox();
+            this.CloseBtn = new System.Windows.Forms.Button();
+            this.labSubject = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labUserName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labMessageDate = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FoldersGroupBox)).BeginInit();
             this.FoldersGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SentBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DraftsBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InBoxBtn)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
+            this.GroupDisplayMessage.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -77,7 +96,7 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 501);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 415);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(758, 22);
             this.statusStrip1.TabIndex = 1;
@@ -94,7 +113,7 @@
             this.FoldersGroupBox.HeaderText = "Folders";
             this.FoldersGroupBox.Location = new System.Drawing.Point(0, 25);
             this.FoldersGroupBox.Name = "FoldersGroupBox";
-            this.FoldersGroupBox.Size = new System.Drawing.Size(136, 476);
+            this.FoldersGroupBox.Size = new System.Drawing.Size(136, 390);
             this.FoldersGroupBox.TabIndex = 3;
             this.FoldersGroupBox.Text = "Folders";
             this.FoldersGroupBox.ThemeName = "Windows8";
@@ -121,6 +140,7 @@
             this.DraftsBtn.Text = "Drafts";
             this.DraftsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.DraftsBtn.ThemeName = "Windows8";
+            this.DraftsBtn.Click += new System.EventHandler(this.DraftsBtn_Click);
             // 
             // InBoxBtn
             // 
@@ -134,29 +154,176 @@
             this.InBoxBtn.ThemeName = "Windows8";
             this.InBoxBtn.Click += new System.EventHandler(this.InBoxBtn_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OpenBtn,
+            this.MoveBtn,
+            this.ClearBtn,
+            this.toolStripMenuItem1,
+            this.DeleteBtn});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(159, 98);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // OpenBtn
+            // 
+            this.OpenBtn.Name = "OpenBtn";
+            this.OpenBtn.Size = new System.Drawing.Size(158, 22);
+            this.OpenBtn.Text = "Open";
+            this.OpenBtn.Click += new System.EventHandler(this.OpenBtn_Click);
+            // 
+            // MoveBtn
+            // 
+            this.MoveBtn.Name = "MoveBtn";
+            this.MoveBtn.Size = new System.Drawing.Size(158, 22);
+            this.MoveBtn.Text = "Move To Drafts";
+            // 
+            // ClearBtn
+            // 
+            this.ClearBtn.Name = "ClearBtn";
+            this.ClearBtn.Size = new System.Drawing.Size(158, 22);
+            this.ClearBtn.Text = "Clear Selection";
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(155, 6);
+            // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(158, 22);
+            this.DeleteBtn.Text = "Delete Selection";
+            // 
             // MessagesListView
             // 
-            this.MessagesListView.CheckBoxes = true;
+            this.MessagesListView.ContextMenuStrip = this.contextMenuStrip1;
             this.MessagesListView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MessagesListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MessagesListView.FullRowSelect = true;
             this.MessagesListView.GridLines = true;
             this.MessagesListView.Location = new System.Drawing.Point(136, 25);
             this.MessagesListView.Name = "MessagesListView";
-            this.MessagesListView.Size = new System.Drawing.Size(622, 476);
+            this.MessagesListView.Size = new System.Drawing.Size(622, 390);
             this.MessagesListView.TabIndex = 4;
             this.MessagesListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // GroupDisplayMessage
+            // 
+            this.GroupDisplayMessage.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.GroupDisplayMessage.Controls.Add(this.labMessageDate);
+            this.GroupDisplayMessage.Controls.Add(this.label4);
+            this.GroupDisplayMessage.Controls.Add(this.label2);
+            this.GroupDisplayMessage.Controls.Add(this.CloseBtn);
+            this.GroupDisplayMessage.Controls.Add(this.labSubject);
+            this.GroupDisplayMessage.Controls.Add(this.label3);
+            this.GroupDisplayMessage.Controls.Add(this.labUserName);
+            this.GroupDisplayMessage.Controls.Add(this.label1);
+            this.GroupDisplayMessage.Controls.Add(this.richTextBox1);
+            this.GroupDisplayMessage.Location = new System.Drawing.Point(173, 43);
+            this.GroupDisplayMessage.Name = "GroupDisplayMessage";
+            this.GroupDisplayMessage.Size = new System.Drawing.Size(526, 348);
+            this.GroupDisplayMessage.TabIndex = 7;
+            this.GroupDisplayMessage.TabStop = false;
+            this.GroupDisplayMessage.Text = "Selected Message";
+            // 
+            // CloseBtn
+            // 
+            this.CloseBtn.Location = new System.Drawing.Point(433, 319);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(75, 23);
+            this.CloseBtn.TabIndex = 5;
+            this.CloseBtn.Text = "Close";
+            this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click_1);
+            // 
+            // labSubject
+            // 
+            this.labSubject.AutoSize = true;
+            this.labSubject.Location = new System.Drawing.Point(88, 50);
+            this.labSubject.Name = "labSubject";
+            this.labSubject.Size = new System.Drawing.Size(27, 13);
+            this.labSubject.TabIndex = 4;
+            this.labSubject.Text = ".....";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Subject :";
+            // 
+            // labUserName
+            // 
+            this.labUserName.AutoSize = true;
+            this.labUserName.Location = new System.Drawing.Point(88, 28);
+            this.labUserName.Name = "labUserName";
+            this.labUserName.Size = new System.Drawing.Size(27, 13);
+            this.labUserName.TabIndex = 2;
+            this.labUserName.Text = ".....";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "User      :";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.Location = new System.Drawing.Point(6, 94);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(502, 219);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "The Message ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 324);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "At Date : ";
+            // 
+            // labMessageDate
+            // 
+            this.labMessageDate.AutoSize = true;
+            this.labMessageDate.Location = new System.Drawing.Point(88, 324);
+            this.labMessageDate.Name = "labMessageDate";
+            this.labMessageDate.Size = new System.Drawing.Size(27, 13);
+            this.labMessageDate.TabIndex = 8;
+            this.labMessageDate.Text = ".....";
             // 
             // frmMailServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 523);
+            this.ClientSize = new System.Drawing.Size(758, 437);
+            this.Controls.Add(this.GroupDisplayMessage);
             this.Controls.Add(this.MessagesListView);
             this.Controls.Add(this.FoldersGroupBox);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmMailServer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMailServer";
             this.Load += new System.EventHandler(this.frmMailServer_Load);
             this.toolStrip1.ResumeLayout(false);
@@ -166,6 +333,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.SentBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DraftsBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InBoxBtn)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.GroupDisplayMessage.ResumeLayout(false);
+            this.GroupDisplayMessage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,6 +351,22 @@
         private Telerik.WinControls.UI.RadButton SentBtn;
         private Telerik.WinControls.UI.RadButton DraftsBtn;
         private Telerik.WinControls.UI.RadButton InBoxBtn;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem OpenBtn;
+        private System.Windows.Forms.ToolStripMenuItem MoveBtn;
+        private System.Windows.Forms.ToolStripMenuItem ClearBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem DeleteBtn;
         private System.Windows.Forms.ListView MessagesListView;
+        private System.Windows.Forms.GroupBox GroupDisplayMessage;
+        private System.Windows.Forms.Button CloseBtn;
+        private System.Windows.Forms.Label labSubject;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labUserName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labMessageDate;
+        private System.Windows.Forms.Label label4;
     }
 }

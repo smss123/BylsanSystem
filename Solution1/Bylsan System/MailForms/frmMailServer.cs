@@ -23,6 +23,9 @@ namespace Bylsan_System.MailForms
         public frmMailServer()
         {
             InitializeComponent();
+            GroupDisplayMessage.Visible = false;
+
+
         }
         List<Inbox> ls = new List<Inbox>();
         private void frmMailServer_Load(object sender, EventArgs e)
@@ -215,6 +218,65 @@ namespace Bylsan_System.MailForms
             }
             ReSizeFontsAndColor();
             Operation.EndOperation(this);
+        }
+
+
+
+        private void DraftsBtn_Click(object sender, EventArgs e)
+        {
+            Operation.BeginOperation(this);
+
+            MessagesListView.Columns.Clear();
+            CreateListView();
+            MessagesListView.Columns[1].Text = "Sent To / From";
+            var GetAllInBoxMessages = (from u in OutBoxCmd.LoadAllMessages()
+                                       where u.SenderUserID == XamaDataLayer.Security.UserInfo.CurrentUserID
+                                       select u).ToList();
+            MessagesListView.Items.Clear();
+            foreach (var item in GetAllInBoxMessages)
+            {
+                ListViewItem Itm = new ListViewItem(item.ID.ToString());
+
+                Itm.SubItems.Add((from u in UserCmd.GetAllUsers() where u.ID == item.ReciverUserID select u.UserName).First());
+                Itm.SubItems.Add(item.Subject.ToString());
+                Itm.SubItems.Add(item.Status.ToString());
+
+                MessagesListView.Items.Add(Itm);
+            }
+            ReSizeFontsAndColor();
+            Operation.EndOperation(this);
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            MessagesListView.Items.Clear();
+        }
+
+        
+        private void OpenBtn_Click(object sender, EventArgs e)
+        {
+            if (MessagesListView.Items.Count != 0)
+            {
+                GroupDisplayMessage.Visible = true;
+
+                
+
+
+            }
+        }
+
+    
+        private void CloseBtn_Click_1(object sender, EventArgs e)
+        {
+            richTextBox1.Text = "";
+            labUserName.Text = "";
+            labSubject.Text = "";
+            GroupDisplayMessage.Visible = false;
         }
 
 
