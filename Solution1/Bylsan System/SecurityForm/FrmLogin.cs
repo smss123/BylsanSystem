@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.Helper_Classes;
 using XamaDataLayer.Security; 
 namespace Bylsan_System.SecurityForm
 {
-    public partial class FrmLogin : Form
+    public partial class FrmLogin : RadForm
     {
         public FrmLogin()
         {

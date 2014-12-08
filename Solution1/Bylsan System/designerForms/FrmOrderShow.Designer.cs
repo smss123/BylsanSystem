@@ -39,14 +39,18 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.DGVOrders);
             this.groupBox1.Location = new System.Drawing.Point(12, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(661, 490);
+            this.groupBox1.Size = new System.Drawing.Size(816, 534);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Orders";
@@ -55,10 +59,11 @@
             // 
             this.DGVOrders.BackColor = System.Drawing.SystemColors.Control;
             this.DGVOrders.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DGVOrders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVOrders.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.DGVOrders.ForeColor = System.Drawing.SystemColors.ControlText;
             this.DGVOrders.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DGVOrders.Location = new System.Drawing.Point(3, 16);
+            this.DGVOrders.Location = new System.Drawing.Point(3, 18);
             // 
             // DGVOrders
             // 
@@ -67,20 +72,20 @@
             gridViewTextBoxColumn1.FieldName = "ID";
             gridViewTextBoxColumn1.HeaderText = "ID";
             gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn1.Width = 72;
+            gridViewTextBoxColumn1.Width = 90;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "OrderName";
             gridViewTextBoxColumn2.HeaderText = "Order Name";
             gridViewTextBoxColumn2.Name = "OrderName";
-            gridViewTextBoxColumn2.Width = 271;
+            gridViewTextBoxColumn2.Width = 339;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Enter";
             gridViewCommandColumn1.Name = "EnterColm";
-            gridViewCommandColumn1.Width = 109;
+            gridViewCommandColumn1.Width = 136;
             gridViewTextBoxColumn3.FieldName = "OrderDate";
             gridViewTextBoxColumn3.HeaderText = "Order Date";
             gridViewTextBoxColumn3.Name = "OrdDate";
-            gridViewTextBoxColumn3.Width = 182;
+            gridViewTextBoxColumn3.Width = 227;
             this.DGVOrders.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -90,7 +95,7 @@
             this.DGVOrders.Name = "DGVOrders";
             this.DGVOrders.ReadOnly = true;
             this.DGVOrders.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DGVOrders.Size = new System.Drawing.Size(652, 471);
+            this.DGVOrders.Size = new System.Drawing.Size(810, 513);
             this.DGVOrders.TabIndex = 1;
             this.DGVOrders.Text = "radGridView1";
             this.DGVOrders.ThemeName = "Windows8";
@@ -98,9 +103,9 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 493);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 553);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(687, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(833, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -108,15 +113,22 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 515);
+            this.ClientSize = new System.Drawing.Size(833, 575);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmOrderShow";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmOrderShow";
+            this.ThemeName = "VisualStudio2012Light";
             this.Load += new System.EventHandler(this.FrmOrderShow_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

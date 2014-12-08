@@ -72,12 +72,14 @@
             this.suppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expensesShowBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.expensesShowBtn = new System.Windows.Forms.ToolStripButton();
+            this.BtnFactory = new System.Windows.Forms.ToolStripButton();
+            this.recivedOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -101,10 +103,11 @@
             this.BtnDesinger,
             this.toolStripButton3,
             this.toolStripButton4,
-            this.expensesShowBtn});
+            this.expensesShowBtn,
+            this.BtnFactory});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(936, 37);
+            this.toolStrip1.Size = new System.Drawing.Size(1141, 37);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -178,7 +181,8 @@
             this.BranchDropDownButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BranchDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addBranchBtn,
-            this.ManagementBranchBtn});
+            this.ManagementBranchBtn,
+            this.recivedOrdersToolStripMenuItem});
             this.BranchDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("BranchDropDownButton.Image")));
             this.BranchDropDownButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.BranchDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -447,13 +451,22 @@
             this.manageSupplierToolStripMenuItem.Text = "Manage Supplier";
             this.manageSupplierToolStripMenuItem.Click += new System.EventHandler(this.manageSupplierToolStripMenuItem_Click);
             // 
+            // expensesShowBtn
+            // 
+            this.expensesShowBtn.Image = ((System.Drawing.Image)(resources.GetObject("expensesShowBtn.Image")));
+            this.expensesShowBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.expensesShowBtn.Name = "expensesShowBtn";
+            this.expensesShowBtn.Size = new System.Drawing.Size(74, 34);
+            this.expensesShowBtn.Text = "Expenses";
+            this.expensesShowBtn.Click += new System.EventHandler(this.expensesShowBtn_Click);
+            // 
             // toolStrip2
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1});
             this.toolStrip2.Location = new System.Drawing.Point(0, 37);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(936, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(1141, 25);
             this.toolStrip2.TabIndex = 2;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -470,25 +483,32 @@
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 584);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(936, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1141, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // expensesShowBtn
+            // BtnFactory
             // 
-            this.expensesShowBtn.Image = ((System.Drawing.Image)(resources.GetObject("expensesShowBtn.Image")));
-            this.expensesShowBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.expensesShowBtn.Name = "expensesShowBtn";
-            this.expensesShowBtn.Size = new System.Drawing.Size(74, 34);
-            this.expensesShowBtn.Text = "Expenses";
-            this.expensesShowBtn.Click += new System.EventHandler(this.expensesShowBtn_Click);
+            this.BtnFactory.Image = ((System.Drawing.Image)(resources.GetObject("BtnFactory.Image")));
+            this.BtnFactory.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BtnFactory.Name = "BtnFactory";
+            this.BtnFactory.Size = new System.Drawing.Size(66, 34);
+            this.BtnFactory.Text = "Factory";
+            this.BtnFactory.Click += new System.EventHandler(this.BtnFactory_Click);
+            // 
+            // recivedOrdersToolStripMenuItem
+            // 
+            this.recivedOrdersToolStripMenuItem.Name = "recivedOrdersToolStripMenuItem";
+            this.recivedOrdersToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.recivedOrdersToolStripMenuItem.Text = "Recived Orders";
+            this.recivedOrdersToolStripMenuItem.Click += new System.EventHandler(this.recivedOrdersToolStripMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(936, 606);
+            this.ClientSize = new System.Drawing.Size(1141, 606);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
@@ -563,5 +583,7 @@
         private System.Windows.Forms.ToolStripMenuItem addSupplierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageSupplierToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton expensesShowBtn;
+        private System.Windows.Forms.ToolStripButton BtnFactory;
+        private System.Windows.Forms.ToolStripMenuItem recivedOrdersToolStripMenuItem;
     }
 }

@@ -12,9 +12,11 @@ using XamaDataLayer.Helper_Classes;
 using System.Threading;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
+using Xprema.XExtention;
+using Telerik.WinControls.UI;
 namespace Bylsan_System.designerForms
 {
-    public partial class FrmOrderProductShow : Form
+    public partial class FrmOrderProductShow : RadForm
     {
         public FrmOrderProductShow()
         {
@@ -28,7 +30,7 @@ namespace Bylsan_System.designerForms
         private void PopulateGrd()
         {
             Operation.BeginOperation(this);
-            var q = OrderProductsCmd.GetAllByOrderID(TaregtOrder);
+            var q = OrderProductsCmd.GetAllByOrderID(TaregtOrder).Where(p=>p.Status.Contains("To Deliver"));
             this.Invoke((MethodInvoker)delegate 
             {
                 DGVProducts.DataSource = q; 
@@ -52,11 +54,9 @@ namespace Bylsan_System.designerForms
             Operation.BeginOperation(this);
                 if (DGVProducts.Rows.Count != 0)
                 {
-                    this.Cursor = Cursors.WaitCursor;
+                   
                     AttachThread = new Thread(LoadAttachments);
                     AttachThread.Start();
-
-                    this.Cursor = Cursors.Default;
                 }
                 Operation.EndOperation (this);
         }
@@ -66,42 +66,50 @@ namespace Bylsan_System.designerForms
             //SelectedProductPhotoBox.Image =null;
             //lblPoductName.Text = "";
             //lblPrice.Text = "";
-
-            int prdid = int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString());
-            imageList1.Images.Clear();
-            this.Invoke((MethodInvoker)delegate
+            try
             {
-              
-                PhotoBox.Image = null;
-               
-                //============================================
-                
-                var lst = (from p in OrderProuctAttachmentCmd.GetOneAttachmentByOrderProductID(prdid ) select p).ToList ();
-                foreach (var item in lst )
+                Operation.BeginOperation(this);
+                int prdid = int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString());
+                imageList1.Images.Clear();
+                var lst = (from p in OrderProuctAttachmentCmd.GetOneAttachmentByOrderProductID(prdid) select p).ToList();
+                this.Invoke((MethodInvoker)delegate
                 {
-                    TxtDescription.Text = item.Description;
-                    PhotoBox.Image = item.imageX;
-                    imageList1.Images.Add(item.imageX);
-                   
-                    IDImageAddress = item.ID;
-                   
-                }
-               //==============================================
-                //-- Display Selected Product Information : 
-                var getcurrentProductInfo = ProductsCmd.GetProductByID(prdid);
-                foreach (var prd in getcurrentProductInfo )
-                {
-                    SelectedProductPhotoBox.Image = prd.Img;
-                    lblPoductName.Text = prd.Product_Name;
-                    lblPrice.Text = prd.ProductPrice.ToString();
-                }
 
-                //=============================================
-            });
-          
-            AttachThread.Abort();
-            
+                    PhotoBox.Image = null;
 
+                    //============================================
+
+                   
+                    foreach (var item in lst)
+                    {
+                        TxtDescription.Text = item.Description;
+                        PhotoBox.Image = item.imageX;
+                        imageList1.Images.Add(item.imageX);
+
+                        IDImageAddress = item.ID;
+
+                    }
+                    //==============================================
+                    //-- Display Selected Product Information : 
+                    var getcurrentProductInfo = ProductsCmd.GetProductByID(prdid);
+                    foreach (var prd in getcurrentProductInfo)
+                    {
+                        SelectedProductPhotoBox.Image = prd.Img;
+                        lblPoductName.Text = prd.Product_Name;
+                        lblPrice.Text = prd.ProductPrice.ToString();
+                    }
+
+                    //=============================================
+                });
+
+                AttachThread.Abort();
+
+            }catch(System.NullReferenceException ex)
+            {
+                Operation.EndOperation(this);
+                return;
+            }
+            Operation.EndOperation(this);
         }
 
    

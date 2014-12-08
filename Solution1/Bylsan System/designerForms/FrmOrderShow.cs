@@ -11,9 +11,10 @@ using System.Threading;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Helper_Classes;
+using Telerik.WinControls.UI;
 namespace Bylsan_System.designerForms
 {
-    public partial class FrmOrderShow : Form
+    public partial class FrmOrderShow : RadForm
     {
         public FrmOrderShow()
         {
@@ -80,9 +81,16 @@ namespace Bylsan_System.designerForms
         private void LoadingCustomerData()
         {
             this.Invoke((MethodInvoker)delegate
+           {
+               FrmProdShow.labCustomerName.Text = "Loading Info ..";
+               FrmProdShow.labCustomerPhone.Text = "Loading Info ..";
+           });
+            var Lst = (from c in OrdersCmd.GetAllOrderByID(SelectedOrderID) select c).Single();
+            var cust = (from c in CustomersCmd.GetAllCustmers() where c.ID == Lst.CustomerID select c).Single();
+
+            this.Invoke((MethodInvoker)delegate
             {
-             var    Lst = ( from c in  OrdersCmd.GetAllOrderByID(SelectedOrderID) select c   ) .Single ();
-             var cust = (from c in CustomersCmd.GetAllCustmers () where c .ID == Lst .CustomerID  select c).Single();
+             
              FrmProdShow.labCustomerName.Text = cust.CustomerName.ToString();
              FrmProdShow.labCustomerPhone .Text = cust.PhoneNumber .ToString();
             });
