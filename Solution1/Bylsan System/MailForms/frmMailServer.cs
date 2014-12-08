@@ -138,8 +138,9 @@ namespace Bylsan_System.MailForms
         #region "    ^^^ Create MessagesListView   "
         void CreateListView()
         {
+            MessagesListView.Columns.Clear();
             MessagesListView.View = View.Details;
-            MessagesListView.Columns.Add("SenderID", 50, HorizontalAlignment.Center); 
+            MessagesListView.Columns.Add("Serial ", 50, HorizontalAlignment.Center); 
             MessagesListView.Columns.Add("From", 150, HorizontalAlignment.Center);
             MessagesListView.Columns.Add("Subject", 300, HorizontalAlignment.Center);
             MessagesListView.Columns.Add("Status", 100, HorizontalAlignment.Center);
@@ -160,10 +161,65 @@ namespace Bylsan_System.MailForms
                 Itm.SubItems.Add(item .Status .ToString ());
 
                 MessagesListView.Items.Add(Itm);
+                //=======================================
+
+                ReSizeFontsAndColor();
             }
         }
 
+        void ReSizeFontsAndColor()
+        {
+            if (MessagesListView.Items.Count != 0)
+            {
+                foreach (ListViewItem  Itm in MessagesListView .Items )
+                {
+                    if (Itm.SubItems[3].Text == "UnRead")
+                    {
+                        Itm.ForeColor = Color.YellowGreen; 
+                        Itm.BackColor = Color.Blue;
+                        Itm.Font = new Font("Times New Roman", 12, FontStyle.Bold);
+                    }
+                }
+            }
+        }
         #endregion 
+
+        private void InBoxBtn_Click(object sender, EventArgs e)
+        {
+            MessagesListView.Columns.Clear();
+            CreateListView();
+            MessagesListView.Columns[1].Text = "From";
+            frmMailServer_Load(sender, e);
+        }
+
+        private void SentBtn_Click(object sender, EventArgs e)
+        {
+            Operation.BeginOperation(this);
+
+            MessagesListView.Columns.Clear();
+            CreateListView();
+            MessagesListView.Columns[1].Text = "Sent To";
+            var GetAllInBoxMessages = (from u in OutBoxCmd.LoadAllMessages ()
+                                       where u.SenderUserID  == XamaDataLayer.Security.UserInfo.CurrentUserID 
+                                       select u).ToList();
+            MessagesListView.Items.Clear();
+            foreach (var item in GetAllInBoxMessages)
+            {
+                ListViewItem Itm = new ListViewItem(item.ID.ToString());
+
+                Itm.SubItems.Add((from u in UserCmd.GetAllUsers() where u.ID == item.ReciverUserID   select u.UserName).First());
+                Itm.SubItems.Add(item.Subject.ToString());
+                Itm.SubItems.Add(item.Status.ToString());
+
+                MessagesListView.Items.Add(Itm);
+            }
+            ReSizeFontsAndColor();
+            Operation.EndOperation(this);
+        }
+
+
+
+
 
     }
 }

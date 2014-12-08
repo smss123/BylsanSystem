@@ -109,6 +109,7 @@
             this.SentBtn.Text = "Sent";
             this.SentBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SentBtn.ThemeName = "Windows8";
+            this.SentBtn.Click += new System.EventHandler(this.SentBtn_Click);
             // 
             // DraftsBtn
             // 
@@ -131,6 +132,7 @@
             this.InBoxBtn.Text = "Inbox";
             this.InBoxBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.InBoxBtn.ThemeName = "Windows8";
+            this.InBoxBtn.Click += new System.EventHandler(this.InBoxBtn_Click);
             // 
             // MessagesListView
             // 

@@ -51,7 +51,11 @@ namespace XamaDataLayer.MailServer
         public static List<OutBox> LoadAllMessages()
         {
             db = new DbDataContext();
-            return db.OutBoxes.ToList();
+            var lst = (from m in db.OutBoxes
+                       orderby m.DateOfMessage descending 
+                       where m.Status == "Sent"
+                       select m).ToList();
+            return lst;
         }
 
         public static List<OutBox> LoadAllMessagesByDate( DateTime dat)

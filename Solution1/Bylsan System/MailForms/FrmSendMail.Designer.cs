@@ -76,10 +76,10 @@
             // TheMessageBox
             // 
             this.TheMessageBox.BackColor = System.Drawing.SystemColors.Info;
-            this.TheMessageBox.Location = new System.Drawing.Point(56, 104);
+            this.TheMessageBox.Location = new System.Drawing.Point(69, 104);
             this.TheMessageBox.Multiline = true;
             this.TheMessageBox.Name = "TheMessageBox";
-            this.TheMessageBox.Size = new System.Drawing.Size(411, 183);
+            this.TheMessageBox.Size = new System.Drawing.Size(398, 183);
             this.TheMessageBox.TabIndex = 6;
             // 
             // SubjectLabl
@@ -103,18 +103,18 @@
             // SubjectBox
             // 
             this.SubjectBox.BackColor = System.Drawing.SystemColors.Info;
-            this.SubjectBox.Location = new System.Drawing.Point(54, 72);
+            this.SubjectBox.Location = new System.Drawing.Point(69, 72);
             this.SubjectBox.Name = "SubjectBox";
-            this.SubjectBox.Size = new System.Drawing.Size(414, 20);
+            this.SubjectBox.Size = new System.Drawing.Size(399, 20);
             this.SubjectBox.TabIndex = 3;
             // 
             // UsersAutoCompleteBox
             // 
             this.UsersAutoCompleteBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.UsersAutoCompleteBox.BackColor = System.Drawing.SystemColors.Info;
-            this.UsersAutoCompleteBox.Location = new System.Drawing.Point(49, 30);
+            this.UsersAutoCompleteBox.Location = new System.Drawing.Point(69, 30);
             this.UsersAutoCompleteBox.Name = "UsersAutoCompleteBox";
-            this.UsersAutoCompleteBox.Size = new System.Drawing.Size(419, 26);
+            this.UsersAutoCompleteBox.Size = new System.Drawing.Size(399, 26);
             this.UsersAutoCompleteBox.TabIndex = 2;
             this.UsersAutoCompleteBox.Text = "Select Users;";
             this.UsersAutoCompleteBox.ThemeName = "Windows8";
