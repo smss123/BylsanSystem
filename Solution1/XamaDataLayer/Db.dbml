@@ -217,7 +217,7 @@
   </Table>
   <Table Name="MailServer.Inbox" Member="Inboxes">
     <Type Name="Inbox">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Subject" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Column Name="MessageText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="DateOfMessage" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />

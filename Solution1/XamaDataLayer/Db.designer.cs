@@ -4994,7 +4994,7 @@ namespace XamaDataLayer
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID
 		{
 			get
@@ -8164,7 +8164,7 @@ namespace XamaDataLayer
 		
 		private System.Nullable<double> _ItemPrice;
 		
-		private  Image _ItemIcon;//System.Data.Linq.Binary
+		private Image _ItemIcon;
 		
 		private EntitySet<BillItem> _BillItems;
 		
