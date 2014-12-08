@@ -262,10 +262,52 @@ namespace Bylsan_System.MailForms
         {
             if (MessagesListView.Items.Count != 0)
             {
-                GroupDisplayMessage.Visible = true;
+              
+                int Indx = int .Parse (MessagesListView.SelectedItems[0].Text.ToString ()) ;
+              //================================================================================
+                if (MessagesListView.Columns[1].Text == "From")
+                {
+                    var GetMessage = (from m in InBoxCmd.GetAllMessages()
+                                      where m.ID == Indx 
+                                      && m.ReciverUserID == XamaDataLayer .Security .UserInfo .CurrentUserID 
+                                      && m.Status == "UnRead"
+                                      select m).ToList ();
+                    foreach (var item in GetMessage )
+                    {
+                        labUserName.Text = item.SenderUserID.ToString();
+                        labSubject.Text = item.Subject;
+                        richTextBox1.Text = item.MessageText.ToString();
+                        labMessageDate.Text = item.DateOfMessage.ToString();
 
+                    }
+              
+                    GroupDisplayMessage.Visible = true;
+                }
+                //====================================================
+                if (MessagesListView.Columns[1].Text == "Sent To")
+                {
+                    var GetMessage = (from m in OutBoxCmd .LoadAllMessages ()
+                                      where m.ID == Indx
+                                      && m.SenderUserID  == XamaDataLayer.Security.UserInfo.CurrentUserID
+                                      && m.Status == "Sent"
+                                      select m).ToList();
+                    foreach (var item in GetMessage)
+                    {
+                        labUserName.Text = item.SenderUserID.ToString();
+                        labSubject.Text = item.Subject;
+                        richTextBox1.Text = item.MessageText.ToString();
+                        labMessageDate.Text = item.DateOfMessage.ToString();
+
+                    }
+
+                    GroupDisplayMessage.Visible = true;
+                }
+                //===================================================
+                if (MessagesListView.Columns[1].Text == "Sent To / From")
+                {
+
+                }
                 
-
 
             }
         }
@@ -277,6 +319,39 @@ namespace Bylsan_System.MailForms
             labUserName.Text = "";
             labSubject.Text = "";
             GroupDisplayMessage.Visible = false;
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            if (MessagesListView.Items.Count != 0)
+            {
+
+                int Indx = int.Parse(MessagesListView.SelectedItems[0].Text.ToString());
+                //================================================================================
+                if (MessagesListView.Columns[1].Text == "From")
+                {
+                 if(MessageBox .Show ("Are You Sure ?","Delete Option",MessageBoxButtons.YesNo) ==  System.Windows.Forms.DialogResult.Yes  ){
+                     InBoxCmd.DeleteMsg(Indx);
+                     frmMailServer_Load(sender, e);
+                 }
+                }
+                //====================================================
+                if (MessagesListView.Columns[1].Text == "Sent To")
+                {
+                    if (MessageBox.Show("Are You Sure ?", "Delete Option", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes )
+                    {
+                        OutBoxCmd.DeleteMsg(Indx);
+                        frmMailServer_Load(sender, e);
+                    }
+                }
+                //===================================================
+                if (MessagesListView.Columns[1].Text == "Sent To / From")
+                {
+
+                }
+
+
+            }
         }
 
 

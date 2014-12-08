@@ -46,15 +46,15 @@
             this.DeleteBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.MessagesListView = new System.Windows.Forms.ListView();
             this.GroupDisplayMessage = new System.Windows.Forms.GroupBox();
+            this.labMessageDate = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.CloseBtn = new System.Windows.Forms.Button();
             this.labSubject = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.labUserName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labMessageDate = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FoldersGroupBox)).BeginInit();
             this.FoldersGroupBox.SuspendLayout();
@@ -175,6 +175,7 @@
             // 
             // MoveBtn
             // 
+            this.MoveBtn.Enabled = false;
             this.MoveBtn.Name = "MoveBtn";
             this.MoveBtn.Size = new System.Drawing.Size(158, 22);
             this.MoveBtn.Text = "Move To Drafts";
@@ -196,6 +197,7 @@
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(158, 22);
             this.DeleteBtn.Text = "Delete Selection";
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // MessagesListView
             // 
@@ -212,7 +214,7 @@
             // 
             // GroupDisplayMessage
             // 
-            this.GroupDisplayMessage.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.GroupDisplayMessage.BackColor = System.Drawing.Color.Gray;
             this.GroupDisplayMessage.Controls.Add(this.labMessageDate);
             this.GroupDisplayMessage.Controls.Add(this.label4);
             this.GroupDisplayMessage.Controls.Add(this.label2);
@@ -229,6 +231,34 @@
             this.GroupDisplayMessage.TabStop = false;
             this.GroupDisplayMessage.Text = "Selected Message";
             // 
+            // labMessageDate
+            // 
+            this.labMessageDate.AutoSize = true;
+            this.labMessageDate.ForeColor = System.Drawing.Color.Lime;
+            this.labMessageDate.Location = new System.Drawing.Point(88, 324);
+            this.labMessageDate.Name = "labMessageDate";
+            this.labMessageDate.Size = new System.Drawing.Size(27, 13);
+            this.labMessageDate.TabIndex = 8;
+            this.labMessageDate.Text = ".....";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 324);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "At Date : ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(28, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "The Message ";
+            // 
             // CloseBtn
             // 
             this.CloseBtn.Location = new System.Drawing.Point(433, 319);
@@ -242,7 +272,8 @@
             // labSubject
             // 
             this.labSubject.AutoSize = true;
-            this.labSubject.Location = new System.Drawing.Point(88, 50);
+            this.labSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.labSubject.Location = new System.Drawing.Point(110, 47);
             this.labSubject.Name = "labSubject";
             this.labSubject.Size = new System.Drawing.Size(27, 13);
             this.labSubject.TabIndex = 4;
@@ -251,7 +282,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 50);
+            this.label3.Location = new System.Drawing.Point(28, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 3;
@@ -260,7 +291,8 @@
             // labUserName
             // 
             this.labUserName.AutoSize = true;
-            this.labUserName.Location = new System.Drawing.Point(88, 28);
+            this.labUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.labUserName.Location = new System.Drawing.Point(110, 25);
             this.labUserName.Name = "labUserName";
             this.labUserName.Size = new System.Drawing.Size(27, 13);
             this.labUserName.TabIndex = 2;
@@ -269,7 +301,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 28);
+            this.label1.Location = new System.Drawing.Point(28, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 1;
@@ -284,33 +316,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(502, 219);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "The Message ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 324);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "At Date : ";
-            // 
-            // labMessageDate
-            // 
-            this.labMessageDate.AutoSize = true;
-            this.labMessageDate.Location = new System.Drawing.Point(88, 324);
-            this.labMessageDate.Name = "labMessageDate";
-            this.labMessageDate.Size = new System.Drawing.Size(27, 13);
-            this.labMessageDate.TabIndex = 8;
-            this.labMessageDate.Text = ".....";
             // 
             // frmMailServer
             // 
