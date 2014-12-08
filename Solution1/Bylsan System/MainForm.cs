@@ -16,8 +16,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
+
 using Bylsan_System.SellSystemForms;
-using Bylsan_System.FactoryForms;
+using Bylsan_System.SellSystemForms;
 namespace Bylsan_System
 {
     public partial class MainForm : RadForm
@@ -193,16 +194,16 @@ namespace Bylsan_System
             frm.Show();
         }
 
-        private void BtnFactory_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            FrmFactoryOrderShow frm = new FrmFactoryOrderShow();
-            frm.ShowDialog();
+            FrmAddSales frm = new FrmAddSales();
+            frm.Show();
         }
 
-        private void recivedOrdersToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
-            FrmDeliveryOrder frm = new FrmDeliveryOrder();
-            frm.ShowDialog();
+            FrmAddSellItem frm = new FrmAddSellItem();
+            frm.Show();
         }
     }
 }
