@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
@@ -30,6 +31,16 @@ namespace Bylsan_System.EmployeeForms
                 frm.TragetEmployee = (Employee)EmployeeGridView.CurrentRow.DataBoundItem;
                 frm.ShowDialog();
                 LoadEmployee();
+            }
+            if (col == 10)
+            {
+                if (RadMessageBox.Show("Sure To Delete?","Delete",MessageBoxButtons.YesNo)==System.Windows.Forms.DialogResult.Yes)
+                {
+                    Operation.BeginOperation(this);
+                    EmployeesCmd.DeleteEmployee(((Employee)EmployeeGridView.CurrentRow.DataBoundItem).ID);
+                    Operation.ShowToustOk("Deleted", this);
+                    Operation.EndOperation(this);
+                }
             }
         }
 
@@ -60,6 +71,11 @@ namespace Bylsan_System.EmployeeForms
                 toolStrip1.Text = "Compelete Load .... ";
 
             });
+        }
+
+        private void EmployeeGridView_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

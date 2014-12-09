@@ -20,6 +20,7 @@ using Telerik.WinControls.UI;
 using Bylsan_System.MailForms;
 
 using Bylsan_System.SellSystemForms;
+using Bylsan_System.SenarioAddOrderForms;
 
 namespace Bylsan_System
 {
@@ -199,14 +200,12 @@ namespace Bylsan_System
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            FrmAddSales frm = new FrmAddSales();
-            frm.Show();
+            
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            FrmAddSellItem frm = new FrmAddSellItem();
-            frm.Show();
+           
         }
         #endregion 
 
@@ -218,6 +217,31 @@ namespace Bylsan_System
         private void InBoxMassagesBtn_Click(object sender, EventArgs e)
         {
          
+        }
+
+        private void btnFactory_Click(object sender, EventArgs e)
+        {
+            FactoryForms.FrmFactoryOrderShow frm = new FactoryForms.FrmFactoryOrderShow();
+            frm.ShowDialog();
+
+        }
+
+        private void addIteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAddSellItem frm = new FrmAddSellItem();
+            frm.Show();
+        }
+
+        private void salesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAddSales frm = new FrmAddSales();
+            frm.Show();
+        }
+
+        private void quotationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPrintQuotation frm = new FrmPrintQuotation();
+            frm.ShowDialog();
         }
     }
 }
