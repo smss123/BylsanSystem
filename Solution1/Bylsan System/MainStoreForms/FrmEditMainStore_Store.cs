@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls;
 using Telerik.WinControls.Data;
 using Telerik.WinControls.UI;
 using XamaDataLayer;
@@ -19,6 +20,7 @@ namespace Bylsan_System.MainStoreForms
         public FrmEditMainStore_Store()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("VisualStudio2012Light");
         }
         public int XStorId { get; set; }
         public Store treagtStore { get; set; }
@@ -55,7 +57,11 @@ namespace Bylsan_System.MainStoreForms
         {
             FillComboBoxItme();
             XStorId = treagtStore.ID;
-       //     ItemColumnComboBox.Text=treagtStore.
+            ItemColumnComboBox.Text = treagtStore.Item.ItemName;
+            AvailableQtyTextBox.Text = treagtStore.AvailableQty.ToString();
+            DescriptiontextBox.Text = treagtStore.Description;
+
+   
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -95,28 +101,29 @@ namespace Bylsan_System.MainStoreForms
             }
             #endregion
 
-          
+
             Operation.BeginOperation(this);
 
-
-            Store tb = new Store
+            if (RadMessageBox.Show(this, "Do you Want To Save", "Save Changes", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
-                ID =XStorId,
-                ItemID = int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
-                AvailableQty = int.Parse(AvailableQtyTextBox.Text),
-                Description = DescriptiontextBox.Text
+                Store tb = new Store
+                {
+                    ID = XStorId,
+                    ItemID = int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
+                    AvailableQty = int.Parse(AvailableQtyTextBox.Text),
+                    Description = DescriptiontextBox.Text
 
 
-            };
-            StoreCmd.EditStore(tb);
+                };
+                StoreCmd.EditStore(tb);
 
-            Operation.ShowToustOk("Store Saved", this);
-           
-            Operation.EndOperation(this);
+                Operation.ShowToustOk("Store Saved", this);
+
+                Operation.EndOperation(this);
 
 
+            }
         }
-
         private void AvailableQtyTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);

@@ -17,10 +17,10 @@ namespace XamaDataLayer.Main_Store
            return true;
        }
 
-       public Supplier EditSupplier(Supplier tb, int xid)
+       public static Supplier EditSupplier(Supplier tb)
        {
            db = new DbDataContext();
-           var q = db.Suppliers.Where(d => d.ID == xid).SingleOrDefault();
+           var q = db.Suppliers.Where(d => d.ID == tb.ID).SingleOrDefault();
            q.SupplierName = tb.SupplierName;
            q.SupplierPhone = tb.SupplierPhone;
            q.Address = tb.Address;

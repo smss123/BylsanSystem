@@ -18,7 +18,7 @@ namespace XamaDataLayer.Main_Store
             return  true ;
         }
 
-        public StoreManager EditStoreManager(StoreManager tb)
+        public static StoreManager EditStoreManager(StoreManager tb)
         {
             db = new DbDataContext();
 
@@ -27,7 +27,7 @@ namespace XamaDataLayer.Main_Store
             q.Price = tb.Price;
             q.QtyInOrOut = tb.QtyInOrOut;
             q.StoreID = tb.StoreID;
-            q.DateOfProcess = tb.DateOfProcess;
+         //   q.DateOfProcess = tb.DateOfProcess;
             q.ProcessType = tb.ProcessType;
             q.Description = tb.Description;
 
