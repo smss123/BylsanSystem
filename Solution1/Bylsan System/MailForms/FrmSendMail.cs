@@ -101,7 +101,7 @@ namespace Bylsan_System.MailForms
               foreach (var item in UsersAutoCompleteBox.Items)
               {
                   InBoxTb = new Inbox() 
-                  { 
+                  {  
                       Subject  =  SubjectBox.Text ,
                        DateOfMessage = DateTime .Now ,
                         MessageText = TheMessageBox.Text ,

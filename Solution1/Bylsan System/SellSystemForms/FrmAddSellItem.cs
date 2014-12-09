@@ -78,6 +78,7 @@ namespace Bylsan_System.SellSystemForms
                     {
                         ((TextBox)item).Clear();
                     }
+                    pictureBox1.Image = null;
                 }
 
             }

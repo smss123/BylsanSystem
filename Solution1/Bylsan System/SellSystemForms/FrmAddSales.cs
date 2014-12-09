@@ -87,6 +87,7 @@ namespace Bylsan_System.SellSystemForms
                             {
                                 DGVSellItems.Rows[i].Cells[4].Value = int.Parse(DGVSellItems.Rows[i].Cells[4].Value.ToString()) + 1;
                                 DGVSellItems.Rows[i].Cells[3].Value = (int.Parse(ListItems.SelectedItems[0].SubItems[3].Text) + int.Parse(DGVSellItems.Rows[i].Cells[3].Value.ToString()));
+                                CalcTotal();
                                 return;
                             }
                         }
@@ -101,8 +102,10 @@ namespace Bylsan_System.SellSystemForms
                                 ListItems.SelectedItems[0].SubItems[3].Text,
                                 "1"
                             });
+
+                        CalcTotal();
                 }
-                CalcTotal();
+               
                                                 
        
             }

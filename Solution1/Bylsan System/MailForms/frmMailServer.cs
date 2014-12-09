@@ -40,89 +40,89 @@ namespace Bylsan_System.MailForms
         #region "    ^^^ UnUsed    "
         private void LoadEmail()
         {
-            ls.Add(new Inbox()
-            {
-                DateOfMessage = DateTime.Now,
-                ID = 1,
-                MessageText = "Message Here Now",
-                ReciverUserID = 1,
-                SenderUserID = 1,
-                Status = "NotRead",
-                Subject = "Hi This subject 1"
-            });
+            //ls.Add(new Inbox()
+            //{
+            //    DateOfMessage = DateTime.Now,
+            //    ID = 1,
+            //    MessageText = "Message Here Now",
+            //    ReciverUserID = 1,
+            //    SenderUserID = 1,
+            //    Status = "NotRead",
+            //    Subject = "Hi This subject 1"
+            //});
 
-            ls.Add(new Inbox()
-            {
-                DateOfMessage = DateTime.Now,
-                ID = 1,
-                MessageText = "Message Here Now",
-                ReciverUserID = 1,
-                SenderUserID = 1,
-                Status = "NotRead",
-                Subject = "Hi This subject 2"
-            });
-            ls.Add(new Inbox()
-            {
-                DateOfMessage = DateTime.Now,
-                ID = 1,
-                MessageText = "Message Here Now",
-                ReciverUserID = 1,
-                SenderUserID = 1,
-                Status = "NotRead",
-                Subject = "Hi This subject 3"
-            });
+            //ls.Add(new Inbox()
+            //{
+            //    DateOfMessage = DateTime.Now,
+            //    ID = 1,
+            //    MessageText = "Message Here Now",
+            //    ReciverUserID = 1,
+            //    SenderUserID = 1,
+            //    Status = "NotRead",
+            //    Subject = "Hi This subject 2"
+            //});
+            //ls.Add(new Inbox()
+            //{
+            //    DateOfMessage = DateTime.Now,
+            //    ID = 1,
+            //    MessageText = "Message Here Now",
+            //    ReciverUserID = 1,
+            //    SenderUserID = 1,
+            //    Status = "NotRead",
+            //    Subject = "Hi This subject 3"
+            //});
 
-            ls.Add(new Inbox()
-            {
-                DateOfMessage = DateTime.Now,
-                ID = 1,
-                MessageText = "Message Here Now",
-                ReciverUserID = 1,
-                SenderUserID = 1,
-                Status = "NotRead",
-                Subject = "Hi This subject 4"
-            });
+            //ls.Add(new Inbox()
+            //{
+            //    DateOfMessage = DateTime.Now,
+            //    ID = 1,
+            //    MessageText = "Message Here Now",
+            //    ReciverUserID = 1,
+            //    SenderUserID = 1,
+            //    Status = "NotRead",
+            //    Subject = "Hi This subject 4"
+            //});
 
-            ls.Add(new Inbox()
-            {
-                DateOfMessage = DateTime.Now,
-                ID = 1,
-                MessageText = "Message Here Now",
-                ReciverUserID = 1,
-                SenderUserID = 1,
-                Status = "Readed",
-                Subject = "Hi This subject 5"
-            });
-            ls.Add(new Inbox()
-            {
-                DateOfMessage = DateTime.Now,
-                ID = 1,
-                MessageText = "Message Here Now",
-                ReciverUserID = 1,
-                SenderUserID = 1,
-                Status = "Readed",
-                Subject = "Hi This subject 6"
-            });
-            ls.Add(new Inbox()
-            {
-                DateOfMessage = DateTime.Now,
-                ID = 1,
-                MessageText = "Message Here Now",
-                ReciverUserID = 1,
-                SenderUserID = 1,
-                Status = "Readed",
-                Subject = "Hi This subject 7"
-            });
-            ls.Add(new Inbox()
-            {
-                DateOfMessage = DateTime.Now,
-                ID = 1,
-                MessageText = "Message Here Now",
-                ReciverUserID = 1,
-                SenderUserID = 1,
-                Status = "Readed",
-                Subject = "Hi This subject 8"
-            });
+            //ls.Add(new Inbox()
+            //{
+            //    DateOfMessage = DateTime.Now,
+            //    ID = 1,
+            //    MessageText = "Message Here Now",
+            //    ReciverUserID = 1,
+            //    SenderUserID = 1,
+            //    Status = "Readed",
+            //    Subject = "Hi This subject 5"
+            //});
+            //ls.Add(new Inbox()
+            //{
+            //    DateOfMessage = DateTime.Now,
+            //    ID = 1,
+            //    MessageText = "Message Here Now",
+            //    ReciverUserID = 1,
+            //    SenderUserID = 1,
+            //    Status = "Readed",
+            //    Subject = "Hi This subject 6"
+            //});
+            //ls.Add(new Inbox()
+            //{
+            //    DateOfMessage = DateTime.Now,
+            //    ID = 1,
+            //    MessageText = "Message Here Now",
+            //    ReciverUserID = 1,
+            //    SenderUserID = 1,
+            //    Status = "Readed",
+            //    Subject = "Hi This subject 7"
+            //});
+            //ls.Add(new Inbox()
+            //{
+            //    DateOfMessage = DateTime.Now,
+            //    ID = 1,
+            //    MessageText = "Message Here Now",
+            //    ReciverUserID = 1,
+            //    SenderUserID = 1,
+            //    Status = "Readed",
+            //    Subject = "Hi This subject 8"
+            //});
         }
         #endregion 
 

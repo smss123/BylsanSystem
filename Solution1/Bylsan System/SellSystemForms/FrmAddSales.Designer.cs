@@ -140,11 +140,14 @@
             // 
             // BillCostBox
             // 
+            this.BillCostBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BillCostBox.ForeColor = System.Drawing.Color.Red;
             this.BillCostBox.Location = new System.Drawing.Point(635, 209);
             this.BillCostBox.Name = "BillCostBox";
             this.BillCostBox.ReadOnly = true;
-            this.BillCostBox.Size = new System.Drawing.Size(82, 20);
+            this.BillCostBox.Size = new System.Drawing.Size(82, 22);
             this.BillCostBox.TabIndex = 2;
+            this.BillCostBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Okeybtn
             // 
