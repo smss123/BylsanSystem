@@ -18,13 +18,14 @@ namespace XamaDataLayer.Main_Store
         }
 
 
-        public StoreWithDrawal EditStoreWithDrawal(StoreWithDrawal tb, int xid)
+        public static StoreWithDrawal EditStoreWithDrawal(StoreWithDrawal tb)
         {
             db = new DbDataContext();
-            var q = db.StoreWithDrawals.Where(d => d.ID == xid).SingleOrDefault();
+            var q = db.StoreWithDrawals.Where(d => d.ID == tb.ID).SingleOrDefault();
+            q.ID = tb.ID;
             q.ItemID = tb.ItemID;
             q.Qty = tb.Qty;
-            q.DateOfProcess = tb.DateOfProcess;
+           // q.DateOfProcess = tb.DateOfProcess;
             q.Comment = tb.Comment;
             q.UserID = tb.UserID;
             q.StoreID = tb.StoreID;

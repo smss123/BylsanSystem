@@ -148,6 +148,7 @@ namespace Bylsan_System.MainStoreForms
             {
                 ItemID=int.Parse(ItemComboBox.SelectedValue.ToString()),
                 StoreID=int.Parse(StoreComboBox.SelectedValue.ToString()),
+                DateOfProcess=DateTime.Now,
                 Qty=int.Parse(qtyTextBox.Text),
                 Comment=commentTextBox.Text,
 

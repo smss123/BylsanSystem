@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
+using Telerik.WinControls;
+using Telerik.WinControls.Data;
 using Telerik.WinControls.UI;
-
+using XamaDataLayer;
+using XamaDataLayer.Main_Store;
 namespace Bylsan_System.MainStoreForms
 {
     public partial class FrmEditMainStore_StoreWithDrawal : RadForm
@@ -16,8 +14,72 @@ namespace Bylsan_System.MainStoreForms
         public FrmEditMainStore_StoreWithDrawal()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("VisualStudio2012Light");
         }
+        public int XDrawalID { get; set; }
+        public StoreWithDrawal TregatDrawal { get; set; }
 
+        private void fillCombo()
+        {
+            #region "  fillItem "
+            this.ItemComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
+            Operation.BeginOperation(this);
+
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.ItemComboBox.AutoFilter = true;
+                this.ItemComboBox.ValueMember = "ID";
+                this.ItemComboBox.DisplayMember = "ItemName";
+            });
+
+
+            var q = ItemsCmd.GetAllItems();
+            this.Invoke((MethodInvoker)delegate
+            {
+                ItemComboBox.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.ItemComboBox.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.ItemComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+
+
+
+
+            });
+            Operation.EndOperation(this);
+            #endregion
+
+            //
+            #region "  fillStore "
+
+            this.StoreComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
+            Operation.BeginOperation(this);
+
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.StoreComboBox.AutoFilter = true;
+                this.StoreComboBox.ValueMember = "ID";
+                this.StoreComboBox.DisplayMember = "ItemID";
+            });
+
+
+            var q1 = StoreCmd.GetAllStores();
+            this.Invoke((MethodInvoker)delegate
+            {
+                StoreComboBox.DataSource = q1;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.StoreComboBox.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.StoreComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+
+
+
+
+            });
+            Operation.EndOperation(this);
+            #endregion
+
+        }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
@@ -77,10 +139,37 @@ namespace Bylsan_System.MainStoreForms
 
 
             #endregion
+
+            if (RadMessageBox.Show(this, "Do you Want To Save", "Save Changes", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+            {
+                Operation.BeginOperation(this);
+                StoreWithDrawal tb = new StoreWithDrawal()
+                {
+                    ID=XDrawalID,
+                    ItemID = int.Parse(ItemComboBox.SelectedValue.ToString()),
+                    StoreID = int.Parse(StoreComboBox.SelectedValue.ToString()),
+                    Qty = int.Parse(qtyTextBox.Text),
+                    Comment = commentTextBox.Text,
+
+
+                };
+         //       StoreDrawalCmd.ed(tb);
+
+                Operation.ShowToustOk("StoreDrawal Saved", this);
+                Operation.EndOperation(this);
+            }
+
         }
 
         private void FrmEditMainStore_StoreWithDrawal_Load(object sender, EventArgs e)
         {
+            Thread th = new Thread(fillCombo);
+            th.Start();
+            XDrawalID = TregatDrawal.ID;
+            ItemComboBox.Text = TregatDrawal.Item.ItemName;
+            StoreComboBox.Text = TregatDrawal.Store.ItemID.ToString();
+            qtyTextBox.Text = TregatDrawal.Qty.ToString();
+            commentTextBox.Text = TregatDrawal.Comment;
 
         }
 
