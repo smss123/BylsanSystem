@@ -238,6 +238,7 @@
             this.EmployeeGridView.TabIndex = 0;
             this.EmployeeGridView.Text = "EmployeeGridView";
             this.EmployeeGridView.ThemeName = "VisualStudio2012Light";
+            this.EmployeeGridView.Click += new System.EventHandler(this.EmployeeGridView_Click);
             // 
             // employeeBindingSource
             // 

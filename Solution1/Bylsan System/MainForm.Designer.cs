@@ -73,14 +73,17 @@
             this.addSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.expensesShowBtn = new System.Windows.Forms.ToolStripButton();
+            this.btnFactory = new System.Windows.Forms.ToolStripButton();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.btnSales = new System.Windows.Forms.ToolStripDropDownButton();
+            this.sellItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addIteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quotationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -105,7 +108,8 @@
             this.toolStripButton3,
             this.toolStripButton4,
             this.expensesShowBtn,
-            this.toolStripButton5});
+            this.btnFactory,
+            this.btnSales});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1188, 37);
@@ -309,7 +313,8 @@
             // toolStripButton2
             // 
             this.toolStripButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newOrderToolStripMenuItem});
+            this.newOrderToolStripMenuItem,
+            this.quotationToolStripMenuItem});
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
@@ -460,6 +465,15 @@
             this.expensesShowBtn.Text = "Expenses";
             this.expensesShowBtn.Click += new System.EventHandler(this.expensesShowBtn_Click);
             // 
+            // btnFactory
+            // 
+            this.btnFactory.Image = ((System.Drawing.Image)(resources.GetObject("btnFactory.Image")));
+            this.btnFactory.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFactory.Name = "btnFactory";
+            this.btnFactory.Size = new System.Drawing.Size(66, 34);
+            this.btnFactory.Text = "Factory";
+            this.btnFactory.Click += new System.EventHandler(this.btnFactory_Click);
+            // 
             // toolStrip2
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -487,33 +501,45 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // button1
+            // btnSales
             // 
-            this.button1.Location = new System.Drawing.Point(74, 187);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 30);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Add Sales";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnSales.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sellItemsToolStripMenuItem,
+            this.salesToolStripMenuItem});
+            this.btnSales.Image = ((System.Drawing.Image)(resources.GetObject("btnSales.Image")));
+            this.btnSales.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Size = new System.Drawing.Size(62, 34);
+            this.btnSales.Text = "Sales";
             // 
-            // button2
+            // sellItemsToolStripMenuItem
             // 
-            this.button2.Location = new System.Drawing.Point(74, 239);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(152, 30);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Add Sell Item";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.sellItemsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addIteToolStripMenuItem});
+            this.sellItemsToolStripMenuItem.Name = "sellItemsToolStripMenuItem";
+            this.sellItemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sellItemsToolStripMenuItem.Text = "Sell Items";
             // 
-            // toolStripButton5
+            // addIteToolStripMenuItem
             // 
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(114, 34);
-            this.toolStripButton5.Text = "toolStripButton5";
+            this.addIteToolStripMenuItem.Name = "addIteToolStripMenuItem";
+            this.addIteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addIteToolStripMenuItem.Text = "Add Item";
+            this.addIteToolStripMenuItem.Click += new System.EventHandler(this.addIteToolStripMenuItem_Click);
+            // 
+            // salesToolStripMenuItem
+            // 
+            this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
+            this.salesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salesToolStripMenuItem.Text = "Sales";
+            this.salesToolStripMenuItem.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
+            // 
+            // quotationToolStripMenuItem
+            // 
+            this.quotationToolStripMenuItem.Name = "quotationToolStripMenuItem";
+            this.quotationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quotationToolStripMenuItem.Text = "Quotation";
+            this.quotationToolStripMenuItem.Click += new System.EventHandler(this.quotationToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -521,8 +547,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1188, 606);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
@@ -597,8 +621,11 @@
         private System.Windows.Forms.ToolStripMenuItem addSupplierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageSupplierToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton expensesShowBtn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton btnFactory;
+        private System.Windows.Forms.ToolStripDropDownButton btnSales;
+        private System.Windows.Forms.ToolStripMenuItem sellItemsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addIteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quotationToolStripMenuItem;
     }
 }

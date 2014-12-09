@@ -101,7 +101,8 @@ namespace Bylsan_System.SellSystemForms
                                 ListItems.SelectedItems[0].SubItems[3].Text,
                                 "1"
                             });
-                }       
+                }
+                CalcTotal();
                                                 
        
             }
@@ -122,6 +123,8 @@ namespace Bylsan_System.SellSystemForms
                 if (DGVSellItems.Rows.Count != 0)
                 {
 
+
+                    TxtBillNumber.Text = DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Day.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + DateTime.Now.Millisecond.ToString();
                     if (TxtBillNumber.Text == "")
                     {
                         Operation.ShowToustOk("Insert Bill Number ", this);
@@ -174,6 +177,21 @@ namespace Bylsan_System.SellSystemForms
         private void TxtBillNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+        private void CalcTotal()
+        {
+            double tot = 0;
+            foreach (var rw in DGVSellItems.Rows)
+            {
+                tot += int.Parse(rw.Cells[3].Value.ToString());
+            }
+            // Just Display Total Cost To User Onley :
+            BillCostBox.Text = tot.ToString();
+        }
+
+        private void ListItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
     }
