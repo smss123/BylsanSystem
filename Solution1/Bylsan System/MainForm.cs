@@ -13,12 +13,14 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using XamaDataLayer.Security;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
+using Bylsan_System.MailForms;
 
 using Bylsan_System.SellSystemForms;
-using Bylsan_System.SellSystemForms;
+
 namespace Bylsan_System
 {
     public partial class MainForm : RadForm
@@ -27,8 +29,9 @@ namespace Bylsan_System
         public MainForm()
         {
             InitializeComponent();
+         
         }
-
+        #region "    "
         private void AddEmloyeebtn_Click(object sender, EventArgs e)
         {
             FrmAddEmployee frm = new FrmAddEmployee();
@@ -94,7 +97,7 @@ namespace Bylsan_System
         private void MailBtn_Click(object sender, EventArgs e)
         {
             frmMailServer frm = new frmMailServer();
-            frm.ShowDialog();
+            frm.Show();
         }
 
         private void newOrderToolStripMenuItem_Click(object sender, EventArgs e)
@@ -204,6 +207,17 @@ namespace Bylsan_System
         {
             FrmAddSellItem frm = new FrmAddSellItem();
             frm.Show();
+        }
+        #endregion 
+
+        private void SendMessageBtn_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void InBoxMassagesBtn_Click(object sender, EventArgs e)
+        {
+         
         }
     }
 }
