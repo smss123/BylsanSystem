@@ -214,7 +214,7 @@
             // 
             // GroupDisplayMessage
             // 
-            this.GroupDisplayMessage.BackColor = System.Drawing.Color.Gray;
+            this.GroupDisplayMessage.BackColor = System.Drawing.Color.Silver;
             this.GroupDisplayMessage.Controls.Add(this.labMessageDate);
             this.GroupDisplayMessage.Controls.Add(this.label4);
             this.GroupDisplayMessage.Controls.Add(this.label2);
@@ -234,7 +234,7 @@
             // labMessageDate
             // 
             this.labMessageDate.AutoSize = true;
-            this.labMessageDate.ForeColor = System.Drawing.Color.Lime;
+            this.labMessageDate.ForeColor = System.Drawing.Color.White;
             this.labMessageDate.Location = new System.Drawing.Point(88, 324);
             this.labMessageDate.Name = "labMessageDate";
             this.labMessageDate.Size = new System.Drawing.Size(27, 13);
@@ -272,7 +272,7 @@
             // labSubject
             // 
             this.labSubject.AutoSize = true;
-            this.labSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.labSubject.ForeColor = System.Drawing.Color.White;
             this.labSubject.Location = new System.Drawing.Point(110, 47);
             this.labSubject.Name = "labSubject";
             this.labSubject.Size = new System.Drawing.Size(27, 13);
@@ -291,7 +291,7 @@
             // labUserName
             // 
             this.labUserName.AutoSize = true;
-            this.labUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.labUserName.ForeColor = System.Drawing.Color.White;
             this.labUserName.Location = new System.Drawing.Point(110, 25);
             this.labUserName.Name = "labUserName";
             this.labUserName.Size = new System.Drawing.Size(27, 13);

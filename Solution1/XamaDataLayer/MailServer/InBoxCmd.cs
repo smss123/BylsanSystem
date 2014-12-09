@@ -22,11 +22,11 @@ namespace XamaDataLayer.MailServer
        {
            db = new DbDataContext();
            var Msg = db.Inboxes.Where(m => m.ID == xid).SingleOrDefault();
-           Msg.Subject = tb.Subject;
-           Msg.SenderUserID = tb.SenderUserID;
-           Msg.DateOfMessage = tb.DateOfMessage;
-           Msg.ReciverUserID = tb.ReciverUserID;
-           Msg.MessageText = tb.MessageText;
+           //Msg.Subject = tb.Subject;
+           //Msg.SenderUserID = tb.SenderUserID;
+           //Msg.DateOfMessage = tb.DateOfMessage;
+           //Msg.ReciverUserID = tb.ReciverUserID;
+           //Msg.MessageText = tb.MessageText;
            Msg.Status = tb.Status;
            db.SubmitChanges();
            return Msg;

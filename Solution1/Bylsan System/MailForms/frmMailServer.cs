@@ -178,9 +178,9 @@ namespace Bylsan_System.MailForms
                 {
                     if (Itm.SubItems[3].Text == "UnRead")
                     {
-                        Itm.ForeColor = Color.YellowGreen; 
-                        Itm.BackColor = Color.Blue;
-                        Itm.Font = new Font("Times New Roman", 12, FontStyle.Bold);
+                        Itm.ForeColor = Color.Yellow; 
+                        Itm.BackColor = Color.Green ;
+                        Itm.Font = new Font("Times New Roman", 10, FontStyle.Bold);
                     }
                 }
             }
@@ -264,13 +264,12 @@ namespace Bylsan_System.MailForms
             {
               
                 int Indx = int .Parse (MessagesListView.SelectedItems[0].Text.ToString ()) ;
-              //================================================================================
+              //=====================================================================================
                 if (MessagesListView.Columns[1].Text == "From")
                 {
                     var GetMessage = (from m in InBoxCmd.GetAllMessages()
                                       where m.ID == Indx 
-                                      && m.ReciverUserID == XamaDataLayer .Security .UserInfo .CurrentUserID 
-                                      && m.Status == "UnRead"
+                                      && m.ReciverUserID == XamaDataLayer .Security .UserInfo .CurrentUserID                                      
                                       select m).ToList ();
                     foreach (var item in GetMessage )
                     {
@@ -282,8 +281,11 @@ namespace Bylsan_System.MailForms
                     }
               
                     GroupDisplayMessage.Visible = true;
+                    //===============================================================================
+                    // Edit Message Status : 
+                    Inbox tb = new Inbox() {  Status = "Readed" }; InBoxCmd.EditMessage(tb,Indx );
                 }
-                //====================================================
+                //===================================================================================
                 if (MessagesListView.Columns[1].Text == "Sent To")
                 {
                     var GetMessage = (from m in OutBoxCmd .LoadAllMessages ()
