@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="soft_Bylsan" Class="DbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=jasmine.arvixe.com;Initial Catalog=Cloud_Bylsan;User ID=xama" SettingsObjectName="XamaDataLayer.Properties.Settings" SettingsPropertyName="soft_BylsanConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bylsan" Class="DbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=jasmine.arvixe.com;Initial Catalog=Cloud_Bylsan1;Persist Security Info=True;User ID=xama" SettingsObjectName="XamaDataLayer.Properties.Settings" SettingsPropertyName="Cloud_BylsanConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="Accountant.Account" Member="Accounts">
     <Type Name="Account">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -54,7 +54,7 @@
       <Column Name="DebtorDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="Addresss" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="AccountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccountID" AutoSync="OnInsert" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" />
       <Association Name="Account_Debtor" Member="Account" ThisKey="AccountID" OtherKey="ID" Type="Account" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
@@ -63,7 +63,7 @@
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ExpenssesName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
-      <Column Name="AccountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccountID" AutoSync="OnInsert" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" />
       <Association Name="Expenss_ExpenssesMovment" Member="ExpenssesMovments" ThisKey="ID" OtherKey="ExpenssesID" Type="ExpenssesMovment" />
       <Association Name="Account_Expenss" Member="Account" ThisKey="AccountID" OtherKey="ID" Type="Account" IsForeignKey="true" />
     </Type>
@@ -85,8 +85,7 @@
       <Column Name="Branch_Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Manager_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="AccountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Branch_User" Member="Users" ThisKey="ID" OtherKey="Branch_ID" Type="User" />
+      <Column Name="AccountID" AutoSync="OnInsert" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" />
       <Association Name="Account_Branch" Member="Account" ThisKey="AccountID" OtherKey="ID" Type="Account" IsForeignKey="true" />
       <Association Name="Employee_Branch" Member="Employee" ThisKey="Manager_ID" OtherKey="ID" Type="Employee" IsForeignKey="true" />
     </Type>
@@ -98,7 +97,7 @@
       <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Points" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="AccountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccountID" AutoSync="OnInsert" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" />
       <Association Name="Customer_Order" Member="Orders" ThisKey="ID" OtherKey="CustomerID" Type="Order" />
       <Association Name="Account_Customer" Member="Account" ThisKey="AccountID" OtherKey="ID" Type="Account" IsForeignKey="true" />
     </Type>
@@ -130,7 +129,7 @@
       <Column Name="Comment" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
       <Column Name="OrderStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="TotalAmount" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="OrderAccount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrderAccount" AutoSync="OnInsert" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" />
       <Column Name="OrderDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="DeliverdToBranch" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Order_OrderProduct" Member="OrderProducts" ThisKey="ID" OtherKey="OrderID" Type="OrderProduct" />
@@ -217,7 +216,7 @@
   </Table>
   <Table Name="MailServer.Inbox" Member="Inboxes">
     <Type Name="Inbox">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Subject" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Column Name="MessageText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="DateOfMessage" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -243,6 +242,7 @@
       <Column Name="ItemName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ItemType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ItemDescription" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Association Name="Item_Store" Member="Stores" ThisKey="ID" OtherKey="ItemID" Type="Store" />
       <Association Name="Item_Store_Sell" Member="Store_Sells" ThisKey="ID" OtherKey="ItemID" Type="Store_Sell" />
       <Association Name="Item_StoreWithDrawal" Member="StoreWithDrawals" ThisKey="ID" OtherKey="ItemID" Type="StoreWithDrawal" />
     </Type>
@@ -255,6 +255,7 @@
       <Column Name="Description" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
       <Association Name="Store_StoreManager" Member="StoreManagers" ThisKey="ID" OtherKey="StoreID" Type="StoreManager" />
       <Association Name="Store_StoreWithDrawal" Member="StoreWithDrawals" ThisKey="ID" OtherKey="StoreID" Type="StoreWithDrawal" />
+      <Association Name="Item_Store" Member="Item" ThisKey="ItemID" OtherKey="ID" Type="Item" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="MainStore.Store_Sells" Member="Store_Sells">
@@ -348,7 +349,6 @@
       <Association Name="User_StoreWithDrawal" Member="StoreWithDrawals" ThisKey="ID" OtherKey="UserID" Type="StoreWithDrawal" />
       <Association Name="User_History" Member="Histories" ThisKey="ID" OtherKey="UserID" Type="History" />
       <Association Name="User_UserPermession" Member="UserPermessions" ThisKey="ID" OtherKey="UserID" Type="UserPermession" />
-      <Association Name="Branch_User" Member="Branch" ThisKey="Branch_ID" OtherKey="ID" Type="Branch" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="SellSystem.Bill" Member="Bills">

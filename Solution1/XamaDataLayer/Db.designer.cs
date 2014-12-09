@@ -23,7 +23,7 @@ namespace XamaDataLayer
     using System.Drawing;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="soft_Bylsan")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="bylsan")]
 	public partial class DbDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -136,7 +136,7 @@ namespace XamaDataLayer
     #endregion
 		
 		public DbDataContext() : 
-				base(global::XamaDataLayer.Properties.Settings.Default.soft_BylsanConnectionString, mappingSource)
+				base(global::XamaDataLayer.Properties.Settings.Default.Cloud_BylsanConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -1574,7 +1574,7 @@ namespace XamaDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", AutoSync=AutoSync.OnInsert, DbType="Int", IsDbGenerated=true)]
 		public System.Nullable<int> AccountID
 		{
 			get
@@ -1752,7 +1752,7 @@ namespace XamaDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", AutoSync=AutoSync.OnInsert, DbType="Int", IsDbGenerated=true)]
 		public System.Nullable<int> AccountID
 		{
 			get
@@ -2073,8 +2073,6 @@ namespace XamaDataLayer
 		
 		private System.Nullable<int> _AccountID;
 		
-		private EntitySet<User> _Users;
-		
 		private EntityRef<Account> _Account;
 		
 		private EntityRef<Employee> _Employee;
@@ -2099,7 +2097,6 @@ namespace XamaDataLayer
 		
 		public Branch()
 		{
-			this._Users = new EntitySet<User>(new Action<User>(this.attach_Users), new Action<User>(this.detach_Users));
 			this._Account = default(EntityRef<Account>);
 			this._Employee = default(EntityRef<Employee>);
 			OnCreated();
@@ -2209,7 +2206,7 @@ namespace XamaDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", AutoSync=AutoSync.OnInsert, DbType="Int", IsDbGenerated=true)]
 		public System.Nullable<int> AccountID
 		{
 			get
@@ -2230,19 +2227,6 @@ namespace XamaDataLayer
 					this.SendPropertyChanged("AccountID");
 					this.OnAccountIDChanged();
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Branch_User", Storage="_Users", ThisKey="ID", OtherKey="Branch_ID")]
-		public EntitySet<User> Users
-		{
-			get
-			{
-				return this._Users;
-			}
-			set
-			{
-				this._Users.Assign(value);
 			}
 		}
 		
@@ -2332,18 +2316,6 @@ namespace XamaDataLayer
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Users(User entity)
-		{
-			this.SendPropertyChanging();
-			entity.Branch = this;
-		}
-		
-		private void detach_Users(User entity)
-		{
-			this.SendPropertyChanging();
-			entity.Branch = null;
 		}
 	}
 	
@@ -2494,7 +2466,7 @@ namespace XamaDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", AutoSync=AutoSync.OnInsert, DbType="Int", IsDbGenerated=true)]
 		public System.Nullable<int> AccountID
 		{
 			get
@@ -3186,7 +3158,7 @@ namespace XamaDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderAccount", DbType="Int")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderAccount", AutoSync=AutoSync.OnInsert, DbType="Int", IsDbGenerated=true)]
 		public System.Nullable<int> OrderAccount
 		{
 			get
@@ -4994,7 +4966,7 @@ namespace XamaDataLayer
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID
 		{
 			get
@@ -5375,6 +5347,8 @@ namespace XamaDataLayer
 		
 		private string _ItemDescription;
 		
+		private EntitySet<Store> _Stores;
+		
 		private EntitySet<Store_Sell> _Store_Sells;
 		
 		private EntitySet<StoreWithDrawal> _StoreWithDrawals;
@@ -5395,6 +5369,7 @@ namespace XamaDataLayer
 		
 		public Item()
 		{
+			this._Stores = new EntitySet<Store>(new Action<Store>(this.attach_Stores), new Action<Store>(this.detach_Stores));
 			this._Store_Sells = new EntitySet<Store_Sell>(new Action<Store_Sell>(this.attach_Store_Sells), new Action<Store_Sell>(this.detach_Store_Sells));
 			this._StoreWithDrawals = new EntitySet<StoreWithDrawal>(new Action<StoreWithDrawal>(this.attach_StoreWithDrawals), new Action<StoreWithDrawal>(this.detach_StoreWithDrawals));
 			OnCreated();
@@ -5480,6 +5455,19 @@ namespace XamaDataLayer
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Item_Store", Storage="_Stores", ThisKey="ID", OtherKey="ItemID")]
+		public EntitySet<Store> Stores
+		{
+			get
+			{
+				return this._Stores;
+			}
+			set
+			{
+				this._Stores.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Item_Store_Sell", Storage="_Store_Sells", ThisKey="ID", OtherKey="ItemID")]
 		public EntitySet<Store_Sell> Store_Sells
 		{
@@ -5526,6 +5514,18 @@ namespace XamaDataLayer
 			}
 		}
 		
+		private void attach_Stores(Store entity)
+		{
+			this.SendPropertyChanging();
+			entity.Item = this;
+		}
+		
+		private void detach_Stores(Store entity)
+		{
+			this.SendPropertyChanging();
+			entity.Item = null;
+		}
+		
 		private void attach_Store_Sells(Store_Sell entity)
 		{
 			this.SendPropertyChanging();
@@ -5569,6 +5569,8 @@ namespace XamaDataLayer
 		
 		private EntitySet<StoreWithDrawal> _StoreWithDrawals;
 		
+		private EntityRef<Item> _Item;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -5587,6 +5589,7 @@ namespace XamaDataLayer
 		{
 			this._StoreManagers = new EntitySet<StoreManager>(new Action<StoreManager>(this.attach_StoreManagers), new Action<StoreManager>(this.detach_StoreManagers));
 			this._StoreWithDrawals = new EntitySet<StoreWithDrawal>(new Action<StoreWithDrawal>(this.attach_StoreWithDrawals), new Action<StoreWithDrawal>(this.detach_StoreWithDrawals));
+			this._Item = default(EntityRef<Item>);
 			OnCreated();
 		}
 		
@@ -5621,6 +5624,10 @@ namespace XamaDataLayer
 			{
 				if ((this._ItemID != value))
 				{
+					if (this._Item.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnItemIDChanging(value);
 					this.SendPropertyChanging();
 					this._ItemID = value;
@@ -5693,6 +5700,40 @@ namespace XamaDataLayer
 			set
 			{
 				this._StoreWithDrawals.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Item_Store", Storage="_Item", ThisKey="ItemID", OtherKey="ID", IsForeignKey=true)]
+		public Item Item
+		{
+			get
+			{
+				return this._Item.Entity;
+			}
+			set
+			{
+				Item previousValue = this._Item.Entity;
+				if (((previousValue != value) 
+							|| (this._Item.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Item.Entity = null;
+						previousValue.Stores.Remove(this);
+					}
+					this._Item.Entity = value;
+					if ((value != null))
+					{
+						value.Stores.Add(this);
+						this._ItemID = value.ID;
+					}
+					else
+					{
+						this._ItemID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Item");
+				}
 			}
 		}
 		
@@ -7457,8 +7498,6 @@ namespace XamaDataLayer
 		
 		private EntitySet<UserPermession> _UserPermessions;
 		
-		private EntityRef<Branch> _Branch;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -7480,7 +7519,6 @@ namespace XamaDataLayer
 			this._StoreWithDrawals = new EntitySet<StoreWithDrawal>(new Action<StoreWithDrawal>(this.attach_StoreWithDrawals), new Action<StoreWithDrawal>(this.detach_StoreWithDrawals));
 			this._Histories = new EntitySet<History>(new Action<History>(this.attach_Histories), new Action<History>(this.detach_Histories));
 			this._UserPermessions = new EntitySet<UserPermession>(new Action<UserPermession>(this.attach_UserPermessions), new Action<UserPermession>(this.detach_UserPermessions));
-			this._Branch = default(EntityRef<Branch>);
 			OnCreated();
 		}
 		
@@ -7555,10 +7593,6 @@ namespace XamaDataLayer
 			{
 				if ((this._Branch_ID != value))
 				{
-					if (this._Branch.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnBranch_IDChanging(value);
 					this.SendPropertyChanging();
 					this._Branch_ID = value;
@@ -7630,40 +7664,6 @@ namespace XamaDataLayer
 			set
 			{
 				this._UserPermessions.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Branch_User", Storage="_Branch", ThisKey="Branch_ID", OtherKey="ID", IsForeignKey=true)]
-		public Branch Branch
-		{
-			get
-			{
-				return this._Branch.Entity;
-			}
-			set
-			{
-				Branch previousValue = this._Branch.Entity;
-				if (((previousValue != value) 
-							|| (this._Branch.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Branch.Entity = null;
-						previousValue.Users.Remove(this);
-					}
-					this._Branch.Entity = value;
-					if ((value != null))
-					{
-						value.Users.Add(this);
-						this._Branch_ID = value.ID;
-					}
-					else
-					{
-						this._Branch_ID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Branch");
-				}
 			}
 		}
 		
@@ -8164,7 +8164,7 @@ namespace XamaDataLayer
 		
 		private System.Nullable<double> _ItemPrice;
 		
-		private  Image _ItemIcon;//System.Data.Linq.Binary
+		private Image _ItemIcon;
 		
 		private EntitySet<BillItem> _BillItems;
 		

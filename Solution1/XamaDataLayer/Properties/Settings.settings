@@ -5,10 +5,26 @@
     <Setting Name="soft_BylsanConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=jasmine.arvixe.com;Initial Catalog=Cloud_Bylsan;User ID=xama;Password=Pa$$w0rd&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=jasmine.arvixe.com;Initial Catalog=Cloud_Bylsan1;User ID=xama;Password=Pa$$w0rd;Connect Timeout=90&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=jasmine.arvixe.com;Initial Catalog=Cloud_Bylsan;User ID=xama;Password=Pa$$w0rd</Value>
+      <Value Profile="(Default)">Data Source=jasmine.arvixe.com;Initial Catalog=Cloud_Bylsan1;User ID=xama;Password=Pa$$w0rd;Connect Timeout=90</Value>
+    </Setting>
+    <Setting Name="bylsanConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=SEZEROFFICE-PC\SQL2008;Initial Catalog=bylsan;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=SEZEROFFICE-PC\SQL2008;Initial Catalog=bylsan;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="Cloud_BylsanConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=jasmine.arvixe.com;Initial Catalog=Cloud_Bylsan1;Persist Security Info=True;User ID=xama;Password=Pa$$w0rd&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=jasmine.arvixe.com;Initial Catalog=Cloud_Bylsan1;Persist Security Info=True;User ID=xama;Password=Pa$$w0rd</Value>
     </Setting>
   </Settings>
 </SettingsFile>
