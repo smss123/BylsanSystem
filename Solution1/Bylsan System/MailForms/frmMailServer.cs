@@ -229,11 +229,12 @@ namespace Bylsan_System.MailForms
             MessagesListView.Columns.Clear();
             CreateListView();
             MessagesListView.Columns[1].Text = "Sent To / From";
-            var GetAllInBoxMessages = (from u in OutBoxCmd.LoadAllMessages()
+            var GetAllOutBoxMessages = (from u in OutBoxCmd.LoadAllMessages()
                                        where u.SenderUserID == XamaDataLayer.Security.UserInfo.CurrentUserID
+                                       && u.Status == "~Sent"  
                                        select u).ToList();
             MessagesListView.Items.Clear();
-            foreach (var item in GetAllInBoxMessages)
+            foreach (var item in GetAllOutBoxMessages)
             {
                 ListViewItem Itm = new ListViewItem(item.ID.ToString());
 
@@ -243,14 +244,29 @@ namespace Bylsan_System.MailForms
 
                 MessagesListView.Items.Add(Itm);
             }
+            //===================================================================================================
+            var GetAllInBoxMessages = (from u in InBoxCmd .GetAllMessages ()
+                                       where u.ReciverUserID  == XamaDataLayer.Security.UserInfo.CurrentUserID
+                                       && u.Status == "~Received"
+                                       select u).ToList();
+           
+            foreach (var item in GetAllInBoxMessages)
+            {
+                ListViewItem Itm = new ListViewItem(item.ID.ToString());
+
+                Itm.SubItems.Add((from u in UserCmd.GetAllUsers() where u.ID == item.SenderUserID 
+                                  select u.UserName).First());
+                Itm.SubItems.Add(item.Subject.ToString());
+                Itm.SubItems.Add(item.Status.ToString());
+
+                MessagesListView.Items.Add(Itm);
+            }
+            //===================================================================================================
             ReSizeFontsAndColor();
             Operation.EndOperation(this);
         }
 
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
+    
 
         private void ClearBtn_Click(object sender, EventArgs e)
         {
@@ -349,8 +365,82 @@ namespace Bylsan_System.MailForms
                 //===================================================
                 if (MessagesListView.Columns[1].Text == "Sent To / From")
                 {
+                    MoveBtn.Enabled = false;
 
                 }
+
+
+            }
+        }
+
+        private void MessagesListView_MouseHover(object sender, EventArgs e)
+        {
+            if (MessagesListView.Items.Count == 0)
+            {
+                OpenBtn.Enabled = false;
+                MoveBtn.Enabled = false;
+                ClearBtn.Enabled = false;
+                DeleteBtn.Enabled = false;
+            }
+
+        }
+
+        private void MoveBtn_Click(object sender, EventArgs e)
+        {
+            if (MessagesListView.Items.Count != 0)
+            {
+
+                int Indx = int.Parse(MessagesListView.SelectedItems[0].Text.ToString());
+                //================================================================================
+                if (MessagesListView.Columns[1].Text == "From") 
+                {
+                    var GetMessage = (from m in InBoxCmd.GetAllMessages()
+                                      where m.ID == Indx
+                                      && m.ReciverUserID == XamaDataLayer.Security.UserInfo.CurrentUserID
+                                      select m).ToList();
+                    foreach (var item in GetMessage)
+                    {
+                        Inbox intb = new Inbox (){
+                         ReciverUserID =XamaDataLayer.Security.UserInfo.CurrentUserID,
+                         SenderUserID  = int .Parse (item.SenderUserID.ToString()),
+                        Subject  = item.Subject,
+                        MessageText  = item.MessageText.ToString(),
+                        DateOfMessage  = Convert .ToDateTime (item.DateOfMessage.ToString()),
+                         Status = "~Received"
+                        };
+                        InBoxCmd.InsertMassegeInBox(intb);
+                        Operation.ShowToustOk("Moved ...", this);
+
+                    }
+                  
+                }
+                //================================================================================
+                if (MessagesListView.Columns[1].Text == "Sent To")
+                {
+                    var GetMessage = (from m in OutBoxCmd .LoadAllMessages ()
+                                      where m.ID == Indx
+                                      && m.SenderUserID  == XamaDataLayer.Security.UserInfo.CurrentUserID
+                                      select m).ToList();
+                    foreach (var item in GetMessage)
+                    {
+                        OutBox OutTb = new OutBox ()
+                        {
+                            ReciverUserID = XamaDataLayer.Security.UserInfo.CurrentUserID,
+                            SenderUserID = int.Parse(item.SenderUserID.ToString()),
+                            Subject = item.Subject,
+                            MessageText = item.MessageText.ToString(),
+                            DateOfMessage = Convert.ToDateTime(item.DateOfMessage.ToString()),
+                            Status = "~Sent"
+                        };
+                        OutBoxCmd.OutBoxMessage(OutTb);
+                        Operation.ShowToustOk("Moved ...", this);
+                    }
+                 
+                }
+
+
+
+
 
 
             }
