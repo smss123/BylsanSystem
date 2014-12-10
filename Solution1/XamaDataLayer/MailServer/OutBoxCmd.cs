@@ -22,11 +22,7 @@ namespace XamaDataLayer.MailServer
         {
             db = new DbDataContext();
             var Msg = db.OutBoxes .Where(m => m.ID == xid).SingleOrDefault();
-            Msg.Subject = tb.Subject;
-            Msg.SenderUserID = tb.SenderUserID;
-            Msg.DateOfMessage = tb.DateOfMessage;
-            Msg.ReciverUserID = tb.ReciverUserID;
-            Msg.MessageText = tb.MessageText;
+   
             Msg.Status = tb.Status;
             db.SubmitChanges();
             return Msg;
@@ -53,7 +49,7 @@ namespace XamaDataLayer.MailServer
             db = new DbDataContext();
             var lst = (from m in db.OutBoxes
                        orderby m.DateOfMessage descending 
-                       where m.Status == "Sent"
+                       where m.SenderUserID == XamaDataLayer .Security .UserInfo .CurrentUserID 
                        select m).ToList();
             return lst;
         }

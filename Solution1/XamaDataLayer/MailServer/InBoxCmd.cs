@@ -22,11 +22,7 @@ namespace XamaDataLayer.MailServer
        {
            db = new DbDataContext();
            var Msg = db.Inboxes.Where(m => m.ID == xid).SingleOrDefault();
-           //Msg.Subject = tb.Subject;
-           //Msg.SenderUserID = tb.SenderUserID;
-           //Msg.DateOfMessage = tb.DateOfMessage;
-           //Msg.ReciverUserID = tb.ReciverUserID;
-           //Msg.MessageText = tb.MessageText;
+
            Msg.Status = tb.Status;
            db.SubmitChanges();
            return Msg;
@@ -51,7 +47,10 @@ namespace XamaDataLayer.MailServer
        public static List<Inbox> GetAllMessages()
        {
            db = new DbDataContext();
-           return db.Inboxes.ToList();
+           var lst = (from i in db.Inboxes 
+                      where i.ReciverUserID == XamaDataLayer.Security.UserInfo.CurrentUserID
+                      select i).ToList();
+           return lst;
        }
 
        public static List<Inbox > LoadAllMessagesByDate(DateTime dat)
