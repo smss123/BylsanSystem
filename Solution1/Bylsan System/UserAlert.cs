@@ -18,6 +18,7 @@ namespace Bylsan_System
         int OldMessagesCountInBox ;
 
         #region "   Timer      "
+
        public   void ActivateTimer()
         {
             AlertTimer.Interval = 3000;
