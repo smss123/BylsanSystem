@@ -246,7 +246,14 @@ namespace Bylsan_System
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-           
+            UserAlert Alert = new UserAlert();
+            Alert.ActivateTimer();
+        }
+        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            
         }
     }
 }
