@@ -61,18 +61,10 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.itemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageItemsBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.storeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.withDrowlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.storeItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addItemsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageItemsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.storeManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.suppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SupplierBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.expensesShowBtn = new System.Windows.Forms.ToolStripButton();
             this.btnFactory = new System.Windows.Forms.ToolStripButton();
             this.btnSales = new System.Windows.Forms.ToolStripDropDownButton();
@@ -84,6 +76,15 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.AddStoreBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageStoreBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddWithDrawalBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.ManageWithDrawalBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddSupplierBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageSupplierBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.storeManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addStoreManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageStoreManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -106,7 +107,6 @@
             this.toolStripButton2,
             this.BtnDesinger,
             this.toolStripButton3,
-            this.toolStripButton4,
             this.expensesShowBtn,
             this.btnFactory,
             this.btnSales});
@@ -349,119 +349,64 @@
             this.toolStripButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemsToolStripMenuItem,
             this.storeToolStripMenuItem,
+            this.storeManagerToolStripMenuItem,
             this.withDrowlToolStripMenuItem,
-            this.addToolStripMenuItem});
+            this.SupplierBtn});
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(63, 34);
-            this.toolStripButton3.Text = "Store";
+            this.toolStripButton3.Size = new System.Drawing.Size(93, 34);
+            this.toolStripButton3.Text = "Main Store";
             // 
             // itemsToolStripMenuItem
             // 
             this.itemsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addItemsToolStripMenuItem,
-            this.manageItemsToolStripMenuItem});
+            this.manageItemsBtn});
             this.itemsToolStripMenuItem.Name = "itemsToolStripMenuItem";
-            this.itemsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.itemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.itemsToolStripMenuItem.Text = "Items";
             // 
             // addItemsToolStripMenuItem
             // 
             this.addItemsToolStripMenuItem.Name = "addItemsToolStripMenuItem";
-            this.addItemsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.addItemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addItemsToolStripMenuItem.Text = "Add items";
             this.addItemsToolStripMenuItem.Click += new System.EventHandler(this.addItemsToolStripMenuItem_Click);
             // 
-            // manageItemsToolStripMenuItem
+            // manageItemsBtn
             // 
-            this.manageItemsToolStripMenuItem.Name = "manageItemsToolStripMenuItem";
-            this.manageItemsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.manageItemsToolStripMenuItem.Text = "Manage items";
+            this.manageItemsBtn.Name = "manageItemsBtn";
+            this.manageItemsBtn.Size = new System.Drawing.Size(152, 22);
+            this.manageItemsBtn.Text = "Manage items";
+            this.manageItemsBtn.Click += new System.EventHandler(this.manageItemsBtn_Click);
             // 
             // storeToolStripMenuItem
             // 
+            this.storeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddStoreBtn,
+            this.manageStoreBtn});
             this.storeToolStripMenuItem.Name = "storeToolStripMenuItem";
-            this.storeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.storeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.storeToolStripMenuItem.Text = "Store";
             // 
             // withDrowlToolStripMenuItem
             // 
+            this.withDrowlToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddWithDrawalBtn,
+            this.ManageWithDrawalBtn});
             this.withDrowlToolStripMenuItem.Name = "withDrowlToolStripMenuItem";
-            this.withDrowlToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.withDrowlToolStripMenuItem.Text = "WithDrowl";
+            this.withDrowlToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.withDrowlToolStripMenuItem.Text = "WithDrawal";
             // 
-            // addToolStripMenuItem
+            // SupplierBtn
             // 
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.addToolStripMenuItem.Text = "Add";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.storeItemsToolStripMenuItem,
-            this.storeManagerToolStripMenuItem,
-            this.suppliersToolStripMenuItem});
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(63, 34);
-            this.toolStripButton4.Text = "Store";
-            // 
-            // storeItemsToolStripMenuItem
-            // 
-            this.storeItemsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addItemsToolStripMenuItem1,
-            this.manageItemsToolStripMenuItem1});
-            this.storeItemsToolStripMenuItem.Name = "storeItemsToolStripMenuItem";
-            this.storeItemsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.storeItemsToolStripMenuItem.Text = "Store Items";
-            this.storeItemsToolStripMenuItem.Click += new System.EventHandler(this.storeItemsToolStripMenuItem_Click);
-            // 
-            // addItemsToolStripMenuItem1
-            // 
-            this.addItemsToolStripMenuItem1.Name = "addItemsToolStripMenuItem1";
-            this.addItemsToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
-            this.addItemsToolStripMenuItem1.Text = "Add Items";
-            this.addItemsToolStripMenuItem1.Click += new System.EventHandler(this.addItemsToolStripMenuItem1_Click);
-            // 
-            // manageItemsToolStripMenuItem1
-            // 
-            this.manageItemsToolStripMenuItem1.Name = "manageItemsToolStripMenuItem1";
-            this.manageItemsToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
-            this.manageItemsToolStripMenuItem1.Text = "Manage Items";
-            this.manageItemsToolStripMenuItem1.Click += new System.EventHandler(this.manageItemsToolStripMenuItem1_Click);
-            // 
-            // storeManagerToolStripMenuItem
-            // 
-            this.storeManagerToolStripMenuItem.Name = "storeManagerToolStripMenuItem";
-            this.storeManagerToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.storeManagerToolStripMenuItem.Text = "Store Manager";
-            this.storeManagerToolStripMenuItem.Click += new System.EventHandler(this.storeManagerToolStripMenuItem_Click);
-            // 
-            // suppliersToolStripMenuItem
-            // 
-            this.suppliersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addSupplierToolStripMenuItem,
-            this.manageSupplierToolStripMenuItem});
-            this.suppliersToolStripMenuItem.Name = "suppliersToolStripMenuItem";
-            this.suppliersToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.suppliersToolStripMenuItem.Text = "Suppliers";
-            // 
-            // addSupplierToolStripMenuItem
-            // 
-            this.addSupplierToolStripMenuItem.Name = "addSupplierToolStripMenuItem";
-            this.addSupplierToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.addSupplierToolStripMenuItem.Text = "Add Supplier";
-            this.addSupplierToolStripMenuItem.Click += new System.EventHandler(this.addSupplierToolStripMenuItem_Click);
-            // 
-            // manageSupplierToolStripMenuItem
-            // 
-            this.manageSupplierToolStripMenuItem.Name = "manageSupplierToolStripMenuItem";
-            this.manageSupplierToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.manageSupplierToolStripMenuItem.Text = "Manage Supplier";
-            this.manageSupplierToolStripMenuItem.Click += new System.EventHandler(this.manageSupplierToolStripMenuItem_Click);
+            this.SupplierBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddSupplierBtn,
+            this.manageSupplierBtn});
+            this.SupplierBtn.Name = "SupplierBtn";
+            this.SupplierBtn.Size = new System.Drawing.Size(152, 22);
+            this.SupplierBtn.Text = "Supplier";
             // 
             // expensesShowBtn
             // 
@@ -541,6 +486,70 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // AddStoreBtn
+            // 
+            this.AddStoreBtn.Name = "AddStoreBtn";
+            this.AddStoreBtn.Size = new System.Drawing.Size(152, 22);
+            this.AddStoreBtn.Text = "Add Store";
+            this.AddStoreBtn.Click += new System.EventHandler(this.AddStoreBtn_Click);
+            // 
+            // manageStoreBtn
+            // 
+            this.manageStoreBtn.Name = "manageStoreBtn";
+            this.manageStoreBtn.Size = new System.Drawing.Size(152, 22);
+            this.manageStoreBtn.Text = "Manage Store";
+            this.manageStoreBtn.Click += new System.EventHandler(this.manageStoreBtn_Click);
+            // 
+            // AddWithDrawalBtn
+            // 
+            this.AddWithDrawalBtn.Name = "AddWithDrawalBtn";
+            this.AddWithDrawalBtn.Size = new System.Drawing.Size(176, 22);
+            this.AddWithDrawalBtn.Text = "Add WithDrowl";
+            this.AddWithDrawalBtn.Click += new System.EventHandler(this.AddWithDrawalBtn_Click);
+            // 
+            // ManageWithDrawalBtn
+            // 
+            this.ManageWithDrawalBtn.Name = "ManageWithDrawalBtn";
+            this.ManageWithDrawalBtn.Size = new System.Drawing.Size(176, 22);
+            this.ManageWithDrawalBtn.Text = "Manage WithDrowl";
+            this.ManageWithDrawalBtn.Click += new System.EventHandler(this.ManageWithDrawalBtn_Click);
+            // 
+            // AddSupplierBtn
+            // 
+            this.AddSupplierBtn.Name = "AddSupplierBtn";
+            this.AddSupplierBtn.Size = new System.Drawing.Size(163, 22);
+            this.AddSupplierBtn.Text = "Add Supplier";
+            this.AddSupplierBtn.Click += new System.EventHandler(this.AddSupplierBtn_Click);
+            // 
+            // manageSupplierBtn
+            // 
+            this.manageSupplierBtn.Name = "manageSupplierBtn";
+            this.manageSupplierBtn.Size = new System.Drawing.Size(163, 22);
+            this.manageSupplierBtn.Text = "Manage Supplier";
+            // 
+            // storeManagerToolStripMenuItem
+            // 
+            this.storeManagerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addStoreManagerToolStripMenuItem,
+            this.manageStoreManagerToolStripMenuItem});
+            this.storeManagerToolStripMenuItem.Name = "storeManagerToolStripMenuItem";
+            this.storeManagerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.storeManagerToolStripMenuItem.Text = "StoreManager";
+            // 
+            // addStoreManagerToolStripMenuItem
+            // 
+            this.addStoreManagerToolStripMenuItem.Name = "addStoreManagerToolStripMenuItem";
+            this.addStoreManagerToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.addStoreManagerToolStripMenuItem.Text = "Add StoreManager";
+            this.addStoreManagerToolStripMenuItem.Click += new System.EventHandler(this.addStoreManagerToolStripMenuItem_Click);
+            // 
+            // manageStoreManagerToolStripMenuItem
+            // 
+            this.manageStoreManagerToolStripMenuItem.Name = "manageStoreManagerToolStripMenuItem";
+            this.manageStoreManagerToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.manageStoreManagerToolStripMenuItem.Text = "Manage StoreManager";
+            this.manageStoreManagerToolStripMenuItem.Click += new System.EventHandler(this.manageStoreManagerToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -603,24 +612,16 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripButton3;
         private System.Windows.Forms.ToolStripMenuItem itemsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addItemsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageItemsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageItemsBtn;
         private System.Windows.Forms.ToolStripMenuItem storeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem withDrowlToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SupplierBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private Telerik.WinControls.Themes.VisualStudio2012DarkTheme visualStudio2012DarkTheme1;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripButton4;
-        private System.Windows.Forms.ToolStripMenuItem storeItemsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addItemsToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem manageItemsToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem storeManagerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem suppliersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addSupplierToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageSupplierToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton expensesShowBtn;
         private System.Windows.Forms.ToolStripButton btnFactory;
         private System.Windows.Forms.ToolStripDropDownButton btnSales;
@@ -628,5 +629,14 @@
         private System.Windows.Forms.ToolStripMenuItem addIteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quotationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AddStoreBtn;
+        private System.Windows.Forms.ToolStripMenuItem manageStoreBtn;
+        private System.Windows.Forms.ToolStripMenuItem AddWithDrawalBtn;
+        private System.Windows.Forms.ToolStripMenuItem ManageWithDrawalBtn;
+        private System.Windows.Forms.ToolStripMenuItem AddSupplierBtn;
+        private System.Windows.Forms.ToolStripMenuItem manageSupplierBtn;
+        private System.Windows.Forms.ToolStripMenuItem storeManagerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addStoreManagerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageStoreManagerToolStripMenuItem;
     }
 }

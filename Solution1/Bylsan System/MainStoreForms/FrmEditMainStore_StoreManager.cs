@@ -144,6 +144,7 @@ namespace Bylsan_System.MainStoreForms
             processTypeComboBox.Text = TregatStorManeger.ProcessType;
             priceTextBox.Text = TregatStorManeger.Price.ToString();
             descriptionTextBox.Text = TregatStorManeger.Description;
+            qtyInOrOutTextBox.Text = TregatStorManeger.QtyInOrOut.ToString();
 
 
         }
