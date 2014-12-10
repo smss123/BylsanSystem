@@ -47,13 +47,15 @@
             this.ReportBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.StoreManager = new Telerik.WinControls.UI.RadGridView();
+            this.StoreManagerGridView = new Telerik.WinControls.UI.RadGridView();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.StoreManager)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StoreManager.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StoreManagerGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StoreManagerGridView.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +82,7 @@
             this.Addbtn.Name = "Addbtn";
             this.Addbtn.Size = new System.Drawing.Size(92, 36);
             this.Addbtn.Text = "Add item";
+            this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
             // toolStripSeparator1
             // 
@@ -116,15 +119,23 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblStatus});
             this.statusStrip1.Location = new System.Drawing.Point(0, 511);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(846, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // lblStatus
+            // 
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(12, 17);
+            this.lblStatus.Text = "-";
+            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.StoreManager);
+            this.groupBox1.Controls.Add(this.StoreManagerGridView);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 39);
@@ -134,20 +145,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // StoreManager
+            // StoreManagerGridView
             // 
-            this.StoreManager.BackColor = System.Drawing.SystemColors.Control;
-            this.StoreManager.Cursor = System.Windows.Forms.Cursors.Default;
-            this.StoreManager.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StoreManager.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.StoreManager.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.StoreManager.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.StoreManager.Location = new System.Drawing.Point(3, 18);
+            this.StoreManagerGridView.BackColor = System.Drawing.SystemColors.Control;
+            this.StoreManagerGridView.Cursor = System.Windows.Forms.Cursors.Default;
+            this.StoreManagerGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StoreManagerGridView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.StoreManagerGridView.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.StoreManagerGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.StoreManagerGridView.Location = new System.Drawing.Point(3, 18);
             // 
-            // StoreManager
+            // StoreManagerGridView
             // 
-            this.StoreManager.MasterTemplate.AllowAddNewRow = false;
-            this.StoreManager.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.StoreManagerGridView.MasterTemplate.AllowAddNewRow = false;
+            this.StoreManagerGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "ID";
             gridViewTextBoxColumn1.HeaderText = "ID";
@@ -182,7 +193,7 @@
             gridViewTextBoxColumn7.FieldName = "Description";
             gridViewTextBoxColumn7.HeaderText = "Description";
             gridViewTextBoxColumn7.Name = "Description";
-            gridViewTextBoxColumn7.Width = 161;
+            gridViewTextBoxColumn7.Width = 163;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Edit";
             gridViewCommandColumn1.MaxWidth = 45;
@@ -195,7 +206,7 @@
             gridViewCommandColumn2.MinWidth = 45;
             gridViewCommandColumn2.Name = "DeleteCol";
             gridViewCommandColumn2.Width = 45;
-            this.StoreManager.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            this.StoreManagerGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
@@ -206,15 +217,16 @@
             gridViewCommandColumn1,
             gridViewCommandColumn2});
             sortDescriptor1.PropertyName = "column1";
-            this.StoreManager.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
+            this.StoreManagerGridView.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
             sortDescriptor1});
-            this.StoreManager.Name = "StoreManager";
-            this.StoreManager.ReadOnly = true;
-            this.StoreManager.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.StoreManager.Size = new System.Drawing.Size(840, 451);
-            this.StoreManager.TabIndex = 0;
-            this.StoreManager.Text = "radGridView1";
-            this.StoreManager.ThemeName = "VisualStudio2012Light";
+            this.StoreManagerGridView.Name = "StoreManagerGridView";
+            this.StoreManagerGridView.ReadOnly = true;
+            this.StoreManagerGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.StoreManagerGridView.Size = new System.Drawing.Size(840, 451);
+            this.StoreManagerGridView.TabIndex = 0;
+            this.StoreManagerGridView.Text = "radGridView1";
+            this.StoreManagerGridView.ThemeName = "VisualStudio2012Light";
+            this.StoreManagerGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.StoreManagerGridView_CommandCellClick);
             // 
             // FrmManageMainStore_StoreManager
             // 
@@ -232,11 +244,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmManageMainStore_StoreManager";
             this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmManageMainStore_StoreManager_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.StoreManager.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StoreManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StoreManagerGridView.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StoreManagerGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -248,7 +263,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private Telerik.WinControls.UI.RadGridView StoreManager;
+        private Telerik.WinControls.UI.RadGridView StoreManagerGridView;
         private System.Windows.Forms.ToolStripButton Addbtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton RefreshBtn;
@@ -256,5 +271,6 @@
         private System.Windows.Forms.ToolStripButton ReportBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
+        private System.Windows.Forms.ToolStripStatusLabel lblStatus;
     }
 }
