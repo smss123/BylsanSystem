@@ -163,8 +163,7 @@
             this.toolStripMenuItem1,
             this.DeleteBtn});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(159, 98);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(159, 120);
             // 
             // OpenBtn
             // 
@@ -175,10 +174,10 @@
             // 
             // MoveBtn
             // 
-            this.MoveBtn.Enabled = false;
             this.MoveBtn.Name = "MoveBtn";
             this.MoveBtn.Size = new System.Drawing.Size(158, 22);
             this.MoveBtn.Text = "Move To Drafts";
+            this.MoveBtn.Click += new System.EventHandler(this.MoveBtn_Click);
             // 
             // ClearBtn
             // 
@@ -211,6 +210,7 @@
             this.MessagesListView.Size = new System.Drawing.Size(622, 390);
             this.MessagesListView.TabIndex = 4;
             this.MessagesListView.UseCompatibleStateImageBehavior = false;
+            this.MessagesListView.MouseHover += new System.EventHandler(this.MessagesListView_MouseHover);
             // 
             // GroupDisplayMessage
             // 

@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
 using Bylsan_System.MailForms;
-
+using XamaDataLayer.MailServer;
 using Bylsan_System.SellSystemForms;
 using Bylsan_System.SenarioAddOrderForms;
 
@@ -242,6 +242,11 @@ namespace Bylsan_System
         {
             FrmPrintQuotation frm = new FrmPrintQuotation();
             frm.ShowDialog();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }
