@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageMainStore_StoreManager));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn4 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            Telerik.WinControls.Data.SortDescriptor sortDescriptor2 = new Telerik.WinControls.Data.SortDescriptor();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Addbtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -159,67 +159,64 @@
             // StoreManagerGridView
             // 
             this.StoreManagerGridView.MasterTemplate.AllowAddNewRow = false;
+            this.StoreManagerGridView.MasterTemplate.AutoGenerateColumns = false;
             this.StoreManagerGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "ID";
-            gridViewTextBoxColumn8.HeaderText = "ID";
-            gridViewTextBoxColumn8.Name = "ID";
-            gridViewTextBoxColumn8.Width = 93;
-            gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "StoreID";
-            gridViewTextBoxColumn9.HeaderText = "StoreID";
-            gridViewTextBoxColumn9.Name = "StoreID";
-            gridViewTextBoxColumn9.Width = 117;
-            gridViewTextBoxColumn10.EnableExpressionEditor = false;
-            gridViewTextBoxColumn10.FieldName = "QtyInOrOut";
-            gridViewTextBoxColumn10.HeaderText = "QtyInOrOut";
-            gridViewTextBoxColumn10.Name = "QtyInOrOut";
-            gridViewTextBoxColumn10.Width = 94;
-            gridViewTextBoxColumn11.EnableExpressionEditor = false;
-            gridViewTextBoxColumn11.FieldName = "DateOfProcess";
-            gridViewTextBoxColumn11.HeaderText = "DateOfProcess";
-            gridViewTextBoxColumn11.Name = "DateOfProcess";
-            gridViewTextBoxColumn11.Width = 94;
-            gridViewTextBoxColumn12.EnableExpressionEditor = false;
-            gridViewTextBoxColumn12.FieldName = "ProcessType";
-            gridViewTextBoxColumn12.HeaderText = "ProcessType";
-            gridViewTextBoxColumn12.Name = "ProcessType";
-            gridViewTextBoxColumn12.Width = 81;
-            gridViewTextBoxColumn13.EnableExpressionEditor = false;
-            gridViewTextBoxColumn13.FieldName = "Price";
-            gridViewTextBoxColumn13.HeaderText = "Price";
-            gridViewTextBoxColumn13.Name = "Price";
-            gridViewTextBoxColumn13.Width = 97;
-            gridViewTextBoxColumn14.EnableExpressionEditor = false;
-            gridViewTextBoxColumn14.FieldName = "Description";
-            gridViewTextBoxColumn14.HeaderText = "Description";
-            gridViewTextBoxColumn14.Name = "Description";
-            gridViewTextBoxColumn14.Width = 163;
-            gridViewCommandColumn3.EnableExpressionEditor = false;
-            gridViewCommandColumn3.HeaderText = "Edit";
-            gridViewCommandColumn3.MaxWidth = 45;
-            gridViewCommandColumn3.MinWidth = 45;
-            gridViewCommandColumn3.Name = "EditCol";
-            gridViewCommandColumn3.Width = 45;
-            gridViewCommandColumn4.EnableExpressionEditor = false;
-            gridViewCommandColumn4.HeaderText = "Delete";
-            gridViewCommandColumn4.MaxWidth = 45;
-            gridViewCommandColumn4.MinWidth = 45;
-            gridViewCommandColumn4.Name = "DeleteCol";
-            gridViewCommandColumn4.Width = 45;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.Name = "ID";
+            gridViewTextBoxColumn1.Width = 90;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "StoreID";
+            gridViewTextBoxColumn2.HeaderText = "StoreID";
+            gridViewTextBoxColumn2.Name = "StoreID";
+            gridViewTextBoxColumn2.Width = 112;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "QtyInOrOut";
+            gridViewTextBoxColumn3.HeaderText = "QtyInOrOut";
+            gridViewTextBoxColumn3.Name = "QtyInOrOut";
+            gridViewTextBoxColumn3.Width = 91;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "DateOfProcess";
+            gridViewTextBoxColumn4.HeaderText = "DateOfProcess";
+            gridViewTextBoxColumn4.Name = "DateOfProcess";
+            gridViewTextBoxColumn4.Width = 91;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "ProcessType";
+            gridViewTextBoxColumn5.HeaderText = "ProcessType";
+            gridViewTextBoxColumn5.Name = "ProcessType";
+            gridViewTextBoxColumn5.Width = 78;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "Price";
+            gridViewTextBoxColumn6.HeaderText = "Price";
+            gridViewTextBoxColumn6.Name = "Price";
+            gridViewTextBoxColumn6.Width = 93;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "Description";
+            gridViewTextBoxColumn7.HeaderText = "Description";
+            gridViewTextBoxColumn7.Name = "Description";
+            gridViewTextBoxColumn7.Width = 152;
+            gridViewCommandColumn1.EnableExpressionEditor = false;
+            gridViewCommandColumn1.HeaderText = "Edit";
+            gridViewCommandColumn1.Name = "EditCol";
+            gridViewCommandColumn1.Width = 60;
+            gridViewCommandColumn2.EnableExpressionEditor = false;
+            gridViewCommandColumn2.HeaderText = "Delete";
+            gridViewCommandColumn2.Name = "Delete";
+            gridViewCommandColumn2.Width = 62;
             this.StoreManagerGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9,
-            gridViewTextBoxColumn10,
-            gridViewTextBoxColumn11,
-            gridViewTextBoxColumn12,
-            gridViewTextBoxColumn13,
-            gridViewTextBoxColumn14,
-            gridViewCommandColumn3,
-            gridViewCommandColumn4});
-            sortDescriptor2.PropertyName = "column1";
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewCommandColumn1,
+            gridViewCommandColumn2});
+            sortDescriptor1.PropertyName = "column1";
             this.StoreManagerGridView.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
-            sortDescriptor2});
+            sortDescriptor1});
             this.StoreManagerGridView.Name = "StoreManagerGridView";
             this.StoreManagerGridView.ReadOnly = true;
             this.StoreManagerGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;

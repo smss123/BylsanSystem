@@ -255,5 +255,53 @@ namespace Bylsan_System
 
             
         }
+
+        private void manageItemsBtn_Click(object sender, EventArgs e)
+        {
+            FrmManageMainStore_Item frm = new FrmManageMainStore_Item();
+            frm.ShowDialog();
+        }
+
+        private void AddStoreBtn_Click(object sender, EventArgs e)
+        {
+            FrmAddMainStore_Store frm = new FrmAddMainStore_Store();
+            frm.ShowDialog();
+        }
+
+        private void manageStoreBtn_Click(object sender, EventArgs e)
+        {
+            FrmManageMainStore_Store frm = new FrmManageMainStore_Store();
+            frm.ShowDialog();
+        }
+
+        private void AddWithDrawalBtn_Click(object sender, EventArgs e)
+        {
+            FrmAddMainStore_StoreWithDrawal frm = new FrmAddMainStore_StoreWithDrawal();
+            frm.ShowDialog();
+        }
+
+        private void ManageWithDrawalBtn_Click(object sender, EventArgs e)
+        {
+            FrmManageMainStore_StoreWithDrawal frm = new FrmManageMainStore_StoreWithDrawal();
+            frm.ShowDialog();
+        }
+
+        private void addStoreManagerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAddMainStore_StoreManager frm = new FrmAddMainStore_StoreManager();
+            frm.ShowDialog();
+        }
+
+        private void manageStoreManagerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmManageMainStore_StoreManager frm = new FrmManageMainStore_StoreManager();
+            frm.ShowDialog();
+        }
+
+        private void AddSupplierBtn_Click(object sender, EventArgs e)
+        {
+            FrmAddMainStore_Supplier frm = new FrmAddMainStore_Supplier();
+            frm.ShowDialog();
+        }
     }
 }
