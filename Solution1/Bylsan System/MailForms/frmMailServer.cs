@@ -353,7 +353,51 @@ namespace Bylsan_System.MailForms
                 //===================================================
                 if (MessagesListView.Columns[1].Text == "Sent To / From")
                 {
+                    string SelectedMesageStatus = MessagesListView.SelectedItems[0].SubItems [3].Text.ToString();
 
+                    switch (SelectedMesageStatus)
+                    {
+                        case "~Sent":
+                            var GetMessage = (from m in OutBoxCmd .LoadAllMessages ()
+                                      where m.ID == Indx
+                                      && m.Status == "~Sent"
+                                      select m).ToList();
+                    foreach (var item in GetMessage)
+                    {
+                        labUserName.Text = (from u in UserCmd.GetAllUsers() where u.ID == item.ReciverUserID  select u.UserName).First();
+                        labSubject.Text = item.Subject;
+                        richTextBox1.Text = item.MessageText.ToString();
+                        labMessageDate.Text = item.DateOfMessage.ToString();
+
+                    }
+
+                    GroupDisplayMessage.Visible = true;
+
+
+                            break ;
+                            //==========================
+                        case "~Received":
+
+              
+                    var GetInBoxMessage = (from m in InBoxCmd.GetAllMessages()
+                                      where m.ID == Indx
+                                      && m.Status == "~Received"                                     
+                                      select m).ToList ();
+                    foreach (var item in GetInBoxMessage )
+                    {
+
+
+                        labUserName.Text = (from u in UserCmd.GetAllUsers() where u.ID == item.SenderUserID select u.UserName).First();
+                        labSubject.Text = item.Subject;
+                        richTextBox1.Text = item.MessageText.ToString();
+                        labMessageDate.Text = item.DateOfMessage.ToString();
+
+                    }
+              
+                    GroupDisplayMessage.Visible = true;
+
+                            break;
+                    }
                 }
                 
 
@@ -406,7 +450,11 @@ namespace Bylsan_System.MailForms
                 ClearBtn.Enabled = false;
                 DeleteBtn.Enabled = false;
             }
-
+            if (MessagesListView.Columns[1].Text == "Sent To / From")
+            {
+                MoveBtn.Enabled = false;
+                DeleteBtn.Enabled = false;
+            }
         }
 
         private void MoveBtn_Click(object sender, EventArgs e)
