@@ -20,6 +20,7 @@ namespace Bylsan_System.MainStoreForms
         public FrmManageMainStore_StoreManager()
         {
             InitializeComponent();
+            RadMessageBox.SetThemeName("VisualStudio2012Light");
         }
         Thread th;
         private void Loading()
@@ -59,7 +60,7 @@ namespace Bylsan_System.MainStoreForms
         {
             var col = StoreManagerGridView.CurrentColumn.Index;
 
-            if (col == 4)
+            if (col == 7)
             {
                 Operation.BeginOperation(this);
                 FrmEditMainStore_StoreManager frm = new FrmEditMainStore_StoreManager();
@@ -69,7 +70,7 @@ namespace Bylsan_System.MainStoreForms
                 Operation.EndOperation(this);
             }
 
-            if (col == 5)
+            if (col == 8)
             {
                 if (RadMessageBox.Show(this, "Do you want to delete", "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
@@ -78,6 +79,11 @@ namespace Bylsan_System.MainStoreForms
                     Operation.EndOperation(this);
                 }
             }
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            FrmManageMainStore_StoreManager_Load(sender, e);
         }
 
       
