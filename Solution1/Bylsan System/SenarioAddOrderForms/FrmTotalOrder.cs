@@ -180,8 +180,10 @@ namespace Bylsan_System.SenarioAddOrderForms
         #region " ^^^^  Compute Discount  "
         private double ComputeDiscount(double TotalCost, double DiscountValue)
         {
+            double xValue = 0;
+            xValue = (TotalCost * DiscountValue) / 100;
             double NetTotalCostPrice = 0;
-            NetTotalCostPrice = (TotalCost * DiscountValue) / 100;
+            NetTotalCostPrice = TotalCost - xValue;
             return NetTotalCostPrice;
         }
         #endregion
