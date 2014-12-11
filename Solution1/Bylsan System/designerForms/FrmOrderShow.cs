@@ -65,7 +65,7 @@ namespace Bylsan_System.designerForms
                     CustomerThread.Start();
 
                     FrmProdShow.TaregtOrder = SelectedOrderID;
-
+                    MessageBox.Show("SelectedOrderID " + SelectedOrderID.ToString());
                   
                     FrmProdShow.ShowDialog ();
                  

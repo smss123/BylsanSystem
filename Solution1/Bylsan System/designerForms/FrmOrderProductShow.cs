@@ -30,7 +30,7 @@ namespace Bylsan_System.designerForms
         private void PopulateGrd()
         {
             Operation.BeginOperation(this);
-            var q = OrderProductsCmd.GetAllByOrderID(TaregtOrder).Where(p=>p.Status.Contains("To Deliver"));
+            var q = OrderProductsCmd.GetAllByOrderID(TaregtOrder);//.Where(p=>p.Status.Contains("To Deliver"));
             this.Invoke((MethodInvoker)delegate 
             {
                 DGVProducts.DataSource = q; 
@@ -48,27 +48,32 @@ namespace Bylsan_System.designerForms
             Thr.Start();
         }
 
-        Thread AttachThread;
+       
         private void DGVProducts_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Operation.BeginOperation(this);
-                if (DGVProducts.Rows.Count != 0)
-                {
-                   
-                    AttachThread = new Thread(LoadAttachments);
-                    AttachThread.Start();
-                }
-                Operation.EndOperation (this);
+            if (DGVProducts.Rows.Count != 0)
+            {
+
+               Thread  AttachThread = new Thread(LoadAttachments);
+                AttachThread.Start();
+            }
+            Operation.EndOperation(this);
+
+           
+           
         }
 
+        
         void LoadAttachments()
         {
             //SelectedProductPhotoBox.Image =null;
             //lblPoductName.Text = "";
-            //lblPrice.Text = "";
+            ////lblPrice.Text = "";
             try
             {
                 Operation.BeginOperation(this);
+         
                 int prdid = int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString());
                 imageList1.Images.Clear();
                 var lst = (from p in OrderProuctAttachmentCmd.GetOneAttachmentByOrderProductID(prdid) select p).ToList();
@@ -76,10 +81,10 @@ namespace Bylsan_System.designerForms
                 {
 
                     PhotoBox.Image = null;
-
+                    
                     //============================================
 
-                   
+                    Application.DoEvents();
                     foreach (var item in lst)
                     {
                         TxtDescription.Text = item.Description;
@@ -87,10 +92,12 @@ namespace Bylsan_System.designerForms
                         imageList1.Images.Add(item.imageX);
 
                         IDImageAddress = item.ID;
+                   
 
                     }
                     //==============================================
                     //-- Display Selected Product Information : 
+                   
                     var getcurrentProductInfo = ProductsCmd.GetProductByID(prdid);
                     foreach (var prd in getcurrentProductInfo)
                     {
@@ -102,11 +109,13 @@ namespace Bylsan_System.designerForms
                     //=============================================
                 });
 
-                AttachThread.Abort();
+                //AttachThread.Abort();
 
-            }catch(System.NullReferenceException ex)
+            }
+            catch (System.NullReferenceException ex)
             {
                 Operation.EndOperation(this);
+                MessageBox.Show(ex.Message.ToString(), "  Error");
                 return;
             }
             Operation.EndOperation(this);
