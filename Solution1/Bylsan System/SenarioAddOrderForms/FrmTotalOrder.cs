@@ -51,7 +51,17 @@ namespace Bylsan_System.SenarioAddOrderForms
 
 
             Operation.BeginOperation(this);
-
+            //========================================
+            double TotalCost;
+            if (txtDiscountBox.Text != "") 
+            {
+                TotalCost = ComputeDiscount(Convert.ToDouble(TotalPriceBox.Text.ToString()), Convert.ToDouble(txtDiscountBox.Text.ToString()));
+            }
+            else
+            {
+                TotalCost = Convert.ToDouble(TotalPriceBox.Text.ToString());
+            }
+            //========================================
             // Get Branch 
             var CurrentBranch = BranchsCmd.GetBranchByBarnchID(int.Parse(txtBranches.SelectedValue.ToString()));
             int CustId = 0;
@@ -126,7 +136,7 @@ namespace Bylsan_System.SenarioAddOrderForms
             // == Save At AccountDaily :
             AccountDaily DyTb = new AccountDaily() { //500
                 AccountID = CustmerAccountID ,
-                TotalIn = Convert .ToDouble ( TotalPriceBox.Text ),
+                TotalIn = TotalCost,// Convert .ToDouble ( TotalPriceBox.Text ),
                 TotalOut=0f,
                 DateOfProcess = DateTime .Now ,
                 Description = string.Format( "Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}",otb.OrderName,DateTime.Now.ToString(),CurrentBranch.Branch_Name),
@@ -136,7 +146,7 @@ namespace Bylsan_System.SenarioAddOrderForms
             {
                 AccountID = CustmerAccountID,
                 TotalIn = 0f,
-                TotalOut =txtPayment.Text.ToFloat(),
+                TotalOut =  TotalCost,// txtPayment.Text.ToFloat(),
                 DateOfProcess = DateTime.Now,
                 Description = "Payment Of  A Normal Order",
 
@@ -167,12 +177,27 @@ namespace Bylsan_System.SenarioAddOrderForms
         }
 
 
-      
-
-        private void txtBranches_SelectedIndexChanged(object sender, EventArgs e)
+        #region " ^^^^  Compute Discount  "
+        private double ComputeDiscount(double TotalCost, double DiscountValue)
         {
+            double NetTotalCostPrice = 0;
+            NetTotalCostPrice = (TotalCost * DiscountValue) / 100;
+            return NetTotalCostPrice;
+        }
+        #endregion
+ 
 
-         
+        private void txtDiscountBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // ^^^ Abu Ehab : 
+            string strvalid = "0123456789.";
+            if (e.KeyChar > 26)
+            {
+                if (((strvalid.IndexOf(e.KeyChar) + 1) == 0))
+                {
+                    e.KeyChar = '\0';
+                }
+            }
         }
     }
 }
