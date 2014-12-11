@@ -119,7 +119,7 @@
             this.UsersAutoCompleteBox.Text = "Select Users;";
             this.UsersAutoCompleteBox.ThemeName = "Windows8";
             this.UsersAutoCompleteBox.TextBlockFormatting += new Telerik.WinControls.UI.TextBlockFormattingEventHandler(this.radAutoCompleteBox1_TextBlockFormatting);
-            this.UsersAutoCompleteBox.TabIndexChanged += new System.EventHandler(this.radAutoCompleteBox1_TabIndexChanged);
+          //  this.UsersAutoCompleteBox.TabIndexChanged += new System.EventHandler(this.radAutoCompleteBox1_TabIndexChanged);
             // 
             // label1
             // 
@@ -129,7 +129,7 @@
             this.label1.Size = new System.Drawing.Size(23, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "To:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+           // this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // toolStrip1
             // 
@@ -161,6 +161,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmSendMail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Send Mail";
             this.Load += new System.EventHandler(this.FrmSendMail_Load);
             this.groupBox1.ResumeLayout(false);
@@ -180,12 +181,12 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private Telerik.WinControls.UI.RadButton SendBtn;
-        private System.Windows.Forms.TextBox TheMessageBox;
         private System.Windows.Forms.Label SubjectLabl;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox SubjectBox;
-        private Telerik.WinControls.UI.RadAutoCompleteBox UsersAutoCompleteBox;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        public Telerik.WinControls.UI.RadAutoCompleteBox UsersAutoCompleteBox;
+        public System.Windows.Forms.TextBox TheMessageBox;
+        public System.Windows.Forms.TextBox SubjectBox;
     }
 }
