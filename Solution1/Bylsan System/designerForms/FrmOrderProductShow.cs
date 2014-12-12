@@ -74,7 +74,7 @@ namespace Bylsan_System.designerForms
             {
                 Operation.BeginOperation(this);
          
-                int prdid = int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString());
+                int prdid = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString());
                 imageList1.Images.Clear();
                 var lst = (from p in OrderProuctAttachmentCmd.GetOneAttachmentByOrderProductID(prdid) select p).ToList();
                 this.Invoke((MethodInvoker)delegate
