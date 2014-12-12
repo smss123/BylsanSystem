@@ -87,8 +87,10 @@ namespace Bylsan_System.designerForms
                     Application.DoEvents();
                     foreach (var item in lst)
                     {
+                        
                         TxtDescription.Text = item.Description;
                         PhotoBox.Image = item.imageX;
+                      
                         imageList1.Images.Add(item.imageX);
 
                         IDImageAddress = item.ID;
@@ -216,38 +218,42 @@ namespace Bylsan_System.designerForms
         SaveFileDialog SvDialog = new SaveFileDialog();
         private void SavePhotoBtn_Click(object sender, EventArgs e)
         {
-            SvDialog = new SaveFileDialog();
-            SvDialog.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
-            SvDialog.Title = "Save an Image File";
-            SvDialog.ShowDialog();
-
-
-            if (SvDialog.FileName != "" && PhotoBox.Image != null)
+            if (PhotoBox.Image != null)
             {
+                SvDialog = new SaveFileDialog();
+                SvDialog.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
+                SvDialog.Title = "Save an Image File";
+                SvDialog.ShowDialog();
 
-                System.IO.FileStream fs =
-                   (System.IO.FileStream)SvDialog.OpenFile();
 
-                switch (SvDialog.FilterIndex)
+                if (SvDialog.FileName != "" && PhotoBox.Image != null)
                 {
-                    case 1:
-                        PhotoBox.Image.Save(fs,
-                           System.Drawing.Imaging.ImageFormat.Jpeg);
-                        break;
 
-                    case 2:
-                        PhotoBox.Image.Save(fs,
-                           System.Drawing.Imaging.ImageFormat.Bmp);
-                        break;
+                    System.IO.FileStream fs =
+                       (System.IO.FileStream)SvDialog.OpenFile();
 
-                    case 3:
-                        PhotoBox.Image.Save(fs,
-                           System.Drawing.Imaging.ImageFormat.Gif);
-                        break;
+                    switch (SvDialog.FilterIndex)
+                    {
+                        case 1:
+                            PhotoBox.Image.Save(fs,
+                               System.Drawing.Imaging.ImageFormat.Jpeg);
+                            break;
+
+                        case 2:
+                            PhotoBox.Image.Save(fs,
+                               System.Drawing.Imaging.ImageFormat.Bmp);
+                            break;
+
+                        case 3:
+                            PhotoBox.Image.Save(fs,
+                               System.Drawing.Imaging.ImageFormat.Gif);
+                            break;
+                    }
+
+                    fs.Close();
                 }
-
-                fs.Close();
             }
+            
         }
         #endregion
         private void CloseBtn_Click(object sender, EventArgs e)

@@ -61,6 +61,7 @@ namespace Bylsan_System.SenarioAddOrderForms
             {
                 TotalCost = Convert.ToDouble(TotalPriceBox.Text.ToString());
             }
+            MessageBox.Show("total Cost : " + TotalCost.ToString());
             //========================================
             // Get Branch 
             var CurrentBranch = BranchsCmd.GetBranchByBarnchID(int.Parse(txtBranches.SelectedValue.ToString()));
@@ -180,10 +181,10 @@ namespace Bylsan_System.SenarioAddOrderForms
         #region " ^^^^  Compute Discount  "
         private double ComputeDiscount(double TotalCost, double DiscountValue)
         {
-            double xValue = 0;
-            xValue = (TotalCost * DiscountValue) / 100;
-            double NetTotalCostPrice = 0;
-            NetTotalCostPrice = TotalCost - xValue;
+            // ( المبلغ الأصلي ) - ( المبلغ الأصلي * (الخصم ÷ 100) )
+         
+            double NetTotalCostPrice = TotalCost - (TotalCost * (DiscountValue / 100));
+      
             return NetTotalCostPrice;
         }
         #endregion
