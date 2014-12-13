@@ -63,13 +63,14 @@ namespace Bylsan_System.designerForms
            
            
         }
-
-        
+        List<Image> ListPictures = new List<Image >();
+       
         void LoadAttachments()
         {
             //SelectedProductPhotoBox.Image =null;
             //lblPoductName.Text = "";
             ////lblPrice.Text = "";
+            ListPictures.Clear();
             try
             {
                 Operation.BeginOperation(this);
@@ -94,8 +95,10 @@ namespace Bylsan_System.designerForms
                         imageList1.Images.Add(item.imageX);
 
                         IDImageAddress = item.ID;
-                   
 
+                        //================================
+                        
+                        ListPictures.Add( item.imageX );
                     }
                     //==============================================
                     //-- Display Selected Product Information : 
@@ -131,21 +134,21 @@ namespace Bylsan_System.designerForms
 
             if (PhotoBox.Image != null)
             {
-                if (i != imageList1.Images.Count)
+        
+                if (ListPictures.Count != 0 && i < ListPictures .Count )
                 {
-
                     PhotoBox.Image = null;
-                    PhotoBox.Image = imageList1.Images[i];
-                    SizeLab.Text = imageList1.Images[i].Size.ToString();
+                    PhotoBox.Image = ListPictures[i];
                     i++;
                 }
                 else
                 {
                     i = 0;
                     PhotoBox.Image = null;
-                    PhotoBox.Image = imageList1.Images[i];
-                    SizeLab.Text = imageList1.Images[i].Size.ToString();
+                    PhotoBox.Image = ListPictures[i];
                 }
+               
+                
             }
         }
 
