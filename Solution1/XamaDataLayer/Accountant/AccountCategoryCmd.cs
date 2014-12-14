@@ -44,7 +44,8 @@ namespace XamaDataLayer.Accountant
        public static List<AccountCategory> GetAll()
        {
            db = new DbDataContext();
-           return db.AccountCategories.ToList();
+           var Lst = ( from a in  db.AccountCategories select a ).ToList();
+           return Lst;
        }
     }
 }

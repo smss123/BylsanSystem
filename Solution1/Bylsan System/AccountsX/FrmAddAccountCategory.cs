@@ -3,46 +3,50 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using Telerik.WinControls;
+using Telerik.WinControls.UI;
+using XamaDataLayer;
+using XamaDataLayer.BranchCmd;
+using XamaDataLayer.Helper_Classes;
+using XamaDataLayer.Accountant;
+//==========================
+
 
 namespace Bylsan_System.AccountsX
 {
-    public partial class FrmAddAccountCategory : Telerik.WinControls.UI.RadForm
+    public partial class FrmAddAccountCategory : Form
     {
         public FrmAddAccountCategory()
         {
             InitializeComponent();
         }
 
+      
         private void FrmAddAccountCategory_Load(object sender, EventArgs e)
         {
-
+            txtAccountName.Text = ""; textBox1.Text = "";
+            
         }
 
-        private void AddBtn_Click(object sender, EventArgs e)
+        private void SaveBtn_Click(object sender, EventArgs e)
         {
-            #region "  CheckFillTextBox "
-
-            if (accountCategoryNameTextBox.Text == "")
+            try
             {
-
-                accountCategoryNameTextBox.BackColor = Color.OrangeRed;
-
-                accountCategoryNameTextBox.Focus();
-                errorProvider1.SetError(this.accountCategoryNameTextBox, "Please Enter account Category Name ");
-
-                return;
+                Operation.BeginOperation(this);
+                AccountCategory tb = new AccountCategory() 
+                { AccountCategoryName = txtAccountName .Text , Description = textBox1.Text  };
+                AccountCategoryCmd.AddAccountCategory(tb);
+                Operation.EndOperation(this);
+                Operation.ShowToustOk("Account Was Created", this);
             }
-            else
+            catch (Exception)
             {
-                accountCategoryNameTextBox.BackColor = Color.White;
-                errorProvider1.Clear();
-
+                
+                
             }
-
-            #endregion
         }
     }
 }

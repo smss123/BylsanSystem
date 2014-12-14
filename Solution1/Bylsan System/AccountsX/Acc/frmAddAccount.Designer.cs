@@ -35,10 +35,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CmbCategories = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtAccountName = new System.Windows.Forms.TextBox();
             this.btnAdd = new Telerik.WinControls.UI.RadButton();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             accountNameLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -46,8 +46,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,9 +74,9 @@
             label1.AutoSize = true;
             label1.Location = new System.Drawing.Point(83, 42);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(59, 13);
+            label1.Size = new System.Drawing.Size(62, 13);
             label1.TabIndex = 0;
-            label1.Text = "Category :";
+            label1.Text = "Category  :";
             // 
             // groupBox1
             // 
@@ -132,10 +132,6 @@
             this.txtDescription.Size = new System.Drawing.Size(253, 98);
             this.txtDescription.TabIndex = 3;
             // 
-            // accountBindingSource
-            // 
-            this.accountBindingSource.DataSource = typeof(XamaDataLayer.Account);
-            // 
             // txtAccountName
             // 
             this.txtAccountName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "AccountName", true));
@@ -153,12 +149,16 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataSource = typeof(XamaDataLayer.Account);
+            // 
             // frmAddAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(459, 272);
+            this.ClientSize = new System.Drawing.Size(481, 271);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmAddAccount";
@@ -174,8 +174,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

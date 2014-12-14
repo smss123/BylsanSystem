@@ -17,7 +17,7 @@ using XamaDataLayer.Security;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
-using Bylsan_System.MailForms;
+using Bylsan_System.AccountsX;
 using XamaDataLayer.MailServer;
 using Bylsan_System.SellSystemForms;
 using Bylsan_System.SenarioAddOrderForms;
@@ -308,6 +308,12 @@ namespace Bylsan_System
         {
             frmAddAccount FrmAccount = new frmAddAccount();
             FrmAccount.Show();
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            FrmAddAccountCategory FRM = new FrmAddAccountCategory();
+            FRM.Show();
         }
     }
 }
