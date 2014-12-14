@@ -112,11 +112,23 @@
     <Compile Include="AccountsX\FrmEditAccountCategory.Designer.cs">
       <DependentUpon>FrmEditAccountCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="AccountsX\FrmEditDebtors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountsX\FrmEditDebtors.Designer.cs">
+      <DependentUpon>FrmEditDebtors.cs</DependentUpon>
+    </Compile>
     <Compile Include="AccountsX\FrmManageAccountCategory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AccountsX\FrmManageAccountCategory.Designer.cs">
       <DependentUpon>FrmManageAccountCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountsX\FrmManageDebtors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountsX\FrmManageDebtors.Designer.cs">
+      <DependentUpon>FrmManageDebtors.cs</DependentUpon>
     </Compile>
     <Compile Include="BranchForms\FrmAddBranch.cs">
       <SubType>Form</SubType>
@@ -500,8 +512,14 @@
     <EmbeddedResource Include="AccountsX\FrmEditAccountCategory.resx">
       <DependentUpon>FrmEditAccountCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AccountsX\FrmEditDebtors.resx">
+      <DependentUpon>FrmEditDebtors.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AccountsX\FrmManageAccountCategory.resx">
       <DependentUpon>FrmManageAccountCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountsX\FrmManageDebtors.resx">
+      <DependentUpon>FrmManageDebtors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BranchForms\FrmAddBranch.resx">
       <DependentUpon>FrmAddBranch.cs</DependentUpon>
