@@ -38,8 +38,8 @@
             this.txtAccountName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SaveBtn = new System.Windows.Forms.Button();
-            this.txtAccount = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAccountBox = new System.Windows.Forms.TextBox();
+            this.txtDescriptionBox = new System.Windows.Forms.TextBox();
             descriptionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             accountNameLabel = new System.Windows.Forms.Label();
@@ -141,9 +141,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.SaveBtn);
-            this.groupBox1.Controls.Add(this.txtAccount);
+            this.groupBox1.Controls.Add(this.txtAccountBox);
             this.groupBox1.Controls.Add(label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtDescriptionBox);
             this.groupBox1.Controls.Add(label4);
             this.groupBox1.Location = new System.Drawing.Point(36, 23);
             this.groupBox1.Name = "groupBox1";
@@ -161,26 +161,26 @@
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
-            // txtAccount
+            // txtAccountBox
             // 
-            this.txtAccount.Location = new System.Drawing.Point(125, 26);
-            this.txtAccount.Name = "txtAccount";
-            this.txtAccount.Size = new System.Drawing.Size(244, 20);
-            this.txtAccount.TabIndex = 5;
+            this.txtAccountBox.Location = new System.Drawing.Point(125, 26);
+            this.txtAccountBox.Name = "txtAccountBox";
+            this.txtAccountBox.Size = new System.Drawing.Size(244, 20);
+            this.txtAccountBox.TabIndex = 5;
             // 
-            // textBox1
+            // txtDescriptionBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(116, 67);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 83);
-            this.textBox1.TabIndex = 3;
+            this.txtDescriptionBox.Location = new System.Drawing.Point(116, 67);
+            this.txtDescriptionBox.Multiline = true;
+            this.txtDescriptionBox.Name = "txtDescriptionBox";
+            this.txtDescriptionBox.Size = new System.Drawing.Size(253, 83);
+            this.txtDescriptionBox.TabIndex = 3;
             // 
             // FrmAddAccountCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 220);
+            this.ClientSize = new System.Drawing.Size(444, 235);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAddAccountCategory";
             this.Text = "FrmAddAccountCategory";
@@ -200,8 +200,8 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtAccountName;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDescriptionBox;
         private System.Windows.Forms.Button SaveBtn;
-        private System.Windows.Forms.TextBox txtAccount;
+        private System.Windows.Forms.TextBox txtAccountBox;
     }
 }

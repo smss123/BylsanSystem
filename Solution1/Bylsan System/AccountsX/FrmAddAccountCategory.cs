@@ -27,7 +27,7 @@ namespace Bylsan_System.AccountsX
       
         private void FrmAddAccountCategory_Load(object sender, EventArgs e)
         {
-            txtAccountName.Text = ""; textBox1.Text = "";
+            txtAccountName.Text = ""; txtDescriptionBox.Text = "";
             
         }
 
@@ -35,9 +35,10 @@ namespace Bylsan_System.AccountsX
         {
             try
             {
+                
                 Operation.BeginOperation(this);
                 AccountCategory tb = new AccountCategory() 
-                { AccountCategoryName = txtAccountName .Text , Description = textBox1.Text  };
+                { AccountCategoryName = txtAccountBox .Text , Description = txtDescriptionBox.Text  };
                 AccountCategoryCmd.AddAccountCategory(tb);
                 Operation.EndOperation(this);
                 Operation.ShowToustOk("Account Was Created", this);

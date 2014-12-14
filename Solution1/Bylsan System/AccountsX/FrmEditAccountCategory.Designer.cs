@@ -44,6 +44,24 @@
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(69, 69);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(69, 13);
+            descriptionLabel.TabIndex = 2;
+            descriptionLabel.Text = "Description:";
+            // 
+            // accountCategoryNameLabel
+            // 
+            accountCategoryNameLabel.AutoSize = true;
+            accountCategoryNameLabel.Location = new System.Drawing.Point(5, 38);
+            accountCategoryNameLabel.Name = "accountCategoryNameLabel";
+            accountCategoryNameLabel.Size = new System.Drawing.Size(133, 13);
+            accountCategoryNameLabel.TabIndex = 0;
+            accountCategoryNameLabel.Text = "Account Category Name:";
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -75,15 +93,6 @@
             this.SaveBtn.ThemeName = "VisualStudio2012Light";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(69, 69);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(69, 13);
-            descriptionLabel.TabIndex = 2;
-            descriptionLabel.Text = "Description:";
-            // 
             // descriptionTextBox
             // 
             this.descriptionTextBox.Location = new System.Drawing.Point(144, 66);
@@ -91,15 +100,6 @@
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(209, 70);
             this.descriptionTextBox.TabIndex = 3;
-            // 
-            // accountCategoryNameLabel
-            // 
-            accountCategoryNameLabel.AutoSize = true;
-            accountCategoryNameLabel.Location = new System.Drawing.Point(5, 38);
-            accountCategoryNameLabel.Name = "accountCategoryNameLabel";
-            accountCategoryNameLabel.Size = new System.Drawing.Size(133, 13);
-            accountCategoryNameLabel.TabIndex = 0;
-            accountCategoryNameLabel.Text = "Account Category Name:";
             // 
             // accountCategoryNameTextBox
             // 
@@ -127,6 +127,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditAccountCategory";
             this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmEditAccountCategory_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
