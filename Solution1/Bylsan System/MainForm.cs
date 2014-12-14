@@ -327,5 +327,11 @@ namespace Bylsan_System
             FrmManageAccountCategory frm = new FrmManageAccountCategory();
             frm.Show();
         }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            FrmAccountTree Tree = new FrmAccountTree();
+            Tree.Show();
+        }
     }
 }
