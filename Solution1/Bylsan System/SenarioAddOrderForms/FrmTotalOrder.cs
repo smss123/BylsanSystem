@@ -143,11 +143,13 @@ namespace Bylsan_System.SenarioAddOrderForms
                 Description = string.Format( "Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}",otb.OrderName,DateTime.Now.ToString(),CurrentBranch.Branch_Name),
                 
             };
+            AccountDailyCmd.AddAccountDaily(DyTb);
+
             AccountDaily Cu = new AccountDaily()//250
             {
                 AccountID = CustmerAccountID,
                 TotalIn = 0f,
-                TotalOut =  TotalCost,// txtPayment.Text.ToFloat(),
+                TotalOut = int .Parse (txtPayment.Text .ToString ()),  // txtPayment.Text.ToFloat(),
                 DateOfProcess = DateTime.Now,
                 Description = "Payment Of  A Normal Order",
 
@@ -173,7 +175,7 @@ namespace Bylsan_System.SenarioAddOrderForms
 
             Operation.EndOperation(this);
 
-            MessageBox.Show("Saved ");
+            Operation.ShowToustOk("Saved Successfull ....", this);
 
         }
 
