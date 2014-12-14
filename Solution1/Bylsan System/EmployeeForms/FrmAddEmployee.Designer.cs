@@ -39,6 +39,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.nationaltyComboBox = new System.Windows.Forms.ComboBox();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.emp_NameTextBox = new System.Windows.Forms.TextBox();
             this.hereDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.homeAddressTextBox = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             emp_NameLabel = new System.Windows.Forms.Label();
             hereDateLabel = new System.Windows.Forms.Label();
             homeAddressLabel = new System.Windows.Forms.Label();
@@ -57,8 +57,8 @@
             nationaltyLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -178,6 +178,10 @@
             this.nationaltyComboBox.Size = new System.Drawing.Size(255, 21);
             this.nationaltyComboBox.TabIndex = 2;
             // 
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataSource = typeof(XamaDataLayer.Employee);
+            // 
             // emp_NameTextBox
             // 
             this.emp_NameTextBox.BackColor = System.Drawing.SystemColors.Info;
@@ -232,10 +236,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataSource = typeof(XamaDataLayer.Employee);
-            // 
             // FrmAddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,8 +259,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

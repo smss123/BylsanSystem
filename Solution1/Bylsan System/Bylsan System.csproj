@@ -88,11 +88,23 @@
     <Compile Include="AccountsX\frmAccountDailySHow.Designer.cs">
       <DependentUpon>frmAccountDailySHow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AccountsX\FrmAccountTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountsX\FrmAccountTree.Designer.cs">
+      <DependentUpon>FrmAccountTree.cs</DependentUpon>
+    </Compile>
     <Compile Include="AccountsX\FrmAddAccountCategory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AccountsX\FrmAddAccountCategory.Designer.cs">
       <DependentUpon>FrmAddAccountCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountsX\FrmAddDebtors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountsX\FrmAddDebtors.Designer.cs">
+      <DependentUpon>FrmAddDebtors.cs</DependentUpon>
     </Compile>
     <Compile Include="AccountsX\FrmEditAccountCategory.cs">
       <SubType>Form</SubType>
@@ -476,8 +488,14 @@
     <EmbeddedResource Include="AccountsX\frmAccountDailySHow.resx">
       <DependentUpon>frmAccountDailySHow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AccountsX\FrmAccountTree.resx">
+      <DependentUpon>FrmAccountTree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AccountsX\FrmAddAccountCategory.resx">
       <DependentUpon>FrmAddAccountCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountsX\FrmAddDebtors.resx">
+      <DependentUpon>FrmAddDebtors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AccountsX\FrmEditAccountCategory.resx">
       <DependentUpon>FrmEditAccountCategory.cs</DependentUpon>
