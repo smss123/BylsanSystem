@@ -197,5 +197,48 @@ namespace Bylsan_System.SellSystemForms
 
         }
 
+        private void txtBarCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                if (ListItems.Items.Count != 0)
+                {
+                    xItemID = 0;
+
+                    var GetItem = SellItemsCmd.GetSellItemByID(int.Parse(txtBarCode.Text.ToString()));
+                    xItemID = GetItem[1].ID;
+                    Application.DoEvents();
+                    //==================================================
+
+                    if (DGVSellItems.Rows.Count != 0)
+                    {
+                        for (int i = 0; i < DGVSellItems.Rows.Count; i++)
+                        {
+                            if (int.Parse(DGVSellItems.Rows[i].Cells[0].Value.ToString()) == xItemID)
+                            {
+                                DGVSellItems.Rows[i].Cells[4].Value = int.Parse(DGVSellItems.Rows[i].Cells[4].Value.ToString()) + 1;
+                                DGVSellItems.Rows[i].Cells[3].Value = (int.Parse(ListItems.SelectedItems[0].SubItems[3].Text) + int.Parse(DGVSellItems.Rows[i].Cells[3].Value.ToString()));
+                                CalcTotal();
+                                return;
+                            }
+                        }
+                    }
+
+
+                    DGVSellItems.Rows.Add(new string[] 
+                            {
+                                xItemID.ToString(),
+                                ListItems.SelectedItems[0].SubItems[1].Text,
+                                ListItems.SelectedItems[0].SubItems[2].Text,
+                                ListItems.SelectedItems[0].SubItems[3].Text,
+                                "1"
+                            });
+
+                    CalcTotal();
+                }
+
+            }            
+        }
+
     }
 }
