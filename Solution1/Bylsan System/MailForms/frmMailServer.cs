@@ -171,6 +171,7 @@ namespace Bylsan_System.MailForms
             }
         }
 
+        #region " ^^^ Color & Font "
         void ReSizeFontsAndColor()
         {
             if (MessagesListView.Items.Count != 0)
@@ -186,7 +187,9 @@ namespace Bylsan_System.MailForms
                 }
             }
         }
-        #endregion 
+        #endregion
+
+        #endregion
 
         private void InBoxBtn_Click(object sender, EventArgs e)
         {
@@ -196,6 +199,7 @@ namespace Bylsan_System.MailForms
             frmMailServer_Load(sender, e);
         }
 
+        #region  " ^^^ Sent Messages  " 
         private void SentBtn_Click(object sender, EventArgs e)
         {
             Operation.BeginOperation(this);
@@ -221,6 +225,7 @@ namespace Bylsan_System.MailForms
             ReSizeFontsAndColor();
             Operation.EndOperation(this);
         }
+#endregion 
 
         #region "  ^^^ UnUsed       "
         void GetAllDarfts(){
@@ -238,7 +243,8 @@ namespace Bylsan_System.MailForms
                                where i.ReciverUserID == XamaDataLayer .Security .UserInfo .CurrentUserID
                                && i.Status == "~Received" 
                                join o in OutBoxCmd.LoadAllMessages()       
-                               on  i.ReciverUserID  equals (o.SenderUserID )  where o.Status == "~Sent"
+                               on  i.ReciverUserID  equals (o.SenderUserID ) 
+                               where o.Status == "~Sent"
                                select new { i,o }).ToList();
 
                Operation.EndOperation(this);
@@ -246,7 +252,7 @@ namespace Bylsan_System.MailForms
 
         #endregion 
 
-
+        #region " ^^^ Draft           "
         private void DraftsBtn_Click(object sender, EventArgs e)
         {
             Operation.BeginOperation(this);
@@ -294,14 +300,14 @@ namespace Bylsan_System.MailForms
             Operation.EndOperation(this);
         }
 
-    
+        #endregion 
 
         private void ClearBtn_Click(object sender, EventArgs e)
         {
             MessagesListView.Items.Clear();
         }
 
-        
+        #region  " ^^^ Open Message  "
         private void OpenBtn_Click(object sender, EventArgs e)
         {
             if (MessagesListView.Items.Count != 0)
@@ -404,7 +410,8 @@ namespace Bylsan_System.MailForms
             }
         }
 
-    
+        #endregion 
+
         private void CloseBtn_Click_1(object sender, EventArgs e)
         {
             frmMailServer_Load(sender, e);
@@ -511,8 +518,22 @@ namespace Bylsan_System.MailForms
             }
         }
 
+        #region "    ^^^ Replay Message       "
+        private void ReplayBtn_Click(object sender, EventArgs e)
+        {
+            if (richTextBox1.Text != "" && labUserName.Text != "")
+            {
+                FrmSendMail frm = new FrmSendMail();
+                frm.UsersAutoCompleteBox.Text = labUserName.Text;
+                frm.TheMessageBox.Text = richTextBox1.Text;
+                frm.SubjectBox.Text = labSubject.Text;
+                frm.Show();
+                this.GroupDisplayMessage.Visible = false;
+                this.Hide();
+            }
+        }
 
-
+        #endregion
 
 
     }

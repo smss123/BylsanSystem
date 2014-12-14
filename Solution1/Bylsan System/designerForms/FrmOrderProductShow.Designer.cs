@@ -189,7 +189,7 @@
             // 
             this.CloseBtn.Location = new System.Drawing.Point(17, 366);
             this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(110, 36);
+            this.CloseBtn.Size = new System.Drawing.Size(130, 36);
             this.CloseBtn.TabIndex = 6;
             this.CloseBtn.Text = "Close";
             this.CloseBtn.UseVisualStyleBackColor = true;
@@ -320,9 +320,9 @@
             // 
             this.SavePhotoBtn.Location = new System.Drawing.Point(17, 326);
             this.SavePhotoBtn.Name = "SavePhotoBtn";
-            this.SavePhotoBtn.Size = new System.Drawing.Size(130, 34);
+            this.SavePhotoBtn.Size = new System.Drawing.Size(271, 34);
             this.SavePhotoBtn.TabIndex = 11;
-            this.SavePhotoBtn.Text = "Save Photo ";
+            this.SavePhotoBtn.Text = "Save the image to your computer";
             this.SavePhotoBtn.UseVisualStyleBackColor = true;
             this.SavePhotoBtn.Click += new System.EventHandler(this.SavePhotoBtn_Click);
             // 

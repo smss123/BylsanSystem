@@ -27,6 +27,7 @@ namespace Bylsan_System
             this.AlertTimer.Tick += AlertTimer_Tick;
             AlertTimer.Start();
 
+
         }
         void AlertTimer_Tick(object sender, EventArgs e)
         {

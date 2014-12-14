@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.CustomerInfomationGroupBox = new System.Windows.Forms.GroupBox();
             this.OrderTypeLab = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,6 +53,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.OkeyBtn = new Telerik.WinControls.UI.RadButton();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
+            this.txtDiscountBox = new System.Windows.Forms.TextBox();
             this.CustomerInfomationGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OkeyBtn)).BeginInit();
@@ -62,6 +63,7 @@
             // 
             // CustomerInfomationGroupBox
             // 
+            this.CustomerInfomationGroupBox.Controls.Add(this.txtDiscountBox);
             this.CustomerInfomationGroupBox.Controls.Add(this.OrderTypeLab);
             this.CustomerInfomationGroupBox.Controls.Add(this.label8);
             this.CustomerInfomationGroupBox.Controls.Add(this.txtBranches);
@@ -81,7 +83,7 @@
             this.CustomerInfomationGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.CustomerInfomationGroupBox.Location = new System.Drawing.Point(0, 0);
             this.CustomerInfomationGroupBox.Name = "CustomerInfomationGroupBox";
-            this.CustomerInfomationGroupBox.Size = new System.Drawing.Size(524, 133);
+            this.CustomerInfomationGroupBox.Size = new System.Drawing.Size(524, 167);
             this.CustomerInfomationGroupBox.TabIndex = 7;
             this.CustomerInfomationGroupBox.TabStop = false;
             this.CustomerInfomationGroupBox.Text = "Customer Infomation";
@@ -89,7 +91,7 @@
             // OrderTypeLab
             // 
             this.OrderTypeLab.AutoSize = true;
-            this.OrderTypeLab.Location = new System.Drawing.Point(105, 114);
+            this.OrderTypeLab.Location = new System.Drawing.Point(180, 16);
             this.OrderTypeLab.Name = "OrderTypeLab";
             this.OrderTypeLab.Size = new System.Drawing.Size(23, 13);
             this.OrderTypeLab.TabIndex = 1;
@@ -98,11 +100,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 114);
+            this.label8.Location = new System.Drawing.Point(12, 128);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 13);
+            this.label8.Size = new System.Drawing.Size(121, 13);
             this.label8.TabIndex = 2;
-            this.label8.Text = "Order Type : ";
+            this.label8.Text = "Discount on the amount";
             // 
             // txtBranches
             // 
@@ -113,7 +115,7 @@
             this.txtBranches.Name = "txtBranches";
             this.txtBranches.Size = new System.Drawing.Size(121, 21);
             this.txtBranches.TabIndex = 10;
-            this.txtBranches.SelectedIndexChanged += new System.EventHandler(this.txtBranches_SelectedIndexChanged);
+            //this.txtBranches.SelectedIndexChanged += new System.EventHandler(this.txtBranches_SelectedIndexChanged);
             // 
             // txtPayment
             // 
@@ -135,8 +137,10 @@
             // 
             this.TotalPriceBox.Location = new System.Drawing.Point(299, 83);
             this.TotalPriceBox.Name = "TotalPriceBox";
+            this.TotalPriceBox.ReadOnly = true;
             this.TotalPriceBox.Size = new System.Drawing.Size(213, 20);
             this.TotalPriceBox.TabIndex = 9;
+            this.TotalPriceBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -230,7 +234,7 @@
             // 
             this.panel1.Controls.Add(this.OkeyBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 394);
+            this.panel1.Location = new System.Drawing.Point(0, 426);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(524, 44);
             this.panel1.TabIndex = 9;
@@ -251,51 +255,60 @@
             this.radGridView1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.radGridView1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.radGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radGridView1.Location = new System.Drawing.Point(0, 139);
+            this.radGridView1.Location = new System.Drawing.Point(0, 173);
             // 
             // radGridView1
             // 
             this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.FieldName = "Product.Product_Name";
-            gridViewTextBoxColumn1.HeaderText = "Name";
-            gridViewTextBoxColumn1.Name = "ColName";
-            gridViewTextBoxColumn1.Width = 126;
-            gridViewTextBoxColumn2.Expression = "";
-            gridViewTextBoxColumn2.FieldName = "Qty";
-            gridViewTextBoxColumn2.HeaderText = "Qty";
-            gridViewTextBoxColumn2.Name = "ColQty";
-            gridViewTextBoxColumn2.Width = 126;
-            gridViewTextBoxColumn3.FieldName = "Product.ProductPrice";
-            gridViewTextBoxColumn3.HeaderText = "Product Price";
-            gridViewTextBoxColumn3.Name = "ColProductPrice";
-            gridViewTextBoxColumn3.Width = 126;
-            gridViewTextBoxColumn4.EnableExpressionEditor = true;
-            gridViewTextBoxColumn4.Expression = "ColProductPrice * ColQty";
-            gridViewTextBoxColumn4.HeaderText = "Price";
-            gridViewTextBoxColumn4.Name = "ColPrice";
-            gridViewTextBoxColumn4.Width = 128;
-            gridViewTextBoxColumn5.FieldName = "ProductID";
-            gridViewTextBoxColumn5.HeaderText = "ProductID";
-            gridViewTextBoxColumn5.IsVisible = false;
-            gridViewTextBoxColumn5.Name = "ColID";
-            gridViewTextBoxColumn5.Width = 45;
+            gridViewTextBoxColumn11.FieldName = "Product.Product_Name";
+            gridViewTextBoxColumn11.HeaderText = "Name";
+            gridViewTextBoxColumn11.Name = "ColName";
+            gridViewTextBoxColumn11.Width = 126;
+            gridViewTextBoxColumn12.Expression = "";
+            gridViewTextBoxColumn12.FieldName = "Qty";
+            gridViewTextBoxColumn12.HeaderText = "Qty";
+            gridViewTextBoxColumn12.Name = "ColQty";
+            gridViewTextBoxColumn12.Width = 126;
+            gridViewTextBoxColumn13.FieldName = "Product.ProductPrice";
+            gridViewTextBoxColumn13.HeaderText = "Product Price";
+            gridViewTextBoxColumn13.Name = "ColProductPrice";
+            gridViewTextBoxColumn13.Width = 126;
+            gridViewTextBoxColumn14.EnableExpressionEditor = true;
+            gridViewTextBoxColumn14.Expression = "ColProductPrice * ColQty";
+            gridViewTextBoxColumn14.HeaderText = "Price";
+            gridViewTextBoxColumn14.Name = "ColPrice";
+            gridViewTextBoxColumn14.Width = 128;
+            gridViewTextBoxColumn15.FieldName = "ProductID";
+            gridViewTextBoxColumn15.HeaderText = "ProductID";
+            gridViewTextBoxColumn15.IsVisible = false;
+            gridViewTextBoxColumn15.Name = "ColID";
+            gridViewTextBoxColumn15.Width = 45;
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5});
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14,
+            gridViewTextBoxColumn15});
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.radGridView1.Size = new System.Drawing.Size(524, 253);
             this.radGridView1.TabIndex = 14;
             this.radGridView1.Text = "radGridView1";
             // 
+            // txtDiscountBox
+            // 
+            this.txtDiscountBox.Location = new System.Drawing.Point(139, 125);
+            this.txtDiscountBox.Name = "txtDiscountBox";
+            this.txtDiscountBox.Size = new System.Drawing.Size(64, 20);
+            this.txtDiscountBox.TabIndex = 11;
+            this.txtDiscountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDiscountBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscountBox_KeyPress);
+            // 
             // FrmTotalOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 438);
+            this.ClientSize = new System.Drawing.Size(524, 470);
             this.Controls.Add(this.radGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CustomerInfomationGroupBox);
@@ -335,5 +348,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.Label OrderTypeLab;
+        private System.Windows.Forms.TextBox txtDiscountBox;
     }
 }

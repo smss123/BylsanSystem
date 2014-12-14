@@ -30,7 +30,7 @@ namespace Bylsan_System.designerForms
         private void PopulateGrd()
         {
             Operation.BeginOperation(this);
-            var q = OrderProductsCmd.GetAllByOrderID(TaregtOrder).Where(p=>p.Status.Contains("To Deliver"));
+            var q = OrderProductsCmd.GetAllByOrderID(TaregtOrder);//.Where(p=>p.Status.Contains("To Deliver"));
             this.Invoke((MethodInvoker)delegate 
             {
                 DGVProducts.DataSource = q; 
@@ -48,49 +48,61 @@ namespace Bylsan_System.designerForms
             Thr.Start();
         }
 
-        Thread AttachThread;
+       
         private void DGVProducts_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Operation.BeginOperation(this);
-                if (DGVProducts.Rows.Count != 0)
-                {
-                   
-                    AttachThread = new Thread(LoadAttachments);
-                    AttachThread.Start();
-                }
-                Operation.EndOperation (this);
-        }
+            if (DGVProducts.Rows.Count != 0)
+            {
 
+               Thread  AttachThread = new Thread(LoadAttachments);
+                AttachThread.Start();
+            }
+            Operation.EndOperation(this);
+
+           
+           
+        }
+        List<Image> ListPictures = new List<Image >();
+       
         void LoadAttachments()
         {
             //SelectedProductPhotoBox.Image =null;
             //lblPoductName.Text = "";
-            //lblPrice.Text = "";
+            ////lblPrice.Text = "";
+            ListPictures.Clear();
             try
             {
                 Operation.BeginOperation(this);
-                int prdid = int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString());
+         
+                int prdid = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString());
                 imageList1.Images.Clear();
                 var lst = (from p in OrderProuctAttachmentCmd.GetOneAttachmentByOrderProductID(prdid) select p).ToList();
                 this.Invoke((MethodInvoker)delegate
                 {
 
                     PhotoBox.Image = null;
-
+                    
                     //============================================
 
-                   
+                    Application.DoEvents();
                     foreach (var item in lst)
                     {
+                        
                         TxtDescription.Text = item.Description;
                         PhotoBox.Image = item.imageX;
+                      
                         imageList1.Images.Add(item.imageX);
 
                         IDImageAddress = item.ID;
 
+                        //================================
+                        
+                        ListPictures.Add( item.imageX );
                     }
                     //==============================================
                     //-- Display Selected Product Information : 
+                   
                     var getcurrentProductInfo = ProductsCmd.GetProductByID(prdid);
                     foreach (var prd in getcurrentProductInfo)
                     {
@@ -102,11 +114,13 @@ namespace Bylsan_System.designerForms
                     //=============================================
                 });
 
-                AttachThread.Abort();
+                //AttachThread.Abort();
 
-            }catch(System.NullReferenceException ex)
+            }
+            catch (System.NullReferenceException ex)
             {
                 Operation.EndOperation(this);
+                MessageBox.Show(ex.Message.ToString(), "  Error");
                 return;
             }
             Operation.EndOperation(this);
@@ -120,21 +134,21 @@ namespace Bylsan_System.designerForms
 
             if (PhotoBox.Image != null)
             {
-                if (i != imageList1.Images.Count)
+        
+                if (ListPictures.Count != 0 && i < ListPictures .Count )
                 {
-
                     PhotoBox.Image = null;
-                    PhotoBox.Image = imageList1.Images[i];
-                    SizeLab.Text = imageList1.Images[i].Size.ToString();
+                    PhotoBox.Image = ListPictures[i];
                     i++;
                 }
                 else
                 {
                     i = 0;
                     PhotoBox.Image = null;
-                    PhotoBox.Image = imageList1.Images[i];
-                    SizeLab.Text = imageList1.Images[i].Size.ToString();
+                    PhotoBox.Image = ListPictures[i];
                 }
+               
+                
             }
         }
 
@@ -207,38 +221,42 @@ namespace Bylsan_System.designerForms
         SaveFileDialog SvDialog = new SaveFileDialog();
         private void SavePhotoBtn_Click(object sender, EventArgs e)
         {
-            SvDialog = new SaveFileDialog();
-            SvDialog.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
-            SvDialog.Title = "Save an Image File";
-            SvDialog.ShowDialog();
-
-
-            if (SvDialog.FileName != "" && PhotoBox.Image != null)
+            if (PhotoBox.Image != null)
             {
+                SvDialog = new SaveFileDialog();
+                SvDialog.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
+                SvDialog.Title = "Save an Image File";
+                SvDialog.ShowDialog();
 
-                System.IO.FileStream fs =
-                   (System.IO.FileStream)SvDialog.OpenFile();
 
-                switch (SvDialog.FilterIndex)
+                if (SvDialog.FileName != "" && PhotoBox.Image != null)
                 {
-                    case 1:
-                        PhotoBox.Image.Save(fs,
-                           System.Drawing.Imaging.ImageFormat.Jpeg);
-                        break;
 
-                    case 2:
-                        PhotoBox.Image.Save(fs,
-                           System.Drawing.Imaging.ImageFormat.Bmp);
-                        break;
+                    System.IO.FileStream fs =
+                       (System.IO.FileStream)SvDialog.OpenFile();
 
-                    case 3:
-                        PhotoBox.Image.Save(fs,
-                           System.Drawing.Imaging.ImageFormat.Gif);
-                        break;
+                    switch (SvDialog.FilterIndex)
+                    {
+                        case 1:
+                            PhotoBox.Image.Save(fs,
+                               System.Drawing.Imaging.ImageFormat.Jpeg);
+                            break;
+
+                        case 2:
+                            PhotoBox.Image.Save(fs,
+                               System.Drawing.Imaging.ImageFormat.Bmp);
+                            break;
+
+                        case 3:
+                            PhotoBox.Image.Save(fs,
+                               System.Drawing.Imaging.ImageFormat.Gif);
+                            break;
+                    }
+
+                    fs.Close();
                 }
-
-                fs.Close();
             }
+            
         }
         #endregion
         private void CloseBtn_Click(object sender, EventArgs e)

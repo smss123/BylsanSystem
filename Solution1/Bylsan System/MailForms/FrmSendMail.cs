@@ -23,29 +23,32 @@ namespace Bylsan_System.MailForms
 
         }
 
-        void GetListUsers()
-        {
-            Operation.BeginOperation(this );
-            var AllUsers = UserCmd.GetAllUsers();
-           
-            this.Invoke((MethodInvoker)delegate {  
-            foreach (var item in AllUsers )
-            {
-                RadListDataItemCollection items = this.UsersAutoCompleteBox.AutoCompleteItems;
-                items.Add(new RadListDataItem( item .UserName .ToString () ,item.ID .ToString ()));
-     
-            }
-
-            });
-            Operation.EndOperation(this);
-        }
-
-
         private void FrmSendMail_Load(object sender, EventArgs e)
         {
             Thread thr = new Thread(GetListUsers); thr.Start();
         }
 
+        #region "  ^^^^ Users      "
+        void GetListUsers()
+        {
+            Operation.BeginOperation(this);
+            var AllUsers = UserCmd.GetAllUsers();
+
+            this.Invoke((MethodInvoker)delegate
+            {
+                foreach (var item in AllUsers)
+                {
+                    RadListDataItemCollection items = this.UsersAutoCompleteBox.AutoCompleteItems;
+                    items.Add(new RadListDataItem(item.UserName.ToString(), item.ID.ToString()));
+
+                }
+
+            });
+            Operation.EndOperation(this);
+        }
+        #endregion
+
+        #region "  ^^^ Send Message   "
         private void SendBtn_Click(object sender, EventArgs e)
         {
 
@@ -88,12 +91,7 @@ namespace Bylsan_System.MailForms
 
            
 
-            #endregion
-
-
-
-            
-
+            #endregion       
 
           if(UsersAutoCompleteBox. Text != ""){
               Inbox InBoxTb = new Inbox();
@@ -129,13 +127,9 @@ namespace Bylsan_System.MailForms
           }
         }
 
+        #endregion 
 
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        #region " ^^^ Auto Complate   "
         private void radAutoCompleteBox1_TextBlockFormatting(object sender, Telerik.WinControls.UI.TextBlockFormattingEventArgs e)
         {
             TokenizedTextBlockElement token = e.TextBlock as TokenizedTextBlockElement;
@@ -146,10 +140,8 @@ namespace Bylsan_System.MailForms
             }
         }
 
-        private void radAutoCompleteBox1_TabIndexChanged(object sender, EventArgs e)
-        {
-         
-        }
+        #endregion
+     
 
     }
 }

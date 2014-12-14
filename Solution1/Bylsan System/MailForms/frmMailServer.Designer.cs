@@ -55,6 +55,7 @@
             this.labUserName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.ReplayBtn = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FoldersGroupBox)).BeginInit();
             this.FoldersGroupBox.SuspendLayout();
@@ -163,7 +164,7 @@
             this.toolStripMenuItem1,
             this.DeleteBtn});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(159, 120);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(159, 98);
             // 
             // OpenBtn
             // 
@@ -215,6 +216,7 @@
             // GroupDisplayMessage
             // 
             this.GroupDisplayMessage.BackColor = System.Drawing.Color.Silver;
+            this.GroupDisplayMessage.Controls.Add(this.ReplayBtn);
             this.GroupDisplayMessage.Controls.Add(this.labMessageDate);
             this.GroupDisplayMessage.Controls.Add(this.label4);
             this.GroupDisplayMessage.Controls.Add(this.label2);
@@ -261,6 +263,7 @@
             // 
             // CloseBtn
             // 
+            this.CloseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CloseBtn.Location = new System.Drawing.Point(433, 319);
             this.CloseBtn.Name = "CloseBtn";
             this.CloseBtn.Size = new System.Drawing.Size(75, 23);
@@ -316,6 +319,17 @@
             this.richTextBox1.Size = new System.Drawing.Size(502, 219);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
+            // 
+            // ReplayBtn
+            // 
+            this.ReplayBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ReplayBtn.Location = new System.Drawing.Point(352, 319);
+            this.ReplayBtn.Name = "ReplayBtn";
+            this.ReplayBtn.Size = new System.Drawing.Size(75, 23);
+            this.ReplayBtn.TabIndex = 9;
+            this.ReplayBtn.Text = "Replay";
+            this.ReplayBtn.UseVisualStyleBackColor = true;
+            this.ReplayBtn.Click += new System.EventHandler(this.ReplayBtn_Click);
             // 
             // frmMailServer
             // 
@@ -373,5 +387,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labMessageDate;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button ReplayBtn;
     }
 }
