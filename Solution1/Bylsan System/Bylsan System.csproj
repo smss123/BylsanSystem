@@ -82,6 +82,30 @@
     <Compile Include="AccountsX\Acc\frmAddAccount.Designer.cs">
       <DependentUpon>frmAddAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="AccountsX\frmAccountDailySHow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountsX\frmAccountDailySHow.Designer.cs">
+      <DependentUpon>frmAccountDailySHow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountsX\FrmAddAccountCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountsX\FrmAddAccountCategory.Designer.cs">
+      <DependentUpon>FrmAddAccountCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountsX\FrmEditAccountCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountsX\FrmEditAccountCategory.Designer.cs">
+      <DependentUpon>FrmEditAccountCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountsX\FrmManageAccountCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountsX\FrmManageAccountCategory.Designer.cs">
+      <DependentUpon>FrmManageAccountCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="BranchForms\FrmAddBranch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -448,6 +472,18 @@
     <Compile Include="UserAlert.cs" />
     <EmbeddedResource Include="AccountsX\Acc\frmAddAccount.resx">
       <DependentUpon>frmAddAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountsX\frmAccountDailySHow.resx">
+      <DependentUpon>frmAccountDailySHow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountsX\FrmAddAccountCategory.resx">
+      <DependentUpon>FrmAddAccountCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountsX\FrmEditAccountCategory.resx">
+      <DependentUpon>FrmEditAccountCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountsX\FrmManageAccountCategory.resx">
+      <DependentUpon>FrmManageAccountCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BranchForms\FrmAddBranch.resx">
       <DependentUpon>FrmAddBranch.cs</DependentUpon>

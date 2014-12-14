@@ -33,22 +33,50 @@
             System.Windows.Forms.Label descriptionLabel;
             System.Windows.Forms.Label label1;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.accountNameTextBox = new System.Windows.Forms.TextBox();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.CategoryMultiColumnComboBox1 = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.accountNameTextBox = new System.Windows.Forms.TextBox();
             this.btnAdd = new Telerik.WinControls.UI.RadButton();
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             accountNameLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryMultiColumnComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryMultiColumnComboBox1.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryMultiColumnComboBox1.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
+            // 
+            // accountNameLabel
+            // 
+            accountNameLabel.AutoSize = true;
+            accountNameLabel.Location = new System.Drawing.Point(58, 71);
+            accountNameLabel.Name = "accountNameLabel";
+            accountNameLabel.Size = new System.Drawing.Size(84, 13);
+            accountNameLabel.TabIndex = 0;
+            accountNameLabel.Text = "Account Name:";
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(73, 97);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(69, 13);
+            descriptionLabel.TabIndex = 2;
+            descriptionLabel.Text = "Description:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(83, 42);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(59, 13);
+            label1.TabIndex = 0;
+            label1.Text = "Category :";
             // 
             // groupBox1
             // 
@@ -64,45 +92,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // accountBindingSource
-            // 
-            this.accountBindingSource.DataSource = typeof(XamaDataLayer.Account);
-            // 
-            // accountNameLabel
-            // 
-            accountNameLabel.AutoSize = true;
-            accountNameLabel.Location = new System.Drawing.Point(58, 71);
-            accountNameLabel.Name = "accountNameLabel";
-            accountNameLabel.Size = new System.Drawing.Size(84, 13);
-            accountNameLabel.TabIndex = 0;
-            accountNameLabel.Text = "Account Name:";
-            // 
-            // accountNameTextBox
-            // 
-            this.accountNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "AccountName", true));
-            this.accountNameTextBox.Location = new System.Drawing.Point(148, 68);
-            this.accountNameTextBox.Name = "accountNameTextBox";
-            this.accountNameTextBox.Size = new System.Drawing.Size(253, 20);
-            this.accountNameTextBox.TabIndex = 1;
-            // 
-            // descriptionLabel
-            // 
-            descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(73, 97);
-            descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(69, 13);
-            descriptionLabel.TabIndex = 2;
-            descriptionLabel.Text = "Description:";
-            // 
-            // descriptionTextBox
-            // 
-            this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "Description", true));
-            this.descriptionTextBox.Location = new System.Drawing.Point(148, 94);
-            this.descriptionTextBox.Multiline = true;
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(253, 98);
-            this.descriptionTextBox.TabIndex = 3;
-            // 
             // CategoryMultiColumnComboBox1
             // 
             // 
@@ -113,7 +102,7 @@
             this.CategoryMultiColumnComboBox1.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CategoryMultiColumnComboBox1.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // CategoryMultiColumnComboBox1.NestedRadGridView
+            // 
             // 
             this.CategoryMultiColumnComboBox1.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.CategoryMultiColumnComboBox1.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -132,14 +121,22 @@
             this.CategoryMultiColumnComboBox1.TabStop = false;
             this.CategoryMultiColumnComboBox1.Text = "radMultiColumnComboBox1";
             // 
-            // label1
+            // descriptionTextBox
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(83, 42);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(59, 13);
-            label1.TabIndex = 0;
-            label1.Text = "Category :";
+            this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "Description", true));
+            this.descriptionTextBox.Location = new System.Drawing.Point(148, 94);
+            this.descriptionTextBox.Multiline = true;
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(253, 98);
+            this.descriptionTextBox.TabIndex = 3;
+            // 
+            // accountNameTextBox
+            // 
+            this.accountNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "AccountName", true));
+            this.accountNameTextBox.Location = new System.Drawing.Point(148, 68);
+            this.accountNameTextBox.Name = "accountNameTextBox";
+            this.accountNameTextBox.Size = new System.Drawing.Size(253, 20);
+            this.accountNameTextBox.TabIndex = 1;
             // 
             // btnAdd
             // 
@@ -149,10 +146,15 @@
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataSource = typeof(XamaDataLayer.Account);
+            // 
             // frmAddAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(459, 272);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
@@ -165,11 +167,11 @@
             this.ThemeName = "VisualStudio2012Light";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryMultiColumnComboBox1.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryMultiColumnComboBox1.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryMultiColumnComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -183,5 +185,6 @@
         private System.Windows.Forms.TextBox accountNameTextBox;
         private Telerik.WinControls.UI.RadMultiColumnComboBox CategoryMultiColumnComboBox1;
         private Telerik.WinControls.UI.RadButton btnAdd;
+        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     }
 }
