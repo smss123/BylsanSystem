@@ -355,7 +355,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SecurityForm\FrmEditUserPermession.cs" />
+    <Compile Include="SecurityForm\FrmEditUserPermession.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SecurityForm\FrmEditUserPermession.Designer.cs">
       <DependentUpon>FrmEditUserPermession.cs</DependentUpon>
     </Compile>
@@ -365,7 +367,9 @@
     <Compile Include="SecurityForm\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="SecurityForm\FrmUserShow.cs" />
+    <Compile Include="SecurityForm\FrmUserShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SecurityForm\FrmUserShow.Designer.cs">
       <DependentUpon>FrmUserShow.cs</DependentUpon>
     </Compile>
@@ -441,6 +445,7 @@
     <Compile Include="SenarioAddOrderForms\FrmTotalOrder.Designer.cs">
       <DependentUpon>FrmTotalOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserAlert.cs" />
     <EmbeddedResource Include="AccountsX\Acc\frmAddAccount.resx">
       <DependentUpon>frmAddAccount.cs</DependentUpon>
     </EmbeddedResource>

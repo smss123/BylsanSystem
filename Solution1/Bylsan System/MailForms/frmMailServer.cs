@@ -407,6 +407,7 @@ namespace Bylsan_System.MailForms
     
         private void CloseBtn_Click_1(object sender, EventArgs e)
         {
+            frmMailServer_Load(sender, e);
             richTextBox1.Text = "";
             labUserName.Text = "";
             labSubject.Text = "";
