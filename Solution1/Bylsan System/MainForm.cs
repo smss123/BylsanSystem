@@ -333,5 +333,11 @@ namespace Bylsan_System
             FrmAccountTree Tree = new FrmAccountTree();
             Tree.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FrmManageDebtors frm = new FrmManageDebtors();
+            frm.Show();
+        }
     }
 }

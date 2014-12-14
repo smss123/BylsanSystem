@@ -40,11 +40,11 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.DebeorGridView = new Telerik.WinControls.UI.RadGridView();
+            this.DGVDebitors = new Telerik.WinControls.UI.RadGridView();
             this.debtorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DebeorGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DebeorGridView.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVDebitors)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVDebitors.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.debtorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +67,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.DebeorGridView);
+            this.groupBox1.Controls.Add(this.DGVDebitors);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 25);
             this.groupBox1.Name = "groupBox1";
@@ -75,21 +75,21 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
-            // DebeorGridView
+            // DGVDebitors
             // 
-            this.DebeorGridView.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DebeorGridView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.DebeorGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DebeorGridView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.DebeorGridView.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.DebeorGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DebeorGridView.Location = new System.Drawing.Point(3, 18);
+            this.DGVDebitors.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DGVDebitors.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DGVDebitors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGVDebitors.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.DGVDebitors.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DGVDebitors.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.DGVDebitors.Location = new System.Drawing.Point(3, 18);
             // 
-            // DebeorGridView
+            // DGVDebitors
             // 
-            this.DebeorGridView.MasterTemplate.AllowAddNewRow = false;
-            this.DebeorGridView.MasterTemplate.AutoGenerateColumns = false;
-            this.DebeorGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.DGVDebitors.MasterTemplate.AllowAddNewRow = false;
+            this.DGVDebitors.MasterTemplate.AutoGenerateColumns = false;
+            this.DGVDebitors.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewDecimalColumn1.DataType = typeof(int);
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "ID";
@@ -136,7 +136,7 @@
             gridViewCommandColumn2.HeaderText = "Show Account";
             gridViewCommandColumn2.Name = "ShowAccount";
             gridViewCommandColumn2.Width = 60;
-            this.DebeorGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            this.DGVDebitors.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -145,14 +145,15 @@
             gridViewDecimalColumn2,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
-            this.DebeorGridView.MasterTemplate.DataSource = this.debtorBindingSource;
-            this.DebeorGridView.MasterTemplate.EnableFiltering = true;
-            this.DebeorGridView.Name = "DebeorGridView";
-            this.DebeorGridView.ReadOnly = true;
-            this.DebeorGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DebeorGridView.Size = new System.Drawing.Size(796, 451);
-            this.DebeorGridView.TabIndex = 0;
-            this.DebeorGridView.ThemeName = "VisualStudio2012Light";
+            this.DGVDebitors.MasterTemplate.DataSource = this.debtorBindingSource;
+            this.DGVDebitors.MasterTemplate.EnableFiltering = true;
+            this.DGVDebitors.Name = "DGVDebitors";
+            this.DGVDebitors.ReadOnly = true;
+            this.DGVDebitors.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DGVDebitors.Size = new System.Drawing.Size(796, 451);
+            this.DGVDebitors.TabIndex = 0;
+            this.DGVDebitors.ThemeName = "VisualStudio2012Light";
+            this.DGVDebitors.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.DGVDebitors_CommandCellClick);
             // 
             // debtorBindingSource
             // 
@@ -175,9 +176,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmManageDebtors";
             this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmManageDebtors_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DebeorGridView.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DebeorGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVDebitors.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVDebitors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.debtorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -190,7 +192,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private Telerik.WinControls.UI.RadGridView DebeorGridView;
+        private Telerik.WinControls.UI.RadGridView DGVDebitors;
         private System.Windows.Forms.BindingSource debtorBindingSource;
     }
 }
