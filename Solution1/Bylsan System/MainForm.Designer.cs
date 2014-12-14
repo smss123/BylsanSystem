@@ -63,8 +63,17 @@
             this.addItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageItemsBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.storeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddStoreBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageStoreBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.storeManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addStoreManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageStoreManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.withDrowlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddWithDrawalBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.ManageWithDrawalBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.SupplierBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddSupplierBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageSupplierBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.expensesShowBtn = new System.Windows.Forms.ToolStripButton();
             this.btnFactory = new System.Windows.Forms.ToolStripButton();
             this.btnSales = new System.Windows.Forms.ToolStripDropDownButton();
@@ -76,15 +85,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.AddStoreBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageStoreBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddWithDrawalBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.ManageWithDrawalBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddSupplierBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageSupplierBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.storeManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addStoreManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageStoreManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -364,20 +365,20 @@
             this.addItemsToolStripMenuItem,
             this.manageItemsBtn});
             this.itemsToolStripMenuItem.Name = "itemsToolStripMenuItem";
-            this.itemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.itemsToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.itemsToolStripMenuItem.Text = "Items";
             // 
             // addItemsToolStripMenuItem
             // 
             this.addItemsToolStripMenuItem.Name = "addItemsToolStripMenuItem";
-            this.addItemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addItemsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.addItemsToolStripMenuItem.Text = "Add items";
             this.addItemsToolStripMenuItem.Click += new System.EventHandler(this.addItemsToolStripMenuItem_Click);
             // 
             // manageItemsBtn
             // 
             this.manageItemsBtn.Name = "manageItemsBtn";
-            this.manageItemsBtn.Size = new System.Drawing.Size(152, 22);
+            this.manageItemsBtn.Size = new System.Drawing.Size(149, 22);
             this.manageItemsBtn.Text = "Manage items";
             this.manageItemsBtn.Click += new System.EventHandler(this.manageItemsBtn_Click);
             // 
@@ -387,8 +388,45 @@
             this.AddStoreBtn,
             this.manageStoreBtn});
             this.storeToolStripMenuItem.Name = "storeToolStripMenuItem";
-            this.storeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.storeToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.storeToolStripMenuItem.Text = "Store";
+            // 
+            // AddStoreBtn
+            // 
+            this.AddStoreBtn.Name = "AddStoreBtn";
+            this.AddStoreBtn.Size = new System.Drawing.Size(147, 22);
+            this.AddStoreBtn.Text = "Add Store";
+            this.AddStoreBtn.Click += new System.EventHandler(this.AddStoreBtn_Click);
+            // 
+            // manageStoreBtn
+            // 
+            this.manageStoreBtn.Name = "manageStoreBtn";
+            this.manageStoreBtn.Size = new System.Drawing.Size(147, 22);
+            this.manageStoreBtn.Text = "Manage Store";
+            this.manageStoreBtn.Click += new System.EventHandler(this.manageStoreBtn_Click);
+            // 
+            // storeManagerToolStripMenuItem
+            // 
+            this.storeManagerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addStoreManagerToolStripMenuItem,
+            this.manageStoreManagerToolStripMenuItem});
+            this.storeManagerToolStripMenuItem.Name = "storeManagerToolStripMenuItem";
+            this.storeManagerToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.storeManagerToolStripMenuItem.Text = "StoreManager";
+            // 
+            // addStoreManagerToolStripMenuItem
+            // 
+            this.addStoreManagerToolStripMenuItem.Name = "addStoreManagerToolStripMenuItem";
+            this.addStoreManagerToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.addStoreManagerToolStripMenuItem.Text = "Add StoreManager";
+            this.addStoreManagerToolStripMenuItem.Click += new System.EventHandler(this.addStoreManagerToolStripMenuItem_Click);
+            // 
+            // manageStoreManagerToolStripMenuItem
+            // 
+            this.manageStoreManagerToolStripMenuItem.Name = "manageStoreManagerToolStripMenuItem";
+            this.manageStoreManagerToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.manageStoreManagerToolStripMenuItem.Text = "Manage StoreManager";
+            this.manageStoreManagerToolStripMenuItem.Click += new System.EventHandler(this.manageStoreManagerToolStripMenuItem_Click);
             // 
             // withDrowlToolStripMenuItem
             // 
@@ -396,8 +434,22 @@
             this.AddWithDrawalBtn,
             this.ManageWithDrawalBtn});
             this.withDrowlToolStripMenuItem.Name = "withDrowlToolStripMenuItem";
-            this.withDrowlToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.withDrowlToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.withDrowlToolStripMenuItem.Text = "WithDrawal";
+            // 
+            // AddWithDrawalBtn
+            // 
+            this.AddWithDrawalBtn.Name = "AddWithDrawalBtn";
+            this.AddWithDrawalBtn.Size = new System.Drawing.Size(176, 22);
+            this.AddWithDrawalBtn.Text = "Add WithDrowl";
+            this.AddWithDrawalBtn.Click += new System.EventHandler(this.AddWithDrawalBtn_Click);
+            // 
+            // ManageWithDrawalBtn
+            // 
+            this.ManageWithDrawalBtn.Name = "ManageWithDrawalBtn";
+            this.ManageWithDrawalBtn.Size = new System.Drawing.Size(176, 22);
+            this.ManageWithDrawalBtn.Text = "Manage WithDrowl";
+            this.ManageWithDrawalBtn.Click += new System.EventHandler(this.ManageWithDrawalBtn_Click);
             // 
             // SupplierBtn
             // 
@@ -405,8 +457,21 @@
             this.AddSupplierBtn,
             this.manageSupplierBtn});
             this.SupplierBtn.Name = "SupplierBtn";
-            this.SupplierBtn.Size = new System.Drawing.Size(152, 22);
+            this.SupplierBtn.Size = new System.Drawing.Size(148, 22);
             this.SupplierBtn.Text = "Supplier";
+            // 
+            // AddSupplierBtn
+            // 
+            this.AddSupplierBtn.Name = "AddSupplierBtn";
+            this.AddSupplierBtn.Size = new System.Drawing.Size(163, 22);
+            this.AddSupplierBtn.Text = "Add Supplier";
+            this.AddSupplierBtn.Click += new System.EventHandler(this.AddSupplierBtn_Click);
+            // 
+            // manageSupplierBtn
+            // 
+            this.manageSupplierBtn.Name = "manageSupplierBtn";
+            this.manageSupplierBtn.Size = new System.Drawing.Size(163, 22);
+            this.manageSupplierBtn.Text = "Manage Supplier";
             // 
             // expensesShowBtn
             // 
@@ -486,69 +551,15 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // AddStoreBtn
+            // button1
             // 
-            this.AddStoreBtn.Name = "AddStoreBtn";
-            this.AddStoreBtn.Size = new System.Drawing.Size(152, 22);
-            this.AddStoreBtn.Text = "Add Store";
-            this.AddStoreBtn.Click += new System.EventHandler(this.AddStoreBtn_Click);
-            // 
-            // manageStoreBtn
-            // 
-            this.manageStoreBtn.Name = "manageStoreBtn";
-            this.manageStoreBtn.Size = new System.Drawing.Size(152, 22);
-            this.manageStoreBtn.Text = "Manage Store";
-            this.manageStoreBtn.Click += new System.EventHandler(this.manageStoreBtn_Click);
-            // 
-            // AddWithDrawalBtn
-            // 
-            this.AddWithDrawalBtn.Name = "AddWithDrawalBtn";
-            this.AddWithDrawalBtn.Size = new System.Drawing.Size(176, 22);
-            this.AddWithDrawalBtn.Text = "Add WithDrowl";
-            this.AddWithDrawalBtn.Click += new System.EventHandler(this.AddWithDrawalBtn_Click);
-            // 
-            // ManageWithDrawalBtn
-            // 
-            this.ManageWithDrawalBtn.Name = "ManageWithDrawalBtn";
-            this.ManageWithDrawalBtn.Size = new System.Drawing.Size(176, 22);
-            this.ManageWithDrawalBtn.Text = "Manage WithDrowl";
-            this.ManageWithDrawalBtn.Click += new System.EventHandler(this.ManageWithDrawalBtn_Click);
-            // 
-            // AddSupplierBtn
-            // 
-            this.AddSupplierBtn.Name = "AddSupplierBtn";
-            this.AddSupplierBtn.Size = new System.Drawing.Size(163, 22);
-            this.AddSupplierBtn.Text = "Add Supplier";
-            this.AddSupplierBtn.Click += new System.EventHandler(this.AddSupplierBtn_Click);
-            // 
-            // manageSupplierBtn
-            // 
-            this.manageSupplierBtn.Name = "manageSupplierBtn";
-            this.manageSupplierBtn.Size = new System.Drawing.Size(163, 22);
-            this.manageSupplierBtn.Text = "Manage Supplier";
-            // 
-            // storeManagerToolStripMenuItem
-            // 
-            this.storeManagerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addStoreManagerToolStripMenuItem,
-            this.manageStoreManagerToolStripMenuItem});
-            this.storeManagerToolStripMenuItem.Name = "storeManagerToolStripMenuItem";
-            this.storeManagerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.storeManagerToolStripMenuItem.Text = "StoreManager";
-            // 
-            // addStoreManagerToolStripMenuItem
-            // 
-            this.addStoreManagerToolStripMenuItem.Name = "addStoreManagerToolStripMenuItem";
-            this.addStoreManagerToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.addStoreManagerToolStripMenuItem.Text = "Add StoreManager";
-            this.addStoreManagerToolStripMenuItem.Click += new System.EventHandler(this.addStoreManagerToolStripMenuItem_Click);
-            // 
-            // manageStoreManagerToolStripMenuItem
-            // 
-            this.manageStoreManagerToolStripMenuItem.Name = "manageStoreManagerToolStripMenuItem";
-            this.manageStoreManagerToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.manageStoreManagerToolStripMenuItem.Text = "Manage StoreManager";
-            this.manageStoreManagerToolStripMenuItem.Click += new System.EventHandler(this.manageStoreManagerToolStripMenuItem_Click);
+            this.button1.Location = new System.Drawing.Point(157, 211);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(146, 30);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Add Account";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // MainForm
             // 
@@ -556,6 +567,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1188, 606);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
@@ -638,5 +650,6 @@
         private System.Windows.Forms.ToolStripMenuItem storeManagerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addStoreManagerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageStoreManagerToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -33,21 +33,21 @@
             System.Windows.Forms.Label descriptionLabel;
             System.Windows.Forms.Label label1;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.CategoryMultiColumnComboBox1 = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.accountNameTextBox = new System.Windows.Forms.TextBox();
-            this.btnAdd = new Telerik.WinControls.UI.RadButton();
+            this.CmbCategories = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtAccountName = new System.Windows.Forms.TextBox();
+            this.btnAdd = new Telerik.WinControls.UI.RadButton();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             accountNameLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoryMultiColumnComboBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoryMultiColumnComboBox1.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoryMultiColumnComboBox1.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbCategories)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,63 +80,69 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.CategoryMultiColumnComboBox1);
+            this.groupBox1.Controls.Add(this.CmbCategories);
             this.groupBox1.Controls.Add(descriptionLabel);
-            this.groupBox1.Controls.Add(this.descriptionTextBox);
+            this.groupBox1.Controls.Add(this.txtDescription);
             this.groupBox1.Controls.Add(label1);
             this.groupBox1.Controls.Add(accountNameLabel);
-            this.groupBox1.Controls.Add(this.accountNameTextBox);
+            this.groupBox1.Controls.Add(this.txtAccountName);
             this.groupBox1.Location = new System.Drawing.Point(5, 24);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(443, 204);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // CategoryMultiColumnComboBox1
+            // CmbCategories
+            // 
+            this.CmbCategories.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            // 
+            // CmbCategories.NestedRadGridView
+            // 
+            this.CmbCategories.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.CmbCategories.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.CmbCategories.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CmbCategories.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
             // 
-            // CategoryMultiColumnComboBox1.NestedRadGridView
             // 
-            this.CategoryMultiColumnComboBox1.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.CategoryMultiColumnComboBox1.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.CategoryMultiColumnComboBox1.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.CategoryMultiColumnComboBox1.EditorControl.Location = new System.Drawing.Point(0, 0);
+            this.CmbCategories.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.CmbCategories.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.CmbCategories.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.CmbCategories.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.CmbCategories.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.CmbCategories.EditorControl.Name = "NestedRadGridView";
+            this.CmbCategories.EditorControl.ReadOnly = true;
+            this.CmbCategories.EditorControl.ShowGroupPanel = false;
+            this.CmbCategories.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.CmbCategories.EditorControl.TabIndex = 0;
+            this.CmbCategories.Location = new System.Drawing.Point(148, 42);
+            this.CmbCategories.Name = "CmbCategories";
+            this.CmbCategories.Size = new System.Drawing.Size(253, 20);
+            this.CmbCategories.TabIndex = 4;
+            this.CmbCategories.TabStop = false;
+            this.CmbCategories.Text = "CmbCategories";
+            this.CmbCategories.SelectedIndexChanged += new System.EventHandler(this.CmbCategories_SelectedIndexChanged);
             // 
+            // txtDescription
             // 
+            this.txtDescription.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "Description", true));
+            this.txtDescription.Location = new System.Drawing.Point(148, 94);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(253, 98);
+            this.txtDescription.TabIndex = 3;
             // 
-            this.CategoryMultiColumnComboBox1.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.CategoryMultiColumnComboBox1.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.CategoryMultiColumnComboBox1.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.CategoryMultiColumnComboBox1.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.CategoryMultiColumnComboBox1.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.CategoryMultiColumnComboBox1.EditorControl.Name = "NestedRadGridView";
-            this.CategoryMultiColumnComboBox1.EditorControl.ReadOnly = true;
-            this.CategoryMultiColumnComboBox1.EditorControl.ShowGroupPanel = false;
-            this.CategoryMultiColumnComboBox1.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.CategoryMultiColumnComboBox1.EditorControl.TabIndex = 0;
-            this.CategoryMultiColumnComboBox1.Location = new System.Drawing.Point(148, 42);
-            this.CategoryMultiColumnComboBox1.Name = "CategoryMultiColumnComboBox1";
-            this.CategoryMultiColumnComboBox1.Size = new System.Drawing.Size(253, 20);
-            this.CategoryMultiColumnComboBox1.TabIndex = 4;
-            this.CategoryMultiColumnComboBox1.TabStop = false;
-            this.CategoryMultiColumnComboBox1.Text = "radMultiColumnComboBox1";
+            // accountBindingSource
             // 
-            // descriptionTextBox
+            this.accountBindingSource.DataSource = typeof(XamaDataLayer.Account);
             // 
-            this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "Description", true));
-            this.descriptionTextBox.Location = new System.Drawing.Point(148, 94);
-            this.descriptionTextBox.Multiline = true;
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(253, 98);
-            this.descriptionTextBox.TabIndex = 3;
+            // txtAccountName
             // 
-            // accountNameTextBox
-            // 
-            this.accountNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "AccountName", true));
-            this.accountNameTextBox.Location = new System.Drawing.Point(148, 68);
-            this.accountNameTextBox.Name = "accountNameTextBox";
-            this.accountNameTextBox.Size = new System.Drawing.Size(253, 20);
-            this.accountNameTextBox.TabIndex = 1;
+            this.txtAccountName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "AccountName", true));
+            this.txtAccountName.Location = new System.Drawing.Point(148, 68);
+            this.txtAccountName.Name = "txtAccountName";
+            this.txtAccountName.Size = new System.Drawing.Size(253, 20);
+            this.txtAccountName.TabIndex = 1;
             // 
             // btnAdd
             // 
@@ -145,10 +151,7 @@
             this.btnAdd.Size = new System.Drawing.Size(110, 24);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
-            // 
-            // accountBindingSource
-            // 
-            this.accountBindingSource.DataSource = typeof(XamaDataLayer.Account);
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // frmAddAccount
             // 
@@ -165,13 +168,14 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "frmAddAccount";
             this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.frmAddAccount_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoryMultiColumnComboBox1.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoryMultiColumnComboBox1.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoryMultiColumnComboBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbCategories)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -180,10 +184,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox descriptionTextBox;
+        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.BindingSource accountBindingSource;
-        private System.Windows.Forms.TextBox accountNameTextBox;
-        private Telerik.WinControls.UI.RadMultiColumnComboBox CategoryMultiColumnComboBox1;
+        private System.Windows.Forms.TextBox txtAccountName;
+        private Telerik.WinControls.UI.RadMultiColumnComboBox CmbCategories;
         private Telerik.WinControls.UI.RadButton btnAdd;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     }

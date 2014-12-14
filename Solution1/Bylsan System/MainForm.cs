@@ -21,7 +21,7 @@ using Bylsan_System.MailForms;
 using XamaDataLayer.MailServer;
 using Bylsan_System.SellSystemForms;
 using Bylsan_System.SenarioAddOrderForms;
-
+using Bylsan_System.AccountsX.Acc;
 namespace Bylsan_System
 {
     public partial class MainForm : RadForm
@@ -208,7 +208,7 @@ namespace Bylsan_System
            
         }
         #endregion 
-
+        #region "           "
         private void SendMessageBtn_Click(object sender, EventArgs e)
         {
            
@@ -302,6 +302,12 @@ namespace Bylsan_System
         {
             FrmAddMainStore_Supplier frm = new FrmAddMainStore_Supplier();
             frm.ShowDialog();
+        }
+        #endregion
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            frmAddAccount FrmAccount = new frmAddAccount();
+            FrmAccount.Show();
         }
     }
 }
