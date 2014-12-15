@@ -13,7 +13,9 @@ namespace Bylsan_System.Reports.ReportCommand
    public class CustmoerReportCmd
     {
 
-           
+           /// <summary>
+           /// //
+           /// </summary>
             public CustmoerReportCmd() { }
             CustomerReportObj xx = new CustomerReportObj();
        public void GetAllCoustmer()

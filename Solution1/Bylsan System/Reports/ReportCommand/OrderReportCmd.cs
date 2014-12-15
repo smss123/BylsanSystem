@@ -12,7 +12,9 @@ namespace Bylsan_System.Reports.ReportCommand
     public class OrderReportCmd
     {
 
-
+        /// <summary>
+        /// /
+        /// </summary>
         public OrderReportCmd() { }
 
         public void GetOrderProductsByOrderId(int XOrderID)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Bylsan_System.Reports.ReportsObject
 {
    public class ExpenssesMovmentReportObj
-    {///
+    {/////
         public int ExpnessID { get; set; }
        public string ExpenssesName { get; set; }
        public double Amount { get; set; }

@@ -9,7 +9,7 @@ namespace Bylsan_System.Reports.ReportsObject
 {
   public  class ProductReportObj
     {
-      /// <summary>
+      /// <summary>/////
       /// /
       /// </summary>
         public int ProductID { get; set; }

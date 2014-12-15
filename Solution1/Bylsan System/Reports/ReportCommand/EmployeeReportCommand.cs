@@ -13,7 +13,9 @@ namespace Bylsan_System.Reports.ReportCommand
     {
 
        public EmployeeReportCommand() { }
-        
+        /// <summary>
+        /// /
+        /// </summary>
        public void GetAllCoustmer()
        {///
            var q = EmployeesCmd.GetAllEmployees();
