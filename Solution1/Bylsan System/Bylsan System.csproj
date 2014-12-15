@@ -414,6 +414,7 @@
     </Compile>
     <Compile Include="Reports\ReportCommand\CustmoerReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\EmployeeReportCommand.cs" />
+    <Compile Include="Reports\ReportCommand\OrderReportCmd.cs" />
     <Compile Include="Reports\ReportsObject\CustomerReportObj.cs" />
     <Compile Include="Reports\ReportsObject\EmployeeReportObj.cs" />
     <Compile Include="Reports\ReportsObject\ExpenssesMovmentReportObj.cs" />

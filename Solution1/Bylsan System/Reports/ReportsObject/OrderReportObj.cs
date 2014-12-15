@@ -7,10 +7,11 @@ using XamaDataLayer;
 
 namespace Bylsan_System.Reports.ReportsObject
 {
-     public class OrderReportObj
+    public class OrderReportObj
     {
-         //Order
-         public Order RepOrder { get; set; }
+        //Order
+        public string CustomerName { get; set; }
+        public string CustomerPhoneNumber { get; set; }
         public int OrderIdID { get; set; }
         public string OrderName { get; set; }
         public string OrderType { get; set; }
@@ -21,18 +22,20 @@ namespace Bylsan_System.Reports.ReportsObject
         public string OrderStatus { get; set; }
         public double TotalAmount { get; set; }
         public DateTime OrderDate { get; set; }
-        public string DeliverdToBranch { get; set; }
-        public string CustomerName { get; set; }
+        public int DeliverdToBranch { get; set; }
+
 
         ////////////////OrderProduct
 
 
         public string ProductName { get; set; }
-        public int  Qty { get; set; }
-       // public string ProductName { get; set; }
-       // public string ProductName { get; set; }
-//
+        public int Qty { get; set; }
+        public double ProductPrice { get; set; }
+        public string ProductUnit { get; set; }
+        public string PublicName { get; set; }
+        public string OrderProductDescription { get; set; }
+        public string OrderProductStatus { get; set; }
 
-         
+
     }
 }
