@@ -58,8 +58,16 @@ namespace XamaDataLayer.Accountant
        }
 
    //==================================================
-   
 
+       public static List<AccountDaily> GetAllAccountDailyByAccountID(int ACTID)
+       {
+           db = new DbDataContext();
+           var dy = (from d in db.AccountDailies
+                     orderby d.DateOfProcess ascending
+                     where d.AccountID == ACTID 
+                     select d).ToList();
+           return dy;
+       }
 
     }
 }

@@ -61,6 +61,17 @@ namespace XamaDataLayer.Accountant
             return ACT;
         }
 
-
+        public static List<Account> GetAccountByID(int xID)
+        {
+            db = new DbDataContext();
+            var ACT = (from ac in db.Accounts where ac.ID  == xID  select ac).ToList();
+            return ACT;
+        }
+        public static List<Account> GetAccountByName(string nam)
+        {
+            db = new DbDataContext();
+            var ACT = (from ac in db.Accounts where ac.AccountName  == nam  select ac).ToList();
+            return ACT;
+        }
     }
 }

@@ -58,8 +58,10 @@ namespace Bylsan_System.AccountsX
             TreeAccounts.Nodes.Add("AbuEhab", "Accounts Categories", 0);
             Thread TreeThread = new Thread(PopulateTreeAccounts); 
             TreeThread.Start();
+            //===============================
+            DGVAccountsDaily.Rows.Clear();
         }
-
+        #region "     Tree Controler      "
         private void ExpandBtn_Click(object sender, EventArgs e)
         {
             TreeAccounts.ExpandAll(); 
@@ -69,5 +71,44 @@ namespace Bylsan_System.AccountsX
         {
             TreeAccounts.CollapseAll();
         }
+        #endregion 
+
+
+        #region "  ^^^  Get Account Details        "
+        public int AcctID { get; set; }
+
+        private void TreeAccounts_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (TreeAccounts.Nodes.Count != 0)
+            {
+                Broom();
+                var Accts = AccountsCmd.GetAccountByName(e.Node.Text);
+                foreach (var Actitem in Accts)
+                {
+                    AcctID = Actitem.ID;
+                    txtAccountName.Text = Actitem.AccountName;
+                    txtDescription.Text = Actitem.Description;
+                }
+                MessageBox.Show("" + AcctID.ToString());
+                Thread DGVThread = new Thread(GetAccountDetails);
+                DGVThread.Start();
+            }
+        }
+        void GetAccountDetails()
+        {
+            Operation.BeginOperation(this);
+            var GetCurrentAccount = AccountDailyCmd .GetAllAccountDailyByAccountID(AcctID );
+            this.Invoke((MethodInvoker)delegate { DGVAccountsDaily.DataSource = GetCurrentAccount; });
+            Operation.EndOperation(this);
+        }
+
+        void Broom() { txtDescription.Text = ""; txtAccountName.Text = ""; txtBalance.Text = ""; DGVAccountsDaily.Rows.Clear(); }
+        #endregion 
+
+      
+
+       
+
+
     }
 }
