@@ -16,7 +16,7 @@ namespace Bylsan_System.Reports.ReportCommand
         /// /
         /// </summary>
         public OrderReportCmd() { }
-
+        //استخراج كافة فاتورة خاصة بناء على رقم الفاتورة
         public void GetOrderProductsByOrderId(int XOrderID)
         {
             var q = OrderProductsCmd.GetAllByOrderID(XOrderID);
@@ -66,9 +66,95 @@ namespace Bylsan_System.Reports.ReportCommand
 
         }
 
+        /////استخراج كافة الفواتير المفصلة الخاصة بزبون واحد   -	تقرير العميل وطلبياته
+        public void GetOrderProductsCustomer()
+        {
+            ///GetAllOederBy Customer
+            ///وضع دالة الاستعلام الخاصة بالكستمر
+            //ReportDataSource rs = new ReportDataSource();
+            //List<OrderReportObj> ls = new List<OrderReportObj>();
+
+            //foreach (var item in q)
+            //{
+
+            //    ls.Add(new OrderReportObj()
+            //    {////////////
+            //         information Order And Customer
+            //        OrderIdID = item.Order.ID,
+            //        CustomerName = item.Order.Customer.CustomerName,
+            //        CustomerPhoneNumber = item.Order.Customer.PhoneNumber,
+            //        OrderName = item.Order.OrderName,
+            //        OrderType = item.Order.OrderType,
+            //        OrderDate = item.Order.OrderDate.Value,
+            //        OrderDelivery = item.Order.OrderDelivery,
+            //        OrderVerify = item.Order.OrderVerify,
+            //        OrderDeliveryDate = item.Order.OrderDeliveryDate.Value,
+            //        OrderStatus = item.Order.OrderStatus,
+            //        TotalAmount = item.Order.TotalAmount.Value,
+            //        DeliverdToBranch = item.Order.DeliverdToBranch.Value,
+
+            //        //informationOrderPrduct
+            //        ProductName = item.Product.Product_Name,
+            //        Qty = item.Qty.Value,
+            //        ProductPrice = item.Product.ProductPrice.Value,
+            //        PublicName = item.Product.PublicName,
+            //        OrderProductDescription = item.Description,
+            //        OrderProductStatus = item.Status,
 
 
 
 
+            //    });
+            //}
+            //rs.Name = "DataSet1";
+            //rs.Value = ls;
+            //RebortView frm = new RebortView();
+            //frm.reportViewer1.LocalReport.DataSources.Clear();
+            //frm.reportViewer1.LocalReport.DataSources.Add(rs);
+            //frm.reportViewer1.LocalReport.ReportEmbeddedResource = "Bylsan_System.Reports.Sheets.RepOrderFollow.rdlc";
+            //frm.ShowDialog();
+
+
+        }
+
+
+        /////استخراج كافة الطلبيات بدون تفصيل  الخاصة بزبون واحد  -	تقرير كشف حساب العميل
+        public void GetOrderProductsCustomer(int CoustmerID)
+        {
+
+            var q = OrdersCmd.GetAllOrdersByCustomerID(CoustmerID);
+            ReportDataSource rs = new ReportDataSource();
+            List<OrderReportObj> ls = new List<OrderReportObj>();
+
+            foreach (var item in q)
+            {
+
+                ls.Add(new OrderReportObj()
+                {////////////
+                    OrderIdID = item.ID,
+                    CustomerName = item.Customer.CustomerName,
+                    CustomerPhoneNumber = item.Customer.PhoneNumber,
+                    OrderName = item.OrderName,
+                    OrderType = item.OrderType,
+                    OrderDate = item.OrderDate.Value,
+                    OrderDelivery = item.OrderDelivery,
+                    OrderVerify = item.OrderVerify,
+                    OrderDeliveryDate = item.OrderDeliveryDate.Value,
+                    OrderStatus = item.OrderStatus,
+                    TotalAmount = item.TotalAmount.Value,
+                    DeliverdToBranch = item.DeliverdToBranch.Value,
+                   
+                });
+            }
+            rs.Name = "DataSet1";
+            rs.Value = ls;
+            RebortView frm = new RebortView();
+            frm.reportViewer1.LocalReport.DataSources.Clear();
+            frm.reportViewer1.LocalReport.DataSources.Add(rs);
+            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "Bylsan_System.Reports.Sheets.RepCustomerAccountOrders.rdlc";
+            frm.ShowDialog();
+
+
+        }
     }
 }
