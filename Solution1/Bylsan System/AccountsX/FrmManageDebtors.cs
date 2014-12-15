@@ -46,6 +46,7 @@ namespace Bylsan_System.AccountsX
                 Debtor tb = (Debtor)DGVDebitors.CurrentRow.DataBoundItem;
                 frm.TargetDebitor = tb;
                 frm.ShowDialog();
+            
                 Operation.EndOperation(this);
             }
         }

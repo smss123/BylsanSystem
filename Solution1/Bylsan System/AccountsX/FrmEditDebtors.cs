@@ -60,7 +60,9 @@ namespace Bylsan_System.AccountsX
 
             Operation.ShowToustOk("Updated Successfull ....", this);
 
+      
             this.Hide();
+           
 
         }
 
