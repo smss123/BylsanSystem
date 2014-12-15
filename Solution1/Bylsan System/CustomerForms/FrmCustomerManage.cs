@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Bylsan_System.Reports;
+using Bylsan_System.Reports.ReportsObject;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -75,7 +77,16 @@ namespace Bylsan_System.CustomerForms
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            //Show report Option
+            
+            var AllCustomers = CustomersCmd.GetAllCustmers();
+            RebortView frm = new RebortView();
+
+            ReportsObj.xData(AllCustomers);
+
+            frm.reportViewer1.LocalReport.DataSources.Clear();
+            frm.reportViewer1.LocalReport.DataSources.Add(ReportsObj.rs);
+             frm.reportViewer1.LocalReport.ReportEmbeddedResource = "Bylsan_System.Reports.Sheets.RepAllCustomers.rdlc";
+            frm.ShowDialog();
         }
     }
 }

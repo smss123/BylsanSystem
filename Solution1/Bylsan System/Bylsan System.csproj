@@ -175,6 +175,7 @@
     <Compile Include="CustomerForms\FrmCustomerManage.Designer.cs">
       <DependentUpon>FrmCustomerManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerForms\ReportObj.cs" />
     <Compile Include="designerForms\FrmOrderProductShow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -412,14 +413,7 @@
     <Compile Include="Reports\RebortView.Designer.cs">
       <DependentUpon>RebortView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\ReportCommand\CustmoerReportCmd.cs" />
-    <Compile Include="Reports\ReportCommand\EmployeeReportCommand.cs" />
-    <Compile Include="Reports\ReportCommand\OrderReportCmd.cs" />
-    <Compile Include="Reports\ReportsObject\CustomerReportObj.cs" />
-    <Compile Include="Reports\ReportsObject\EmployeeReportObj.cs" />
-    <Compile Include="Reports\ReportsObject\ExpenssesMovmentReportObj.cs" />
-    <Compile Include="Reports\ReportsObject\OrderReportObj.cs" />
-    <Compile Include="Reports\ReportsObject\ProductReportObj.cs" />
+    <Compile Include="Reports\ReportsObject\ReportsObj.cs" />
     <Compile Include="SecurityForm\FrmEditUserPermession.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -686,6 +680,7 @@
     <EmbeddedResource Include="Reports\RebortView.resx">
       <DependentUpon>RebortView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Sheets\RepAllCustomers.rdlc" />
     <EmbeddedResource Include="SecurityForm\FrmEditUserPermession.resx">
       <DependentUpon>FrmEditUserPermession.cs</DependentUpon>
     </EmbeddedResource>
