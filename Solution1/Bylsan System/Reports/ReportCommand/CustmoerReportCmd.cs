@@ -17,7 +17,7 @@ namespace Bylsan_System.Reports.ReportCommand
             public CustmoerReportCmd() { }
             CustomerReportObj xx = new CustomerReportObj();
        public void GetAllCoustmer()
-       {
+       {//
            var q = CustomersCmd.GetAllCustmers();
            ReportDataSource rs = new ReportDataSource();
            List<CustomerReportObj> ls = new List<CustomerReportObj>();

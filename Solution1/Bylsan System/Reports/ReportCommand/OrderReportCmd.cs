@@ -25,7 +25,7 @@ namespace Bylsan_System.Reports.ReportCommand
             {
 
                 ls.Add(new OrderReportObj()
-                {//////////
+                {////////////
                     /// information Order And Customer
                     OrderIdID = item.Order.ID,
                     CustomerName = item.Order.Customer.CustomerName,

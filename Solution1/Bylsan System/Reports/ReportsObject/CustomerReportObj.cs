@@ -8,7 +8,7 @@ using XamaDataLayer;
 namespace Bylsan_System.Reports.ReportsObject
 {
     public   class CustomerReportObj
-    {
+    {///
         public  Customer  CustmoerRbt { get; set; }
 
         public int CustomerID { get; set; }

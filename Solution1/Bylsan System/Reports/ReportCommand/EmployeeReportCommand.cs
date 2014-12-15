@@ -15,7 +15,7 @@ namespace Bylsan_System.Reports.ReportCommand
        public EmployeeReportCommand() { }
         
        public void GetAllCoustmer()
-       {
+       {///
            var q = EmployeesCmd.GetAllEmployees();
            ReportDataSource rs = new ReportDataSource();
            List<EmployeeReportObj> ls = new List<EmployeeReportObj>();

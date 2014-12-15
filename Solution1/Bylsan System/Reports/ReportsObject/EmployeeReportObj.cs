@@ -8,7 +8,9 @@ namespace Bylsan_System.Reports.ReportsObject
 {
     public class EmployeeReportObj
     {
-
+        /// <summary>
+        /// /
+        /// </summary>
         public int EmpID { get; set; }
         public string EmpName { get; set; }
         public DateTime HereDate { get; set; }

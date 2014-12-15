@@ -9,7 +9,7 @@ namespace Bylsan_System.Reports.ReportsObject
 {
     public class OrderReportObj
     {
-        //Order
+        //Order///
         public string CustomerName { get; set; }
         public string CustomerPhoneNumber { get; set; }
         public int OrderIdID { get; set; }
