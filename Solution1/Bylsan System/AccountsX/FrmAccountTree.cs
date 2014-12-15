@@ -64,12 +64,14 @@ namespace Bylsan_System.AccountsX
         #region "     Tree Controler      "
         private void ExpandBtn_Click(object sender, EventArgs e)
         {
-            TreeAccounts.ExpandAll(); 
+            TreeAccounts.ExpandAll();
+            Broom();
         }
 
         private void CollapseBtn_Click(object sender, EventArgs e)
         {
-            TreeAccounts.CollapseAll();
+            TreeAccounts.CollapseAll(); Broom();
+
         }
         #endregion 
 
@@ -88,8 +90,9 @@ namespace Bylsan_System.AccountsX
                     AcctID = Actitem.ID;
                     txtAccountName.Text = Actitem.AccountName;
                     txtDescription.Text = Actitem.Description;
+                    
                 }
-                MessageBox.Show("" + AcctID.ToString());
+            
                 Thread DGVThread = new Thread(GetAccountDetails);
                 DGVThread.Start();
             }
@@ -98,7 +101,11 @@ namespace Bylsan_System.AccountsX
         {
             Operation.BeginOperation(this);
             var GetCurrentAccount = AccountDailyCmd .GetAllAccountDailyByAccountID(AcctID );
-            this.Invoke((MethodInvoker)delegate { DGVAccountsDaily.DataSource = GetCurrentAccount; });
+            this.Invoke((MethodInvoker)delegate {
+                DGVAccountsDaily.DataSource = GetCurrentAccount;
+               double Balance = AccountDailyCmd.GetBalanceByAccountID (AcctID );
+               txtBalance.Text = Balance.ToString();
+            });
             Operation.EndOperation(this);
         }
 

@@ -68,6 +68,23 @@ namespace XamaDataLayer.Accountant
                      select d).ToList();
            return dy;
        }
+       public static double  GetBalanceByAccountID(int ACTID)
+       {
+           db = new DbDataContext();
+           double NetBalance = 0;
+            var  TotIn = (from d in db.AccountDailies
+                     orderby d.DateOfProcess ascending
+                     where d.AccountID == ACTID
+                     select  d.TotalIn ).Sum (  );
+
+            var TotOut = (from d in db.AccountDailies
+                         orderby d.DateOfProcess ascending
+                         where d.AccountID == ACTID
+                         select d.TotalOut).Sum();
+
+           NetBalance = (TotIn .Value - TotOut .Value );
+           return NetBalance;
+       }
 
     }
 }
