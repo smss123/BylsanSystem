@@ -84,7 +84,7 @@ namespace XamaDataLayer.Accountant
                          orderby d.DateOfProcess ascending
                          where d.AccountID == ACTID
                          select d.TotalOut).Sum();
-         
+            NetBalance = TotIn.Value - TotOut.Value;
 
            return NetBalance;
            }
