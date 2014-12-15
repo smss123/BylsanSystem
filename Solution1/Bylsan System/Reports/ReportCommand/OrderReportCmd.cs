@@ -55,12 +55,12 @@ namespace Bylsan_System.Reports.ReportCommand
 
                 });
             }
-            rs.Name = "";
+            rs.Name = "DataSet1";
             rs.Value = ls;
             RebortView frm = new RebortView();
             frm.reportViewer1.LocalReport.DataSources.Clear();
             frm.reportViewer1.LocalReport.DataSources.Add(rs);
-            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "UcasProWindowsForm.Reports.00000000.rdlc";
+            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "Bylsan_System.Reports.Sheets.RepOrderFollow.rdlc";
             frm.ShowDialog();
 
 

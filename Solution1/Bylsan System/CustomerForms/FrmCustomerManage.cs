@@ -78,15 +78,6 @@ namespace Bylsan_System.CustomerForms
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             
-            var AllCustomers = CustomersCmd.GetAllCustmers();
-            RebortView frm = new RebortView();
-
-            ReportsObj.xData(AllCustomers);
-
-            frm.reportViewer1.LocalReport.DataSources.Clear();
-            frm.reportViewer1.LocalReport.DataSources.Add(ReportsObj.rs);
-             frm.reportViewer1.LocalReport.ReportEmbeddedResource = "Bylsan_System.Reports.Sheets.RepAllCustomers.rdlc";
-            frm.ShowDialog();
         }
     }
 }

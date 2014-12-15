@@ -13,6 +13,7 @@ using XamaDataLayer.Helper_Classes;
 using XamaDataLayer.Security;
 using XamaDataLayer.Accountant;
 using Xprema.XExtention;
+using Bylsan_System.Reports.ReportCommand;
 namespace Bylsan_System.SenarioAddOrderForms
 { // 1
     public partial class FrmTotalOrder : Form
@@ -61,7 +62,7 @@ namespace Bylsan_System.SenarioAddOrderForms
             {
                 TotalCost = Convert.ToDouble(TotalPriceBox.Text.ToString());
             }
-            MessageBox.Show("total Cost : " + TotalCost.ToString());
+           // MessageBox.Show("total Cost : " + TotalCost.ToString());
             //========================================
             // Get Branch 
             var CurrentBranch = BranchsCmd.GetBranchByBarnchID(int.Parse(txtBranches.SelectedValue.ToString()));
@@ -115,7 +116,7 @@ namespace Bylsan_System.SenarioAddOrderForms
             db.SubmitChanges();
 
             //=========================================================================
-            int xLastOrderID = otb.ID;
+             xLastOrderID = otb.ID;
             //==========================================================================
             //=== Save At OrderProduct
             OrderProduct ordtb = new OrderProduct();
@@ -190,8 +191,8 @@ namespace Bylsan_System.SenarioAddOrderForms
             return NetTotalCostPrice;
         }
         #endregion
- 
 
+        int xLastOrderID;
         private void txtDiscountBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             // ^^^ Abu Ehab : 
@@ -203,6 +204,12 @@ namespace Bylsan_System.SenarioAddOrderForms
                     e.KeyChar = '\0';
                 }
             }
+        }
+
+        private void PrintBtn_Click(object sender, EventArgs e)
+        {
+            OrderReportCmd cmd = new OrderReportCmd();
+            cmd.GetOrderProductsByOrderId( xLastOrderID);
         }
     }
 }
