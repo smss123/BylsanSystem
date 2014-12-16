@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 
-
+using System.Linq;
 using XamaDataLayer;
 using XamaDataLayer.SellSystem;
 using Bylsan_System.SellSystemForms;
@@ -85,6 +85,7 @@ namespace Bylsan_System.SellSystemForms
                 };
 
                 SellItemsCmd.AddSellItems(tb);
+        
                 Operation.ShowToustOk("Item Sell  Has Been Saved", this);
                 foreach (Control item in groupBox1.Controls)
                 {
@@ -128,5 +129,10 @@ namespace Bylsan_System.SellSystemForms
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
         #endregion
+
+        private void FrmAddSellItem_Load(object sender, EventArgs e)
+        {
+            DGVSellItems.DataSource = SellItemsCmd.GetAllSellItems();
+        }
     }
 }

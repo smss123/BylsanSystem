@@ -27,7 +27,7 @@ namespace XamaDataLayer.SellSystem
            sell.ItemName = tb.ItemName;
            sell.ItemPrice = tb.ItemPrice;
            sell.Description = tb.Description;
-
+           sell.ItemIcon = tb.ItemIcon;
            db.SubmitChanges();
            return sell;
        }
@@ -54,7 +54,7 @@ namespace XamaDataLayer.SellSystem
        // == Loading Data 
        public static List<SellItem> GetAllSellItems() {
            db = new DbDataContext();
-           var lst = (from i in db.SellItems select i).ToList();
+           var lst = (from i in db.SellItems  select i).ToList();
            return lst;
        }
 
