@@ -14,6 +14,9 @@ namespace XamaDataLayer.Main_Store
             db = new DbDataContext();
             db.StoreWithDrawals.InsertOnSubmit(tb);
             db.SubmitChanges();
+
+            XamaDataLayer.Security.UserCmd.SaveHistory("Add ", " Add Drawal", " Add New  Drawal  At Main Store ");
+
             return true;
         }
 
@@ -30,6 +33,8 @@ namespace XamaDataLayer.Main_Store
             q.UserID = tb.UserID;
             q.StoreID = tb.StoreID;
             db.SubmitChanges();
+
+            XamaDataLayer.Security.UserCmd.SaveHistory("Edit ", " Edit Drawal", " Edit Selected Drawal  At Main Store ");
             return q;
         }
 
@@ -41,7 +46,7 @@ namespace XamaDataLayer.Main_Store
                 var q = db.StoreWithDrawals.Where(d => d.ID == xid).SingleOrDefault();
                 db.StoreWithDrawals.DeleteOnSubmit(q);
                 db.SubmitChanges();
-
+                XamaDataLayer.Security.UserCmd.SaveHistory("Delete ", " Delete Drawal", " Delete Selected Drawal  At Main Store ");
             }
             catch (Exception)
             {

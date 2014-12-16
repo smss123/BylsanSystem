@@ -248,6 +248,7 @@ namespace Bylsan_System
         {
             UserAlert Alert = new UserAlert();
             Alert.ActivateTimer();
+           
         }
         
         private void timer1_Tick(object sender, EventArgs e)

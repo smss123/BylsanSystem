@@ -17,6 +17,7 @@ namespace XamaDataLayer.BranchCmd
            {
                db.Branches.InsertOnSubmit(tb);
                db.SubmitChanges();
+               XamaDataLayer.Security.UserCmd.SaveHistory("Add  ", "Add Branch ", " Add New Branch's Informations  ");
                return true;
            }
            else { return false; }
@@ -70,6 +71,8 @@ namespace XamaDataLayer.BranchCmd
            b.Manager_ID = tb.Manager_ID;
            b.AccountID = tb.AccountID;
            db.SubmitChanges();
+           XamaDataLayer.Security.UserCmd.SaveHistory("Edit   ", "Edit Branch ", " Edit Selected Branch's Informations  ");
+
            return true;
        }
 
@@ -81,6 +84,7 @@ namespace XamaDataLayer.BranchCmd
            var b = db.Branches.Where(n => n.ID == xid).SingleOrDefault();
            db.Branches.DeleteOnSubmit(b);
            db.SubmitChanges();
+           XamaDataLayer.Security.UserCmd.SaveHistory("Delete  ", "Delete Branch ", " Delete Selected  Branch's Informations  ");
           
        }
     }

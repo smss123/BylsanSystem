@@ -16,6 +16,8 @@ namespace XamaDataLayer.BranchCmd
            db = new DbDataContext();
            db.Customers.InsertOnSubmit(tb);
            db.SubmitChanges();
+           XamaDataLayer.Security.UserCmd.SaveHistory("Add ", " Add Customer", " Add New Customer ");
+
            return true;
        }
 
@@ -67,6 +69,8 @@ namespace XamaDataLayer.BranchCmd
            c.CustomerName = tb.CustomerName;
            c.PhoneNumber = tb.PhoneNumber;
            db.SubmitChanges();
+           XamaDataLayer.Security.UserCmd.SaveHistory("Edit ", "Edit Customer", " Edit Selected Customer's Informations  ");
+
            return true;
        }
 
@@ -77,7 +81,7 @@ namespace XamaDataLayer.BranchCmd
                var c = db.Customers.Where(cc => cc.ID == xid).SingleOrDefault();
                db.Customers.DeleteOnSubmit(c);
                db.SubmitChanges();
-          
+               XamaDataLayer.Security.UserCmd.SaveHistory("Delete ", "Delete Customer", " Delete Selected Customer's Informations  ");
        }
        public static List<Customer> GetCustmerByID(int CustId)
        {

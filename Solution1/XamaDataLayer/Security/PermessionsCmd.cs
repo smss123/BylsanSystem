@@ -15,6 +15,9 @@ namespace XamaDataLayer.Security
            db = new DbDataContext();
            db.SystemPermessions.InsertOnSubmit(tb);
            db.SubmitChanges();
+
+         UserCmd.SaveHistory("Add ", " Add New User", " Add new User To System ");
+
            return true;
        }
 
@@ -34,6 +37,8 @@ namespace XamaDataLayer.Security
            db = new DbDataContext();
            db.UserPermessions .InsertOnSubmit(tb);
            db.SubmitChanges();
+
+          UserCmd.SaveHistory("Add ", "Permessions ", "Geven User Some Of  Permessions  ");
            return true;
        }
 
@@ -47,6 +52,8 @@ namespace XamaDataLayer.Security
                    q.PermessionValue = u.PermessionValue;
                    q.UserID = u.UserID;
                    db.SubmitChanges();
+                   XamaDataLayer.Security.UserCmd.SaveHistory(" Edit", " Edit Permession", " Edit  Permession to selected user ");
+
                    return true;
                }
                return false;

@@ -16,6 +16,7 @@ using System.Data.Linq;
 using System.Threading;
 using Xprema.XExtention;
 using Telerik.WinControls.UI;
+using XamaDataLayer.Security;
 
 namespace Bylsan_System.SenarioAddOrderForms
 {
@@ -273,7 +274,7 @@ namespace Bylsan_System.SenarioAddOrderForms
 
         private void nextBtn_Click_1(object sender, EventArgs e)
         {
-
+            XamaDataLayer.Security.UserCmd.SaveHistory("Add", "Order Product ", "Add New Order Product  ");
             frm.TragetOrderType = OrderTypeCheckLab.Text;
             frm.Show();
             this.Hide();
@@ -302,5 +303,6 @@ namespace Bylsan_System.SenarioAddOrderForms
 
         #endregion
 
+       
     }
 }

@@ -14,6 +14,9 @@ namespace XamaDataLayer.Main_Store
            db = new DbDataContext();
            db.Items.InsertOnSubmit(tb);
            db.SubmitChanges();
+
+           XamaDataLayer.Security.UserCmd.SaveHistory("Add ", " Add Item", " Add New Item At Main Store ");
+
            return true;
        }
 
@@ -25,6 +28,8 @@ namespace XamaDataLayer.Main_Store
            q.ItemDescription = tb.ItemDescription;
            q.ItemType = tb.ItemType;
            db.SubmitChanges();
+
+           XamaDataLayer.Security.UserCmd.SaveHistory("Edit ", " Edit Item", " Edit Selected Item At Main Store ");
            return true;
        }
 
@@ -37,6 +42,7 @@ namespace XamaDataLayer.Main_Store
                var q = db.Items .Where(p => p.ID == xid).SingleOrDefault();
                db.Items .DeleteOnSubmit(q);
                db.SubmitChanges();
+               XamaDataLayer.Security.UserCmd.SaveHistory("Delete ", " Delete Item", " Delete selected Item At Main Store ");
            }
            catch (Exception)
            {

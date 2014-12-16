@@ -14,6 +14,8 @@ namespace XamaDataLayer.Main_Store
            db = new DbDataContext();
            db.Suppliers.InsertOnSubmit(tb);
            db.SubmitChanges();
+
+           XamaDataLayer.Security.UserCmd.SaveHistory("Add ", " Add Supplier ", " Add new Supplier ");
            return true;
        }
 
@@ -26,6 +28,8 @@ namespace XamaDataLayer.Main_Store
            q.Address = tb.Address;
            q.Description = tb.Description;
            db.SubmitChanges();
+           XamaDataLayer.Security.UserCmd.SaveHistory("Edit ", "EDIT  Supplier ", " Edit selected  Supplier ");
+
            return q;
        }
 
@@ -37,6 +41,7 @@ namespace XamaDataLayer.Main_Store
            var q = db.Suppliers.Where(d => d.ID == xid).SingleOrDefault();
            db.Suppliers.DeleteOnSubmit(q);
            db.SubmitChanges();
+           XamaDataLayer.Security.UserCmd.SaveHistory("Delete ", "Delete  Supplier ", " Delete selected  Supplier ");
 
            }
            catch (Exception)

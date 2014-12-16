@@ -110,7 +110,30 @@ namespace XamaDataLayer.Security
 
         #endregion 
 
+       #region "  ^^^ History  "
+      public static  void SaveHistory(string xActionName, string xHistoryAction,string descript)
+       {
+           db = new DbDataContext();
+           History tb = new History()
+           {
+               ActionName = xActionName ,
+               HistoryAction =  xHistoryAction ,
+               Description = string.Format( descript + " | By User :  " +  XamaDataLayer.Security.UserInfo.CurrentUserName),
+               DateOfProcess = DateTime.Now,
+               UserID = XamaDataLayer.Security.UserInfo.CurrentUserID,
+           };
+           db.Histories.InsertOnSubmit(tb);
+           db.SubmitChanges();
+       }
 
+
+       public static List<History> GetAllUserHistories()
+       {
+           return db.Histories.ToList();
+       
+       }
+
+       #endregion 
 
     }
 }

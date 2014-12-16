@@ -14,6 +14,7 @@ namespace XamaDataLayer.BranchCmd
            db = new DbDataContext();
            db.OrderProuctAttachments.InsertOnSubmit(tb);
            db.SubmitChanges();
+           XamaDataLayer.Security.UserCmd.SaveHistory("Add  ", "Add Attachment ", " Add New Attachment   ");
            return true;  
        }
        public static OrderProuctAttachment EditAttachment(OrderProuctAttachment tb, int xid)
@@ -23,6 +24,8 @@ namespace XamaDataLayer.BranchCmd
            q.OrderProductID = tb.OrderProductID;
            q.imageX = tb.imageX;
            db.SubmitChanges();
+
+           XamaDataLayer.Security.UserCmd.SaveHistory("Edit  ", "Edit Attachment ", " Edit selected  Attachment's Informations    ");
              return q;
               
        }
@@ -33,7 +36,7 @@ namespace XamaDataLayer.BranchCmd
            var q = db.OrderProuctAttachments.Where(c => c.ID == xid).SingleOrDefault();
            db.OrderProuctAttachments.DeleteOnSubmit(q);
            db.SubmitChanges();
-        
+           XamaDataLayer.Security.UserCmd.SaveHistory("Delete  ", "Delete  Attachment ", " Delete selected  Attachment   ");
        }
 
        public static List<OrderProuctAttachment> GetAllAttachments() {
