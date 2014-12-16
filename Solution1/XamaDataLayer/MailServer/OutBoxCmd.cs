@@ -15,6 +15,7 @@ namespace XamaDataLayer.MailServer
             db = new DbDataContext();
             db.OutBoxes .InsertOnSubmit(tb);
             db.SubmitChanges();
+            XamaDataLayer.Security.UserCmd.SaveHistory("Send ", " Message  ", " Sent Message  ");
             return true;
         }
 
@@ -25,6 +26,8 @@ namespace XamaDataLayer.MailServer
    
             Msg.Status = tb.Status;
             db.SubmitChanges();
+            XamaDataLayer.Security.UserCmd.SaveHistory("Edit", " Message  ", " Edit Message Status ");
+
             return Msg;
         }
 
@@ -36,6 +39,7 @@ namespace XamaDataLayer.MailServer
                 var Msg = db.OutBoxes .Where(m => m.ID == xid).SingleOrDefault();
                 db.OutBoxes .DeleteOnSubmit(Msg);
                 db.SubmitChanges();
+                XamaDataLayer.Security.UserCmd.SaveHistory("Delete ", " Message  ", " Delete OutBox Message  ");
             }
             catch (Exception)
             {
