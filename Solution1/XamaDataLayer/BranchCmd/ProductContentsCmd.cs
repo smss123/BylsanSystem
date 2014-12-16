@@ -15,6 +15,7 @@ namespace XamaDataLayer.BranchCmd
             db = new DbDataContext();
             db.ProductContents.InsertOnSubmit(tb);
             db.SubmitChanges();
+            XamaDataLayer.Security.UserCmd.SaveHistory(" ", " ", " ");
             return true;
         }
         public static ProductContent EditContents(ProductContent tb, int xid)

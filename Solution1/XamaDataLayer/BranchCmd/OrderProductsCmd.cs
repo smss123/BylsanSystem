@@ -72,7 +72,24 @@ namespace XamaDataLayer.BranchCmd
            return LST;
        }
 
-
+       public static List<OrderProduct> GetOrderProductByCustomerPhone( int xOrderid , string Phon)
+       {
+           db = new DbDataContext();
+           //===============================================================================================
+           var getcustomeridbyphone = (from c in CustomersCmd.GetAllCustmers()
+                                       where c.PhoneNumber == Phon select c).Single();
+           int CustmrID = getcustomeridbyphone.ID;
+           //=================================================================================================
+           var GetOrderByOrderID = (from o in OrdersCmd.GetAllOrders()
+                                    where o.ID == xOrderid && o.CustomerID == CustmrID select o).Single ();
+           //=================================================================================================
+           int TargetOrderProduct = GetOrderByOrderID.ID;
+           var LST = (from p in db.OrderProducts
+                      orderby p.ID
+                      where p.OrderID  ==  TargetOrderProduct 
+                      select p).ToList();
+           return LST;
+       }
 
     }
 }
