@@ -690,6 +690,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Sheets\RepAllCustomers.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepCustomerAccountOrders.rdlc" />
+    <EmbeddedResource Include="Reports\Sheets\RepitemStore.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepOrderFollow.rdlc" />
     <EmbeddedResource Include="SecurityForm\FrmEditUserPermession.resx">
       <DependentUpon>FrmEditUserPermession.cs</DependentUpon>
@@ -737,6 +738,7 @@
       <DependentUpon>FrmTotalOrder.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Lib\Xprema.dll.config" />
+    <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.ItemsStoreReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.OrderReportObj.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.Account.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.AccountCategory.datasource" />
