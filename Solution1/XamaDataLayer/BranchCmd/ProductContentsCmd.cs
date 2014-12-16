@@ -15,7 +15,7 @@ namespace XamaDataLayer.BranchCmd
             db = new DbDataContext();
             db.ProductContents.InsertOnSubmit(tb);
             db.SubmitChanges();
-            XamaDataLayer.Security.UserCmd.SaveHistory(" ", " ", " ");
+            XamaDataLayer.Security.UserCmd.SaveHistory("Add ", " Product Content ", " Add New Product Content ");
             return true;
         }
         public static ProductContent EditContents(ProductContent tb, int xid)
@@ -27,6 +27,8 @@ namespace XamaDataLayer.BranchCmd
             q.ContentsProductID = tb.ContentsProductID;
             q.unitOfProduct = tb.unitOfProduct;
             db.SubmitChanges();
+
+            XamaDataLayer.Security.UserCmd.SaveHistory("Edit ", " Product Content ", " Edit Selected  Product Content ");
             return q;
         }
 
@@ -36,6 +38,8 @@ namespace XamaDataLayer.BranchCmd
             var q = db.ProductContents.Where(p => p.ID == xid).SingleOrDefault();
             db.ProductContents.DeleteOnSubmit(q);
             db.SubmitChanges();
+            XamaDataLayer.Security.UserCmd.SaveHistory("Delete ", " Product Content ", " Delete Product Content ");
+
         }
         //==================================================
 

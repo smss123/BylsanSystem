@@ -15,6 +15,8 @@ namespace XamaDataLayer.BranchCmd
            db = new DbDataContext();
            db.QuotationProducts.InsertOnSubmit(tb);
            db.SubmitChanges();
+
+           XamaDataLayer.Security.UserCmd.SaveHistory("Add ", "Quotation  Product  ", " Add Product's Quotation Informations  ");
            return true;
        }
 
@@ -27,6 +29,8 @@ namespace XamaDataLayer.BranchCmd
            q.Description = tb.Description;
 
            db.SubmitChanges();
+           XamaDataLayer.Security.UserCmd.SaveHistory("Add ", "  Quotation Product  ", " Edit Selected  Product's Quotation Informations  ");
+
            return q;
        }
 
@@ -38,6 +42,8 @@ namespace XamaDataLayer.BranchCmd
            db.QuotationProducts.DeleteOnSubmit(q);
 
            db.SubmitChanges();
+
+           XamaDataLayer.Security.UserCmd.SaveHistory("Delete ", " Quotation Product  ", " Delete selected  Product's Quotation Informations  ");
        }
 
 
