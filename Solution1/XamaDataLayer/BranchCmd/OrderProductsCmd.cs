@@ -9,6 +9,7 @@ namespace XamaDataLayer.BranchCmd
    public static  class OrderProductsCmd
     {
        static DbDataContext db = new DbDataContext();
+       #region "    ^^^^         "
        public static bool AddOrderProduct(OrderProduct tb)
        {
            db = new DbDataContext();
@@ -71,8 +72,10 @@ namespace XamaDataLayer.BranchCmd
                       select p).ToList();
            return LST;
        }
+       #endregion 
 
-       public static List<OrderProduct> GetOrderProductByCustomerPhone( int xOrderid , string Phon)
+
+       public static List<OrderProduct> GetOrderProductByCustomerPhone(  string Phon)
        {
            db = new DbDataContext();
            //===============================================================================================
@@ -81,7 +84,7 @@ namespace XamaDataLayer.BranchCmd
            int CustmrID = getcustomeridbyphone.ID;
            //=================================================================================================
            var GetOrderByOrderID = (from o in OrdersCmd.GetAllOrders()
-                                    where o.ID == xOrderid && o.CustomerID == CustmrID select o).Single ();
+                                    where  o.CustomerID == CustmrID select o).Single ();
            //=================================================================================================
            int TargetOrderProduct = GetOrderByOrderID.ID;
            var LST = (from p in db.OrderProducts
