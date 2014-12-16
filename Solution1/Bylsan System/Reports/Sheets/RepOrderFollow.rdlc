@@ -6,16 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>17.0098cm</Width>
+              <Width>16.59889cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>7.75403cm</Height>
+              <Height>6.52785cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Rectangle Name="Rectangle1">
+                    <Rectangle Name="Rectangle2">
                       <ReportItems>
                         <Textbox Name="OrderName">
                           <CanGrow>true</CanGrow>
@@ -32,8 +32,8 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>OrderName</rd:DefaultName>
-                          <Top>2.31125cm</Top>
-                          <Left>2.51239cm</Left>
+                          <Top>1.54368cm</Top>
+                          <Left>2.12875cm</Left>
                           <Height>0.6cm</Height>
                           <Width>4.73623cm</Width>
                           <Style>
@@ -61,8 +61,8 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>2.31125cm</Top>
-                          <Left>0.40926cm</Left>
+                          <Top>1.54368cm</Top>
+                          <Left>0.02562cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.15604cm</Width>
                           <ZIndex>1</ZIndex>
@@ -95,8 +95,8 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>OrderDate</rd:DefaultName>
-                          <Top>3.08764cm</Top>
-                          <Left>2.23504cm</Left>
+                          <Top>2.32007cm</Top>
+                          <Left>1.8514cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.5cm</Width>
                           <ZIndex>2</ZIndex>
@@ -125,8 +125,8 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>3.08764cm</Top>
-                          <Left>0.41805cm</Left>
+                          <Top>2.32007cm</Top>
+                          <Left>0.03441cm</Left>
                           <Height>0.6cm</Height>
                           <Width>1.83854cm</Width>
                           <ZIndex>3</ZIndex>
@@ -899,7 +899,7 @@
                                 <KeepWithGroup>After</KeepWithGroup>
                               </TablixMember>
                               <TablixMember>
-                                <Group Name="Details" />
+                                <Group Name="Details2" />
                               </TablixMember>
                               <TablixMember>
                                 <KeepWithGroup>Before</KeepWithGroup>
@@ -907,8 +907,8 @@
                             </TablixMembers>
                           </TablixRowHierarchy>
                           <DataSetName>DataSet1</DataSetName>
-                          <Top>5.49542cm</Top>
-                          <Left>0.43488cm</Left>
+                          <Top>4.72785cm</Top>
+                          <Left>0.05124cm</Left>
                           <Height>1.8cm</Height>
                           <Width>15.01808cm</Width>
                           <ZIndex>4</ZIndex>
@@ -918,128 +918,6 @@
                             </Border>
                           </Style>
                         </Tablix>
-                        <Textbox Name="CustomerName">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!CustomerName.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>CustomerName</rd:DefaultName>
-                          <Top>0.44097cm</Top>
-                          <Left>3.15276cm</Left>
-                          <Height>0.6cm</Height>
-                          <Width>5.01435cm</Width>
-                          <ZIndex>5</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox5">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>CustomerName:</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>0.44097cm</Top>
-                          <Left>0.42283cm</Left>
-                          <Height>0.6cm</Height>
-                          <Width>2.78285cm</Width>
-                          <ZIndex>6</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Gainsboro</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox18">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!CustomerPhoneNumber.Value</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox18</rd:DefaultName>
-                          <Top>0.44097cm</Top>
-                          <Left>10.91406cm</Left>
-                          <Height>0.6cm</Height>
-                          <Width>4.18956cm</Width>
-                          <ZIndex>7</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <Textbox Name="Textbox19">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Phone Number</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox19</rd:DefaultName>
-                          <Top>0.44097cm</Top>
-                          <Left>8.3435cm</Left>
-                          <Height>0.6cm</Height>
-                          <Width>2.5cm</Width>
-                          <ZIndex>8</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>Gainsboro</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
                         <Textbox Name="OrderDate2">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -1058,11 +936,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>OrderDate</rd:DefaultName>
-                          <Top>3.82875cm</Top>
-                          <Left>2.18072cm</Left>
+                          <Top>3.06118cm</Top>
+                          <Left>1.79708cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.60724cm</Width>
-                          <ZIndex>9</ZIndex>
+                          <ZIndex>5</ZIndex>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1088,11 +966,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>3.82875cm</Top>
-                          <Left>0.40926cm</Left>
+                          <Top>3.06118cm</Top>
+                          <Left>0.02562cm</Left>
                           <Height>0.6cm</Height>
                           <Width>1.77146cm</Width>
-                          <ZIndex>10</ZIndex>
+                          <ZIndex>6</ZIndex>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1122,11 +1000,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>OrderDate</rd:DefaultName>
-                          <Top>4.60514cm</Top>
-                          <Left>2.55565cm</Left>
+                          <Top>3.83757cm</Top>
+                          <Left>2.17201cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.23542cm</Width>
-                          <ZIndex>11</ZIndex>
+                          <ZIndex>7</ZIndex>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1152,11 +1030,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>4.60514cm</Top>
-                          <Left>0.43488cm</Left>
+                          <Top>3.83757cm</Top>
+                          <Left>0.05124cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.10312cm</Width>
-                          <ZIndex>12</ZIndex>
+                          <ZIndex>8</ZIndex>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1186,11 +1064,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>OrderDate</rd:DefaultName>
-                          <Top>4.56986cm</Top>
-                          <Left>12.95784cm</Left>
+                          <Top>3.80229cm</Top>
+                          <Left>12.5742cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.55292cm</Width>
-                          <ZIndex>13</ZIndex>
+                          <ZIndex>9</ZIndex>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1216,11 +1094,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>4.56986cm</Top>
-                          <Left>10.42256cm</Left>
+                          <Top>3.80229cm</Top>
+                          <Left>10.03892cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.5cm</Width>
-                          <ZIndex>14</ZIndex>
+                          <ZIndex>10</ZIndex>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1250,11 +1128,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>OrderDate</rd:DefaultName>
-                          <Top>1.53486cm</Top>
-                          <Left>12.92256cm</Left>
+                          <Top>0.76729cm</Top>
+                          <Left>12.53892cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.23542cm</Width>
-                          <ZIndex>15</ZIndex>
+                          <ZIndex>11</ZIndex>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1280,11 +1158,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>1.53486cm</Top>
-                          <Left>10.42256cm</Left>
+                          <Top>0.76729cm</Top>
+                          <Left>10.03892cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.5cm</Width>
-                          <ZIndex>16</ZIndex>
+                          <ZIndex>12</ZIndex>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1314,11 +1192,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>OrderDate</rd:DefaultName>
-                          <Top>2.31125cm</Top>
-                          <Left>12.95784cm</Left>
+                          <Top>1.54368cm</Top>
+                          <Left>12.5742cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.23542cm</Width>
-                          <ZIndex>17</ZIndex>
+                          <ZIndex>13</ZIndex>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1344,11 +1222,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>2.31125cm</Top>
-                          <Left>10.42256cm</Left>
+                          <Top>1.54368cm</Top>
+                          <Left>10.03892cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.5cm</Width>
-                          <ZIndex>18</ZIndex>
+                          <ZIndex>14</ZIndex>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1378,11 +1256,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>OrderDate</rd:DefaultName>
-                          <Top>3.08764cm</Top>
-                          <Left>13.52919cm</Left>
+                          <Top>2.32007cm</Top>
+                          <Left>13.14555cm</Left>
                           <Height>0.6cm</Height>
                           <Width>3.00271cm</Width>
-                          <ZIndex>19</ZIndex>
+                          <ZIndex>15</ZIndex>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1408,11 +1286,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>3.08764cm</Top>
-                          <Left>10.42256cm</Left>
+                          <Top>2.32007cm</Top>
+                          <Left>10.03892cm</Left>
                           <Height>0.6cm</Height>
                           <Width>3.08059cm</Width>
-                          <ZIndex>20</ZIndex>
+                          <ZIndex>16</ZIndex>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1439,11 +1317,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox32</rd:DefaultName>
-                          <Top>1.53486cm</Top>
-                          <Left>0.44845cm</Left>
+                          <Top>0.76729cm</Top>
+                          <Left>0.06481cm</Left>
                           <Height>0.6cm</Height>
                           <Width>1.78562cm</Width>
-                          <ZIndex>21</ZIndex>
+                          <ZIndex>17</ZIndex>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1470,11 +1348,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>OrderName</rd:DefaultName>
-                          <Top>1.53486cm</Top>
-                          <Left>2.21644cm</Left>
+                          <Top>0.76729cm</Top>
+                          <Left>1.8328cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.51861cm</Width>
-                          <ZIndex>22</ZIndex>
+                          <ZIndex>18</ZIndex>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1503,11 +1381,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>OrderDate</rd:DefaultName>
-                          <Top>3.82875cm</Top>
-                          <Left>12.2293cm</Left>
+                          <Top>3.06118cm</Top>
+                          <Left>11.84566cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.60724cm</Width>
-                          <ZIndex>23</ZIndex>
+                          <ZIndex>19</ZIndex>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1533,11 +1411,11 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>3.82875cm</Top>
-                          <Left>10.42256cm</Left>
+                          <Top>3.06118cm</Top>
+                          <Left>10.03892cm</Left>
                           <Height>0.6cm</Height>
                           <Width>1.77146cm</Width>
-                          <ZIndex>24</ZIndex>
+                          <ZIndex>20</ZIndex>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -1571,20 +1449,147 @@
         <TablixRowHierarchy>
           <TablixMembers>
             <TablixMember>
-              <Group Name="Details1" />
+              <Group Name="Details">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!OrderIdID.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <Top>0.35669cm</Top>
-        <Left>0.25384cm</Left>
-        <Height>7.75403cm</Height>
-        <Width>17.0098cm</Width>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>1.25828cm</Top>
+        <Left>0.40787cm</Left>
+        <Height>6.52785cm</Height>
+        <Width>16.59889cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="CustomerName">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!CustomerName.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CustomerName</rd:DefaultName>
+        <Top>0.33196cm</Top>
+        <Left>3.1378cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.01435cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CustomerName:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>0.33196cm</Top>
+        <Left>0.40787cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.78285cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <BackgroundColor>Gainsboro</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox18">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!CustomerPhoneNumber.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox18</rd:DefaultName>
+        <Top>0.33196cm</Top>
+        <Left>10.8991cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.18956cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox19">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Phone Number</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox19</rd:DefaultName>
+        <Top>0.33196cm</Top>
+        <Left>8.32854cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <BackgroundColor>Gainsboro</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>3.2911in</Height>
     <Style />
@@ -1636,11 +1641,18 @@
       </ConnectionProperties>
       <rd:DataSourceID>4e1a4150-397b-42b0-91cb-019f12a60c0e</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="Bylsan_SystemReportsReportsObject1">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>f10e6362-1105-491d-b718-58535e3b7258</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>Bylsan_SystemReportsReportsObject</DataSourceName>
+        <DataSourceName>Bylsan_SystemReportsReportsObject1</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
