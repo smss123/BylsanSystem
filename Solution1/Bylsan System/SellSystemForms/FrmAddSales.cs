@@ -75,7 +75,16 @@ namespace Bylsan_System.SellSystemForms
                 {
                     xItemID = 0;
                     xItemID = int.Parse(ListItems.SelectedItems[0].Text);
+                    //===================================================
 
+                    var ChkAvailable = SellItemsCmd.GetSellStoreByItemID(xItemID);
+                    if (ChkAvailable[1].Qty == 0)
+                    {
+                        Operation.ShowToustOk("Not Available .. Qty = 0 ", this);
+                        return;
+                    }
+
+                    //===================================================
                     Application.DoEvents(); 
                     //==================================================
 
@@ -88,6 +97,7 @@ namespace Bylsan_System.SellSystemForms
                                 DGVSellItems.Rows[i].Cells[4].Value = int.Parse(DGVSellItems.Rows[i].Cells[4].Value.ToString()) + 1;
                                 DGVSellItems.Rows[i].Cells[3].Value = (int.Parse(ListItems.SelectedItems[0].SubItems[3].Text) + int.Parse(DGVSellItems.Rows[i].Cells[3].Value.ToString()));
                                 CalcTotal();
+                                SalesIt ();
                                 return;
                             }
                         }
@@ -101,8 +111,9 @@ namespace Bylsan_System.SellSystemForms
                                 ListItems.SelectedItems[0].SubItems[2].Text,
                                 ListItems.SelectedItems[0].SubItems[3].Text,
                                 "1"
+                               
                             });
-
+                        SalesIt();
                         CalcTotal();
                 }
                
@@ -114,9 +125,17 @@ namespace Bylsan_System.SellSystemForms
                 MessageBox.Show(ex.Message.ToString(), "Error");
             }
         }
-      
 
 
+        void SalesIt()
+        {
+            SellStore stb = new SellStore()
+            {
+                ItemID = xItemID ,
+                Qty = -1,
+            };
+            SellStoreCmd.Sales_EditQtyInSellStore(stb, xItemID);
+        }
 
 
         private void Okeybtn_Click(object sender, EventArgs e)
@@ -239,6 +258,8 @@ namespace Bylsan_System.SellSystemForms
 
             }            
         }
+
+       
 
     }
 }

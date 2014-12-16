@@ -19,7 +19,8 @@ namespace XamaDataLayer.SellSystem
            return true;
        }
 
-       public static SellStore EditSellStore(SellStore tb, int xid)
+       // Add New Qty
+       public static SellStore EditQtyInSellStore(SellStore tb, int xid)
        {
            db = new DbDataContext();
            var sll = db.SellStores.Where(s => s.ID == xid).SingleOrDefault();
@@ -28,7 +29,16 @@ namespace XamaDataLayer.SellSystem
            db.SubmitChanges();
            return sll;
        }
-
+       // Sales 
+       public static SellStore Sales_EditQtyInSellStore(SellStore tb, int xid)
+       {
+           db = new DbDataContext();
+           var sll = db.SellStores.Where(s => s.ID == xid).SingleOrDefault();
+           sll.ItemID = tb.ItemID;
+           sll.Qty = tb.Qty;
+           db.SubmitChanges();
+           return sll;
+       }
        public static void DeleteSellStore(int xid)
        {
           

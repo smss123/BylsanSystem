@@ -100,7 +100,7 @@ namespace Bylsan_System.SellSystemForms
                     ItemID = int.Parse(ItemComboBox.SelectedValue.ToString()),
                     Qty =   int.Parse(qtyTextBox.Text) 
                 };
-                SellStoreCmd.EditSellStore (tb,ChekStore[1].ID);
+                SellStoreCmd.EditQtyInSellStore (tb,ChekStore[1].ID);
                 Operation.ShowToustOk("Item Sell Qty Has Been Updated", this);
             }
             //============================================================================
