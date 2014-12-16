@@ -77,7 +77,7 @@ namespace Bylsan_System.SellSystemForms
                     xItemID = int.Parse(ListItems.SelectedItems[0].Text);
                     //===================================================
 
-                    var ChkAvailable = SellItemsCmd.GetSellStoreByItemID(xItemID);
+                    var ChkAvailable = SellStoreCmd.GetSellStoreByItemID(xItemID);
                     if (ChkAvailable[1].Qty == 0)
                     {
                         Operation.ShowToustOk("Not Available .. Qty = 0 ", this);
