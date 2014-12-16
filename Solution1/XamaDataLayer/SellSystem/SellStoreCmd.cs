@@ -19,6 +19,21 @@ namespace XamaDataLayer.SellSystem
            return true;
        }
 
+       // 
+
+       // Edit Informations 
+
+       public static SellStore EditSellStore(SellStore tb, int xid)
+       {
+           db = new DbDataContext();
+           var sll = db.SellStores.Where(s => s.ID == xid).SingleOrDefault();
+           sll.ItemID = tb.ItemID;
+           sll.Qty = tb.Qty;
+           db.SubmitChanges();
+           return sll;
+       }
+
+
        // Add New Qty
        public static SellStore EditQtyInSellStore(SellStore tb, int xid)
        {

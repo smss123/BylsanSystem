@@ -61,17 +61,29 @@ namespace Bylsan_System.SellSystemForms
             }
             #endregion
 
-            Operation.BeginOperation(this);
-            var ChkItemByItName = SellItemsCmd.GetAllSellItemName(itemNameTextBox.Text);
+            
 
-            SellItem tb = new SellItem() { 
-                ItemName = itemNameTextBox .Text ,
-                ItemIcon =  pictureBox1 .Image  ,
-                Description = descriptionTextBox .Text ,
-                ItemPrice = int .Parse (itemPriceTextBox.Text ),
-            };
-            if (ChkItemByItName[1].ID != 0 )
+      
+
+            try
             {
+                Operation.BeginOperation(this);
+                var ChkItemByItName = SellItemsCmd.GetSellItemByName(itemNameTextBox.Text);
+                 Operation.ShowToustOk("........Item Sell  Has Been Exist  .......", this);
+                 Operation.EndOperation(this);
+                 return;
+            }
+            catch (Exception)
+            {
+                
+                SellItem tb = new SellItem()
+                {
+                    ItemName = itemNameTextBox.Text,
+                    ItemIcon = pictureBox1.Image,
+                    Description = descriptionTextBox.Text,
+                    ItemPrice = int.Parse(itemPriceTextBox.Text),
+                };
+
                 SellItemsCmd.AddSellItems(tb);
                 Operation.ShowToustOk("Item Sell  Has Been Saved", this);
                 foreach (Control item in groupBox1.Controls)
@@ -82,13 +94,11 @@ namespace Bylsan_System.SellSystemForms
                     }
                     pictureBox1.Image = null;
                 }
-
+                Operation.EndOperation(this);
             }
-            else
-            {
-                Operation.ShowToustOk("Item Sell  Has Been Exist", this);
-            }
-            Operation.EndOperation(this);
+           
+            
+           
         }
 
         #endregion 

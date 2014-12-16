@@ -54,14 +54,17 @@ namespace XamaDataLayer.SellSystem
        // == Loading Data 
        public static List<SellItem> GetAllSellItems() {
            db = new DbDataContext();
-           return db.SellItems.ToList();
+           var lst = (from i in db.SellItems select i).ToList();
+           return lst;
        }
 
-       public static List<SellItem> GetAllSellItemName(string ItmName)
+       public static SellItem GetSellItemByName(string ItmName)
        {
            db = new DbDataContext();
-           var lst = (from i in db.SellItems orderby i.ID ascending  where i.ItemName == ItmName 
-                      select i).ToList();
+           var lst = (from i in db.SellItems
+                      orderby i.ID ascending
+                      where i.ItemName == ItmName
+                      select i).Single();
            return lst;
        }
 

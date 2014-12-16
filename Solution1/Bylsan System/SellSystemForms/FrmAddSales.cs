@@ -39,17 +39,18 @@ namespace Bylsan_System.SellSystemForms
 
             ListItems.Items.Clear();
 
-            this.Invoke((MethodInvoker)delegate {
+            this.Invoke((MethodInvoker)delegate
+            {
 
                 foreach (var item in AllSellItems)
                 {
-                     ListViewItem Itm = new ListViewItem(item .ID .ToString () , ImgIndx );
-                     Itm.SubItems.Add(item.ItemName.ToString());
-                     Itm.SubItems.Add(item.Description.ToString());
-                     Itm.SubItems.Add(item.ItemPrice.ToString());
-                     imageList1.Images.Add(item.ItemIcon);
-                     ListItems.Items.Add(Itm);
-                     ImgIndx++;
+                    ListViewItem Itm = new ListViewItem(item.ID.ToString(), ImgIndx);
+                    Itm.SubItems.Add(item.ItemName.ToString());
+                    Itm.SubItems.Add(item.Description.ToString());
+                    Itm.SubItems.Add(item.ItemPrice.ToString());
+                    imageList1.Images.Add(item.ItemIcon);
+                    ListItems.Items.Add(Itm);
+                    ImgIndx++;
                 }
             });
 
@@ -59,7 +60,7 @@ namespace Bylsan_System.SellSystemForms
 
         private void FrmAddSales_Load(object sender, EventArgs e)
        {
-     
+           
            PopulateListItems();
         }
 
