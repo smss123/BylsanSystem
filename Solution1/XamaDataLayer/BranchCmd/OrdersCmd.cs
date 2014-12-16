@@ -17,6 +17,7 @@ namespace XamaDataLayer.BranchCmd
            db = new DbDataContext();
            db.Orders.InsertOnSubmit(tb);
            db.SubmitChanges();
+           XamaDataLayer.Security.UserCmd.SaveHistory("Add ", "Add Order ", " Add New Order ");
            return true;
        }
        //================================================
@@ -30,6 +31,8 @@ namespace XamaDataLayer.BranchCmd
       
 
            db.SubmitChanges();
+           XamaDataLayer.Security.UserCmd.SaveHistory("Edit ", "Edit  Order ", " Edit Selected  Order ");
+
            return ord;
        }
 
@@ -53,6 +56,8 @@ namespace XamaDataLayer.BranchCmd
            ord.DeliverdToBranch = tb.DeliverdToBranch;
 
            db.SubmitChanges();
+
+           XamaDataLayer.Security.UserCmd.SaveHistory("Edit ", "Edit  Order ", " Edit Selected  Order ");
            return ord;
        }
 
@@ -64,7 +69,7 @@ namespace XamaDataLayer.BranchCmd
            var ord = db.Orders.Where(oo => oo.ID == xid).SingleOrDefault();
            db.Orders.DeleteOnSubmit(ord);
            db.SubmitChanges();
-          
+           XamaDataLayer.Security.UserCmd.SaveHistory("Delete  ", "Delete  Order ", " Delete Selected  Order ");
        }
 
 
