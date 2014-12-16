@@ -83,15 +83,20 @@ namespace XamaDataLayer.BranchCmd
                                        where c.PhoneNumber == Phon select c).Single();
            int CustmrID = getcustomeridbyphone.ID;
            //=================================================================================================
-           var GetOrderByOrderID = (from o in OrdersCmd.GetAllOrders()
-                                    where  o.CustomerID == CustmrID select o).Single ();
+           var GetAllOrders = (from o in OrdersCmd.GetAllOrders()
+                                    where  o.CustomerID == CustmrID select o).ToList ();
            //=================================================================================================
-           int TargetOrderProduct = GetOrderByOrderID.ID;
-           var LST = (from p in db.OrderProducts
-                      orderby p.ID
-                      where p.OrderID  ==  TargetOrderProduct 
-                      select p).ToList();
-           return LST;
+
+           List<OrderProduct> Lst = new List<OrderProduct>();
+               foreach (var item in  GetAllOrders)
+	            {
+                    Lst = (from p in db.OrderProducts
+                           orderby p.ID
+                           where p.OrderID == item .ID 
+                           select p).ToList();
+	            }
+                     
+           return Lst;
        }
 
     }
