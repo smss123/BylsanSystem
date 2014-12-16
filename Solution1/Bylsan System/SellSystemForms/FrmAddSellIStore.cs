@@ -80,12 +80,33 @@ namespace Bylsan_System.SellSystemForms
             #endregion
 
             Operation.BeginOperation(this);
-            SellStore tb = new SellStore() { 
-                ItemID =  int .Parse (ItemComboBox .SelectedValue .ToString ()) , Qty  = int .Parse (qtyTextBox .Text ),
-            };
-            if (SellStoreCmd.AddSellStore(tb))
+
+            //=====================================================================
+            var ChekStore = SellStoreCmd.GetSellStoreByItemID(int.Parse(ItemComboBox.SelectedValue.ToString()));
+            if (ChekStore[1].ID == 0) // New
             {
+                SellStore tb = new SellStore()
+                {
+                    ItemID = int.Parse(ItemComboBox.SelectedValue.ToString()),
+                    Qty = int.Parse(qtyTextBox.Text),
+                };
+                SellStoreCmd.AddSellStore(tb);
                 Operation.ShowToustOk("Item Sell  Has Been Saved", this);
+            }
+            else // Edit
+            {
+                SellStore tb = new SellStore()
+                {
+                    ItemID = int.Parse(ItemComboBox.SelectedValue.ToString()),
+                    Qty =   int.Parse(qtyTextBox.Text) 
+                };
+                SellStoreCmd.EditSellStore (tb,ChekStore[1].ID);
+                Operation.ShowToustOk("Item Sell Qty Has Been Updated", this);
+            }
+            //============================================================================
+          
+           
+                
                 foreach (Control item in groupBox1.Controls)
                 {
                     if (item is TextBox)
@@ -93,7 +114,7 @@ namespace Bylsan_System.SellSystemForms
                         ((TextBox)item).Clear();
                     }
                 }
-            }
+          
             Operation.EndOperation(this);
         }
 

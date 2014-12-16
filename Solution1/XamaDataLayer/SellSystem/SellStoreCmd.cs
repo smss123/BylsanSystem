@@ -24,7 +24,7 @@ namespace XamaDataLayer.SellSystem
            db = new DbDataContext();
            var sll = db.SellStores.Where(s => s.ID == xid).SingleOrDefault();
            sll.ItemID = tb.ItemID;
-           sll.Qty = tb.Qty;
+           sll.Qty += tb.Qty;
            db.SubmitChanges();
            return sll;
        }
