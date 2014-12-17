@@ -91,6 +91,9 @@ namespace Bylsan_System.SellSystemForms
                     Qty = int.Parse(qtyTextBox.Text)
                 };
                 SellStoreCmd.EditQtyInSellStore(Oldtb, ChekStore.ID);
+               
+
+                WriteStore();
                 Operation.ShowToustOk("Item Sell Qty Has Been Updated", this);
                 Operation.EndOperation(this);
 
@@ -104,8 +107,12 @@ namespace Bylsan_System.SellSystemForms
                     Qty = int.Parse(qtyTextBox.Text),
                 };
                 SellStoreCmd.AddSellStore(Newtb);
+                
+
+                WriteStore();
                 Operation.ShowToustOk("Item Sell  Has Been Saved", this);
                 Operation.EndOperation(this);
+
             }
 
           
@@ -122,7 +129,22 @@ namespace Bylsan_System.SellSystemForms
             Operation.EndOperation(this);
         }
 
+        void WriteStore()
+        {
+            // Save At : StoreOperationManager
+            var xSellStore = SellStoreCmd.GetSellStoreByItemID(int.Parse(ItemComboBox.SelectedValue.ToString()));
+           StoreOperationManager OptrTb = new StoreOperationManager()
+            {
+                StoreID = xSellStore.ID,
+                ProcessType = "Deposit", // أيداع
+                ProcessDate = DateTime.Now,
+                Qty =  int.Parse(qtyTextBox.Text),
+                UserID = XamaDataLayer.Security.UserInfo.CurrentUserID
+            };
+            StoreOperationManagerCmd.AddStoreOperationManager(OptrTb);
+            //=======================================================
 
+        }
 
         private void qtyTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
