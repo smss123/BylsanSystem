@@ -42,5 +42,37 @@ namespace Bylsan_System.Reports.ReportCommand
 
 
        }
+
+
+         //GetByAccount
+       public void GetExpenssesMovmentByDate( int AccountID)
+       {//
+           var q = AccountDailyCmd.GetAllAccountDailyByAccountID(AccountID);
+           ReportDataSource rs = new ReportDataSource();
+           List<AccountDailyReportObj> ls = new List<AccountDailyReportObj>();
+
+           foreach (var item in q)
+           {
+
+               ls.Add(new AccountDailyReportObj()
+               {
+                   AccountName = item.Account.AccountName,
+                   DateOfProcess = item.DateOfProcess.Value,
+                   TotalIn = item.TotalIn.Value,
+                   TotalOut = item.TotalOut.Value,
+                   Description = item.Description,
+                   CommandArg = item.CommandArg,
+               });
+           }
+           rs.Name = "DataSet1";
+           rs.Value = ls;
+           RebortView frm = new RebortView();
+           frm.reportViewer1.LocalReport.DataSources.Clear();
+           frm.reportViewer1.LocalReport.DataSources.Add(rs);
+           frm.reportViewer1.LocalReport.ReportEmbeddedResource = "Bylsan_System.Reports.Sheets.RepAccountDaily.rdlc";
+           frm.ShowDialog();
+
+
+       }
     }
 }
