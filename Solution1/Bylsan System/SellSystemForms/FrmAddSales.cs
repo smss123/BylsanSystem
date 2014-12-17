@@ -65,7 +65,7 @@ namespace Bylsan_System.SellSystemForms
         }
 
         private  int xItemID { get; set; }
-
+        private int xStorID { get; set; }
         private void ListItems_MouseClick(object sender, MouseEventArgs e)
         {
            
@@ -79,6 +79,7 @@ namespace Bylsan_System.SellSystemForms
                     //===================================================
 
                     var ChkAvailable = SellStoreCmd.GetSellStoreByItemID(xItemID);
+                    xStorID = ChkAvailable.ID;
                     if (ChkAvailable.Qty == 0)
                     {
                         Operation.ShowToustOk("Not Available .. Qty = 0 ", this);
@@ -135,14 +136,14 @@ namespace Bylsan_System.SellSystemForms
                 ItemID = xItemID ,
                 Qty = -1,
             };
-            SellStoreCmd.Sales_EditQtyInSellStore(stb, xItemID);
+            SellStoreCmd.Sales_EditQtyInSellStore(stb, xStorID );
         }
 
         StoreOperationManager OptrTb = new StoreOperationManager();
         private void Okeybtn_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 if (DGVSellItems.Rows.Count != 0)
                 {
 
@@ -204,12 +205,12 @@ namespace Bylsan_System.SellSystemForms
                     }
                     Operation.ShowToustOk("Bill Has Been Saved ..", this);
                 }
-            }
-            catch (Exception)
-            {
+            //}
+            //catch (Exception)
+            //{
                 
                 
-            }
+            //}
         }
 
         private void TxtBillNumber_KeyPress(object sender, KeyPressEventArgs e)
