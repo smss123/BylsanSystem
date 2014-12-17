@@ -144,7 +144,7 @@
       <Column Name="ProductID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Qty" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
-      <Column Name="ImageX" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ImageX" Type="Image" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="OrderProduct_OrderProuctAttachment" Member="OrderProuctAttachments" ThisKey="ID" OtherKey="OrderProductID" Type="OrderProuctAttachment" />
       <Association Name="Order_OrderProduct" Member="Order" ThisKey="OrderID" OtherKey="ID" Type="Order" IsForeignKey="true" DeleteRule="CASCADE" />
@@ -154,7 +154,7 @@
   <Table Name="dbo.OrderProuctAttachment" Member="OrderProuctAttachments">
     <Type Name="OrderProuctAttachment">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="imageX" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="imageX" Type="Image" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="OrderProductID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="OrderProduct_OrderProuctAttachment" Member="OrderProduct" ThisKey="OrderProductID" OtherKey="ID" Type="OrderProduct" IsForeignKey="true" DeleteRule="CASCADE" />
@@ -166,7 +166,7 @@
       <Column Name="Product_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Product_Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Column Name="CateogryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Img" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Img" Type="Image" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="PublicName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ProductPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="ProductUnit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
@@ -377,7 +377,7 @@
       <Column Name="ItemName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ItemPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="ItemIcon" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ItemIcon" Type="Image" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="SellItem_BillItem" Member="BillItems" ThisKey="ID" OtherKey="ItemID" Type="BillItem" />
       <Association Name="SellItem_SellStore" Member="SellStores" ThisKey="ID" OtherKey="ItemID" Type="SellStore" />
     </Type>

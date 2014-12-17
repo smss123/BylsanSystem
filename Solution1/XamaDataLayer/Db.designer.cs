@@ -20,6 +20,7 @@ namespace XamaDataLayer
 	using System.Linq.Expressions;
 	using System.ComponentModel;
 	using System;
+    using System.Drawing;
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="bylsan")]
@@ -3351,7 +3352,7 @@ namespace XamaDataLayer
 		
 		private string _Description;
 		
-		private System.Data.Linq.Binary _ImageX;
+		private Image _ImageX;
 		
 		private string _Status;
 		
@@ -3375,7 +3376,7 @@ namespace XamaDataLayer
     partial void OnQtyChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
-    partial void OnImageXChanging(System.Data.Linq.Binary value);
+    partial void OnImageXChanging(Image value);
     partial void OnImageXChanged();
     partial void OnStatusChanging(string value);
     partial void OnStatusChanged();
@@ -3498,7 +3499,7 @@ namespace XamaDataLayer
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageX", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary ImageX
+		public Image ImageX
 		{
 			get
 			{
@@ -3659,7 +3660,7 @@ namespace XamaDataLayer
 		
 		private int _ID;
 		
-		private System.Data.Linq.Binary _imageX;
+		private Image _imageX;
 		
 		private System.Nullable<int> _OrderProductID;
 		
@@ -3673,7 +3674,7 @@ namespace XamaDataLayer
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnimageXChanging(System.Data.Linq.Binary value);
+    partial void OnimageXChanging(Image value);
     partial void OnimageXChanged();
     partial void OnOrderProductIDChanging(System.Nullable<int> value);
     partial void OnOrderProductIDChanged();
@@ -3708,7 +3709,7 @@ namespace XamaDataLayer
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imageX", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary imageX
+		public Image imageX
 		{
 			get
 			{
@@ -3840,7 +3841,7 @@ namespace XamaDataLayer
 		
 		private System.Nullable<int> _CateogryID;
 		
-		private System.Data.Linq.Binary _Img;
+		private Image _Img;
 		
 		private string _PublicName;
 		
@@ -3868,7 +3869,7 @@ namespace XamaDataLayer
     partial void OnProduct_DescriptionChanged();
     partial void OnCateogryIDChanging(System.Nullable<int> value);
     partial void OnCateogryIDChanged();
-    partial void OnImgChanging(System.Data.Linq.Binary value);
+    partial void OnImgChanging(Image value);
     partial void OnImgChanged();
     partial void OnPublicNameChanging(string value);
     partial void OnPublicNameChanged();
@@ -3972,7 +3973,7 @@ namespace XamaDataLayer
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Img", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary Img
+		public Image Img
 		{
 			get
 			{
@@ -8163,7 +8164,7 @@ namespace XamaDataLayer
 		
 		private System.Nullable<double> _ItemPrice;
 		
-		private System.Data.Linq.Binary _ItemIcon;
+		private Image _ItemIcon;
 		
 		private EntitySet<BillItem> _BillItems;
 		
@@ -8181,7 +8182,7 @@ namespace XamaDataLayer
     partial void OnDescriptionChanged();
     partial void OnItemPriceChanging(System.Nullable<double> value);
     partial void OnItemPriceChanged();
-    partial void OnItemIconChanging(System.Data.Linq.Binary value);
+    partial void OnItemIconChanging(Image value);
     partial void OnItemIconChanged();
     #endregion
 		
@@ -8273,7 +8274,7 @@ namespace XamaDataLayer
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemIcon", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary ItemIcon
+		public Image ItemIcon
 		{
 			get
 			{
