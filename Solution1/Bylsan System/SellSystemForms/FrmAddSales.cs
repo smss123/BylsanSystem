@@ -138,7 +138,7 @@ namespace Bylsan_System.SellSystemForms
             SellStoreCmd.Sales_EditQtyInSellStore(stb, xItemID);
         }
 
-
+        StoreOperationManager OptrTb = new StoreOperationManager();
         private void Okeybtn_Click(object sender, EventArgs e)
         {
             try
@@ -176,6 +176,7 @@ namespace Bylsan_System.SellSystemForms
 
                     // Save At BillItem :
                     BillItem billtb = new BillItem();
+
                     foreach (var rw in DGVSellItems.Rows)
                     {
                         billtb = new BillItem()
@@ -185,7 +186,21 @@ namespace Bylsan_System.SellSystemForms
                             Bill_ID = BillsCmd.GetMaxBill(),
                         };
                         BillItemsCmd.AddBillItmes(billtb);
+                        //=======================================================
+                        // Save At : StoreOperationManager
 
+                         var xSellStore =   SellStoreCmd .GetSellStoreByItemID (int.Parse(rw.Cells[0].Value.ToString()));
+                        
+                         OptrTb = new StoreOperationManager()
+                         {                            
+                             StoreID = xSellStore .ID  ,
+                             ProcessType = "Sales",
+                             ProcessDate = DateTime .Now ,
+                             Qty = int.Parse(rw.Cells[4].Value.ToString()),
+                             UserID = XamaDataLayer.Security .UserInfo .CurrentUserID 
+                         };
+                         StoreOperationManagerCmd.AddStoreOperationManager(OptrTb);
+                        //=======================================================
                     }
                     Operation.ShowToustOk("Bill Has Been Saved ..", this);
                 }
