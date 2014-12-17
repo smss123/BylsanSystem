@@ -79,31 +79,35 @@ namespace Bylsan_System.SellSystemForms
             }
             #endregion
 
-            Operation.BeginOperation(this);
-
-            //=====================================================================
-            var ChekStore = SellStoreCmd.GetSellStoreByItemID(int.Parse(ItemComboBox.SelectedValue.ToString()));
-            if (ChekStore[1].ID == 0) // New
+       
+            try
             {
-                SellStore tb = new SellStore()
+                Operation.BeginOperation(this);
+                var ChekStore = SellStoreCmd.GetSellStoreByItemID(int.Parse(ItemComboBox.SelectedValue.ToString()));
+                // Edit
+                SellStore Oldtb = new SellStore()
+                {
+                    ItemID = int.Parse(ItemComboBox.SelectedValue.ToString()),
+                    Qty = int.Parse(qtyTextBox.Text)
+                };
+                SellStoreCmd.EditQtyInSellStore(Oldtb, ChekStore.ID);
+                Operation.ShowToustOk("Item Sell Qty Has Been Updated", this);
+                Operation.EndOperation(this);
+
+            }
+            catch (Exception)
+            {
+                // Add New
+                SellStore Newtb = new SellStore()
                 {
                     ItemID = int.Parse(ItemComboBox.SelectedValue.ToString()),
                     Qty = int.Parse(qtyTextBox.Text),
                 };
-                SellStoreCmd.AddSellStore(tb);
+                SellStoreCmd.AddSellStore(Newtb);
                 Operation.ShowToustOk("Item Sell  Has Been Saved", this);
+                Operation.EndOperation(this);
             }
-            else // Edit
-            {
-                SellStore tb = new SellStore()
-                {
-                    ItemID = int.Parse(ItemComboBox.SelectedValue.ToString()),
-                    Qty =   int.Parse(qtyTextBox.Text) 
-                };
-                SellStoreCmd.EditQtyInSellStore (tb,ChekStore[1].ID);
-                Operation.ShowToustOk("Item Sell Qty Has Been Updated", this);
-            }
-            //============================================================================
+
           
            
                 

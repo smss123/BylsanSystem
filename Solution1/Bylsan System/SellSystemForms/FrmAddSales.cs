@@ -79,7 +79,7 @@ namespace Bylsan_System.SellSystemForms
                     //===================================================
 
                     var ChkAvailable = SellStoreCmd.GetSellStoreByItemID(xItemID);
-                    if (ChkAvailable[1].Qty == 0)
+                    if (ChkAvailable.Qty == 0)
                     {
                         Operation.ShowToustOk("Not Available .. Qty = 0 ", this);
                         return;
