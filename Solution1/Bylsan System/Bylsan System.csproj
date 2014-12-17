@@ -412,11 +412,13 @@
     <Compile Include="Reports\RebortView.Designer.cs">
       <DependentUpon>RebortView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ReportCommand\AccountDailyReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\CustmoerReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\EmployeeReportCommand.cs" />
     <Compile Include="Reports\ReportCommand\ExpenssesMovmenReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\ItemsStoreReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\OrderReportCmd.cs" />
+    <Compile Include="Reports\ReportsObject\AccountDailyReportObj.cs" />
     <Compile Include="Reports\ReportsObject\CustomerReportObj.cs" />
     <Compile Include="Reports\ReportsObject\EmployeeReportObj.cs" />
     <Compile Include="Reports\ReportsObject\ExpenssesMovmentReportObj.cs" />
@@ -689,6 +691,7 @@
     <EmbeddedResource Include="Reports\RebortView.resx">
       <DependentUpon>RebortView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Sheets\RepAccountDaily.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepAllCustomers.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepCustomerAccountOrders.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepExpenssesMovment.rdlc" />
@@ -740,6 +743,7 @@
       <DependentUpon>FrmTotalOrder.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Lib\Xprema.dll.config" />
+    <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.AccountDailyReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.ExpenssesMovmentReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.ItemsStoreReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.OrderReportObj.datasource" />
