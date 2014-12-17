@@ -347,5 +347,11 @@ namespace Bylsan_System
             FrmAddSellIStore frm = new FrmAddSellIStore();
             frm.Show();
         }
+
+        private void manageSupplierBtn_Click(object sender, EventArgs e)
+        {
+            FrmManageMainStore_Supplier f = new FrmManageMainStore_Supplier();
+            f.Show();
+        }
     }
 }

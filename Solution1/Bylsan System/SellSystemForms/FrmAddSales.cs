@@ -142,8 +142,8 @@ namespace Bylsan_System.SellSystemForms
         StoreOperationManager OptrTb = new StoreOperationManager();
         private void Okeybtn_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 if (DGVSellItems.Rows.Count != 0)
                 {
 
@@ -204,13 +204,17 @@ namespace Bylsan_System.SellSystemForms
                         //=======================================================
                     }
                     Operation.ShowToustOk("Bill Has Been Saved ..", this);
+                    DGVSellItems.Rows.Clear();
+                    BillCostBox.Text = "";
+                    txtBarCode.Text = "";
+                    TxtBillNumber.Text = "";
                 }
-            //}
-            //catch (Exception)
-            //{
-                
-                
-            //}
+            }
+            catch (Exception)
+            {
+
+
+            }
         }
 
         private void TxtBillNumber_KeyPress(object sender, KeyPressEventArgs e)
