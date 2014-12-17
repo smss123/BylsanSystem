@@ -195,7 +195,7 @@ namespace Bylsan_System.SellSystemForms
                          OptrTb = new StoreOperationManager()
                          {                            
                              StoreID = xSellStore .ID  ,
-                             ProcessType = "Pull", // ســحب
+                             ProcessType = "Darwal", // ســحب
                              ProcessDate = DateTime .Now ,
                              Qty = int.Parse(rw.Cells[4].Value.ToString()),
                              UserID = XamaDataLayer.Security .UserInfo .CurrentUserID 
