@@ -248,6 +248,7 @@ namespace Bylsan_System
         {
             UserAlert Alert = new UserAlert();
             Alert.ActivateTimer();
+          
            
         }
         
@@ -338,6 +339,12 @@ namespace Bylsan_System
         private void button6_Click(object sender, EventArgs e)
         {
             FrmManageDebtors frm = new FrmManageDebtors();
+            frm.Show();
+        }
+
+        private void addItemsQtyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAddSellIStore frm = new FrmAddSellIStore();
             frm.Show();
         }
     }

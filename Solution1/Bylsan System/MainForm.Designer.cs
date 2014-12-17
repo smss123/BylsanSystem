@@ -91,6 +91,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.addItemsQtyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -510,22 +511,23 @@
             // sellItemsToolStripMenuItem
             // 
             this.sellItemsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addIteToolStripMenuItem});
+            this.addIteToolStripMenuItem,
+            this.addItemsQtyToolStripMenuItem});
             this.sellItemsToolStripMenuItem.Name = "sellItemsToolStripMenuItem";
-            this.sellItemsToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.sellItemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sellItemsToolStripMenuItem.Text = "Sell Items";
             // 
             // addIteToolStripMenuItem
             // 
             this.addIteToolStripMenuItem.Name = "addIteToolStripMenuItem";
-            this.addIteToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.addIteToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.addIteToolStripMenuItem.Text = "Add Item";
             this.addIteToolStripMenuItem.Click += new System.EventHandler(this.addIteToolStripMenuItem_Click);
             // 
             // salesToolStripMenuItem
             // 
             this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-            this.salesToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.salesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salesToolStripMenuItem.Text = "Sales";
             this.salesToolStripMenuItem.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
             // 
@@ -615,6 +617,13 @@
             this.button6.Text = "Debitors";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // addItemsQtyToolStripMenuItem
+            // 
+            this.addItemsQtyToolStripMenuItem.Name = "addItemsQtyToolStripMenuItem";
+            this.addItemsQtyToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.addItemsQtyToolStripMenuItem.Text = "Add Item\'s Qty";
+            this.addItemsQtyToolStripMenuItem.Click += new System.EventHandler(this.addItemsQtyToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -716,5 +725,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ToolStripMenuItem addItemsQtyToolStripMenuItem;
     }
 }
