@@ -753,7 +753,11 @@
         <TablixRowHierarchy>
           <TablixMembers>
             <TablixMember>
-              <Group Name="Details" />
+              <Group Name="Details">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!AccountName.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
