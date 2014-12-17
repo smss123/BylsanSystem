@@ -40,16 +40,30 @@ namespace Bylsan_System.MainStoreForms
             }
 
             #endregion
+
             Operation.BeginOperation(this);
-         if(   XamaDataLayer.Main_Store.ItemsCmd.AddNewItem(new XamaDataLayer.Item() { 
-            
-             ItemDescription = itemDescriptionTextBox.Text,
-              ItemName= itemNameTextBox.Text,
-               ItemType = ItemTypecomboBox.Text
-            
-            }))
+            try
             {
-                Operation.ShowToustOk("Item Saved", this);
+                var xChekItem = ItemsCmd.ChekByName(itemDescriptionTextBox.Text);
+                Operation.ShowToustOk("Item Existed .... ", this);
+                Operation.EndOperation(this);
+                return;
+
+            }
+            catch (Exception)
+            {
+                if (ItemsCmd.AddNewItem(new XamaDataLayer.Item()
+                {
+
+                    ItemDescription = itemDescriptionTextBox.Text,
+                    ItemName = itemNameTextBox.Text,
+                    ItemType = ItemTypecomboBox.Text
+
+                }))
+                {
+                    Operation.ShowToustOk("Item Saved", this);
+                }
+                Operation.EndOperation(this);
             }
 
 

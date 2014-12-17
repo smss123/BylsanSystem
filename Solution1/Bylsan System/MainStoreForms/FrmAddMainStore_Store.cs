@@ -88,19 +88,38 @@ namespace Bylsan_System.MainStoreForms
             #endregion
 
             Operation.BeginOperation(this);
-          
 
-            Store tb=new Store
+
+            try
             {
-                ItemID=int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
-                AvailableQty=int.Parse(AvailableQtyTextBox.Text),
-                Description = DescriptiontextBox.Text
-               
+                var ChkStore = StoreCmd.ChekByItemID(int.Parse(ItemColumnComboBox.SelectedValue.ToString()));
+                if (ChkStore.ID != 0)
+                {
+                    // Edit AvailableQty
+                     ChkStore.ItemID =int.Parse(ItemColumnComboBox.SelectedValue.ToString());
+                     ChkStore.AvailableQty += int.Parse(AvailableQtyTextBox.Text);
+                     ChkStore. Description = DescriptiontextBox.Text ;
 
-            };
-            StoreCmd.AddNewStore(tb);
+                     StoreCmd.EditStore(ChkStore);
 
-            Operation.ShowToustOk("Item Saved", this);
+                    Operation.ShowToustOk("Item Updated ", this);
+                }
+            }
+            catch (Exception)
+            {
+                // new 
+                 Store tb=new Store
+                {
+                    ItemID=int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
+                    AvailableQty=int.Parse(AvailableQtyTextBox.Text),
+                    Description = DescriptiontextBox.Text
+                };
+                StoreCmd.AddNewStore(tb);
+                Operation.ShowToustOk("Item Saved", this);
+
+            }
+
+            
             ItemColumnComboBox.ResetText();
             AvailableQtyTextBox.Clear();
             DescriptiontextBox.Clear();
