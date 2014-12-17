@@ -98,6 +98,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.DGVSellItems);
             this.groupBox1.Controls.Add(label1);
             this.groupBox1.Controls.Add(this.AddBtn);
             this.groupBox1.Controls.Add(this.BrowseBtn);
@@ -110,7 +114,7 @@
             this.groupBox1.Controls.Add(this.itemNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(336, 287);
+            this.groupBox1.Size = new System.Drawing.Size(911, 287);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
@@ -181,11 +185,11 @@
             this.DGVSellItems.BackgroundColor = System.Drawing.Color.White;
             this.DGVSellItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVSellItems.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DGVSellItems.Location = new System.Drawing.Point(359, 12);
+            this.DGVSellItems.Location = new System.Drawing.Point(345, 14);
             this.DGVSellItems.Name = "DGVSellItems";
             this.DGVSellItems.ReadOnly = true;
             this.DGVSellItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVSellItems.Size = new System.Drawing.Size(552, 283);
+            this.DGVSellItems.Size = new System.Drawing.Size(552, 266);
             this.DGVSellItems.TabIndex = 1;
             // 
             // FrmAddSellItem
@@ -193,8 +197,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(933, 309);
-            this.Controls.Add(this.DGVSellItems);
+            this.ClientSize = new System.Drawing.Size(935, 309);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

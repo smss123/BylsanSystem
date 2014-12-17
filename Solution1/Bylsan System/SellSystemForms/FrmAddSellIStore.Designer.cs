@@ -62,12 +62,15 @@
             qtyLabel.AutoSize = true;
             qtyLabel.Location = new System.Drawing.Point(11, 60);
             qtyLabel.Name = "qtyLabel";
-            qtyLabel.Size = new System.Drawing.Size(28, 13);
+            qtyLabel.Size = new System.Drawing.Size(27, 13);
             qtyLabel.TabIndex = 2;
             qtyLabel.Text = "Qty:";
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.AddBtn);
             this.groupBox1.Controls.Add(this.ItemComboBox);
             this.groupBox1.Controls.Add(qtyLabel);
@@ -75,7 +78,7 @@
             this.groupBox1.Controls.Add(itemIDLabel);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(364, 147);
+            this.groupBox1.Size = new System.Drawing.Size(320, 147);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
@@ -118,7 +121,7 @@
             this.ItemComboBox.EditorControl.TabIndex = 0;
             this.ItemComboBox.Location = new System.Drawing.Point(40, 28);
             this.ItemComboBox.Name = "ItemComboBox";
-            this.ItemComboBox.Size = new System.Drawing.Size(212, 20);
+            this.ItemComboBox.Size = new System.Drawing.Size(233, 20);
             this.ItemComboBox.TabIndex = 1;
             this.ItemComboBox.TabStop = false;
             this.ItemComboBox.ThemeName = "VisualStudio2012Light";
@@ -141,7 +144,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(388, 171);
+            this.ClientSize = new System.Drawing.Size(344, 171);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

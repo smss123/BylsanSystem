@@ -54,6 +54,17 @@ namespace Bylsan_System.SellSystemForms
 
         private void SellitmeGridView_CellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
+            
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            FrmManageSellItem_Load(sender, e);
+
+        }
+
+        private void SellitmeGridView_CommandCellClick(object sender, EventArgs e)
+        {
             var col = SellitmeGridView.CurrentColumn.Index;
             if (col == 5)
             {
@@ -69,17 +80,11 @@ namespace Bylsan_System.SellSystemForms
             {
                 Operation.BeginOperation(this);
 
-                SellItemsCmd.DeleteSellItem(int.Parse(SellitmeGridView.CurrentRow.Cells [0].Value .ToString ()));
+                SellItemsCmd.DeleteSellItem(int.Parse(SellitmeGridView.CurrentRow.Cells[0].Value.ToString()));
                 FrmManageSellItem_Load(sender, e);
 
                 Operation.EndOperation(this);
             }
-        }
-
-        private void RefreshBtn_Click(object sender, EventArgs e)
-        {
-            FrmManageSellItem_Load(sender, e);
-
         }
 
        

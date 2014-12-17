@@ -178,6 +178,7 @@
             this.SellStoreGridView.Text = "radGridView1";
             this.SellStoreGridView.ThemeName = "VisualStudio2012Light";
             this.SellStoreGridView.CellClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.SellStoreGridView_CellClick);
+            this.SellStoreGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.SellStoreGridView_CommandCellClick);
             this.SellStoreGridView.Click += new System.EventHandler(this.MasterTemplate_Click);
             // 
             // sellStoreBindingSource

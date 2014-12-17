@@ -62,33 +62,38 @@ namespace Bylsan_System.SellSystemForms
         private void SellStoreGridView_CellClick(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
         {
        
+           
+        }
+
+        private void MasterTemplate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SellStoreGridView_CommandCellClick(object sender, EventArgs e)
+        {
             var col = SellStoreGridView.CurrentColumn.Index;
             if (col == 3)
             {
                 Operation.BeginOperation(this);
                 FrmEditSellIStore frm = new FrmEditSellIStore();
 
-                SellStore tb = (SellStore )SellStoreGridView.CurrentRow.DataBoundItem;
-                frm.TargetStore= tb;
+                SellStore tb = (SellStore)SellStoreGridView.CurrentRow.DataBoundItem;
+                frm.TargetStore = tb;
 
                 frm.ShowDialog();
                 Operation.EndOperation(this);
             }
-            if(col == 4)
+            if (col == 4)
             {
 
                 Operation.BeginOperation(this);
-                    
+
                 SellStoreCmd.DeleteSellStore(int.Parse(SellStoreGridView.CurrentRow.Cells[0].Value.ToString()));
                 FrmManageSellIStore_Load(sender, e);
 
                 Operation.EndOperation(this);
             }
-        }
-
-        private void MasterTemplate_Click(object sender, EventArgs e)
-        {
-
         }
 
 
