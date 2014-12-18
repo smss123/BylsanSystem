@@ -211,10 +211,11 @@
             this.BranchDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addBranchBtn,
             this.ManagementBranchBtn});
+            this.BranchDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("BranchDropDownButton.Image")));
             this.BranchDropDownButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.BranchDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BranchDropDownButton.Name = "BranchDropDownButton";
-            this.BranchDropDownButton.Size = new System.Drawing.Size(57, 35);
+            this.BranchDropDownButton.Size = new System.Drawing.Size(77, 35);
             this.BranchDropDownButton.Text = "Branch";
             // 
             // addBranchBtn
@@ -245,10 +246,11 @@
             this.toolStripSeparator2,
             this.addProductBtn,
             this.managementProductBtn});
+            this.ProductDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("ProductDropDownButton.Image")));
             this.ProductDropDownButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ProductDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ProductDropDownButton.Name = "ProductDropDownButton";
-            this.ProductDropDownButton.Size = new System.Drawing.Size(62, 35);
+            this.ProductDropDownButton.Size = new System.Drawing.Size(93, 35);
             this.ProductDropDownButton.Text = "Product";
             // 
             // addProductCategoryBtn
@@ -674,10 +676,12 @@
             this.FactoryOrder.AccessibleName = "Factory Order";
             this.FactoryOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(200)))), ((int)(((byte)(37)))));
             this.FactoryOrder.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.FactoryOrder.Image = ((System.Drawing.Image)(resources.GetObject("FactoryOrder.Image")));
             this.FactoryOrder.Name = "FactoryOrder";
             this.FactoryOrder.Row = 1;
             this.FactoryOrder.Text = "Factory Order";
             this.FactoryOrder.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.FactoryOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.FactoryOrder.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // DesignerOrder
@@ -730,10 +734,12 @@
             this.SellItemsTileElement2.AccessibleName = "Sell Items";
             this.SellItemsTileElement2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(200)))), ((int)(((byte)(37)))));
             this.SellItemsTileElement2.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.SellItemsTileElement2.Image = ((System.Drawing.Image)(resources.GetObject("SellItemsTileElement2.Image")));
             this.SellItemsTileElement2.Name = "SellItemsTileElement2";
             this.SellItemsTileElement2.Row = 2;
             this.SellItemsTileElement2.Text = "Sell Items";
             this.SellItemsTileElement2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.SellItemsTileElement2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.SellItemsTileElement2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // SalesTileElement
@@ -777,9 +783,11 @@
             this.itemsBtn.AccessibleName = "Items";
             this.itemsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(161)))), ((int)(((byte)(237)))));
             this.itemsBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.itemsBtn.Image = ((System.Drawing.Image)(resources.GetObject("itemsBtn.Image")));
             this.itemsBtn.Name = "itemsBtn";
             this.itemsBtn.Text = "Items";
             this.itemsBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.itemsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.itemsBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // WithDrawalBtn
@@ -830,9 +838,11 @@
             this.storeManagerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(161)))), ((int)(((byte)(237)))));
             this.storeManagerBtn.Column = 2;
             this.storeManagerBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.storeManagerBtn.Image = ((System.Drawing.Image)(resources.GetObject("storeManagerBtn.Image")));
             this.storeManagerBtn.Name = "storeManagerBtn";
             this.storeManagerBtn.Text = "store Manager";
             this.storeManagerBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.storeManagerBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.storeManagerBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // AccountsGroup
@@ -864,9 +874,11 @@
             this.AccountTreeBtn.AccessibleName = "Account Tree";
             this.AccountTreeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(179)))), ((int)(((byte)(34)))));
             this.AccountTreeBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.AccountTreeBtn.Image = ((System.Drawing.Image)(resources.GetObject("AccountTreeBtn.Image")));
             this.AccountTreeBtn.Name = "AccountTreeBtn";
             this.AccountTreeBtn.Text = "Account Tree";
             this.AccountTreeBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.AccountTreeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.AccountTreeBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // AccountCategoryTileElement3
@@ -888,9 +900,11 @@
             this.ShowAccountsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(179)))), ((int)(((byte)(34)))));
             this.ShowAccountsBtn.Column = 1;
             this.ShowAccountsBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.ShowAccountsBtn.Image = ((System.Drawing.Image)(resources.GetObject("ShowAccountsBtn.Image")));
             this.ShowAccountsBtn.Name = "ShowAccountsBtn";
             this.ShowAccountsBtn.Text = "Show Accounts";
             this.ShowAccountsBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.ShowAccountsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.ShowAccountsBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // DebitorsTileElement
@@ -900,6 +914,7 @@
             this.DebitorsTileElement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(179)))), ((int)(((byte)(34)))));
             this.DebitorsTileElement.Column = 1;
             this.DebitorsTileElement.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.DebitorsTileElement.Image = ((System.Drawing.Image)(resources.GetObject("DebitorsTileElement.Image")));
             this.DebitorsTileElement.Name = "DebitorsTileElement";
             this.DebitorsTileElement.Row = 1;
             this.DebitorsTileElement.Text = "Debitors";
@@ -913,10 +928,12 @@
             this.AccountDailyBtn.AccessibleName = "Account DailyBt";
             this.AccountDailyBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(179)))), ((int)(((byte)(34)))));
             this.AccountDailyBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.AccountDailyBtn.Image = ((System.Drawing.Image)(resources.GetObject("AccountDailyBtn.Image")));
             this.AccountDailyBtn.Name = "AccountDailyBtn";
             this.AccountDailyBtn.Row = 2;
             this.AccountDailyBtn.Text = "Account Daily";
             this.AccountDailyBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.AccountDailyBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.AccountDailyBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // expensesBtn
@@ -926,10 +943,12 @@
             this.expensesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(179)))), ((int)(((byte)(34)))));
             this.expensesBtn.Column = 1;
             this.expensesBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.expensesBtn.Image = ((System.Drawing.Image)(resources.GetObject("expensesBtn.Image")));
             this.expensesBtn.Name = "expensesBtn";
             this.expensesBtn.Row = 2;
             this.expensesBtn.Text = "Expenses";
             this.expensesBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.expensesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.expensesBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // radTileElement4
