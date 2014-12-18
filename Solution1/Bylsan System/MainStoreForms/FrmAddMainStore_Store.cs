@@ -103,10 +103,12 @@ namespace Bylsan_System.MainStoreForms
                     StoreCmd.EditStore(ChkStore);
 
                     //================================================
+
+                    TargetStoreID = ChkStore.ID;
                     WriteAt_StoreSells();
                     WriteAtStoreManagerTable();
                     //================================================
-                    GetStore();
+                
                     Operation.ShowToustOk("Item Updated ", this);
                 }
             }
@@ -129,7 +131,7 @@ namespace Bylsan_System.MainStoreForms
                 //================================================
             }
 
-
+            txtUnitPrice.Text = "";
             ItemColumnComboBox.ResetText();
             QtyTextBox.Clear();
             DescriptiontextBox.Clear();
@@ -140,6 +142,9 @@ namespace Bylsan_System.MainStoreForms
 
         private void FrmAddMainStore_Store_Load(object sender, EventArgs e)
         {
+
+            PopulateCmbSuppliers();
+            //===========================
             Thread th = new Thread(FillComboBoxItme);
             th.Start();
         }
@@ -151,6 +156,7 @@ namespace Bylsan_System.MainStoreForms
 
         void PopulateCmbSuppliers()
         {
+            CmbSuppliers.Items.Clear();
             CmbSuppliers.Items.AddRange(
                 (from s in SuppliersCmd.GetAllSuppliers() select s.SupplierName).Distinct().ToArray());
         }
@@ -161,6 +167,8 @@ namespace Bylsan_System.MainStoreForms
         public int TotalPrice { get; set; }
 
         public Store StoreTb { get; set; }
+
+        public int TargetStoreID { get; set; }
         private void CmbSuppliers_SelectedIndexChanged(object sender, EventArgs e)
         {
           
@@ -191,7 +199,7 @@ namespace Bylsan_System.MainStoreForms
             TotalPrice = int.Parse(txtUnitPrice.Text.ToString()) * int.Parse(QtyTextBox.Text.ToString());
             StoreManager tb = new StoreManager()
             {
-                StoreID = StoreTb.ID,
+                StoreID =TargetStoreID ,
                 QtyInOrOut = int.Parse(QtyTextBox.Text.ToString()),
                 DateOfProcess = DateTime.Now,
                 Price = TotalPrice,
@@ -203,9 +211,9 @@ namespace Bylsan_System.MainStoreForms
 
         void GetStore()
         {
-
+            TargetStoreID = 0;
             StoreTb = StoreCmd.ChekByItemID(int.Parse(ItemColumnComboBox.SelectedValue.ToString()));
-
+            TargetStoreID = StoreTb.ID;
 
         }
 
@@ -215,7 +223,9 @@ namespace Bylsan_System.MainStoreForms
             {
                 if (CmbSuppliers.Text != "")
                 {
+                    xSupplierId = 0;
                     xSupplierId = (from i in SuppliersCmd.GetAllSuppliers() where i.SupplierName == CmbSuppliers.Text select i.ID).Single();
+                    
                 }
             }
             catch (Exception)
