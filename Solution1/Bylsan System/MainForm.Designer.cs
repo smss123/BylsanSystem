@@ -888,6 +888,7 @@
             this.DebitorsTileElement.Row = 1;
             this.DebitorsTileElement.Text = "Debitors";
             this.DebitorsTileElement.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.DebitorsTileElement.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.DebitorsTileElement.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // AccountDailyBtn

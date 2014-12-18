@@ -338,6 +338,18 @@
         QmCC
 </value>
   </data>
+  <data name="storeBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADkAAAA3CAYAAAC2EuL1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8
+        AAABJklEQVRoQ+2Y0Q3CMAxEOwIjMAIjMAojMAKjMQKjsEE4S6kUJSkC00OX1pYeH9bl1AdRP5hSSj0O
+        4DwgR9D4NIuMHRhxbqDxaRaZkBSekKzZheQu3q6bwj7M3n7mJewbKg8Nl7eQHXo3FixLh8tTSoFUnlIK
+        pPKUUiCVp5QCqTylFEjlKaVAKk8pBVJ5SimQylNKgVSeUgqk8pRSIJWnlAKpPKUUSOUppUAqTykFUnlK
+        KZDKW2gX/wxsnu5ya3SXYOme97KfcAfz1NfNS9k5j13PJtssMiHpICSdhGRJs8iEpIOQdBKSJc0iE5IO
+        did5Bdb/Kw9Qj4wkc0KyJiQdhOSKE5I1IelgKEl7WA9P8I9ZRVJ9QrImJIXnK8kT6L1A1LmAyiVNL42v
+        8GCaTbr4AAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="SalesTileElement.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADsAAAA7CAYAAADFJfKzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -364,18 +376,6 @@
         xEq5QRSq82jr8RQRZIg3XDVMMi2Y0Coue1gjqIXrt2tibJxg3QdbmAlhMYVrhYf3irFxkpT7HmaqcGVP
         Ydq7B5bYeICt8yvtTYtPkEiiqmNA7rsOKrHxILEupypClnvX2o/j5ekPqqvEB7v59L4AAAAASUVORK5C
         YII=
-</value>
-  </data>
-  <data name="storeBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADkAAAA3CAYAAAC2EuL1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8
-        AAABJklEQVRoQ+2Y0Q3CMAxEOwIjMAIjMAojMAKjMQKjsEE4S6kUJSkC00OX1pYeH9bl1AdRP5hSSj0O
-        4DwgR9D4NIuMHRhxbqDxaRaZkBSekKzZheQu3q6bwj7M3n7mJewbKg8Nl7eQHXo3FixLh8tTSoFUnlIK
-        pPKUUiCVp5QCqTylFEjlKaVAKk8pBVJ5SimQylNKgVSeUgqk8pRSIJWnlAKpPKUUSOUppUAqTykFUnlK
-        KZDKW2gX/wxsnu5ya3SXYOme97KfcAfz1NfNS9k5j13PJtssMiHpICSdhGRJs8iEpIOQdBKSJc0iE5IO
-        did5Bdb/Kw9Qj4wkc0KyJiQdhOSKE5I1IelgKEl7WA9P8I9ZRVJ9QrImJIXnK8kT6L1A1LmAyiVNL42v
-        8GCaTbr4AAAAAElFTkSuQmCC
 </value>
   </data>
 </root>
