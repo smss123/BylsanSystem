@@ -320,8 +320,8 @@ namespace Bylsan_System
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            frmAccountDailySHow frm = new frmAccountDailySHow();
-            frm.Show();
+            //frmAccountDailySHow frm = new frmAccountDailySHow();
+            //frm.Show();
         }
 
         private void button4_Click_1(object sender, EventArgs e)

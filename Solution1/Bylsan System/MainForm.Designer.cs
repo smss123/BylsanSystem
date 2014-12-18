@@ -81,8 +81,6 @@
             this.addIteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addItemsQtyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
@@ -97,8 +95,9 @@
             this.FactoryOrder = new Telerik.WinControls.UI.RadTileElement();
             this.DesignerOrder = new Telerik.WinControls.UI.RadTileElement();
             this.ManagmentOrder = new Telerik.WinControls.UI.RadTileElement();
-            this.radTileElement4 = new Telerik.WinControls.UI.RadTileElement();
             this.radTileElement1 = new Telerik.WinControls.UI.RadTileElement();
+            this.SellItemsTileElement2 = new Telerik.WinControls.UI.RadTileElement();
+            this.SalesTileElement = new Telerik.WinControls.UI.RadTileElement();
             this.MainStorGroup = new Telerik.WinControls.UI.TileGroupElement();
             this.itemsBtn = new Telerik.WinControls.UI.RadTileElement();
             this.WithDrawalBtn = new Telerik.WinControls.UI.RadTileElement();
@@ -112,10 +111,8 @@
             this.DebitorsTileElement = new Telerik.WinControls.UI.RadTileElement();
             this.AccountDailyBtn = new Telerik.WinControls.UI.RadTileElement();
             this.expensesBtn = new Telerik.WinControls.UI.RadTileElement();
-            this.SellItemsTileElement2 = new Telerik.WinControls.UI.RadTileElement();
-            this.SalesTileElement = new Telerik.WinControls.UI.RadTileElement();
+            this.radTileElement4 = new Telerik.WinControls.UI.RadTileElement();
             this.toolStrip1.SuspendLayout();
-            this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -347,14 +344,14 @@
             // newOrderToolStripMenuItem
             // 
             this.newOrderToolStripMenuItem.Name = "newOrderToolStripMenuItem";
-            this.newOrderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newOrderToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.newOrderToolStripMenuItem.Text = "New Order";
             this.newOrderToolStripMenuItem.Click += new System.EventHandler(this.newOrderToolStripMenuItem_Click);
             // 
             // quotationToolStripMenuItem
             // 
             this.quotationToolStripMenuItem.Name = "quotationToolStripMenuItem";
-            this.quotationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quotationToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.quotationToolStripMenuItem.Text = "Quotation";
             this.quotationToolStripMenuItem.Click += new System.EventHandler(this.quotationToolStripMenuItem_Click);
             // 
@@ -387,20 +384,20 @@
             this.addItemsToolStripMenuItem,
             this.manageItemsBtn});
             this.itemsToolStripMenuItem.Name = "itemsToolStripMenuItem";
-            this.itemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.itemsToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.itemsToolStripMenuItem.Text = "Items";
             // 
             // addItemsToolStripMenuItem
             // 
             this.addItemsToolStripMenuItem.Name = "addItemsToolStripMenuItem";
-            this.addItemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addItemsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.addItemsToolStripMenuItem.Text = "Add items";
             this.addItemsToolStripMenuItem.Click += new System.EventHandler(this.addItemsToolStripMenuItem_Click);
             // 
             // manageItemsBtn
             // 
             this.manageItemsBtn.Name = "manageItemsBtn";
-            this.manageItemsBtn.Size = new System.Drawing.Size(152, 22);
+            this.manageItemsBtn.Size = new System.Drawing.Size(149, 22);
             this.manageItemsBtn.Text = "Manage items";
             this.manageItemsBtn.Click += new System.EventHandler(this.manageItemsBtn_Click);
             // 
@@ -410,20 +407,20 @@
             this.AddStoreBtn,
             this.manageStoreBtn});
             this.storeToolStripMenuItem.Name = "storeToolStripMenuItem";
-            this.storeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.storeToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.storeToolStripMenuItem.Text = "Store";
             // 
             // AddStoreBtn
             // 
             this.AddStoreBtn.Name = "AddStoreBtn";
-            this.AddStoreBtn.Size = new System.Drawing.Size(152, 22);
+            this.AddStoreBtn.Size = new System.Drawing.Size(147, 22);
             this.AddStoreBtn.Text = "Add Store";
             this.AddStoreBtn.Click += new System.EventHandler(this.AddStoreBtn_Click);
             // 
             // manageStoreBtn
             // 
             this.manageStoreBtn.Name = "manageStoreBtn";
-            this.manageStoreBtn.Size = new System.Drawing.Size(152, 22);
+            this.manageStoreBtn.Size = new System.Drawing.Size(147, 22);
             this.manageStoreBtn.Text = "Manage Store";
             this.manageStoreBtn.Click += new System.EventHandler(this.manageStoreBtn_Click);
             // 
@@ -433,7 +430,7 @@
             this.addStoreManagerToolStripMenuItem,
             this.manageStoreManagerToolStripMenuItem});
             this.storeManagerToolStripMenuItem.Name = "storeManagerToolStripMenuItem";
-            this.storeManagerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.storeManagerToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.storeManagerToolStripMenuItem.Text = "StoreManager";
             // 
             // addStoreManagerToolStripMenuItem
@@ -456,7 +453,7 @@
             this.AddWithDrawalBtn,
             this.ManageWithDrawalBtn});
             this.withDrowlToolStripMenuItem.Name = "withDrowlToolStripMenuItem";
-            this.withDrowlToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.withDrowlToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.withDrowlToolStripMenuItem.Text = "WithDrawal";
             // 
             // AddWithDrawalBtn
@@ -479,7 +476,7 @@
             this.AddSupplierBtn,
             this.manageSupplierBtn});
             this.SupplierBtn.Name = "SupplierBtn";
-            this.SupplierBtn.Size = new System.Drawing.Size(152, 22);
+            this.SupplierBtn.Size = new System.Drawing.Size(148, 22);
             this.SupplierBtn.Text = "Supplier";
             // 
             // AddSupplierBtn
@@ -531,7 +528,7 @@
             this.addIteToolStripMenuItem,
             this.addItemsQtyToolStripMenuItem});
             this.sellItemsToolStripMenuItem.Name = "sellItemsToolStripMenuItem";
-            this.sellItemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sellItemsToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.sellItemsToolStripMenuItem.Text = "Sell Items";
             // 
             // addIteToolStripMenuItem
@@ -551,32 +548,13 @@
             // salesToolStripMenuItem
             // 
             this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-            this.salesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salesToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.salesToolStripMenuItem.Text = "Sales";
             this.salesToolStripMenuItem.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
             // 
-            // toolStrip2
-            // 
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 38);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1326, 25);
-            this.toolStrip2.TabIndex = 2;
-            this.toolStrip2.Text = "toolStrip2";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 547);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 559);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1326, 22);
             this.statusStrip1.TabIndex = 3;
@@ -585,7 +563,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(420, 547);
+            this.button1.Location = new System.Drawing.Point(420, 559);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 23);
             this.button1.TabIndex = 4;
@@ -596,7 +574,7 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.Location = new System.Drawing.Point(280, 546);
+            this.button2.Location = new System.Drawing.Point(280, 558);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(134, 23);
             this.button2.TabIndex = 5;
@@ -607,7 +585,7 @@
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.Location = new System.Drawing.Point(560, 547);
+            this.button3.Location = new System.Drawing.Point(560, 559);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(134, 23);
             this.button3.TabIndex = 6;
@@ -618,7 +596,7 @@
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button4.Location = new System.Drawing.Point(700, 547);
+            this.button4.Location = new System.Drawing.Point(700, 559);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(134, 23);
             this.button4.TabIndex = 7;
@@ -629,7 +607,7 @@
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button5.Location = new System.Drawing.Point(0, 547);
+            this.button5.Location = new System.Drawing.Point(0, 559);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(134, 23);
             this.button5.TabIndex = 8;
@@ -640,7 +618,7 @@
             // button6
             // 
             this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button6.Location = new System.Drawing.Point(140, 547);
+            this.button6.Location = new System.Drawing.Point(140, 559);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(134, 23);
             this.button6.TabIndex = 9;
@@ -650,6 +628,8 @@
             // 
             // radPanorama1
             // 
+            this.radPanorama1.AutoScroll = true;
+            this.radPanorama1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.radPanorama1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanorama1.Groups.AddRange(new Telerik.WinControls.RadItem[] {
             this.tileGroupElement1,
@@ -657,11 +637,11 @@
             this.AccountsGroup});
             this.radPanorama1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radTileElement4});
-            this.radPanorama1.Location = new System.Drawing.Point(0, 63);
+            this.radPanorama1.Location = new System.Drawing.Point(0, 38);
             this.radPanorama1.Name = "radPanorama1";
             this.radPanorama1.RowsCount = 6;
             this.radPanorama1.ShowGroups = true;
-            this.radPanorama1.Size = new System.Drawing.Size(1326, 484);
+            this.radPanorama1.Size = new System.Drawing.Size(1326, 521);
             this.radPanorama1.TabIndex = 10;
             this.radPanorama1.Text = "radPanorama1";
             this.radPanorama1.ThemeName = "VisualStudio2012Light";
@@ -672,7 +652,8 @@
             this.tileGroupElement1.AccessibleName = "tileGroupElement1";
             this.tileGroupElement1.Alignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.tileGroupElement1.AutoSize = false;
-            this.tileGroupElement1.Bounds = new System.Drawing.Rectangle(0, 0, 500, 500);
+            this.tileGroupElement1.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize;
+            this.tileGroupElement1.Bounds = new System.Drawing.Rectangle(0, 0, 480, 639);
             this.tileGroupElement1.CellSize = new System.Drawing.Size(150, 150);
             this.tileGroupElement1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.FactoryOrder,
@@ -692,6 +673,7 @@
             this.FactoryOrder.AccessibleDescription = "Factory Order";
             this.FactoryOrder.AccessibleName = "Factory Order";
             this.FactoryOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(200)))), ((int)(((byte)(37)))));
+            this.FactoryOrder.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.FactoryOrder.Name = "FactoryOrder";
             this.FactoryOrder.Row = 1;
             this.FactoryOrder.Text = "Factory Order";
@@ -705,6 +687,7 @@
             this.DesignerOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(200)))), ((int)(((byte)(37)))));
             this.DesignerOrder.BackgroundImage = null;
             this.DesignerOrder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.DesignerOrder.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.DesignerOrder.Image = ((System.Drawing.Image)(resources.GetObject("DesignerOrder.Image")));
             this.DesignerOrder.Name = "DesignerOrder";
             this.DesignerOrder.Text = "New Order";
@@ -718,19 +701,12 @@
             this.ManagmentOrder.AccessibleName = "Managment Order";
             this.ManagmentOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(200)))), ((int)(((byte)(37)))));
             this.ManagmentOrder.Column = 1;
+            this.ManagmentOrder.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.ManagmentOrder.Name = "ManagmentOrder";
             this.ManagmentOrder.Row = 1;
             this.ManagmentOrder.Text = "Desinger Order";
             this.ManagmentOrder.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.ManagmentOrder.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // radTileElement4
-            // 
-            this.radTileElement4.AccessibleDescription = "radTileElement4";
-            this.radTileElement4.AccessibleName = "radTileElement4";
-            this.radTileElement4.Name = "radTileElement4";
-            this.radTileElement4.Text = "radTileElement4";
-            this.radTileElement4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // radTileElement1
             // 
@@ -740,6 +716,7 @@
             this.radTileElement1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(200)))), ((int)(((byte)(37)))));
             this.radTileElement1.Bounds = new System.Drawing.Rectangle(0, 0, 290, 140);
             this.radTileElement1.Column = 1;
+            this.radTileElement1.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.radTileElement1.Image = ((System.Drawing.Image)(resources.GetObject("radTileElement1.Image")));
             this.radTileElement1.Name = "radTileElement1";
             this.radTileElement1.Text = "Order Mangment";
@@ -747,11 +724,41 @@
             this.radTileElement1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.radTileElement1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
+            // SellItemsTileElement2
+            // 
+            this.SellItemsTileElement2.AccessibleDescription = "Sell Items";
+            this.SellItemsTileElement2.AccessibleName = "Sell Items";
+            this.SellItemsTileElement2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(200)))), ((int)(((byte)(37)))));
+            this.SellItemsTileElement2.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.SellItemsTileElement2.Name = "SellItemsTileElement2";
+            this.SellItemsTileElement2.Row = 2;
+            this.SellItemsTileElement2.Text = "Sell Items";
+            this.SellItemsTileElement2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.SellItemsTileElement2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // SalesTileElement
+            // 
+            this.SalesTileElement.AccessibleDescription = "Sales";
+            this.SalesTileElement.AccessibleName = "Sales";
+            this.SalesTileElement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(200)))), ((int)(((byte)(37)))));
+            this.SalesTileElement.Column = 1;
+            this.SalesTileElement.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.SalesTileElement.Image = ((System.Drawing.Image)(resources.GetObject("SalesTileElement.Image")));
+            this.SalesTileElement.Name = "SalesTileElement";
+            this.SalesTileElement.Row = 2;
+            this.SalesTileElement.Text = "Sales";
+            this.SalesTileElement.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.SalesTileElement.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.SalesTileElement.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
             // MainStorGroup
             // 
             this.MainStorGroup.AccessibleDescription = "Main Stor";
             this.MainStorGroup.AccessibleName = "Main Stor";
             this.MainStorGroup.Alignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MainStorGroup.AutoSize = false;
+            this.MainStorGroup.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize;
+            this.MainStorGroup.Bounds = new System.Drawing.Rectangle(0, 0, 480, 400);
             this.MainStorGroup.CellSize = new System.Drawing.Size(150, 150);
             this.MainStorGroup.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.itemsBtn,
@@ -769,6 +776,7 @@
             this.itemsBtn.AccessibleDescription = "Items";
             this.itemsBtn.AccessibleName = "Items";
             this.itemsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(161)))), ((int)(((byte)(237)))));
+            this.itemsBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.itemsBtn.Name = "itemsBtn";
             this.itemsBtn.Text = "Items";
             this.itemsBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -779,6 +787,7 @@
             this.WithDrawalBtn.AccessibleDescription = "With Drawal";
             this.WithDrawalBtn.AccessibleName = "With Drawal";
             this.WithDrawalBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(161)))), ((int)(((byte)(237)))));
+            this.WithDrawalBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.WithDrawalBtn.Name = "WithDrawalBtn";
             this.WithDrawalBtn.Row = 1;
             this.WithDrawalBtn.Text = "With Drawal";
@@ -791,6 +800,7 @@
             this.storeBtn.AccessibleName = "store";
             this.storeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(161)))), ((int)(((byte)(237)))));
             this.storeBtn.Column = 1;
+            this.storeBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.storeBtn.Image = ((System.Drawing.Image)(resources.GetObject("storeBtn.Image")));
             this.storeBtn.Name = "storeBtn";
             this.storeBtn.Text = "store";
@@ -806,6 +816,7 @@
             this.SupplierTileElement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(161)))), ((int)(((byte)(237)))));
             this.SupplierTileElement.Bounds = new System.Drawing.Rectangle(0, 0, 290, 140);
             this.SupplierTileElement.Column = 1;
+            this.SupplierTileElement.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.SupplierTileElement.Name = "SupplierTileElement";
             this.SupplierTileElement.Row = 1;
             this.SupplierTileElement.Text = "Supplier";
@@ -830,6 +841,7 @@
             this.AccountsGroup.AccessibleName = "Accounts";
             this.AccountsGroup.Alignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.AccountsGroup.AutoSize = false;
+            this.AccountsGroup.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize;
             this.AccountsGroup.Bounds = new System.Drawing.Rectangle(0, 0, 300, 500);
             this.AccountsGroup.CellSize = new System.Drawing.Size(150, 150);
             this.AccountsGroup.Font = new System.Drawing.Font("Segoe UI Light", 20.25F);
@@ -851,6 +863,7 @@
             this.AccountTreeBtn.AccessibleDescription = "Account Tree";
             this.AccountTreeBtn.AccessibleName = "Account Tree";
             this.AccountTreeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(179)))), ((int)(((byte)(34)))));
+            this.AccountTreeBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.AccountTreeBtn.Name = "AccountTreeBtn";
             this.AccountTreeBtn.Text = "Account Tree";
             this.AccountTreeBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -861,6 +874,7 @@
             this.AccountCategoryTileElement3.AccessibleDescription = " Account Category";
             this.AccountCategoryTileElement3.AccessibleName = " Account Category";
             this.AccountCategoryTileElement3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(179)))), ((int)(((byte)(34)))));
+            this.AccountCategoryTileElement3.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.AccountCategoryTileElement3.Name = "AccountCategoryTileElement3";
             this.AccountCategoryTileElement3.Row = 1;
             this.AccountCategoryTileElement3.Text = " Account Category";
@@ -873,6 +887,7 @@
             this.ShowAccountsBtn.AccessibleName = "Show Accounts";
             this.ShowAccountsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(179)))), ((int)(((byte)(34)))));
             this.ShowAccountsBtn.Column = 1;
+            this.ShowAccountsBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.ShowAccountsBtn.Name = "ShowAccountsBtn";
             this.ShowAccountsBtn.Text = "Show Accounts";
             this.ShowAccountsBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
@@ -884,6 +899,7 @@
             this.DebitorsTileElement.AccessibleName = "Debitors";
             this.DebitorsTileElement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(179)))), ((int)(((byte)(34)))));
             this.DebitorsTileElement.Column = 1;
+            this.DebitorsTileElement.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.DebitorsTileElement.Name = "DebitorsTileElement";
             this.DebitorsTileElement.Row = 1;
             this.DebitorsTileElement.Text = "Debitors";
@@ -896,9 +912,10 @@
             this.AccountDailyBtn.AccessibleDescription = "Account DailyBt";
             this.AccountDailyBtn.AccessibleName = "Account DailyBt";
             this.AccountDailyBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(179)))), ((int)(((byte)(34)))));
+            this.AccountDailyBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.AccountDailyBtn.Name = "AccountDailyBtn";
             this.AccountDailyBtn.Row = 2;
-            this.AccountDailyBtn.Text = "Account DailyBt";
+            this.AccountDailyBtn.Text = "Account Daily";
             this.AccountDailyBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.AccountDailyBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
@@ -908,43 +925,27 @@
             this.expensesBtn.AccessibleName = "Expenses";
             this.expensesBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(179)))), ((int)(((byte)(34)))));
             this.expensesBtn.Column = 1;
+            this.expensesBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.expensesBtn.Name = "expensesBtn";
             this.expensesBtn.Row = 2;
             this.expensesBtn.Text = "Expenses";
             this.expensesBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.expensesBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // SellItemsTileElement2
+            // radTileElement4
             // 
-            this.SellItemsTileElement2.AccessibleDescription = "Sell Items";
-            this.SellItemsTileElement2.AccessibleName = "Sell Items";
-            this.SellItemsTileElement2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(200)))), ((int)(((byte)(37)))));
-            this.SellItemsTileElement2.Name = "SellItemsTileElement2";
-            this.SellItemsTileElement2.Row = 2;
-            this.SellItemsTileElement2.Text = "Sell Items";
-            this.SellItemsTileElement2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.SellItemsTileElement2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // SalesTileElement
-            // 
-            this.SalesTileElement.AccessibleDescription = "Sales";
-            this.SalesTileElement.AccessibleName = "Sales";
-            this.SalesTileElement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(200)))), ((int)(((byte)(37)))));
-            this.SalesTileElement.Column = 1;
-            this.SalesTileElement.Image = ((System.Drawing.Image)(resources.GetObject("SalesTileElement.Image")));
-            this.SalesTileElement.Name = "SalesTileElement";
-            this.SalesTileElement.Row = 2;
-            this.SalesTileElement.Text = "Sales";
-            this.SalesTileElement.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.SalesTileElement.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.SalesTileElement.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radTileElement4.AccessibleDescription = "radTileElement4";
+            this.radTileElement4.AccessibleName = "radTileElement4";
+            this.radTileElement4.Name = "radTileElement4";
+            this.radTileElement4.Text = "radTileElement4";
+            this.radTileElement4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1326, 569);
+            this.ClientSize = new System.Drawing.Size(1326, 581);
             this.Controls.Add(this.radPanorama1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -953,7 +954,6 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MainForm";
             // 
@@ -968,8 +968,6 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -992,8 +990,6 @@
         private System.Windows.Forms.ToolStripMenuItem addProductCategoryBtn;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton5;
         private System.Windows.Forms.ToolStripDropDownButton MailBtn;
-        private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem ManagementBranchBtn;
