@@ -825,10 +825,12 @@
             this.SupplierTileElement.Bounds = new System.Drawing.Rectangle(0, 0, 290, 140);
             this.SupplierTileElement.Column = 1;
             this.SupplierTileElement.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.SupplierTileElement.Image = ((System.Drawing.Image)(resources.GetObject("SupplierTileElement.Image")));
             this.SupplierTileElement.Name = "SupplierTileElement";
             this.SupplierTileElement.Row = 1;
             this.SupplierTileElement.Text = "Supplier";
             this.SupplierTileElement.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.SupplierTileElement.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.SupplierTileElement.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // storeManagerBtn
