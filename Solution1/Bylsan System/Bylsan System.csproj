@@ -85,11 +85,11 @@
     <Compile Include="AccountsX\Acc\frmAddAccount.Designer.cs">
       <DependentUpon>frmAddAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="AccountsX\frmfrmAccountDailySHow.cs.cs">
+    <Compile Include="AccountsX\frmAccountDailySHow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountsX\frmfrmAccountDailySHow.cs.Designer.cs">
-      <DependentUpon>frmfrmAccountDailySHow.cs.cs</DependentUpon>
+    <Compile Include="AccountsX\frmAccountDailySHow.Designer.cs">
+      <DependentUpon>frmAccountDailySHow.cs</DependentUpon>
     </Compile>
     <Compile Include="AccountsX\FrmAccountTree.cs">
       <SubType>Form</SubType>
@@ -519,8 +519,8 @@
     <EmbeddedResource Include="AccountsX\Acc\frmAddAccount.resx">
       <DependentUpon>frmAddAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AccountsX\frmfrmAccountDailySHow.cs.resx">
-      <DependentUpon>frmfrmAccountDailySHow.cs.cs</DependentUpon>
+    <EmbeddedResource Include="AccountsX\frmAccountDailySHow.resx">
+      <DependentUpon>frmAccountDailySHow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AccountsX\FrmAccountTree.resx">
       <DependentUpon>FrmAccountTree.cs</DependentUpon>
