@@ -164,6 +164,7 @@ namespace Bylsan_System.MainStoreForms
 
             };
             StoreDrawalCmd.AddDrawal(tb);
+            RollOutQty();
             Operation.ShowToustOk("Store Drawal Saved", this);
 
             Broom();
