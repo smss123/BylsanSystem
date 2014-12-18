@@ -164,7 +164,10 @@ namespace Bylsan_System.MainStoreForms
 
             };
             StoreDrawalCmd.AddDrawal(tb);
+            //==========================
             RollOutQty();
+            WriteAtStoreManagerTable();
+            //==========================
             Operation.ShowToustOk("Store Drawal Saved", this);
 
             Broom();
@@ -188,6 +191,8 @@ namespace Bylsan_System.MainStoreForms
         public int XItemID { get; set; }
         public Store  xStoreTb { get; set; }
         public int   xAvailableQty { get; set; }
+        public int ItmPrice  { get; set; }
+        public int TotalPrice { get; set; }
         private void ItemComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(CmbItems .Text != null){
@@ -196,6 +201,11 @@ namespace Bylsan_System.MainStoreForms
 
                 xStoreTb = StoreCmd.GetAvailableQtyByItemID (XItemID);
                 xAvailableQty = int .Parse (xStoreTb.AvailableQty.ToString ());
+                //===============================================================
+                // Get Item Price From  {  Store Sell Table }
+                Store_Sell tb = StoreSalesCmd.GetAllSTore_SellByItemID(XItemID);
+                ItmPrice = 0;
+                ItmPrice = int .Parse (tb.Price.ToString ());
             }
         }
 
@@ -207,6 +217,20 @@ namespace Bylsan_System.MainStoreForms
             StoreCmd.EditStore(xStoreTb);
         }
 
+        void WriteAtStoreManagerTable()
+        {
+            TotalPrice = 0 ;
+            TotalPrice = int .Parse (qtyTextBox .Text .ToString ()) * ItmPrice ;
+            StoreManager tb = new StoreManager () {
+             StoreID = xStoreTb .ID ,
+             QtyInOrOut = int .Parse (qtyTextBox .Text .ToString ()),
+             DateOfProcess = DateTime .Now ,
+             Price =  TotalPrice ,
+             ProcessType = "Roll Out ",
+             Description = "Roll Out Qty ( Drawal Process )" 
+            };
+            StoreManagerCmd.AddStoreManager(tb);
+        }
         void Broom()
         {
           

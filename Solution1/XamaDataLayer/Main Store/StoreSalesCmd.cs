@@ -79,12 +79,12 @@ namespace XamaDataLayer.Main_Store
    
 
         // == {By Item }
-        public static List<Store_Sell> GetAllSTore_SellByItemID(int xid)
+        public static Store_Sell GetAllSTore_SellByItemID(int xid)
         {
             var lst = (from s in db.Store_Sells
                        orderby s.DateOfProcess ascending
                        where s.ItemID  == xid
-                       select s).ToList();
+                       select s).Single ();
             return lst;
         }
         // == { By: Date}
