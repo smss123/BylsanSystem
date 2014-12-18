@@ -30,22 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label DescriptionLabel;
-            System.Windows.Forms.Label AvailableQtyLabel;
+            System.Windows.Forms.Label QtyLabel;
             System.Windows.Forms.Label itemNameLabel;
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label label2;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DescriptiontextBox = new System.Windows.Forms.TextBox();
             this.ItemColumnComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.Addbtn = new Telerik.WinControls.UI.RadButton();
-            this.AvailableQtyTextBox = new System.Windows.Forms.TextBox();
+            this.QtyTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
+            this.CmbSuppliers = new System.Windows.Forms.ComboBox();
             DescriptionLabel = new System.Windows.Forms.Label();
-            AvailableQtyLabel = new System.Windows.Forms.Label();
+            QtyLabel = new System.Windows.Forms.Label();
             itemNameLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox.EditorControl)).BeginInit();
@@ -64,14 +70,14 @@
             DescriptionLabel.TabIndex = 4;
             DescriptionLabel.Text = "Description:";
             // 
-            // AvailableQtyLabel
+            // QtyLabel
             // 
-            AvailableQtyLabel.AutoSize = true;
-            AvailableQtyLabel.Location = new System.Drawing.Point(21, 58);
-            AvailableQtyLabel.Name = "AvailableQtyLabel";
-            AvailableQtyLabel.Size = new System.Drawing.Size(73, 13);
-            AvailableQtyLabel.TabIndex = 2;
-            AvailableQtyLabel.Text = "AvailableQty:";
+            QtyLabel.AutoSize = true;
+            QtyLabel.Location = new System.Drawing.Point(21, 58);
+            QtyLabel.Name = "QtyLabel";
+            QtyLabel.Size = new System.Drawing.Size(52, 13);
+            QtyLabel.TabIndex = 2;
+            QtyLabel.Text = "Add Qty:";
             // 
             // itemNameLabel
             // 
@@ -87,16 +93,20 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(label2);
+            this.groupBox1.Controls.Add(this.CmbSuppliers);
+            this.groupBox1.Controls.Add(label1);
+            this.groupBox1.Controls.Add(this.txtUnitPrice);
             this.groupBox1.Controls.Add(this.DescriptiontextBox);
             this.groupBox1.Controls.Add(this.ItemColumnComboBox);
             this.groupBox1.Controls.Add(this.Addbtn);
             this.groupBox1.Controls.Add(DescriptionLabel);
-            this.groupBox1.Controls.Add(AvailableQtyLabel);
-            this.groupBox1.Controls.Add(this.AvailableQtyTextBox);
+            this.groupBox1.Controls.Add(QtyLabel);
+            this.groupBox1.Controls.Add(this.QtyTextBox);
             this.groupBox1.Controls.Add(itemNameLabel);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(355, 238);
+            this.groupBox1.Size = new System.Drawing.Size(355, 336);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Main Store";
@@ -123,43 +133,43 @@
             this.ItemColumnComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ItemColumnComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // ItemColumnComboBox.NestedRadGridView
             // 
             this.ItemColumnComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.ItemColumnComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.ItemColumnComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.ItemColumnComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
             this.ItemColumnComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn1.DataType = typeof(int);
-            gridViewDecimalColumn1.EnableExpressionEditor = false;
-            gridViewDecimalColumn1.FieldName = "ID";
-            gridViewDecimalColumn1.HeaderText = "ID";
-            gridViewDecimalColumn1.IsAutoGenerated = true;
-            gridViewDecimalColumn1.IsVisible = false;
-            gridViewDecimalColumn1.Name = "ID";
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "ItemName";
-            gridViewTextBoxColumn1.HeaderText = "ItemName";
-            gridViewTextBoxColumn1.IsAutoGenerated = true;
-            gridViewTextBoxColumn1.Name = "ItemName";
-            gridViewTextBoxColumn1.Width = 142;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "ItemType";
-            gridViewTextBoxColumn2.HeaderText = "ItemType";
-            gridViewTextBoxColumn2.IsAutoGenerated = true;
-            gridViewTextBoxColumn2.Name = "ItemType";
-            gridViewTextBoxColumn2.Width = 179;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "ItemDescription";
-            gridViewTextBoxColumn3.HeaderText = "ItemDescription";
-            gridViewTextBoxColumn3.IsAutoGenerated = true;
-            gridViewTextBoxColumn3.Name = "ItemDescription";
-            gridViewTextBoxColumn3.Width = 282;
+            gridViewDecimalColumn2.DataType = typeof(int);
+            gridViewDecimalColumn2.EnableExpressionEditor = false;
+            gridViewDecimalColumn2.FieldName = "ID";
+            gridViewDecimalColumn2.HeaderText = "ID";
+            gridViewDecimalColumn2.IsAutoGenerated = true;
+            gridViewDecimalColumn2.IsVisible = false;
+            gridViewDecimalColumn2.Name = "ID";
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "ItemName";
+            gridViewTextBoxColumn4.HeaderText = "ItemName";
+            gridViewTextBoxColumn4.IsAutoGenerated = true;
+            gridViewTextBoxColumn4.Name = "ItemName";
+            gridViewTextBoxColumn4.Width = 52;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "ItemType";
+            gridViewTextBoxColumn5.HeaderText = "ItemType";
+            gridViewTextBoxColumn5.IsAutoGenerated = true;
+            gridViewTextBoxColumn5.Name = "ItemType";
+            gridViewTextBoxColumn5.Width = 66;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "ItemDescription";
+            gridViewTextBoxColumn6.HeaderText = "ItemDescription";
+            gridViewTextBoxColumn6.IsAutoGenerated = true;
+            gridViewTextBoxColumn6.Name = "ItemDescription";
+            gridViewTextBoxColumn6.Width = 103;
             this.ItemColumnComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn1,
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3});
+            gridViewDecimalColumn2,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6});
             this.ItemColumnComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ItemColumnComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
             this.ItemColumnComboBox.EditorControl.Name = "NestedRadGridView";
@@ -181,7 +191,7 @@
             this.Addbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.Addbtn.Image = global::Bylsan_System.Properties.Resources.Add;
             this.Addbtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Addbtn.Location = new System.Drawing.Point(16, 180);
+            this.Addbtn.Location = new System.Drawing.Point(34, 278);
             this.Addbtn.Name = "Addbtn";
             this.Addbtn.Size = new System.Drawing.Size(109, 37);
             this.Addbtn.TabIndex = 4;
@@ -190,25 +200,60 @@
             this.Addbtn.ThemeName = "VisualStudio2012Light";
             this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
-            // AvailableQtyTextBox
+            // QtyTextBox
             // 
-            this.AvailableQtyTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.AvailableQtyTextBox.Location = new System.Drawing.Point(97, 54);
-            this.AvailableQtyTextBox.Name = "AvailableQtyTextBox";
-            this.AvailableQtyTextBox.Size = new System.Drawing.Size(162, 20);
-            this.AvailableQtyTextBox.TabIndex = 2;
-            this.AvailableQtyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AvailableQtyTextBox_KeyPress);
+            this.QtyTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.QtyTextBox.Location = new System.Drawing.Point(97, 54);
+            this.QtyTextBox.Name = "QtyTextBox";
+            this.QtyTextBox.Size = new System.Drawing.Size(162, 20);
+            this.QtyTextBox.TabIndex = 2;
+            this.QtyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AvailableQtyTextBox_KeyPress);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // txtUnitPrice
+            // 
+            this.txtUnitPrice.Location = new System.Drawing.Point(109, 179);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.Size = new System.Drawing.Size(100, 20);
+            this.txtUnitPrice.TabIndex = 5;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(35, 182);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(56, 13);
+            label1.TabIndex = 6;
+            label1.Text = "Unit Price";
+            // 
+            // CmbSuppliers
+            // 
+            this.CmbSuppliers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbSuppliers.FormattingEnabled = true;
+            this.CmbSuppliers.Location = new System.Drawing.Point(101, 230);
+            this.CmbSuppliers.Name = "CmbSuppliers";
+            this.CmbSuppliers.Size = new System.Drawing.Size(230, 21);
+            this.CmbSuppliers.TabIndex = 7;
+            this.CmbSuppliers.SelectedIndexChanged += new System.EventHandler(this.CmbSuppliers_SelectedIndexChanged_1);
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(39, 230);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(50, 13);
+            label2.TabIndex = 8;
+            label2.Text = "Supplier";
             // 
             // FrmAddMainStore_Store
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(379, 262);
+            this.ClientSize = new System.Drawing.Size(379, 360);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -237,10 +282,12 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private Telerik.WinControls.UI.RadButton Addbtn;
-        private System.Windows.Forms.TextBox AvailableQtyTextBox;
+        private System.Windows.Forms.TextBox QtyTextBox;
         private Telerik.WinControls.UI.RadMultiColumnComboBox ItemColumnComboBox;
         private System.Windows.Forms.TextBox DescriptiontextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
+        private System.Windows.Forms.ComboBox CmbSuppliers;
+        private System.Windows.Forms.TextBox txtUnitPrice;
     }
 }

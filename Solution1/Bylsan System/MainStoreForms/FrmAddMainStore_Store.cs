@@ -53,14 +53,14 @@ namespace Bylsan_System.MainStoreForms
         private void Addbtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
-            
+
             if (ItemColumnComboBox.SelectedValue == null)
             {
                 ItemColumnComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
-                
+
                 ItemColumnComboBox.Focus();
                 errorProvider1.SetError(this.ItemColumnComboBox, "Please Enter itemName name");
-                
+
                 return;
             }
             else
@@ -69,19 +69,19 @@ namespace Bylsan_System.MainStoreForms
                 errorProvider1.Clear();
             }
 
-            if (AvailableQtyTextBox.Text == "")
+            if (QtyTextBox.Text == "")
             {
 
-                AvailableQtyTextBox.BackColor = Color.OrangeRed;
+                QtyTextBox.BackColor = Color.OrangeRed;
 
-                AvailableQtyTextBox.Focus();
-                errorProvider1.SetError(this.AvailableQtyTextBox, "Please Enter Qty");
+                QtyTextBox.Focus();
+                errorProvider1.SetError(this.QtyTextBox, "Please Enter Qty");
 
                 return;
             }
             else
             {
-                AvailableQtyTextBox.BackColor = Color.White;
+                QtyTextBox.BackColor = Color.White;
                 errorProvider1.Clear();
 
             }
@@ -96,36 +96,46 @@ namespace Bylsan_System.MainStoreForms
                 if (ChkStore.ID != 0)
                 {
                     // Edit AvailableQty
-                     ChkStore.ItemID =int.Parse(ItemColumnComboBox.SelectedValue.ToString());
-                     ChkStore.AvailableQty += int.Parse(AvailableQtyTextBox.Text);
-                     ChkStore. Description = DescriptiontextBox.Text ;
+                    ChkStore.ItemID = int.Parse(ItemColumnComboBox.SelectedValue.ToString());
+                    ChkStore.AvailableQty += int.Parse(QtyTextBox.Text);
+                    ChkStore.Description = DescriptiontextBox.Text;
 
-                     StoreCmd.EditStore(ChkStore);
+                    StoreCmd.EditStore(ChkStore);
 
+                    //================================================
+                    WriteAt_StoreSells();
+                    WriteAtStoreManagerTable();
+                    //================================================
+                    GetStore();
                     Operation.ShowToustOk("Item Updated ", this);
                 }
             }
             catch (Exception)
             {
                 // new 
-                 Store tb=new Store
+                Store tb = new Store
                 {
-                    ItemID=int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
-                    AvailableQty=int.Parse(AvailableQtyTextBox.Text),
+                    ItemID = int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
+                    AvailableQty = int.Parse(QtyTextBox.Text),
                     Description = DescriptiontextBox.Text
                 };
                 StoreCmd.AddNewStore(tb);
                 Operation.ShowToustOk("Item Saved", this);
-
+                //================================================
+                GetStore();
+                //================================================
+                WriteAt_StoreSells();
+                WriteAtStoreManagerTable();
+                //================================================
             }
 
-            
+
             ItemColumnComboBox.ResetText();
-            AvailableQtyTextBox.Clear();
+            QtyTextBox.Clear();
             DescriptiontextBox.Clear();
             ItemColumnComboBox.Focus();
             Operation.EndOperation(this);
-          
+
         }
 
         private void FrmAddMainStore_Store_Load(object sender, EventArgs e)
@@ -136,6 +146,83 @@ namespace Bylsan_System.MainStoreForms
         private void AvailableQtyTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+
+        void PopulateCmbSuppliers()
+        {
+            CmbSuppliers.Items.AddRange(
+                (from s in SuppliersCmd.GetAllSuppliers() select s.SupplierName).Distinct().ToArray());
+        }
+
+
+
+        public int xSupplierId { get; set; }
+        public int TotalPrice { get; set; }
+
+        public Store StoreTb { get; set; }
+        private void CmbSuppliers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        void WriteAt_StoreSells()
+        {
+            TotalPrice = 0;
+            TotalPrice = int.Parse(txtUnitPrice.Text.ToString()) * int.Parse(QtyTextBox.Text.ToString());
+
+            Store_Sell stb = new Store_Sell()
+            {
+                ItemID = int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
+                UnitPrice = int.Parse(txtUnitPrice.Text.ToString()),
+                Price = TotalPrice,
+                DateOfProcess = DateTime.Now,
+                UserID = XamaDataLayer.Security.UserInfo.CurrentUserID,
+                SupplierID = xSupplierId,
+
+            };
+            StoreSalesCmd.AddNewSales(stb);
+        }
+
+        void WriteAtStoreManagerTable()
+        {
+
+            TotalPrice = 0;
+            TotalPrice = int.Parse(txtUnitPrice.Text.ToString()) * int.Parse(QtyTextBox.Text.ToString());
+            StoreManager tb = new StoreManager()
+            {
+                StoreID = StoreTb.ID,
+                QtyInOrOut = int.Parse(QtyTextBox.Text.ToString()),
+                DateOfProcess = DateTime.Now,
+                Price = TotalPrice,
+                ProcessType = "Pull In ",
+                Description = "Pull In Qty (Sales )"
+            };
+            StoreManagerCmd.AddStoreManager(tb);
+        }
+
+        void GetStore()
+        {
+
+            StoreTb = StoreCmd.ChekByItemID(int.Parse(ItemColumnComboBox.SelectedValue.ToString()));
+
+
+        }
+
+        private void CmbSuppliers_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CmbSuppliers.Text != "")
+                {
+                    xSupplierId = (from i in SuppliersCmd.GetAllSuppliers() where i.SupplierName == CmbSuppliers.Text select i.ID).Single();
+                }
+            }
+            catch (Exception)
+            {
+
+
+            }
         }
     }
 }
