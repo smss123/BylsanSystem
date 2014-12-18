@@ -50,13 +50,13 @@ namespace XamaDataLayer.Main_Store
 
        //===============================================================
       // Important Function : 
-       public static List<Store> GetAvailableQtyByItemID(int ItmId)
+       public static Store GetAvailableQtyByItemID(int ItmId)
        {
            db = new DbDataContext();
            var lst = (from i in db.Stores
                       where i.ItemID == ItmId
                       orderby i.ID ascending
-                      select i).ToList();
+                      select i).Single();
            return lst;
        }
 
@@ -68,6 +68,9 @@ namespace XamaDataLayer.Main_Store
                       select i).Single ();
            return Rec;
        }
+
+   
+       
        //================================================================
        public static List< Store > GetAllStores()
        {

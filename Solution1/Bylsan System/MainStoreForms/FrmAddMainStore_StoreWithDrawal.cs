@@ -24,25 +24,25 @@ namespace Bylsan_System.MainStoreForms
         private void fillCombo()
         {
             #region "  fillItem "
-            this.ItemComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
+            this.CmbItems.MultiColumnComboBoxElement.DropDownWidth = 550;
             Operation.BeginOperation(this);
 
             this.Invoke((MethodInvoker)delegate
             {
-                this.ItemComboBox.AutoFilter = true;
-                this.ItemComboBox.ValueMember = "ID";
-                this.ItemComboBox.DisplayMember = "ItemName";
+                this.CmbItems.AutoFilter = true;
+                this.CmbItems.ValueMember = "ID";
+                this.CmbItems.DisplayMember = "ItemName";
             });
 
           
             var q = ItemsCmd.GetAllItems();
             this.Invoke((MethodInvoker)delegate
             {
-                ItemComboBox.DataSource = q;
+                CmbItems.DataSource = q;
                 FilterDescriptor filter = new FilterDescriptor();
-                filter.PropertyName = this.ItemComboBox.DisplayMember;
+                filter.PropertyName = this.CmbItems.DisplayMember;
                 filter.Operator = FilterOperator.Contains;
-                this.ItemComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+                this.CmbItems.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
 
 
 
@@ -54,25 +54,25 @@ namespace Bylsan_System.MainStoreForms
             //
             #region "  fillStore "
 
-            this.StoreComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
+            this.CmbStores.MultiColumnComboBoxElement.DropDownWidth = 550;
             Operation.BeginOperation(this);
 
             this.Invoke((MethodInvoker)delegate
             {
-                this.StoreComboBox.AutoFilter = true;
-                this.StoreComboBox.ValueMember = "ID";
-                this.StoreComboBox.DisplayMember = "ItemID";
+                this.CmbStores.AutoFilter = true;
+                this.CmbStores.ValueMember = "ID";
+                this.CmbStores.DisplayMember = "ItemID";
             });
 
 
             var q1 = StoreCmd.GetAllStores();
             this.Invoke((MethodInvoker)delegate
             {
-                StoreComboBox.DataSource = q1;
+                CmbStores.DataSource = q1;
                 FilterDescriptor filter = new FilterDescriptor();
-                filter.PropertyName = this.StoreComboBox.DisplayMember;
+                filter.PropertyName = this.CmbStores.DisplayMember;
                 filter.Operator = FilterOperator.Contains;
-                this.StoreComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+                this.CmbStores.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
 
 
 
@@ -87,19 +87,19 @@ namespace Bylsan_System.MainStoreForms
         private void Addbtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
-            if (ItemComboBox.SelectedValue == null)
+            if (CmbItems.SelectedValue == null)
             {
-                ItemComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                CmbItems.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
 
 
-                ItemComboBox.Focus();
-                errorProvider1.SetError(this.ItemComboBox, "Please Enter Item ");
+                CmbItems.Focus();
+                errorProvider1.SetError(this.CmbItems, "Please Enter Item ");
 
                 return;
             }
             else
             {
-                ItemComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                CmbItems.MultiColumnComboBoxElement.BackColor = Color.White;
                 errorProvider1.Clear();
 
             }
@@ -121,19 +121,19 @@ namespace Bylsan_System.MainStoreForms
             }
 
 
-            if (StoreComboBox.SelectedValue == null)
+            if (CmbStores.SelectedValue == null)
             {
-                StoreComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+                CmbStores.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
 
 
-                StoreComboBox.Focus();
-                errorProvider1.SetError(this.StoreComboBox, "Please Enter Store ");
+                CmbStores.Focus();
+                errorProvider1.SetError(this.CmbStores, "Please Enter Store ");
 
                 return;
             }
             else
             {
-                StoreComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
+                CmbStores.MultiColumnComboBoxElement.BackColor = Color.White;
                 errorProvider1.Clear();
 
             }
@@ -143,26 +143,31 @@ namespace Bylsan_System.MainStoreForms
 
 
             #endregion
+
+            //=====================================================
+            if (int.Parse(qtyTextBox.Text.ToString()) > xAvailableQty)
+            {
+                Operation.ShowToustOk("Qty Not vvailable ... Sorry", this);
+                Broom();
+                return;
+            }
+
             Operation.BeginOperation(this);
             StoreWithDrawal tb = new StoreWithDrawal()
             {
-                ItemID=int.Parse(ItemComboBox.SelectedValue.ToString()),
-                StoreID=int.Parse(StoreComboBox.SelectedValue.ToString()),
+                ItemID = XItemID ,
+                StoreID =  xStoreTb .ID ,
                 DateOfProcess=DateTime.Now,
                 Qty=int.Parse(qtyTextBox.Text),
-                Comment=commentTextBox.Text,
-
+                Comment=commentTextBox.Text + "-- Roll Out Qty   ",
+                UserID = XamaDataLayer.Security.UserInfo.CurrentUserID 
 
             };
             StoreDrawalCmd.AddDrawal(tb);
+            Operation.ShowToustOk("Store Drawal Saved", this);
 
-            Operation.ShowToustOk("StoreDrawal Saved", this);
-            ItemComboBox.ResetText();
-            StoreComboBox.ResetText();
-            qtyTextBox.Clear();
-            commentTextBox.Clear();
-            ItemComboBox.Focus();
-
+            Broom();
+       
             Operation.EndOperation(this);
 
         }
@@ -177,5 +182,41 @@ namespace Bylsan_System.MainStoreForms
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+        #region "  ^^^ Load Store Informations    "
+        public int XItemID { get; set; }
+        public Store  xStoreTb { get; set; }
+        public int   xAvailableQty { get; set; }
+        private void ItemComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(CmbItems .Text != null){
+                XItemID = 0;
+                XItemID = int .Parse (CmbItems.SelectedValue.ToString());
+
+                xStoreTb = StoreCmd.GetAvailableQtyByItemID (XItemID);
+                xAvailableQty = int .Parse (xStoreTb.AvailableQty.ToString ());
+            }
+        }
+
+        void RollOutQty()
+        {
+            xStoreTb.ItemID = XItemID;
+            xStoreTb.AvailableQty -= int.Parse(qtyTextBox.Text);
+            xStoreTb.Description = "Roll Out ";
+            StoreCmd.EditStore(xStoreTb);
+        }
+
+        void Broom()
+        {
+          
+            CmbItems.ResetText();
+            CmbStores.ResetText();
+            qtyTextBox.Clear();
+            commentTextBox.Clear();
+            CmbItems.Focus();
+
+        }
+        #endregion 
+
     }
 }

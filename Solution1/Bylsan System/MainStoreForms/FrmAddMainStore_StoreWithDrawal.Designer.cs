@@ -43,24 +43,25 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Addbtn = new Telerik.WinControls.UI.RadButton();
-            this.StoreComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.CmbStores = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.commentTextBox = new System.Windows.Forms.TextBox();
             this.qtyTextBox = new System.Windows.Forms.TextBox();
-            this.ItemComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.CmbItems = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.label1 = new System.Windows.Forms.Label();
             itemNameLabel = new System.Windows.Forms.Label();
             qtyLabel = new System.Windows.Forms.Label();
             commentLabel = new System.Windows.Forms.Label();
             storeIDLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Addbtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StoreComboBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StoreComboBox.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StoreComboBox.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemComboBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemComboBox.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemComboBox.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbStores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbStores.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbStores.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbItems.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbItems.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -79,7 +80,7 @@
             qtyLabel.AutoSize = true;
             qtyLabel.Location = new System.Drawing.Point(41, 54);
             qtyLabel.Name = "qtyLabel";
-            qtyLabel.Size = new System.Drawing.Size(27, 13);
+            qtyLabel.Size = new System.Drawing.Size(28, 13);
             qtyLabel.TabIndex = 2;
             qtyLabel.Text = "Qty:";
             // 
@@ -100,21 +101,22 @@
             storeIDLabel.Size = new System.Drawing.Size(51, 13);
             storeIDLabel.TabIndex = 6;
             storeIDLabel.Text = "Store ID:";
+            storeIDLabel.Visible = false;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.Addbtn);
-            this.groupBox1.Controls.Add(this.StoreComboBox);
+            this.groupBox1.Controls.Add(this.CmbStores);
             this.groupBox1.Controls.Add(storeIDLabel);
             this.groupBox1.Controls.Add(commentLabel);
             this.groupBox1.Controls.Add(this.commentTextBox);
             this.groupBox1.Controls.Add(qtyLabel);
             this.groupBox1.Controls.Add(this.qtyTextBox);
             this.groupBox1.Controls.Add(itemNameLabel);
-            this.groupBox1.Controls.Add(this.ItemComboBox);
+            this.groupBox1.Controls.Add(this.CmbItems);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(325, 230);
+            this.groupBox1.Size = new System.Drawing.Size(325, 204);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
@@ -124,7 +126,7 @@
             this.Addbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Addbtn.Image = global::Bylsan_System.Properties.Resources.Add;
             this.Addbtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Addbtn.Location = new System.Drawing.Point(12, 175);
+            this.Addbtn.Location = new System.Drawing.Point(73, 154);
             this.Addbtn.Name = "Addbtn";
             this.Addbtn.Size = new System.Drawing.Size(109, 37);
             this.Addbtn.TabIndex = 4;
@@ -133,25 +135,25 @@
             this.Addbtn.ThemeName = "VisualStudio2012Light";
             this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
-            // StoreComboBox
+            // CmbStores
             // 
             // 
-            // StoreComboBox.NestedRadGridView
+            // CmbStores.NestedRadGridView
             // 
-            this.StoreComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.StoreComboBox.EditorControl.Cursor = System.Windows.Forms.Cursors.Default;
-            this.StoreComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.StoreComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.StoreComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.StoreComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
+            this.CmbStores.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.CmbStores.EditorControl.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CmbStores.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.CmbStores.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CmbStores.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.CmbStores.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
+            // CmbStores.NestedRadGridView
             // 
-            // 
-            this.StoreComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.StoreComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.StoreComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.StoreComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
-            this.StoreComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.CmbStores.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.CmbStores.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.CmbStores.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.CmbStores.EditorControl.MasterTemplate.AutoGenerateColumns = false;
+            this.CmbStores.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewDecimalColumn1.DataType = typeof(int);
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "ID";
@@ -166,39 +168,39 @@
             gridViewDecimalColumn2.HeaderText = "ItemID";
             gridViewDecimalColumn2.IsAutoGenerated = true;
             gridViewDecimalColumn2.Name = "ItemID";
-            gridViewDecimalColumn2.Width = 201;
+            gridViewDecimalColumn2.Width = 74;
             gridViewDecimalColumn3.DataType = typeof(System.Nullable<long>);
             gridViewDecimalColumn3.EnableExpressionEditor = false;
             gridViewDecimalColumn3.FieldName = "AvailableQty";
             gridViewDecimalColumn3.HeaderText = "AvailableQty";
             gridViewDecimalColumn3.IsAutoGenerated = true;
             gridViewDecimalColumn3.Name = "AvailableQty";
-            gridViewDecimalColumn3.Width = 114;
+            gridViewDecimalColumn3.Width = 42;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "Description";
             gridViewTextBoxColumn1.HeaderText = "Description";
             gridViewTextBoxColumn1.IsAutoGenerated = true;
             gridViewTextBoxColumn1.Name = "Description";
-            gridViewTextBoxColumn1.Width = 288;
-            this.StoreComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn1.Width = 105;
+            this.CmbStores.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewDecimalColumn2,
             gridViewDecimalColumn3,
             gridViewTextBoxColumn1});
-            this.StoreComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.StoreComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.StoreComboBox.EditorControl.Name = "NestedRadGridView";
-            this.StoreComboBox.EditorControl.ReadOnly = true;
-            this.StoreComboBox.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.StoreComboBox.EditorControl.ShowGroupPanel = false;
-            this.StoreComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.StoreComboBox.EditorControl.TabIndex = 0;
-            this.StoreComboBox.Location = new System.Drawing.Point(73, 128);
-            this.StoreComboBox.Name = "StoreComboBox";
-            this.StoreComboBox.Size = new System.Drawing.Size(232, 20);
-            this.StoreComboBox.TabIndex = 3;
-            this.StoreComboBox.TabStop = false;
-            this.StoreComboBox.ThemeName = "VisualStudio2012Light";
+            this.CmbStores.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.CmbStores.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.CmbStores.EditorControl.Name = "NestedRadGridView";
+            this.CmbStores.EditorControl.ReadOnly = true;
+            this.CmbStores.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.CmbStores.EditorControl.ShowGroupPanel = false;
+            this.CmbStores.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.CmbStores.EditorControl.TabIndex = 0;
+            this.CmbStores.Location = new System.Drawing.Point(73, 128);
+            this.CmbStores.Name = "CmbStores";
+            this.CmbStores.Size = new System.Drawing.Size(232, 20);
+            this.CmbStores.TabIndex = 3;
+            this.CmbStores.TabStop = false;
+            this.CmbStores.ThemeName = "VisualStudio2012Light";
             // 
             // commentTextBox
             // 
@@ -218,80 +220,94 @@
             this.qtyTextBox.TabIndex = 1;
             this.qtyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.qtyTextBox_KeyPress);
             // 
-            // ItemComboBox
+            // CmbItems
             // 
+            this.CmbItems.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             // 
-            // ItemComboBox.NestedRadGridView
+            // CmbItems.NestedRadGridView
             // 
-            this.ItemComboBox.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.ItemComboBox.EditorControl.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ItemComboBox.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.ItemComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ItemComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ItemComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
+            this.CmbItems.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.CmbItems.EditorControl.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CmbItems.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.CmbItems.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CmbItems.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.CmbItems.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
+            // CmbItems.NestedRadGridView
             // 
-            // 
-            this.ItemComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.ItemComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.ItemComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.ItemComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
-            this.ItemComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.CmbItems.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.CmbItems.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.CmbItems.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.CmbItems.EditorControl.MasterTemplate.AutoGenerateColumns = false;
+            this.CmbItems.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewDecimalColumn4.DataType = typeof(int);
             gridViewDecimalColumn4.EnableExpressionEditor = false;
             gridViewDecimalColumn4.FieldName = "ID";
             gridViewDecimalColumn4.HeaderText = "ID";
             gridViewDecimalColumn4.IsAutoGenerated = true;
             gridViewDecimalColumn4.Name = "ID";
-            gridViewDecimalColumn4.Width = 151;
+            gridViewDecimalColumn4.Width = 56;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "ItemName";
             gridViewTextBoxColumn2.HeaderText = "ItemName";
             gridViewTextBoxColumn2.IsAutoGenerated = true;
             gridViewTextBoxColumn2.Name = "ItemName";
-            gridViewTextBoxColumn2.Width = 151;
+            gridViewTextBoxColumn2.Width = 56;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "ItemType";
             gridViewTextBoxColumn3.HeaderText = "ItemType";
             gridViewTextBoxColumn3.IsAutoGenerated = true;
             gridViewTextBoxColumn3.Name = "ItemType";
-            gridViewTextBoxColumn3.Width = 151;
+            gridViewTextBoxColumn3.Width = 56;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "ItemDescription";
             gridViewTextBoxColumn4.HeaderText = "ItemDescription";
             gridViewTextBoxColumn4.IsAutoGenerated = true;
             gridViewTextBoxColumn4.Name = "ItemDescription";
-            gridViewTextBoxColumn4.Width = 151;
-            this.ItemComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn4.Width = 54;
+            this.CmbItems.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn4,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
             gridViewTextBoxColumn4});
-            this.ItemComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.ItemComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.ItemComboBox.EditorControl.Name = "NestedRadGridView";
-            this.ItemComboBox.EditorControl.ReadOnly = true;
-            this.ItemComboBox.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ItemComboBox.EditorControl.ShowGroupPanel = false;
-            this.ItemComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.ItemComboBox.EditorControl.TabIndex = 0;
-            this.ItemComboBox.Location = new System.Drawing.Point(73, 25);
-            this.ItemComboBox.Name = "ItemComboBox";
-            this.ItemComboBox.Size = new System.Drawing.Size(232, 20);
-            this.ItemComboBox.TabIndex = 0;
-            this.ItemComboBox.TabStop = false;
-            this.ItemComboBox.ThemeName = "VisualStudio2012Light";
+            this.CmbItems.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.CmbItems.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.CmbItems.EditorControl.Name = "NestedRadGridView";
+            this.CmbItems.EditorControl.ReadOnly = true;
+            this.CmbItems.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.CmbItems.EditorControl.ShowGroupPanel = false;
+            this.CmbItems.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.CmbItems.EditorControl.TabIndex = 0;
+            this.CmbItems.Location = new System.Drawing.Point(73, 25);
+            this.CmbItems.Name = "CmbItems";
+            this.CmbItems.Size = new System.Drawing.Size(232, 20);
+            this.CmbItems.TabIndex = 0;
+            this.CmbItems.TabStop = false;
+            this.CmbItems.ThemeName = "VisualStudio2012Light";
+            this.CmbItems.SelectedIndexChanged += new System.EventHandler(this.ItemComboBox_SelectedIndexChanged);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(32, 233);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(380, 67);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "هذة شاشة المبيعات يا محمد... المفترض تخفي الكمبوبكس بتاع الالستور لأن كل أيتــم ت" +
+    "ابع لستور ... أنا بعملها ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FrmAddMainStore_StoreWithDrawal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(350, 255);
+            this.ClientSize = new System.Drawing.Size(421, 309);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -307,12 +323,12 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Addbtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StoreComboBox.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StoreComboBox.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StoreComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemComboBox.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemComboBox.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbStores.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbStores.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbStores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbItems.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbItems.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -322,12 +338,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private Telerik.WinControls.UI.RadMultiColumnComboBox ItemComboBox;
-        private Telerik.WinControls.UI.RadMultiColumnComboBox StoreComboBox;
+        private Telerik.WinControls.UI.RadMultiColumnComboBox CmbItems;
+        private Telerik.WinControls.UI.RadMultiColumnComboBox CmbStores;
         private System.Windows.Forms.TextBox commentTextBox;
         private System.Windows.Forms.TextBox qtyTextBox;
         private Telerik.WinControls.UI.RadButton Addbtn;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
+        private System.Windows.Forms.Label label1;
     }
 }
