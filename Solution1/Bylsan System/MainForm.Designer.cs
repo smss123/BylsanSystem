@@ -326,9 +326,10 @@
             // MailBtn
             // 
             this.MailBtn.Image = ((System.Drawing.Image)(resources.GetObject("MailBtn.Image")));
+            this.MailBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.MailBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.MailBtn.Name = "MailBtn";
-            this.MailBtn.Size = new System.Drawing.Size(59, 35);
+            this.MailBtn.Size = new System.Drawing.Size(74, 35);
             this.MailBtn.Text = "Mail";
             this.MailBtn.Click += new System.EventHandler(this.MailBtn_Click);
             // 
@@ -666,7 +667,7 @@
             this.SalesTileElement});
             this.tileGroupElement1.Name = "tileGroupElement1";
             this.tileGroupElement1.RowsCount = 3;
-            this.tileGroupElement1.Text = "Order";
+            this.tileGroupElement1.Text = "Order And Sales";
             this.tileGroupElement1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.tileGroupElement1.Click += new System.EventHandler(this.tileGroupElement1_Click);
             // 
@@ -706,10 +707,12 @@
             this.ManagmentOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(200)))), ((int)(((byte)(37)))));
             this.ManagmentOrder.Column = 1;
             this.ManagmentOrder.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.ManagmentOrder.Image = ((System.Drawing.Image)(resources.GetObject("ManagmentOrder.Image")));
             this.ManagmentOrder.Name = "ManagmentOrder";
             this.ManagmentOrder.Row = 1;
             this.ManagmentOrder.Text = "Desinger Order";
             this.ManagmentOrder.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.ManagmentOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.ManagmentOrder.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // radTileElement1
@@ -796,10 +799,12 @@
             this.WithDrawalBtn.AccessibleName = "With Drawal";
             this.WithDrawalBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(161)))), ((int)(((byte)(237)))));
             this.WithDrawalBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.WithDrawalBtn.Image = ((System.Drawing.Image)(resources.GetObject("WithDrawalBtn.Image")));
             this.WithDrawalBtn.Name = "WithDrawalBtn";
             this.WithDrawalBtn.Row = 1;
             this.WithDrawalBtn.Text = "With Drawal";
             this.WithDrawalBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.WithDrawalBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.WithDrawalBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // storeBtn
@@ -888,11 +893,13 @@
             this.AccountCategoryTileElement3.AccessibleDescription = " Account Category";
             this.AccountCategoryTileElement3.AccessibleName = " Account Category";
             this.AccountCategoryTileElement3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(179)))), ((int)(((byte)(34)))));
-            this.AccountCategoryTileElement3.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.AccountCategoryTileElement3.Font = new System.Drawing.Font("Segoe UI Light", 12F);
+            this.AccountCategoryTileElement3.Image = ((System.Drawing.Image)(resources.GetObject("AccountCategoryTileElement3.Image")));
             this.AccountCategoryTileElement3.Name = "AccountCategoryTileElement3";
             this.AccountCategoryTileElement3.Row = 1;
             this.AccountCategoryTileElement3.Text = " Account Category";
             this.AccountCategoryTileElement3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.AccountCategoryTileElement3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.AccountCategoryTileElement3.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // ShowAccountsBtn
