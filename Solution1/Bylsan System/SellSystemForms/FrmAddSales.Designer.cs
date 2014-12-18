@@ -138,6 +138,7 @@
             this.txtBarCode.Name = "txtBarCode";
             this.txtBarCode.Size = new System.Drawing.Size(131, 20);
             this.txtBarCode.TabIndex = 6;
+            this.txtBarCode.TextChanged += new System.EventHandler(this.txtBarCode_TextChanged);
             this.txtBarCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarCode_KeyDown);
             // 
             // label2

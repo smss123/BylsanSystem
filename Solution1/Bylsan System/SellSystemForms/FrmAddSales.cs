@@ -142,8 +142,8 @@ namespace Bylsan_System.SellSystemForms
         StoreOperationManager OptrTb = new StoreOperationManager();
         private void Okeybtn_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 if (DGVSellItems.Rows.Count != 0)
                 {
 
@@ -195,7 +195,7 @@ namespace Bylsan_System.SellSystemForms
                          OptrTb = new StoreOperationManager()
                          {                            
                              StoreID = xSellStore .ID  ,
-                             ProcessType = "Pull", // ســحب
+                             ProcessType = "Darwal", // ســحب
                              ProcessDate = DateTime .Now ,
                              Qty = int.Parse(rw.Cells[4].Value.ToString()),
                              UserID = XamaDataLayer.Security .UserInfo .CurrentUserID 
@@ -204,13 +204,17 @@ namespace Bylsan_System.SellSystemForms
                         //=======================================================
                     }
                     Operation.ShowToustOk("Bill Has Been Saved ..", this);
+                    DGVSellItems.Rows.Clear();
+                    BillCostBox.Text = "";
+                    txtBarCode.Text = "";
+                    TxtBillNumber.Text = "";
                 }
-            //}
-            //catch (Exception)
-            //{
-                
-                
-            //}
+            }
+            catch (Exception)
+            {
+
+
+            }
         }
 
         private void TxtBillNumber_KeyPress(object sender, KeyPressEventArgs e)
@@ -242,41 +246,58 @@ namespace Bylsan_System.SellSystemForms
                     xItemID = 0;
 
                     var GetItem = SellItemsCmd.GetSellItemByID(int.Parse(txtBarCode.Text.ToString()));
-                    xItemID = GetItem[1].ID;
-                    Application.DoEvents();
-                    //==================================================
-
-                    if (DGVSellItems.Rows.Count != 0)
+                    if (GetItem.Count == 0)
                     {
-                        for (int i = 0; i < DGVSellItems.Rows.Count; i++)
+                        Operation.ShowToustOk("This Item Not Found ", this);
+
+                    }
+                    else
+                    {
+
+
+                        xItemID = GetItem[0].ID;
+                        Application.DoEvents();
+                        //==================================================
+
+                        if (DGVSellItems.Rows.Count != 0)
                         {
-                            if (int.Parse(DGVSellItems.Rows[i].Cells[0].Value.ToString()) == xItemID)
+                            for (int i = 0; i < DGVSellItems.Rows.Count; i++)
                             {
-                                DGVSellItems.Rows[i].Cells[4].Value = int.Parse(DGVSellItems.Rows[i].Cells[4].Value.ToString()) + 1;
-                                DGVSellItems.Rows[i].Cells[3].Value = (int.Parse(ListItems.SelectedItems[0].SubItems[3].Text) + int.Parse(DGVSellItems.Rows[i].Cells[3].Value.ToString()));
-                                CalcTotal();
-                                return;
+                                if (int.Parse(DGVSellItems.Rows[i].Cells[0].Value.ToString()) == xItemID)
+                                {
+                                    DGVSellItems.Rows[i].Cells[4].Value = int.Parse(DGVSellItems.Rows[i].Cells[4].Value.ToString()) + 1;
+                                    DGVSellItems.Rows[i].Cells[3].Value = (int.Parse(ListItems.SelectedItems[0].SubItems[3].Text) + int.Parse(DGVSellItems.Rows[i].Cells[3].Value.ToString()));
+                                    CalcTotal();
+                                    return;
+                                }
                             }
                         }
-                    }
 
 
-                    DGVSellItems.Rows.Add(new string[] 
+                        DGVSellItems.Rows.Add(new string[] 
                             {
                                 xItemID.ToString(),
-                                ListItems.SelectedItems[0].SubItems[1].Text,
-                                ListItems.SelectedItems[0].SubItems[2].Text,
-                                ListItems.SelectedItems[0].SubItems[3].Text,
+                               GetItem[0].ItemName,// ListItems.SelectedItems[0].SubItems[1].Text,
+                                GetItem[0].Description,//ListItems.SelectedItems[0].SubItems[2].Text,
+                               GetItem[0].ItemPrice.ToString(), //ListItems.SelectedItems[0].SubItems[3].Text,
                                 "1"
                             });
 
-                    CalcTotal();
+                        CalcTotal();
+                       
+                    }
                 }
+
+                txtBarCode.Clear();
+                txtBarCode.Focus();
 
             }            
         }
 
-      
+        private void txtBarCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
        
 

@@ -59,6 +59,15 @@ namespace XamaDataLayer.Main_Store
                       select i).ToList();
            return lst;
        }
+
+       public static Store ChekByItemID(int ItmId)
+       {
+           db = new DbDataContext();
+           var Rec = (from i in db.Stores
+                      where i.ItemID == ItmId
+                      select i).Single ();
+           return Rec;
+       }
        //================================================================
        public static List< Store > GetAllStores()
        {

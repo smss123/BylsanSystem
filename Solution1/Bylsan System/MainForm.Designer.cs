@@ -79,6 +79,7 @@
             this.btnSales = new System.Windows.Forms.ToolStripDropDownButton();
             this.sellItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addIteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addItemsQtyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -370,7 +371,7 @@
             this.addItemsToolStripMenuItem,
             this.manageItemsBtn});
             this.itemsToolStripMenuItem.Name = "itemsToolStripMenuItem";
-            this.itemsToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.itemsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.itemsToolStripMenuItem.Text = "Items";
             // 
             // addItemsToolStripMenuItem
@@ -393,20 +394,20 @@
             this.AddStoreBtn,
             this.manageStoreBtn});
             this.storeToolStripMenuItem.Name = "storeToolStripMenuItem";
-            this.storeToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.storeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.storeToolStripMenuItem.Text = "Store";
             // 
             // AddStoreBtn
             // 
             this.AddStoreBtn.Name = "AddStoreBtn";
-            this.AddStoreBtn.Size = new System.Drawing.Size(147, 22);
+            this.AddStoreBtn.Size = new System.Drawing.Size(152, 22);
             this.AddStoreBtn.Text = "Add Store";
             this.AddStoreBtn.Click += new System.EventHandler(this.AddStoreBtn_Click);
             // 
             // manageStoreBtn
             // 
             this.manageStoreBtn.Name = "manageStoreBtn";
-            this.manageStoreBtn.Size = new System.Drawing.Size(147, 22);
+            this.manageStoreBtn.Size = new System.Drawing.Size(152, 22);
             this.manageStoreBtn.Text = "Manage Store";
             this.manageStoreBtn.Click += new System.EventHandler(this.manageStoreBtn_Click);
             // 
@@ -416,7 +417,7 @@
             this.addStoreManagerToolStripMenuItem,
             this.manageStoreManagerToolStripMenuItem});
             this.storeManagerToolStripMenuItem.Name = "storeManagerToolStripMenuItem";
-            this.storeManagerToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.storeManagerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.storeManagerToolStripMenuItem.Text = "StoreManager";
             // 
             // addStoreManagerToolStripMenuItem
@@ -439,7 +440,7 @@
             this.AddWithDrawalBtn,
             this.ManageWithDrawalBtn});
             this.withDrowlToolStripMenuItem.Name = "withDrowlToolStripMenuItem";
-            this.withDrowlToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.withDrowlToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.withDrowlToolStripMenuItem.Text = "WithDrawal";
             // 
             // AddWithDrawalBtn
@@ -462,7 +463,7 @@
             this.AddSupplierBtn,
             this.manageSupplierBtn});
             this.SupplierBtn.Name = "SupplierBtn";
-            this.SupplierBtn.Size = new System.Drawing.Size(148, 22);
+            this.SupplierBtn.Size = new System.Drawing.Size(152, 22);
             this.SupplierBtn.Text = "Supplier";
             // 
             // AddSupplierBtn
@@ -477,6 +478,7 @@
             this.manageSupplierBtn.Name = "manageSupplierBtn";
             this.manageSupplierBtn.Size = new System.Drawing.Size(163, 22);
             this.manageSupplierBtn.Text = "Manage Supplier";
+            this.manageSupplierBtn.Click += new System.EventHandler(this.manageSupplierBtn_Click);
             // 
             // expensesShowBtn
             // 
@@ -510,7 +512,8 @@
             // sellItemsToolStripMenuItem
             // 
             this.sellItemsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addIteToolStripMenuItem});
+            this.addIteToolStripMenuItem,
+            this.addItemsQtyToolStripMenuItem});
             this.sellItemsToolStripMenuItem.Name = "sellItemsToolStripMenuItem";
             this.sellItemsToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.sellItemsToolStripMenuItem.Text = "Sell Items";
@@ -518,9 +521,16 @@
             // addIteToolStripMenuItem
             // 
             this.addIteToolStripMenuItem.Name = "addIteToolStripMenuItem";
-            this.addIteToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.addIteToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.addIteToolStripMenuItem.Text = "Add Item";
             this.addIteToolStripMenuItem.Click += new System.EventHandler(this.addIteToolStripMenuItem_Click);
+            // 
+            // addItemsQtyToolStripMenuItem
+            // 
+            this.addItemsQtyToolStripMenuItem.Name = "addItemsQtyToolStripMenuItem";
+            this.addItemsQtyToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.addItemsQtyToolStripMenuItem.Text = "Add Item\'s Qty";
+            this.addItemsQtyToolStripMenuItem.Click += new System.EventHandler(this.addItemsQtyToolStripMenuItem_Click);
             // 
             // salesToolStripMenuItem
             // 
@@ -716,5 +726,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ToolStripMenuItem addItemsQtyToolStripMenuItem;
     }
 }

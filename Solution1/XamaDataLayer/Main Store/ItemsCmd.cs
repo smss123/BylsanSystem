@@ -51,6 +51,13 @@ namespace XamaDataLayer.Main_Store
            }
        }
 
+       public static Item ChekByName(string nam)
+       {
+          
+           db = new DbDataContext();
+           var xItem = (from c in db.Items where c.ItemName == nam select c).Single();
+           return xItem;
+       }
        public static List<Item> GetAllItems() { 
            
            db = new DbDataContext();
