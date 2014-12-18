@@ -191,7 +191,7 @@ namespace Bylsan_System.MainStoreForms
         public int XItemID { get; set; }
         public Store  xStoreTb { get; set; }
         public int   xAvailableQty { get; set; }
-        public int ItmPrice  { get; set; }
+        public int ItmUnitPrice  { get; set; }
         public int TotalPrice { get; set; }
         private void ItemComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -204,8 +204,8 @@ namespace Bylsan_System.MainStoreForms
                 //===============================================================
                 // Get Item Price From  {  Store Sell Table }
                 Store_Sell tb = StoreSalesCmd.GetAllSTore_SellByItemID(XItemID);
-                ItmPrice = 0;
-                ItmPrice = int .Parse (tb.Price.ToString ());
+                ItmUnitPrice = 0;
+                ItmUnitPrice = int .Parse (tb.UnitPrice .ToString ());
             }
         }
 
@@ -220,7 +220,7 @@ namespace Bylsan_System.MainStoreForms
         void WriteAtStoreManagerTable()
         {
             TotalPrice = 0 ;
-            TotalPrice = int .Parse (qtyTextBox .Text .ToString ()) * ItmPrice ;
+            TotalPrice = int .Parse (qtyTextBox .Text .ToString ()) * ItmUnitPrice ;
             StoreManager tb = new StoreManager () {
              StoreID = xStoreTb .ID ,
              QtyInOrOut = int .Parse (qtyTextBox .Text .ToString ()),
