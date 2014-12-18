@@ -353,5 +353,10 @@ namespace Bylsan_System
             FrmManageMainStore_Supplier f = new FrmManageMainStore_Supplier();
             f.Show();
         }
+
+        private void tileGroupElement1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
