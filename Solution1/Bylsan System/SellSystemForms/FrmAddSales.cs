@@ -35,7 +35,7 @@ namespace Bylsan_System.SellSystemForms
 
             Operation.BeginOperation(this);
             int ImgIndx = 0;
-            var AllSellItems = SellItemsCmd.GetAllSellItems();
+            var AllSellItems =   SellItemsCmd.GetAllSellItems();
 
             ListItems.Items.Clear();
 
@@ -297,6 +297,28 @@ namespace Bylsan_System.SellSystemForms
         private void txtBarCode_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void MasterTemplate_CommandCellClick(object sender, EventArgs e)
+        {
+            var col = DGVSellItems.CurrentColumn.Index;
+            if (col == 5)
+            {
+                Operation.BeginOperation(this);
+                
+             var   GetItemPrice  =  SellItemsCmd .GetSellItemByID(int .Parse (DGVSellItems .CurrentRow .Cells [0].Value.ToString ()) )[0].ItemPrice ;
+
+             DGVSellItems.CurrentRow.Cells[4].Value = int.Parse(DGVSellItems.CurrentRow.Cells[4].Value.ToString()) - 1;
+             DGVSellItems.CurrentRow.Cells[3].Value = int.Parse(DGVSellItems.CurrentRow.Cells[3].Value.ToString()) - GetItemPrice ;
+             CalcTotal();
+                int Indx = 0 ; 
+                Indx = DGVSellItems .CurrentRow .Index ;
+             if (int.Parse(DGVSellItems.CurrentRow.Cells[4].Value.ToString()) == 0)
+             {
+                 DGVSellItems.Rows.RemoveAt(Indx);
+             }
+             Operation.EndOperation(this);
+            }
         }
 
        

@@ -34,23 +34,24 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.RefreshBTn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ListItems = new System.Windows.Forms.ListView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Okeybtn = new Telerik.WinControls.UI.RadButton();
+            this.BillCostBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtBarCode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtBillNumber = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.BillCostBox = new System.Windows.Forms.TextBox();
-            this.Okeybtn = new Telerik.WinControls.UI.RadButton();
             this.DGVSellItems = new Telerik.WinControls.UI.RadGridView();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.RefreshBTn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -70,6 +71,20 @@
             this.toolStrip1.Size = new System.Drawing.Size(729, 39);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // RefreshBTn
+            // 
+            this.RefreshBTn.Image = global::Bylsan_System.Properties.Resources.Refrech;
+            this.RefreshBTn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.RefreshBTn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RefreshBTn.Name = "RefreshBTn";
+            this.RefreshBTn.Size = new System.Drawing.Size(79, 36);
+            this.RefreshBTn.Text = "Refresh";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
             // statusStrip1
             // 
@@ -122,6 +137,29 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order";
             // 
+            // Okeybtn
+            // 
+            this.Okeybtn.Image = global::Bylsan_System.Properties.Resources.Save;
+            this.Okeybtn.Location = new System.Drawing.Point(625, 280);
+            this.Okeybtn.Name = "Okeybtn";
+            this.Okeybtn.Size = new System.Drawing.Size(99, 35);
+            this.Okeybtn.TabIndex = 1;
+            this.Okeybtn.Text = " Save Bill";
+            this.Okeybtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Okeybtn.ThemeName = "VisualStudio2012Light";
+            this.Okeybtn.Click += new System.EventHandler(this.Okeybtn_Click);
+            // 
+            // BillCostBox
+            // 
+            this.BillCostBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BillCostBox.ForeColor = System.Drawing.Color.Red;
+            this.BillCostBox.Location = new System.Drawing.Point(66, 291);
+            this.BillCostBox.Name = "BillCostBox";
+            this.BillCostBox.ReadOnly = true;
+            this.BillCostBox.Size = new System.Drawing.Size(95, 22);
+            this.BillCostBox.TabIndex = 2;
+            this.BillCostBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -131,6 +169,17 @@
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Bar Code:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.Location = new System.Drawing.Point(12, 295);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Bill Cost:";
             // 
             // txtBarCode
             // 
@@ -159,40 +208,6 @@
             this.TxtBillNumber.TabIndex = 4;
             this.TxtBillNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBillNumber_KeyPress);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(12, 295);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Bill Cost:";
-            // 
-            // BillCostBox
-            // 
-            this.BillCostBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BillCostBox.ForeColor = System.Drawing.Color.Red;
-            this.BillCostBox.Location = new System.Drawing.Point(66, 291);
-            this.BillCostBox.Name = "BillCostBox";
-            this.BillCostBox.ReadOnly = true;
-            this.BillCostBox.Size = new System.Drawing.Size(95, 22);
-            this.BillCostBox.TabIndex = 2;
-            this.BillCostBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Okeybtn
-            // 
-            this.Okeybtn.Image = global::Bylsan_System.Properties.Resources.Save;
-            this.Okeybtn.Location = new System.Drawing.Point(625, 280);
-            this.Okeybtn.Name = "Okeybtn";
-            this.Okeybtn.Size = new System.Drawing.Size(99, 35);
-            this.Okeybtn.TabIndex = 1;
-            this.Okeybtn.Text = " Save Bill";
-            this.Okeybtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Okeybtn.ThemeName = "VisualStudio2012Light";
-            this.Okeybtn.Click += new System.EventHandler(this.Okeybtn_Click);
-            // 
             // DGVSellItems
             // 
             this.DGVSellItems.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -214,56 +229,48 @@
             gridViewTextBoxColumn2.FieldName = "ItemName";
             gridViewTextBoxColumn2.HeaderText = "Item Name";
             gridViewTextBoxColumn2.Name = "ItemName";
-            gridViewTextBoxColumn2.Width = 175;
+            gridViewTextBoxColumn2.Width = 162;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "Description";
             gridViewTextBoxColumn3.HeaderText = "Description";
             gridViewTextBoxColumn3.Name = "Description";
-            gridViewTextBoxColumn3.Width = 233;
+            gridViewTextBoxColumn3.Width = 216;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "ItemPrice";
             gridViewTextBoxColumn4.HeaderText = "Item Price";
             gridViewTextBoxColumn4.Name = "ItemPrice";
             gridViewTextBoxColumn4.ReadOnly = true;
             gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn4.Width = 117;
+            gridViewTextBoxColumn4.Width = 108;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.HeaderText = "Ouantity";
             gridViewTextBoxColumn5.Name = "Quantity";
             gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn5.Width = 176;
+            gridViewTextBoxColumn5.Width = 162;
+            gridViewCommandColumn1.EnableExpressionEditor = false;
+            gridViewCommandColumn1.HeaderText = "-";
+            gridViewCommandColumn1.Name = "colbtn";
+            gridViewCommandColumn1.Width = 54;
             this.DGVSellItems.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
             gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5});
+            gridViewTextBoxColumn5,
+            gridViewCommandColumn1});
             this.DGVSellItems.Name = "DGVSellItems";
             this.DGVSellItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DGVSellItems.Size = new System.Drawing.Size(717, 223);
             this.DGVSellItems.TabIndex = 0;
             this.DGVSellItems.Text = "DGVItems";
             this.DGVSellItems.ThemeName = "VisualStudio2012Light";
+            this.DGVSellItems.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.MasterTemplate_CommandCellClick);
             // 
             // imageList1
             // 
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // RefreshBTn
-            // 
-            this.RefreshBTn.Image = global::Bylsan_System.Properties.Resources.Refrech;
-            this.RefreshBTn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.RefreshBTn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RefreshBTn.Name = "RefreshBTn";
-            this.RefreshBTn.Size = new System.Drawing.Size(79, 36);
-            this.RefreshBTn.Text = "Refresh";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
             // FrmAddSales
             // 
