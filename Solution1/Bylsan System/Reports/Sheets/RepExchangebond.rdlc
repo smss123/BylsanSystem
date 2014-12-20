@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!bondName.Value</Value>
+                <Value>=Fields!PaymentVoucherNumber.Value</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -22,9 +22,9 @@
         </Paragraphs>
         <rd:DefaultName>bondNumber</rd:DefaultName>
         <Top>1.95474cm</Top>
-        <Left>2.8937cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.55292cm</Width>
+        <Left>2.33808cm</Left>
+        <Height>0.62646cm</Height>
+        <Width>2.87042cm</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -42,7 +42,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!bondName.Value</Value>
+                <Value>=Fields!PaymentVoucherName.Value</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -57,7 +57,7 @@
         <Top>1.95474cm</Top>
         <Left>7.38833cm</Left>
         <Height>0.62646cm</Height>
-        <Width>5.14584cm</Width>
+        <Width>6.1248cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -76,7 +76,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Bond Number:</Value>
+                <Value>Number:</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -91,7 +91,7 @@
         <Top>1.95474cm</Top>
         <Left>0.35842cm</Left>
         <Height>0.62646cm</Height>
-        <Width>2.5cm</Width>
+        <Width>1.94438cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -181,7 +181,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!bondDate.Value</Value>
+                <Value>=Fields!Date.Value</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -215,7 +215,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!bondCost.Value</Value>
+                <Value>=Fields!Cost.Value</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -353,7 +353,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Exchange bond</Value>
+                <Value>Payment Voucher</Value>
                 <Style>
                   <FontSize>18pt</FontSize>
                 </Style>
@@ -374,6 +374,7 @@
           <Border>
             <Style>None</Style>
           </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -391,6 +392,70 @@
           </Border>
         </Style>
       </Line>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Rec s.Sig:..............................................</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>4.48564cm</Top>
+        <Left>0.35842cm</Left>
+        <Height>0.6cm</Height>
+        <Width>7.28302cm</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Rec s.Sig:..............................................</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>9.69228cm</Top>
+        <Left>0.35842cm</Left>
+        <Height>0.6cm</Height>
+        <Width>7.28302cm</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
       <Textbox Name="bondNumber3">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -398,7 +463,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!bondName.Value</Value>
+                <Value>=Fields!PaymentVoucherNumber.Value</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -410,11 +475,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>bondNumber</rd:DefaultName>
-        <Top>7.31696cm</Top>
-        <Left>3.18208cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.55292cm</Width>
-        <ZIndex>12</ZIndex>
+        <Top>7.21113cm</Top>
+        <Left>2.33808cm</Left>
+        <Height>0.62646cm</Height>
+        <Width>2.87042cm</Width>
+        <ZIndex>14</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -432,7 +497,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!bondName.Value</Value>
+                <Value>=Fields!PaymentVoucherName.Value</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -444,11 +509,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>bondNumber</rd:DefaultName>
-        <Top>7.31696cm</Top>
-        <Left>7.67671cm</Left>
+        <Top>7.21113cm</Top>
+        <Left>7.38833cm</Left>
         <Height>0.62646cm</Height>
-        <Width>5.14584cm</Width>
-        <ZIndex>13</ZIndex>
+        <Width>6.1248cm</Width>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -466,7 +531,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Bond Number:</Value>
+                <Value>Number:</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -478,11 +543,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>7.31696cm</Top>
-        <Left>0.6468cm</Left>
+        <Top>7.21113cm</Top>
+        <Left>0.35842cm</Left>
         <Height>0.62646cm</Height>
-        <Width>2.5cm</Width>
-        <ZIndex>14</ZIndex>
+        <Width>1.94438cm</Width>
+        <ZIndex>16</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -513,11 +578,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>7.31696cm</Top>
-        <Left>6.19977cm</Left>
+        <Top>7.21113cm</Top>
+        <Left>5.91139cm</Left>
         <Height>0.62646cm</Height>
         <Width>1.44167cm</Width>
-        <ZIndex>15</ZIndex>
+        <ZIndex>17</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -548,11 +613,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>8.74571cm</Top>
-        <Left>0.6468cm</Left>
+        <Top>8.63988cm</Top>
+        <Left>0.35842cm</Left>
         <Height>0.62646cm</Height>
         <Width>1.30937cm</Width>
-        <ZIndex>16</ZIndex>
+        <ZIndex>18</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -571,7 +636,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!bondDate.Value</Value>
+                <Value>=Fields!Date.Value</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -583,11 +648,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>bondDate</rd:DefaultName>
-        <Top>8.74571cm</Top>
-        <Left>1.95618cm</Left>
+        <Top>8.63988cm</Top>
+        <Left>1.6678cm</Left>
         <Height>0.62646cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>17</ZIndex>
+        <ZIndex>19</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -605,7 +670,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!bondCost.Value</Value>
+                <Value>=Fields!Cost.Value</Value>
                 <Style>
                   <FontFamily>times New Roman</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -617,11 +682,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>bondCost</rd:DefaultName>
-        <Top>8.74571cm</Top>
-        <Left>6.05866cm</Left>
+        <Top>8.63988cm</Top>
+        <Left>5.77028cm</Left>
         <Height>0.62646cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>18</ZIndex>
+        <ZIndex>20</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -651,11 +716,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>8.74571cm</Top>
-        <Left>4.8904cm</Left>
+        <Top>8.63988cm</Top>
+        <Left>4.60202cm</Left>
         <Height>0.62646cm</Height>
         <Width>1.13298cm</Width>
-        <ZIndex>19</ZIndex>
+        <ZIndex>21</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -686,11 +751,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Remaining</rd:DefaultName>
-        <Top>8.74571cm</Top>
-        <Left>11.15076cm</Left>
+        <Top>8.63988cm</Top>
+        <Left>10.86238cm</Left>
         <Height>0.62646cm</Height>
         <Width>3.32021cm</Width>
-        <ZIndex>20</ZIndex>
+        <ZIndex>22</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -720,11 +785,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>8.74571cm</Top>
-        <Left>8.86243cm</Left>
+        <Top>8.63988cm</Top>
+        <Left>8.57405cm</Left>
         <Height>0.62646cm</Height>
         <Width>2.28833cm</Width>
-        <ZIndex>21</ZIndex>
+        <ZIndex>23</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -743,7 +808,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Exchange bond</Value>
+                <Value>Payment Voucher</Value>
                 <Style>
                   <FontSize>18pt</FontSize>
                 </Style>
@@ -755,15 +820,16 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>5.75592cm</Top>
-        <Left>4.8904cm</Left>
+        <Top>5.65009cm</Top>
+        <Left>4.60202cm</Left>
         <Height>0.94396cm</Height>
         <Width>6.76307cm</Width>
-        <ZIndex>22</ZIndex>
+        <ZIndex>24</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -771,7 +837,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>4.05208in</Height>
+    <Height>4.22916in</Height>
     <Style />
   </Body>
   <Width>6.63925in</Width>
@@ -822,20 +888,20 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="bondCost">
-          <DataField>bondCost</DataField>
+        <Field Name="Cost">
+          <DataField>Cost</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="bondDate">
-          <DataField>bondDate</DataField>
+        <Field Name="Date">
+          <DataField>Date</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="bondName">
-          <DataField>bondName</DataField>
+        <Field Name="PaymentVoucherName">
+          <DataField>PaymentVoucherName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="bondNumber">
-          <DataField>bondNumber</DataField>
+        <Field Name="PaymentVoucherNumber">
+          <DataField>PaymentVoucherNumber</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Remaining">
@@ -845,8 +911,8 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>Bylsan_System.Reports.ReportsObject</rd:DataSetName>
-        <rd:TableName>ExchangebondReportObj</rd:TableName>
-        <rd:ObjectDataSourceType>Bylsan_System.Reports.ReportsObject.ExchangebondReportObj, Bylsan System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>PaymentVoucherReportObj</rd:TableName>
+        <rd:ObjectDataSourceType>Bylsan_System.Reports.ReportsObject.PaymentVoucherReportObj, Bylsan System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

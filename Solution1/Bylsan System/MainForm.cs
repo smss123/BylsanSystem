@@ -22,6 +22,7 @@ using XamaDataLayer.MailServer;
 using Bylsan_System.SellSystemForms;
 using Bylsan_System.SenarioAddOrderForms;
 using Bylsan_System.AccountsX.Acc;
+using Bylsan_System.SecurityForm;
 namespace Bylsan_System
 {
     public partial class MainForm : RadForm
@@ -359,6 +360,12 @@ namespace Bylsan_System
         private void tileGroupElement1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void UserManagementBtn_Click(object sender, EventArgs e)
+        {
+            FrmUserShow frm = new FrmUserShow();
+            frm.ShowDialog();
         }
     }
 }

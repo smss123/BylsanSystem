@@ -32,7 +32,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.UserDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.UserManagementBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.EmployeeDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.AddEmloyeebtn = new System.Windows.Forms.ToolStripMenuItem();
@@ -139,7 +139,7 @@
             this.btnSales});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1326, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(1282, 38);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -148,7 +148,7 @@
             this.UserDropDownButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.UserDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addUserToolStripMenuItem,
-            this.manToolStripMenuItem});
+            this.UserManagementBtn});
             this.UserDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("UserDropDownButton.Image")));
             this.UserDropDownButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.UserDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -162,11 +162,12 @@
             this.addUserToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.addUserToolStripMenuItem.Text = "Add User";
             // 
-            // manToolStripMenuItem
+            // UserManagementBtn
             // 
-            this.manToolStripMenuItem.Name = "manToolStripMenuItem";
-            this.manToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.manToolStripMenuItem.Text = " User Management";
+            this.UserManagementBtn.Name = "UserManagementBtn";
+            this.UserManagementBtn.Size = new System.Drawing.Size(174, 22);
+            this.UserManagementBtn.Text = " User Management";
+            this.UserManagementBtn.Click += new System.EventHandler(this.UserManagementBtn_Click);
             // 
             // toolStripSeparator1
             // 
@@ -559,7 +560,7 @@
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 559);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1326, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1282, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -644,7 +645,7 @@
             this.radPanorama1.Name = "radPanorama1";
             this.radPanorama1.RowsCount = 6;
             this.radPanorama1.ShowGroups = true;
-            this.radPanorama1.Size = new System.Drawing.Size(1326, 521);
+            this.radPanorama1.Size = new System.Drawing.Size(1282, 521);
             this.radPanorama1.TabIndex = 10;
             this.radPanorama1.Text = "radPanorama1";
             this.radPanorama1.ThemeName = "VisualStudio2012Light";
@@ -973,7 +974,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1326, 581);
+            this.ClientSize = new System.Drawing.Size(1282, 581);
             this.Controls.Add(this.radPanorama1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -1008,7 +1009,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton UserDropDownButton;
         private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem UserManagementBtn;
         private System.Windows.Forms.ToolStripDropDownButton EmployeeDropDownButton;
         private System.Windows.Forms.ToolStripMenuItem AddEmloyeebtn;
         private System.Windows.Forms.ToolStripMenuItem managementEmployeeToolStripMenuItem;

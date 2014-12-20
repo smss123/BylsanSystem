@@ -422,7 +422,7 @@
     <Compile Include="Reports\ReportsObject\AccountDailyReportObj.cs" />
     <Compile Include="Reports\ReportsObject\CustomerReportObj.cs" />
     <Compile Include="Reports\ReportsObject\EmployeeReportObj.cs" />
-    <Compile Include="Reports\ReportsObject\ExchangebondReportObj.cs" />
+    <Compile Include="Reports\ReportsObject\PaymentVoucherReportObj.cs" />
     <Compile Include="Reports\ReportsObject\ExpenssesMovmentReportObj.cs" />
     <Compile Include="Reports\ReportsObject\ItemsStoreReportObj.cs" />
     <Compile Include="Reports\ReportsObject\OrderReportObj.cs" />
@@ -751,6 +751,7 @@
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.ExpenssesMovmentReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.ItemsStoreReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.OrderReportObj.datasource" />
+    <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.PaymentVoucherReportObj.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.Account.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.AccountCategory.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.AccountDaily.datasource" />

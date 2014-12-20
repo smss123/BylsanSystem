@@ -502,6 +502,7 @@
                                           <RightBorder>
                                             <Color>Black</Color>
                                           </RightBorder>
+                                          <BackgroundColor>WhiteSmoke</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
@@ -548,6 +549,7 @@
                                           <RightBorder>
                                             <Color>Black</Color>
                                           </RightBorder>
+                                          <BackgroundColor>WhiteSmoke</BackgroundColor>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
                                           <PaddingTop>2pt</PaddingTop>
