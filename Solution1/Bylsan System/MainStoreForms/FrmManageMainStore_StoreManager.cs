@@ -50,9 +50,7 @@ namespace Bylsan_System.MainStoreForms
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
-            FrmAddMainStore_StoreManager frm = new FrmAddMainStore_StoreManager();
-            frm.ShowDialog();
-
+            
 
         }
 

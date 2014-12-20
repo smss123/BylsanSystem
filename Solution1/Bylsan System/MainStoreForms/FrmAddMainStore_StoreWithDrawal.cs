@@ -52,34 +52,7 @@ namespace Bylsan_System.MainStoreForms
             #endregion
 
             //
-            #region "  fillStore "
-
-            this.CmbStores.MultiColumnComboBoxElement.DropDownWidth = 550;
-            Operation.BeginOperation(this);
-
-            this.Invoke((MethodInvoker)delegate
-            {
-                this.CmbStores.AutoFilter = true;
-                this.CmbStores.ValueMember = "ID";
-                this.CmbStores.DisplayMember = "ItemID";
-            });
-
-
-            var q1 = StoreCmd.GetAllStores();
-            this.Invoke((MethodInvoker)delegate
-            {
-                CmbStores.DataSource = q1;
-                FilterDescriptor filter = new FilterDescriptor();
-                filter.PropertyName = this.CmbStores.DisplayMember;
-                filter.Operator = FilterOperator.Contains;
-                this.CmbStores.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-
-
-
-
-            });
-            Operation.EndOperation(this);
-            #endregion
+          
 
         }
 
@@ -121,22 +94,7 @@ namespace Bylsan_System.MainStoreForms
             }
 
 
-            if (CmbStores.SelectedValue == null)
-            {
-                CmbStores.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
-
-
-                CmbStores.Focus();
-                errorProvider1.SetError(this.CmbStores, "Please Enter Store ");
-
-                return;
-            }
-            else
-            {
-                CmbStores.MultiColumnComboBoxElement.BackColor = Color.White;
-                errorProvider1.Clear();
-
-            }
+           
 
 
  
@@ -235,7 +193,6 @@ namespace Bylsan_System.MainStoreForms
         {
           
             CmbItems.ResetText();
-            CmbStores.ResetText();
             qtyTextBox.Clear();
             commentTextBox.Clear();
             CmbItems.Focus();

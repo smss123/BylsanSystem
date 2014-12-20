@@ -289,12 +289,6 @@
     <Compile Include="MainStoreForms\FrmAddMainStore_Store.Designer.cs">
       <DependentUpon>FrmAddMainStore_Store.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainStoreForms\FrmAddMainStore_StoreManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainStoreForms\FrmAddMainStore_StoreManager.Designer.cs">
-      <DependentUpon>FrmAddMainStore_StoreManager.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainStoreForms\FrmAddMainStore_StoreWithDrawal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -623,9 +617,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainStoreForms\FrmAddMainStore_Store.resx">
       <DependentUpon>FrmAddMainStore_Store.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainStoreForms\FrmAddMainStore_StoreManager.resx">
-      <DependentUpon>FrmAddMainStore_StoreManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainStoreForms\FrmAddMainStore_StoreWithDrawal.resx">
       <DependentUpon>FrmAddMainStore_StoreWithDrawal.cs</DependentUpon>

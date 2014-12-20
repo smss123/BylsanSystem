@@ -293,8 +293,7 @@ namespace Bylsan_System
 
         private void addStoreManagerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmAddMainStore_StoreManager frm = new FrmAddMainStore_StoreManager();
-            frm.ShowDialog();
+           
         }
 
         private void manageStoreManagerToolStripMenuItem_Click(object sender, EventArgs e)
