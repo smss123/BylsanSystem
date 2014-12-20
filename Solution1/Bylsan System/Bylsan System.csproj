@@ -427,6 +427,7 @@
     <Compile Include="Reports\ReportsObject\ItemsStoreReportObj.cs" />
     <Compile Include="Reports\ReportsObject\OrderReportObj.cs" />
     <Compile Include="Reports\ReportsObject\ProductReportObj.cs" />
+    <Compile Include="Reports\ReportsObject\ReceiptVoucherObj.cs" />
     <Compile Include="SecurityForm\FrmEditUserPermession.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -700,6 +701,7 @@
     <EmbeddedResource Include="Reports\Sheets\RepExpenssesMovment.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepitemStore.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepOrderFollow.rdlc" />
+    <EmbeddedResource Include="Reports\Sheets\RepReceiptVoucher.rdlc" />
     <EmbeddedResource Include="SecurityForm\FrmEditUserPermession.resx">
       <DependentUpon>FrmEditUserPermession.cs</DependentUpon>
     </EmbeddedResource>
@@ -752,6 +754,7 @@
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.ItemsStoreReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.OrderReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.PaymentVoucherReportObj.datasource" />
+    <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.ReceiptVoucherObj.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.Account.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.AccountCategory.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.AccountDaily.datasource" />
