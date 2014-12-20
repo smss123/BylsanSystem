@@ -23,6 +23,7 @@ using Bylsan_System.SellSystemForms;
 using Bylsan_System.SenarioAddOrderForms;
 using Bylsan_System.AccountsX.Acc;
 using Bylsan_System.SecurityForm;
+using Bylsan_System.FactoryForms;
 namespace Bylsan_System
 {
     public partial class MainForm : RadForm
@@ -364,6 +365,96 @@ namespace Bylsan_System
         private void UserManagementBtn_Click(object sender, EventArgs e)
         {
             FrmUserShow frm = new FrmUserShow();
+            frm.ShowDialog();
+        }
+
+        private void NewOrderBtn_Click(object sender, EventArgs e)
+        {
+            FrmAddInformationCustomer frm = new FrmAddInformationCustomer();
+            frm.ShowDialog();
+        }
+
+        private void ManagmentOrderBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FactoryOrderBtn_Click(object sender, EventArgs e)
+        {
+            FrmFactoryOrderShow frm = new FrmFactoryOrderShow();
+            frm.ShowDialog();
+        }
+
+        private void DesignerOrderBtn_Click(object sender, EventArgs e)
+        {
+            FrmOrderShow frm = new FrmOrderShow();
+            frm.ShowDialog();
+
+        }
+
+        private void SellItemsTileElement_Click(object sender, EventArgs e)
+        {
+            FrmManageSellItem frm = new FrmManageSellItem();
+            frm.ShowDialog();
+        }
+
+        private void itemsBtn_Click(object sender, EventArgs e)
+        {
+            FrmManageMainStore_Item frm = new FrmManageMainStore_Item();
+            frm.ShowDialog();
+        }
+
+        private void storeBtn_Click(object sender, EventArgs e)
+        {
+            FrmManageMainStore_Store frm = new FrmManageMainStore_Store();
+            frm.ShowDialog();
+        }
+
+        private void storeManagerBtn_Click(object sender, EventArgs e)
+        {
+            FrmManageMainStore_StoreManager frm = new FrmManageMainStore_StoreManager();
+            frm.ShowDialog();
+        }
+
+        private void WithDrawalBtn_Click(object sender, EventArgs e)
+        {
+            FrmManageMainStore_StoreWithDrawal frm = new FrmManageMainStore_StoreWithDrawal();
+            frm.ShowDialog();
+        }
+
+        private void SupplierTileElement_Click(object sender, EventArgs e)
+        {
+            FrmManageMainStore_Supplier frm = new FrmManageMainStore_Supplier();
+            frm.ShowDialog();
+        }
+
+        private void AccountTreeBtn_Click(object sender, EventArgs e)
+        {
+            FrmAccountTree frm = new FrmAccountTree();
+            frm.ShowDialog();
+        }
+
+        private void AccountCategoryTileElement3_Click(object sender, EventArgs e)
+        {
+            FrmManageAccountCategory frm = new FrmManageAccountCategory();
+            frm.ShowDialog();
+        }
+
+        private void DebitorsTileElement_Click(object sender, EventArgs e)
+        {
+            FrmManageDebtors frm = new FrmManageDebtors();
+            frm.ShowDialog();
+        }
+
+        private void expensesBtn_Click(object sender, EventArgs e)
+        {
+            FrmexpensesShow frm = new FrmexpensesShow();
+            frm.ShowDialog();
+        }
+
+        private void AccountDailyBtn_Click(object sender, EventArgs e)
+        {
+            frmAccountDailySHow frm = new frmAccountDailySHow();
             frm.ShowDialog();
         }
     }
