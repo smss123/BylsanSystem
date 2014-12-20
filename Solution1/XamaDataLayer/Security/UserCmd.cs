@@ -98,7 +98,23 @@ namespace XamaDataLayer.Security
           
        }
 
-       
+      public  static  void UserLogOut()
+       {
+      
+           //==========================================
+           History htb = new History();
+           htb.ActionName = "User LogOut";
+           htb.DateOfProcess = DateTime.Now;
+           htb.HistoryAction = "User LogOut ";
+           htb.Description = string.Format("User : {0}  LogOut  ", UserInfo.CurrentUserName);
+           htb.UserID = UserInfo.CurrentUserID;
+
+           WriteUserHistory(htb);
+
+           UserInfo.CurrentUserID = 0;
+           UserInfo.CurrentUserName ="";
+           UserInfo.CurrentUserPassword = "";
+       }
 
        private static bool WriteUserHistory(History htb)
        {
