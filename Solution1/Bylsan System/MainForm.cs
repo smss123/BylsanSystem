@@ -122,6 +122,8 @@ namespace Bylsan_System
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            UserCmd.UserLogOut();
+
             Application.Exit();
         }
 
