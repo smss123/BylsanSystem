@@ -73,5 +73,16 @@ namespace XamaDataLayer.Accountant
             var ACT = (from ac in db.Accounts where ac.AccountName  == nam  select ac).ToList();
             return ACT;
         }
+
+        public static double? GetAccountBalance(int AccountID)
+        {
+            double? balance = 0d;
+
+            var AllTotalIn = db.AccountDailies.Where(p => p.AccountID == AccountID).Sum(p => p.TotalIn);
+            var AllTotalOut = db.AccountDailies.Where(p => p.AccountID == AccountID).Sum(p => p.TotalOut);
+            balance = AllTotalIn - AllTotalOut;
+
+            return balance;
+        }
     }
 }
