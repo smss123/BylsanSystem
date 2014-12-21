@@ -21,6 +21,12 @@ namespace Bylsan_System.SenarioAddOrderForms
         public FrmTotalOrder()
         {
             InitializeComponent();
+
+            var ListPerm = XamaDataLayer.Security.PermessionsCmd.GetAllUserPermissonsByUserID(XamaDataLayer.Security.UserInfo.CurrnetUser.ID);
+
+            if (Convert.ToBoolean(ListPerm[0].PermessionValue.ToString()) == false) { txtDiscountBox.Enabled = false; }
+
+           
         }
         public string  TragetOrderType { get; set; }
       

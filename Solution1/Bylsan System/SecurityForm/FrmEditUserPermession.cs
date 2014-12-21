@@ -6,7 +6,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.Data;
 using XamaDataLayer;
+using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Security;
 
 namespace Bylsan_System.SecurityForm
@@ -22,6 +24,7 @@ namespace Bylsan_System.SecurityForm
         private void FrmEditUserPermession_Load(object sender, EventArgs e)
         {
             ReFrishData();
+            FillBranchsCombo ();
         }
         UserPermession px = new UserPermession();
         private void ReFrishData()
@@ -62,12 +65,12 @@ namespace Bylsan_System.SecurityForm
             string xValue = "";
 
 
-            //==========================================
+            //==============================================
             PermessionsCmd.ClearAllUserPermessions(XUserId);
-            //===========================================
+            //==============================================
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-
+                px = new UserPermession();
                 DataGridViewCheckBoxCell chkchecking = dataGridView1.Rows[i].Cells[3] as DataGridViewCheckBoxCell;
                 if (Convert.ToBoolean(chkchecking.Value) == true)
                 { xValue = "True"; }
@@ -85,5 +88,39 @@ namespace Bylsan_System.SecurityForm
             this.Hide(); 
         }
     
+     #region "       ^^^ Branchs       "
+        private void FillBranchsCombo()
+        {
+            Operation.BeginOperation(this);
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.CmbBranches.MultiColumnComboBoxElement.DropDownWidth = 550;
+                this.CmbBranches.AutoFilter = true;
+                this.CmbBranches.DisplayMember = "Branch_Name";
+                this.CmbBranches.ValueMember = "ID";
+            });
+
+
+            var q = BranchsCmd.GetAllBranchs();
+
+            this.Invoke((MethodInvoker)delegate
+            {
+
+                CmbBranches.DataSource = q;
+
+                CompositeFilterDescriptor compositeFilter = new CompositeFilterDescriptor();
+                FilterDescriptor prodName = new FilterDescriptor("Branch_Name", FilterOperator.Contains, "");
+                compositeFilter.FilterDescriptors.Add(prodName);
+                compositeFilter.LogicalOperator = FilterLogicalOperator.Or;
+                this.CmbBranches.EditorControl.FilterDescriptors.Add(compositeFilter);
+
+
+
+            });
+            Operation.EndOperation(this);
+        }
+
+
+     #endregion 
     }
 }

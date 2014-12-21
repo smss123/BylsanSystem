@@ -54,6 +54,7 @@
             this.customerManagementBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.MailBtn = new System.Windows.Forms.ToolStripDropDownButton();
+            this.Aboutbtn = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
@@ -79,7 +80,6 @@
             this.AccountDailyBtn = new Telerik.WinControls.UI.RadTileElement();
             this.expensesBtn = new Telerik.WinControls.UI.RadTileElement();
             this.radTileElement4 = new Telerik.WinControls.UI.RadTileElement();
-            this.Aboutbtn = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -118,6 +118,7 @@
             this.UserDropDownButton.Name = "UserDropDownButton";
             this.UserDropDownButton.Size = new System.Drawing.Size(79, 35);
             this.UserDropDownButton.Text = "Users";
+            this.UserDropDownButton.Click += new System.EventHandler(this.UserDropDownButton_Click);
             // 
             // addUserToolStripMenuItem
             // 
@@ -149,6 +150,7 @@
             this.EmployeeDropDownButton.Name = "EmployeeDropDownButton";
             this.EmployeeDropDownButton.Size = new System.Drawing.Size(100, 35);
             this.EmployeeDropDownButton.Text = "Employee";
+            this.EmployeeDropDownButton.Click += new System.EventHandler(this.EmployeeDropDownButton_Click);
             // 
             // AddEmloyeebtn
             // 
@@ -181,6 +183,7 @@
             this.BranchDropDownButton.Name = "BranchDropDownButton";
             this.BranchDropDownButton.Size = new System.Drawing.Size(77, 35);
             this.BranchDropDownButton.Text = "Branch";
+            this.BranchDropDownButton.Click += new System.EventHandler(this.BranchDropDownButton_Click);
             // 
             // addBranchBtn
             // 
@@ -296,6 +299,15 @@
             this.MailBtn.Size = new System.Drawing.Size(74, 35);
             this.MailBtn.Text = "Mail";
             this.MailBtn.Click += new System.EventHandler(this.MailBtn_Click);
+            // 
+            // Aboutbtn
+            // 
+            this.Aboutbtn.Image = ((System.Drawing.Image)(resources.GetObject("Aboutbtn.Image")));
+            this.Aboutbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.Aboutbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Aboutbtn.Name = "Aboutbtn";
+            this.Aboutbtn.Size = new System.Drawing.Size(74, 35);
+            this.Aboutbtn.Text = "About";
             // 
             // statusStrip1
             // 
@@ -658,15 +670,6 @@
             this.radTileElement4.Name = "radTileElement4";
             this.radTileElement4.Text = "radTileElement4";
             this.radTileElement4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // Aboutbtn
-            // 
-            this.Aboutbtn.Image = ((System.Drawing.Image)(resources.GetObject("Aboutbtn.Image")));
-            this.Aboutbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.Aboutbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Aboutbtn.Name = "Aboutbtn";
-            this.Aboutbtn.Size = new System.Drawing.Size(74, 35);
-            this.Aboutbtn.Text = "About";
             // 
             // MainForm
             // 

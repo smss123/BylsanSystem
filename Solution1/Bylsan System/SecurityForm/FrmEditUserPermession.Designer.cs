@@ -33,7 +33,7 @@
             System.Windows.Forms.Label passwordsLabel;
             System.Windows.Forms.Label label1;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radMultiColumnComboBox1 = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.CmbBranches = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.passwordsTextBox = new System.Windows.Forms.TextBox();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userNameTextBox = new System.Windows.Forms.TextBox();
@@ -50,9 +50,9 @@
             passwordsLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbBranches)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbBranches.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbBranches.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
@@ -81,16 +81,17 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(39, 111);
+            label1.Location = new System.Drawing.Point(367, 29);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(46, 13);
             label1.TabIndex = 5;
             label1.Text = "Branch:";
+            label1.Visible = false;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(label1);
-            this.groupBox1.Controls.Add(this.radMultiColumnComboBox1);
+            this.groupBox1.Controls.Add(this.CmbBranches);
             this.groupBox1.Controls.Add(passwordsLabel);
             this.groupBox1.Controls.Add(this.passwordsTextBox);
             this.groupBox1.Controls.Add(userNameLabel);
@@ -98,45 +99,47 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(640, 157);
+            this.groupBox1.Size = new System.Drawing.Size(640, 112);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // radMultiColumnComboBox1
+            // CmbBranches
             // 
             // 
-            // radMultiColumnComboBox1.NestedRadGridView
+            // CmbBranches.NestedRadGridView
             // 
-            this.radMultiColumnComboBox1.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.radMultiColumnComboBox1.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.radMultiColumnComboBox1.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radMultiColumnComboBox1.EditorControl.Location = new System.Drawing.Point(0, 0);
+            this.CmbBranches.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.CmbBranches.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.CmbBranches.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CmbBranches.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
             // 
             // 
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.radMultiColumnComboBox1.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.radMultiColumnComboBox1.EditorControl.Name = "NestedRadGridView";
-            this.radMultiColumnComboBox1.EditorControl.ReadOnly = true;
-            this.radMultiColumnComboBox1.EditorControl.ShowGroupPanel = false;
-            this.radMultiColumnComboBox1.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.radMultiColumnComboBox1.EditorControl.TabIndex = 0;
-            this.radMultiColumnComboBox1.Location = new System.Drawing.Point(91, 104);
-            this.radMultiColumnComboBox1.Name = "radMultiColumnComboBox1";
-            this.radMultiColumnComboBox1.Size = new System.Drawing.Size(194, 20);
-            this.radMultiColumnComboBox1.TabIndex = 4;
-            this.radMultiColumnComboBox1.TabStop = false;
-            this.radMultiColumnComboBox1.ThemeName = "VisualStudio2012Light";
+            this.CmbBranches.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.CmbBranches.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.CmbBranches.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.CmbBranches.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.CmbBranches.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.CmbBranches.EditorControl.Name = "NestedRadGridView";
+            this.CmbBranches.EditorControl.ReadOnly = true;
+            this.CmbBranches.EditorControl.ShowGroupPanel = false;
+            this.CmbBranches.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.CmbBranches.EditorControl.TabIndex = 0;
+            this.CmbBranches.Location = new System.Drawing.Point(434, 29);
+            this.CmbBranches.Name = "CmbBranches";
+            this.CmbBranches.Size = new System.Drawing.Size(194, 20);
+            this.CmbBranches.TabIndex = 4;
+            this.CmbBranches.TabStop = false;
+            this.CmbBranches.ThemeName = "VisualStudio2012Light";
+            this.CmbBranches.Visible = false;
             // 
             // passwordsTextBox
             // 
             this.passwordsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Passwords", true));
             this.passwordsTextBox.Location = new System.Drawing.Point(91, 69);
             this.passwordsTextBox.Name = "passwordsTextBox";
+            this.passwordsTextBox.ReadOnly = true;
             this.passwordsTextBox.Size = new System.Drawing.Size(194, 20);
             this.passwordsTextBox.TabIndex = 3;
             // 
@@ -149,6 +152,7 @@
             this.userNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "UserName", true));
             this.userNameTextBox.Location = new System.Drawing.Point(91, 33);
             this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.ReadOnly = true;
             this.userNameTextBox.Size = new System.Drawing.Size(194, 20);
             this.userNameTextBox.TabIndex = 1;
             // 
@@ -165,9 +169,9 @@
             this.groupBox2.Controls.Add(this.SaveBtn);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 157);
+            this.groupBox2.Location = new System.Drawing.Point(0, 112);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(640, 322);
+            this.groupBox2.Size = new System.Drawing.Size(640, 367);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "User Permession";
@@ -249,9 +253,9 @@
             this.Load += new System.EventHandler(this.FrmEditUserPermession_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radMultiColumnComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbBranches.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbBranches.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbBranches)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
@@ -265,7 +269,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private Telerik.WinControls.UI.RadMultiColumnComboBox radMultiColumnComboBox1;
+        private Telerik.WinControls.UI.RadMultiColumnComboBox CmbBranches;
         private System.Windows.Forms.TextBox passwordsTextBox;
         private System.Windows.Forms.BindingSource userBindingSource;
         private System.Windows.Forms.TextBox userNameTextBox;
