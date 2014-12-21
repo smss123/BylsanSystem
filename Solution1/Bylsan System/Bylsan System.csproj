@@ -35,44 +35,91 @@
     <Reference Include="DevComponents.DotNetBar2, Version=11.2.0.1, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar2.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Synchronization.Data, Version=3.1.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\Microsoft.Synchronization.Data.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Synchronization.Data.Server, Version=3.1.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\Microsoft.Synchronization.Data.Server.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Synchronization.Data.SqlServer, Version=3.1.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\Microsoft.Synchronization.Data.SqlServer.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Synchronization.Data.SqlServerCe, Version=3.1.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\Microsoft.Synchronization.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Telerik.WinControls, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
-    <Reference Include="Telerik.WinControls.GridView, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="Telerik.WinControls.UI, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
-    <Reference Include="TelerikCommon, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.GridView, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2013.3.1016.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Xprema, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\Xprema.dll</HintPath>
@@ -407,6 +454,7 @@
       <DependentUpon>RebortView.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\ReportCommand\AccountDailyReportCmd.cs" />
+    <Compile Include="Reports\ReportCommand\BillReportCommand.cs" />
     <Compile Include="Reports\ReportCommand\CustmoerReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\EmployeeReportCommand.cs" />
     <Compile Include="Reports\ReportCommand\ExchangebondReportCmd.cs" />
@@ -422,6 +470,7 @@
     <Compile Include="Reports\ReportsObject\OrderReportObj.cs" />
     <Compile Include="Reports\ReportsObject\ProductReportObj.cs" />
     <Compile Include="Reports\ReportsObject\ReceiptVoucherObj.cs" />
+    <Compile Include="Reports\ReportsObject\RptBillObj.cs" />
     <Compile Include="SecurityForm\FrmEditUserPermession.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -687,12 +736,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Sheets\RepAccountDaily.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepAllCustomers.rdlc" />
+    <EmbeddedResource Include="Reports\Sheets\RepBillPrint.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepCustomerAccountOrders.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepExchangebond.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepExpenssesMovment.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepitemStore.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepOrderFollow.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepReceiptVoucher.rdlc" />
+    <EmbeddedResource Include="Reports\Sheets\RptBalanceSheet.rdlc" />
     <EmbeddedResource Include="SecurityForm\FrmEditUserPermession.resx">
       <DependentUpon>FrmEditUserPermession.cs</DependentUpon>
     </EmbeddedResource>
@@ -746,6 +797,7 @@
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.OrderReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.PaymentVoucherReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.ReceiptVoucherObj.datasource" />
+    <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.RptBillObj.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.Account.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.AccountCategory.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.AccountDaily.datasource" />

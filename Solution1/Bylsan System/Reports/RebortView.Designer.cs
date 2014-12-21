@@ -30,11 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.OrderReportObjBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.OrderReportObjBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
+            // 
+            // OrderReportObjBindingSource
+            // 
+            this.OrderReportObjBindingSource.DataSource = typeof(Bylsan_System.Reports.ReportsObject.OrderReportObj);
             // 
             // reportViewer1
             // 
@@ -47,10 +51,7 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(626, 474);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // OrderReportObjBindingSource
-            // 
-            this.OrderReportObjBindingSource.DataSource = typeof(Bylsan_System.Reports.ReportsObject.OrderReportObj);
+            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // RebortView
             // 
@@ -64,7 +65,8 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "RebortView";
-            this.ThemeName = "ControlDefault";
+            this.ThemeName = "VisualStudio2012Light";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.RebortView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.OrderReportObjBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();

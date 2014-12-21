@@ -457,5 +457,11 @@ namespace Bylsan_System
             frmAccountDailySHow frm = new frmAccountDailySHow();
             frm.ShowDialog();
         }
+
+        private void SalesTileElement_Click(object sender, EventArgs e)
+        {
+            SellSystemForms.FrmAddSales frm = new FrmAddSales();
+            frm.ShowDialog();
+        }
     }
 }

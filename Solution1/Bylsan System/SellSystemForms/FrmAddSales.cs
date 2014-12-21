@@ -12,6 +12,8 @@ using XamaDataLayer.SellSystem;
 using Bylsan_System.SellSystemForms;
 using System.Threading;
 using XamaDataLayer.Security;
+using Bylsan_System.Reports.ReportCommand;
+using Bylsan_System.Reports.ReportsObject;
 namespace Bylsan_System.SellSystemForms
 {
     public partial class FrmAddSales : Telerik.WinControls.UI.RadForm
@@ -177,7 +179,7 @@ namespace Bylsan_System.SellSystemForms
 
                     // Save At BillItem :
                     BillItem billtb = new BillItem();
-
+                    List<BillItem> billItem = new List<BillItem>();
                     foreach (var rw in DGVSellItems.Rows)
                     {
                         billtb = new BillItem()
@@ -186,6 +188,7 @@ namespace Bylsan_System.SellSystemForms
                             Qty = int.Parse(rw.Cells[4].Value.ToString()),
                             Bill_ID = BillsCmd.GetMaxBill(),
                         };
+                        billItem.Add(billtb);
                         BillItemsCmd.AddBillItmes(billtb);
                         //=======================================================
                         // Save At : StoreOperationManager
@@ -204,6 +207,26 @@ namespace Bylsan_System.SellSystemForms
                         //=======================================================
                     }
                     Operation.ShowToustOk("Bill Has Been Saved ..", this);
+                    BillReportCommand printBill = new BillReportCommand();
+                    btb.BillItems.AddRange(billItem);
+                    List<RptBillObj> ls = new List<RptBillObj>();
+
+                    foreach (var item in btb.BillItems)
+                    {
+                        ls.Add(new RptBillObj() { 
+                         ID = btb.ID,
+                          Total = btb.BillTotal,
+                           BillDate= DateTime.Now,
+                            ItemName = item.SellItem.ItemName,
+                             Qty = item.Qty.ToString(),
+                              Amount  = item.Qty* item.SellItem.ItemPrice,
+                               UnitPrice= item.SellItem.ItemPrice,
+                         User = UserInfo.CurrnetUser.UserName
+                        
+                        
+                        });
+                    }
+                    printBill.PrintBill(ls);
                     DGVSellItems.Rows.Clear();
                     BillCostBox.Text = "";
                     txtBarCode.Text = "";
@@ -291,7 +314,9 @@ namespace Bylsan_System.SellSystemForms
                 txtBarCode.Clear();
                 txtBarCode.Focus();
 
-            }            
+            }
+            
+
         }
 
         private void txtBarCode_TextChanged(object sender, EventArgs e)
