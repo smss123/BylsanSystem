@@ -472,6 +472,12 @@
     <Compile Include="Reports\ReportsObject\ProductReportObj.cs" />
     <Compile Include="Reports\ReportsObject\ReceiptVoucherObj.cs" />
     <Compile Include="Reports\ReportsObject\RptBillObj.cs" />
+    <Compile Include="SecurityForm\FrmAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecurityForm\FrmAddUser.Designer.cs">
+      <DependentUpon>FrmAddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="SecurityForm\FrmEditUserPermession.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -483,6 +489,12 @@
     </Compile>
     <Compile Include="SecurityForm\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityForm\FrmPasswordEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecurityForm\FrmPasswordEdit.Designer.cs">
+      <DependentUpon>FrmPasswordEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="SecurityForm\FrmUserShow.cs">
       <SubType>Form</SubType>
@@ -745,11 +757,17 @@
     <EmbeddedResource Include="Reports\Sheets\RepOrderFollow.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepReceiptVoucher.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RptBalanceSheet.rdlc" />
+    <EmbeddedResource Include="SecurityForm\FrmAddUser.resx">
+      <DependentUpon>FrmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SecurityForm\FrmEditUserPermession.resx">
       <DependentUpon>FrmEditUserPermession.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SecurityForm\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecurityForm\FrmPasswordEdit.resx">
+      <DependentUpon>FrmPasswordEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SecurityForm\FrmUserShow.resx">
       <DependentUpon>FrmUserShow.cs</DependentUpon>
