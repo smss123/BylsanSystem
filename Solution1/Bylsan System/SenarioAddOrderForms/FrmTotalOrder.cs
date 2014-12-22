@@ -26,6 +26,10 @@ namespace Bylsan_System.SenarioAddOrderForms
             var ListPerm = XamaDataLayer.Security.PermessionsCmd.GetAllUserPermissonsByUserID(XamaDataLayer.Security.UserInfo.CurrnetUser.ID);
 
             if (Convert.ToBoolean(ListPerm[0].PermessionValue.ToString()) == false) { txtDiscountBox.Enabled = false; }
+
+            if (Convert.ToBoolean(ListPerm[4].PermessionValue.ToString()) == false) { PrintBtn.Enabled = false; }
+
+
         }
         public string  TragetOrderType { get; set; }
       
