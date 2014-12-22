@@ -462,6 +462,7 @@
     <Compile Include="Reports\ReportCommand\ItemsStoreReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\OrderReportCmd.cs" />
     <Compile Include="Reports\ReportsObject\AccountDailyReportObj.cs" />
+    <Compile Include="Reports\ReportsObject\BalanceSheetObj.cs" />
     <Compile Include="Reports\ReportsObject\CustomerReportObj.cs" />
     <Compile Include="Reports\ReportsObject\EmployeeReportObj.cs" />
     <Compile Include="Reports\ReportsObject\PaymentVoucherReportObj.cs" />
