@@ -50,27 +50,27 @@ namespace Bylsan_System.MainStoreForms
 
         private void StoreWithDrawalGridView_CommandCellClick(object sender, EventArgs e)
         {
-            var col = StoreWithDrawalGridView.CurrentColumn.Index;
+        //    var col = StoreWithDrawalGridView.CurrentColumn.Index;
 
-            if (col == 7)
-            {
-                Operation.BeginOperation(this);
-                FrmEditMainStore_StoreWithDrawal frm = new FrmEditMainStore_StoreWithDrawal();
-                frm.TregatDrawal = (StoreWithDrawal)this.StoreWithDrawalGridView.CurrentRow.DataBoundItem;
-                frm.ShowDialog();
-                this.FrmManageMainStore_StoreWithDrawal_Load(null, null);
-                Operation.EndOperation(this);
-            }
+        //    if (col == 7)
+        //    {
+        //        Operation.BeginOperation(this);
+        //        FrmEditMainStore_StoreWithDrawal frm = new FrmEditMainStore_StoreWithDrawal();
+        //        frm.TregatDrawal = (StoreWithDrawal)this.StoreWithDrawalGridView.CurrentRow.DataBoundItem;
+        //        frm.ShowDialog();
+        //        this.FrmManageMainStore_StoreWithDrawal_Load(null, null);
+        //        Operation.EndOperation(this);
+        //    }
 
-            if (col == 8)
-            {
-                if (RadMessageBox.Show(this, "Do you want to delete", "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
-                {
-                    Operation.BeginOperation(this);
-                    ItemsCmd.DeleteItemAt(((StoreWithDrawal)this.StoreWithDrawalGridView.CurrentRow.DataBoundItem).ID);
-                    Operation.EndOperation(this);
-                }
-            }
+        //    if (col == 8)
+        //    {
+        //        if (RadMessageBox.Show(this, "Do you want to delete", "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+        //        {
+        //            Operation.BeginOperation(this);
+        //            ItemsCmd.DeleteItemAt(((StoreWithDrawal)this.StoreWithDrawalGridView.CurrentRow.DataBoundItem).ID);
+        //            Operation.EndOperation(this);
+        //        }
+        //    }
         }
 
 

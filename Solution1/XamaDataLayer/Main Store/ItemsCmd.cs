@@ -39,8 +39,8 @@ namespace XamaDataLayer.Main_Store
            try
            {
 
-               var q = db.Items .Where(p => p.ID == xid).SingleOrDefault();
-               db.Items .DeleteOnSubmit(q);
+               Item  tb = db.Items .Where(p => p.ID == xid).SingleOrDefault();
+               db.Items .DeleteOnSubmit(tb);
                db.SubmitChanges();
                XamaDataLayer.Security.UserCmd.SaveHistory("Delete ", " Delete Item", " Delete selected Item At Main Store ");
            }

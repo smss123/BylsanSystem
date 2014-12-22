@@ -44,13 +44,13 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.ItemGridView = new Telerik.WinControls.UI.RadGridView();
+            this.DGVItems = new Telerik.WinControls.UI.RadGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemGridView.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVItems.MasterTemplate)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -128,20 +128,20 @@
             this.lblStatus.Size = new System.Drawing.Size(12, 17);
             this.lblStatus.Text = "_";
             // 
-            // ItemGridView
+            // DGVItems
             // 
-            this.ItemGridView.BackColor = System.Drawing.SystemColors.Control;
-            this.ItemGridView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ItemGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ItemGridView.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.ItemGridView.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ItemGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ItemGridView.Location = new System.Drawing.Point(3, 18);
+            this.DGVItems.BackColor = System.Drawing.SystemColors.Control;
+            this.DGVItems.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DGVItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGVItems.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.DGVItems.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DGVItems.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.DGVItems.Location = new System.Drawing.Point(3, 18);
             // 
-            // ItemGridView
+            // DGVItems
             // 
-            this.ItemGridView.MasterTemplate.AllowAddNewRow = false;
-            this.ItemGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            this.DGVItems.MasterTemplate.AllowAddNewRow = false;
+            this.DGVItems.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "ID";
             gridViewTextBoxColumn1.HeaderText = "ID";
@@ -161,7 +161,7 @@
             gridViewTextBoxColumn4.FieldName = "ItemDescription";
             gridViewTextBoxColumn4.HeaderText = "Item Description";
             gridViewTextBoxColumn4.Name = "ItemDescription";
-            gridViewTextBoxColumn4.Width = 479;
+            gridViewTextBoxColumn4.Width = 481;
             gridViewCommandColumn1.DefaultText = "Edit";
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Edit";
@@ -178,28 +178,28 @@
             gridViewCommandColumn2.Name = "DeleteCol";
             gridViewCommandColumn2.UseDefaultText = true;
             gridViewCommandColumn2.Width = 45;
-            this.ItemGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            this.DGVItems.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
             gridViewTextBoxColumn4,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
-            this.ItemGridView.MasterTemplate.EnableFiltering = true;
-            this.ItemGridView.Name = "ItemGridView";
-            this.ItemGridView.ReadOnly = true;
-            this.ItemGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ItemGridView.Size = new System.Drawing.Size(1181, 358);
-            this.ItemGridView.TabIndex = 2;
-            this.ItemGridView.Text = "ItemsGridView";
-            this.ItemGridView.ThemeName = "VisualStudio2012Light";
-            this.ItemGridView.CellClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.MasterTemplate_CellClick);
-            this.ItemGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.MasterTemplate_CommandCellClick);
-            this.ItemGridView.Click += new System.EventHandler(this.MasterTemplate_Click);
+            this.DGVItems.MasterTemplate.EnableFiltering = true;
+            this.DGVItems.Name = "DGVItems";
+            this.DGVItems.ReadOnly = true;
+            this.DGVItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DGVItems.Size = new System.Drawing.Size(1181, 358);
+            this.DGVItems.TabIndex = 2;
+            this.DGVItems.Text = "ItemsGridView";
+            this.DGVItems.ThemeName = "VisualStudio2012Light";
+            this.DGVItems.CellClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.MasterTemplate_CellClick);
+            this.DGVItems.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.MasterTemplate_CommandCellClick);
+            this.DGVItems.Click += new System.EventHandler(this.MasterTemplate_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.ItemGridView);
+            this.groupBox1.Controls.Add(this.DGVItems);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 39);
             this.groupBox1.Name = "groupBox1";
@@ -229,8 +229,8 @@
             this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemGridView.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ItemGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVItems.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVItems)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -243,7 +243,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton Addbtn;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private Telerik.WinControls.UI.RadGridView ItemGridView;
+        private Telerik.WinControls.UI.RadGridView DGVItems;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
