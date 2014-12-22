@@ -67,7 +67,7 @@ namespace Bylsan_System.SecurityForm
             //===========================================
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-
+                px = new UserPermession();
                 DataGridViewCheckBoxCell chkchecking = dataGridView1.Rows[i].Cells[3] as DataGridViewCheckBoxCell;
                 if (Convert.ToBoolean(chkchecking.Value) == true)
                 { xValue = "True"; }
