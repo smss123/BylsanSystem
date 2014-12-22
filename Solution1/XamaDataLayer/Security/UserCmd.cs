@@ -151,5 +151,14 @@ namespace XamaDataLayer.Security
 
        #endregion 
 
+       public static User EditPassword(User tb, int xid)
+       {
+           db = new DbDataContext();
+           var q = db.Users.Where(u => u.ID == xid).SingleOrDefault();
+           q.Passwords = tb.Passwords;
+           db.SubmitChanges();
+           return q;
+       }
+
     }
 }

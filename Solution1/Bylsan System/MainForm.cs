@@ -482,5 +482,11 @@ namespace Bylsan_System
             SellSystemForms.FrmAddSales frm = new FrmAddSales();
             frm.ShowDialog();
         }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            FrmPasswordEdit f = new FrmPasswordEdit();
+            f.Show();
+        }
     }
 }

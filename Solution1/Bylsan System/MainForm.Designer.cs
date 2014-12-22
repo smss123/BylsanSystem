@@ -80,6 +80,7 @@
             this.AccountDailyBtn = new Telerik.WinControls.UI.RadTileElement();
             this.expensesBtn = new Telerik.WinControls.UI.RadTileElement();
             this.radTileElement4 = new Telerik.WinControls.UI.RadTileElement();
+            this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -118,7 +119,6 @@
             this.UserDropDownButton.Name = "UserDropDownButton";
             this.UserDropDownButton.Size = new System.Drawing.Size(79, 35);
             this.UserDropDownButton.Text = "Users";
-            //this.UserDropDownButton.Click += new System.EventHandler(this.UserDropDownButton_Click);
             // 
             // addUserToolStripMenuItem
             // 
@@ -150,7 +150,6 @@
             this.EmployeeDropDownButton.Name = "EmployeeDropDownButton";
             this.EmployeeDropDownButton.Size = new System.Drawing.Size(100, 35);
             this.EmployeeDropDownButton.Text = "Employee";
-         //   this.EmployeeDropDownButton.Click += new System.EventHandler(this.EmployeeDropDownButton_Click);
             // 
             // AddEmloyeebtn
             // 
@@ -183,7 +182,6 @@
             this.BranchDropDownButton.Name = "BranchDropDownButton";
             this.BranchDropDownButton.Size = new System.Drawing.Size(77, 35);
             this.BranchDropDownButton.Text = "Branch";
-           // this.BranchDropDownButton.Click += new System.EventHandler(this.BranchDropDownButton_Click);
             // 
             // addBranchBtn
             // 
@@ -672,12 +670,23 @@
             this.radTileElement4.Text = "radTileElement4";
             this.radTileElement4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(722, 559);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "edit passord";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_3);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1282, 581);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.radPanorama1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
@@ -754,5 +763,6 @@
         private Telerik.WinControls.UI.RadTileElement SellItemsTileElement;
         private Telerik.WinControls.UI.RadTileElement SalesTileElement;
         private System.Windows.Forms.ToolStripButton Aboutbtn;
+        private System.Windows.Forms.Button button1;
     }
 }

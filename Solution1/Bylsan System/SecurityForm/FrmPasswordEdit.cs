@@ -6,7 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
-
+using XamaDataLayer;
+using XamaDataLayer.Security;
 namespace Bylsan_System.SecurityForm
 {
     public partial class FrmPasswordEdit : Telerik.WinControls.UI.RadForm
@@ -23,7 +24,7 @@ namespace Bylsan_System.SecurityForm
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-
+            #region "     "
             if (OldPasswordText.Text == "")
             {
 
@@ -83,6 +84,30 @@ namespace Bylsan_System.SecurityForm
                 errorProvider1.Clear();
 
             }
+            #endregion
+            if (NewPassowrdText.Text != ConfirmPasswordText.Text)
+            { 
+
+                return;
+            }
+            else
+            {
+                Operation.BeginOperation(this);
+                User Tb = new User();
+                Tb.Passwords = NewPassowrdText.Text;
+             
+                UserCmd.EditPassword(Tb, UserInfo.CurrentUserID);
+                Operation.EndOperation(this);
+                Operation.ShowToustOk("Done ... ", this);
+               
+            }
+
+
+        }
+
+        private void FrmPasswordEdit_Load(object sender, EventArgs e)
+        {
+            this.OldPasswordText.Text = XamaDataLayer.Security.UserInfo.CurrentUserPassword;
         }
     }
 }
