@@ -39,6 +39,7 @@ namespace Bylsan_System.EmployeeForms
                     Operation.BeginOperation(this);
                     EmployeesCmd.DeleteEmployee(((Employee)EmployeeGridView.CurrentRow.DataBoundItem).ID);
                     Operation.ShowToustOk("Deleted", this);
+                    FrmEmployeeManage_Load(sender, e);
                     Operation.EndOperation(this);
                 }
             }

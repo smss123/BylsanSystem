@@ -34,7 +34,7 @@ namespace XamaDataLayer.BranchCmd
             var emp = db.Employees.Where(m => m.Emp_Name == nam ).SingleOrDefault();
             int xid = 0;
             xid = emp.ID;
-            XamaDataLayer.Security.UserCmd.SaveHistory("Edit   ", "Edit Employee ", " Edit Selected  Employee's Informations  ");
+         
             return xid;
         }
         public static bool EditEmployee(Employee tb, int xid)
@@ -50,6 +50,8 @@ namespace XamaDataLayer.BranchCmd
           
             emp.Job = tb.Job;
             db.SubmitChanges();
+            XamaDataLayer.Security.UserCmd.SaveHistory("Edit   ", "Edit Employee ", " Edit Selected  Employee's Informations  ");
+
             return true;
 
         }

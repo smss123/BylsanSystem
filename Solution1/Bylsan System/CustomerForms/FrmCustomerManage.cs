@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
@@ -22,16 +23,16 @@ namespace Bylsan_System.CustomerForms
         public FrmCustomerManage()
         {
             InitializeComponent();
-            CustomerGridView.CommandCellClick += CustomerGridView_CommandCellClick;
+            DGVCustomers.CommandCellClick += CustomerGridView_CommandCellClick;
         }
 
         void CustomerGridView_CommandCellClick(object sender, EventArgs e)
         {
-            var col = CustomerGridView.CurrentColumn.Index;
+            var col = DGVCustomers.CurrentColumn.Index;
             if (col == 5)
             {
                 FrmCustomerEdit frm = new FrmCustomerEdit();
-                frm.TragetCustomer = (Customer)CustomerGridView.CurrentRow.DataBoundItem;
+                frm.TragetCustomer = (Customer)DGVCustomers.CurrentRow.DataBoundItem;
                 frm.ShowDialog();
             }
         }
@@ -50,7 +51,7 @@ namespace Bylsan_System.CustomerForms
             });
             Operation.BeginOperation(this);
             
-            CustomerGridView.DataSource = CustomersCmd.GetAllCustmers();
+            DGVCustomers.DataSource = CustomersCmd.GetAllCustmers();
             Operation.EndOperation(this);
             statusStrip1.Invoke((MethodInvoker)delegate
             {
@@ -78,6 +79,32 @@ namespace Bylsan_System.CustomerForms
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void DGVCustomers_CommandCellClick(object sender, EventArgs e)
+        {
+            var COL = DGVCustomers.CurrentRow.Index;
+            if (COL == 5)
+            {
+                Operation.BeginOperation(this);
+                FrmCustomerEdit frm = new FrmCustomerEdit();
+                frm.TragetCustomer = (Customer)this.DGVCustomers.CurrentRow.DataBoundItem;
+                frm.ShowDialog();
+                this.FrmCustomerManage_Load(null, null);
+
+                Operation.EndOperation(this);
+            }
+            Application.DoEvents();
+            //if (COL == 6)
+            //{
+            //    if (RadMessageBox.Show(this, "Do you want to delete", "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+            //    {
+            //        Operation.BeginOperation(this);
+            //         CustomersCmd .DeleteCustomer (((Customer )this.DGVCustomers .CurrentRow.DataBoundItem).ID);
+            //        Operation.EndOperation(this);
+            //    }
+            //}
+
         }
     }
 }
