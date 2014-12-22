@@ -118,7 +118,7 @@
             this.UserDropDownButton.Name = "UserDropDownButton";
             this.UserDropDownButton.Size = new System.Drawing.Size(79, 35);
             this.UserDropDownButton.Text = "Users";
-            this.UserDropDownButton.Click += new System.EventHandler(this.UserDropDownButton_Click);
+            //this.UserDropDownButton.Click += new System.EventHandler(this.UserDropDownButton_Click);
             // 
             // addUserToolStripMenuItem
             // 
@@ -150,7 +150,7 @@
             this.EmployeeDropDownButton.Name = "EmployeeDropDownButton";
             this.EmployeeDropDownButton.Size = new System.Drawing.Size(100, 35);
             this.EmployeeDropDownButton.Text = "Employee";
-            this.EmployeeDropDownButton.Click += new System.EventHandler(this.EmployeeDropDownButton_Click);
+         //   this.EmployeeDropDownButton.Click += new System.EventHandler(this.EmployeeDropDownButton_Click);
             // 
             // AddEmloyeebtn
             // 
@@ -183,7 +183,7 @@
             this.BranchDropDownButton.Name = "BranchDropDownButton";
             this.BranchDropDownButton.Size = new System.Drawing.Size(77, 35);
             this.BranchDropDownButton.Text = "Branch";
-            this.BranchDropDownButton.Click += new System.EventHandler(this.BranchDropDownButton_Click);
+           // this.BranchDropDownButton.Click += new System.EventHandler(this.BranchDropDownButton_Click);
             // 
             // addBranchBtn
             // 

@@ -32,8 +32,27 @@ namespace Bylsan_System
         public MainForm()
         {
             InitializeComponent();
-         
+            ActivatePermessions();
         }
+
+
+        void ActivatePermessions()
+        {
+            var ListPerm = XamaDataLayer.Security.PermessionsCmd.GetAllUserPermissonsByUserID(XamaDataLayer.Security.UserInfo.CurrnetUser.ID);
+
+            if (Convert.ToBoolean(ListPerm[1].PermessionValue.ToString()) == false) { BranchDropDownButton.Enabled = false; }
+
+            if (Convert.ToBoolean(ListPerm[2].PermessionValue.ToString()) == false) { UserDropDownButton.Enabled = false; }
+
+            if (Convert.ToBoolean(ListPerm[3].PermessionValue.ToString()) == false) { EmployeeDropDownButton.Enabled = false; }
+
+            if (Convert.ToBoolean(ListPerm[5].PermessionValue.ToString()) == false) { NewOrderBtn.Enabled = false; }
+
+            if (Convert.ToBoolean(ListPerm[6].PermessionValue.ToString()) == false) { FactoryOrderBtn.Enabled = false; }
+
+            if (Convert.ToBoolean(ListPerm[7].PermessionValue.ToString()) == false) { DesignerOrderBtn.Enabled = false; }
+        }
+
         #region "    "
         private void AddEmloyeebtn_Click(object sender, EventArgs e)
         {
