@@ -30,12 +30,12 @@
         {
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DGVOrders = new Telerik.WinControls.UI.RadGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
+            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders.MasterTemplate)).BeginInit();
@@ -72,25 +72,26 @@
             gridViewTextBoxColumn1.FieldName = "ID";
             gridViewTextBoxColumn1.HeaderText = "ID";
             gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn1.Width = 90;
+            gridViewTextBoxColumn1.Width = 89;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "OrderName";
             gridViewTextBoxColumn2.HeaderText = "Order Name";
             gridViewTextBoxColumn2.Name = "OrderName";
-            gridViewTextBoxColumn2.Width = 339;
+            gridViewTextBoxColumn2.Width = 340;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "OrderDate";
+            gridViewTextBoxColumn3.HeaderText = "Order Date";
+            gridViewTextBoxColumn3.Name = "OrdDate";
+            gridViewTextBoxColumn3.Width = 229;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Enter";
             gridViewCommandColumn1.Name = "EnterColm";
             gridViewCommandColumn1.Width = 136;
-            gridViewTextBoxColumn3.FieldName = "OrderDate";
-            gridViewTextBoxColumn3.HeaderText = "Order Date";
-            gridViewTextBoxColumn3.Name = "OrdDate";
-            gridViewTextBoxColumn3.Width = 227;
             this.DGVOrders.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
-            gridViewCommandColumn1,
-            gridViewTextBoxColumn3});
+            gridViewTextBoxColumn3,
+            gridViewCommandColumn1});
             this.DGVOrders.MasterTemplate.EnableFiltering = true;
             this.DGVOrders.Name = "DGVOrders";
             this.DGVOrders.ReadOnly = true;
@@ -98,7 +99,7 @@
             this.DGVOrders.Size = new System.Drawing.Size(810, 513);
             this.DGVOrders.TabIndex = 1;
             this.DGVOrders.Text = "radGridView1";
-            this.DGVOrders.ThemeName = "Windows8";
+            this.DGVOrders.ThemeName = "VisualStudio2012Light";
             this.DGVOrders.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DGVOrders_MouseDoubleClick);
             // 
             // statusStrip1
@@ -113,6 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(833, 575);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
@@ -139,6 +141,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private Telerik.WinControls.UI.RadGridView DGVOrders;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
+        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     }
 }

@@ -59,6 +59,7 @@ namespace Bylsan_System.expensesFroms
             frmAddExpenssesMovment frm = new frmAddExpenssesMovment();
 
             frm.ExpenssId = ExpID;
+            frm.TragetExpenss = tragetExp;
             frm.ShowDialog();
             Operation.EndOperation(this);
         }
