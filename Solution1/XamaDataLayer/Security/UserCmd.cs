@@ -17,6 +17,25 @@ namespace XamaDataLayer.Security
 
            db.Users.InsertOnSubmit(tb);
            db.SubmitChanges();
+       
+        //================================
+           var parmList = db.SystemPermessions.ToList();
+
+           foreach (var item in parmList)
+           {
+               UserPermession userprm = new UserPermession()
+               {
+                   PermessionValue = false.ToString(),
+                   SystemPermession = item,
+                   User = tb
+               };
+               db.UserPermessions.InsertOnSubmit(userprm);
+               
+           }
+           db.SubmitChanges();
+
+
+        //===============================
            return true;
        }
 

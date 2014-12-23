@@ -461,6 +461,12 @@
     <Compile Include="Reports\ReportCommand\ExpenssesMovmenReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\ItemsStoreReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\OrderReportCmd.cs" />
+    <Compile Include="Reports\ReportOption\frmRptBarcodeOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportOption\frmRptBarcodeOption.Designer.cs">
+      <DependentUpon>frmRptBarcodeOption.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\ReportsObject\AccountDailyReportObj.cs" />
     <Compile Include="Reports\ReportsObject\BalanceSheetObj.cs" />
     <Compile Include="Reports\ReportsObject\CustomerReportObj.cs" />
@@ -746,6 +752,9 @@
     </Compile>
     <EmbeddedResource Include="Reports\RebortView.resx">
       <DependentUpon>RebortView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportOption\frmRptBarcodeOption.resx">
+      <DependentUpon>frmRptBarcodeOption.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Sheets\RepAccountDaily.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepAllCustomers.rdlc" />
