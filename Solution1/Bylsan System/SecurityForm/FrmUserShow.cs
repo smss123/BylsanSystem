@@ -48,5 +48,11 @@ namespace Bylsan_System.SecurityForm
             frm.TragetUser = (User)UserGridView.CurrentRow.DataBoundItem;
             frm.ShowDialog();
         }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            FrmAddUser frm = new FrmAddUser();
+            frm.ShowDialog();
+        }
     }
 }
