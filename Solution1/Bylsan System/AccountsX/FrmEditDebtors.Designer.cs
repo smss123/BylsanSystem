@@ -54,7 +54,7 @@
             // debtorDescriptionLabel1
             // 
             debtorDescriptionLabel1.AutoSize = true;
-            debtorDescriptionLabel1.Location = new System.Drawing.Point(10, 128);
+            debtorDescriptionLabel1.Location = new System.Drawing.Point(10, 108);
             debtorDescriptionLabel1.Name = "debtorDescriptionLabel1";
             debtorDescriptionLabel1.Size = new System.Drawing.Size(108, 13);
             debtorDescriptionLabel1.TabIndex = 8;
@@ -63,7 +63,7 @@
             // addresssLabel
             // 
             addresssLabel.AutoSize = true;
-            addresssLabel.Location = new System.Drawing.Point(62, 102);
+            addresssLabel.Location = new System.Drawing.Point(62, 79);
             addresssLabel.Name = "addresssLabel";
             addresssLabel.Size = new System.Drawing.Size(56, 13);
             addresssLabel.TabIndex = 6;
@@ -72,7 +72,7 @@
             // phoneNumberLabel
             // 
             phoneNumberLabel.AutoSize = true;
-            phoneNumberLabel.Location = new System.Drawing.Point(31, 67);
+            phoneNumberLabel.Location = new System.Drawing.Point(31, 49);
             phoneNumberLabel.Name = "phoneNumberLabel";
             phoneNumberLabel.Size = new System.Drawing.Size(87, 13);
             phoneNumberLabel.TabIndex = 4;
@@ -81,7 +81,7 @@
             // debtorNameLabel
             // 
             debtorNameLabel.AutoSize = true;
-            debtorNameLabel.Location = new System.Drawing.Point(40, 31);
+            debtorNameLabel.Location = new System.Drawing.Point(40, 21);
             debtorNameLabel.Name = "debtorNameLabel";
             debtorNameLabel.Size = new System.Drawing.Size(78, 13);
             debtorNameLabel.TabIndex = 0;
@@ -103,7 +103,7 @@
             this.groupBox1.Controls.Add(this.debtorNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(358, 266);
+            this.groupBox1.Size = new System.Drawing.Size(380, 214);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -112,7 +112,7 @@
             this.SaveBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBtn.Image = global::Bylsan_System.Properties.Resources.Save;
             this.SaveBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.SaveBtn.Location = new System.Drawing.Point(13, 210);
+            this.SaveBtn.Location = new System.Drawing.Point(13, 169);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(109, 37);
             this.SaveBtn.TabIndex = 10;
@@ -123,31 +123,31 @@
             // 
             // debtorDescriptionTextBox1
             // 
-            this.debtorDescriptionTextBox1.Location = new System.Drawing.Point(124, 125);
+            this.debtorDescriptionTextBox1.Location = new System.Drawing.Point(124, 105);
             this.debtorDescriptionTextBox1.Multiline = true;
             this.debtorDescriptionTextBox1.Name = "debtorDescriptionTextBox1";
-            this.debtorDescriptionTextBox1.Size = new System.Drawing.Size(196, 56);
+            this.debtorDescriptionTextBox1.Size = new System.Drawing.Size(221, 56);
             this.debtorDescriptionTextBox1.TabIndex = 9;
             // 
             // addresssTextBox
             // 
-            this.addresssTextBox.Location = new System.Drawing.Point(124, 99);
+            this.addresssTextBox.Location = new System.Drawing.Point(124, 76);
             this.addresssTextBox.Name = "addresssTextBox";
-            this.addresssTextBox.Size = new System.Drawing.Size(196, 20);
+            this.addresssTextBox.Size = new System.Drawing.Size(221, 20);
             this.addresssTextBox.TabIndex = 7;
             // 
             // phoneNumberTextBox
             // 
-            this.phoneNumberTextBox.Location = new System.Drawing.Point(124, 64);
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(124, 46);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
-            this.phoneNumberTextBox.Size = new System.Drawing.Size(196, 20);
+            this.phoneNumberTextBox.Size = new System.Drawing.Size(221, 20);
             this.phoneNumberTextBox.TabIndex = 5;
             // 
             // debtorNameTextBox
             // 
-            this.debtorNameTextBox.Location = new System.Drawing.Point(124, 28);
+            this.debtorNameTextBox.Location = new System.Drawing.Point(124, 18);
             this.debtorNameTextBox.Name = "debtorNameTextBox";
-            this.debtorNameTextBox.Size = new System.Drawing.Size(196, 20);
+            this.debtorNameTextBox.Size = new System.Drawing.Size(221, 20);
             this.debtorNameTextBox.TabIndex = 1;
             // 
             // errorProvider1
@@ -159,13 +159,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(382, 290);
+            this.ClientSize = new System.Drawing.Size(404, 238);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(412, 271);
+            this.MinimumSize = new System.Drawing.Size(412, 271);
             this.Name = "FrmEditDebtors";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(412, 323);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditDebtors";
             this.ThemeName = "VisualStudio2012Light";

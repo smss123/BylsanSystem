@@ -33,6 +33,27 @@ namespace Bylsan_System.AccountsX
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            #region "  CheckFillTextBox "
+
+            if (txtAccountBox.Text == "")
+            {
+
+                txtAccountBox.BackColor = Color.OrangeRed;
+
+                txtAccountBox.Focus();
+                errorProvider1.SetError(this.txtAccountBox, "Please Enter account Category Name ");
+
+                return;
+            }
+            else
+            {
+                txtAccountBox.BackColor = Color.White;
+                errorProvider1.Clear();
+
+            }
+
+            #endregion
+            
             try
             {
                 

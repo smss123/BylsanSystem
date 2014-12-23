@@ -54,28 +54,7 @@ namespace Bylsan_System.designerForms
         public int SelectedOrderID { get; set; }
         private void DGVOrders_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            try
-            {
-                if (DGVOrders.Rows.Count != 0) 
-                {
-                    SelectedOrderID = int.Parse(DGVOrders.CurrentRow.Cells[0].Value.ToString());
-                    FrmProdShow = new FrmOrderProductShow();
-
-                    CustomerThread = new Thread(LoadingCustomerData);
-                    CustomerThread.Start();
-
-                    FrmProdShow.TaregtOrder = SelectedOrderID;
-                    MessageBox.Show("SelectedOrderID " + SelectedOrderID.ToString());
-                  
-                    FrmProdShow.ShowDialog ();
-                 
-                }
-            }
-            catch (Exception)
-            {
-                
-               
-            }
+          
         }
 
         private void LoadingCustomerData()
@@ -96,6 +75,32 @@ namespace Bylsan_System.designerForms
             });
 
             CustomerThread.Abort() ;
+        }
+
+        private void MasterTemplate_CommandCellClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DGVOrders.Rows.Count != 0)
+                {
+                    SelectedOrderID = int.Parse(DGVOrders.CurrentRow.Cells[0].Value.ToString());
+                    FrmProdShow = new FrmOrderProductShow();
+
+                    CustomerThread = new Thread(LoadingCustomerData);
+                    CustomerThread.Start();
+
+                    FrmProdShow.TaregtOrder = SelectedOrderID;
+                  //  MessageBox.Show("SelectedOrderID " + SelectedOrderID.ToString());
+
+                    FrmProdShow.ShowDialog();
+
+                }
+            }
+            catch (Exception)
+            {
+
+
+            }
         }
         
     }

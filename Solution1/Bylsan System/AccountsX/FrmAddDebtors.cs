@@ -25,6 +25,26 @@ namespace Bylsan_System.AccountsX
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            #region "  CheckFillTextBox "
+
+            if (txtDebtorName.Text == "")
+            {
+
+                txtDebtorName.BackColor = Color.OrangeRed;
+
+                txtDebtorName.Focus();
+                errorProvider1.SetError(this.txtDebtorName, "Please Enter account Debtor Name  ");
+
+                return;
+            }
+            else
+            {
+                txtDebtorName.BackColor = Color.White;
+                errorProvider1.Clear();
+
+            }
+
+            #endregion
             Operation.BeginOperation(this);
             Debtor dtb = new Debtor() 
             {

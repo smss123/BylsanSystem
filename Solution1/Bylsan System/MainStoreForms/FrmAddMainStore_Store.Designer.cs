@@ -32,21 +32,21 @@
             System.Windows.Forms.Label DescriptionLabel;
             System.Windows.Forms.Label QtyLabel;
             System.Windows.Forms.Label itemNameLabel;
+            System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label label2;
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            System.Windows.Forms.Label label1;
-            System.Windows.Forms.Label label2;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CmbSuppliers = new System.Windows.Forms.ComboBox();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.DescriptiontextBox = new System.Windows.Forms.TextBox();
             this.ItemColumnComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.Addbtn = new Telerik.WinControls.UI.RadButton();
             this.QtyTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.txtUnitPrice = new System.Windows.Forms.TextBox();
-            this.CmbSuppliers = new System.Windows.Forms.ComboBox();
             DescriptionLabel = new System.Windows.Forms.Label();
             QtyLabel = new System.Windows.Forms.Label();
             itemNameLabel = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             // DescriptionLabel
             // 
             DescriptionLabel.AutoSize = true;
-            DescriptionLabel.Location = new System.Drawing.Point(31, 88);
+            DescriptionLabel.Location = new System.Drawing.Point(26, 88);
             DescriptionLabel.Name = "DescriptionLabel";
             DescriptionLabel.Size = new System.Drawing.Size(69, 13);
             DescriptionLabel.TabIndex = 4;
@@ -73,20 +73,38 @@
             // QtyLabel
             // 
             QtyLabel.AutoSize = true;
-            QtyLabel.Location = new System.Drawing.Point(21, 58);
+            QtyLabel.Location = new System.Drawing.Point(37, 57);
             QtyLabel.Name = "QtyLabel";
-            QtyLabel.Size = new System.Drawing.Size(52, 13);
+            QtyLabel.Size = new System.Drawing.Size(51, 13);
             QtyLabel.TabIndex = 2;
             QtyLabel.Text = "Add Qty:";
             // 
             // itemNameLabel
             // 
             itemNameLabel.AutoSize = true;
-            itemNameLabel.Location = new System.Drawing.Point(32, 25);
+            itemNameLabel.Location = new System.Drawing.Point(27, 25);
             itemNameLabel.Name = "itemNameLabel";
             itemNameLabel.Size = new System.Drawing.Size(64, 13);
             itemNameLabel.TabIndex = 0;
             itemNameLabel.Text = "Item Name:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(34, 169);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(59, 13);
+            label1.TabIndex = 6;
+            label1.Text = "Unit Price:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(38, 201);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(53, 13);
+            label2.TabIndex = 8;
+            label2.Text = "Supplier:";
             // 
             // groupBox1
             // 
@@ -106,10 +124,27 @@
             this.groupBox1.Controls.Add(itemNameLabel);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(355, 336);
+            this.groupBox1.Size = new System.Drawing.Size(355, 305);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Main Store";
+            // 
+            // CmbSuppliers
+            // 
+            this.CmbSuppliers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbSuppliers.FormattingEnabled = true;
+            this.CmbSuppliers.Location = new System.Drawing.Point(97, 198);
+            this.CmbSuppliers.Name = "CmbSuppliers";
+            this.CmbSuppliers.Size = new System.Drawing.Size(230, 21);
+            this.CmbSuppliers.TabIndex = 7;
+            this.CmbSuppliers.SelectedIndexChanged += new System.EventHandler(this.CmbSuppliers_SelectedIndexChanged_1);
+            // 
+            // txtUnitPrice
+            // 
+            this.txtUnitPrice.Location = new System.Drawing.Point(97, 166);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.Size = new System.Drawing.Size(100, 20);
+            this.txtUnitPrice.TabIndex = 5;
             // 
             // DescriptiontextBox
             // 
@@ -191,7 +226,7 @@
             this.Addbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.Addbtn.Image = global::Bylsan_System.Properties.Resources.Add;
             this.Addbtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Addbtn.Location = new System.Drawing.Point(34, 278);
+            this.Addbtn.Location = new System.Drawing.Point(12, 253);
             this.Addbtn.Name = "Addbtn";
             this.Addbtn.Size = new System.Drawing.Size(109, 37);
             this.Addbtn.TabIndex = 4;
@@ -213,55 +248,23 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // txtUnitPrice
-            // 
-            this.txtUnitPrice.Location = new System.Drawing.Point(109, 179);
-            this.txtUnitPrice.Name = "txtUnitPrice";
-            this.txtUnitPrice.Size = new System.Drawing.Size(100, 20);
-            this.txtUnitPrice.TabIndex = 5;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(35, 182);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(56, 13);
-            label1.TabIndex = 6;
-            label1.Text = "Unit Price";
-            // 
-            // CmbSuppliers
-            // 
-            this.CmbSuppliers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbSuppliers.FormattingEnabled = true;
-            this.CmbSuppliers.Location = new System.Drawing.Point(101, 230);
-            this.CmbSuppliers.Name = "CmbSuppliers";
-            this.CmbSuppliers.Size = new System.Drawing.Size(230, 21);
-            this.CmbSuppliers.TabIndex = 7;
-            this.CmbSuppliers.SelectedIndexChanged += new System.EventHandler(this.CmbSuppliers_SelectedIndexChanged_1);
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(39, 230);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(50, 13);
-            label2.TabIndex = 8;
-            label2.Text = "Supplier";
-            // 
             // FrmAddMainStore_Store
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(379, 360);
+            this.ClientSize = new System.Drawing.Size(379, 329);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(387, 362);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(387, 362);
             this.Name = "FrmAddMainStore_Store";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(387, 393);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddMainStore_Store";
             this.ThemeName = "VisualStudio2012Light";

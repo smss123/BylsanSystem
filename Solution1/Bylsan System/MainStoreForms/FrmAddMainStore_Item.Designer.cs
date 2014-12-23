@@ -148,12 +148,15 @@
             this.ClientSize = new System.Drawing.Size(379, 267);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(387, 300);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(387, 300);
             this.Name = "FrmAddMainStore_Item";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(387, 300);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddMainStore_Item";
             this.ThemeName = "VisualStudio2012Light";

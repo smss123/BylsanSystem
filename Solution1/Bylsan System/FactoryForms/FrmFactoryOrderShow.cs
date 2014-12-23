@@ -64,6 +64,11 @@ namespace Bylsan_System.FactoryForms
 
         private void DGVOrders_MouseDoubleClick_1(object sender, MouseEventArgs e)
         {
+           
+        }
+
+        private void MasterTemplate_CommandCellClick(object sender, EventArgs e)
+        {
             try
             {
                 if (DGVOrders.Rows.Count != 0)

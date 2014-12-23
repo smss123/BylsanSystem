@@ -68,7 +68,7 @@
             this.customerNameTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.customerNameTextBox.Location = new System.Drawing.Point(110, 22);
             this.customerNameTextBox.Name = "customerNameTextBox";
-            this.customerNameTextBox.Size = new System.Drawing.Size(193, 20);
+            this.customerNameTextBox.Size = new System.Drawing.Size(216, 20);
             this.customerNameTextBox.TabIndex = 0;
             // 
             // phoneNumberTextBox
@@ -76,7 +76,7 @@
             this.phoneNumberTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.phoneNumberTextBox.Location = new System.Drawing.Point(110, 55);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
-            this.phoneNumberTextBox.Size = new System.Drawing.Size(193, 20);
+            this.phoneNumberTextBox.Size = new System.Drawing.Size(216, 20);
             this.phoneNumberTextBox.TabIndex = 1;
             this.phoneNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneNumberTextBox_KeyPress);
             // 

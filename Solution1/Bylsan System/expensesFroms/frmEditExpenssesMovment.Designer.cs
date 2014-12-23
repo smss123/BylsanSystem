@@ -79,7 +79,7 @@
             this.groupBox1.Controls.Add(this.amountTextBox);
             this.groupBox1.Location = new System.Drawing.Point(8, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 267);
+            this.groupBox1.Size = new System.Drawing.Size(353, 270);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
@@ -121,15 +121,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(369, 291);
+            this.ClientSize = new System.Drawing.Size(369, 294);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(377, 324);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(377, 324);
             this.Name = "frmEditExpenssesMovment";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(377, 324);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditExpenssesMovment";
             this.ThemeName = "VisualStudio2012Light";

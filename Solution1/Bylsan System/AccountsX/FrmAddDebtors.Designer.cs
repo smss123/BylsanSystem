@@ -36,20 +36,18 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.debtorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtDebtorName = new System.Windows.Forms.TextBox();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.accountDailyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             debtorNameLabel = new System.Windows.Forms.Label();
             phoneNumberLabel = new System.Windows.Forms.Label();
             addresssLabel = new System.Windows.Forms.Label();
             debtorDescriptionLabel1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.debtorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountDailyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,7 +103,7 @@
             this.groupBox1.Controls.Add(this.txtDebtorName);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(387, 216);
+            this.groupBox1.Size = new System.Drawing.Size(390, 214);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -125,57 +123,54 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.debtorBindingSource, "DebtorDescription", true));
             this.txtDescription.Location = new System.Drawing.Point(124, 106);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(196, 56);
+            this.txtDescription.Size = new System.Drawing.Size(220, 56);
             this.txtDescription.TabIndex = 9;
-            // 
-            // debtorBindingSource
-            // 
-            this.debtorBindingSource.DataSource = typeof(XamaDataLayer.Debtor);
             // 
             // txtAddress
             // 
-            this.txtAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.debtorBindingSource, "Addresss", true));
             this.txtAddress.Location = new System.Drawing.Point(124, 80);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(196, 20);
+            this.txtAddress.Size = new System.Drawing.Size(220, 20);
             this.txtAddress.TabIndex = 7;
             // 
             // txtPhone
             // 
-            this.txtPhone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.debtorBindingSource, "PhoneNumber", true));
             this.txtPhone.Location = new System.Drawing.Point(124, 54);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(196, 20);
+            this.txtPhone.Size = new System.Drawing.Size(220, 20);
             this.txtPhone.TabIndex = 5;
             // 
             // txtDebtorName
             // 
-            this.txtDebtorName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.debtorBindingSource, "DebtorName", true));
             this.txtDebtorName.Location = new System.Drawing.Point(124, 28);
             this.txtDebtorName.Name = "txtDebtorName";
-            this.txtDebtorName.Size = new System.Drawing.Size(196, 20);
+            this.txtDebtorName.Size = new System.Drawing.Size(220, 20);
             this.txtDebtorName.TabIndex = 1;
             // 
-            // accountDailyBindingSource
+            // errorProvider1
             // 
-            this.accountDailyBindingSource.DataSource = typeof(XamaDataLayer.AccountDaily);
+            this.errorProvider1.ContainerControl = this;
             // 
             // FrmAddDebtors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(411, 240);
+            this.ClientSize = new System.Drawing.Size(404, 238);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(422, 271);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(412, 271);
             this.Name = "FrmAddDebtors";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(422, 271);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddDebtors";
             this.ThemeName = "VisualStudio2012Light";
@@ -183,8 +178,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.debtorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountDailyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -193,13 +187,12 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.BindingSource debtorBindingSource;
         private System.Windows.Forms.TextBox txtDebtorName;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
-        private System.Windows.Forms.BindingSource accountDailyBindingSource;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtPhone;
         private Telerik.WinControls.UI.RadButton AddBtn;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

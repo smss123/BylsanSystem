@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label descriptionLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label accountNameLabel;
@@ -37,11 +38,11 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtAccountName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.addBtn = new Telerik.WinControls.UI.RadButton();
             this.txtAccountBox = new System.Windows.Forms.TextBox();
             this.txtDescriptionBox = new System.Windows.Forms.TextBox();
-            this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.SaveBtn = new Telerik.WinControls.UI.RadButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             descriptionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             accountNameLabel = new System.Windows.Forms.Label();
@@ -51,7 +52,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl.MasterTemplate)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +84,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(23, 55);
+            label2.Location = new System.Drawing.Point(68, 67);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(69, 13);
             label2.TabIndex = 2;
@@ -91,11 +93,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(8, 29);
+            label4.Location = new System.Drawing.Point(6, 29);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(84, 13);
+            label4.Size = new System.Drawing.Size(133, 13);
             label4.TabIndex = 0;
-            label4.Text = "Account Name:";
+            label4.Text = "Account Category Name:";
             // 
             // CmbCategories
             // 
@@ -147,57 +149,65 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.SaveBtn);
+            this.groupBox1.Controls.Add(this.addBtn);
             this.groupBox1.Controls.Add(this.txtAccountBox);
             this.groupBox1.Controls.Add(label2);
             this.groupBox1.Controls.Add(this.txtDescriptionBox);
             this.groupBox1.Controls.Add(label4);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(383, 211);
+            this.groupBox1.Size = new System.Drawing.Size(390, 214);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
+            // addBtn
+            // 
+            this.addBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.Image = global::Bylsan_System.Properties.Resources.Add;
+            this.addBtn.Location = new System.Drawing.Point(11, 163);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(110, 42);
+            this.addBtn.TabIndex = 7;
+            this.addBtn.Text = "add";
+            this.addBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.addBtn.ThemeName = "VisualStudio2012Light";
+            this.addBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
             // txtAccountBox
             // 
-            this.txtAccountBox.Location = new System.Drawing.Point(107, 26);
+            this.txtAccountBox.Location = new System.Drawing.Point(143, 29);
             this.txtAccountBox.Name = "txtAccountBox";
-            this.txtAccountBox.Size = new System.Drawing.Size(244, 20);
+            this.txtAccountBox.Size = new System.Drawing.Size(220, 20);
             this.txtAccountBox.TabIndex = 5;
             // 
             // txtDescriptionBox
             // 
-            this.txtDescriptionBox.Location = new System.Drawing.Point(98, 67);
+            this.txtDescriptionBox.Location = new System.Drawing.Point(143, 67);
             this.txtDescriptionBox.Multiline = true;
             this.txtDescriptionBox.Name = "txtDescriptionBox";
-            this.txtDescriptionBox.Size = new System.Drawing.Size(253, 83);
+            this.txtDescriptionBox.Size = new System.Drawing.Size(220, 83);
             this.txtDescriptionBox.TabIndex = 3;
             // 
-            // SaveBtn
+            // errorProvider1
             // 
-            this.SaveBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveBtn.Image = global::Bylsan_System.Properties.Resources.Save;
-            this.SaveBtn.Location = new System.Drawing.Point(11, 163);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(110, 42);
-            this.SaveBtn.TabIndex = 7;
-            this.SaveBtn.Text = "Save";
-            this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SaveBtn.ThemeName = "VisualStudio2012Light";
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            this.errorProvider1.ContainerControl = this;
             // 
             // FrmAddAccountCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(407, 235);
+            this.ClientSize = new System.Drawing.Size(414, 238);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(422, 271);
+            this.MinimumSize = new System.Drawing.Size(422, 271);
             this.Name = "FrmAddAccountCategory";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(422, 271);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddAccountCategory";
             this.ThemeName = "VisualStudio2012Light";
@@ -207,7 +217,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -221,8 +232,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtDescriptionBox;
         private System.Windows.Forms.TextBox txtAccountBox;
-        private Telerik.WinControls.UI.RadButton SaveBtn;
-        private Telerik.WinControls.Themes.VisualStudio2012DarkTheme visualStudio2012DarkTheme1;
+        private Telerik.WinControls.UI.RadButton addBtn;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

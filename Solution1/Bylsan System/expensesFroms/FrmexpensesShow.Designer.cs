@@ -98,7 +98,7 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 571);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 574);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(959, 22);
             this.statusStrip1.TabIndex = 1;
@@ -112,7 +112,7 @@
             this.radGroupBox1.HeaderText = "expenses Data";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 39);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(959, 532);
+            this.radGroupBox1.Size = new System.Drawing.Size(959, 535);
             this.radGroupBox1.TabIndex = 2;
             this.radGroupBox1.Text = "expenses Data";
             this.radGroupBox1.ThemeName = "VisualStudio2012Light";
@@ -174,7 +174,7 @@
             this.expensesGridView.Name = "expensesGridView";
             this.expensesGridView.ReadOnly = true;
             this.expensesGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.expensesGridView.Size = new System.Drawing.Size(955, 512);
+            this.expensesGridView.Size = new System.Drawing.Size(955, 515);
             this.expensesGridView.TabIndex = 0;
             this.expensesGridView.Text = "radGridView1";
             this.expensesGridView.ThemeName = "VisualStudio2012Light";
@@ -189,15 +189,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(959, 593);
+            this.ClientSize = new System.Drawing.Size(959, 596);
             this.Controls.Add(this.radGroupBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
+            this.MaximumSize = new System.Drawing.Size(967, 626);
+            this.MinimumSize = new System.Drawing.Size(967, 626);
             this.Name = "FrmexpensesShow";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(967, 626);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmexpensesShow";
             this.ThemeName = "VisualStudio2012Light";

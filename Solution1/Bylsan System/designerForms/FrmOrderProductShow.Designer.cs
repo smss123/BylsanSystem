@@ -46,7 +46,6 @@
             this.TxtDescription = new System.Windows.Forms.TextBox();
             this.NextPhotoBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,6 +63,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SelectedProductPhotoBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).BeginInit();
@@ -166,11 +166,11 @@
             gridViewTextBoxColumn2.FieldName = "ProductID";
             gridViewTextBoxColumn2.HeaderText = "Product Name";
             gridViewTextBoxColumn2.Name = "Product_Name";
-            gridViewTextBoxColumn2.Width = 215;
+            gridViewTextBoxColumn2.Width = 216;
             gridViewTextBoxColumn3.FieldName = "Qty";
             gridViewTextBoxColumn3.HeaderText = "Quantity";
             gridViewTextBoxColumn3.Name = "Quantity";
-            gridViewTextBoxColumn3.Width = 115;
+            gridViewTextBoxColumn3.Width = 116;
             this.DGVProducts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -182,7 +182,7 @@
             this.DGVProducts.Size = new System.Drawing.Size(392, 370);
             this.DGVProducts.TabIndex = 0;
             this.DGVProducts.Text = "OrdeProductGridView";
-            this.DGVProducts.ThemeName = "Windows8";
+            this.DGVProducts.ThemeName = "VisualStudio2012Light";
             this.DGVProducts.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DGVProducts_MouseDoubleClick);
             // 
             // CloseBtn
@@ -412,6 +412,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(710, 544);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.WthBox);
@@ -420,11 +421,15 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(718, 577);
+            this.MinimumSize = new System.Drawing.Size(718, 577);
             this.Name = "FrmOrderProductShow";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(718, 577);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmOrderProductShow";
             this.ThemeName = "VisualStudio2012Light";
@@ -449,7 +454,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private Telerik.WinControls.UI.RadGridView DGVProducts;
-        private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -480,5 +484,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox SelectedProductPhotoBox;
+        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     }
 }

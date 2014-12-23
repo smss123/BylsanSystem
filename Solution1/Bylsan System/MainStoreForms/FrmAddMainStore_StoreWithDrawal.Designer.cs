@@ -84,6 +84,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.Addbtn);
             this.groupBox1.Controls.Add(commentLabel);
             this.groupBox1.Controls.Add(this.commentTextBox);
@@ -93,7 +96,7 @@
             this.groupBox1.Controls.Add(this.CmbItems);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(325, 204);
+            this.groupBox1.Size = new System.Drawing.Size(341, 206);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
@@ -103,7 +106,7 @@
             this.Addbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Addbtn.Image = global::Bylsan_System.Properties.Resources.Add;
             this.Addbtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Addbtn.Location = new System.Drawing.Point(73, 154);
+            this.Addbtn.Location = new System.Drawing.Point(15, 141);
             this.Addbtn.Name = "Addbtn";
             this.Addbtn.Size = new System.Drawing.Size(109, 37);
             this.Addbtn.TabIndex = 4;
@@ -205,15 +208,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(421, 309);
+            this.ClientSize = new System.Drawing.Size(366, 231);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(374, 264);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(374, 264);
             this.Name = "FrmAddMainStore_StoreWithDrawal";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(374, 264);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddMainStore_StoreWithDrawal";
             this.ThemeName = "VisualStudio2012Light";

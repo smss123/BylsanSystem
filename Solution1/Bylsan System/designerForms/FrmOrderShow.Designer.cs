@@ -67,26 +67,27 @@
             // 
             // DGVOrders
             // 
+            this.DGVOrders.MasterTemplate.AutoGenerateColumns = false;
             this.DGVOrders.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "ID";
             gridViewTextBoxColumn1.HeaderText = "ID";
             gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn1.Width = 89;
+            gridViewTextBoxColumn1.Width = 100;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "OrderName";
             gridViewTextBoxColumn2.HeaderText = "Order Name";
             gridViewTextBoxColumn2.Name = "OrderName";
-            gridViewTextBoxColumn2.Width = 340;
+            gridViewTextBoxColumn2.Width = 380;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "OrderDate";
             gridViewTextBoxColumn3.HeaderText = "Order Date";
             gridViewTextBoxColumn3.Name = "OrdDate";
-            gridViewTextBoxColumn3.Width = 229;
+            gridViewTextBoxColumn3.Width = 254;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Enter";
             gridViewCommandColumn1.Name = "EnterColm";
-            gridViewCommandColumn1.Width = 136;
+            gridViewCommandColumn1.Width = 60;
             this.DGVOrders.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -100,6 +101,7 @@
             this.DGVOrders.TabIndex = 1;
             this.DGVOrders.Text = "radGridView1";
             this.DGVOrders.ThemeName = "VisualStudio2012Light";
+            this.DGVOrders.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.MasterTemplate_CommandCellClick);
             this.DGVOrders.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DGVOrders_MouseDoubleClick);
             // 
             // statusStrip1
