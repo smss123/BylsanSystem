@@ -37,9 +37,11 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtAccountName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.SaveBtn = new System.Windows.Forms.Button();
             this.txtAccountBox = new System.Windows.Forms.TextBox();
             this.txtDescriptionBox = new System.Windows.Forms.TextBox();
+            this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
+            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             descriptionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             accountNameLabel = new System.Windows.Forms.Label();
@@ -49,6 +51,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl.MasterTemplate)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // descriptionLabel
@@ -78,18 +82,18 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(41, 55);
+            label2.Location = new System.Drawing.Point(23, 55);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(64, 13);
+            label2.Size = new System.Drawing.Size(69, 13);
             label2.TabIndex = 2;
             label2.Text = "Description:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(26, 29);
+            label4.Location = new System.Drawing.Point(8, 29);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(80, 13);
+            label4.Size = new System.Drawing.Size(84, 13);
             label4.TabIndex = 0;
             label4.Text = "Account Name:";
             // 
@@ -140,56 +144,71 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.SaveBtn);
             this.groupBox1.Controls.Add(this.txtAccountBox);
             this.groupBox1.Controls.Add(label2);
             this.groupBox1.Controls.Add(this.txtDescriptionBox);
             this.groupBox1.Controls.Add(label4);
-            this.groupBox1.Location = new System.Drawing.Point(36, 23);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(396, 181);
+            this.groupBox1.Size = new System.Drawing.Size(383, 211);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // SaveBtn
-            // 
-            this.SaveBtn.Location = new System.Drawing.Point(29, 127);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(75, 23);
-            this.SaveBtn.TabIndex = 6;
-            this.SaveBtn.Text = "Save ";
-            this.SaveBtn.UseVisualStyleBackColor = true;
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
-            // 
             // txtAccountBox
             // 
-            this.txtAccountBox.Location = new System.Drawing.Point(125, 26);
+            this.txtAccountBox.Location = new System.Drawing.Point(107, 26);
             this.txtAccountBox.Name = "txtAccountBox";
             this.txtAccountBox.Size = new System.Drawing.Size(244, 20);
             this.txtAccountBox.TabIndex = 5;
             // 
             // txtDescriptionBox
             // 
-            this.txtDescriptionBox.Location = new System.Drawing.Point(116, 67);
+            this.txtDescriptionBox.Location = new System.Drawing.Point(98, 67);
             this.txtDescriptionBox.Multiline = true;
             this.txtDescriptionBox.Name = "txtDescriptionBox";
             this.txtDescriptionBox.Size = new System.Drawing.Size(253, 83);
             this.txtDescriptionBox.TabIndex = 3;
             // 
+            // SaveBtn
+            // 
+            this.SaveBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveBtn.Image = global::Bylsan_System.Properties.Resources.Save;
+            this.SaveBtn.Location = new System.Drawing.Point(11, 163);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(110, 42);
+            this.SaveBtn.TabIndex = 7;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SaveBtn.ThemeName = "VisualStudio2012Light";
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
             // FrmAddAccountCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 235);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(407, 235);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAddAccountCategory";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddAccountCategory";
+            this.ThemeName = "VisualStudio2012Light";
             this.Load += new System.EventHandler(this.FrmAddAccountCategory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,7 +220,9 @@
         private System.Windows.Forms.TextBox txtAccountName;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtDescriptionBox;
-        private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.TextBox txtAccountBox;
+        private Telerik.WinControls.UI.RadButton SaveBtn;
+        private Telerik.WinControls.Themes.VisualStudio2012DarkTheme visualStudio2012DarkTheme1;
+        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     }
 }

@@ -17,7 +17,7 @@ using XamaDataLayer.Accountant;
 
 namespace Bylsan_System.AccountsX
 {
-    public partial class FrmAddAccountCategory : Form
+    public partial class FrmAddAccountCategory : RadForm
     {
         public FrmAddAccountCategory()
         {

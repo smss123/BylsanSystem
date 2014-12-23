@@ -884,6 +884,7 @@
     <Content Include="Lib\Microsoft.Synchronization.Data.Server.dll" />
     <Content Include="Lib\Microsoft.Synchronization.Data.SqlServer.dll" />
     <Content Include="Lib\Microsoft.Synchronization.Data.SqlServerCe.dll" />
+    <Content Include="Lib\NewIcon.ico" />
     <Content Include="Lib\Xprema.dll" />
     <Content Include="Lib\Xprema.pdb" />
     <None Include="Resources\ImagePreview.png" />
