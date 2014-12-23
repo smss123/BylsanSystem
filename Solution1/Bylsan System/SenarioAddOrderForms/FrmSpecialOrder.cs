@@ -12,11 +12,12 @@ using System.IO;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Helper_Classes;
+using Telerik.WinControls.UI;
 
 
 namespace Bylsan_System.SenarioAddOrderForms
 {
-    public partial class FrmSpecialOrder : Form
+    public partial class FrmSpecialOrder : RadForm
     {
         public FrmSpecialOrder()
         {

@@ -36,23 +36,23 @@
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.DGVSellItems = new System.Windows.Forms.DataGridView();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.BrowseBtn = new Telerik.WinControls.UI.RadButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.itemPriceTextBox = new System.Windows.Forms.TextBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.itemNameTextBox = new System.Windows.Forms.TextBox();
-            this.DGVSellItems = new System.Windows.Forms.DataGridView();
             itemNameLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
             itemPriceLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVSellItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrowseBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVSellItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,6 +119,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
             // 
+            // DGVSellItems
+            // 
+            this.DGVSellItems.AllowUserToAddRows = false;
+            this.DGVSellItems.BackgroundColor = System.Drawing.Color.White;
+            this.DGVSellItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVSellItems.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DGVSellItems.Location = new System.Drawing.Point(345, 14);
+            this.DGVSellItems.Name = "DGVSellItems";
+            this.DGVSellItems.ReadOnly = true;
+            this.DGVSellItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVSellItems.Size = new System.Drawing.Size(552, 266);
+            this.DGVSellItems.TabIndex = 1;
+            // 
             // AddBtn
             // 
             this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,19 +192,6 @@
             this.itemNameTextBox.Size = new System.Drawing.Size(217, 20);
             this.itemNameTextBox.TabIndex = 1;
             // 
-            // DGVSellItems
-            // 
-            this.DGVSellItems.AllowUserToAddRows = false;
-            this.DGVSellItems.BackgroundColor = System.Drawing.Color.White;
-            this.DGVSellItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVSellItems.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DGVSellItems.Location = new System.Drawing.Point(345, 14);
-            this.DGVSellItems.Name = "DGVSellItems";
-            this.DGVSellItems.ReadOnly = true;
-            this.DGVSellItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVSellItems.Size = new System.Drawing.Size(552, 266);
-            this.DGVSellItems.TabIndex = 1;
-            // 
             // FrmAddSellItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,12 +200,15 @@
             this.ClientSize = new System.Drawing.Size(935, 309);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(943, 342);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(943, 342);
             this.Name = "FrmAddSellItem";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(943, 342);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddSellItem";
             this.ThemeName = "VisualStudio2012Light";
@@ -213,10 +216,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVSellItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrowseBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVSellItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

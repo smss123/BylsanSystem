@@ -8,11 +8,12 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 namespace Bylsan_System.ProductForms
 {
-    public partial class frmManageProduct : Form
+    public partial class frmManageProduct : RadForm
     {
         public frmManageProduct()
         {
@@ -71,6 +72,17 @@ namespace Bylsan_System.ProductForms
         private void ProductGridView_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            frmAddProduct frm = new frmAddProduct();
+            frm.ShowDialog();
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            frmManageProduct_Load(null, null);
         }
     }
 }

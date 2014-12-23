@@ -239,11 +239,16 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(648, 534);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(648, 534);
             this.Name = "FrmEditUserPermession";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(648, 534);
             this.Text = "FrmUserPermessionEdit";
             this.ThemeName = "VisualStudio2012Light";
             this.Load += new System.EventHandler(this.FrmEditUserPermession_Load);

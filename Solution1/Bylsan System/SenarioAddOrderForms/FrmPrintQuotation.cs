@@ -13,9 +13,10 @@ using XamaDataLayer;
 using Bylsan_System.SenarioAddOrderForms;
 using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Helper_Classes;
+using Telerik.WinControls.UI;
 namespace Bylsan_System.SenarioAddOrderForms
 {
-    public partial class FrmPrintQuotation : Form
+    public partial class FrmPrintQuotation : RadForm
     {
         public FrmPrintQuotation()
         {

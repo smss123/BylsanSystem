@@ -170,27 +170,27 @@
             this.OrderTypeCheckLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.OrderTypeCheckLab.Location = new System.Drawing.Point(701, 50);
             this.OrderTypeCheckLab.Name = "OrderTypeCheckLab";
-            this.OrderTypeCheckLab.Size = new System.Drawing.Size(60, 22);
+            this.OrderTypeCheckLab.Size = new System.Drawing.Size(34, 22);
             this.OrderTypeCheckLab.TabIndex = 2;
-            this.OrderTypeCheckLab.Text = "label1";
+            this.OrderTypeCheckLab.Text = "----";
             // 
             // CustomerPhoneLab
             // 
             this.CustomerPhoneLab.AutoSize = true;
             this.CustomerPhoneLab.Location = new System.Drawing.Point(58, 50);
             this.CustomerPhoneLab.Name = "CustomerPhoneLab";
-            this.CustomerPhoneLab.Size = new System.Drawing.Size(38, 13);
+            this.CustomerPhoneLab.Size = new System.Drawing.Size(23, 13);
             this.CustomerPhoneLab.TabIndex = 1;
-            this.CustomerPhoneLab.Text = "label2";
+            this.CustomerPhoneLab.Text = "----";
             // 
             // CustomerNameLab
             // 
             this.CustomerNameLab.AutoSize = true;
             this.CustomerNameLab.Location = new System.Drawing.Point(58, 26);
             this.CustomerNameLab.Name = "CustomerNameLab";
-            this.CustomerNameLab.Size = new System.Drawing.Size(38, 13);
+            this.CustomerNameLab.Size = new System.Drawing.Size(23, 13);
             this.CustomerNameLab.TabIndex = 0;
-            this.CustomerNameLab.Text = "label1";
+            this.CustomerNameLab.Text = "----";
             // 
             // groupBox1
             // 

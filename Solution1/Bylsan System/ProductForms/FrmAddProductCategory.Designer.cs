@@ -36,12 +36,13 @@
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.productCategoryNameTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
+            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             productCategoryNameLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
             this.ProductCategorygroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // productCategoryNameLabel
@@ -49,7 +50,7 @@
             productCategoryNameLabel.AutoSize = true;
             productCategoryNameLabel.Location = new System.Drawing.Point(12, 26);
             productCategoryNameLabel.Name = "productCategoryNameLabel";
-            productCategoryNameLabel.Size = new System.Drawing.Size(86, 13);
+            productCategoryNameLabel.Size = new System.Drawing.Size(88, 13);
             productCategoryNameLabel.TabIndex = 0;
             productCategoryNameLabel.Text = "Category Name:";
             // 
@@ -58,7 +59,7 @@
             descriptionLabel.AutoSize = true;
             descriptionLabel.Location = new System.Drawing.Point(34, 64);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(64, 13);
+            descriptionLabel.Size = new System.Drawing.Size(69, 13);
             descriptionLabel.TabIndex = 2;
             descriptionLabel.Text = "Description:";
             // 
@@ -78,12 +79,15 @@
             // 
             // AddBtn
             // 
+            this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddBtn.Image = global::Bylsan_System.Properties.Resources.Add;
             this.AddBtn.Location = new System.Drawing.Point(15, 144);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(126, 33);
+            this.AddBtn.Size = new System.Drawing.Size(116, 43);
             this.AddBtn.TabIndex = 3;
             this.AddBtn.Text = "Add";
-            this.AddBtn.ThemeName = "Windows8";
+            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddBtn.ThemeName = "VisualStudio2012Light";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // descriptionTextBox
@@ -112,20 +116,27 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(385, 215);
+            this.ClientSize = new System.Drawing.Size(393, 220);
             this.Controls.Add(this.ProductCategorygroupBox);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(401, 253);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(401, 253);
             this.Name = "FrmAddProductCategory";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(401, 253);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Product Category";
+            this.ThemeName = "VisualStudio2012Light";
             this.Load += new System.EventHandler(this.FrmAddProductCategory_Load);
             this.ProductCategorygroupBox.ResumeLayout(false);
             this.ProductCategorygroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -137,6 +148,6 @@
         private System.Windows.Forms.TextBox descriptionTextBox;
         private System.Windows.Forms.TextBox productCategoryNameTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
+        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     }
 }

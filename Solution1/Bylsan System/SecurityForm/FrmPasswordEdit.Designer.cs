@@ -141,11 +141,14 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(351, 218);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(359, 251);
+            this.MinimumSize = new System.Drawing.Size(359, 251);
             this.Name = "FrmPasswordEdit";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(359, 251);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPasswordEdit";
             this.ThemeName = "VisualStudio2012Light";

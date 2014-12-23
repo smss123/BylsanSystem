@@ -40,11 +40,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.DescriptiontextBox = new System.Windows.Forms.TextBox();
             this.ImageListProducuts = new System.Windows.Forms.ImageList(this.components);
+            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OkyBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrwoseBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RemoveBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -66,7 +68,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.flowLayoutPanel1);
-            this.panel1.Location = new System.Drawing.Point(1, 156);
+            this.panel1.Location = new System.Drawing.Point(6, 146);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(281, 219);
             this.panel1.TabIndex = 7;
@@ -84,11 +86,12 @@
             // 
             // OkyBtn
             // 
-            this.OkyBtn.Location = new System.Drawing.Point(215, 381);
+            this.OkyBtn.Location = new System.Drawing.Point(218, 381);
             this.OkyBtn.Name = "OkyBtn";
             this.OkyBtn.Size = new System.Drawing.Size(60, 24);
             this.OkyBtn.TabIndex = 6;
             this.OkyBtn.Text = "Oky";
+            this.OkyBtn.ThemeName = "VisualStudio2012Light";
             this.OkyBtn.Click += new System.EventHandler(this.OkyBtn_Click);
             // 
             // label2
@@ -96,7 +99,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(431, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Select image:";
             // 
@@ -107,6 +110,7 @@
             this.BrwoseBtn.Size = new System.Drawing.Size(110, 24);
             this.BrwoseBtn.TabIndex = 4;
             this.BrwoseBtn.Text = "Upload Image";
+            this.BrwoseBtn.ThemeName = "VisualStudio2012Light";
             this.BrwoseBtn.Click += new System.EventHandler(this.BrwoseBtn_Click);
             // 
             // PathTextBox
@@ -123,20 +127,21 @@
             this.RemoveBtn.Size = new System.Drawing.Size(59, 24);
             this.RemoveBtn.TabIndex = 2;
             this.RemoveBtn.Text = "<<";
+            this.RemoveBtn.ThemeName = "VisualStudio2012Light";
             this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 33);
+            this.label1.Location = new System.Drawing.Point(6, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Description:";
             // 
             // DescriptiontextBox
             // 
-            this.DescriptiontextBox.Location = new System.Drawing.Point(6, 49);
+            this.DescriptiontextBox.Location = new System.Drawing.Point(6, 44);
             this.DescriptiontextBox.Multiline = true;
             this.DescriptiontextBox.Name = "DescriptiontextBox";
             this.DescriptiontextBox.Size = new System.Drawing.Size(276, 85);
@@ -152,11 +157,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(329, 443);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmSpecialOrder";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSpecialOrder";
+            this.ThemeName = "VisualStudio2012Light";
             this.Load += new System.EventHandler(this.FrmSpecialOrder_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -164,6 +175,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.OkyBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BrwoseBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RemoveBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -181,5 +193,6 @@
         private Telerik.WinControls.UI.RadButton BrwoseBtn;
         private System.Windows.Forms.ImageList ImageListProducuts;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     }
 }

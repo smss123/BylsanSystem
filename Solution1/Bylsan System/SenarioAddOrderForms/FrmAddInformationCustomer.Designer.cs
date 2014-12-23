@@ -44,12 +44,14 @@
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblstatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             customerNameLabel = new System.Windows.Forms.Label();
             phoneNumberLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NextBtn)).BeginInit();
             this.InformationgroupBox.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // customerNameLabel
@@ -57,7 +59,7 @@
             customerNameLabel.AutoSize = true;
             customerNameLabel.Location = new System.Drawing.Point(17, 69);
             customerNameLabel.Name = "customerNameLabel";
-            customerNameLabel.Size = new System.Drawing.Size(87, 13);
+            customerNameLabel.Size = new System.Drawing.Size(91, 13);
             customerNameLabel.TabIndex = 1;
             customerNameLabel.Text = "Customer Name:";
             // 
@@ -66,7 +68,7 @@
             phoneNumberLabel.AutoSize = true;
             phoneNumberLabel.Location = new System.Drawing.Point(23, 31);
             phoneNumberLabel.Name = "phoneNumberLabel";
-            phoneNumberLabel.Size = new System.Drawing.Size(81, 13);
+            phoneNumberLabel.Size = new System.Drawing.Size(87, 13);
             phoneNumberLabel.TabIndex = 3;
             phoneNumberLabel.Text = "Phone Number:";
             // 
@@ -92,7 +94,7 @@
             this.SpecialOrderCheckBox.AutoSize = true;
             this.SpecialOrderCheckBox.Location = new System.Drawing.Point(176, 243);
             this.SpecialOrderCheckBox.Name = "SpecialOrderCheckBox";
-            this.SpecialOrderCheckBox.Size = new System.Drawing.Size(90, 17);
+            this.SpecialOrderCheckBox.Size = new System.Drawing.Size(95, 17);
             this.SpecialOrderCheckBox.TabIndex = 6;
             this.SpecialOrderCheckBox.Text = "Special Order";
             this.SpecialOrderCheckBox.UseVisualStyleBackColor = true;
@@ -103,7 +105,7 @@
             this.NormalOrdercheckBox.AutoSize = true;
             this.NormalOrdercheckBox.Location = new System.Drawing.Point(11, 243);
             this.NormalOrdercheckBox.Name = "NormalOrdercheckBox";
-            this.NormalOrdercheckBox.Size = new System.Drawing.Size(90, 17);
+            this.NormalOrdercheckBox.Size = new System.Drawing.Size(96, 17);
             this.NormalOrdercheckBox.TabIndex = 5;
             this.NormalOrdercheckBox.Text = "Normal Order";
             this.NormalOrdercheckBox.UseVisualStyleBackColor = true;
@@ -137,27 +139,27 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(46, 102);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(19, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "label3";
+            this.label3.Text = "---";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(46, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(19, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.label2.Text = "---";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(46, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(19, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.label1.Text = "---";
             // 
             // InformationsBox
             // 
@@ -211,8 +213,13 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAddInformationCustomer";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddInformationCustomer";
+            this.ThemeName = "VisualStudio2012Light";
             this.Load += new System.EventHandler(this.FrmAddInformationCustomer_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -221,6 +228,7 @@
             this.InformationgroupBox.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +250,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblstatus;
+        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     }
 }

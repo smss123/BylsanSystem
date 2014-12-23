@@ -12,9 +12,10 @@ using XamaDataLayer.BranchCmd;
 using Bylsan_System.SenarioAddOrderForms;
 using XamaDataLayer.Helper_Classes;
 using XamaDataLayer;
+using Telerik.WinControls.UI;
 namespace Bylsan_System.SenarioAddOrderForms
 {
-    public partial class FrmAddInformationCustomer : Form
+    public partial class FrmAddInformationCustomer : RadForm
     {
         public FrmAddInformationCustomer()
         {

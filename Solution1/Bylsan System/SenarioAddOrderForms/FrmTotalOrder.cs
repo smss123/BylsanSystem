@@ -14,9 +14,10 @@ using XamaDataLayer.Security;
 using XamaDataLayer.Accountant;
 using Xprema.XExtention;
 using Bylsan_System.Reports.ReportCommand;
+using Telerik.WinControls.UI;
 namespace Bylsan_System.SenarioAddOrderForms
 { // 1
-    public partial class FrmTotalOrder : Form
+    public partial class FrmTotalOrder : RadForm
     {//2
         public FrmTotalOrder()
         {

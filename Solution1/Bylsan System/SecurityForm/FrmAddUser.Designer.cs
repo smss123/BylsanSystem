@@ -38,21 +38,21 @@
             Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.BranshComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.branchBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.passwordsTextBox = new System.Windows.Forms.TextBox();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.AddBtn = new Telerik.WinControls.UI.RadButton();
-            this.branchBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             passwordsLabel = new System.Windows.Forms.Label();
             branch_IDLabel = new System.Windows.Forms.Label();
             userNameLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BranshComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BranshComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BranshComboBox.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -103,6 +103,20 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add User";
+            // 
+            // AddBtn
+            // 
+            this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddBtn.Image = global::Bylsan_System.Properties.Resources.Add;
+            this.AddBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.AddBtn.Location = new System.Drawing.Point(6, 163);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(109, 37);
+            this.AddBtn.TabIndex = 11;
+            this.AddBtn.Text = "Add";
+            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddBtn.ThemeName = "VisualStudio2012Light";
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // BranshComboBox
             // 
@@ -180,6 +194,10 @@
             this.BranshComboBox.TabStop = false;
             this.BranshComboBox.ThemeName = "VisualStudio2012Light";
             // 
+            // branchBindingSource
+            // 
+            this.branchBindingSource.DataSource = typeof(XamaDataLayer.Branch);
+            // 
             // userNameTextBox
             // 
             this.userNameTextBox.Location = new System.Drawing.Point(92, 39);
@@ -195,24 +213,6 @@
             this.passwordsTextBox.Size = new System.Drawing.Size(209, 20);
             this.passwordsTextBox.TabIndex = 3;
             // 
-            // AddBtn
-            // 
-            this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddBtn.Image = global::Bylsan_System.Properties.Resources.Add;
-            this.AddBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.AddBtn.Location = new System.Drawing.Point(6, 163);
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(109, 37);
-            this.AddBtn.TabIndex = 11;
-            this.AddBtn.Text = "Add";
-            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddBtn.ThemeName = "VisualStudio2012Light";
-            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
-            // 
-            // branchBindingSource
-            // 
-            this.branchBindingSource.DataSource = typeof(XamaDataLayer.Branch);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -224,21 +224,26 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(342, 234);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(350, 267);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(350, 267);
             this.Name = "FrmAddUser";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(350, 267);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddUser";
             this.ThemeName = "VisualStudio2012Light";
             this.Load += new System.EventHandler(this.FrmAddUser_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BranshComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BranshComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BranshComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.branchBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();

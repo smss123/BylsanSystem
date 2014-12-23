@@ -119,7 +119,7 @@
             this.ItemComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ItemComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // ItemComboBox.NestedRadGridView
+            // 
             // 
             this.ItemComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.ItemComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -146,12 +146,15 @@
             this.ClientSize = new System.Drawing.Size(332, 176);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(340, 209);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(340, 209);
             this.Name = "FrmEditSellIStore";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(340, 209);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditSellIStore";
             this.ThemeName = "VisualStudio2012Light";

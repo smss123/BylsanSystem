@@ -44,19 +44,28 @@ namespace Bylsan_System.ProductForms
             this.ProductgroupBox = new System.Windows.Forms.GroupBox();
             this.ProductGridView = new Telerik.WinControls.UI.RadGridView();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
+            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.ProductgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridView.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripSeparator1,
+            this.RefreshBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1020, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1020, 39);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -80,9 +89,9 @@ namespace Bylsan_System.ProductForms
             // 
             this.ProductgroupBox.Controls.Add(this.ProductGridView);
             this.ProductgroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductgroupBox.Location = new System.Drawing.Point(0, 25);
+            this.ProductgroupBox.Location = new System.Drawing.Point(0, 39);
             this.ProductgroupBox.Name = "ProductgroupBox";
-            this.ProductgroupBox.Size = new System.Drawing.Size(1020, 558);
+            this.ProductgroupBox.Size = new System.Drawing.Size(1020, 544);
             this.ProductgroupBox.TabIndex = 2;
             this.ProductgroupBox.TabStop = false;
             this.ProductgroupBox.Text = "Product Data";
@@ -152,7 +161,7 @@ namespace Bylsan_System.ProductForms
             gridViewImageColumn1.Name = "column1";
             gridViewImageColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewImageColumn1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            gridViewImageColumn1.Width = 58;
+            gridViewImageColumn1.Width = 60;
             this.ProductGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
@@ -166,15 +175,40 @@ namespace Bylsan_System.ProductForms
             this.ProductGridView.MasterTemplate.EnableFiltering = true;
             this.ProductGridView.Name = "ProductGridView";
             this.ProductGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ProductGridView.Size = new System.Drawing.Size(1014, 537);
+            this.ProductGridView.Size = new System.Drawing.Size(1014, 523);
             this.ProductGridView.TabIndex = 0;
             this.ProductGridView.Text = "radGridView1";
-            this.ProductGridView.ThemeName = "Windows8";
+            this.ProductGridView.ThemeName = "VisualStudio2012Light";
             this.ProductGridView.Click += new System.EventHandler(this.ProductGridView_Click);
             // 
             // productBindingSource
             // 
             this.productBindingSource.DataSource = typeof(XamaDataLayer.Product);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::Bylsan_System.Properties.Resources.Add;
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(65, 36);
+            this.toolStripButton1.Text = "Add";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // RefreshBtn
+            // 
+            this.RefreshBtn.Image = global::Bylsan_System.Properties.Resources.Refrech;
+            this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Size = new System.Drawing.Size(79, 36);
+            this.RefreshBtn.Text = "Refresh";
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // frmManageProduct
             // 
@@ -185,15 +219,23 @@ namespace Bylsan_System.ProductForms
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmManageProduct";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Product";
+            this.ThemeName = "VisualStudio2012Light";
             this.Load += new System.EventHandler(this.frmManageProduct_Load);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ProductgroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridView.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,7 +248,10 @@ namespace Bylsan_System.ProductForms
         private System.Windows.Forms.GroupBox ProductgroupBox;
         private Telerik.WinControls.UI.RadGridView ProductGridView;
         private System.Windows.Forms.BindingSource productBindingSource;
-        private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton RefreshBtn;
     }
 }

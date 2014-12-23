@@ -103,7 +103,7 @@
             // 
             this.txtprice.Location = new System.Drawing.Point(117, 193);
             this.txtprice.Name = "txtprice";
-            this.txtprice.Size = new System.Drawing.Size(240, 22);
+            this.txtprice.Size = new System.Drawing.Size(240, 20);
             this.txtprice.TabIndex = 22;
             // 
             // CategoryComboBox
@@ -116,7 +116,7 @@
             this.CategoryComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CategoryComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // CategoryComboBox.NestedRadGridView
             // 
             this.CategoryComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.CategoryComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -137,11 +137,14 @@
             // 
             // AddBtn
             // 
+            this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddBtn.Image = global::Bylsan_System.Properties.Resources.Save;
             this.AddBtn.Location = new System.Drawing.Point(6, 348);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(122, 37);
+            this.AddBtn.Size = new System.Drawing.Size(111, 37);
             this.AddBtn.TabIndex = 15;
             this.AddBtn.Text = "Save";
+            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AddBtn.ThemeName = "Windows8";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
@@ -179,7 +182,7 @@
             this.product_NameTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.product_NameTextBox.Location = new System.Drawing.Point(117, 36);
             this.product_NameTextBox.Name = "product_NameTextBox";
-            this.product_NameTextBox.Size = new System.Drawing.Size(240, 22);
+            this.product_NameTextBox.Size = new System.Drawing.Size(240, 20);
             this.product_NameTextBox.TabIndex = 12;
             // 
             // label2

@@ -69,8 +69,8 @@
             this.AddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(120, 36);
-            this.AddBtn.Text = "Add Employee";
+            this.AddBtn.Size = new System.Drawing.Size(91, 36);
+            this.AddBtn.Text = "Add User";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // toolStripSeparator1
@@ -174,11 +174,14 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.UserGridView);
             this.Controls.Add(this.toolStrip1);
+            this.MaximumSize = new System.Drawing.Size(821, 522);
+            this.MinimumSize = new System.Drawing.Size(821, 522);
             this.Name = "FrmUserShow";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(821, 522);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmUserShow";
             this.ThemeName = "VisualStudio2012Light";

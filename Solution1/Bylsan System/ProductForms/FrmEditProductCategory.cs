@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 
 namespace Bylsan_System.ProductForms
 {
-    public partial class FrmEditProductCategory : Form
+    public partial class FrmEditProductCategory : RadForm
     {
         public FrmEditProductCategory()
         {

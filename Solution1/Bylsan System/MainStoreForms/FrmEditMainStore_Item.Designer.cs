@@ -148,11 +148,14 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(379, 267);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(387, 300);
+            this.MinimumSize = new System.Drawing.Size(387, 300);
             this.Name = "FrmEditMainStore_Item";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(387, 300);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditMainStore_Item";
             this.ThemeName = "VisualStudio2012Light";

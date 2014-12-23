@@ -887,6 +887,7 @@
     <Content Include="Lib\NewIcon.ico" />
     <Content Include="Lib\Xprema.dll" />
     <Content Include="Lib\Xprema.pdb" />
+    <None Include="Resources\Print.png" />
     <None Include="Resources\ImagePreview.png" />
     <None Include="Resources\Refrech.png" />
     <None Include="Resources\Save.png" />
