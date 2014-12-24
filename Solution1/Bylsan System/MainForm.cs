@@ -504,5 +504,11 @@ namespace Bylsan_System
             FrmPasswordEdit f = new FrmPasswordEdit();
             f.Show();
         }
+
+        private void button2_Click_3(object sender, EventArgs e)
+        {
+            FrmPrivatewithdrawals f = new FrmPrivatewithdrawals();
+            f.Show();
+        }
     }
 }

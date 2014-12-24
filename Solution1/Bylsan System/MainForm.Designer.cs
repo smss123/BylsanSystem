@@ -84,8 +84,10 @@
             this.expensesBtn = new Telerik.WinControls.UI.RadTileElement();
             this.radTileElement4 = new Telerik.WinControls.UI.RadTileElement();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).BeginInit();
+            this.radPanorama1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -107,7 +109,7 @@
             this.Aboutbtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1426, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(1358, 38);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -315,7 +317,7 @@
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 648);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1426, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1358, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -326,6 +328,7 @@
             this.radPanorama1.BackColor = System.Drawing.Color.White;
             this.radPanorama1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.radPanorama1.ContextMenuStrip = this.contextMenuStrip1;
+            this.radPanorama1.Controls.Add(this.button2);
             this.radPanorama1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanorama1.Groups.AddRange(new Telerik.WinControls.RadItem[] {
             this.tileGroupElement1,
@@ -338,7 +341,7 @@
             this.radPanorama1.Name = "radPanorama1";
             this.radPanorama1.RowsCount = 6;
             this.radPanorama1.ShowGroups = true;
-            this.radPanorama1.Size = new System.Drawing.Size(1426, 610);
+            this.radPanorama1.Size = new System.Drawing.Size(1358, 610);
             this.radPanorama1.TabIndex = 10;
             this.radPanorama1.Text = "radPanorama1";
             this.radPanorama1.ThemeName = "VisualStudio2012Dark";
@@ -701,12 +704,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_3);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(544, 475);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(107, 44);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Private withdrawals";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_3);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1426, 670);
+            this.ClientSize = new System.Drawing.Size(1358, 670);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.radPanorama1);
             this.Controls.Add(this.statusStrip1);
@@ -725,6 +738,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).EndInit();
+            this.radPanorama1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -788,5 +802,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btnManagecustomerPoint;
         public Telerik.WinControls.UI.RadPanorama radPanorama1;
+        private System.Windows.Forms.Button button2;
     }
 }

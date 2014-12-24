@@ -58,5 +58,27 @@ namespace XamaDataLayer.Helper_Classes
             tb = db.AccountDailies.Where(Mn => Mn.TotalOut == MinTotalOut).SingleOrDefault();
             return tb;
         }
+
+        public static  double  GetFreeBalance()
+        {
+            double NetBalance = 0;
+            try
+            {
+                db = new DbDataContext();
+
+                var TotIn = (from d in db.AccountDailies
+                             select d.TotalIn).Sum();
+
+                var TotOut = (from d in db.AccountDailies
+                              select d.TotalOut).Sum();
+                NetBalance = TotIn.Value - TotOut.Value;
+
+                return NetBalance;
+            }
+            catch (Exception)
+            {
+                return NetBalance = 0;
+            }
+        }
     }
 }
