@@ -93,11 +93,22 @@ namespace XamaDataLayer.Accountant
                 p => p.AccountID == accountID &&
                  p.DateOfProcess.Value.Year >= fromDate.Year 
                  && p.DateOfProcess.Value.Month >= fromDate.Month &&
-                 p.DateOfProcess.Value.Day >= fromDate.Day).Sum(p => p.TotalIn);
+                 p.DateOfProcess.Value.Day >= fromDate.Day &&
+
+                  p.DateOfProcess.Value.Year <= ToDate.Year
+                 && p.DateOfProcess.Value.Month <= ToDate.Month &&
+                 p.DateOfProcess.Value.Day <= ToDate.Day
+
+                 ).Sum(p => p.TotalIn);
             var allTotalOut = db.AccountDailies.Where(p => p.AccountID == accountID &&
                  p.DateOfProcess.Value.Year >= fromDate.Year
                  && p.DateOfProcess.Value.Month >= fromDate.Month &&
-                 p.DateOfProcess.Value.Day >= fromDate.Day).Sum(p => p.TotalOut);
+                 p.DateOfProcess.Value.Day >= fromDate.Day &&
+
+                  p.DateOfProcess.Value.Year <= ToDate.Year
+                 && p.DateOfProcess.Value.Month <= ToDate.Month &&
+                 p.DateOfProcess.Value.Day <= ToDate.Day
+                 ).Sum(p => p.TotalOut);
             balance = allTotalIn - allTotalOut;
 
             return balance;

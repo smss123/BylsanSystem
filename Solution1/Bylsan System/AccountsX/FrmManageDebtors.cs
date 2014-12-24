@@ -50,5 +50,12 @@ namespace Bylsan_System.AccountsX
                 Operation.EndOperation(this);
             }
         }
+
+        private void AddDebt_Click(object sender, EventArgs e)
+        {
+            FrmAddDebtors frm = new FrmAddDebtors();
+            frm.ShowDialog();
+
+        }
     }
 }
