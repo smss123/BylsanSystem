@@ -60,6 +60,8 @@
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.radPanorama1 = new Telerik.WinControls.UI.RadPanorama();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnManagecustomerPoint = new System.Windows.Forms.ToolStripMenuItem();
             this.tileGroupElement1 = new Telerik.WinControls.UI.TileGroupElement();
             this.FactoryOrderBtn = new Telerik.WinControls.UI.RadTileElement();
             this.NewOrderBtn = new Telerik.WinControls.UI.RadTileElement();
@@ -82,8 +84,6 @@
             this.expensesBtn = new Telerik.WinControls.UI.RadTileElement();
             this.radTileElement4 = new Telerik.WinControls.UI.RadTileElement();
             this.button1 = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnManagecustomerPoint = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -107,7 +107,7 @@
             this.Aboutbtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1282, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(1426, 38);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -313,15 +313,17 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 559);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 648);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1282, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1426, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // radPanorama1
             // 
             this.radPanorama1.AutoScroll = true;
+            this.radPanorama1.AutoScrollMargin = new System.Drawing.Size(10, 10);
+            this.radPanorama1.BackColor = System.Drawing.Color.White;
             this.radPanorama1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.radPanorama1.ContextMenuStrip = this.contextMenuStrip1;
             this.radPanorama1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -332,13 +334,27 @@
             this.radPanorama1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radTileElement4});
             this.radPanorama1.Location = new System.Drawing.Point(0, 38);
+            this.radPanorama1.Margin = new System.Windows.Forms.Padding(10);
             this.radPanorama1.Name = "radPanorama1";
             this.radPanorama1.RowsCount = 6;
             this.radPanorama1.ShowGroups = true;
-            this.radPanorama1.Size = new System.Drawing.Size(1282, 521);
+            this.radPanorama1.Size = new System.Drawing.Size(1426, 610);
             this.radPanorama1.TabIndex = 10;
             this.radPanorama1.Text = "radPanorama1";
-            this.radPanorama1.ThemeName = "VisualStudio2012Light";
+            this.radPanorama1.ThemeName = "VisualStudio2012Dark";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnManagecustomerPoint});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(208, 26);
+            // 
+            // btnManagecustomerPoint
+            // 
+            this.btnManagecustomerPoint.Name = "btnManagecustomerPoint";
+            this.btnManagecustomerPoint.Size = new System.Drawing.Size(207, 22);
+            this.btnManagecustomerPoint.Text = "Customer Point Manager";
             // 
             // tileGroupElement1
             // 
@@ -685,25 +701,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_3);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnManagecustomerPoint});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(208, 26);
-            // 
-            // btnManagecustomerPoint
-            // 
-            this.btnManagecustomerPoint.Name = "btnManagecustomerPoint";
-            this.btnManagecustomerPoint.Size = new System.Drawing.Size(207, 22);
-            this.btnManagecustomerPoint.Text = "Customer Point Manager";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1282, 581);
+            this.ClientSize = new System.Drawing.Size(1426, 670);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.radPanorama1);
             this.Controls.Add(this.statusStrip1);
@@ -759,7 +762,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private Telerik.WinControls.Themes.VisualStudio2012DarkTheme visualStudio2012DarkTheme1;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
-        private Telerik.WinControls.UI.RadPanorama radPanorama1;
         private Telerik.WinControls.UI.TileGroupElement tileGroupElement1;
         private Telerik.WinControls.UI.RadTileElement FactoryOrderBtn;
         private Telerik.WinControls.UI.RadTileElement NewOrderBtn;
@@ -785,5 +787,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btnManagecustomerPoint;
+        public Telerik.WinControls.UI.RadPanorama radPanorama1;
     }
 }
