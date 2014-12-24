@@ -74,13 +74,31 @@ namespace XamaDataLayer.Accountant
             return ACT;
         }
 
-        public static double? GetAccountBalance(int AccountID)
+        public static double? GetAccountBalance(int accountID)
         {
             double? balance = 0d;
 
-            var AllTotalIn = db.AccountDailies.Where(p => p.AccountID == AccountID).Sum(p => p.TotalIn);
-            var AllTotalOut = db.AccountDailies.Where(p => p.AccountID == AccountID).Sum(p => p.TotalOut);
-            balance = AllTotalIn - AllTotalOut;
+            var allTotalIn = db.AccountDailies.Where(p => p.AccountID == accountID).Sum(p => p.TotalIn);
+            var allTotalOut = db.AccountDailies.Where(p => p.AccountID == accountID).Sum(p => p.TotalOut);
+            balance = allTotalIn - allTotalOut;
+
+            return balance;
+        }
+
+        public static double? GetAccountBalance(int accountID, DateTime fromDate,DateTime ToDate)
+        {
+            double? balance = 0d;
+
+            var allTotalIn = db.AccountDailies.Where(
+                p => p.AccountID == accountID &&
+                 p.DateOfProcess.Value.Year >= fromDate.Year 
+                 && p.DateOfProcess.Value.Month >= fromDate.Month &&
+                 p.DateOfProcess.Value.Day >= fromDate.Day).Sum(p => p.TotalIn);
+            var allTotalOut = db.AccountDailies.Where(p => p.AccountID == accountID &&
+                 p.DateOfProcess.Value.Year >= fromDate.Year
+                 && p.DateOfProcess.Value.Month >= fromDate.Month &&
+                 p.DateOfProcess.Value.Day >= fromDate.Day).Sum(p => p.TotalOut);
+            balance = allTotalIn - allTotalOut;
 
             return balance;
         }
