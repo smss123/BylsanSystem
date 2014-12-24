@@ -20,6 +20,7 @@ namespace Bylsan_System.BranchForms
         public FrmAddBranch()
         {
             InitializeComponent();
+            ///
         }
 
         private void FrmAddBranch_Load(object sender, EventArgs e)
