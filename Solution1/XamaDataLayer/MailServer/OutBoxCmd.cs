@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XamaDataLayer.MailServer
 {
     public static class OutBoxCmd
     {
-        static DbDataContext db = new DbDataContext();
+        private static DbDataContext db = new DbDataContext();
 
         public static bool OutBoxMessage(OutBox  tb)
         {
@@ -23,7 +21,7 @@ namespace XamaDataLayer.MailServer
         {
             db = new DbDataContext();
             var Msg = db.OutBoxes .Where(m => m.ID == xid).SingleOrDefault();
-   
+
             Msg.Status = tb.Status;
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Edit", " Message  ", " Edit Message Status ");
@@ -43,7 +41,6 @@ namespace XamaDataLayer.MailServer
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -52,8 +49,8 @@ namespace XamaDataLayer.MailServer
         {
             db = new DbDataContext();
             var lst = (from m in db.OutBoxes
-                       orderby m.DateOfMessage descending 
-                       where m.SenderUserID == XamaDataLayer .Security .UserInfo .CurrentUserID 
+                       orderby m.DateOfMessage descending
+                       where m.SenderUserID == XamaDataLayer .Security .UserInfo .CurrentUserID
                        select m).ToList();
             return lst;
         }

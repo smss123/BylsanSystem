@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XamaDataLayer.Main_Store
 {
     public   class StoreManagerCmd
     {
-
-        static DbDataContext db = new DbDataContext();
+        private static DbDataContext db = new DbDataContext();
         public static bool AddStoreManager(StoreManager tb)
         {
             db = new DbDataContext();
@@ -29,7 +26,7 @@ namespace XamaDataLayer.Main_Store
             q.Price = tb.Price;
             q.QtyInOrOut = tb.QtyInOrOut;
             q.StoreID = tb.StoreID;
-         //   q.DateOfProcess = tb.DateOfProcess;
+
             q.ProcessType = tb.ProcessType;
             q.Description = tb.Description;
             XamaDataLayer.Security.UserCmd.SaveHistory("Edit ", " Edit  Store Manager", " Edit selected  store manager   At Main Store ");
@@ -46,7 +43,7 @@ namespace XamaDataLayer.Main_Store
                 XamaDataLayer.Security.UserCmd.SaveHistory("Delete ", " Delete Store Manager", "  Delete Selected  store manager   At Main Store ");
             }
             catch (Exception)
-            {     
+            {
             }
         }
 
@@ -71,10 +68,9 @@ namespace XamaDataLayer.Main_Store
             db = new DbDataContext();
             var lst = (from m in db.StoreManagers
                        orderby m.DateOfProcess ascending
-                       where m.ProcessType == Procctype  
+                       where m.ProcessType == Procctype
                        select m).ToList();
             return lst;
         }
-
     }
 }

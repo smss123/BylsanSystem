@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XamaDataLayer.BranchCmd
 {
     public static class EmployeesCmd
     {
-
-        static DbDataContext db = new DbDataContext();
+        private static DbDataContext db = new DbDataContext();
         public static bool AddEmployee(Employee tb)
         {
             db = new DbDataContext();
@@ -32,9 +29,9 @@ namespace XamaDataLayer.BranchCmd
         {
             db = new DbDataContext();
             var emp = db.Employees.Where(m => m.Emp_Name == nam ).SingleOrDefault();
-            int xid = 0;
+            var xid = 0;
             xid = emp.ID;
-         
+
             return xid;
         }
         public static bool EditEmployee(Employee tb, int xid)
@@ -47,17 +44,15 @@ namespace XamaDataLayer.BranchCmd
             emp.Personalty_ID = tb.Personalty_ID;
             emp.Nationalty = tb.Nationalty;
             emp.HomeAddress = tb.HomeAddress;
-          
+
             emp.Job = tb.Job;
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Edit   ", "Edit Employee ", " Edit Selected  Employee's Informations  ");
 
             return true;
-
         }
         public static void DeleteEmployee(int xid)
         {
-           
             db = new DbDataContext();
             var emp = db.Employees.Where(m => m.ID == xid).SingleOrDefault();
             db.Employees.DeleteOnSubmit(emp);

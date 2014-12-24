@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XamaDataLayer.BranchCmd
 {
     public class QuotationCmd
     {
-        static DbDataContext db = new DbDataContext();
+        private static DbDataContext db = new DbDataContext();
 
 
         public static bool AddQuotation(Quotation tb)
@@ -49,8 +47,10 @@ namespace XamaDataLayer.BranchCmd
 
 
 
-        public static List<Quotation> GetAllQuotations() {
+        public static List<Quotation> GetAllQuotations()
+        {
             db = new DbDataContext();
-          return   db.Quotations.ToList(); }
+            return   db.Quotations.ToList();
+        }
     }
 }

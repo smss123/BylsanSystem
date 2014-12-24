@@ -114,6 +114,10 @@ namespace Bylsan_System.SenarioAddOrderForms
                     var GetCurrentCustomerInfor = (from c in Cust
                                                    where c.PhoneNumber == phoneNumberTextBox.Text
                                                    select c).Single();
+                    if (GetCurrentCustomerInfor ==null)
+                    {
+                        return;
+                    }
                     this.CurrnetCust = GetCurrentCustomerInfor;
                     if (GetCurrentCustomerInfor.ID != 0)
                     {

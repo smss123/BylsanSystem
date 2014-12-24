@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XamaDataLayer.BranchCmd
 {
     public class ProductContentsCmd
     {
-
-        static DbDataContext db = new DbDataContext();
+        private static DbDataContext db = new DbDataContext();
         public static bool AddProductContents(ProductContent tb)
         {
             db = new DbDataContext();
@@ -39,22 +36,25 @@ namespace XamaDataLayer.BranchCmd
             db.ProductContents.DeleteOnSubmit(q);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Delete ", " Product Content ", " Delete Product Content ");
-
         }
-        //==================================================
 
-        public static List<ProductContent> GetAllProductConentsByProductID(int XID ) {
+
+        public static List<ProductContent> GetAllProductConentsByProductID(int XID )
+        {
             db = new DbDataContext();
-            var lst = (from c in db.ProductContents where c.ProductID == XID select c).ToList();
+            var lst = (from c in db.ProductContents
+                        where c.ProductID == XID
+                        select c).ToList();
             return lst;
         }
 
         public static List<ProductContent> GetAllProductConentsByContentsProductID(int XID)
         {
             db = new DbDataContext();
-            var lst = (from c in db.ProductContents where c.ContentsProductID == XID select c).ToList();
+            var lst = (from c in db.ProductContents
+                        where c.ContentsProductID == XID
+                        select c).ToList();
             return lst;
         }
-
     }
 }

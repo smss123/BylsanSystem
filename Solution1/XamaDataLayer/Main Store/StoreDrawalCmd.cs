@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XamaDataLayer.Main_Store
 {
     public  class StoreDrawalCmd
     {
-        static DbDataContext db = new DbDataContext();
+        private static DbDataContext db = new DbDataContext();
         public static bool AddDrawal(StoreWithDrawal tb)
         {
             db = new DbDataContext();
@@ -28,7 +26,7 @@ namespace XamaDataLayer.Main_Store
             q.ID = tb.ID;
             q.ItemID = tb.ItemID;
             q.Qty = tb.Qty;
-           // q.DateOfProcess = tb.DateOfProcess;
+
             q.Comment = tb.Comment;
             q.UserID = tb.UserID;
             q.StoreID = tb.StoreID;
@@ -50,7 +48,6 @@ namespace XamaDataLayer.Main_Store
             }
             catch (Exception)
             {
-                
                 throw;
             }
         }
@@ -62,7 +59,7 @@ namespace XamaDataLayer.Main_Store
         public static List<StoreWithDrawal> GetAllStoreDrawalByUserID( int XID )
         {
             var LST = (from u in db.StoreWithDrawals
-                       orderby u.DateOfProcess ascending 
+                       orderby u.DateOfProcess ascending
                        where u.UserID == XID
                        select u).ToList();
             return LST;
@@ -76,6 +73,5 @@ namespace XamaDataLayer.Main_Store
                        select u).ToList();
             return LST;
         }
-
     }
 }

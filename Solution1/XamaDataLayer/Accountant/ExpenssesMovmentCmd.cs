@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XamaDataLayer.Accountant
 {
     public static class ExpenssesMovmentCmd
     {
-        static DbDataContext db = new DbDataContext();
+        private static DbDataContext db = new DbDataContext();
         public static bool AddExpenssesMovment( ExpenssesMovment tb )
         {
             db = new DbDataContext();
@@ -19,11 +17,11 @@ namespace XamaDataLayer.Accountant
         public static ExpenssesMovment EditExpMovment(ExpenssesMovment tb)
         {
             db = new DbDataContext();
-            var exp = db .ExpenssesMovments .Where (x=> x.ID == tb.ID ).SingleOrDefault ();
+            var exp = db .ExpenssesMovments .Where (x => x.ID == tb.ID ).SingleOrDefault ();
             exp.ID = tb.ID;
-         //   exp .ExpenssesID = tb .ExpenssesID ;
+
             exp .Amount = tb .Amount ;
-        //    exp .DateOfProcess = tb .DateOfProcess ;
+
             exp .Description = tb .Description  ;
 
 
@@ -34,21 +32,17 @@ namespace XamaDataLayer.Accountant
 
         public static void DeleteExpMovment(int xid)
         {
-
             try
             {
-           db = new DbDataContext();
-            var exp = db .ExpenssesMovments .Where (x=> x.ID == xid ).SingleOrDefault ();
-            db.ExpenssesMovments.DeleteOnSubmit(exp);
-            db.SubmitChanges();
+                db = new DbDataContext();
+                var exp = db .ExpenssesMovments .Where (x => x.ID == xid ).SingleOrDefault ();
+                db.ExpenssesMovments.DeleteOnSubmit(exp);
+                db.SubmitChanges();
             }
             catch (Exception)
             {
-                
                 throw;
             }
-            
-           
         }
 
         public static List<ExpenssesMovment> GetAll()
@@ -69,13 +63,10 @@ namespace XamaDataLayer.Accountant
         public static List<ExpenssesMovment> GetAllExpnssesMovmentsByDate( DateTime dat )
         {
             db = new DbDataContext();
-            var lst = (from d in db.ExpenssesMovments where d.DateOfProcess == dat select d).ToList();
+            var lst = (from d in db.ExpenssesMovments
+                        where d.DateOfProcess == dat
+                        select d).ToList();
             return lst;
-           
         }
-
-
-
-
     }
 }

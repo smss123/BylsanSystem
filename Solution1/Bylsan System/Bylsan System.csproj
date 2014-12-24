@@ -240,6 +240,12 @@
     <Compile Include="CustomerForms\FrmCustomerManage.Designer.cs">
       <DependentUpon>FrmCustomerManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerForms\frmManagePoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerForms\frmManagePoint.Designer.cs">
+      <DependentUpon>frmManagePoint.cs</DependentUpon>
+    </Compile>
     <Compile Include="designerForms\FrmOrderProductShow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -654,6 +660,9 @@
     <EmbeddedResource Include="CustomerForms\FrmCustomerManage.resx">
       <DependentUpon>FrmCustomerManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerForms\frmManagePoint.resx">
+      <DependentUpon>frmManagePoint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="designerForms\FrmOrderProductShow.resx">
       <DependentUpon>FrmOrderProductShow.cs</DependentUpon>
     </EmbeddedResource>
@@ -787,6 +796,7 @@
     <EmbeddedResource Include="Reports\Sheets\RepAccountDaily.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepAllCustomers.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepBillPrint.rdlc" />
+    <EmbeddedResource Include="Reports\Sheets\RepCenterMoney.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepCustomerAccountOrders.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepExchangebond.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepExpenssesMovment.rdlc" />
@@ -847,7 +857,6 @@
     </EmbeddedResource>
     <None Include="Lib\Xprema.dll.config" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.AccountDailyReportObj.datasource" />
-    <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.ExchangebondReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.ExpenssesMovmentReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.ItemsStoreReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.OrderReportObj.datasource" />
@@ -887,6 +896,7 @@
     <None Include="Properties\DataSources\XamaDataLayer.Store_Sell.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.Supplier.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.SystemPermession.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.SystemSetting.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.User.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.UserPermession.datasource" />
     <None Include="Properties\Settings.settings">

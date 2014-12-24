@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bylsan" Class="DbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=jasmine.arvixe.com;Initial Catalog=Cloud_Bylsan1;Persist Security Info=True;User ID=xama" SettingsObjectName="XamaDataLayer.Properties.Settings" SettingsPropertyName="Cloud_BylsanConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Cloud_Bylsan" Class="DbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SEZEROFFICE-PC\SQL2008;Initial Catalog=Cloud_Bylsan;Integrated Security=True" SettingsObjectName="XamaDataLayer.Properties.Settings" SettingsPropertyName="Cloud_BylsanConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="Accountant.Account" Member="Accounts">
     <Type Name="Account">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -389,6 +389,16 @@
       <Column Name="Qty" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Association Name="SellStore_StoreOperationManager" Member="StoreOperationManagers" ThisKey="ID" OtherKey="StoreID" Type="StoreOperationManager" />
       <Association Name="SellItem_SellStore" Member="SellItem" ThisKey="ItemID" OtherKey="ID" Type="SellItem" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="Security.SystemSettings" Member="SystemSettings">
+    <Type Name="SystemSetting">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SettingName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SettingValue" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BinaryValue" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SerialNumber" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CommandArg" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

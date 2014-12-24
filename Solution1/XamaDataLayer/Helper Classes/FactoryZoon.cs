@@ -1,73 +1,67 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using XamaDataLayer;
-using System.Threading;
 using System.Windows.Forms;
-using System.Drawing;
 using System.Diagnostics;
 
 
 namespace XamaDataLayer.Helper_Classes
 {
-    public  class FactoryZoon  : IDisposable 
+    public  class FactoryZoon  : IDisposable
     {
-        static DbDataContext db = new DbDataContext();
+        private static DbDataContext db = new DbDataContext();
         ~FactoryZoon()
         {
             GC.Collect();
             Application.DoEvents();
-           Debug.Write(this);
+            Debug.Write(this);
         }
 
 
 
-    public  List<Order> GetAllOrdersInDesigner()
-    {
-        db = new DbDataContext();
-        var Lst = (from o in db.Orders
+        public  List<Order> GetAllOrdersInDesigner()
+        {
+            db = new DbDataContext();
+            var Lst = (from o in db.Orders
                    orderby o.OrderDate ascending
                    where
                        o.OrderStatus == "In Designer"
                    select o).ToList();
-        return Lst;
-    }
+            return Lst;
+        }
 
-    public List<Order> GetAllInProducting() {
-        db = new DbDataContext();
-        var Lst = (from o in db.Orders
+        public List<Order> GetAllInProducting()
+        {
+            db = new DbDataContext();
+            var Lst = (from o in db.Orders
                    orderby o.OrderDate ascending
                    where
                        o.OrderStatus == "in producting "
                    select o).ToList();
-        return Lst;
-    }
+            return Lst;
+        }
 
 
-    public  List<Order> GetAllToDeliver()
-    {
-        db = new DbDataContext();
-        var Lst = (from o in db.Orders
+        public  List<Order> GetAllToDeliver()
+        {
+            db = new DbDataContext();
+            var Lst = (from o in db.Orders
                    orderby o.OrderDate ascending
                    where
                        o.OrderStatus == "To Deliver"
                    select o).ToList();
-        return Lst;
-    
-    }
+            return Lst;
+        }
 
 
 
 
 
 
-    public void Dispose()
-    {
-        this.MemberwiseClone();
-        GC.SuppressFinalize(this);
-    }
-        
+        public void Dispose()
+        {
+            MemberwiseClone();
+            GC.SuppressFinalize(this);
+        }
     }
 }

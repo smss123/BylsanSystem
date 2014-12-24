@@ -14,6 +14,7 @@ using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Helper_Classes;
 using XamaDataLayer.Accountant;
+using Bylsan_System.Reports.ReportOption;
 //==========================
 namespace Bylsan_System.AccountsX
 {
@@ -111,6 +112,12 @@ namespace Bylsan_System.AccountsX
 
         void Broom() { txtDescription.Text = ""; txtAccountName.Text = ""; txtBalance.Text = ""; DGVAccountsDaily.Rows.Clear(); }
         #endregion 
+
+        private void balanceSheetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReportOptionBalanceSheet frm = new frmReportOptionBalanceSheet();
+            frm.ShowDialog();
+        }
 
       
 

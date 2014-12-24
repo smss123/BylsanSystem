@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XamaDataLayer.Accountant
 {
     public static class AccountsCmd
     {
-        static DbDataContext db = new DbDataContext();
-        public static bool AddAccount(Account tb)        
+        private static DbDataContext db = new DbDataContext();
+        public static bool AddAccount(Account tb)
         {
-            // عارف أنه معمول له تريـــقر  ومش راح يلزم
             db = new DbDataContext();
             db.Accounts.InsertOnSubmit(tb);
             db.SubmitChanges();
@@ -34,16 +31,14 @@ namespace XamaDataLayer.Accountant
         {
             try
             {
-            db = new DbDataContext();
-            var act = db.Accounts.Where(a => a.ID == xid).SingleOrDefault();
-            db.Accounts.DeleteOnSubmit(act);
+                db = new DbDataContext();
+                var act = db.Accounts.Where(a => a.ID == xid).SingleOrDefault();
+                db.Accounts.DeleteOnSubmit(act);
 
-            db.SubmitChanges();
-            
+                db.SubmitChanges();
             }
             catch (Exception)
             {
-                
                 throw;
             }
         }
@@ -57,26 +52,32 @@ namespace XamaDataLayer.Accountant
         public static List<Account> GetAccountByCategoryID(int categID)
         {
             db = new DbDataContext();
-            var ACT = (from g in db.Accounts where g.CategoryID == categID select g).ToList();
+            var ACT = (from g in db.Accounts
+                        where g.CategoryID == categID
+                        select g).ToList();
             return ACT;
         }
 
         public static List<Account> GetAccountByID(int xID)
         {
             db = new DbDataContext();
-            var ACT = (from ac in db.Accounts where ac.ID  == xID  select ac).ToList();
+            var ACT = (from ac in db.Accounts
+                        where ac.ID  == xID
+                         select ac).ToList();
             return ACT;
         }
         public static List<Account> GetAccountByName(string nam)
         {
             db = new DbDataContext();
-            var ACT = (from ac in db.Accounts where ac.AccountName  == nam  select ac).ToList();
+            var ACT = (from ac in db.Accounts
+                        where ac.AccountName  == nam
+                         select ac).ToList();
             return ACT;
         }
 
         public static double? GetAccountBalance(int accountID)
         {
-            double? balance = 0d;
+            var balance = (double? )0d;
 
             var allTotalIn = db.AccountDailies.Where(p => p.AccountID == accountID).Sum(p => p.TotalIn);
             var allTotalOut = db.AccountDailies.Where(p => p.AccountID == accountID).Sum(p => p.TotalOut);
@@ -85,19 +86,19 @@ namespace XamaDataLayer.Accountant
             return balance;
         }
 
-        public static double? GetAccountBalance(int accountID, DateTime fromDate,DateTime ToDate)
+        public static double? GetAccountBalance(int accountID, DateTime fromDate, DateTime toDate)
         {
-            double? balance = 0d;
+            var balance = (double? )0d;
 
             var allTotalIn = db.AccountDailies.Where(
-                p => p.AccountID == accountID &&
-                 p.DateOfProcess.Value.Year >= fromDate.Year 
+            p => p.AccountID == accountID &&
+                 p.DateOfProcess.Value.Year >= fromDate.Year
                  && p.DateOfProcess.Value.Month >= fromDate.Month &&
                  p.DateOfProcess.Value.Day >= fromDate.Day &&
 
-                  p.DateOfProcess.Value.Year <= ToDate.Year
-                 && p.DateOfProcess.Value.Month <= ToDate.Month &&
-                 p.DateOfProcess.Value.Day <= ToDate.Day
+                  p.DateOfProcess.Value.Year <= toDate.Year
+                 && p.DateOfProcess.Value.Month <= toDate.Month &&
+                 p.DateOfProcess.Value.Day <= toDate.Day
 
                  ).Sum(p => p.TotalIn);
             var allTotalOut = db.AccountDailies.Where(p => p.AccountID == accountID &&
@@ -105,9 +106,9 @@ namespace XamaDataLayer.Accountant
                  && p.DateOfProcess.Value.Month >= fromDate.Month &&
                  p.DateOfProcess.Value.Day >= fromDate.Day &&
 
-                  p.DateOfProcess.Value.Year <= ToDate.Year
-                 && p.DateOfProcess.Value.Month <= ToDate.Month &&
-                 p.DateOfProcess.Value.Day <= ToDate.Day
+                  p.DateOfProcess.Value.Year <= toDate.Year
+                 && p.DateOfProcess.Value.Month <= toDate.Month &&
+                 p.DateOfProcess.Value.Day <= toDate.Day
                  ).Sum(p => p.TotalOut);
             balance = allTotalIn - allTotalOut;
 

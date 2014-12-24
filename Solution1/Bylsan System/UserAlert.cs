@@ -23,9 +23,18 @@ namespace Bylsan_System
         {
             AlertTimer.Interval = 3000;
             AlertTimer.Enabled = true;
-            OldMessagesCountInBox = (from i in InBoxCmd.GetAllMessages() select i.ID).Max();
-            this.AlertTimer.Tick += AlertTimer_Tick;
-            AlertTimer.Start();
+            try
+            {
+                OldMessagesCountInBox = (from i in InBoxCmd.GetAllMessages() select i.ID).Max();
+                this.AlertTimer.Tick += AlertTimer_Tick;
+                AlertTimer.Start();
+            }
+            catch (System.InvalidOperationException ex )
+            {
+                
+               return;
+            }
+           
 
 
         }
