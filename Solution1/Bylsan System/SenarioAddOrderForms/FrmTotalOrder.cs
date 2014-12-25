@@ -146,29 +146,78 @@ namespace Bylsan_System.SenarioAddOrderForms
          
             //=========================================
             // == Save At AccountDaily :
-            AccountDaily DyTb = new AccountDaily() { //500
-                AccountID = CustmerAccountID ,
+            AccountDaily addOrder = new AccountDaily()
+            { //500
+                AccountID = otb.OrderAccount,
+                // AccountID = CustmerAccountID ,
                 TotalIn = TotalCost,// Convert .ToDouble ( TotalPriceBox.Text ),
-                TotalOut=0f,
-                DateOfProcess = DateTime .Now ,
-                Description = string.Format( "Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}",otb.OrderName,DateTime.Now.ToString(),CurrentBranch.Branch_Name),
-                
-            };
-            AccountDailyCmd.AddAccountDaily(DyTb);
-
-            AccountDaily Cu = new AccountDaily()//250
-            {
-                AccountID = CustmerAccountID,
-                TotalIn = 0f,
-                TotalOut = int .Parse (txtPayment.Text .ToString ()),  // txtPayment.Text.ToFloat(),
+                TotalOut = 0f,
                 DateOfProcess = DateTime.Now,
-                Description = "Payment Of  A Normal Order",
+                Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", otb.OrderName, DateTime.Now.ToString(), CurrentBranch.Branch_Name),
 
             };
-            AccountDailyCmd.AddAccountDaily(Cu);
-            //=============================================================================
+            db.AccountDailies.InsertOnSubmit(addOrder); 
+
+       //--------------------------
+            AccountDaily ordertrs = new AccountDaily()
+            { //500
+                AccountID = otb.OrderAccount,
+                // AccountID = CustmerAccountID ,
+                TotalIn = 0f,// Convert .ToDouble ( TotalPriceBox.Text ),
+                TotalOut = TotalCost,
+                DateOfProcess = DateTime.Now,
+                Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", otb.OrderName, DateTime.Now.ToString(), CurrentBranch.Branch_Name),
+
+            };
+
+            db.AccountDailies.InsertOnSubmit(ordertrs);
+
+            //--------------------------
+            AccountDaily CustomerDept = new AccountDaily()
+            { //500
+                AccountID = CustmerAccountID,
+                // AccountID = CustmerAccountID ,
+                TotalIn = 0f,// Convert .ToDouble ( TotalPriceBox.Text ),
+                TotalOut = TotalCost,
+                DateOfProcess = DateTime.Now,
+                Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", otb.OrderName, DateTime.Now.ToString(), CurrentBranch.Branch_Name),
+
+            };
+            db.AccountDailies.InsertOnSubmit(CustomerDept);
+
+            //--------------------------
+            AccountDaily CutomerPay = new AccountDaily()
+            { //500
+                AccountID = CustmerAccountID,
+                // AccountID = CustmerAccountID ,
+                TotalIn = txtPayment.Text.Todouble(),// Convert .ToDouble ( TotalPriceBox.Text ),
+                TotalOut = 0f,
+                DateOfProcess = DateTime.Now,
+                Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", otb.OrderName, DateTime.Now.ToString(), CurrentBranch.Branch_Name),
+
+            };
+
+            db.AccountDailies.InsertOnSubmit(CutomerPay);
+            AccountDaily BranchCreated = new AccountDaily()
+            { //500
+                AccountID = CurrentBranch.AccountID,
+                // AccountID = CustmerAccountID ,
+                TotalIn = txtPayment.Text.Todouble(),// Convert .ToDouble ( TotalPriceBox.Text ),
+                TotalOut = 0f,
+                DateOfProcess = DateTime.Now,
+                Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", otb.OrderName, DateTime.Now.ToString(), CurrentBranch.Branch_Name),
+
+            };
+
+
+            db.AccountDailies.InsertOnSubmit(BranchCreated);
+            db.SubmitChanges();
+
+          
+//--------
+         //=============================================================================
             // Save Order Prouct Attachment :
-             int OrdPrd  = ( from o in OrderProductsCmd .GetAll ()  select o.ID ).Max ();
+            int OrdPrd = otb.ID;// ( from o in OrderProductsCmd .GetAll ()  select o.ID ).Max ();
 
              OrderProuctAttachment attb = new OrderProuctAttachment();
              foreach (var item in CustomerInformations .WaitingAttachment )
