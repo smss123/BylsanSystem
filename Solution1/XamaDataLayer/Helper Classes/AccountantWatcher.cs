@@ -59,7 +59,7 @@ namespace XamaDataLayer.Helper_Classes
             return tb;
         }
 
-        public static  double  GetFreeBalance()
+        public static  double  GetFreeBalance( int? actid)
         {
             double NetBalance = 0;
             try
@@ -67,9 +67,11 @@ namespace XamaDataLayer.Helper_Classes
                 db = new DbDataContext();
 
                 var TotIn = (from d in db.AccountDailies
+                             where d.AccountID == actid 
                              select d.TotalIn).Sum();
 
                 var TotOut = (from d in db.AccountDailies
+                              where d.AccountID == actid 
                               select d.TotalOut).Sum();
                 NetBalance = TotIn.Value - TotOut.Value;
 
