@@ -173,6 +173,8 @@ namespace Bylsan_System.SellSystemForms
                         BillNumber =  TxtBillNumber.Text ,// شوف طريقة لأدخال رقم الفاتورة سواء كان يدوي  أو تلقائي يعني عداد 
                         UserID = UserInfo.CurrentUserID,
                         BillTotal =  tot ,
+                        paytype = "" ,
+                        description = ""
 
                     };
                     BillsCmd.AddBill(btb);

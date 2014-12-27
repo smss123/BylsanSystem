@@ -11,6 +11,7 @@ using XamaDataLayer;
 using XamaDataLayer.SellSystem;
 using Bylsan_System.SellSystemForms;
 using System.Threading;
+using XamaDataLayer.Security;
 namespace Bylsan_System.SellSystemForms
 {
     public partial class FrmAddSellIStore : Telerik.WinControls.UI.RadForm
@@ -88,7 +89,8 @@ namespace Bylsan_System.SellSystemForms
                 SellStore Oldtb = new SellStore()
                 {
                     ItemID = int.Parse(ItemComboBox.SelectedValue.ToString()),
-                    Qty = int.Parse(qtyTextBox.Text)
+                    Qty = int.Parse(qtyTextBox.Text),
+                    branchID = UserInfo.CurrnetUser .Branch_ID 
                 };
                 SellStoreCmd.EditQtyInSellStore(Oldtb, ChekStore.ID);
                
@@ -105,6 +107,7 @@ namespace Bylsan_System.SellSystemForms
                 {
                     ItemID = int.Parse(ItemComboBox.SelectedValue.ToString()),
                     Qty = int.Parse(qtyTextBox.Text),
+                    branchID = UserInfo.CurrnetUser.Branch_ID 
                 };
                 SellStoreCmd.AddSellStore(Newtb);
                 

@@ -68,7 +68,7 @@
             this.toolStripSeparator1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(729, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(1071, 39);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -90,7 +90,7 @@
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 622);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(729, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1071, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -100,7 +100,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(729, 263);
+            this.groupBox1.Size = new System.Drawing.Size(1071, 263);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "product Show";
@@ -113,7 +113,7 @@
             this.ListItems.GridLines = true;
             this.ListItems.Location = new System.Drawing.Point(3, 18);
             this.ListItems.Name = "ListItems";
-            this.ListItems.Size = new System.Drawing.Size(723, 242);
+            this.ListItems.Size = new System.Drawing.Size(1065, 242);
             this.ListItems.TabIndex = 0;
             this.ListItems.UseCompatibleStateImageBehavior = false;
             this.ListItems.SelectedIndexChanged += new System.EventHandler(this.ListItems_SelectedIndexChanged);
@@ -132,7 +132,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 302);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(729, 320);
+            this.groupBox2.Size = new System.Drawing.Size(1071, 320);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order";
@@ -164,7 +164,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(219, 27);
+            this.label3.Location = new System.Drawing.Point(23, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 7;
@@ -183,7 +183,7 @@
             // 
             // txtBarCode
             // 
-            this.txtBarCode.Location = new System.Drawing.Point(276, 24);
+            this.txtBarCode.Location = new System.Drawing.Point(80, 15);
             this.txtBarCode.Name = "txtBarCode";
             this.txtBarCode.Size = new System.Drawing.Size(131, 20);
             this.txtBarCode.TabIndex = 6;
@@ -194,7 +194,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Blue;
-            this.label2.Location = new System.Drawing.Point(6, 27);
+            this.label2.Location = new System.Drawing.Point(826, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 5;
@@ -202,9 +202,9 @@
             // 
             // TxtBillNumber
             // 
-            this.TxtBillNumber.Location = new System.Drawing.Point(79, 25);
+            this.TxtBillNumber.Location = new System.Drawing.Point(842, 51);
             this.TxtBillNumber.Name = "TxtBillNumber";
-            this.TxtBillNumber.Size = new System.Drawing.Size(124, 20);
+            this.TxtBillNumber.Size = new System.Drawing.Size(57, 20);
             this.TxtBillNumber.TabIndex = 4;
             this.TxtBillNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBillNumber_KeyPress);
             // 
@@ -277,7 +277,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(729, 644);
+            this.ClientSize = new System.Drawing.Size(1071, 644);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.statusStrip1);

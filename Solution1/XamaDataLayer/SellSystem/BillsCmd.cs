@@ -23,7 +23,8 @@ namespace XamaDataLayer.SellSystem
             bl.BillNumber = tb.BillNumber;
             bl.UserID = tb.UserID;
             bl.BillTotal = tb.BillTotal;
-
+            bl.description = tb.description;
+            bl.paytype = tb.paytype;
             db.SubmitChanges();
             return bl;
         }

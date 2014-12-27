@@ -26,6 +26,7 @@ namespace XamaDataLayer.SellSystem
             var sll = db.SellStores.Where(s => s.ID == xid).SingleOrDefault();
             sll.ItemID = tb.ItemID;
             sll.Qty = tb.Qty;
+            sll.branchID = tb.branchID;
             db.SubmitChanges();
             return sll;
         }
@@ -38,6 +39,7 @@ namespace XamaDataLayer.SellSystem
             var sll = db.SellStores.Where(s => s.ID == xid).SingleOrDefault();
             sll.ItemID = tb.ItemID;
             sll.Qty += tb.Qty;
+            sll.branchID = tb.branchID;
             db.SubmitChanges();
             return sll;
         }
@@ -48,6 +50,7 @@ namespace XamaDataLayer.SellSystem
             var sll = db.SellStores.Where(s => s.ID == xid).SingleOrDefault();
             sll.ItemID = tb.ItemID;
             sll.Qty = tb.Qty;
+            sll.branchID = tb.branchID;
             db.SubmitChanges();
             return sll;
         }
