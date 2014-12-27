@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn17 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn18 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn19 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn20 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn4 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.RefreshBTn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -52,12 +52,19 @@
             this.DGVSellItems = new Telerik.WinControls.UI.RadGridView();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.CmbPaymentTypes = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtCash = new System.Windows.Forms.TextBox();
+            this.txtVisaCard = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Okeybtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVSellItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVSellItems.MasterTemplate)).BeginInit();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +75,7 @@
             this.toolStripSeparator1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1071, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(741, 39);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -90,7 +97,7 @@
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 622);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1071, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(741, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -100,7 +107,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1071, 263);
+            this.groupBox1.Size = new System.Drawing.Size(741, 263);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "product Show";
@@ -113,7 +120,7 @@
             this.ListItems.GridLines = true;
             this.ListItems.Location = new System.Drawing.Point(3, 18);
             this.ListItems.Name = "ListItems";
-            this.ListItems.Size = new System.Drawing.Size(1065, 242);
+            this.ListItems.Size = new System.Drawing.Size(735, 242);
             this.ListItems.TabIndex = 0;
             this.ListItems.UseCompatibleStateImageBehavior = false;
             this.ListItems.SelectedIndexChanged += new System.EventHandler(this.ListItems_SelectedIndexChanged);
@@ -121,6 +128,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.Okeybtn);
             this.groupBox2.Controls.Add(this.BillCostBox);
             this.groupBox2.Controls.Add(this.label3);
@@ -132,15 +140,16 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 302);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1071, 320);
+            this.groupBox2.Size = new System.Drawing.Size(741, 320);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // Okeybtn
             // 
             this.Okeybtn.Image = global::Bylsan_System.Properties.Resources.Save;
-            this.Okeybtn.Location = new System.Drawing.Point(625, 280);
+            this.Okeybtn.Location = new System.Drawing.Point(624, 98);
             this.Okeybtn.Name = "Okeybtn";
             this.Okeybtn.Size = new System.Drawing.Size(99, 35);
             this.Okeybtn.TabIndex = 1;
@@ -153,10 +162,10 @@
             // 
             this.BillCostBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BillCostBox.ForeColor = System.Drawing.Color.Red;
-            this.BillCostBox.Location = new System.Drawing.Point(66, 291);
+            this.BillCostBox.Location = new System.Drawing.Point(601, 64);
             this.BillCostBox.Name = "BillCostBox";
             this.BillCostBox.ReadOnly = true;
-            this.BillCostBox.Size = new System.Drawing.Size(95, 22);
+            this.BillCostBox.Size = new System.Drawing.Size(129, 22);
             this.BillCostBox.TabIndex = 2;
             this.BillCostBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -164,7 +173,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(23, 18);
+            this.label3.Location = new System.Drawing.Point(542, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 7;
@@ -175,7 +184,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(12, 295);
+            this.label1.Location = new System.Drawing.Point(547, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 3;
@@ -183,7 +192,7 @@
             // 
             // txtBarCode
             // 
-            this.txtBarCode.Location = new System.Drawing.Point(80, 15);
+            this.txtBarCode.Location = new System.Drawing.Point(599, 36);
             this.txtBarCode.Name = "txtBarCode";
             this.txtBarCode.Size = new System.Drawing.Size(131, 20);
             this.txtBarCode.TabIndex = 6;
@@ -215,52 +224,52 @@
             this.DGVSellItems.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.DGVSellItems.ForeColor = System.Drawing.SystemColors.ControlText;
             this.DGVSellItems.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DGVSellItems.Location = new System.Drawing.Point(6, 51);
+            this.DGVSellItems.Location = new System.Drawing.Point(6, 139);
             // 
             // DGVSellItems
             // 
             this.DGVSellItems.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "ID";
-            gridViewTextBoxColumn1.HeaderText = "ID";
-            gridViewTextBoxColumn1.IsVisible = false;
-            gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "ItemName";
-            gridViewTextBoxColumn2.HeaderText = "Item Name";
-            gridViewTextBoxColumn2.Name = "ItemName";
-            gridViewTextBoxColumn2.Width = 162;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "Description";
-            gridViewTextBoxColumn3.HeaderText = "Description";
-            gridViewTextBoxColumn3.Name = "Description";
-            gridViewTextBoxColumn3.Width = 216;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "ItemPrice";
-            gridViewTextBoxColumn4.HeaderText = "Item Price";
-            gridViewTextBoxColumn4.Name = "ItemPrice";
-            gridViewTextBoxColumn4.ReadOnly = true;
-            gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn4.Width = 108;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.HeaderText = "Ouantity";
-            gridViewTextBoxColumn5.Name = "Quantity";
-            gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn5.Width = 162;
-            gridViewCommandColumn1.EnableExpressionEditor = false;
-            gridViewCommandColumn1.HeaderText = "-";
-            gridViewCommandColumn1.Name = "colbtn";
-            gridViewCommandColumn1.Width = 54;
+            gridViewTextBoxColumn16.EnableExpressionEditor = false;
+            gridViewTextBoxColumn16.FieldName = "ID";
+            gridViewTextBoxColumn16.HeaderText = "ID";
+            gridViewTextBoxColumn16.IsVisible = false;
+            gridViewTextBoxColumn16.Name = "ID";
+            gridViewTextBoxColumn17.EnableExpressionEditor = false;
+            gridViewTextBoxColumn17.FieldName = "ItemName";
+            gridViewTextBoxColumn17.HeaderText = "Item Name";
+            gridViewTextBoxColumn17.Name = "ItemName";
+            gridViewTextBoxColumn17.Width = 162;
+            gridViewTextBoxColumn18.EnableExpressionEditor = false;
+            gridViewTextBoxColumn18.FieldName = "Description";
+            gridViewTextBoxColumn18.HeaderText = "Description";
+            gridViewTextBoxColumn18.Name = "Description";
+            gridViewTextBoxColumn18.Width = 216;
+            gridViewTextBoxColumn19.EnableExpressionEditor = false;
+            gridViewTextBoxColumn19.FieldName = "ItemPrice";
+            gridViewTextBoxColumn19.HeaderText = "Item Price";
+            gridViewTextBoxColumn19.Name = "ItemPrice";
+            gridViewTextBoxColumn19.ReadOnly = true;
+            gridViewTextBoxColumn19.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn19.Width = 108;
+            gridViewTextBoxColumn20.EnableExpressionEditor = false;
+            gridViewTextBoxColumn20.HeaderText = "Ouantity";
+            gridViewTextBoxColumn20.Name = "Quantity";
+            gridViewTextBoxColumn20.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn20.Width = 162;
+            gridViewCommandColumn4.EnableExpressionEditor = false;
+            gridViewCommandColumn4.HeaderText = "-";
+            gridViewCommandColumn4.Name = "colbtn";
+            gridViewCommandColumn4.Width = 54;
             this.DGVSellItems.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewCommandColumn1});
+            gridViewTextBoxColumn16,
+            gridViewTextBoxColumn17,
+            gridViewTextBoxColumn18,
+            gridViewTextBoxColumn19,
+            gridViewTextBoxColumn20,
+            gridViewCommandColumn4});
             this.DGVSellItems.Name = "DGVSellItems";
             this.DGVSellItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DGVSellItems.Size = new System.Drawing.Size(717, 223);
+            this.DGVSellItems.Size = new System.Drawing.Size(717, 135);
             this.DGVSellItems.TabIndex = 0;
             this.DGVSellItems.Text = "DGVItems";
             this.DGVSellItems.ThemeName = "VisualStudio2012Light";
@@ -272,12 +281,69 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtVisaCard);
+            this.groupBox3.Controls.Add(this.txtCash);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.CmbPaymentTypes);
+            this.groupBox3.Location = new System.Drawing.Point(15, 18);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(387, 90);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Select Payment Type";
+            // 
+            // CmbPaymentTypes
+            // 
+            this.CmbPaymentTypes.FormattingEnabled = true;
+            this.CmbPaymentTypes.Location = new System.Drawing.Point(19, 21);
+            this.CmbPaymentTypes.Name = "CmbPaymentTypes";
+            this.CmbPaymentTypes.Size = new System.Drawing.Size(343, 21);
+            this.CmbPaymentTypes.TabIndex = 0;
+            this.CmbPaymentTypes.SelectedIndexChanged += new System.EventHandler(this.CmbPaymentTypes_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(26, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Cash";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(194, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Visa Card";
+            // 
+            // txtCash
+            // 
+            this.txtCash.Location = new System.Drawing.Point(64, 60);
+            this.txtCash.Name = "txtCash";
+            this.txtCash.Size = new System.Drawing.Size(95, 20);
+            this.txtCash.TabIndex = 9;
+            this.txtCash.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCash_KeyPress);
+            // 
+            // txtVisaCard
+            // 
+            this.txtVisaCard.Location = new System.Drawing.Point(255, 57);
+            this.txtVisaCard.Name = "txtVisaCard";
+            this.txtVisaCard.Size = new System.Drawing.Size(107, 20);
+            this.txtVisaCard.TabIndex = 10;
+            this.txtVisaCard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVisaCard_KeyPress);
+            // 
             // FrmAddSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1071, 644);
+            this.ClientSize = new System.Drawing.Size(741, 644);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.statusStrip1);
@@ -299,6 +365,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Okeybtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVSellItems.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVSellItems)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -324,5 +392,11 @@
         private System.Windows.Forms.TextBox txtBarCode;
         private System.Windows.Forms.ToolStripButton RefreshBTn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtVisaCard;
+        private System.Windows.Forms.TextBox txtCash;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox CmbPaymentTypes;
     }
 }

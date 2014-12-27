@@ -62,7 +62,8 @@ namespace Bylsan_System.SellSystemForms
 
         private void FrmAddSales_Load(object sender, EventArgs e)
        {
-           
+           CmbPaymentTypes.Items.AddRange(new string[] {"Cash Onley","Visa Card Onley","Both" });
+           txtCash.Enabled = false; txtVisaCard.Enabled = false;
            PopulateListItems();
         }
 
@@ -144,6 +145,10 @@ namespace Bylsan_System.SellSystemForms
         StoreOperationManager OptrTb = new StoreOperationManager();
         private void Okeybtn_Click(object sender, EventArgs e)
         {
+            if (CmbPaymentTypes.Text == "Both")
+            {
+                if (txtVisaCard.Text == "" || txtCash.Text == "") { Operation.ShowToustOk("Enter the apportionment payment", this); return; }
+            }
             try
             {
                 if (DGVSellItems.Rows.Count != 0)
@@ -173,8 +178,8 @@ namespace Bylsan_System.SellSystemForms
                         BillNumber =  TxtBillNumber.Text ,// شوف طريقة لأدخال رقم الفاتورة سواء كان يدوي  أو تلقائي يعني عداد 
                         UserID = UserInfo.CurrentUserID,
                         BillTotal =  tot ,
-                        paytype = "" ,
-                        description = ""
+                        paytype =  CmbPaymentTypes .Text  ,
+                        description = string .Format ( " Pay by Cash : {0}  , pay by visa card :  {1}  ", txtCash .Text ,txtVisaCard .Text )
 
                     };
                     BillsCmd.AddBill(btb);
@@ -346,6 +351,33 @@ namespace Bylsan_System.SellSystemForms
              }
              Operation.EndOperation(this);
             }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CmbPaymentTypes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CmbPaymentTypes.Text == "Both")
+            {
+                txtCash.Enabled = true ; txtVisaCard.Enabled = true ;
+            }
+            else
+            {
+                txtCash.Enabled = false; txtVisaCard.Enabled = false;
+            }
+        }
+
+        private void txtCash_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtVisaCard_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
        
