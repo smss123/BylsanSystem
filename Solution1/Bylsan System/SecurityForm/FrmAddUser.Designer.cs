@@ -99,7 +99,7 @@
             this.groupBox1.Controls.Add(this.passwordsTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(318, 210);
+            this.groupBox1.Size = new System.Drawing.Size(318, 207);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add User";

@@ -13,6 +13,7 @@ using XamaDataLayer.Accountant;
 using Telerik.WinControls.Data;
 using XamaDataLayer.BranchCmd;
 using System.Threading;
+using Xprema.XExtention;
 namespace Bylsan_System.AccountsX
 {
     public partial class FrmPrivatewithdrawals : Form
@@ -26,13 +27,16 @@ namespace Bylsan_System.AccountsX
         Thread th;
         public void FillBrnchCombo()
         {
-            var q = BranchsCmd.GetAllBranchs();
+            var q = AccountsCmd.GetAllAccounts();
 
             Operation.BeginOperation(this);
             this.Invoke((MethodInvoker)delegate
             {
-                CmbBranches.Items.Clear();
-                CmbBranches.Items.AddRange((from b in q.ToList() select b.Branch_Name).Distinct().ToArray());
+                CmbFromAccount.Items.Clear();
+                CmbFromAccount.Items.AddRange((from b in q.ToList() select b.AccountName).Distinct().ToArray());
+
+                CmbToAccount.Items.Clear();
+                CmbToAccount.Items.AddRange((from b in q.ToList() select b.AccountName ).Distinct().ToArray());
 
             });
 
@@ -49,7 +53,18 @@ namespace Bylsan_System.AccountsX
 
         private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
         {
+            char ch = e.KeyChar;
+            if (ch == 46 &&  txtAmount.Text.IndexOf(".") != -1)
+            {
 
+                e.Handled = true;
+                return;
+            }
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
         }
 
         public int? AcctID { get; set; }
@@ -57,26 +72,36 @@ namespace Bylsan_System.AccountsX
         {
             try
             {
+                if (CmbFromAccount.Text == CmbToAccount.Text) { Operation.ShowToustOk("Transfer the amount from the same account unacceptable.", this); return; }
                 if(Convert.ToDouble (txtAmount .Text .ToString ()) > Convert .ToDouble (lblAvailableAmount .Text .ToString ()))
                 {
+                    Operation.ShowToustOk("The amount is not available.", this);
                     return ;
                 }
 
                 // Start Save AT AccountDaily :
-                AccountDaily Adailytb = new AccountDaily() {
-               // الحفظ في جدول اليومية بعد الخصم
-                
+                AccountDaily tb = new AccountDaily() {
+               AccountID = FromAccount_ID ,
+                 DateOfProcess = DateTime .Now ,
+                  TotalIn = 0f,
+                  TotalOut = txtAmount .Text .Todouble (),
+                     Description = txtDescription .Text .ToString ()
                 };
-                AccountDailyCmd.AddAccountDaily(Adailytb);
+                AccountDailyCmd.AddAccountDaily(tb);
 
-                // Satrt Save At Debtors :
-                Debtor dtb = new Debtor() {
-                
-               // تسجيل الدين على المدين
-                // لكن ما قدرت أجيب رقم حساب الخزينه
+
+                AccountDaily xtb = new AccountDaily()
+                {
+                     AccountID = ToAccount_ID ,
+                    DateOfProcess = DateTime.Now,
+                    TotalIn = txtAmount.Text.Todouble(),
+                    TotalOut = 0f,
+                    Description = txtDescription.Text.ToString()
                 };
-                DebtorsCmd.AddDebt(dtb);
+                AccountDailyCmd.AddAccountDaily(xtb);
 
+                //================================================
+             
 
 
             }
@@ -86,37 +111,43 @@ namespace Bylsan_System.AccountsX
                 
             }
         }
+        public int FromAccount_ID { get; set; }
+        public int ToAccount_ID { get; set; }
+        private void CmbFromAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CmbFromAccount.Text != "")
+            {
+                lblAvailableAmount.Text = "";
+                FromAccount_ID = 0;
+                var TargetAccount = AccountsCmd.GetOneAccountByName(CmbFromAccount.Text);
+                FromAccount_ID = TargetAccount.ID;
+                lblAvailableAmount.Text = AccountantWatcher.GetFreeBalance(TargetAccount .ID ).ToString ();
+
+            }
+        }
+        private void CmbToAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CmbToAccount.Text != "")
+            {
+                ToAccount_ID = 0;
+                var TargetAccount = AccountsCmd.GetOneAccountByName(CmbToAccount .Text );
+                ToAccount_ID = TargetAccount.ID;
+            }
+        }
+
+
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
 
-        private void CmbBranches_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (CmbBranches.Text != "")
-                {
-                    AcctID = 0;
-                   var q  = (from i in BranchsCmd.GetAllBranchs() 
-                              where i.Branch_Name == CmbBranches.Text 
-                              select i).Single();
-                   AcctID = q.AccountID;
-                   lblAvailableAmount.Text = "";
-                   lblAvailableAmount.Text = Convert.ToDouble(AccountantWatcher.GetFreeBalance(AcctID )).ToString();
-                }
-            }
-            catch (Exception)
-            {
-                
-              
-            }
-        }
+    
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+      
 
-        }
+      
+
+      
     }
 }

@@ -82,5 +82,7 @@ namespace XamaDataLayer.Helper_Classes
                 return NetBalance = 0;
             }
         }
+
+
     }
 }

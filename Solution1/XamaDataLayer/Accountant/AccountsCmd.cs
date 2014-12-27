@@ -71,10 +71,17 @@ namespace XamaDataLayer.Accountant
             db = new DbDataContext();
             var ACT = (from ac in db.Accounts
                         where ac.AccountName  == nam
-                         select ac).ToList();
+                         select ac).ToList ();
             return ACT;
         }
-
+        public static Account GetOneAccountByName(string nam)
+        {
+            db = new DbDataContext();
+            var ACT = (from ac in db.Accounts
+                       where ac.AccountName == nam
+                       select ac).Single ();
+            return ACT;
+        }
         public static double? GetAccountBalance(int accountID)
         {
             var balance = (double? )0d;

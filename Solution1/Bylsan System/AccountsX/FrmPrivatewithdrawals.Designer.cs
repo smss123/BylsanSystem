@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CmbFromAccount = new System.Windows.Forms.ComboBox();
+            this.CmbToAccount = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.SaveBtn = new System.Windows.Forms.Button();
@@ -37,19 +39,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblAvailableAmount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Description = new System.Windows.Forms.TextBox();
-            this.txtFrom = new System.Windows.Forms.TextBox();
-            this.CmbBranches = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.CmbBranches);
+            this.groupBox1.Controls.Add(this.CmbFromAccount);
+            this.groupBox1.Controls.Add(this.CmbToAccount);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtAmount);
             this.groupBox1.Controls.Add(this.SaveBtn);
@@ -58,16 +55,35 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lblAvailableAmount);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.Description);
-            this.groupBox1.Controls.Add(this.txtFrom);
+            this.groupBox1.Controls.Add(this.txtDescription);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(18, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(366, 296);
+            this.groupBox1.Size = new System.Drawing.Size(467, 265);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Private withdrawals";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // CmbFromAccount
+            // 
+            this.CmbFromAccount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbFromAccount.FormattingEnabled = true;
+            this.CmbFromAccount.Location = new System.Drawing.Point(105, 72);
+            this.CmbFromAccount.Name = "CmbFromAccount";
+            this.CmbFromAccount.Size = new System.Drawing.Size(312, 23);
+            this.CmbFromAccount.TabIndex = 14;
+            this.CmbFromAccount.SelectedIndexChanged += new System.EventHandler(this.CmbFromAccount_SelectedIndexChanged);
+            // 
+            // CmbToAccount
+            // 
+            this.CmbToAccount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbToAccount.FormattingEnabled = true;
+            this.CmbToAccount.Location = new System.Drawing.Point(105, 109);
+            this.CmbToAccount.Name = "CmbToAccount";
+            this.CmbToAccount.Size = new System.Drawing.Size(312, 23);
+            this.CmbToAccount.TabIndex = 11;
+            this.CmbToAccount.SelectedIndexChanged += new System.EventHandler(this.CmbToAccount_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -89,7 +105,7 @@
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(69, 258);
+            this.SaveBtn.Location = new System.Drawing.Point(105, 216);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(128, 32);
             this.SaveBtn.TabIndex = 8;
@@ -100,7 +116,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(66, 188);
+            this.label5.Location = new System.Drawing.Point(102, 146);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 15);
             this.label5.TabIndex = 7;
@@ -128,7 +144,7 @@
             // 
             this.lblAvailableAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAvailableAmount.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvailableAmount.Location = new System.Drawing.Point(113, 150);
+            this.lblAvailableAmount.Location = new System.Drawing.Point(318, 28);
             this.lblAvailableAmount.Name = "lblAvailableAmount";
             this.lblAvailableAmount.Size = new System.Drawing.Size(99, 29);
             this.lblAvailableAmount.TabIndex = 4;
@@ -137,61 +153,25 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 160);
+            this.label1.Location = new System.Drawing.Point(211, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "Available Amount";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Description
+            // txtDescription
             // 
-            this.Description.Location = new System.Drawing.Point(69, 204);
-            this.Description.Multiline = true;
-            this.Description.Name = "Description";
-            this.Description.Size = new System.Drawing.Size(254, 48);
-            this.Description.TabIndex = 2;
-            // 
-            // txtFrom
-            // 
-            this.txtFrom.Location = new System.Drawing.Point(105, 75);
-            this.txtFrom.Name = "txtFrom";
-            this.txtFrom.Size = new System.Drawing.Size(201, 22);
-            this.txtFrom.TabIndex = 0;
-            // 
-            // CmbBranches
-            // 
-            this.CmbBranches.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbBranches.FormattingEnabled = true;
-            this.CmbBranches.Location = new System.Drawing.Point(105, 109);
-            this.CmbBranches.Name = "CmbBranches";
-            this.CmbBranches.Size = new System.Drawing.Size(201, 23);
-            this.CmbBranches.TabIndex = 11;
-            this.CmbBranches.SelectedIndexChanged += new System.EventHandler(this.CmbBranches_SelectedIndexChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(312, 82);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 15);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "مدين";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(314, 117);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(25, 15);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "دائن";
+            this.txtDescription.Location = new System.Drawing.Point(105, 162);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(312, 48);
+            this.txtDescription.TabIndex = 2;
             // 
             // FrmPrivatewithdrawals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 332);
+            this.ClientSize = new System.Drawing.Size(496, 306);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -214,12 +194,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblAvailableAmount;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox Description;
-        private System.Windows.Forms.TextBox txtFrom;
+        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAmount;
-        private System.Windows.Forms.ComboBox CmbBranches;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox CmbToAccount;
+        private System.Windows.Forms.ComboBox CmbFromAccount;
     }
 }
