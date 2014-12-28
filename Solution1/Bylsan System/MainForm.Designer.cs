@@ -86,6 +86,7 @@
             this.expensesBtn = new Telerik.WinControls.UI.RadTileElement();
             this.radTileElement4 = new Telerik.WinControls.UI.RadTileElement();
             this.button1 = new System.Windows.Forms.Button();
+            this.PrintQuotationBtn = new Telerik.WinControls.UI.RadTileElement();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).BeginInit();
             this.radPanorama1.SuspendLayout();
@@ -392,7 +393,8 @@
             this.DesignerOrderBtn,
             this.ReportOrderBtn,
             this.SellItemsTileElement,
-            this.SalesTileElement});
+            this.SalesTileElement,
+            this.PrintQuotationBtn});
             this.tileGroupElement1.Name = "tileGroupElement1";
             this.tileGroupElement1.RowsCount = 3;
             this.tileGroupElement1.Text = "Order And Sales";
@@ -722,6 +724,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_3);
             // 
+            // PrintQuotationBtn
+            // 
+            this.PrintQuotationBtn.AccessibleDescription = "Print Quotation";
+            this.PrintQuotationBtn.AccessibleName = "Print Quotation";
+            this.PrintQuotationBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(200)))), ((int)(((byte)(37)))));
+            this.PrintQuotationBtn.Column = 2;
+            this.PrintQuotationBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.PrintQuotationBtn.Name = "PrintQuotationBtn";
+            this.PrintQuotationBtn.Row = 2;
+            this.PrintQuotationBtn.Text = "Print Quotation";
+            this.PrintQuotationBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.PrintQuotationBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.PrintQuotationBtn.Click += new System.EventHandler(this.PrintQuotationBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -812,5 +828,6 @@
         public Telerik.WinControls.UI.RadPanorama radPanorama1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem deliveryOrderBtn;
+        private Telerik.WinControls.UI.RadTileElement PrintQuotationBtn;
     }
 }

@@ -517,5 +517,11 @@ namespace Bylsan_System
             FrmDeliveryOrder frm = new FrmDeliveryOrder();
             frm.ShowDialog();
         }
+
+        private void PrintQuotationBtn_Click(object sender, EventArgs e)
+        {
+            FrmPrintQuotation frm = new FrmPrintQuotation();
+            frm.ShowDialog();
+        }
     }
 }
