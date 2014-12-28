@@ -129,5 +129,10 @@ namespace XamaDataLayer.BranchCmd
                       select o).ToList();
             return Lst;
         }
+
+        public static List<Order> GetOrdersByCustomerPhone(string phone)
+        {
+            return db.Customers.Where(p => p.PhoneNumber == phone).Take(1).Single().Orders.ToList();
+        }
     }
 }
