@@ -95,5 +95,18 @@ namespace Bylsan_System.BranchForms
         }
         #endregion 
 
+        private void DGVDelivery_CommandCellClick(object sender, EventArgs e)
+        {
+              var col = DGVDelivery.CurrentColumn.Index;
+
+              if (col == 8)
+              { 
+              
+                 
+              
+              }
+
+        }
+
     }
 }
