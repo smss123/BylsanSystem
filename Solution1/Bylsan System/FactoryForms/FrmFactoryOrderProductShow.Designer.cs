@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DGVProducts = new Telerik.WinControls.UI.RadGridView();
@@ -84,32 +84,34 @@
             // 
             this.DGVProducts.BackColor = System.Drawing.SystemColors.Control;
             this.DGVProducts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DGVProducts.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVProducts.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
             this.DGVProducts.ForeColor = System.Drawing.SystemColors.ControlText;
             this.DGVProducts.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.DGVProducts.Location = new System.Drawing.Point(3, 16);
             // 
             // DGVProducts
             // 
+            this.DGVProducts.MasterTemplate.AutoGenerateColumns = false;
             this.DGVProducts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "ID";
-            gridViewTextBoxColumn4.HeaderText = "ID";
-            gridViewTextBoxColumn4.Name = "ID";
-            gridViewTextBoxColumn4.Width = 43;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "ProductID";
-            gridViewTextBoxColumn5.HeaderText = "Product Name";
-            gridViewTextBoxColumn5.Name = "Product_Name";
-            gridViewTextBoxColumn5.Width = 216;
-            gridViewTextBoxColumn6.FieldName = "Qty";
-            gridViewTextBoxColumn6.HeaderText = "Quantity";
-            gridViewTextBoxColumn6.Name = "Quantity";
-            gridViewTextBoxColumn6.Width = 116;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.Name = "ID";
+            gridViewTextBoxColumn1.Width = 47;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "Product.Product_Name";
+            gridViewTextBoxColumn2.HeaderText = "Product Name";
+            gridViewTextBoxColumn2.Name = "Product_Name";
+            gridViewTextBoxColumn2.Width = 282;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "Qty";
+            gridViewTextBoxColumn3.HeaderText = "Quantity";
+            gridViewTextBoxColumn3.Name = "Quantity";
+            gridViewTextBoxColumn3.Width = 46;
             this.DGVProducts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3});
             this.DGVProducts.MasterTemplate.EnableFiltering = true;
             this.DGVProducts.Name = "DGVProducts";
             this.DGVProducts.ReadOnly = true;

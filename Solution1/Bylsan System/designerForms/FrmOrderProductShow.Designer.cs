@@ -149,28 +149,30 @@
             // 
             this.DGVProducts.BackColor = System.Drawing.SystemColors.Control;
             this.DGVProducts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DGVProducts.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVProducts.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
             this.DGVProducts.ForeColor = System.Drawing.SystemColors.ControlText;
             this.DGVProducts.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.DGVProducts.Location = new System.Drawing.Point(3, 16);
             // 
             // DGVProducts
             // 
+            this.DGVProducts.MasterTemplate.AutoGenerateColumns = false;
             this.DGVProducts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "ID";
             gridViewTextBoxColumn1.HeaderText = "ID";
             gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn1.Width = 43;
+            gridViewTextBoxColumn1.Width = 49;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "ProductID";
+            gridViewTextBoxColumn2.FieldName = "Product.Product_Name";
             gridViewTextBoxColumn2.HeaderText = "Product Name";
             gridViewTextBoxColumn2.Name = "Product_Name";
-            gridViewTextBoxColumn2.Width = 216;
+            gridViewTextBoxColumn2.Width = 258;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "Qty";
             gridViewTextBoxColumn3.HeaderText = "Quantity";
             gridViewTextBoxColumn3.Name = "Quantity";
-            gridViewTextBoxColumn3.Width = 116;
+            gridViewTextBoxColumn3.Width = 68;
             this.DGVProducts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
