@@ -119,10 +119,10 @@ namespace Bylsan_System.Reports.ReportCommand
 
 
         /////استخراج كافة الطلبيات بدون تفصيل  الخاصة بزبون واحد  -	تقرير كشف حساب العميل
-        public void GetOrderProductsCustomer(int CoustmerID)
+        public void GetOrderCustomer(string Phone)
         {
 
-            var q = OrdersCmd.GetAllOrdersByCustomerID(CoustmerID);
+            var q = OrdersCmd.GetOrdersByCustomerPhone(Phone);
             ReportDataSource rs = new ReportDataSource();
             List<OrderReportObj> ls = new List<OrderReportObj>();
 

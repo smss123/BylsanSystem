@@ -42,6 +42,7 @@
             this.BranchDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.addBranchBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.ManagementBranchBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.deliveryOrderBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.ProductDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.addProductCategoryBtn = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,7 +68,7 @@
             this.FactoryOrderBtn = new Telerik.WinControls.UI.RadTileElement();
             this.NewOrderBtn = new Telerik.WinControls.UI.RadTileElement();
             this.DesignerOrderBtn = new Telerik.WinControls.UI.RadTileElement();
-            this.ManagmentOrderBtn = new Telerik.WinControls.UI.RadTileElement();
+            this.ReportOrderBtn = new Telerik.WinControls.UI.RadTileElement();
             this.SellItemsTileElement = new Telerik.WinControls.UI.RadTileElement();
             this.SalesTileElement = new Telerik.WinControls.UI.RadTileElement();
             this.MainStorGroup = new Telerik.WinControls.UI.TileGroupElement();
@@ -85,7 +86,6 @@
             this.expensesBtn = new Telerik.WinControls.UI.RadTileElement();
             this.radTileElement4 = new Telerik.WinControls.UI.RadTileElement();
             this.button1 = new System.Windows.Forms.Button();
-            this.deliveryOrderBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).BeginInit();
             this.radPanorama1.SuspendLayout();
@@ -204,6 +204,13 @@
             this.ManagementBranchBtn.Size = new System.Drawing.Size(188, 22);
             this.ManagementBranchBtn.Text = " Branch Management";
             this.ManagementBranchBtn.Click += new System.EventHandler(this.ManagementBranchBtn_Click);
+            // 
+            // deliveryOrderBtn
+            // 
+            this.deliveryOrderBtn.Name = "deliveryOrderBtn";
+            this.deliveryOrderBtn.Size = new System.Drawing.Size(188, 22);
+            this.deliveryOrderBtn.Text = "Delivery Order";
+            this.deliveryOrderBtn.Click += new System.EventHandler(this.deliveryOrderBtn_Click);
             // 
             // toolStripSeparator4
             // 
@@ -383,7 +390,7 @@
             this.FactoryOrderBtn,
             this.NewOrderBtn,
             this.DesignerOrderBtn,
-            this.ManagmentOrderBtn,
+            this.ReportOrderBtn,
             this.SellItemsTileElement,
             this.SalesTileElement});
             this.tileGroupElement1.Name = "tileGroupElement1";
@@ -439,22 +446,22 @@
             this.DesignerOrderBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.DesignerOrderBtn.Click += new System.EventHandler(this.DesignerOrderBtn_Click);
             // 
-            // ManagmentOrderBtn
+            // ReportOrderBtn
             // 
-            this.ManagmentOrderBtn.AccessibleDescription = "Order Mangment";
-            this.ManagmentOrderBtn.AccessibleName = "Order Mangment";
-            this.ManagmentOrderBtn.AutoSize = false;
-            this.ManagmentOrderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(200)))), ((int)(((byte)(37)))));
-            this.ManagmentOrderBtn.Bounds = new System.Drawing.Rectangle(0, 0, 290, 140);
-            this.ManagmentOrderBtn.Column = 1;
-            this.ManagmentOrderBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
-            this.ManagmentOrderBtn.Image = ((System.Drawing.Image)(resources.GetObject("ManagmentOrderBtn.Image")));
-            this.ManagmentOrderBtn.Name = "ManagmentOrderBtn";
-            this.ManagmentOrderBtn.Text = "Order Mangment";
-            this.ManagmentOrderBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.ManagmentOrderBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.ManagmentOrderBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.ManagmentOrderBtn.Click += new System.EventHandler(this.ManagmentOrderBtn_Click);
+            this.ReportOrderBtn.AccessibleDescription = "Order Mangment";
+            this.ReportOrderBtn.AccessibleName = "Order Mangment";
+            this.ReportOrderBtn.AutoSize = false;
+            this.ReportOrderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(200)))), ((int)(((byte)(37)))));
+            this.ReportOrderBtn.Bounds = new System.Drawing.Rectangle(0, 0, 290, 140);
+            this.ReportOrderBtn.Column = 1;
+            this.ReportOrderBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.ReportOrderBtn.Image = ((System.Drawing.Image)(resources.GetObject("ReportOrderBtn.Image")));
+            this.ReportOrderBtn.Name = "ReportOrderBtn";
+            this.ReportOrderBtn.Text = "View Orders Report";
+            this.ReportOrderBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.ReportOrderBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.ReportOrderBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.ReportOrderBtn.Click += new System.EventHandler(this.ManagmentOrderBtn_Click);
             // 
             // SellItemsTileElement
             // 
@@ -715,13 +722,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_3);
             // 
-            // deliveryOrderBtn
-            // 
-            this.deliveryOrderBtn.Name = "deliveryOrderBtn";
-            this.deliveryOrderBtn.Size = new System.Drawing.Size(188, 22);
-            this.deliveryOrderBtn.Text = "Delivery Order";
-            this.deliveryOrderBtn.Click += new System.EventHandler(this.deliveryOrderBtn_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -789,7 +789,7 @@
         private Telerik.WinControls.UI.RadTileElement NewOrderBtn;
         private Telerik.WinControls.UI.RadTileElement DesignerOrderBtn;
         private Telerik.WinControls.UI.RadTileElement radTileElement4;
-        private Telerik.WinControls.UI.RadTileElement ManagmentOrderBtn;
+        private Telerik.WinControls.UI.RadTileElement ReportOrderBtn;
         private Telerik.WinControls.UI.TileGroupElement MainStorGroup;
         private Telerik.WinControls.UI.RadTileElement itemsBtn;
         private Telerik.WinControls.UI.RadTileElement WithDrawalBtn;

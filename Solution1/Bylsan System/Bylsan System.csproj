@@ -623,6 +623,12 @@
     <Compile Include="SenarioAddOrderForms\FrmTotalOrder.Designer.cs">
       <DependentUpon>FrmTotalOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="SenarioAddOrderForms\FrmViewOrdersReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SenarioAddOrderForms\FrmViewOrdersReport.Designer.cs">
+      <DependentUpon>FrmViewOrdersReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserAlert.cs" />
     <EmbeddedResource Include="AccountsX\Acc\frmAddAccount.resx">
       <DependentUpon>frmAddAccount.cs</DependentUpon>
@@ -872,6 +878,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SenarioAddOrderForms\FrmTotalOrder.resx">
       <DependentUpon>FrmTotalOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SenarioAddOrderForms\FrmViewOrdersReport.resx">
+      <DependentUpon>FrmViewOrdersReport.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Lib\Xprema.dll.config" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.AccountDailyReportObj.datasource" />

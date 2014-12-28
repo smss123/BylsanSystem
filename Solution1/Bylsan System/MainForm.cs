@@ -411,7 +411,8 @@ namespace Bylsan_System
 
         private void ManagmentOrderBtn_Click(object sender, EventArgs e)
         {
-
+            FrmViewOrdersReport rpt = new FrmViewOrdersReport();
+            rpt.ShowDialog();
         }
 
         private void FactoryOrderBtn_Click(object sender, EventArgs e)
