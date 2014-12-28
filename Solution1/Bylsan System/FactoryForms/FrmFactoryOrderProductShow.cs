@@ -105,7 +105,7 @@ namespace Bylsan_System.FactoryForms
 
         private void ChkToDeliver_CheckedChanged(object sender, EventArgs e)
         {
-            if (PrdID != 0 && TaregtOrder != 0)
+            if ( TaregtOrder != 0)
             {
                 // Start Edit At Order Table :
                 Order OrderTb = new Order()

@@ -216,6 +216,12 @@
     <Compile Include="BranchForms\FrmDeliveryOrder.Designer.cs">
       <DependentUpon>FrmDeliveryOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="BranchForms\FrmDeliveryOrderShowInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BranchForms\FrmDeliveryOrderShowInfo.Designer.cs">
+      <DependentUpon>FrmDeliveryOrderShowInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="BranchForms\FrmEditBranch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -653,6 +659,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BranchForms\FrmDeliveryOrder.resx">
       <DependentUpon>FrmDeliveryOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BranchForms\FrmDeliveryOrderShowInfo.resx">
+      <DependentUpon>FrmDeliveryOrderShowInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BranchForms\FrmEditBranch.resx">
       <DependentUpon>FrmEditBranch.cs</DependentUpon>

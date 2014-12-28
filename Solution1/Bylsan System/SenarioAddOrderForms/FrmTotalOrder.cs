@@ -25,11 +25,20 @@ namespace Bylsan_System.SenarioAddOrderForms
 
 
             var ListPerm = XamaDataLayer.Security.PermessionsCmd.GetAllUserPermissonsByUserID(XamaDataLayer.Security.UserInfo.CurrnetUser.ID);
+            try
+            {
+                if (Convert.ToBoolean(ListPerm[0].PermessionValue.ToString()) == false) { txtDiscountBox.Enabled = false; }
 
-            if (Convert.ToBoolean(ListPerm[0].PermessionValue.ToString()) == false) { txtDiscountBox.Enabled = false; }
+                if (Convert.ToBoolean(ListPerm[4].PermessionValue.ToString()) == false) { PrintBtn.Enabled = false; }
 
-            if (Convert.ToBoolean(ListPerm[4].PermessionValue.ToString()) == false) { PrintBtn.Enabled = false; }
+            }
+            catch (System.ArgumentOutOfRangeException ex)
+            {
+                
+                return;
+            }
 
+          
 
         }
         public string  TragetOrderType { get; set; }

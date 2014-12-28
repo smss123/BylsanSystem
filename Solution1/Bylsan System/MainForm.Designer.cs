@@ -62,6 +62,7 @@
             this.radPanorama1 = new Telerik.WinControls.UI.RadPanorama();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnManagecustomerPoint = new System.Windows.Forms.ToolStripMenuItem();
+            this.button2 = new System.Windows.Forms.Button();
             this.tileGroupElement1 = new Telerik.WinControls.UI.TileGroupElement();
             this.FactoryOrderBtn = new Telerik.WinControls.UI.RadTileElement();
             this.NewOrderBtn = new Telerik.WinControls.UI.RadTileElement();
@@ -84,7 +85,7 @@
             this.expensesBtn = new Telerik.WinControls.UI.RadTileElement();
             this.radTileElement4 = new Telerik.WinControls.UI.RadTileElement();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.deliveryOrderBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).BeginInit();
             this.radPanorama1.SuspendLayout();
@@ -181,7 +182,8 @@
             this.BranchDropDownButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BranchDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addBranchBtn,
-            this.ManagementBranchBtn});
+            this.ManagementBranchBtn,
+            this.deliveryOrderBtn});
             this.BranchDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("BranchDropDownButton.Image")));
             this.BranchDropDownButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.BranchDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -329,19 +331,18 @@
             this.radPanorama1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.radPanorama1.ContextMenuStrip = this.contextMenuStrip1;
             this.radPanorama1.Controls.Add(this.button2);
-            this.radPanorama1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanorama1.Groups.AddRange(new Telerik.WinControls.RadItem[] {
             this.tileGroupElement1,
             this.MainStorGroup,
             this.AccountsGroup});
             this.radPanorama1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radTileElement4});
-            this.radPanorama1.Location = new System.Drawing.Point(0, 38);
+            this.radPanorama1.Location = new System.Drawing.Point(0, 176);
             this.radPanorama1.Margin = new System.Windows.Forms.Padding(10);
             this.radPanorama1.Name = "radPanorama1";
             this.radPanorama1.RowsCount = 6;
             this.radPanorama1.ShowGroups = true;
-            this.radPanorama1.Size = new System.Drawing.Size(1358, 610);
+            this.radPanorama1.Size = new System.Drawing.Size(1358, 472);
             this.radPanorama1.TabIndex = 10;
             this.radPanorama1.Text = "radPanorama1";
             this.radPanorama1.ThemeName = "VisualStudio2012Dark";
@@ -358,6 +359,16 @@
             this.btnManagecustomerPoint.Name = "btnManagecustomerPoint";
             this.btnManagecustomerPoint.Size = new System.Drawing.Size(207, 22);
             this.btnManagecustomerPoint.Text = "Customer Point Manager";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(544, 475);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(107, 44);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Private withdrawals";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_3);
             // 
             // tileGroupElement1
             // 
@@ -704,15 +715,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_3);
             // 
-            // button2
+            // deliveryOrderBtn
             // 
-            this.button2.Location = new System.Drawing.Point(544, 475);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 44);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Private withdrawals";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_3);
+            this.deliveryOrderBtn.Name = "deliveryOrderBtn";
+            this.deliveryOrderBtn.Size = new System.Drawing.Size(188, 22);
+            this.deliveryOrderBtn.Text = "Delivery Order";
+            this.deliveryOrderBtn.Click += new System.EventHandler(this.deliveryOrderBtn_Click);
             // 
             // MainForm
             // 
@@ -803,5 +811,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnManagecustomerPoint;
         public Telerik.WinControls.UI.RadPanorama radPanorama1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem deliveryOrderBtn;
     }
 }

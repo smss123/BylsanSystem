@@ -510,5 +510,11 @@ namespace Bylsan_System
             FrmPrivatewithdrawals f = new FrmPrivatewithdrawals();
             f.Show();
         }
+
+        private void deliveryOrderBtn_Click(object sender, EventArgs e)
+        {
+            FrmDeliveryOrder frm = new FrmDeliveryOrder();
+            frm.ShowDialog();
+        }
     }
 }
