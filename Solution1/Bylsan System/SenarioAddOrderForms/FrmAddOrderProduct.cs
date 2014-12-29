@@ -98,7 +98,7 @@ namespace Bylsan_System.SenarioAddOrderForms
                 lblStatus.Text = "Loading ...";
             });
             this.Products = Operation.allproducts;
-            this.ProductCategories = Operation.allcategorys;//CategoriesCmd.GetAllCategories();
+            this.ProductCategories = Operation.allcategorys;
 
             this.Invoke((MethodInvoker)delegate
             {
@@ -152,7 +152,7 @@ namespace Bylsan_System.SenarioAddOrderForms
 
             if (CategID != 0)
             {
-                var AllProducts = this.Products.Where(p => p.CateogryID == CategID); // ProductsCmd.GetProductByCategID(CategID);
+                var AllProducts = this.Products.Where(p => p.CateogryID == CategID); 
                 foreach (var item in AllProducts)
                 {
                     ListViewProductes.LargeImageList = ProductImageList;

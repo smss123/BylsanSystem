@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.AddDebtBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -35,11 +40,11 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
+            this.DGVDebtors = new Telerik.WinControls.UI.RadGridView();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVDebtors)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVDebtors.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,28 +110,54 @@
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // radGridView1
+            // DGVDebtors
             // 
-            this.radGridView1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.radGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGridView1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.radGridView1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radGridView1.Location = new System.Drawing.Point(0, 39);
+            this.DGVDebtors.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DGVDebtors.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DGVDebtors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGVDebtors.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.DGVDebtors.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DGVDebtors.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.DGVDebtors.Location = new System.Drawing.Point(0, 39);
             // 
-            // radGridView1
+            // DGVDebtors
             // 
-            this.radGridView1.MasterTemplate.AllowAddNewRow = false;
-            this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            this.radGridView1.MasterTemplate.EnableFiltering = true;
-            this.radGridView1.Name = "radGridView1";
-            this.radGridView1.ReadOnly = true;
-            this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radGridView1.Size = new System.Drawing.Size(703, 383);
-            this.radGridView1.TabIndex = 2;
-            this.radGridView1.Text = "radGridView1";
-            this.radGridView1.ThemeName = "VisualStudio2012Light";
+            this.DGVDebtors.MasterTemplate.AllowAddNewRow = false;
+            this.DGVDebtors.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.Name = "column1";
+            gridViewTextBoxColumn1.Width = 168;
+            gridViewTextBoxColumn2.FieldName = "AccountID";
+            gridViewTextBoxColumn2.HeaderText = "AccountID";
+            gridViewTextBoxColumn2.Name = "AccountIDCol";
+            gridViewTextBoxColumn2.Width = 89;
+            gridViewTextBoxColumn3.FieldName = "TotalIn";
+            gridViewTextBoxColumn3.HeaderText = "TotalIn";
+            gridViewTextBoxColumn3.Name = "TotalInCol";
+            gridViewTextBoxColumn3.Width = 92;
+            gridViewTextBoxColumn4.FieldName = "TotalOut";
+            gridViewTextBoxColumn4.HeaderText = "TotalOut";
+            gridViewTextBoxColumn4.Name = "TotalOutCol";
+            gridViewTextBoxColumn4.Width = 92;
+            gridViewTextBoxColumn5.FieldName = "DateOfProcess";
+            gridViewTextBoxColumn5.HeaderText = "DateOfProcess";
+            gridViewTextBoxColumn5.Name = "DateOfPrpcess";
+            gridViewTextBoxColumn5.Width = 247;
+            this.DGVDebtors.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5});
+            this.DGVDebtors.MasterTemplate.EnableFiltering = true;
+            this.DGVDebtors.Name = "DGVDebtors";
+            this.DGVDebtors.ReadOnly = true;
+            this.DGVDebtors.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DGVDebtors.Size = new System.Drawing.Size(703, 383);
+            this.DGVDebtors.TabIndex = 2;
+            this.DGVDebtors.Text = "radGridView1";
+            this.DGVDebtors.ThemeName = "VisualStudio2012Light";
             // 
             // FrmShowDebtorAccount
             // 
@@ -134,7 +165,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(703, 444);
-            this.Controls.Add(this.radGridView1);
+            this.Controls.Add(this.DGVDebtors);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "FrmShowDebtorAccount";
@@ -148,8 +179,8 @@
             this.Load += new System.EventHandler(this.FrmShowDebtorAccount_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVDebtors.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVDebtors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,7 +196,7 @@
         private System.Windows.Forms.ToolStripButton RepaydebBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton RefreshBtn;
-        private Telerik.WinControls.UI.RadGridView radGridView1;
+        private Telerik.WinControls.UI.RadGridView DGVDebtors;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
     }
 }

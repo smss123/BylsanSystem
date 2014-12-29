@@ -46,5 +46,12 @@ namespace XamaDataLayer.Accountant
             db = new DbDataContext();
             return db.Debtors.ToList();
         }
+
+        public static Debtor  GetOneDebtorByID( int xid ){
+
+              db = new DbDataContext();
+            var q = db.Debtors.Where(d => d.ID == xid) .Single ();
+            return q;
+        }
     }
 }

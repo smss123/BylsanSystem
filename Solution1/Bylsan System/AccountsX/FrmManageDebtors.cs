@@ -56,8 +56,9 @@ namespace Bylsan_System.AccountsX
             {
                 Operation.BeginOperation(this);
                 FrmShowDebtorAccount frm = new FrmShowDebtorAccount();
-            
-             
+
+                Debtor tb = (Debtor)DGVDebitors.CurrentRow.DataBoundItem;
+                frm.TargetDebtor = tb;
                 frm.ShowDialog();
 
                 Operation.EndOperation(this);

@@ -226,7 +226,7 @@ namespace Bylsan_System.SenarioAddOrderForms
 //--------
          //=============================================================================
             // Save Order Prouct Attachment :
-            int OrdPrd = otb.ID;// ( from o in OrderProductsCmd .GetAll ()  select o.ID ).Max ();
+            int OrdPrd = (from o in OrderProductsCmd .GetAll ()  select o.ID ).Max ();
 
              OrderProuctAttachment attb = new OrderProuctAttachment();
              foreach (var item in CustomerInformations .WaitingAttachment )
