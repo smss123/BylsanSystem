@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using XamaDataLayer;
 using XamaDataLayer.Main_Store;
 using System.Threading;
+using XamaDataLayer.BranchCmd;
+using XamaDataLayer.Main_Store;
+using Xprema.XExtention ;
 namespace Bylsan_System.FactoryForms
 {
     public partial class FrmProductsContantes : Form
@@ -23,11 +26,15 @@ namespace Bylsan_System.FactoryForms
         void PopulateCmb()
         {
             Operation.BeginOperation(this);
+            var Lstproducts = ProductsCmd.GetAllProducts();
             var AllItems = ItemsCmd.GetAllItemsMaterial();
+
             this .Invoke (( MethodInvoker) delegate 
         {
+            Cmbproducts.Items.Clear();
+            Cmbproducts.Items.AddRange((from p in Lstproducts.ToList() select p.Product_Name).Distinct().ToArray());
             CmbItems.Items.Clear();
-            CmbItems .Items .AddRange (( from i in AllItems.ToList () select i .ItemName ).ToArray ());
+            CmbItems .Items .AddRange (( from i in AllItems.ToList () select i .ItemName ).Distinct ().ToArray ());
         });
             Operation.EndOperation(this);
         }
@@ -37,5 +44,84 @@ namespace Bylsan_System.FactoryForms
             th.Start();
 
         }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtQty.Text != "" && itmID !=0 )
+                {
+                     float    AvailQty = 0;
+                    var TargetStore = StoreCmd .GetAvailableQtyByItemID (itmID );
+                    AvailQty = TargetStore.AvailableQty.Value;
+
+                    if (Convert.ToDouble(txtQty.Text.ToString()) > AvailQty)
+                    {
+                        Operation.ShowToustOk("Quantity is not available", this);
+                        txtQty.Text = "";
+                        return;
+                    }
+
+                    //==================================================
+                    // Start Save At ProductContents Table  :
+                    ProductContent tb = new ProductContent() {
+                    ProductID = prdid ,
+                    ContentsProductID = itmID ,
+                    Qty = int .Parse (txtQty .Text .ToString ()),
+                    unitOfProduct = CmbUnits .Text 
+                    
+                    };
+                    ProductContentsCmd.AddProductContents(tb);
+                    //===================================================
+                    TargetStore.ItemID = itmID;
+                    TargetStore.AvailableQty -= (long)(txtQty.Text).ToFloat();
+                    TargetStore.Description = "Drawal";
+                    StoreCmd.EditStore(TargetStore);
+                    
+                    //==============================================================
+                    
+                }
+            }
+            catch (Exception)
+            {
+                
+              
+            }
+        }
+        #region "  ^^^ Get IDes           "
+        public int prdid { get; set; }
+        private void Cmbproducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var Lstproducts = ProductsCmd.GetAllProducts();
+
+                prdid = 0;
+                prdid = (from p in Lstproducts.ToList() select p.ID).Single();
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+        }
+
+        public int itmID { get; set; }
+        private void CmbItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var AllItems = ItemsCmd.GetAllItemsMaterial();
+                itmID = 0;
+                itmID = (from i in AllItems.ToList() select i.ID).Single();
+
+            }
+            catch (Exception)
+            {
+                
+                
+            }
+        }
+        #endregion 
     }
 }
