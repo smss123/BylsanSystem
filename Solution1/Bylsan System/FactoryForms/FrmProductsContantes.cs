@@ -61,7 +61,7 @@ namespace Bylsan_System.FactoryForms
                         txtQty.Text = "";
                         return;
                     }
-
+                    Operation.BeginOperation(this);
                     //==================================================
                     // Start Save At ProductContents Table  :
                     ProductContent tb = new ProductContent() {
@@ -79,7 +79,12 @@ namespace Bylsan_System.FactoryForms
                     StoreCmd.EditStore(TargetStore);
                     
                     //==============================================================
-                    
+                   
+
+                    Operation.EndOperation(this);
+                    Operation.ShowToustOk("Saved ...", this);
+                    broom();
+
                 }
             }
             catch (Exception)
@@ -123,5 +128,17 @@ namespace Bylsan_System.FactoryForms
             }
         }
         #endregion 
+
+        void broom()
+        {
+
+            prdid = 0;
+            itmID = 0;
+            CmbItems.Text = null;
+            Cmbproducts.Text = null;
+            txtQty.Text = "";
+            CmbUnits.Text = "";
+            FrmProductsContantes_Load(null, null);
+        }
     }
 }
