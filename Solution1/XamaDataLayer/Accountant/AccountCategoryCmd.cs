@@ -13,7 +13,7 @@ namespace XamaDataLayer.Accountant
             db = new DbDataContext();
             db.AccountCategories.InsertOnSubmit(tb);
             db.SubmitChanges();
-            XpremaTrack.WriteTrack();
+           
             return true;
         }
 

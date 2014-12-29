@@ -13,8 +13,18 @@ namespace XamaDataLayer.Helper_Classes
      static Thread  th = null;
         public static void WriteTrack()
         {
-           string str =  "\n-------------------------------------------------------\n"+Environment.StackTrace+"\n-------------------"+DateTime.Now.ToString()+"--------------------------------";
-           File.AppendAllText("TrackFile.xprema",str);
+           th = new Thread(SaveTrack);
+           th.Start();
+        }
+
+        private static void SaveTrack()
+        {
+            while (true)
+            {
+                string str = string.Format("\n-------------------------------------------------------\n{0}\n-------------------{1}--------------------------------", Environment.StackTrace, DateTime.Now.ToString());
+                File.AppendAllText("TrackFile.xprema", str);
+                Thread.Sleep(50000);
+            }
         }
     }
 }

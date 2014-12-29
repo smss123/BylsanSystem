@@ -24,6 +24,7 @@ using Bylsan_System.SenarioAddOrderForms;
 using Bylsan_System.AccountsX.Acc;
 using Bylsan_System.SecurityForm;
 using Bylsan_System.FactoryForms;
+using XamaDataLayer.Helper_Classes;
 namespace Bylsan_System
 {
     public partial class MainForm : RadForm
@@ -287,6 +288,7 @@ namespace Bylsan_System
         {
             UserAlert Alert = new UserAlert();
             Alert.ActivateTimer();
+            XpremaTrack.WriteTrack();
           
            
         }
