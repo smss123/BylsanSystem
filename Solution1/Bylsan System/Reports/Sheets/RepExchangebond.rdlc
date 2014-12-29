@@ -57,7 +57,7 @@
         <Top>1.95474cm</Top>
         <Left>7.38833cm</Left>
         <Height>0.62646cm</Height>
-        <Width>6.1248cm</Width>
+        <Width>6.79426cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -374,7 +374,7 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>LightGrey</BackgroundColor>
+          <BackgroundColor>WhiteSmoke</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -829,7 +829,7 @@
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>LightGrey</BackgroundColor>
+          <BackgroundColor>WhiteSmoke</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -840,7 +840,7 @@
     <Height>4.22916in</Height>
     <Style />
   </Body>
-  <Width>6.63925in</Width>
+  <Width>6.76425in</Width>
   <Page>
     <PageHeader>
       <Height>2.32833cm</Height>

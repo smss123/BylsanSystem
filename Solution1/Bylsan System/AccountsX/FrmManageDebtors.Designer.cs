@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageDebtors));
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -39,11 +38,13 @@
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.AddDebt = new System.Windows.Forms.ToolStripButton();
+            this.AddBtn = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DGVDebitors = new Telerik.WinControls.UI.RadGridView();
             this.debtorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDebitors)).BeginInit();
@@ -55,21 +56,24 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddDebt});
+            this.AddBtn,
+            this.toolStripSeparator1,
+            this.RefreshBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1175, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1175, 39);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // AddDebt
+            // AddBtn
             // 
-            this.AddDebt.Image = ((System.Drawing.Image)(resources.GetObject("AddDebt.Image")));
-            this.AddDebt.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddDebt.Name = "AddDebt";
-            this.AddDebt.Size = new System.Drawing.Size(77, 22);
-            this.AddDebt.Text = "Add Debt";
-            this.AddDebt.Click += new System.EventHandler(this.AddDebt_Click);
+            this.AddBtn.Image = global::Bylsan_System.Properties.Resources.Add;
+            this.AddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(65, 36);
+            this.AddBtn.Text = "Add";
+            this.AddBtn.Click += new System.EventHandler(this.AddDebt_Click);
             // 
             // statusStrip1
             // 
@@ -83,9 +87,9 @@
             // 
             this.groupBox1.Controls.Add(this.DGVDebitors);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 25);
+            this.groupBox1.Location = new System.Drawing.Point(0, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1175, 472);
+            this.groupBox1.Size = new System.Drawing.Size(1175, 458);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
@@ -164,7 +168,7 @@
             this.DGVDebitors.Name = "DGVDebitors";
             this.DGVDebitors.ReadOnly = true;
             this.DGVDebitors.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DGVDebitors.Size = new System.Drawing.Size(1169, 451);
+            this.DGVDebitors.Size = new System.Drawing.Size(1169, 437);
             this.DGVDebitors.TabIndex = 0;
             this.DGVDebitors.ThemeName = "VisualStudio2012Light";
             this.DGVDebitors.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.DGVDebitors_CommandCellClick);
@@ -172,6 +176,21 @@
             // debtorBindingSource
             // 
             this.debtorBindingSource.DataSource = typeof(XamaDataLayer.Debtor);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // RefreshBtn
+            // 
+            this.RefreshBtn.Image = global::Bylsan_System.Properties.Resources.Refrech;
+            this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Size = new System.Drawing.Size(79, 36);
+            this.RefreshBtn.Text = "Refresh";
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // FrmManageDebtors
             // 
@@ -210,6 +229,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private Telerik.WinControls.UI.RadGridView DGVDebitors;
         private System.Windows.Forms.BindingSource debtorBindingSource;
-        private System.Windows.Forms.ToolStripButton AddDebt;
+        private System.Windows.Forms.ToolStripButton AddBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton RefreshBtn;
     }
 }

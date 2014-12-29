@@ -22,9 +22,9 @@
         </Paragraphs>
         <rd:DefaultName>ID</rd:DefaultName>
         <Top>0.17583in</Top>
-        <Left>0.81125in</Left>
+        <Left>0.7418in</Left>
         <Height>0.25in</Height>
-        <Width>2.125in</Width>
+        <Width>1.20834in</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -61,6 +61,7 @@
           <Border>
             <Style>Solid</Style>
           </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -85,9 +86,9 @@
         </Paragraphs>
         <rd:DefaultName>BillDate</rd:DefaultName>
         <Top>0.17583in</Top>
-        <Left>4.22097in</Left>
+        <Left>4.0543in</Left>
         <Height>0.25in</Height>
-        <Width>1in</Width>
+        <Width>1.16667in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -117,14 +118,15 @@
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
         <Top>0.17583in</Top>
-        <Left>3.74528in</Left>
+        <Left>3.37722in</Left>
         <Height>0.25in</Height>
-        <Width>0.40625in</Width>
+        <Width>0.67708in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
           </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -151,8 +153,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total</rd:DefaultName>
-        <Top>1.14458in</Top>
-        <Left>2.99181in</Left>
+        <Top>1.22097in</Top>
+        <Left>0.8425in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
         <ZIndex>4</ZIndex>
@@ -186,8 +188,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>1.14458in</Top>
-        <Left>2.43972in</Left>
+        <Top>1.22097in</Top>
+        <Left>0.34597in</Left>
         <Height>0.25in</Height>
         <Width>0.49653in</Width>
         <ZIndex>5</ZIndex>
@@ -195,6 +197,7 @@
           <Border>
             <Style>None</Style>
           </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -246,6 +249,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -279,6 +283,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -312,6 +317,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -345,6 +351,7 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -531,8 +538,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>User</rd:DefaultName>
-        <Top>1.49875in</Top>
-        <Left>1.15847in</Left>
+        <Top>1.51264in</Top>
+        <Left>1.11681in</Left>
         <Height>0.25in</Height>
         <Width>2.5in</Width>
         <ZIndex>7</ZIndex>
@@ -561,7 +568,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>1.49875in</Top>
+        <Top>1.51264in</Top>
         <Left>0.34597in</Left>
         <Height>0.25in</Height>
         <Width>0.74306in</Width>
@@ -570,6 +577,7 @@
           <Border>
             <Style>None</Style>
           </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -577,11 +585,31 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>1.92583in</Height>
+    <Height>1.905in</Height>
     <Style />
   </Body>
   <Width>5.40625in</Width>
   <Page>
+    <PageHeader>
+      <Height>1in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>1in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>

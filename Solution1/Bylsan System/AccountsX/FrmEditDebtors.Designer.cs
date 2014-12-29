@@ -103,7 +103,7 @@
             this.groupBox1.Controls.Add(this.debtorNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(380, 214);
+            this.groupBox1.Size = new System.Drawing.Size(380, 211);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -168,7 +168,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.RootElement.MaxSize = new System.Drawing.Size(412, 323);
+            this.RootElement.MaxSize = new System.Drawing.Size(412, 271);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditDebtors";
             this.ThemeName = "VisualStudio2012Light";

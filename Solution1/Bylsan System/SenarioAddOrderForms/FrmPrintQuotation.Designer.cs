@@ -43,9 +43,9 @@
             this.ListViewProducts = new System.Windows.Forms.ListView();
             this.TreeCategories = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PrintBtn = new Telerik.WinControls.UI.RadButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.PrintBtn = new Telerik.WinControls.UI.RadButton();
             quotationForLabel = new System.Windows.Forms.Label();
             phoneNumberLabel = new System.Windows.Forms.Label();
             addressForLabel = new System.Windows.Forms.Label();
@@ -185,14 +185,6 @@
             this.panel1.Size = new System.Drawing.Size(769, 89);
             this.panel1.TabIndex = 7;
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "eye.png");
-            this.imageList1.Images.SetKeyName(1, "award_star_bronze_2.png");
-            this.imageList1.Images.SetKeyName(2, "yen coins.ico");
-            // 
             // PrintBtn
             // 
             this.PrintBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -206,6 +198,14 @@
             this.PrintBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.PrintBtn.ThemeName = "VisualStudio2012Light";
             this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "eye.png");
+            this.imageList1.Images.SetKeyName(1, "award_star_bronze_2.png");
+            this.imageList1.Images.SetKeyName(2, "yen coins.ico");
             // 
             // FrmPrintQuotation
             // 

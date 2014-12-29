@@ -57,5 +57,10 @@ namespace Bylsan_System.AccountsX
             frm.ShowDialog();
 
         }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            FrmManageDebtors_Load(null, null);
+        }
     }
 }

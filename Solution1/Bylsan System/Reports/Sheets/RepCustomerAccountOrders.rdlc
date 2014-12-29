@@ -6,25 +6,25 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.03257cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.67914cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.03257cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.20896cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.36771cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.10313cm</Width>
+              <Width>1.63664cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.10313cm</Width>
+              <Width>2.71167cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -40,13 +40,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Order Id ID</Value>
+                              <Value>Order Id </Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox1</rd:DefaultName>
@@ -66,7 +68,7 @@
                         <RightBorder>
                           <Color>Black</Color>
                         </RightBorder>
-                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -90,7 +92,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox3</rd:DefaultName>
@@ -110,7 +114,7 @@
                         <RightBorder>
                           <Color>Black</Color>
                         </RightBorder>
-                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -134,7 +138,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox5</rd:DefaultName>
@@ -154,7 +160,7 @@
                         <RightBorder>
                           <Color>Black</Color>
                         </RightBorder>
-                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -178,7 +184,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox7</rd:DefaultName>
@@ -198,7 +206,7 @@
                         <RightBorder>
                           <Color>Black</Color>
                         </RightBorder>
-                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -222,7 +230,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox9</rd:DefaultName>
@@ -242,7 +252,7 @@
                         <RightBorder>
                           <Color>Black</Color>
                         </RightBorder>
-                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -260,13 +270,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Order Status</Value>
+                              <Value>Status</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox11</rd:DefaultName>
@@ -286,7 +298,7 @@
                         <RightBorder>
                           <Color>Black</Color>
                         </RightBorder>
-                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -310,7 +322,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox13</rd:DefaultName>
@@ -330,7 +344,7 @@
                         <RightBorder>
                           <Color>Black</Color>
                         </RightBorder>
-                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -357,7 +371,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>OrderIdID</rd:DefaultName>
@@ -756,10 +772,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>2.43099cm</Top>
+        <Top>1.19077cm</Top>
         <Left>0.36724cm</Left>
         <Height>1.8cm</Height>
-        <Width>16.41521cm</Width>
+        <Width>16.66927cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -781,10 +797,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>CustomerName</rd:DefaultName>
-        <Top>1.04938cm</Top>
+        <Top>0.41438cm</Top>
         <Left>3.09717cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.01435cm</Width>
+        <Width>6.20498cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -813,7 +829,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>1.04938cm</Top>
+        <Top>0.41438cm</Top>
         <Left>0.36724cm</Left>
         <Height>0.6cm</Height>
         <Width>2.78285cm</Width>
@@ -844,8 +860,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox18</rd:DefaultName>
-        <Top>1.04938cm</Top>
-        <Left>10.82319cm</Left>
+        <Top>0.41438cm</Top>
+        <Left>12.37541cm</Left>
         <Height>0.6cm</Height>
         <Width>4.18956cm</Width>
         <ZIndex>3</ZIndex>
@@ -876,8 +892,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>1.04938cm</Top>
-        <Left>8.28791cm</Left>
+        <Top>0.41438cm</Top>
+        <Left>9.87541cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>4</ZIndex>
@@ -893,13 +909,13 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>1.98958in</Height>
+    <Height>1.36458in</Height>
     <Style />
   </Body>
   <Width>7.03435in</Width>
   <Page>
     <PageHeader>
-      <Height>2.54cm</Height>
+      <Height>2.24896cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <Style>
@@ -909,7 +925,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>1.27cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <Style>

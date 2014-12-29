@@ -11,7 +11,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>4.72722cm</Height>
+              <Height>3.27201cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -34,7 +34,7 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>AccountName</rd:DefaultName>
-                          <Top>0.87877cm</Top>
+                          <Top>0.29669cm</Top>
                           <Left>3.23356cm</Left>
                           <Height>0.6cm</Height>
                           <Width>7.58cm</Width>
@@ -64,7 +64,7 @@
                                 <Width>2.5cm</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>5.70146cm</Width>
+                                <Width>6.07188cm</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
@@ -590,10 +590,10 @@
                             </TablixMembers>
                           </TablixRowHierarchy>
                           <DataSetName>DataSet1</DataSetName>
-                          <Top>1.83127cm</Top>
+                          <Top>1.24919cm</Top>
                           <Left>0.49953cm</Left>
                           <Height>1.8cm</Height>
-                          <Width>15.70146cm</Width>
+                          <Width>16.07188cm</Width>
                           <ZIndex>1</ZIndex>
                           <Style>
                             <Border>
@@ -618,7 +618,7 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>AccountName</rd:DefaultName>
-                          <Top>0.87877cm</Top>
+                          <Top>0.29669cm</Top>
                           <Left>0.49953cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.73403cm</Width>
@@ -666,7 +666,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>0.17639cm</Top>
-        <Height>4.72722cm</Height>
+        <Height>3.27201cm</Height>
         <Width>17.13995cm</Width>
         <Style>
           <Border>
@@ -675,7 +675,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.4375in</Height>
     <Style />
   </Body>
   <Width>6.74801in</Width>

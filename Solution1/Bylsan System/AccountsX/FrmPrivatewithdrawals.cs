@@ -14,9 +14,11 @@ using Telerik.WinControls.Data;
 using XamaDataLayer.BranchCmd;
 using System.Threading;
 using Xprema.XExtention;
+using Telerik.WinControls.UI;
+using XamaDataLayer.Main_Store;
 namespace Bylsan_System.AccountsX
 {
-    public partial class FrmPrivatewithdrawals : Form
+    public partial class FrmPrivatewithdrawals : RadForm
     {
         public FrmPrivatewithdrawals()
         {
@@ -27,23 +29,47 @@ namespace Bylsan_System.AccountsX
         Thread th;
         public void FillBrnchCombo()
         {
-            var q = AccountsCmd.GetAllAccounts();
 
+            this.CmbFromAccount.MultiColumnComboBoxElement.DropDownWidth = 550;
+            this.CmbToAccount.MultiColumnComboBoxElement.DropDownWidth = 550;
             Operation.BeginOperation(this);
+
             this.Invoke((MethodInvoker)delegate
             {
-                CmbFromAccount.Items.Clear();
-                CmbFromAccount.Items.AddRange((from b in q.ToList() select b.AccountName).Distinct().ToArray());
+                this.CmbFromAccount.AutoFilter = true;
+                this.CmbFromAccount.ValueMember = "ID";
+                this.CmbFromAccount.DisplayMember = "AccountName";
 
-                CmbToAccount.Items.Clear();
-                CmbToAccount.Items.AddRange((from b in q.ToList() select b.AccountName ).Distinct().ToArray());
+                ////
 
+                this.CmbToAccount.AutoFilter = true;
+                this.CmbToAccount.ValueMember = "ID";
+                this.CmbToAccount.DisplayMember = "AccountName";
             });
 
-      
-           
-            Operation.EndOperation(this);
 
+            var q = AccountsCmd.GetAllAccounts();
+            this.Invoke((MethodInvoker)delegate
+            {
+                CmbFromAccount.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.CmbFromAccount.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.CmbFromAccount.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+
+                ////
+                CmbToAccount.DataSource = q;
+                FilterDescriptor filter1 = new FilterDescriptor();
+                filter1.PropertyName = this.CmbToAccount.DisplayMember;
+                filter1.Operator = FilterOperator.Contains;
+                this.CmbToAccount.EditorControl.MasterTemplate.FilterDescriptors.Add(filter1);
+
+
+
+
+            });
+            Operation.EndOperation(this);
+           
             th.Abort();
         }
         private void FrmPrivatewithdrawals_Load(object sender, EventArgs e)

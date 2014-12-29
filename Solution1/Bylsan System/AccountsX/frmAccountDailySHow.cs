@@ -35,6 +35,18 @@ namespace Bylsan_System.AccountsX
             th.Start();
         }
 
+        private void ADDbtn_Click(object sender, EventArgs e)
+        {
+            FrmPrivatewithdrawals frm= new FrmPrivatewithdrawals();
+            frm.ShowDialog();
+            
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            frmAccountDailySHow_Load(null, null);
+        }
+
 
     }
 }
