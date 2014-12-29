@@ -31,6 +31,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DGVProducts = new Telerik.WinControls.UI.RadGridView();
@@ -65,7 +66,7 @@
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 503);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(742, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(810, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -75,7 +76,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(398, 503);
+            this.groupBox1.Size = new System.Drawing.Size(446, 503);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "OrderProduct";
@@ -84,10 +85,11 @@
             // 
             this.DGVProducts.BackColor = System.Drawing.SystemColors.Control;
             this.DGVProducts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DGVProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVProducts.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
             this.DGVProducts.ForeColor = System.Drawing.SystemColors.ControlText;
             this.DGVProducts.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DGVProducts.Location = new System.Drawing.Point(3, 16);
+            this.DGVProducts.Location = new System.Drawing.Point(3, 18);
             // 
             // DGVProducts
             // 
@@ -97,26 +99,32 @@
             gridViewTextBoxColumn1.FieldName = "ID";
             gridViewTextBoxColumn1.HeaderText = "ID";
             gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn1.Width = 47;
+            gridViewTextBoxColumn1.Width = 49;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "Product.Product_Name";
             gridViewTextBoxColumn2.HeaderText = "Product Name";
             gridViewTextBoxColumn2.Name = "Product_Name";
-            gridViewTextBoxColumn2.Width = 282;
+            gridViewTextBoxColumn2.Width = 225;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "Qty";
             gridViewTextBoxColumn3.HeaderText = "Quantity";
             gridViewTextBoxColumn3.Name = "Quantity";
-            gridViewTextBoxColumn3.Width = 46;
+            gridViewTextBoxColumn3.Width = 71;
+            gridViewCheckBoxColumn1.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn1.HeaderText = "Check";
+            gridViewCheckBoxColumn1.MinWidth = 20;
+            gridViewCheckBoxColumn1.Name = "Check";
+            gridViewCheckBoxColumn1.Width = 79;
             this.DGVProducts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3});
+            gridViewTextBoxColumn3,
+            gridViewCheckBoxColumn1});
             this.DGVProducts.MasterTemplate.EnableFiltering = true;
             this.DGVProducts.Name = "DGVProducts";
             this.DGVProducts.ReadOnly = true;
             this.DGVProducts.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DGVProducts.Size = new System.Drawing.Size(392, 504);
+            this.DGVProducts.Size = new System.Drawing.Size(440, 482);
             this.DGVProducts.TabIndex = 0;
             this.DGVProducts.Text = "OrdeProductGridView";
             this.DGVProducts.ThemeName = "VisualStudio2012Light";
@@ -128,7 +136,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.labCustomerPhone);
             this.groupBox2.Controls.Add(this.labCustomerName);
-            this.groupBox2.Location = new System.Drawing.Point(409, 6);
+            this.groupBox2.Location = new System.Drawing.Point(452, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(317, 107);
             this.groupBox2.TabIndex = 2;
@@ -188,7 +196,7 @@
             this.groupBox3.Controls.Add(this.TxtDescription);
             this.groupBox3.Controls.Add(this.PhotoBox);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(412, 119);
+            this.groupBox3.Location = new System.Drawing.Point(455, 125);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(314, 388);
             this.groupBox3.TabIndex = 4;
@@ -302,7 +310,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(742, 525);
+            this.ClientSize = new System.Drawing.Size(810, 525);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
