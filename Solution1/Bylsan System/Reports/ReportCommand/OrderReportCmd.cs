@@ -156,5 +156,52 @@ namespace Bylsan_System.Reports.ReportCommand
 
 
         }
+
+
+
+        public void GetOrderBill(int XOrderID)
+        {
+            var q = OrderProductsCmd.GetAllByOrderID(XOrderID);
+            ReportDataSource rs = new ReportDataSource();
+            List<OrderReportObj> ls = new List<OrderReportObj>();
+
+            foreach (var item in q)
+            {
+
+                ls.Add(new OrderReportObj()
+                {////////////
+                    /// information Order And Customer
+                    OrderIdID = item.Order.ID,
+                    CustomerName = item.Order.Customer.CustomerName,
+                    CustomerPhoneNumber = item.Order.Customer.PhoneNumber,
+                    OrderType = item.Order.OrderType,
+                    OrderDate = item.Order.OrderDate.Value,
+                    OrderDelivery = item.Order.OrderDelivery,
+                    OrderVerify = item.Order.OrderVerify,
+                    OrderDeliveryDate = item.Order.OrderDeliveryDate.Value,
+                    TotalAmount = item.Order.TotalAmount.Value,
+                    DeliverdToBranch = item.Order.DeliverdToBranch.Value,
+
+                    ////informationOrderPrduct
+                    ProductName = item.Product.Product_Name,
+                    Qty = item.Qty.Value,
+                    ProductPrice = item.Product.ProductPrice.Value,
+                    OrderProductStatus = item.Status,
+
+
+
+
+                });
+            }
+            rs.Name = "DataSet1";
+            rs.Value = ls;
+            RebortView frm = new RebortView();
+            frm.reportViewer1.LocalReport.DataSources.Clear();
+            frm.reportViewer1.LocalReport.DataSources.Add(rs);
+            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "Bylsan_System.Reports.Sheets.RepOrderBill.rdlc";
+            frm.ShowDialog();
+
+
+        }
     }
 }

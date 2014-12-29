@@ -277,7 +277,7 @@ namespace Bylsan_System.SenarioAddOrderForms
         private void PrintBtn_Click(object sender, EventArgs e)
         {
             OrderReportCmd cmd = new OrderReportCmd();
-            cmd.GetOrderProductsByOrderId( xLastOrderID);
+            cmd.GetOrderBill(xLastOrderID);
         }
     }
 }
