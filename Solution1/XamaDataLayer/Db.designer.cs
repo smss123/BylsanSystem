@@ -20,6 +20,7 @@ namespace XamaDataLayer
 	using System.Linq.Expressions;
 	using System.ComponentModel;
 	using System;
+    using System.Drawing;
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="soft_Bylsan")]
