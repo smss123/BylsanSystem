@@ -64,7 +64,7 @@ namespace Bylsan_System.designerForms
            
         }
         List<Image> ListPictures = new List<Image >();
-       
+
         void LoadAttachments()
         {
             //SelectedProductPhotoBox.Image =null;
@@ -74,7 +74,7 @@ namespace Bylsan_System.designerForms
             try
             {
                 Operation.BeginOperation(this);
-         
+
                 int prdid = int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString());
                 imageList1.Images.Clear();
                 var lst = (from p in OrderProuctAttachmentCmd.GetOneAttachmentByOrderProductID(prdid) select p).ToList();
@@ -82,27 +82,27 @@ namespace Bylsan_System.designerForms
                 {
 
                     PhotoBox.Image = null;
-                    
+
                     //============================================
 
                     Application.DoEvents();
                     foreach (var item in lst)
                     {
-                        
+
                         TxtDescription.Text = item.Description;
                         PhotoBox.Image = item.imageX;
-                      
+
                         imageList1.Images.Add(item.imageX);
 
                         IDImageAddress = item.ID;
 
                         //================================
-                        
-                        ListPictures.Add( item.imageX );
+
+                        ListPictures.Add(item.imageX);
                     }
                     //==============================================
                     //-- Display Selected Product Information : 
-                   
+
                     var getcurrentProductInfo = ProductsCmd.GetProductByID(prdid);
                     foreach (var prd in getcurrentProductInfo)
                     {
@@ -117,7 +117,7 @@ namespace Bylsan_System.designerForms
                 //AttachThread.Abort();
 
             }
-            catch (System.NullReferenceException ex)
+            catch (NullReferenceException ex)
             {
                 Operation.EndOperation(this);
                 MessageBox.Show(ex.Message.ToString(), "  Error");
@@ -177,45 +177,45 @@ namespace Bylsan_System.designerForms
         }
 
 
-        #region "   Upload  Photo    "
+        //#region "   Upload  Photo    "
 
-        OpenFileDialog Op = new OpenFileDialog();
+        //OpenFileDialog Op = new OpenFileDialog();
 
-        private void UploadBtn_Click(object sender, EventArgs e)
-        {
-            Op = new OpenFileDialog();
-            if (Op.ShowDialog() == DialogResult.OK)
-            {
-                this.Cursor = Cursors.WaitCursor;
-                Op.Filter = "Image Files(*.png; *.jpg; *.bmp)|*.png; *.jpg; *.bmp";
-                PhotoBox.Image = Image.FromFile(Op.FileName);
+        //private void UploadBtn_Click(object sender, EventArgs e)
+        //{
+        //    Op = new OpenFileDialog();
+        //    if (Op.ShowDialog() == DialogResult.OK)
+        //    {
+        //        this.Cursor = Cursors.WaitCursor;
+        //        Op.Filter = "Image Files(*.png; *.jpg; *.bmp)|*.png; *.jpg; *.bmp";
+        //        PhotoBox.Image = Image.FromFile(Op.FileName);
                
-                this.Cursor = Cursors.Default;
+        //        this.Cursor = Cursors.Default;
 
-            }
-        }
-        byte[] byteImg1;
-        private void ConvertCarsPhotoes()
-        {
+        //    }
+        //}
+        //byte[] byteImg1;
+        //private void ConvertCarsPhotoes()
+        //{
 
-            if (Op.FileName != "")
-            {
+        //    if (Op.FileName != "")
+        //    {
 
-                this.Cursor = Cursors.WaitCursor;
-                Image img = Image.FromFile(Op.FileName);
-                byteImg1 = PhotosConverter.ImageToByteArray(img);
-                this.Cursor = Cursors.Default;
+        //        this.Cursor = Cursors.WaitCursor;
+        //        Image img = Image.FromFile(Op.FileName);
+        //        byteImg1 = PhotosConverter.ImageToByteArray(img);
+        //        this.Cursor = Cursors.Default;
 
-            }
-            else
-            {
-                byteImg1 = null;
-            }
+        //    }
+        //    else
+        //    {
+        //        byteImg1 = null;
+        //    }
 
-        }
+        //}
 
 
-        #endregion 
+        //#endregion 
 
         #region "      Save Photo At Computer         "
         SaveFileDialog SvDialog = new SaveFileDialog();
