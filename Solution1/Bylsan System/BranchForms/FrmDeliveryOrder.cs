@@ -28,13 +28,13 @@ namespace Bylsan_System.BranchForms
             var Deliver = new object();
             using (FactoryZoon Cmd = new FactoryZoon())
             {
-                Deliver = Cmd.GetAllToDeliver();
+                Deliver = Cmd.GetAllInProducting();
 
             }
 
             this.Invoke((MethodInvoker)delegate { DGVDelivery.DataSource = Deliver; }); ThreadDelivery.Abort();
         }
-        #endregion 
+        #endregion
 
         private void FrmDeliveryOrder_Load(object sender, EventArgs e)
         {
@@ -52,61 +52,78 @@ namespace Bylsan_System.BranchForms
             ThreadChanges.Start();
         }
 
-        public  int OrderID { get; set; }
+        public int OrderID { get; set; }
         void SaveAllChanges()
         {
             Order OrderTb = new Order();
-            this.Invoke((MethodInvoker)delegate {
-                foreach (var row  in  DGVDelivery .Rows )
-                {         
-                    
-                    OrderID = int.Parse(row.Cells[0].Value.ToString());
-                    if ( Convert.ToBoolean (row.Cells[8].Value.ToString()) == true)
+            try
+            {
+                this.Invoke((MethodInvoker)delegate
+                {
+                    foreach (var row in DGVDelivery.Rows)
                     {
-                         
-                        OrderTb = new Order() {
-                        
-                        OrderStatus = "Done",
-                        }; 
-                        
-                    }
-                    else
-                    {
-                       
-                        OrderTb = new Order()
+
+                        OrderID = int.Parse(row.Cells[0].Value.ToString());
+                        if (Convert.ToBoolean(row.Cells[7].Value.ToString()) == true)
                         {
 
-                            OrderStatus = "To Deliver",
-                        };
-                        
+                            OrderTb = new Order()
+                            {
+
+                                OrderStatus = "Done",
+                            };
+
+                        }
+                        else
+                        {
+
+                            OrderTb = new Order()
+                            {
+
+                                OrderStatus = "To Deliver",
+                            };
+
+                        }
+                        OrdersCmd.EditOrderStatusOnly(OrderTb, OrderID);
+
                     }
-                    OrdersCmd.EditOrderStatusOnly(OrderTb, OrderID);
-
-                }
 
 
 
 
-            });
+
+                });
+            }
+            catch (Exception)
+            {
+
+
+            }
 
             MessageBox.Show("Saved Changes");
             ThreadChanges.Abort();
-           
+
         }
-        #endregion 
+        #endregion
 
         private void DGVDelivery_CommandCellClick(object sender, EventArgs e)
         {
-              var col = DGVDelivery.CurrentColumn.Index;
+            var col = DGVDelivery.CurrentColumn.Index;
 
-              if (col == 8)
-              { 
-              
-                 
-              
-              }
+            if (col == 8)
+            {
+
+                Operation.BeginOperation(this);
+                FrmDeliveryOrderShowInfo frm = new FrmDeliveryOrderShowInfo();
+                Order tb = (Order)DGVDelivery.CurrentRow.DataBoundItem;
+                frm.TargetOrder = tb;
+                frm.ShowDialog();
+                Operation.EndOperation(this);
+
+            }
 
         }
+
 
     }
 }
