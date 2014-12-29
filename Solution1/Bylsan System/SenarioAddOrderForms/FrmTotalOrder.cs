@@ -48,7 +48,7 @@ namespace Bylsan_System.SenarioAddOrderForms
         private void FrmTotalOrder_Load_1(object sender, EventArgs e)
         {
             Operation.BeginOperation(this);
-            txtBranches.DataSource = BranchsCmd.GetAllBranchs();
+            txtBranches.DataSource = Operation.AllBranches;
             txtBranches.DisplayMember = "Branch_Name";
             txtBranches.ValueMember = "ID";
             radGridView1.DataSource = CustomerInformations.WaitingOrder.OrderProducts.ToList();
@@ -84,22 +84,22 @@ namespace Bylsan_System.SenarioAddOrderForms
            // MessageBox.Show("total Cost : " + TotalCost.ToString());
             //========================================
             // Get Branch 
-            var CurrentBranch = BranchsCmd.GetBranchByBarnchID(int.Parse(txtBranches.SelectedValue.ToString()));
+            var CurrentBranch = Operation.AllBranches.Where(p => p.ID == txtBranches.SelectedValue.ToString().ToInt ()).Take(1).Single();// BranchsCmd.GetBranchByBarnchID(int.Parse(txtBranches.SelectedValue.ToString()));
             int CustId = 0;
             int? CustmerAccountID = 0;
             if(CustomerInformations.WatingCustomer.ID == 0 ){
                 //===Save New Customer ___
                 Customer ctb = new Customer()
                 {
-                    CustomerName = CustomerInformations .CustmrName , CreateDate = DateTime .Now ,
-                    PhoneNumber = CustomerInformations .CustmrPhone ,Points = 0 ,
+                    CustomerName = CustomerInformations .WatingCustomer.CustomerName , CreateDate = DateTime .Now ,
+                    PhoneNumber = CustomerInformations .WatingCustomer.PhoneNumber  ,Points = 0 ,
                 };
                 CustomersCmd.AddCustomer(ctb);
                 // === Get New Customer ID  & AccountID :
-                var q = CustomersCmd.GetAllCustmerByID(ctb.ID);
+                //var q = CustomersCmd.GetAllCustmerByID(ctb.ID);
                 CustId = ctb.ID;
              
-                CustmerAccountID = q.AccountID;
+                CustmerAccountID = ctb.AccountID;
             }
             else
             {

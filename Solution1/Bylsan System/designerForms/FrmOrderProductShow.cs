@@ -104,13 +104,12 @@ namespace Bylsan_System.designerForms
                     //==============================================
                     //-- Display Selected Product Information : 
 
-                    var getcurrentProductInfo = ProductsCmd.GetProductByID(prdid);
-                    foreach (var prd in getcurrentProductInfo)
-                    {
-                        SelectedProductPhotoBox.Image = prd.Img;
-                        lblPoductName.Text = prd.Product_Name;
-                        lblPrice.Text = prd.ProductPrice.ToString();
-                    }
+                    var getcurrentProductInfo = (OrderProduct)DGVProducts.CurrentRow.DataBoundItem;//ProductsCmd.GetProductByID(prdid);
+
+                    SelectedProductPhotoBox.Image = getcurrentProductInfo.Product.Img;
+                    lblPoductName.Text = getcurrentProductInfo.Product.Product_Name;
+                    lblPrice.Text = "[none]";
+                    
 
                     //=============================================
                 });

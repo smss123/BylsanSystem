@@ -25,6 +25,9 @@ using Bylsan_System.AccountsX.Acc;
 using Bylsan_System.SecurityForm;
 using Bylsan_System.FactoryForms;
 using XamaDataLayer.Helper_Classes;
+using System.Threading;
+
+using XamaDataLayer.BranchCmd;
 namespace Bylsan_System
 {
     public partial class MainForm : RadForm
@@ -43,7 +46,12 @@ namespace Bylsan_System
             frm.ShowDialog();
         }
 
-
+        void PopulateAll() {
+            Operation.allcategorys = CategoriesCmd.GetAllCategories();
+            Operation.allproducts = ProductsCmd.GetAllProducts();
+            Operation.AllBranches = BranchsCmd.GetAllBranchs();
+        
+        }
         void ActivatePermessions()
         {
             var ListPerm = XamaDataLayer.Security.PermessionsCmd.GetAllUserPermissonsByUserID(XamaDataLayer.Security.UserInfo.CurrnetUser.ID);
@@ -276,6 +284,8 @@ namespace Bylsan_System
         {
             FrmAddSales frm = new FrmAddSales();
             frm.Show();
+
+            
         }
 
         private void quotationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -289,7 +299,10 @@ namespace Bylsan_System
             UserAlert Alert = new UserAlert();
             Alert.ActivateTimer();
             XpremaTrack.WriteTrack();
-          
+
+
+            Thread th = new Thread(PopulateAll);
+            th.Start();
            
         }
         

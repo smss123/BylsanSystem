@@ -5,11 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using XamaDataLayer;
 namespace Bylsan_System
 {
    public class Operation
     {
+        public static List<Product> allproducts { get; set; }
+        public static List<ProductCategory>  allcategorys{ get; set; }
+        public static List <Branch >  AllBranches { get; set; }
+
+
        public static void ShowToustOk(string msg, Control frm)
        {
            ToastNotification.Show(frm, msg, null, 1000, eToastGlowColor.Green, eToastPosition.MiddleCenter);

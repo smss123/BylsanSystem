@@ -97,8 +97,8 @@ namespace Bylsan_System.SenarioAddOrderForms
 
                 lblStatus.Text = "Loading ...";
             });
-            this.Products = ProductsCmd.GetAllProducts();
-            this.ProductCategories = CategoriesCmd.GetAllCategories();
+            this.Products = Operation.allproducts;
+            this.ProductCategories = Operation.allcategorys;//CategoriesCmd.GetAllCategories();
 
             this.Invoke((MethodInvoker)delegate
             {
@@ -156,7 +156,7 @@ namespace Bylsan_System.SenarioAddOrderForms
                 foreach (var item in AllProducts)
                 {
                     ListViewProductes.LargeImageList = ProductImageList;
-                    ListViewItem Itm = new ListViewItem(item.ID.ToString(), ImgIndx);
+                    ListViewItem Itm = new ListViewItem(item.ID.ToString(),ImgIndx);
                     Itm.SubItems[0].ForeColor = Color.Green;
                     Itm.SubItems.Add(item.Product_Name.ToString());
                     Itm.SubItems.Add(item.Product_Description.ToString());
@@ -197,8 +197,8 @@ namespace Bylsan_System.SenarioAddOrderForms
         {
             QtyCounter++;
             Operation.BeginOperation(this);
-            try
-            {
+            //try
+            //{
                 if (ListViewProductes.Items.Count != 0)
                 {
 
@@ -210,10 +210,11 @@ namespace Bylsan_System.SenarioAddOrderForms
                  
 
                         PrdID = 0;
-                        PrdID = ListViewProductes.SelectedItems[0].Index;
+                        PrdID = int.Parse(ListViewProductes.SelectedItems[0].Text) ;
+                 
                       
                     
-                        var MyProdctut =  ProductsCmd.GetProductByID(int.Parse(ListViewProductes.Items[PrdID].SubItems[0].Text));
+                        var MyProdctut =  ProductsCmd.GetProductByID(PrdID);
                         Application.DoEvents();
                         foreach (var item in MyProdctut)
                         {
@@ -233,7 +234,7 @@ namespace Bylsan_System.SenarioAddOrderForms
                             //========================================
                             // start Work With Orders :
 
-                            var q = CustomerInformations.WaitingOrder.OrderProducts.Where(p => p.ProductID == MyProdctut[0].ID).SingleOrDefault();
+                            var q = CustomerInformations.WaitingOrder.OrderProducts.Where(p => p.ProductID == item.ID).SingleOrDefault();
                             if (q == null)
                             {
                                 CustomerInformations.WaitingOrder.OrderProducts.Add(new OrderProduct()
@@ -259,15 +260,15 @@ namespace Bylsan_System.SenarioAddOrderForms
                             }
                         
                     }
-                }
+            //    }
 
 
             
-            catch (Exception)
-            {
+            //catch (Exception)
+            //{
 
 
-            }
+            //}
             Operation.EndOperation(this);
         }
 

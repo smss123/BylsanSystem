@@ -71,6 +71,7 @@ namespace Bylsan_System.BranchForms
                             {
 
                                 OrderStatus = "Done",
+                                OrderDate = DateTime .Now ,
                             };
 
                         }
@@ -81,6 +82,7 @@ namespace Bylsan_System.BranchForms
                             {
 
                                 OrderStatus = "To Deliver",
+                                OrderDate = DateTime .Now ,
                             };
 
                         }
