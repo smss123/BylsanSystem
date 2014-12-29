@@ -90,6 +90,7 @@
     <Compile Include="Helper Classes\DataBaseSynic.cs" />
     <Compile Include="Helper Classes\FactoryZoon.cs" />
     <Compile Include="Helper Classes\PhotosConverter.cs" />
+    <Compile Include="Helper Classes\XpremaTrack.cs" />
     <Compile Include="MailServer\InBoxCmd.cs" />
     <Compile Include="MailServer\OutBoxCmd.cs" />
     <Compile Include="Main Store\ItemsCmd.cs" />
