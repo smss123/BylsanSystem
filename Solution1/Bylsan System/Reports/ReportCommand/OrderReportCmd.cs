@@ -183,7 +183,7 @@ namespace Bylsan_System.Reports.ReportCommand
                     DeliverdToBranch = item.Order.DeliverdToBranch.Value,
 
                     ////informationOrderPrduct
-                    ProductName = item.Product.Product_Name,
+                    ProductName = item.Product.PublicName,
                     Qty = item.Qty.Value,
                     ProductPrice = item.Product.ProductPrice.Value,
                     OrderProductStatus = item.Status,

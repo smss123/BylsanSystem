@@ -92,6 +92,11 @@ namespace Bylsan_System.FactoryForms
 
             }
         }
+
+        private void Refreshbtn_Click(object sender, EventArgs e)
+        {
+            FrmFactoryOrderShow_Load(null, null);
+        }
         
 
     }
