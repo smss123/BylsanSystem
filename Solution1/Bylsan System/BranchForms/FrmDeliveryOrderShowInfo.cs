@@ -19,13 +19,17 @@ namespace Bylsan_System.BranchForms
             InitializeComponent();
         }
         public Order TargetOrder { get; set; }
-        private void FrmDeliveryOrderShowInfo_Load(object sender, EventArgs e)
+   
+
+        private void FrmDeliveryOrderShowInfo_Load_1(object sender, EventArgs e)
         {
             int? custid = TargetOrder.CustomerID;
+     
             labCustomerName.Text = (from c in CustomersCmd.GetAllCustmers() where c.ID == custid select c.CustomerName).Single();
             labCustomerPhone.Text = (from c in CustomersCmd.GetAllCustmers() where c.ID == custid select c.PhoneNumber).Single();
             TotaltextBox.Text = TargetOrder.TotalAmount.ToString();
-
+            var lstproducts = OrderProductsCmd.GetAllByOrderID(TargetOrder.ID);
+            dgvproducts.DataSource = lstproducts;
         }
     }
 }

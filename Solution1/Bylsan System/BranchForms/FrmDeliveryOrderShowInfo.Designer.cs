@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.OkyBtn = new Telerik.WinControls.UI.RadButton();
+            this.PaymentRemainingtextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.remainingtextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.PaymenttextBox = new System.Windows.Forms.TextBox();
@@ -47,17 +50,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
+            this.dgvproducts = new Telerik.WinControls.UI.RadGridView();
             this.orderProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.PaymentRemainingtextBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.OkyBtn = new Telerik.WinControls.UI.RadButton();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OkyBtn)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvproducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvproducts.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,6 +91,35 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Customer Information";
+            // 
+            // OkyBtn
+            // 
+            this.OkyBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OkyBtn.Image = global::Bylsan_System.Properties.Resources.Save;
+            this.OkyBtn.Location = new System.Drawing.Point(259, 349);
+            this.OkyBtn.Name = "OkyBtn";
+            this.OkyBtn.Size = new System.Drawing.Size(104, 36);
+            this.OkyBtn.TabIndex = 14;
+            this.OkyBtn.Text = "Oky";
+            this.OkyBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.OkyBtn.ThemeName = "VisualStudio2012Light";
+            // 
+            // PaymentRemainingtextBox
+            // 
+            this.PaymentRemainingtextBox.Location = new System.Drawing.Point(124, 167);
+            this.PaymentRemainingtextBox.Name = "PaymentRemainingtextBox";
+            this.PaymentRemainingtextBox.Size = new System.Drawing.Size(98, 20);
+            this.PaymentRemainingtextBox.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 170);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(118, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Payment Remaining:";
             // 
             // remainingtextBox
             // 
@@ -184,7 +213,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radGridView1);
+            this.groupBox1.Controls.Add(this.dgvproducts);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
@@ -193,100 +222,71 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order Information";
             // 
-            // radGridView1
+            // dgvproducts
             // 
-            this.radGridView1.BackColor = System.Drawing.SystemColors.Control;
-            this.radGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.radGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radGridView1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.radGridView1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radGridView1.Location = new System.Drawing.Point(3, 18);
+            this.dgvproducts.BackColor = System.Drawing.SystemColors.Control;
+            this.dgvproducts.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvproducts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvproducts.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.dgvproducts.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.dgvproducts.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dgvproducts.Location = new System.Drawing.Point(3, 18);
             // 
-            // radGridView1
+            // dgvproducts
             // 
-            this.radGridView1.MasterTemplate.AllowAddNewRow = false;
-            this.radGridView1.MasterTemplate.AutoGenerateColumns = false;
-            this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn3.DataType = typeof(int);
-            gridViewDecimalColumn3.EnableExpressionEditor = false;
-            gridViewDecimalColumn3.FieldName = "ID";
-            gridViewDecimalColumn3.HeaderText = "ID";
-            gridViewDecimalColumn3.IsAutoGenerated = true;
-            gridViewDecimalColumn3.IsVisible = false;
-            gridViewDecimalColumn3.Name = "ID";
-            gridViewDecimalColumn3.Width = 86;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "Product.Product_Name";
-            gridViewTextBoxColumn4.HeaderText = "ProductName";
-            gridViewTextBoxColumn4.Name = "ProductName";
-            gridViewTextBoxColumn4.Width = 182;
-            gridViewTextBoxColumn5.DataType = typeof(System.Nullable<double>);
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "Product.ProductPrice";
-            gridViewTextBoxColumn5.HeaderText = "Price";
-            gridViewTextBoxColumn5.Name = "ProductPrice";
-            gridViewTextBoxColumn5.Width = 91;
-            gridViewDecimalColumn4.DataType = typeof(System.Nullable<int>);
-            gridViewDecimalColumn4.EnableExpressionEditor = false;
-            gridViewDecimalColumn4.FieldName = "Qty";
-            gridViewDecimalColumn4.HeaderText = "Qty";
-            gridViewDecimalColumn4.IsAutoGenerated = true;
-            gridViewDecimalColumn4.Name = "Qty";
-            gridViewDecimalColumn4.Width = 62;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "Status";
-            gridViewTextBoxColumn6.HeaderText = "Status";
-            gridViewTextBoxColumn6.IsAutoGenerated = true;
-            gridViewTextBoxColumn6.Name = "Status";
-            gridViewTextBoxColumn6.Width = 74;
-            this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewDecimalColumn4,
-            gridViewTextBoxColumn6});
-            this.radGridView1.MasterTemplate.DataSource = this.orderProductBindingSource;
-            this.radGridView1.Name = "radGridView1";
-            this.radGridView1.ReadOnly = true;
-            this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radGridView1.Size = new System.Drawing.Size(425, 371);
-            this.radGridView1.TabIndex = 0;
-            this.radGridView1.Text = "OrderGridView";
-            this.radGridView1.ThemeName = "VisualStudio2012Light";
+            this.dgvproducts.MasterTemplate.AllowAddNewRow = false;
+            this.dgvproducts.MasterTemplate.AutoGenerateColumns = false;
+            this.dgvproducts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewDecimalColumn1.DataType = typeof(int);
+            gridViewDecimalColumn1.EnableExpressionEditor = false;
+            gridViewDecimalColumn1.FieldName = "ID";
+            gridViewDecimalColumn1.HeaderText = "ID";
+            gridViewDecimalColumn1.IsAutoGenerated = true;
+            gridViewDecimalColumn1.IsVisible = false;
+            gridViewDecimalColumn1.Name = "ID";
+            gridViewDecimalColumn1.Width = 86;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "Product.Product_Name";
+            gridViewTextBoxColumn1.HeaderText = "ProductName";
+            gridViewTextBoxColumn1.Name = "ProductName";
+            gridViewTextBoxColumn1.Width = 182;
+            gridViewTextBoxColumn2.DataType = typeof(System.Nullable<double>);
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "Product.ProductPrice";
+            gridViewTextBoxColumn2.HeaderText = "Price";
+            gridViewTextBoxColumn2.Name = "ProductPrice";
+            gridViewTextBoxColumn2.Width = 91;
+            gridViewDecimalColumn2.DataType = typeof(System.Nullable<int>);
+            gridViewDecimalColumn2.EnableExpressionEditor = false;
+            gridViewDecimalColumn2.FieldName = "Qty";
+            gridViewDecimalColumn2.HeaderText = "Qty";
+            gridViewDecimalColumn2.IsAutoGenerated = true;
+            gridViewDecimalColumn2.Name = "Qty";
+            gridViewDecimalColumn2.Width = 62;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "Status";
+            gridViewTextBoxColumn3.HeaderText = "Status";
+            gridViewTextBoxColumn3.IsAutoGenerated = true;
+            gridViewTextBoxColumn3.Name = "Status";
+            gridViewTextBoxColumn3.Width = 74;
+            this.dgvproducts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewDecimalColumn1,
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewDecimalColumn2,
+            gridViewTextBoxColumn3});
+            this.dgvproducts.MasterTemplate.DataSource = this.orderProductBindingSource;
+            this.dgvproducts.Name = "dgvproducts";
+            this.dgvproducts.ReadOnly = true;
+            this.dgvproducts.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dgvproducts.Size = new System.Drawing.Size(425, 371);
+            this.dgvproducts.TabIndex = 0;
+            this.dgvproducts.Text = "OrderGridView";
+            this.dgvproducts.ThemeName = "VisualStudio2012Light";
             // 
             // orderProductBindingSource
             // 
             this.orderProductBindingSource.DataSource = typeof(XamaDataLayer.OrderProduct);
-            // 
-            // PaymentRemainingtextBox
-            // 
-            this.PaymentRemainingtextBox.Location = new System.Drawing.Point(124, 167);
-            this.PaymentRemainingtextBox.Name = "PaymentRemainingtextBox";
-            this.PaymentRemainingtextBox.Size = new System.Drawing.Size(98, 20);
-            this.PaymentRemainingtextBox.TabIndex = 13;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 170);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Payment Remaining:";
-            // 
-            // OkyBtn
-            // 
-            this.OkyBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OkyBtn.Image = global::Bylsan_System.Properties.Resources.Save;
-            this.OkyBtn.Location = new System.Drawing.Point(259, 349);
-            this.OkyBtn.Name = "OkyBtn";
-            this.OkyBtn.Size = new System.Drawing.Size(104, 36);
-            this.OkyBtn.TabIndex = 14;
-            this.OkyBtn.Text = "Oky";
-            this.OkyBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.OkyBtn.ThemeName = "VisualStudio2012Light";
             // 
             // FrmDeliveryOrderShowInfo
             // 
@@ -305,13 +305,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDeliveryOrderShowInfo";
             this.ThemeName = "VisualStudio2012Light";
+            this.Load += new System.EventHandler(this.FrmDeliveryOrderShowInfo_Load_1);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderProductBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OkyBtn)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvproducts.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvproducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderProductBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -333,7 +334,7 @@
         private System.Windows.Forms.TextBox labCustomerName;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
-        private Telerik.WinControls.UI.RadGridView radGridView1;
+        private Telerik.WinControls.UI.RadGridView dgvproducts;
         private System.Windows.Forms.BindingSource orderProductBindingSource;
         private Telerik.WinControls.UI.RadButton OkyBtn;
         private System.Windows.Forms.TextBox PaymentRemainingtextBox;
