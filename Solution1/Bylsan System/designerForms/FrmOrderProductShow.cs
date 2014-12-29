@@ -14,6 +14,7 @@ using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 using Xprema.XExtention;
 using Telerik.WinControls.UI;
+using Telerik.WinControls;
 namespace Bylsan_System.designerForms
 {
     public partial class FrmOrderProductShow : RadForm
@@ -159,21 +160,31 @@ namespace Bylsan_System.designerForms
         {     
                      
           
-            OrderProduct tb = new OrderProduct() { 
-            OrderID = TaregtOrder,
-            Description = TxtDescription .Text ,
-            Qty = int.Parse(DGVProducts.CurrentRow.Cells[2].Value.ToString()),
-            ProductID = int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString()),
-             ImageX = PhotoBox .Image  ,
-            Status = "in producting ",
+            OrderProduct tb = new OrderProduct() {
+                OrderID = TaregtOrder,
+              // Description = TxtDescription.Text,//
+               // Qty = int.Parse(DGVProducts.CurrentRow.Cells[2].Value.ToString()),
+              //  ProductID = int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString()),
+            ImageX = PhotoBox .Image  ,
+            Status = "in producting "
             };
-            OrderProductsCmd.EditOrderProduct(tb, int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString()));
+            OrderProductsCmd.EditOrderProductStatus(tb, int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString()));
+
+
             Order Otb = new Order() {
                 OrderStatus = "in producting "
             };
             OrdersCmd.EditOrderStatusOnly (Otb, TaregtOrder);
+
+
             MessageBox.Show("Changes Was Saved ...");
-            this.Hide();
+
+           var cellPlaceHolder = DGVProducts.TableElement.GetCellElement(DGVProducts .CurrentRow , DGVProducts.Columns[0]);
+           cellPlaceHolder.DrawFill = true;
+                 cellPlaceHolder.BackColor = System.Drawing.Color.Pink;
+//cellPlaceHolder.ResetValue(LightVisualElement.DrawFillProperty, Telerik.WinControls.ValueResetFlags.Local);
+//cellPlaceHolder.ResetValue(VisualElement.BackColorProperty, ValueResetFlags.Local);
+        
         }
 
 

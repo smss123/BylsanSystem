@@ -32,7 +32,18 @@ namespace XamaDataLayer.BranchCmd
 
             return ord;
         }
+        public static OrderProduct EditOrderProductStatus(OrderProduct tb, int xid)
+        {
+            db = new DbDataContext();
+            var ord = db.OrderProducts.Where(oo => oo.ID == xid).SingleOrDefault();
+            ord.ProductID = tb.ProductID;
+            ord.ImageX = tb.ImageX;
+            ord.Status = tb.Status;
+            db.SubmitChanges();
+            XamaDataLayer.Security.UserCmd.SaveHistory("Edit  ", "Edit  Order Product ", " Edit Selected Order Product's Informations  ");
 
+            return ord;
+        }
         public static void DeleteOrderProduct(int xid)
         {
             db = new DbDataContext();
