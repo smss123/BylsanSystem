@@ -39,12 +39,12 @@
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.AddBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DGVDebitors = new Telerik.WinControls.UI.RadGridView();
             this.debtorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDebitors)).BeginInit();
@@ -74,6 +74,21 @@
             this.AddBtn.Size = new System.Drawing.Size(65, 36);
             this.AddBtn.Text = "Add";
             this.AddBtn.Click += new System.EventHandler(this.AddDebt_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // RefreshBtn
+            // 
+            this.RefreshBtn.Image = global::Bylsan_System.Properties.Resources.Refrech;
+            this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Size = new System.Drawing.Size(79, 36);
+            this.RefreshBtn.Text = "Refresh";
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // statusStrip1
             // 
@@ -176,21 +191,6 @@
             // debtorBindingSource
             // 
             this.debtorBindingSource.DataSource = typeof(XamaDataLayer.Debtor);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
-            // 
-            // RefreshBtn
-            // 
-            this.RefreshBtn.Image = global::Bylsan_System.Properties.Resources.Refrech;
-            this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(79, 36);
-            this.RefreshBtn.Text = "Refresh";
-            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // FrmManageDebtors
             // 

@@ -49,6 +49,19 @@ namespace Bylsan_System.AccountsX
             
                 Operation.EndOperation(this);
             }
+
+
+          
+            if (col == 7)
+            {
+                Operation.BeginOperation(this);
+                FrmShowDebtorAccount frm = new FrmShowDebtorAccount();
+            
+             
+                frm.ShowDialog();
+
+                Operation.EndOperation(this);
+            }
         }
 
         private void AddDebt_Click(object sender, EventArgs e)

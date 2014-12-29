@@ -168,6 +168,12 @@
     <Compile Include="AccountsX\FrmAddAccountCategory.Designer.cs">
       <DependentUpon>FrmAddAccountCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="AccountsX\FrmAddDebt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountsX\FrmAddDebt.Designer.cs">
+      <DependentUpon>FrmAddDebt.cs</DependentUpon>
+    </Compile>
     <Compile Include="AccountsX\FrmAddDebtors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,18 @@
     </Compile>
     <Compile Include="AccountsX\FrmPrivatewithdrawals.Designer.cs">
       <DependentUpon>FrmPrivatewithdrawals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountsX\FrmRepaydebt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountsX\FrmRepaydebt.Designer.cs">
+      <DependentUpon>FrmRepaydebt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountsX\FrmShowDebtorAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountsX\FrmShowDebtorAccount.Designer.cs">
+      <DependentUpon>FrmShowDebtorAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="BranchForms\FrmAddBranch.cs">
       <SubType>Form</SubType>
@@ -651,6 +669,9 @@
     <EmbeddedResource Include="AccountsX\FrmAddAccountCategory.resx">
       <DependentUpon>FrmAddAccountCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AccountsX\FrmAddDebt.resx">
+      <DependentUpon>FrmAddDebt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AccountsX\FrmAddDebtors.resx">
       <DependentUpon>FrmAddDebtors.cs</DependentUpon>
     </EmbeddedResource>
@@ -668,6 +689,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AccountsX\FrmPrivatewithdrawals.resx">
       <DependentUpon>FrmPrivatewithdrawals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountsX\FrmRepaydebt.resx">
+      <DependentUpon>FrmRepaydebt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountsX\FrmShowDebtorAccount.resx">
+      <DependentUpon>FrmShowDebtorAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BranchForms\FrmAddBranch.resx">
       <DependentUpon>FrmAddBranch.cs</DependentUpon>
