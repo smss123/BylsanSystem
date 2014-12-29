@@ -102,6 +102,11 @@ namespace Bylsan_System.designerForms
 
             }
         }
+
+        private void Refreshbtn_Click(object sender, EventArgs e)
+        {
+            FrmOrderShow_Load(null, null);
+        }
         
     }
 }
