@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using XamaDataLayer.Helper_Classes;
 
 namespace XamaDataLayer.Accountant
 {
@@ -12,6 +13,7 @@ namespace XamaDataLayer.Accountant
             db = new DbDataContext();
             db.AccountCategories.InsertOnSubmit(tb);
             db.SubmitChanges();
+            XpremaTrack.WriteTrack();
             return true;
         }
 
@@ -24,6 +26,7 @@ namespace XamaDataLayer.Accountant
             act.Description = tb.Description;
 
             db.SubmitChanges();
+          
             return act;
         }
 

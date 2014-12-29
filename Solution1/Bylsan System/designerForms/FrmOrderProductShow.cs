@@ -177,45 +177,45 @@ namespace Bylsan_System.designerForms
         }
 
 
-        //#region "   Upload  Photo    "
+        #region "   Upload  Photo    "
 
-        //OpenFileDialog Op = new OpenFileDialog();
+        OpenFileDialog Op = new OpenFileDialog();
 
-        //private void UploadBtn_Click(object sender, EventArgs e)
-        //{
-        //    Op = new OpenFileDialog();
-        //    if (Op.ShowDialog() == DialogResult.OK)
-        //    {
-        //        this.Cursor = Cursors.WaitCursor;
-        //        Op.Filter = "Image Files(*.png; *.jpg; *.bmp)|*.png; *.jpg; *.bmp";
-        //        PhotoBox.Image = Image.FromFile(Op.FileName);
-               
-        //        this.Cursor = Cursors.Default;
+        private void UploadBtn_Click(object sender, EventArgs e)
+        {
+            Op = new OpenFileDialog();
+            if (Op.ShowDialog() == DialogResult.OK)
+            {
+                this.Cursor = Cursors.WaitCursor;
+                Op.Filter = "Image Files(*.png; *.jpg; *.bmp)|*.png; *.jpg; *.bmp";
+                PhotoBox.Image = Image.FromFile(Op.FileName);
 
-        //    }
-        //}
-        //byte[] byteImg1;
-        //private void ConvertCarsPhotoes()
-        //{
+                this.Cursor = Cursors.Default;
 
-        //    if (Op.FileName != "")
-        //    {
+            }
+        }
+        byte[] byteImg1;
+        private void ConvertCarsPhotoes()
+        {
 
-        //        this.Cursor = Cursors.WaitCursor;
-        //        Image img = Image.FromFile(Op.FileName);
-        //        byteImg1 = PhotosConverter.ImageToByteArray(img);
-        //        this.Cursor = Cursors.Default;
+            if (Op.FileName != "")
+            {
 
-        //    }
-        //    else
-        //    {
-        //        byteImg1 = null;
-        //    }
+                this.Cursor = Cursors.WaitCursor;
+                Image img = Image.FromFile(Op.FileName);
+                byteImg1 = PhotosConverter.ImageToByteArray(img);
+                this.Cursor = Cursors.Default;
 
-        //}
+            }
+            else
+            {
+                byteImg1 = null;
+            }
+
+        }
 
 
-        //#endregion 
+        #endregion 
 
         #region "      Save Photo At Computer         "
         SaveFileDialog SvDialog = new SaveFileDialog();

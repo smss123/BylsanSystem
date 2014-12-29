@@ -336,6 +336,10 @@
     <Compile Include="FactoryForms\FrmFactoryOrderShow.Designer.cs">
       <DependentUpon>FrmFactoryOrderShow.cs</DependentUpon>
     </Compile>
+    <Compile Include="FactoryForms\FrmProductsContantes.cs" />
+    <Compile Include="FactoryForms\FrmProductsContantes.Designer.cs">
+      <DependentUpon>FrmProductsContantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -725,6 +729,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FactoryForms\FrmFactoryOrderShow.resx">
       <DependentUpon>FrmFactoryOrderShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FactoryForms\FrmProductsContantes.resx">
+      <DependentUpon>FrmProductsContantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
