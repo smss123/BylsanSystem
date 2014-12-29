@@ -87,6 +87,12 @@ namespace Bylsan_System.SellSystemForms
             }
         }
 
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            FrmAddSellItem frm = new FrmAddSellItem();
+            frm.ShowDialog();
+        }
+
        
 
 

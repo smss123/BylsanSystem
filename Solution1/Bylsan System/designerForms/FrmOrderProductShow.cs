@@ -75,7 +75,7 @@ namespace Bylsan_System.designerForms
             {
                 Operation.BeginOperation(this);
          
-                int prdid = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString());
+                int prdid = int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString());
                 imageList1.Images.Clear();
                 var lst = (from p in OrderProuctAttachmentCmd.GetOneAttachmentByOrderProductID(prdid) select p).ToList();
                 this.Invoke((MethodInvoker)delegate
@@ -163,7 +163,7 @@ namespace Bylsan_System.designerForms
             OrderID = TaregtOrder,
             Description = TxtDescription .Text ,
             Qty = int.Parse(DGVProducts.CurrentRow.Cells[2].Value.ToString()),
-            ProductID = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString()),
+            ProductID = int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString()),
              ImageX = PhotoBox .Image  ,
             Status = "in producting ",
             };

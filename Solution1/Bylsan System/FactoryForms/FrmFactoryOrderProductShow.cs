@@ -69,7 +69,7 @@ namespace Bylsan_System.FactoryForms
         void LoadProdcutInformations()
         {
             PrdID = 0;
-            PrdID = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString());
+            PrdID = int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString());
             var lst1 = OrderProductsCmd.GetAllByProductID(PrdID);
             var lst2 = ProductsCmd.GetProductByID(PrdID);
             this.Invoke((MethodInvoker)delegate
