@@ -59,5 +59,12 @@ namespace XamaDataLayer.Main_Store
             db = new DbDataContext();
             return db.Items.ToList();
         }
+
+        public static List<Item> GetAllItemsMaterial()
+        {
+            db = new DbDataContext();
+           var  LST = (from i in db.Items where i.ItemType == "item row material" select i).ToList();
+           return LST;
+        }
     }
 }

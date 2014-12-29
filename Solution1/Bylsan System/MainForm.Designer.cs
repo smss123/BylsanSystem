@@ -71,6 +71,7 @@
             this.ReportOrderBtn = new Telerik.WinControls.UI.RadTileElement();
             this.SellItemsTileElement = new Telerik.WinControls.UI.RadTileElement();
             this.SalesTileElement = new Telerik.WinControls.UI.RadTileElement();
+            this.PrintQuotationBtn = new Telerik.WinControls.UI.RadTileElement();
             this.MainStorGroup = new Telerik.WinControls.UI.TileGroupElement();
             this.itemsBtn = new Telerik.WinControls.UI.RadTileElement();
             this.WithDrawalBtn = new Telerik.WinControls.UI.RadTileElement();
@@ -86,7 +87,8 @@
             this.expensesBtn = new Telerik.WinControls.UI.RadTileElement();
             this.radTileElement4 = new Telerik.WinControls.UI.RadTileElement();
             this.button1 = new System.Windows.Forms.Button();
-            this.PrintQuotationBtn = new Telerik.WinControls.UI.RadTileElement();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).BeginInit();
             this.radPanorama1.SuspendLayout();
@@ -496,6 +498,20 @@
             this.SalesTileElement.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.SalesTileElement.Click += new System.EventHandler(this.SalesTileElement_Click);
             // 
+            // PrintQuotationBtn
+            // 
+            this.PrintQuotationBtn.AccessibleDescription = "Print Quotation";
+            this.PrintQuotationBtn.AccessibleName = "Print Quotation";
+            this.PrintQuotationBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(200)))), ((int)(((byte)(37)))));
+            this.PrintQuotationBtn.Column = 2;
+            this.PrintQuotationBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.PrintQuotationBtn.Name = "PrintQuotationBtn";
+            this.PrintQuotationBtn.Row = 2;
+            this.PrintQuotationBtn.Text = "Print Quotation";
+            this.PrintQuotationBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.PrintQuotationBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.PrintQuotationBtn.Click += new System.EventHandler(this.PrintQuotationBtn_Click);
+            // 
             // MainStorGroup
             // 
             this.MainStorGroup.AccessibleDescription = "Main Stor";
@@ -724,19 +740,25 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_3);
             // 
-            // PrintQuotationBtn
+            // button3
             // 
-            this.PrintQuotationBtn.AccessibleDescription = "Print Quotation";
-            this.PrintQuotationBtn.AccessibleName = "Print Quotation";
-            this.PrintQuotationBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(200)))), ((int)(((byte)(37)))));
-            this.PrintQuotationBtn.Column = 2;
-            this.PrintQuotationBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
-            this.PrintQuotationBtn.Name = "PrintQuotationBtn";
-            this.PrintQuotationBtn.Row = 2;
-            this.PrintQuotationBtn.Text = "Print Quotation";
-            this.PrintQuotationBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.PrintQuotationBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.PrintQuotationBtn.Click += new System.EventHandler(this.PrintQuotationBtn_Click);
+            this.button3.Location = new System.Drawing.Point(214, 96);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(140, 31);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "add item";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_2);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(428, 103);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(185, 23);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Product Contents";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_2);
             // 
             // MainForm
             // 
@@ -744,6 +766,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1358, 670);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.radPanorama1);
             this.Controls.Add(this.statusStrip1);
@@ -829,5 +853,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem deliveryOrderBtn;
         private Telerik.WinControls.UI.RadTileElement PrintQuotationBtn;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

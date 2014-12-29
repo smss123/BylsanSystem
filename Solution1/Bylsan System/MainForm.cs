@@ -523,5 +523,18 @@ namespace Bylsan_System
             FrmPrintQuotation frm = new FrmPrintQuotation();
             frm.ShowDialog();
         }
+
+        private void button3_Click_2(object sender, EventArgs e)
+        {
+            FrmAddMainStore_Item frm = new FrmAddMainStore_Item();
+            frm.Show();
+        }
+
+        private void button4_Click_2(object sender, EventArgs e)
+        {
+            FrmProductsContantes frm = new FrmProductsContantes();
+            frm.Show();
+
+        }
     }
 }
