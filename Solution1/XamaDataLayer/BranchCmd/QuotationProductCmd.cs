@@ -61,11 +61,11 @@ namespace XamaDataLayer.BranchCmd
             return LST;
         }
 
-        public static List<QuotationProduct> GetQuotationProductByQuotationID(int QuotionId)
+        public static List<QuotationProduct> GetQuotationProductByQuotationID(int quotionId)
         {
             db = new DbDataContext();
             var LST = (from i in db.QuotationProducts
-                        where i.QuotationID  == QuotionId
+                        where i.QuotationID  == quotionId
                         select i).ToList();
             return LST;
         }
