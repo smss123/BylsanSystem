@@ -167,26 +167,21 @@ namespace Bylsan_System.SenarioAddOrderForms
             };
             db.AccountDailies.InsertOnSubmit(addOrder); 
 
-       //--------------------------
+            //----------------------------------------------------------------------
             AccountDaily ordertrs = new AccountDaily()
             { //500
                 AccountID = otb.OrderAccount,
-                // AccountID = CustmerAccountID ,
-                TotalIn = 0f,// Convert .ToDouble ( TotalPriceBox.Text ),
+                TotalIn = 0f,
                 TotalOut = TotalCost,
                 DateOfProcess = DateTime.Now,
                 Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", otb.OrderName, DateTime.Now.ToString(), CurrentBranch.Branch_Name),
-
             };
-
             db.AccountDailies.InsertOnSubmit(ordertrs);
-
             //--------------------------
             AccountDaily CustomerDept = new AccountDaily()
             { //500
                 AccountID = CustmerAccountID,
-                // AccountID = CustmerAccountID ,
-                TotalIn = 0f,// Convert .ToDouble ( TotalPriceBox.Text ),
+                TotalIn = 0f,
                 TotalOut = TotalCost,
                 DateOfProcess = DateTime.Now,
                 Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", otb.OrderName, DateTime.Now.ToString(), CurrentBranch.Branch_Name),
@@ -197,9 +192,8 @@ namespace Bylsan_System.SenarioAddOrderForms
             //--------------------------
             AccountDaily CutomerPay = new AccountDaily()
             { //500
-                AccountID = CustmerAccountID,
-                // AccountID = CustmerAccountID ,
-                TotalIn = txtPayment.Text.Todouble(),// Convert .ToDouble ( TotalPriceBox.Text ),
+                AccountID = CustmerAccountID,              
+                TotalIn = txtPayment.Text.Todouble(),
                 TotalOut = 0f,
                 DateOfProcess = DateTime.Now,
                 Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", otb.OrderName, DateTime.Now.ToString(), CurrentBranch.Branch_Name),
@@ -210,20 +204,15 @@ namespace Bylsan_System.SenarioAddOrderForms
             AccountDaily BranchCreated = new AccountDaily()
             { //500
                 AccountID = CurrentBranch.AccountID,
-                // AccountID = CustmerAccountID ,
-                TotalIn = txtPayment.Text.Todouble(),// Convert .ToDouble ( TotalPriceBox.Text ),
+                TotalIn = txtPayment.Text.Todouble(),
                 TotalOut = 0f,
                 DateOfProcess = DateTime.Now,
                 Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", otb.OrderName, DateTime.Now.ToString(), CurrentBranch.Branch_Name),
 
             };
 
-
             db.AccountDailies.InsertOnSubmit(BranchCreated);
             db.SubmitChanges();
-
-          
-//--------
          //=============================================================================
             // Save Order Prouct Attachment :
             int OrdPrd = (from o in OrderProductsCmd .GetAll ()  select o.ID ).Max ();
@@ -240,8 +229,6 @@ namespace Bylsan_System.SenarioAddOrderForms
              }
           
             //============================================================================
-
-
             Operation.EndOperation(this);
 
             Operation.ShowToustOk("Saved Successfull ....", this);

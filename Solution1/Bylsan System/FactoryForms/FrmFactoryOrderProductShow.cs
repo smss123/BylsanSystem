@@ -69,20 +69,24 @@ namespace Bylsan_System.FactoryForms
         void LoadProdcutInformations()
         {
             PrdID = 0;
-            PrdID = int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString());
+            PrdID = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString());
+          
             var lst1 = OrderProductsCmd.GetAllByProductID(PrdID);
             var lst2 = ProductsCmd.GetProductByID(PrdID);
+
+            
             this.Invoke((MethodInvoker)delegate
             {
                 // Get Data from OrderProduct Table { After Desinging }  :
                 foreach (var item in lst1)
                 {
+                
                     TxtDescription.Text = item.Description;
                     PhotoBox.Image = item.ImageX;
                 }
                 // Get Main Data From Product Table {Any way} : 
                 foreach (var Prd in lst2)
-                {
+                {  
                     lblPoductName .Text = Prd.Product_Name;
                     lblPrice.Text = Prd.ProductPrice.ToString ();
                 }

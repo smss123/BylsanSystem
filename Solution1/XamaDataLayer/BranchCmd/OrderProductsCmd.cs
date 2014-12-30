@@ -83,7 +83,15 @@ namespace XamaDataLayer.BranchCmd
             return LST;
         }
 
-
+        public static OrderProduct GetOneByProductID(int XID)
+        {
+            db = new DbDataContext();
+            var LST = (from p in db.OrderProducts
+                       orderby p.ID
+                       where p.ProductID == XID
+                       select p).Single();
+            return LST;
+        }
 
         public static List<OrderProduct> GetOrderProductByCustomerPhone(  string Phon)
         {
