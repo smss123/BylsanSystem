@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.Remaininglabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,8 +39,8 @@
             this.AmountofDebttextBox = new System.Windows.Forms.TextBox();
             this.TotalDebttextBox = new System.Windows.Forms.TextBox();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.DebetfromcomboBox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -49,9 +51,11 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.DebetfromcomboBox);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtDescription);
             this.groupBox1.Controls.Add(this.AddBtn);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.Remaininglabel);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -63,14 +67,30 @@
             this.groupBox1.Size = new System.Drawing.Size(302, 264);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(59, 141);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Description";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(64, 160);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(205, 40);
+            this.txtDescription.TabIndex = 12;
             // 
             // AddBtn
             // 
             this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddBtn.Image = global::Bylsan_System.Properties.Resources.Add;
             this.AddBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.AddBtn.Location = new System.Drawing.Point(30, 197);
+            this.AddBtn.Location = new System.Drawing.Point(14, 221);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(109, 37);
             this.AddBtn.TabIndex = 11;
@@ -132,22 +152,22 @@
             this.TotalDebttextBox.TabIndex = 0;
             this.TotalDebttextBox.TabStop = false;
             // 
-            // txtDescription
+            // DebetfromcomboBox
             // 
-            this.txtDescription.Location = new System.Drawing.Point(69, 133);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(205, 40);
-            this.txtDescription.TabIndex = 12;
+            this.DebetfromcomboBox.FormattingEnabled = true;
+            this.DebetfromcomboBox.Location = new System.Drawing.Point(96, 112);
+            this.DebetfromcomboBox.Name = "DebetfromcomboBox";
+            this.DebetfromcomboBox.Size = new System.Drawing.Size(144, 21);
+            this.DebetfromcomboBox.TabIndex = 14;
             // 
-            // label3
+            // label4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(75, 117);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Description";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 112);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Debit from:";
             // 
             // FrmAddDebt
             // 
@@ -189,5 +209,7 @@
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.ComboBox DebetfromcomboBox;
+        private System.Windows.Forms.Label label4;
     }
 }

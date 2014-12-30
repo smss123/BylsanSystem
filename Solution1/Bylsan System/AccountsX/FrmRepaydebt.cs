@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Telerik.WinControls.UI;
+using XamaDataLayer;
+using XamaDataLayer.Accountant;
+using Xprema.XExtention;
 
 namespace Bylsan_System.AccountsX
 {
@@ -17,7 +14,7 @@ namespace Bylsan_System.AccountsX
         {
             InitializeComponent();
         }
-
+        public Debtor DebtorInfo { get; set; }
         private void AddBtn_Click(object sender, EventArgs e)
         {
             #region "  CheckFillTextBox "
@@ -40,6 +37,30 @@ namespace Bylsan_System.AccountsX
             }
 
             #endregion
+
+            AccountDaily deptSide = new AccountDaily()
+            {
+                AccountID = DebtorInfo.AccountID,
+                DateOfProcess = DateTime.Now,
+                Description = "this New Debet to Account for :" + txtDescription.Text,
+                TotalOut = PaymenttextBox.Text.Todouble(),
+                TotalIn = 0d,
+
+            };
+            AccountDaily tre = new AccountDaily()
+            {
+                AccountID = DebetfromcomboBox.SelectedValue.ToString().ToInt(),
+                DateOfProcess = DateTime.Now,
+                Description = "this New Debet to Account for :" + txtDescription.Text,
+                TotalOut = PaymenttextBox.Text.Todouble(),
+                TotalIn = 0d,
+
+            };
+            Operation.BeginOperation(this);
+            AccountDailyCmd.AddAccountDaily(deptSide);
+            AccountDailyCmd.AddAccountDaily(tre);
+            Operation.EndOperation(this);
+            Operation.ShowToustOk("saved ..", this);
         }
     }
 }

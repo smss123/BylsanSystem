@@ -33,6 +33,7 @@ namespace Bylsan_System.AccountsX
         {
           
             FrmAddDebt frm = new FrmAddDebt();
+            frm.DebtorInfo = TargetDebtor;
             frm.ShowDialog();
         }
 
