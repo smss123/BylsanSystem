@@ -67,7 +67,7 @@
             this.groupBox1.Controls.Add(this.TotalDebttextBox);
             this.groupBox1.Location = new System.Drawing.Point(8, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(302, 260);
+            this.groupBox1.Size = new System.Drawing.Size(302, 257);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -185,13 +185,15 @@
             this.ClientSize = new System.Drawing.Size(326, 282);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(334, 315);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(334, 315);
             this.Name = "FrmAddDebt";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.RootElement.MaxSize = new System.Drawing.Size(0, 0);
+            this.RootElement.MaxSize = new System.Drawing.Size(334, 315);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddDebt";
             this.ThemeName = "VisualStudio2012Light";

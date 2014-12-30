@@ -183,14 +183,15 @@
             this.ClientSize = new System.Drawing.Size(356, 285);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(364, 318);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(302, 235);
+            this.MinimumSize = new System.Drawing.Size(364, 318);
             this.Name = "FrmRepaydebt";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.RootElement.MaxSize = new System.Drawing.Size(0, 0);
+            this.RootElement.MaxSize = new System.Drawing.Size(364, 318);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRepaydebt";
             this.ThemeName = "VisualStudio2012Light";

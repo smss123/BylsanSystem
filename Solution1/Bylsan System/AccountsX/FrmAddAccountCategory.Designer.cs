@@ -156,7 +156,7 @@
             this.groupBox1.Controls.Add(label4);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(390, 214);
+            this.groupBox1.Size = new System.Drawing.Size(390, 211);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -201,6 +201,7 @@
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(422, 271);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(422, 271);
             this.Name = "FrmAddAccountCategory";
             // 
