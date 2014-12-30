@@ -63,7 +63,6 @@
             this.radPanorama1 = new Telerik.WinControls.UI.RadPanorama();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnManagecustomerPoint = new System.Windows.Forms.ToolStripMenuItem();
-            this.button2 = new System.Windows.Forms.Button();
             this.tileGroupElement1 = new Telerik.WinControls.UI.TileGroupElement();
             this.FactoryOrderBtn = new Telerik.WinControls.UI.RadTileElement();
             this.NewOrderBtn = new Telerik.WinControls.UI.RadTileElement();
@@ -86,12 +85,9 @@
             this.AccountDailyBtn = new Telerik.WinControls.UI.RadTileElement();
             this.expensesBtn = new Telerik.WinControls.UI.RadTileElement();
             this.radTileElement4 = new Telerik.WinControls.UI.RadTileElement();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.editpassordBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).BeginInit();
-            this.radPanorama1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -122,7 +118,8 @@
             this.UserDropDownButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.UserDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addUserToolStripMenuItem,
-            this.UserManagementBtn});
+            this.UserManagementBtn,
+            this.editpassordBtn});
             this.UserDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("UserDropDownButton.Image")));
             this.UserDropDownButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.UserDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -337,22 +334,22 @@
             // 
             this.radPanorama1.AutoScroll = true;
             this.radPanorama1.AutoScrollMargin = new System.Drawing.Size(10, 10);
-            this.radPanorama1.BackColor = System.Drawing.Color.White;
+            this.radPanorama1.BackColor = System.Drawing.Color.Transparent;
             this.radPanorama1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.radPanorama1.ContextMenuStrip = this.contextMenuStrip1;
-            this.radPanorama1.Controls.Add(this.button2);
+            this.radPanorama1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanorama1.Groups.AddRange(new Telerik.WinControls.RadItem[] {
             this.tileGroupElement1,
             this.MainStorGroup,
             this.AccountsGroup});
             this.radPanorama1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radTileElement4});
-            this.radPanorama1.Location = new System.Drawing.Point(0, 176);
+            this.radPanorama1.Location = new System.Drawing.Point(0, 38);
             this.radPanorama1.Margin = new System.Windows.Forms.Padding(10);
             this.radPanorama1.Name = "radPanorama1";
             this.radPanorama1.RowsCount = 6;
             this.radPanorama1.ShowGroups = true;
-            this.radPanorama1.Size = new System.Drawing.Size(1358, 472);
+            this.radPanorama1.Size = new System.Drawing.Size(1358, 610);
             this.radPanorama1.TabIndex = 10;
             this.radPanorama1.Text = "radPanorama1";
             this.radPanorama1.ThemeName = "VisualStudio2012Dark";
@@ -370,16 +367,6 @@
             this.btnManagecustomerPoint.Size = new System.Drawing.Size(207, 22);
             this.btnManagecustomerPoint.Text = "Customer Point Manager";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(544, 475);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 44);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Private withdrawals";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_3);
-            // 
             // tileGroupElement1
             // 
             this.tileGroupElement1.AccessibleDescription = "tileGroupElement1";
@@ -387,6 +374,7 @@
             this.tileGroupElement1.Alignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.tileGroupElement1.AutoSize = false;
             this.tileGroupElement1.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize;
+            this.tileGroupElement1.BackColor = System.Drawing.Color.Empty;
             this.tileGroupElement1.Bounds = new System.Drawing.Rectangle(0, 0, 480, 639);
             this.tileGroupElement1.CellSize = new System.Drawing.Size(150, 150);
             this.tileGroupElement1.Items.AddRange(new Telerik.WinControls.RadItem[] {
@@ -505,10 +493,12 @@
             this.PrintQuotationBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(200)))), ((int)(((byte)(37)))));
             this.PrintQuotationBtn.Column = 2;
             this.PrintQuotationBtn.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            this.PrintQuotationBtn.Image = ((System.Drawing.Image)(resources.GetObject("PrintQuotationBtn.Image")));
             this.PrintQuotationBtn.Name = "PrintQuotationBtn";
             this.PrintQuotationBtn.Row = 2;
             this.PrintQuotationBtn.Text = "Print Quotation";
             this.PrintQuotationBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.PrintQuotationBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.PrintQuotationBtn.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.PrintQuotationBtn.Click += new System.EventHandler(this.PrintQuotationBtn_Click);
             // 
@@ -521,6 +511,7 @@
             this.MainStorGroup.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize;
             this.MainStorGroup.Bounds = new System.Drawing.Rectangle(0, 0, 480, 400);
             this.MainStorGroup.CellSize = new System.Drawing.Size(150, 150);
+            this.MainStorGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
             this.MainStorGroup.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.itemsBtn,
             this.WithDrawalBtn,
@@ -616,9 +607,11 @@
             this.AccountsGroup.Alignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.AccountsGroup.AutoSize = false;
             this.AccountsGroup.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize;
+            this.AccountsGroup.BackColor = System.Drawing.Color.Empty;
             this.AccountsGroup.Bounds = new System.Drawing.Rectangle(0, 0, 300, 500);
             this.AccountsGroup.CellSize = new System.Drawing.Size(150, 150);
             this.AccountsGroup.Font = new System.Drawing.Font("Segoe UI Light", 20.25F);
+            this.AccountsGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
             this.AccountsGroup.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.AccountTreeBtn,
             this.AccountCategoryTileElement3,
@@ -730,35 +723,12 @@
             this.radTileElement4.Text = "radTileElement4";
             this.radTileElement4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // button1
+            // editpassordBtn
             // 
-            this.button1.Location = new System.Drawing.Point(722, 559);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "edit passord";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_3);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(214, 96);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 31);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "add item";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_2);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(428, 103);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(185, 23);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Product Contents";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click_2);
+            this.editpassordBtn.Name = "editpassordBtn";
+            this.editpassordBtn.Size = new System.Drawing.Size(174, 22);
+            this.editpassordBtn.Text = "Edit Password";
+            this.editpassordBtn.Click += new System.EventHandler(this.editpassordBtn_Click);
             // 
             // MainForm
             // 
@@ -766,9 +736,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1358, 670);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.radPanorama1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
@@ -786,7 +753,6 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).EndInit();
-            this.radPanorama1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -846,14 +812,11 @@
         private Telerik.WinControls.UI.RadTileElement SellItemsTileElement;
         private Telerik.WinControls.UI.RadTileElement SalesTileElement;
         private System.Windows.Forms.ToolStripButton Aboutbtn;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btnManagecustomerPoint;
         public Telerik.WinControls.UI.RadPanorama radPanorama1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem deliveryOrderBtn;
         private Telerik.WinControls.UI.RadTileElement PrintQuotationBtn;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ToolStripMenuItem editpassordBtn;
     }
 }

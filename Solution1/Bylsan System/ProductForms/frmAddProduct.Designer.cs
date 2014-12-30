@@ -31,13 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label product_DescriptionLabel;
             System.Windows.Forms.Label product_NameLabel;
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             System.Windows.Forms.Label productPriceLabel;
             System.Windows.Forms.Label publicNameLabel;
             System.Windows.Forms.Label productUnitLabel;
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.ProductgroupBox = new System.Windows.Forms.GroupBox();
+            this.productUnitTextBox = new System.Windows.Forms.TextBox();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.publicNameTextBox = new System.Windows.Forms.TextBox();
+            this.productPriceTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.CategoryComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
@@ -50,16 +54,14 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productPriceTextBox = new System.Windows.Forms.TextBox();
-            this.publicNameTextBox = new System.Windows.Forms.TextBox();
-            this.productUnitTextBox = new System.Windows.Forms.TextBox();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             product_DescriptionLabel = new System.Windows.Forms.Label();
             product_NameLabel = new System.Windows.Forms.Label();
             productPriceLabel = new System.Windows.Forms.Label();
             publicNameLabel = new System.Windows.Forms.Label();
             productUnitLabel = new System.Windows.Forms.Label();
             this.ProductgroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox.EditorControl.MasterTemplate)).BeginInit();
@@ -68,7 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.BrowseBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productpictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,6 +90,33 @@
             product_NameLabel.Size = new System.Drawing.Size(82, 13);
             product_NameLabel.TabIndex = 6;
             product_NameLabel.Text = "Product Name:";
+            // 
+            // productPriceLabel
+            // 
+            productPriceLabel.AutoSize = true;
+            productPriceLabel.Location = new System.Drawing.Point(24, 131);
+            productPriceLabel.Name = "productPriceLabel";
+            productPriceLabel.Size = new System.Drawing.Size(77, 13);
+            productPriceLabel.TabIndex = 11;
+            productPriceLabel.Text = "Product Price:";
+            // 
+            // publicNameLabel
+            // 
+            publicNameLabel.AutoSize = true;
+            publicNameLabel.Location = new System.Drawing.Point(32, 155);
+            publicNameLabel.Name = "publicNameLabel";
+            publicNameLabel.Size = new System.Drawing.Size(73, 13);
+            publicNameLabel.TabIndex = 12;
+            publicNameLabel.Text = "Public Name:";
+            // 
+            // productUnitLabel
+            // 
+            productUnitLabel.AutoSize = true;
+            productUnitLabel.Location = new System.Drawing.Point(24, 179);
+            productUnitLabel.Name = "productUnitLabel";
+            productUnitLabel.Size = new System.Drawing.Size(75, 13);
+            productUnitLabel.TabIndex = 14;
+            productUnitLabel.Text = "Product Unit:";
             // 
             // ProductgroupBox
             // 
@@ -114,6 +142,37 @@
             this.ProductgroupBox.TabIndex = 0;
             this.ProductgroupBox.TabStop = false;
             this.ProductgroupBox.Text = "Add Data";
+            // 
+            // productUnitTextBox
+            // 
+            this.productUnitTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.productUnitTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductUnit", true));
+            this.productUnitTextBox.Location = new System.Drawing.Point(112, 176);
+            this.productUnitTextBox.Name = "productUnitTextBox";
+            this.productUnitTextBox.Size = new System.Drawing.Size(208, 20);
+            this.productUnitTextBox.TabIndex = 5;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(XamaDataLayer.Product);
+            // 
+            // publicNameTextBox
+            // 
+            this.publicNameTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.publicNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "PublicName", true));
+            this.publicNameTextBox.Location = new System.Drawing.Point(112, 152);
+            this.publicNameTextBox.Name = "publicNameTextBox";
+            this.publicNameTextBox.Size = new System.Drawing.Size(208, 20);
+            this.publicNameTextBox.TabIndex = 4;
+            // 
+            // productPriceTextBox
+            // 
+            this.productPriceTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.productPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductPrice", true));
+            this.productPriceTextBox.Location = new System.Drawing.Point(112, 128);
+            this.productPriceTextBox.Name = "productPriceTextBox";
+            this.productPriceTextBox.Size = new System.Drawing.Size(208, 20);
+            this.productPriceTextBox.TabIndex = 3;
             // 
             // label2
             // 
@@ -153,29 +212,29 @@
             this.CategoryComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.CategoryComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.CategoryComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
-            gridViewDecimalColumn2.DataType = typeof(int);
-            gridViewDecimalColumn2.EnableExpressionEditor = false;
-            gridViewDecimalColumn2.FieldName = "ID";
-            gridViewDecimalColumn2.HeaderText = "ID";
-            gridViewDecimalColumn2.IsAutoGenerated = true;
-            gridViewDecimalColumn2.Name = "ID";
-            gridViewDecimalColumn2.Width = 88;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "ProductCategoryName";
-            gridViewTextBoxColumn3.HeaderText = "CategoryName";
-            gridViewTextBoxColumn3.IsAutoGenerated = true;
-            gridViewTextBoxColumn3.Name = "ProductCategoryName";
-            gridViewTextBoxColumn3.Width = 190;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "Description";
-            gridViewTextBoxColumn4.HeaderText = "Description";
-            gridViewTextBoxColumn4.IsAutoGenerated = true;
-            gridViewTextBoxColumn4.Name = "Description";
-            gridViewTextBoxColumn4.Width = 241;
+            gridViewDecimalColumn1.DataType = typeof(int);
+            gridViewDecimalColumn1.EnableExpressionEditor = false;
+            gridViewDecimalColumn1.FieldName = "ID";
+            gridViewDecimalColumn1.HeaderText = "ID";
+            gridViewDecimalColumn1.IsAutoGenerated = true;
+            gridViewDecimalColumn1.Name = "ID";
+            gridViewDecimalColumn1.Width = 88;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ProductCategoryName";
+            gridViewTextBoxColumn1.HeaderText = "CategoryName";
+            gridViewTextBoxColumn1.IsAutoGenerated = true;
+            gridViewTextBoxColumn1.Name = "ProductCategoryName";
+            gridViewTextBoxColumn1.Width = 190;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "Description";
+            gridViewTextBoxColumn2.HeaderText = "Description";
+            gridViewTextBoxColumn2.IsAutoGenerated = true;
+            gridViewTextBoxColumn2.Name = "Description";
+            gridViewTextBoxColumn2.Width = 241;
             this.CategoryComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4});
+            gridViewDecimalColumn1,
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2});
             this.CategoryComboBox.EditorControl.MasterTemplate.DataSource = this.productCategoryBindingSource;
             this.CategoryComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.CategoryComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
@@ -188,7 +247,7 @@
             this.CategoryComboBox.Location = new System.Drawing.Point(112, 200);
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(204, 20);
-            this.CategoryComboBox.TabIndex = 2;
+            this.CategoryComboBox.TabIndex = 6;
             this.CategoryComboBox.TabStop = false;
             this.CategoryComboBox.ThemeName = "VisualStudio2012Light";
             // 
@@ -203,7 +262,7 @@
             this.AddBtn.Location = new System.Drawing.Point(11, 350);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(109, 37);
-            this.AddBtn.TabIndex = 4;
+            this.AddBtn.TabIndex = 8;
             this.AddBtn.Text = "Add";
             this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AddBtn.ThemeName = "VisualStudio2012Light";
@@ -214,7 +273,7 @@
             this.BrowseBtn.Location = new System.Drawing.Point(264, 232);
             this.BrowseBtn.Name = "BrowseBtn";
             this.BrowseBtn.Size = new System.Drawing.Size(45, 24);
-            this.BrowseBtn.TabIndex = 3;
+            this.BrowseBtn.TabIndex = 7;
             this.BrowseBtn.Text = "...";
             this.BrowseBtn.ThemeName = "VisualStudio2012Light";
             this.BrowseBtn.Click += new System.EventHandler(this.BrowseBtn_Click);
@@ -259,64 +318,6 @@
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(XamaDataLayer.Product);
-            // 
-            // productPriceLabel
-            // 
-            productPriceLabel.AutoSize = true;
-            productPriceLabel.Location = new System.Drawing.Point(24, 131);
-            productPriceLabel.Name = "productPriceLabel";
-            productPriceLabel.Size = new System.Drawing.Size(77, 13);
-            productPriceLabel.TabIndex = 11;
-            productPriceLabel.Text = "Product Price:";
-            // 
-            // productPriceTextBox
-            // 
-            this.productPriceTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.productPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductPrice", true));
-            this.productPriceTextBox.Location = new System.Drawing.Point(112, 128);
-            this.productPriceTextBox.Name = "productPriceTextBox";
-            this.productPriceTextBox.Size = new System.Drawing.Size(208, 20);
-            this.productPriceTextBox.TabIndex = 12;
-            // 
-            // publicNameLabel
-            // 
-            publicNameLabel.AutoSize = true;
-            publicNameLabel.Location = new System.Drawing.Point(32, 155);
-            publicNameLabel.Name = "publicNameLabel";
-            publicNameLabel.Size = new System.Drawing.Size(73, 13);
-            publicNameLabel.TabIndex = 12;
-            publicNameLabel.Text = "Public Name:";
-            // 
-            // publicNameTextBox
-            // 
-            this.publicNameTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.publicNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "PublicName", true));
-            this.publicNameTextBox.Location = new System.Drawing.Point(112, 152);
-            this.publicNameTextBox.Name = "publicNameTextBox";
-            this.publicNameTextBox.Size = new System.Drawing.Size(208, 20);
-            this.publicNameTextBox.TabIndex = 13;
-            // 
-            // productUnitLabel
-            // 
-            productUnitLabel.AutoSize = true;
-            productUnitLabel.Location = new System.Drawing.Point(24, 179);
-            productUnitLabel.Name = "productUnitLabel";
-            productUnitLabel.Size = new System.Drawing.Size(75, 13);
-            productUnitLabel.TabIndex = 14;
-            productUnitLabel.Text = "Product Unit:";
-            // 
-            // productUnitTextBox
-            // 
-            this.productUnitTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.productUnitTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductUnit", true));
-            this.productUnitTextBox.Location = new System.Drawing.Point(112, 176);
-            this.productUnitTextBox.Name = "productUnitTextBox";
-            this.productUnitTextBox.Size = new System.Drawing.Size(208, 20);
-            this.productUnitTextBox.TabIndex = 15;
-            // 
             // frmAddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,13 +335,14 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.RootElement.MaxSize = new System.Drawing.Size(0, 0);
+            this.RootElement.MaxSize = new System.Drawing.Size(399, 479);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Product";
             this.ThemeName = "VisualStudio2012Light";
             this.Load += new System.EventHandler(this.frmAddProduct_Load);
             this.ProductgroupBox.ResumeLayout(false);
             this.ProductgroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox)).EndInit();
@@ -349,7 +351,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.BrowseBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productpictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -375,5 +376,6 @@
         private System.Windows.Forms.BindingSource productBindingSource;
         private System.Windows.Forms.TextBox publicNameTextBox;
         private System.Windows.Forms.TextBox productPriceTextBox;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

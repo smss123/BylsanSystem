@@ -11,11 +11,12 @@ using XamaDataLayer;
 using XamaDataLayer.Main_Store;
 using System.Threading;
 using XamaDataLayer.BranchCmd;
-using XamaDataLayer.Main_Store;
 using Xprema.XExtention ;
+using Telerik.WinControls.Data;
+using Telerik.WinControls.UI;
 namespace Bylsan_System.FactoryForms
 {
-    public partial class FrmProductsContantes : Form
+    public partial class FrmProductsContantes : RadForm
     {
         public FrmProductsContantes()
         {
@@ -25,17 +26,58 @@ namespace Bylsan_System.FactoryForms
 
         void PopulateCmb()
         {
-            Operation.BeginOperation(this);
-            var Lstproducts = ProductsCmd.GetAllProducts();
-            var AllItems = ItemsCmd.GetAllItemsMaterial();
+        //    Operation.BeginOperation(this);
+        //    var Lstproducts = ProductsCmd.GetAllProducts();
+        //    var AllItems = ItemsCmd.GetAllItemsMaterial();
 
-            this .Invoke (( MethodInvoker) delegate 
-        {
-            Cmbproducts.Items.Clear();
-            Cmbproducts.Items.AddRange((from p in Lstproducts.ToList() select p.Product_Name).Distinct().ToArray());
-            CmbItems.Items.Clear();
-            CmbItems .Items .AddRange (( from i in AllItems.ToList () select i .ItemName ).Distinct ().ToArray ());
-        });
+        //    this .Invoke (( MethodInvoker) delegate 
+        //{
+        //    Cmbproducts.Items.Clear();
+        //    Cmbproducts.Items.AddRange((from p in Lstproducts.ToList() select p.Product_Name).Distinct().ToArray());
+        //    CmbItems.Items.Clear();
+        //    CmbItems .Items .AddRange (( from i in AllItems.ToList () select i .ItemName ).Distinct ().ToArray ());
+        //});
+        //    Operation.EndOperation(this);
+
+            this.Cmbproducts.MultiColumnComboBoxElement.DropDownWidth = 550;
+            this.CmbItems.MultiColumnComboBoxElement.DropDownWidth = 550;
+            Operation.BeginOperation(this);
+
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.Cmbproducts.AutoFilter = true;
+                this.Cmbproducts.ValueMember = "ID";
+                this.Cmbproducts.DisplayMember = "Product_Name";
+
+                ///Item
+                ///
+
+                this.CmbItems.AutoFilter = true;
+                this.CmbItems.ValueMember = "ID";
+                this.CmbItems.DisplayMember = "ItemName";
+            });
+
+            var q = ProductsCmd.GetAllProducts();
+            var q1 = ItemsCmd.GetAllItems();
+            this.Invoke((MethodInvoker)delegate
+            {
+                CmbItems.DataSource = q1;
+                Cmbproducts.DataSource = q;
+                FilterDescriptor filter = new FilterDescriptor();
+                filter.PropertyName = this.Cmbproducts.DisplayMember;
+                filter.Operator = FilterOperator.Contains;
+                this.Cmbproducts.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+                //FilterItme
+
+                FilterDescriptor filter1 = new FilterDescriptor();
+                filter1.PropertyName = this.CmbItems.DisplayMember;
+                filter1.Operator = FilterOperator.Contains;
+                this.CmbItems.EditorControl.MasterTemplate.FilterDescriptors.Add(filter1);
+
+
+
+
+            });
             Operation.EndOperation(this);
         }
         private void FrmProductsContantes_Load(object sender, EventArgs e)
@@ -47,6 +89,56 @@ namespace Bylsan_System.FactoryForms
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            #region "  CheckFillTextBox "
+
+            if (Cmbproducts.SelectedValue == null)
+            {
+                Cmbproducts.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+
+                Cmbproducts.Focus();
+                errorProvider1.SetError(this.Cmbproducts, "Please Chose Product ");
+
+                return;
+            }
+            else
+            {
+                Cmbproducts.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+            ///
+            if (CmbItems.SelectedValue == null)
+            {
+                CmbItems.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
+
+                CmbItems.Focus();
+                errorProvider1.SetError(this.CmbItems, "Please Chose Item ");
+
+                return;
+            }
+            else
+            {
+                CmbItems.MultiColumnComboBoxElement.BackColor = Color.White;
+                errorProvider1.Clear();
+            }
+            ///
+
+            if (txtQty.Text == "")
+            {
+
+                txtQty.BackColor = Color.OrangeRed;
+
+                txtQty.Focus();
+                errorProvider1.SetError(this.txtQty, "Please Enter Qty");
+
+                return;
+            }
+            else
+            {
+                txtQty.BackColor = Color.White;
+                errorProvider1.Clear();
+
+            }
+            #endregion
             try
             {
                 if (txtQty.Text != "" && itmID !=0 )
@@ -71,7 +163,7 @@ namespace Bylsan_System.FactoryForms
                     unitOfProduct = CmbUnits .Text 
                     
                     };
-                    ProductContentsCmd.AddProductContents(tb);
+                    ProductContentsCmd.AddProductContents(tb);//z
                     //===================================================
                     TargetStore.ItemID = itmID;
                     TargetStore.AvailableQty -= (long)(txtQty.Text).ToFloat();
@@ -139,6 +231,11 @@ namespace Bylsan_System.FactoryForms
             txtQty.Text = "";
             CmbUnits.Text = "";
             FrmProductsContantes_Load(null, null);
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

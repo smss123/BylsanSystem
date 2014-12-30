@@ -1,4 +1,5 @@
-﻿using Bylsan_System.Reports.ReportCommand;
+﻿using Bylsan_System.FactoryForms;
+using Bylsan_System.Reports.ReportCommand;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -108,6 +109,14 @@ namespace Bylsan_System.ProductForms
 
             e.Graphics.DrawString("*10*", printFont, br, 10, 65);
             e.Graphics.DrawString("*item1*", printFont1, br, 10, 85);
+        }
+
+        private void ProductManagmentBtn_Click(object sender, EventArgs e)
+        {
+            FrmProductsContantes frm=new FrmProductsContantes();
+            frm.ShowDialog();
+        
+        
         }
     }
 }
