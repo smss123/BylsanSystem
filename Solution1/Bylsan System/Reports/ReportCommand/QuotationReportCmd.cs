@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using XamaDataLayer.BranchCmd;
+using XamaDataLayer;
 
 namespace Bylsan_System.Reports.ReportCommand
 {
@@ -33,12 +34,6 @@ namespace Bylsan_System.Reports.ReportCommand
                  ProductPublicName=item.Product.PublicName,
                  ProductPrice=item.Product.ProductPrice.Value,
                  QuotationDescription=item.Description,
-
-
-
-
-
-
                 });
             }
             rs.Name = "DataSet1";
@@ -46,7 +41,40 @@ namespace Bylsan_System.Reports.ReportCommand
             RebortView frm = new RebortView();
             frm.reportViewer1.LocalReport.DataSources.Clear();
             frm.reportViewer1.LocalReport.DataSources.Add(rs);
-            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "Bylsan_System.Reports.Sheets.RepOrderBill.rdlc";
+            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "Bylsan_System.Reports.Sheets.RepQuotation.rdlc";
+            frm.ShowDialog();
+
+
+        }
+
+        public void GetOrderProductsByOrderId(Quotation q)
+        {
+          
+            ReportDataSource rs = new ReportDataSource();
+            List<QuotationReportObj> ls = new List<QuotationReportObj>();
+
+            foreach (var item in q.QuotationProducts)
+            {
+
+                ls.Add(new QuotationReportObj()
+                {////////////
+                    /// information Order And Customer
+                    QuotationFor = item.Quotation.QuotationFor,
+                    CreatedDate = item.Quotation.CreatedDate.Value,
+                    PhoneNumber = item.Quotation.PhoneNumber,
+                    AddressFor = item.Quotation.AddressFor,
+                    ///
+                    ProductPublicName = item.Product.PublicName,
+                    ProductPrice = item.Product.ProductPrice.Value,
+                    QuotationDescription = item.Description,
+                });
+            }
+            rs.Name = "DataSet1";
+            rs.Value = ls;
+            RebortView frm = new RebortView();
+            frm.reportViewer1.LocalReport.DataSources.Clear();
+            frm.reportViewer1.LocalReport.DataSources.Add(rs);
+            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "Bylsan_System.Reports.Sheets.RepQuotation.rdlc";
             frm.ShowDialog();
 
 

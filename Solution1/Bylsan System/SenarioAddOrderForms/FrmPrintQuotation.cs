@@ -14,6 +14,7 @@ using Bylsan_System.SenarioAddOrderForms;
 using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Helper_Classes;
 using Telerik.WinControls.UI;
+using Bylsan_System.Reports.ReportCommand;
 namespace Bylsan_System.SenarioAddOrderForms
 {
     public partial class FrmPrintQuotation : RadForm
@@ -84,12 +85,14 @@ namespace Bylsan_System.SenarioAddOrderForms
         {
             if (TreeCategories.Nodes.Count != 0)
             {
-                 SelectedCategryID = (from c in CategoriesCmd.GetAllCategories()
-                                         where c.ProductCategoryName == TreeCategories.SelectedNode.Text
-                                         select c.ID).Single();
-                var Lst = ProductsCmd.GetProductByCategID(SelectedCategryID);
+                 //SelectedCategryID =(from c in CategoriesCmd.GetAllCategories()
+                 //                        where c.ProductCategoryName == TreeCategories.SelectedNode.Text
+                 //                        select c.ID).Single();
+                SelectedCategryID = Operation.Allcategorys.Where(p => p.ProductCategoryName == TreeCategories.SelectedNode.Text).Single().ID;
+
+                var lst = Operation.Allproducts.Where(p => p.CateogryID == SelectedCategryID); //ProductsCmd.GetProductByCategID(SelectedCategryID);
                 ListViewProducts.Items.Clear();
-                foreach (var p in Lst)
+                foreach (var p in lst)
                 {
                     ListViewItem itm = new ListViewItem(p.ID.ToString());
                     itm.SubItems.Add(p.Product_Name);
@@ -119,7 +122,7 @@ namespace Bylsan_System.SenarioAddOrderForms
                     //==================================
 
                     // Starting Save At QuotationProduct
-                    int xMax = (from mx in QuotationCmd.GetAllQuotations() select mx.ID).Max();
+                    int xMax = tb.ID;//(from mx in QuotationCmd.GetAllQuotations() select mx.ID).Max();
                     foreach (ListViewItem  item in ListViewProducts.Items  )
                     {
                         QuotationProduct qptb = new QuotationProduct()
@@ -127,8 +130,13 @@ namespace Bylsan_System.SenarioAddOrderForms
                             ProductID =  int .Parse (item .SubItems [0].Text)  ,  QuotationID = xMax , Description = item .SubItems [2].Text.ToString (),
                         };
                         QuotationProductCmd.AddQuotationProduct(qptb);
+                        tb.QuotationProducts.Add(qptb);
                     }
+                   
+                    QuotationReportCmd cmd = new QuotationReportCmd();
+                    
                     MessageBox.Show("Saved");
+                    cmd.GetOrderProductsByOrderId(tb.ID);
                     ListViewProducts.Items.Clear();
                     TreeCategories.CollapseAll();
                     quotationForTextBox.Focus();

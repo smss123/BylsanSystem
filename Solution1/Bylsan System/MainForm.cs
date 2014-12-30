@@ -47,8 +47,8 @@ namespace Bylsan_System
         }
 
         void PopulateAll() {
-            Operation.allcategorys = CategoriesCmd.GetAllCategories();
-            Operation.allproducts = ProductsCmd.GetAllProducts();
+            Operation.Allcategorys = CategoriesCmd.GetAllCategories();
+            Operation.Allproducts = ProductsCmd.GetAllProducts();
             Operation.AllBranches = BranchsCmd.GetAllBranchs();
         
         }

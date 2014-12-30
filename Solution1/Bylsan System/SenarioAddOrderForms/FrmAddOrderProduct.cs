@@ -97,8 +97,8 @@ namespace Bylsan_System.SenarioAddOrderForms
 
                 lblStatus.Text = "Loading ...";
             });
-            this.Products = Operation.allproducts;
-            this.ProductCategories = Operation.allcategorys;
+            this.Products = Operation.Allproducts;
+            this.ProductCategories = Operation.Allcategorys;
 
             this.Invoke((MethodInvoker)delegate
             {

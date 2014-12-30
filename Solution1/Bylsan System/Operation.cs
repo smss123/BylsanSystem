@@ -10,8 +10,8 @@ namespace Bylsan_System
 {
    public class Operation
     {
-        public static List<Product> allproducts { get; set; }
-        public static List<ProductCategory>  allcategorys{ get; set; }
+        public static List<Product> Allproducts { get; set; }
+        public static List<ProductCategory>  Allcategorys{ get; set; }
         public static List <Branch >  AllBranches { get; set; }
 
 
