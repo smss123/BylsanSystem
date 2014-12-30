@@ -36,14 +36,14 @@
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.Addbtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.productCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Addbtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -65,6 +65,29 @@
             this.toolStrip1.Size = new System.Drawing.Size(645, 39);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // Addbtn
+            // 
+            this.Addbtn.Image = global::Bylsan_System.Properties.Resources.Add;
+            this.Addbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.Addbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Addbtn.Name = "Addbtn";
+            this.Addbtn.Size = new System.Drawing.Size(65, 36);
+            this.Addbtn.Text = "Add";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // RefreshBtn
+            // 
+            this.RefreshBtn.Image = global::Bylsan_System.Properties.Resources.Refrech;
+            this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Size = new System.Drawing.Size(79, 36);
+            this.RefreshBtn.Text = "Refresh";
             // 
             // statusStrip1
             // 
@@ -159,29 +182,6 @@
             // productCategoryBindingSource
             // 
             this.productCategoryBindingSource.DataSource = typeof(XamaDataLayer.ProductCategory);
-            // 
-            // Addbtn
-            // 
-            this.Addbtn.Image = global::Bylsan_System.Properties.Resources.Add;
-            this.Addbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.Addbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Addbtn.Name = "Addbtn";
-            this.Addbtn.Size = new System.Drawing.Size(65, 36);
-            this.Addbtn.Text = "Add";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
-            // 
-            // RefreshBtn
-            // 
-            this.RefreshBtn.Image = global::Bylsan_System.Properties.Resources.Refrech;
-            this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(79, 36);
-            this.RefreshBtn.Text = "Refresh";
             // 
             // FrmManageProductCategory
             // 

@@ -34,6 +34,8 @@
             System.Windows.Forms.Label productUnitLabel;
             System.Windows.Forms.Label publicNameLabel;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.productUnitTextBox = new System.Windows.Forms.TextBox();
+            this.publicNameTextBox = new System.Windows.Forms.TextBox();
             this.txtprice = new System.Windows.Forms.TextBox();
             this.CategoryComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
@@ -48,8 +50,6 @@
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblstatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.productUnitTextBox = new System.Windows.Forms.TextBox();
-            this.publicNameTextBox = new System.Windows.Forms.TextBox();
             product_DescriptionLabel = new System.Windows.Forms.Label();
             product_NameLabel = new System.Windows.Forms.Label();
             productUnitLabel = new System.Windows.Forms.Label();
@@ -84,6 +84,24 @@
             product_NameLabel.TabIndex = 17;
             product_NameLabel.Text = "Product Name:";
             // 
+            // productUnitLabel
+            // 
+            productUnitLabel.AutoSize = true;
+            productUnitLabel.Location = new System.Drawing.Point(32, 179);
+            productUnitLabel.Name = "productUnitLabel";
+            productUnitLabel.Size = new System.Drawing.Size(75, 13);
+            productUnitLabel.TabIndex = 27;
+            productUnitLabel.Text = "Product Unit:";
+            // 
+            // publicNameLabel
+            // 
+            publicNameLabel.AutoSize = true;
+            publicNameLabel.Location = new System.Drawing.Point(40, 155);
+            publicNameLabel.Name = "publicNameLabel";
+            publicNameLabel.Size = new System.Drawing.Size(73, 13);
+            publicNameLabel.TabIndex = 24;
+            publicNameLabel.Text = "Public Name:";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(productUnitLabel);
@@ -109,12 +127,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit Prodct";
             // 
+            // productUnitTextBox
+            // 
+            this.productUnitTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.productUnitTextBox.Location = new System.Drawing.Point(120, 176);
+            this.productUnitTextBox.Name = "productUnitTextBox";
+            this.productUnitTextBox.Size = new System.Drawing.Size(232, 20);
+            this.productUnitTextBox.TabIndex = 3;
+            // 
+            // publicNameTextBox
+            // 
+            this.publicNameTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.publicNameTextBox.Location = new System.Drawing.Point(120, 152);
+            this.publicNameTextBox.Name = "publicNameTextBox";
+            this.publicNameTextBox.Size = new System.Drawing.Size(232, 20);
+            this.publicNameTextBox.TabIndex = 2;
+            // 
             // txtprice
             // 
             this.txtprice.Location = new System.Drawing.Point(120, 237);
             this.txtprice.Name = "txtprice";
             this.txtprice.Size = new System.Drawing.Size(240, 20);
-            this.txtprice.TabIndex = 22;
+            this.txtprice.TabIndex = 5;
             // 
             // CategoryComboBox
             // 
@@ -126,7 +160,7 @@
             this.CategoryComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CategoryComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // CategoryComboBox.NestedRadGridView
             // 
             this.CategoryComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.CategoryComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -141,7 +175,7 @@
             this.CategoryComboBox.Location = new System.Drawing.Point(120, 208);
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(240, 20);
-            this.CategoryComboBox.TabIndex = 21;
+            this.CategoryComboBox.TabIndex = 4;
             this.CategoryComboBox.TabStop = false;
             this.CategoryComboBox.ThemeName = "Windows8";
             // 
@@ -149,10 +183,10 @@
             // 
             this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddBtn.Image = global::Bylsan_System.Properties.Resources.Save;
-            this.AddBtn.Location = new System.Drawing.Point(40, 384);
+            this.AddBtn.Location = new System.Drawing.Point(8, 386);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(111, 37);
-            this.AddBtn.TabIndex = 15;
+            this.AddBtn.TabIndex = 8;
             this.AddBtn.Text = "Save";
             this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AddBtn.ThemeName = "Windows8";
@@ -163,7 +197,7 @@
             this.BrowseBtn.Location = new System.Drawing.Point(280, 264);
             this.BrowseBtn.Name = "BrowseBtn";
             this.BrowseBtn.Size = new System.Drawing.Size(80, 24);
-            this.BrowseBtn.TabIndex = 14;
+            this.BrowseBtn.TabIndex = 6;
             this.BrowseBtn.Text = "...";
             this.BrowseBtn.ThemeName = "Windows8";
             this.BrowseBtn.Click += new System.EventHandler(this.BrowseBtn_Click_1);
@@ -185,7 +219,7 @@
             this.product_DescriptionTextBox.Multiline = true;
             this.product_DescriptionTextBox.Name = "product_DescriptionTextBox";
             this.product_DescriptionTextBox.Size = new System.Drawing.Size(240, 75);
-            this.product_DescriptionTextBox.TabIndex = 13;
+            this.product_DescriptionTextBox.TabIndex = 1;
             // 
             // product_NameTextBox
             // 
@@ -193,7 +227,7 @@
             this.product_NameTextBox.Location = new System.Drawing.Point(117, 36);
             this.product_NameTextBox.Name = "product_NameTextBox";
             this.product_NameTextBox.Size = new System.Drawing.Size(240, 20);
-            this.product_NameTextBox.TabIndex = 12;
+            this.product_NameTextBox.TabIndex = 0;
             // 
             // label2
             // 
@@ -241,40 +275,6 @@
             this.lblstatus.Name = "lblstatus";
             this.lblstatus.Size = new System.Drawing.Size(12, 17);
             this.lblstatus.Text = "_";
-            // 
-            // productUnitLabel
-            // 
-            productUnitLabel.AutoSize = true;
-            productUnitLabel.Location = new System.Drawing.Point(32, 179);
-            productUnitLabel.Name = "productUnitLabel";
-            productUnitLabel.Size = new System.Drawing.Size(75, 13);
-            productUnitLabel.TabIndex = 27;
-            productUnitLabel.Text = "Product Unit:";
-            // 
-            // productUnitTextBox
-            // 
-            this.productUnitTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.productUnitTextBox.Location = new System.Drawing.Point(120, 176);
-            this.productUnitTextBox.Name = "productUnitTextBox";
-            this.productUnitTextBox.Size = new System.Drawing.Size(232, 20);
-            this.productUnitTextBox.TabIndex = 28;
-            // 
-            // publicNameLabel
-            // 
-            publicNameLabel.AutoSize = true;
-            publicNameLabel.Location = new System.Drawing.Point(40, 155);
-            publicNameLabel.Name = "publicNameLabel";
-            publicNameLabel.Size = new System.Drawing.Size(73, 13);
-            publicNameLabel.TabIndex = 24;
-            publicNameLabel.Text = "Public Name:";
-            // 
-            // publicNameTextBox
-            // 
-            this.publicNameTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.publicNameTextBox.Location = new System.Drawing.Point(120, 152);
-            this.publicNameTextBox.Name = "publicNameTextBox";
-            this.publicNameTextBox.Size = new System.Drawing.Size(232, 20);
-            this.publicNameTextBox.TabIndex = 26;
             // 
             // frmEditProduct
             // 
