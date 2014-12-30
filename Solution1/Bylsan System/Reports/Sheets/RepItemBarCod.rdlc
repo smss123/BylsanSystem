@@ -6,12 +6,12 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>17.75292cm</Width>
+              <Width>3.23844cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>3.00686cm</Height>
+              <Height>1.73127cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -28,7 +28,7 @@
                                     <TextRun>
                                       <Value>=Fields!ItemName.Value</Value>
                                       <Style>
-                                        <FontSize>5pt</FontSize>
+                                        <FontSize>7pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -38,10 +38,10 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox2</rd:DefaultName>
-                              <Top>0.88915cm</Top>
+                              <Top>0.57165cm</Top>
                               <Left>0cm</Left>
                               <Height>0.54841cm</Height>
-                              <Width>3.04208cm</Width>
+                              <Width>2.98437cm</Width>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -71,9 +71,9 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox3</rd:DefaultName>
-                              <Top>1.50812cm</Top>
-                              <Height>0.6cm</Height>
-                              <Width>3.04208cm</Width>
+                              <Top>1.12006cm</Top>
+                              <Height>0.52045cm</Height>
+                              <Width>2.98437cm</Width>
                               <ZIndex>1</ZIndex>
                               <Style>
                                 <Border>
@@ -95,7 +95,7 @@
                                       <Value>="*"+str(Fields!itemID.Value)+"*"</Value>
                                       <Style>
                                         <FontFamily>idAutomationHC39M</FontFamily>
-                                        <FontSize>8pt</FontSize>
+                                        <FontSize>5pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -106,9 +106,9 @@
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
                               <Top>0cm</Top>
-                              <Left>0.27921cm</Left>
-                              <Height>0.74804cm</Height>
-                              <Width>2.44378cm</Width>
+                              <Left>0cm</Left>
+                              <Height>0.53778cm</Height>
+                              <Width>2.98437cm</Width>
                               <ZIndex>2</ZIndex>
                               <Style>
                                 <Border>
@@ -122,17 +122,71 @@
                             </Textbox>
                           </ReportItems>
                           <KeepTogether>true</KeepTogether>
-                          <Top>0.55562cm</Top>
-                          <Left>0.44979cm</Left>
-                          <Height>2.21289cm</Height>
-                          <Width>3.04208cm</Width>
+                          <Top>0.03528cm</Top>
+                          <Left>0cm</Left>
+                          <Height>1.69599cm</Height>
+                          <Width>3.10702cm</Width>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
                             </Border>
                           </Style>
                         </Rectangle>
-                        <Rectangle Name="Rectangle4">
+                      </ReportItems>
+                      <KeepTogether>true</KeepTogether>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Details" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <KeepTogether>true</KeepTogether>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.10583cm</Top>
+        <Left>0cm</Left>
+        <Height>1.73127cm</Height>
+        <Width>3.23844cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <TextAlign>Center</TextAlign>
+        </Style>
+      </Tablix>
+      <Tablix Name="Tablix3">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>3.23844cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>1.73127cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="Rectangle4">
+                      <ReportItems>
+                        <Rectangle Name="Rectangle5">
                           <ReportItems>
                             <Textbox Name="Textbox4">
                               <CanGrow>true</CanGrow>
@@ -143,7 +197,7 @@
                                     <TextRun>
                                       <Value>=Fields!ItemName.Value</Value>
                                       <Style>
-                                        <FontSize>5pt</FontSize>
+                                        <FontSize>7pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -153,9 +207,10 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox2</rd:DefaultName>
-                              <Top>0.88915cm</Top>
+                              <Top>0.57165cm</Top>
+                              <Left>0cm</Left>
                               <Height>0.54841cm</Height>
-                              <Width>3.04208cm</Width>
+                              <Width>2.98437cm</Width>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -185,9 +240,9 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox3</rd:DefaultName>
-                              <Top>1.50812cm</Top>
-                              <Height>0.6cm</Height>
-                              <Width>3.04208cm</Width>
+                              <Top>1.12006cm</Top>
+                              <Height>0.52045cm</Height>
+                              <Width>2.98437cm</Width>
                               <ZIndex>1</ZIndex>
                               <Style>
                                 <Border>
@@ -209,7 +264,7 @@
                                       <Value>="*" + Microsoft.VisualBasic.Conversion.str(Fields!itemID.Value) + "*"</Value>
                                       <Style>
                                         <FontFamily>idAutomationHC39M</FontFamily>
-                                        <FontSize>8pt</FontSize>
+                                        <FontSize>5pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -219,9 +274,10 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Left>0.27921cm</Left>
-                              <Height>0.74804cm</Height>
-                              <Width>2.44378cm</Width>
+                              <Top>0cm</Top>
+                              <Left>0cm</Left>
+                              <Height>0.53778cm</Height>
+                              <Width>2.98437cm</Width>
                               <ZIndex>2</ZIndex>
                               <Style>
                                 <Border>
@@ -235,18 +291,70 @@
                             </Textbox>
                           </ReportItems>
                           <KeepTogether>true</KeepTogether>
-                          <Top>0.55562cm</Top>
-                          <Left>4.78417cm</Left>
-                          <Height>2.21289cm</Height>
-                          <Width>3.04208cm</Width>
-                          <ZIndex>1</ZIndex>
+                          <Top>0.03528cm</Top>
+                          <Left>0cm</Left>
+                          <Height>1.69599cm</Height>
+                          <Width>3.10702cm</Width>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
                             </Border>
                           </Style>
                         </Rectangle>
-                        <Rectangle Name="Rectangle5">
+                      </ReportItems>
+                      <KeepTogether>true</KeepTogether>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </Rectangle>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Details2" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.06114cm</Top>
+        <Left>3.59413cm</Left>
+        <Height>1.73127cm</Height>
+        <Width>3.23844cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Tablix Name="Tablix4">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>3.23844cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>1.73127cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Rectangle Name="Rectangle6">
+                      <ReportItems>
+                        <Rectangle Name="Rectangle7">
                           <ReportItems>
                             <Textbox Name="Textbox7">
                               <CanGrow>true</CanGrow>
@@ -257,7 +365,7 @@
                                     <TextRun>
                                       <Value>=Fields!ItemName.Value</Value>
                                       <Style>
-                                        <FontSize>5pt</FontSize>
+                                        <FontSize>7pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -267,9 +375,10 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox2</rd:DefaultName>
-                              <Top>0.88915cm</Top>
+                              <Top>0.57165cm</Top>
+                              <Left>0cm</Left>
                               <Height>0.54841cm</Height>
-                              <Width>3.04208cm</Width>
+                              <Width>2.98437cm</Width>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -299,9 +408,9 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox3</rd:DefaultName>
-                              <Top>1.50812cm</Top>
-                              <Height>0.6cm</Height>
-                              <Width>3.04208cm</Width>
+                              <Top>1.12006cm</Top>
+                              <Height>0.52045cm</Height>
+                              <Width>2.98437cm</Width>
                               <ZIndex>1</ZIndex>
                               <Style>
                                 <Border>
@@ -323,54 +432,6 @@
                                       <Value>="*" + Microsoft.VisualBasic.Conversion.str(Fields!itemID.Value) + "*"</Value>
                                       <Style>
                                         <FontFamily>idAutomationHC39M</FontFamily>
-                                        <FontSize>8pt</FontSize>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Center</TextAlign>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Left>0.27921cm</Left>
-                              <Height>0.74804cm</Height>
-                              <Width>2.44378cm</Width>
-                              <ZIndex>2</ZIndex>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                          </ReportItems>
-                          <KeepTogether>true</KeepTogether>
-                          <Top>0.55562cm</Top>
-                          <Left>9.45329cm</Left>
-                          <Height>2.21289cm</Height>
-                          <Width>3.04208cm</Width>
-                          <ZIndex>2</ZIndex>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                            </Border>
-                          </Style>
-                        </Rectangle>
-                        <Rectangle Name="Rectangle6">
-                          <ReportItems>
-                            <Textbox Name="Textbox10">
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Fields!ItemName.Value</Value>
-                                      <Style>
                                         <FontSize>5pt</FontSize>
                                       </Style>
                                     </TextRun>
@@ -380,76 +441,11 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox2</rd:DefaultName>
-                              <Top>0.88915cm</Top>
-                              <Height>0.54841cm</Height>
-                              <Width>3.04208cm</Width>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="Textbox11">
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Microsoft.VisualBasic.Conversion.str(Fields!ItemPrice.Value) + " R.O"</Value>
-                                      <Style>
-                                        <FontSize>8pt</FontSize>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Center</TextAlign>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox3</rd:DefaultName>
-                              <Top>1.50812cm</Top>
-                              <Height>0.6cm</Height>
-                              <Width>3.04208cm</Width>
-                              <ZIndex>1</ZIndex>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                            <Textbox Name="Textbox12">
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>="*" + Microsoft.VisualBasic.Conversion.str(Fields!itemID.Value) + "*"</Value>
-                                      <Style>
-                                        <FontFamily>idAutomationHC39M</FontFamily>
-                                        <FontSize>8pt</FontSize>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style>
-                                    <TextAlign>Center</TextAlign>
-                                  </Style>
-                                </Paragraph>
-                              </Paragraphs>
                               <rd:DefaultName>Textbox1</rd:DefaultName>
-                              <Left>0.27921cm</Left>
-                              <Height>0.74804cm</Height>
-                              <Width>2.44378cm</Width>
+                              <Top>0cm</Top>
+                              <Left>0cm</Left>
+                              <Height>0.53778cm</Height>
+                              <Width>2.98437cm</Width>
                               <ZIndex>2</ZIndex>
                               <Style>
                                 <Border>
@@ -463,11 +459,10 @@
                             </Textbox>
                           </ReportItems>
                           <KeepTogether>true</KeepTogether>
-                          <Top>0.55562cm</Top>
-                          <Left>13.60361cm</Left>
-                          <Height>2.21289cm</Height>
-                          <Width>3.04208cm</Width>
-                          <ZIndex>3</ZIndex>
+                          <Top>0.03528cm</Top>
+                          <Left>0cm</Left>
+                          <Height>1.69599cm</Height>
+                          <Width>3.10702cm</Width>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -478,7 +473,7 @@
                       <KeepTogether>true</KeepTogether>
                       <Style>
                         <Border>
-                          <Style>Solid</Style>
+                          <Style>None</Style>
                         </Border>
                       </Style>
                     </Rectangle>
@@ -496,15 +491,16 @@
         <TablixRowHierarchy>
           <TablixMembers>
             <TablixMember>
-              <Group Name="Details" />
+              <Group Name="Details3" />
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.34078cm</Top>
-        <Left>0.60537cm</Left>
-        <Height>3.00686cm</Height>
-        <Width>17.75292cm</Width>
+        <Top>0.06114cm</Top>
+        <Left>7.08663cm</Left>
+        <Height>1.73127cm</Height>
+        <Width>3.23844cm</Width>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -512,37 +508,16 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>0.72975in</Height>
     <Style />
   </Body>
-  <Width>7.38542in</Width>
+  <Width>4.06499in</Width>
   <Page>
-    <PageHeader>
-      <Height>2.54cm</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-      </Style>
-    </PageHeader>
-    <PageFooter>
-      <Height>2.54cm</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-      </Style>
-    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>0.5cm</LeftMargin>
     <RightMargin>0.5cm</RightMargin>
     <TopMargin>0.5cm</TopMargin>
-    <BottomMargin>0.5cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

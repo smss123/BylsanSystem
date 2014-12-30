@@ -94,7 +94,9 @@ namespace Bylsan_System.ProductForms
                     Product_Name = product_NameTextBox.Text,
                     Product_Description = product_DescriptionTextBox.Text,
                     Img = productpictureBox.Image,
-                    CateogryID = CategoryComboBox.SelectedValue.ToString().ToInt(),
+                    CateogryID = CategoryComboBox.SelectedValue.ToString().ToInt(), ProductPrice=productPriceTextBox.Text.Todouble(),
+                     PublicName= publicNameTextBox.Text,
+                      ProductUnit= productUnitTextBox.Text,
                 };
             
             

@@ -47,6 +47,25 @@ namespace XamaDataLayer.BranchCmd
             return db.Products.ToList();
         }
 
+        public static List<Product> GetAllProducts(bool p)
+        {
+            db = new DbDataContext();
+         var q = (from i in db.Products select new { i.PublicName, i.ProductPrice, i.ID });
+         List<Product> ls = new List<Product>();
+         foreach (var item in q)
+         {
+             ls.Add(new Product() { 
+              ID= item.ID,
+               ProductPrice=item.ProductPrice,
+                PublicName= item.PublicName
+             
+             });  
+         }
+         q = null;
+         db.Dispose();
+         return ls;
+        }
+
         public static List<Product> GetProductByID(int XID)
         {
             db = new DbDataContext();

@@ -38,16 +38,18 @@ namespace Bylsan_System.ProductForms
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewImageColumn gridViewImageColumn1 = new Telerik.WinControls.UI.GridViewImageColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManageProduct));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProductgroupBox = new System.Windows.Forms.GroupBox();
             this.ProductGridView = new Telerik.WinControls.UI.RadGridView();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
+            this.btnPrintBarcode = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.ProductgroupBox.SuspendLayout();
@@ -62,12 +64,38 @@ namespace Bylsan_System.ProductForms
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripSeparator1,
-            this.RefreshBtn});
+            this.RefreshBtn,
+            this.btnPrintBarcode});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1020, 39);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::Bylsan_System.Properties.Resources.Add;
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(65, 36);
+            this.toolStripButton1.Text = "Add";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // RefreshBtn
+            // 
+            this.RefreshBtn.Image = global::Bylsan_System.Properties.Resources.Refrech;
+            this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Size = new System.Drawing.Size(79, 36);
+            this.RefreshBtn.Text = "Refresh";
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // statusStrip1
             // 
@@ -185,30 +213,14 @@ namespace Bylsan_System.ProductForms
             // 
             this.productBindingSource.DataSource = typeof(XamaDataLayer.Product);
             // 
-            // toolStripButton1
+            // btnPrintBarcode
             // 
-            this.toolStripButton1.Image = global::Bylsan_System.Properties.Resources.Add;
-            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(65, 36);
-            this.toolStripButton1.Text = "Add";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
-            // 
-            // RefreshBtn
-            // 
-            this.RefreshBtn.Image = global::Bylsan_System.Properties.Resources.Refrech;
-            this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(79, 36);
-            this.RefreshBtn.Text = "Refresh";
-            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
+            this.btnPrintBarcode.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintBarcode.Image")));
+            this.btnPrintBarcode.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPrintBarcode.Name = "btnPrintBarcode";
+            this.btnPrintBarcode.Size = new System.Drawing.Size(103, 36);
+            this.btnPrintBarcode.Text = "Print Bar Code";
+            this.btnPrintBarcode.Click += new System.EventHandler(this.btnPrintBarcode_Click);
             // 
             // frmManageProduct
             // 
@@ -253,5 +265,6 @@ namespace Bylsan_System.ProductForms
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton RefreshBtn;
+        private System.Windows.Forms.ToolStripButton btnPrintBarcode;
     }
 }

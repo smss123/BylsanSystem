@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Bylsan_System.Reports.ReportCommand;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -83,6 +85,29 @@ namespace Bylsan_System.ProductForms
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
             frmManageProduct_Load(null, null);
+        }
+
+        private void btnPrintBarcode_Click(object sender, EventArgs e)
+        {
+            ItemBarcodeReportCmd cmd = new ItemBarcodeReportCmd();
+            cmd.GetItemStorByDate();
+            //PrintDocument pd = new PrintDocument();
+            //pd.PrintPage += new PrintPageEventHandler(pd_PrintPage);
+            //// Set the printer name. 
+            ////pd.PrinterSettings.PrinterName = "\\NS5\hpoffice
+            ////pd.PrinterSettings.PrinterName = "Zebra New GK420t"               
+            //pd.Print();
+        }
+  
+        private void pd_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Font printFont = new Font("idAutomationHC39M", 17);
+            Font printFont1 = new Font("Times New Roman", 9, FontStyle.Bold);
+
+            SolidBrush br = new SolidBrush(Color.Black);
+
+            e.Graphics.DrawString("*10*", printFont, br, 10, 65);
+            e.Graphics.DrawString("*item1*", printFont1, br, 10, 85);
         }
     }
 }
