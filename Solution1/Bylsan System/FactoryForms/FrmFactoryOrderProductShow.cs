@@ -113,10 +113,19 @@ namespace Bylsan_System.FactoryForms
                 {
                     OrderStatus = "To Deliver",
                 };
+
                 OrdersCmd.EditOrderStatusOnly(OrderTb, TaregtOrder);
                 MessageBox.Show("The current product is ready to be sent to the customer");
                
             }
+        }
+
+        private void PhotoBox_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog op = new SaveFileDialog();
+            op.ShowDialog();
+            PhotoBox.Image.Save(op.FileName);
+
         }
     }
 }

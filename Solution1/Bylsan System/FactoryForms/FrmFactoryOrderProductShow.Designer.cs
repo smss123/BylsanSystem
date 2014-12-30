@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DGVProducts = new Telerik.WinControls.UI.RadGridView();
@@ -96,38 +96,38 @@
             // 
             this.DGVProducts.MasterTemplate.AutoGenerateColumns = false;
             this.DGVProducts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "ID";
-            gridViewTextBoxColumn1.HeaderText = "ID";
-            gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn1.Width = 66;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "Product.Product_Name";
-            gridViewTextBoxColumn2.HeaderText = "Product Name";
-            gridViewTextBoxColumn2.Name = "ProductName";
-            gridViewTextBoxColumn2.Width = 170;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "Qty";
-            gridViewTextBoxColumn3.HeaderText = "Quantity";
-            gridViewTextBoxColumn3.Name = "Quantity";
-            gridViewTextBoxColumn3.Width = 88;
-            gridViewCheckBoxColumn1.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn1.HeaderText = "Check";
-            gridViewCheckBoxColumn1.MinWidth = 20;
-            gridViewCheckBoxColumn1.Name = "Check";
-            gridViewCheckBoxColumn1.Width = 100;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "ProductID";
-            gridViewTextBoxColumn4.HeaderText = "column1";
-            gridViewTextBoxColumn4.IsVisible = false;
-            gridViewTextBoxColumn4.Name = "ProductIDx";
-            gridViewTextBoxColumn4.Width = 46;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "ID";
+            gridViewTextBoxColumn5.HeaderText = "ID";
+            gridViewTextBoxColumn5.Name = "ID";
+            gridViewTextBoxColumn5.Width = 66;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "Product.Product_Name";
+            gridViewTextBoxColumn6.HeaderText = "Product Name";
+            gridViewTextBoxColumn6.Name = "ProductName";
+            gridViewTextBoxColumn6.Width = 170;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "Qty";
+            gridViewTextBoxColumn7.HeaderText = "Quantity";
+            gridViewTextBoxColumn7.Name = "Quantity";
+            gridViewTextBoxColumn7.Width = 88;
+            gridViewCheckBoxColumn2.EnableExpressionEditor = false;
+            gridViewCheckBoxColumn2.HeaderText = "Check";
+            gridViewCheckBoxColumn2.MinWidth = 20;
+            gridViewCheckBoxColumn2.Name = "Check";
+            gridViewCheckBoxColumn2.Width = 100;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "ProductID";
+            gridViewTextBoxColumn8.HeaderText = "column1";
+            gridViewTextBoxColumn8.IsVisible = false;
+            gridViewTextBoxColumn8.Name = "ProductIDx";
+            gridViewTextBoxColumn8.Width = 46;
             this.DGVProducts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewCheckBoxColumn1,
-            gridViewTextBoxColumn4});
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewCheckBoxColumn2,
+            gridViewTextBoxColumn8});
             this.DGVProducts.MasterTemplate.EnableFiltering = true;
             this.DGVProducts.Name = "DGVProducts";
             this.DGVProducts.ReadOnly = true;
@@ -304,6 +304,7 @@
             this.PhotoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PhotoBox.TabIndex = 3;
             this.PhotoBox.TabStop = false;
+            this.PhotoBox.Click += new System.EventHandler(this.PhotoBox_Click);
             // 
             // label3
             // 
