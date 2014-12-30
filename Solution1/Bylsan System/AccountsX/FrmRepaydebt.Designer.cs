@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.DebetfromcomboBox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.Remaininglabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.RemainingtextBox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.PaymenttextBox = new System.Windows.Forms.TextBox();
             this.TotalDebttextBox = new System.Windows.Forms.TextBox();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.DebetfromcomboBox = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -67,9 +67,26 @@
             this.groupBox1.Controls.Add(this.TotalDebttextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(332, 271);
+            this.groupBox1.Size = new System.Drawing.Size(332, 261);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // DebetfromcomboBox
+            // 
+            this.DebetfromcomboBox.FormattingEnabled = true;
+            this.DebetfromcomboBox.Location = new System.Drawing.Point(96, 88);
+            this.DebetfromcomboBox.Name = "DebetfromcomboBox";
+            this.DebetfromcomboBox.Size = new System.Drawing.Size(166, 21);
+            this.DebetfromcomboBox.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(32, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "credit to:";
             // 
             // AddBtn
             // 
@@ -84,6 +101,15 @@
             this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AddBtn.ThemeName = "VisualStudio2012Light";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 152);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "description:";
             // 
             // Remaininglabel
             // 
@@ -117,15 +143,23 @@
             this.RemainingtextBox.Location = new System.Drawing.Point(96, 120);
             this.RemainingtextBox.Name = "RemainingtextBox";
             this.RemainingtextBox.ReadOnly = true;
-            this.RemainingtextBox.Size = new System.Drawing.Size(184, 20);
+            this.RemainingtextBox.Size = new System.Drawing.Size(125, 20);
             this.RemainingtextBox.TabIndex = 2;
             this.RemainingtextBox.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(96, 144);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(218, 56);
+            this.textBox1.TabIndex = 3;
             // 
             // PaymenttextBox
             // 
             this.PaymenttextBox.Location = new System.Drawing.Point(96, 62);
             this.PaymenttextBox.Name = "PaymenttextBox";
-            this.PaymenttextBox.Size = new System.Drawing.Size(184, 20);
+            this.PaymenttextBox.Size = new System.Drawing.Size(125, 20);
             this.PaymenttextBox.TabIndex = 1;
             // 
             // TotalDebttextBox
@@ -133,47 +167,13 @@
             this.TotalDebttextBox.Location = new System.Drawing.Point(96, 36);
             this.TotalDebttextBox.Name = "TotalDebttextBox";
             this.TotalDebttextBox.ReadOnly = true;
-            this.TotalDebttextBox.Size = new System.Drawing.Size(184, 20);
+            this.TotalDebttextBox.Size = new System.Drawing.Size(125, 20);
             this.TotalDebttextBox.TabIndex = 0;
             this.TotalDebttextBox.TabStop = false;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // DebetfromcomboBox
-            // 
-            this.DebetfromcomboBox.FormattingEnabled = true;
-            this.DebetfromcomboBox.Location = new System.Drawing.Point(96, 88);
-            this.DebetfromcomboBox.Name = "DebetfromcomboBox";
-            this.DebetfromcomboBox.Size = new System.Drawing.Size(184, 21);
-            this.DebetfromcomboBox.TabIndex = 16;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 88);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "credit to:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(96, 144);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 56);
-            this.textBox1.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 152);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "description";
             // 
             // FrmRepaydebt
             // 
@@ -190,7 +190,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.RootElement.MaxSize = new System.Drawing.Size(302, 235);
+            this.RootElement.MaxSize = new System.Drawing.Size(0, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRepaydebt";
             this.ThemeName = "VisualStudio2012Light";

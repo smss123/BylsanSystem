@@ -35,6 +35,27 @@ namespace Bylsan_System.AccountsX
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
+
+            #region "  CheckFillTextBox "
+
+            if (AmountofDebttextBox.Text == "")
+            {
+
+                AmountofDebttextBox.BackColor = Color.OrangeRed;
+
+                AmountofDebttextBox.Focus();
+                errorProvider1.SetError(this.AmountofDebttextBox, "Please Enter  Amount  ");
+
+                return;
+            }
+            else
+            {
+                AmountofDebttextBox.BackColor = Color.White;
+                errorProvider1.Clear();
+
+            }
+
+            #endregion
             AccountDaily deptSide = new AccountDaily()
             {
                 AccountID = DebtorInfo.AccountID,
