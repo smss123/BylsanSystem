@@ -61,7 +61,7 @@ namespace Bylsan_System.ProductForms
 
             });
             Operation.BeginOperation(this);
-            var q = ProductsCmd.GetAllProducts();
+            var q = Operation.Allproducts; //ProductsCmd.GetAllProducts();
             Operation.EndOperation(this);
             statusStrip1.Invoke((MethodInvoker)delegate
             {
@@ -100,16 +100,7 @@ namespace Bylsan_System.ProductForms
             //pd.Print();
         }
   
-        private void pd_PrintPage(object sender, PrintPageEventArgs e)
-        {
-            Font printFont = new Font("idAutomationHC39M", 17);
-            Font printFont1 = new Font("Times New Roman", 9, FontStyle.Bold);
-
-            SolidBrush br = new SolidBrush(Color.Black);
-
-            e.Graphics.DrawString("*10*", printFont, br, 10, 65);
-            e.Graphics.DrawString("*item1*", printFont1, br, 10, 85);
-        }
+     
 
         private void ProductManagmentBtn_Click(object sender, EventArgs e)
         {

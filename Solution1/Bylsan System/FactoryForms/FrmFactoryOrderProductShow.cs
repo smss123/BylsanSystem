@@ -51,7 +51,7 @@ namespace Bylsan_System.FactoryForms
         }
 
         
-        Thread ProductThread;
+        Thread productThread;
         private void DGVProducts_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (DGVProducts.Rows.Count != 0)
@@ -59,8 +59,8 @@ namespace Bylsan_System.FactoryForms
 
                 LoadCleaner();
 
-                ProductThread = new Thread(LoadProdcutInformations);
-                ProductThread.Start();
+                productThread = new Thread(LoadProdcutInformations);
+                productThread.Start();
             }
       
 
@@ -88,7 +88,7 @@ namespace Bylsan_System.FactoryForms
                     lblPrice.Text = "[none]";
               
 
-                ProductThread.Abort();
+                productThread.Abort();
             });
         }
         private void CloseBtn_Click(object sender, EventArgs e)
