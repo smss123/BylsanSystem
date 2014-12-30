@@ -517,8 +517,7 @@ namespace Bylsan_System
 
         private void button1_Click_3(object sender, EventArgs e)
         {
-            FrmPasswordEdit f = new FrmPasswordEdit();
-            f.Show();
+            
         }
 
         private void button2_Click_3(object sender, EventArgs e)
@@ -550,6 +549,12 @@ namespace Bylsan_System
             FrmProductsContantes frm = new FrmProductsContantes();
             frm.Show();
 
+        }
+
+        private void editpassordBtn_Click(object sender, EventArgs e)
+        {
+            FrmPasswordEdit f = new FrmPasswordEdit();
+            f.Show();
         }
     }
 }

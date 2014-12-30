@@ -51,6 +51,9 @@ namespace Bylsan_System.ProductForms
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.ProductManagmentBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.ProductgroupBox.SuspendLayout();
@@ -66,8 +69,11 @@ namespace Bylsan_System.ProductForms
             this.toolStripButton1,
             this.toolStripSeparator1,
             this.RefreshBtn,
+            this.toolStripSeparator3,
             this.btnPrintBarcode,
-            this.ProductManagmentBtn});
+            this.toolStripSeparator2,
+            this.ProductManagmentBtn,
+            this.toolStripSeparator4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1020, 39);
@@ -102,9 +108,10 @@ namespace Bylsan_System.ProductForms
             // btnPrintBarcode
             // 
             this.btnPrintBarcode.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintBarcode.Image")));
+            this.btnPrintBarcode.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnPrintBarcode.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPrintBarcode.Name = "btnPrintBarcode";
-            this.btnPrintBarcode.Size = new System.Drawing.Size(103, 36);
+            this.btnPrintBarcode.Size = new System.Drawing.Size(119, 36);
             this.btnPrintBarcode.Text = "Print Bar Code";
             this.btnPrintBarcode.Click += new System.EventHandler(this.btnPrintBarcode_Click);
             // 
@@ -230,9 +237,24 @@ namespace Bylsan_System.ProductForms
             this.ProductManagmentBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ProductManagmentBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ProductManagmentBtn.Name = "ProductManagmentBtn";
-            this.ProductManagmentBtn.Size = new System.Drawing.Size(137, 36);
+            this.ProductManagmentBtn.Size = new System.Drawing.Size(147, 36);
             this.ProductManagmentBtn.Text = "Product Managment";
             this.ProductManagmentBtn.Click += new System.EventHandler(this.ProductManagmentBtn_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
             // 
             // frmManageProduct
             // 
@@ -279,5 +301,8 @@ namespace Bylsan_System.ProductForms
         private System.Windows.Forms.ToolStripButton RefreshBtn;
         private System.Windows.Forms.ToolStripButton btnPrintBarcode;
         private System.Windows.Forms.ToolStripButton ProductManagmentBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }
