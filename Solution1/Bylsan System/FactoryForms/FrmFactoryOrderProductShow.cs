@@ -69,27 +69,24 @@ namespace Bylsan_System.FactoryForms
         void LoadProdcutInformations()
         {
             PrdID = 0;
-            PrdID = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString());
-          
-            var lst1 = OrderProductsCmd.GetAllByProductID(PrdID);
-            var lst2 = ProductsCmd.GetProductByID(PrdID);
+            PrdID = int.Parse(DGVProducts.CurrentRow.Cells[4].Value.ToString());
+
+            var lst1 = (OrderProduct)DGVProducts.CurrentRow.DataBoundItem; //OrderProductsCmd.GetAllByProductID(PrdID);
+            var lst2 = lst1.Product; //ProductsCmd.GetProductByID(PrdID);
 
             
             this.Invoke((MethodInvoker)delegate
             {
-                // Get Data from OrderProduct Table { After Desinging }  :
-                foreach (var item in lst1)
-                {
-                
-                    TxtDescription.Text = item.Description;
-                    PhotoBox.Image = item.ImageX;
-                }
+              
+
+                    TxtDescription.Text = lst1.Description;
+                    PhotoBox.Image = lst1.ImageX;
+               
                 // Get Main Data From Product Table {Any way} : 
-                foreach (var Prd in lst2)
-                {  
-                    lblPoductName .Text = Prd.Product_Name;
-                    lblPrice.Text = Prd.ProductPrice.ToString ();
-                }
+
+                    lblPoductName.Text = lst2.Product_Name;
+                    lblPrice.Text = "[none]";
+              
 
                 ProductThread.Abort();
             });
