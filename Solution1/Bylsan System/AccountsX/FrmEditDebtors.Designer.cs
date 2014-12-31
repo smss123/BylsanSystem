@@ -103,7 +103,7 @@
             this.groupBox1.Controls.Add(this.debtorNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(380, 211);
+            this.groupBox1.Size = new System.Drawing.Size(380, 208);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 

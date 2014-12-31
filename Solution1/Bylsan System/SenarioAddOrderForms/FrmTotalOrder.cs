@@ -233,6 +233,8 @@ namespace Bylsan_System.SenarioAddOrderForms
 
             Operation.ShowToustOk("Saved Successfull ....", this);
 
+            PrintButton.Enabled = true;
+            ReceiptVoucherButton.Enabled = true;
         }
 
 
