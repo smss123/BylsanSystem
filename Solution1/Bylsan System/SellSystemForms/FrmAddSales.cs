@@ -37,7 +37,7 @@ namespace Bylsan_System.SellSystemForms
 
             Operation.BeginOperation(this);
             int ImgIndx = 0;
-            var AllSellItems =   SellItemsCmd.GetAllSellItems();
+            var AllSellItems = Operation.AllSellItems;
 
             ListItems.Items.Clear();
 

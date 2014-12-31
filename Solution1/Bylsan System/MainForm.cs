@@ -28,6 +28,7 @@ using XamaDataLayer.Helper_Classes;
 using System.Threading;
 
 using XamaDataLayer.BranchCmd;
+using XamaDataLayer.SellSystem;
 namespace Bylsan_System
 {
     public partial class MainForm : RadForm
@@ -50,6 +51,7 @@ namespace Bylsan_System
             Operation.Allcategorys = CategoriesCmd.GetAllCategories();
             Operation.Allproducts = ProductsCmd.GetAllProducts();
             Operation.AllBranches = BranchsCmd.GetAllBranchs();
+            Operation.AllSellItems = SellItemsCmd.GetAllSellItems();
         
         }
         void ActivatePermessions()
@@ -555,6 +557,12 @@ namespace Bylsan_System
         {
             FrmPasswordEdit f = new FrmPasswordEdit();
             f.Show();
+        }
+
+        private void button1_Click_4(object sender, EventArgs e)
+        {
+            FrmAddSellIStore FRM = new FrmAddSellIStore();
+            FRM.Show();
         }
     }
 }

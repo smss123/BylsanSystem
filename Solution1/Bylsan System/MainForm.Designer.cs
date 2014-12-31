@@ -34,6 +34,7 @@
             this.UserDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UserManagementBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.editpassordBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.EmployeeDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.AddEmloyeebtn = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,9 +86,10 @@
             this.AccountDailyBtn = new Telerik.WinControls.UI.RadTileElement();
             this.expensesBtn = new Telerik.WinControls.UI.RadTileElement();
             this.radTileElement4 = new Telerik.WinControls.UI.RadTileElement();
-            this.editpassordBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).BeginInit();
+            this.radPanorama1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -139,6 +141,13 @@
             this.UserManagementBtn.Size = new System.Drawing.Size(174, 22);
             this.UserManagementBtn.Text = " User Management";
             this.UserManagementBtn.Click += new System.EventHandler(this.UserManagementBtn_Click);
+            // 
+            // editpassordBtn
+            // 
+            this.editpassordBtn.Name = "editpassordBtn";
+            this.editpassordBtn.Size = new System.Drawing.Size(174, 22);
+            this.editpassordBtn.Text = "Edit Password";
+            this.editpassordBtn.Click += new System.EventHandler(this.editpassordBtn_Click);
             // 
             // toolStripSeparator1
             // 
@@ -337,6 +346,7 @@
             this.radPanorama1.BackColor = System.Drawing.Color.Transparent;
             this.radPanorama1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.radPanorama1.ContextMenuStrip = this.contextMenuStrip1;
+            this.radPanorama1.Controls.Add(this.button1);
             this.radPanorama1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanorama1.Groups.AddRange(new Telerik.WinControls.RadItem[] {
             this.tileGroupElement1,
@@ -723,12 +733,15 @@
             this.radTileElement4.Text = "radTileElement4";
             this.radTileElement4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // editpassordBtn
+            // button1
             // 
-            this.editpassordBtn.Name = "editpassordBtn";
-            this.editpassordBtn.Size = new System.Drawing.Size(174, 22);
-            this.editpassordBtn.Text = "Edit Password";
-            this.editpassordBtn.Click += new System.EventHandler(this.editpassordBtn_Click);
+            this.button1.Location = new System.Drawing.Point(325, 243);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(116, 37);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Add SellI Store";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_4);
             // 
             // MainForm
             // 
@@ -753,6 +766,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).EndInit();
+            this.radPanorama1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -818,5 +832,6 @@
         private System.Windows.Forms.ToolStripMenuItem deliveryOrderBtn;
         private Telerik.WinControls.UI.RadTileElement PrintQuotationBtn;
         private System.Windows.Forms.ToolStripMenuItem editpassordBtn;
+        private System.Windows.Forms.Button button1;
     }
 }
