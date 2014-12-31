@@ -13,6 +13,7 @@ namespace Bylsan_System
         public static List<Product> Allproducts { get; set; }
         public static List<ProductCategory>  Allcategorys{ get; set; }
         public static List <Branch >  AllBranches { get; set; }
+        public static List <SellItem > AllSellItems  { get; set; }
 
 
        public static void ShowToustOk(string msg, Control frm)

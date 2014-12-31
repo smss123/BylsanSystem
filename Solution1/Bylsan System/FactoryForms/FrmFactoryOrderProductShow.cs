@@ -22,6 +22,7 @@ namespace Bylsan_System.FactoryForms
             InitializeComponent();
         }
         public int TaregtOrder { get; set; }
+        public Order TagOrder { get; set; }
         public int PrdID { get; set; }
         Thread Thr;
         private void PopulateGrd()
@@ -29,7 +30,7 @@ namespace Bylsan_System.FactoryForms
             Operation.BeginOperation(this);
             DGVProducts.Rows.Clear();
             var q = new object();
-            q = OrderProductsCmd.GetAllByOrderID(TaregtOrder);
+            q = TagOrder.OrderProducts.ToList();//OrderProductsCmd.GetAllByOrderID(TaregtOrder);
             this.Invoke((MethodInvoker)delegate
             {
                 DGVProducts.DataSource = q;
@@ -68,8 +69,8 @@ namespace Bylsan_System.FactoryForms
 
         void LoadProdcutInformations()
         {
-            PrdID = 0;
-            PrdID = int.Parse(DGVProducts.CurrentRow.Cells[4].Value.ToString());
+            //PrdID = 0;
+            //PrdID = int.Parse(DGVProducts.CurrentRow.Cells[4].Value.ToString());
 
             var lst1 = (OrderProduct)DGVProducts.CurrentRow.DataBoundItem; //OrderProductsCmd.GetAllByProductID(PrdID);
             var lst2 = lst1.Product; //ProductsCmd.GetProductByID(PrdID);

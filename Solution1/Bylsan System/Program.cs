@@ -11,6 +11,7 @@ using Xprema.XAlerter;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Net.Mail;
+using Bylsan_System.SellSystemForms;
 namespace Bylsan_System
 {
     static class Program
@@ -30,7 +31,7 @@ namespace Bylsan_System
             Application.SetCompatibleTextRenderingDefault(false);
             Application.ThreadException += Application_ThreadException;
             Application.Run(new FrmLogin());
-
+           // Application.Run(new FrmAddSellIStore());
            
 
             //Application.Run(new Form1());

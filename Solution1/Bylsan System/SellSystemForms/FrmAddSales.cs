@@ -37,7 +37,7 @@ namespace Bylsan_System.SellSystemForms
 
             Operation.BeginOperation(this);
             int ImgIndx = 0;
-            var AllSellItems =   SellItemsCmd.GetAllSellItems();
+            var AllSellItems = Operation.AllSellItems;
 
             ListItems.Items.Clear();
 
@@ -72,8 +72,7 @@ namespace Bylsan_System.SellSystemForms
         private void ListItems_MouseClick(object sender, MouseEventArgs e)
         {
            
-            try
-            {
+          
 
                 if (ListItems.Items.Count != 0)
                 {
@@ -124,11 +123,7 @@ namespace Bylsan_System.SellSystemForms
                
                                                 
        
-            }
-            catch (Exception ex )
-            {
-                MessageBox.Show(ex.Message.ToString(), "Error");
-            }
+           
         }
 
 
