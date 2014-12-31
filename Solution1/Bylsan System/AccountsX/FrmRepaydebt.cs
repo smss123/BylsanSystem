@@ -42,7 +42,7 @@ namespace Bylsan_System.AccountsX
             {
                 AccountID = DebtorInfo.AccountID,
                 DateOfProcess = DateTime.Now,
-                Description = "this New Debet to Account for :" + txtDescription.Text,
+                Description = "this New Debet to Account for :" + textBox1.Text,
                 TotalOut = PaymenttextBox.Text.Todouble(),
                 TotalIn = 0d,
 
@@ -51,7 +51,7 @@ namespace Bylsan_System.AccountsX
             {
                 AccountID = DebetfromcomboBox.SelectedValue.ToString().ToInt(),
                 DateOfProcess = DateTime.Now,
-                Description = "this New Debet to Account for :" + txtDescription.Text,
+                Description = "this New Debet to Account for :" + textBox1.Text,
                 TotalOut = PaymenttextBox.Text.Todouble(),
                 TotalIn = 0d,
 

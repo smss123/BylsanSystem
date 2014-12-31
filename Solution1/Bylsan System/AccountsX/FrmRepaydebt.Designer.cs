@@ -67,7 +67,7 @@
             this.groupBox1.Controls.Add(this.TotalDebttextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(332, 261);
+            this.groupBox1.Size = new System.Drawing.Size(332, 258);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
