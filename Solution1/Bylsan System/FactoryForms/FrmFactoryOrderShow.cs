@@ -80,6 +80,7 @@ namespace Bylsan_System.FactoryForms
                     CustomerThread.Start();
 
                     frmFactory.TaregtOrder = SelectedOrderID;
+                    frmFactory.TagOrder = (Order)DGVOrders.CurrentRow.DataBoundItem;
 
 
                     frmFactory.ShowDialog();
