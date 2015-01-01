@@ -163,7 +163,7 @@ namespace Bylsan_System.designerForms
                 OrderID = TaregtOrder,
                 Description = TxtDescription.Text,//
                 Qty = int.Parse(DGVProducts.CurrentRow.Cells[2].Value.ToString()),
-                ProductID = int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString()),
+                ProductID = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString()),
             ImageX = PhotoBox .Image  ,
             Status = "in producting "
             };

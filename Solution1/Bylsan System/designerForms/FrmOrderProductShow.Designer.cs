@@ -164,7 +164,7 @@
             gridViewTextBoxColumn1.Name = "ID";
             gridViewTextBoxColumn1.Width = 49;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "Product.Product_Name";
+            gridViewTextBoxColumn2.FieldName = "ProductID";
             gridViewTextBoxColumn2.HeaderText = "Product Name";
             gridViewTextBoxColumn2.Name = "Product_Name";
             gridViewTextBoxColumn2.Width = 258;
