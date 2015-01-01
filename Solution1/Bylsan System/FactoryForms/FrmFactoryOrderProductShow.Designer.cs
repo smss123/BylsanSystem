@@ -28,14 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.DGVProducts = new Telerik.WinControls.UI.RadGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,12 +48,17 @@
             this.PhotoBox = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.DGVProducts = new System.Windows.Forms.DataGridView();
+            this.SaveChangesBtn = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVProducts.MasterTemplate)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +66,7 @@
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 503);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(810, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(789, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -77,66 +76,10 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(446, 503);
+            this.groupBox1.Size = new System.Drawing.Size(429, 503);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "OrderProduct";
-            // 
-            // DGVProducts
-            // 
-            this.DGVProducts.BackColor = System.Drawing.SystemColors.Control;
-            this.DGVProducts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DGVProducts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGVProducts.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
-            this.DGVProducts.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.DGVProducts.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DGVProducts.Location = new System.Drawing.Point(3, 18);
-            // 
-            // DGVProducts
-            // 
-            this.DGVProducts.MasterTemplate.AutoGenerateColumns = false;
-            this.DGVProducts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "ID";
-            gridViewTextBoxColumn5.HeaderText = "ID";
-            gridViewTextBoxColumn5.Name = "ID";
-            gridViewTextBoxColumn5.Width = 66;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "Product.Product_Name";
-            gridViewTextBoxColumn6.HeaderText = "Product Name";
-            gridViewTextBoxColumn6.Name = "ProductName";
-            gridViewTextBoxColumn6.Width = 170;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "Qty";
-            gridViewTextBoxColumn7.HeaderText = "Quantity";
-            gridViewTextBoxColumn7.Name = "Quantity";
-            gridViewTextBoxColumn7.Width = 88;
-            gridViewCheckBoxColumn2.EnableExpressionEditor = false;
-            gridViewCheckBoxColumn2.HeaderText = "Check";
-            gridViewCheckBoxColumn2.MinWidth = 20;
-            gridViewCheckBoxColumn2.Name = "Check";
-            gridViewCheckBoxColumn2.Width = 100;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "ProductID";
-            gridViewTextBoxColumn8.HeaderText = "column1";
-            gridViewTextBoxColumn8.IsVisible = false;
-            gridViewTextBoxColumn8.Name = "ProductIDx";
-            gridViewTextBoxColumn8.Width = 46;
-            this.DGVProducts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewCheckBoxColumn2,
-            gridViewTextBoxColumn8});
-            this.DGVProducts.MasterTemplate.EnableFiltering = true;
-            this.DGVProducts.Name = "DGVProducts";
-            this.DGVProducts.ReadOnly = true;
-            this.DGVProducts.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DGVProducts.Size = new System.Drawing.Size(440, 482);
-            this.DGVProducts.TabIndex = 0;
-            this.DGVProducts.Text = "OrdeProductGridView";
-            this.DGVProducts.ThemeName = "VisualStudio2012Light";
-            this.DGVProducts.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DGVProducts_MouseDoubleClick);
             // 
             // groupBox2
             // 
@@ -144,7 +87,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.labCustomerPhone);
             this.groupBox2.Controls.Add(this.labCustomerName);
-            this.groupBox2.Location = new System.Drawing.Point(452, 12);
+            this.groupBox2.Location = new System.Drawing.Point(455, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(317, 107);
             this.groupBox2.TabIndex = 2;
@@ -193,6 +136,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.SaveChangesBtn);
             this.groupBox3.Controls.Add(this.CloseBtn);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.ChkToDeliver);
@@ -314,12 +258,63 @@
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 1;
             // 
+            // DGVProducts
+            // 
+            this.DGVProducts.BackgroundColor = System.Drawing.Color.White;
+            this.DGVProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column5});
+            this.DGVProducts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DGVProducts.Location = new System.Drawing.Point(6, 21);
+            this.DGVProducts.Name = "DGVProducts";
+            this.DGVProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVProducts.Size = new System.Drawing.Size(400, 309);
+            this.DGVProducts.TabIndex = 0;
+            this.DGVProducts.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DGVProducts_MouseDoubleClick_1);
+            // 
+            // SaveChangesBtn
+            // 
+            this.SaveChangesBtn.Location = new System.Drawing.Point(49, 333);
+            this.SaveChangesBtn.Name = "SaveChangesBtn";
+            this.SaveChangesBtn.Size = new System.Drawing.Size(153, 28);
+            this.SaveChangesBtn.TabIndex = 19;
+            this.SaveChangesBtn.Text = "Save Changes";
+            this.SaveChangesBtn.UseVisualStyleBackColor = true;
+            this.SaveChangesBtn.Click += new System.EventHandler(this.SaveChangesBtn_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Order Product ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Product Name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Qty";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Ok";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 40;
+            // 
             // FrmFactoryOrderProductShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(810, 525);
+            this.ClientSize = new System.Drawing.Size(789, 525);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -336,13 +331,12 @@
             this.ThemeName = "VisualStudio2012Light";
             this.Load += new System.EventHandler(this.FrmFactoryOrderProductShow_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGVProducts.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -353,7 +347,6 @@
 
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private Telerik.WinControls.UI.RadGridView DGVProducts;
         private System.Windows.Forms.GroupBox groupBox2;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
@@ -372,5 +365,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button CloseBtn;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
+        private System.Windows.Forms.DataGridView DGVProducts;
+        private System.Windows.Forms.Button SaveChangesBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
     }
 }

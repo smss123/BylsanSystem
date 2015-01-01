@@ -28,12 +28,18 @@ namespace Bylsan_System.FactoryForms
         private void PopulateGrd()
         {
             Operation.BeginOperation(this);
-            DGVProducts.Rows.Clear();
-            var q = new object();
-            q = TagOrder.OrderProducts.ToList();//OrderProductsCmd.GetAllByOrderID(TaregtOrder);
+            ChkToDeliver.Visible = false;
+             var q = TagOrder.OrderProducts.ToList();//OrderProductsCmd.GetAllByOrderID(TaregtOrder);
             this.Invoke((MethodInvoker)delegate
             {
-                DGVProducts.DataSource = q;
+                foreach (var item in q)
+                {
+                 
+                     DGVProducts.Rows.Add(new string[] { item .ID .ToString (),item .ProductID .ToString (),
+                     item .Qty .ToString ()
+                     });
+                }
+              
 
             });
             Operation.EndOperation(this);
@@ -55,39 +61,30 @@ namespace Bylsan_System.FactoryForms
         Thread productThread;
         private void DGVProducts_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (DGVProducts.Rows.Count != 0)
-            {
-
-                LoadCleaner();
-
-                productThread = new Thread(LoadProdcutInformations);
-                productThread.Start();
-            }
-      
+       
 
         }
 
         void LoadProdcutInformations()
         {
-            //PrdID = 0;
-            //PrdID = int.Parse(DGVProducts.CurrentRow.Cells[4].Value.ToString());
+            PrdID = 0;
+            PrdID = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString());
 
-            var lst1 = (OrderProduct)DGVProducts.CurrentRow.DataBoundItem; //OrderProductsCmd.GetAllByProductID(PrdID);
-            var lst2 = lst1.Product; //ProductsCmd.GetProductByID(PrdID);
-
-            
+            var lst1 = OrderProductsCmd.GetAllByProductID(PrdID);
+      
+            var CurrentProduct  =    ProductsCmd.GetProductByID(PrdID);         
             this.Invoke((MethodInvoker)delegate
             {
               
 
-                    TxtDescription.Text = lst1.Description;
-                    PhotoBox.Image = lst1.ImageX;
+                    TxtDescription.Text = lst1[0].Description;
+                    PhotoBox.Image = lst1[0].ImageX;
                
                 // Get Main Data From Product Table {Any way} : 
 
-                    lblPoductName.Text = lst2.Product_Name;
+                    lblPoductName.Text = CurrentProduct[0].Product_Name;
                     lblPrice.Text = "[none]";
-              
+
 
                 productThread.Abort();
             });
@@ -127,6 +124,45 @@ namespace Bylsan_System.FactoryForms
             op.ShowDialog();
             PhotoBox.Image.Save(op.FileName);
 
+        }
+
+        private void SaveChangesBtn_Click(object sender, EventArgs e)
+        {
+            Order OrderTb = new Order();
+
+            for (int i = 0; i < DGVProducts.Rows.Count; i++)
+            {
+              
+                DataGridViewCheckBoxCell chkchecking = DGVProducts.Rows[i].Cells[3] as DataGridViewCheckBoxCell;
+                if (Convert.ToBoolean(chkchecking.Value) == true)
+                {
+                    
+                    int Indx = DGVProducts.CurrentRow.Index;
+                    DGVProducts.Rows.RemoveAt(Indx);
+                
+                }
+               
+                // Start Edit At Order Table :
+               OrderTb = new Order()
+                {
+                    OrderStatus = "To Deliver",
+                };
+
+                OrdersCmd.EditOrderStatusOnly(OrderTb, TaregtOrder);
+            }
+        }
+
+        private void DGVProducts_MouseDoubleClick_1(object sender, MouseEventArgs e)
+        {
+            if (DGVProducts.Rows.Count != 0)
+            {
+
+                LoadCleaner();
+
+                productThread = new Thread(LoadProdcutInformations);
+                productThread.Start();
+            }
+      
         }
     }
 }
