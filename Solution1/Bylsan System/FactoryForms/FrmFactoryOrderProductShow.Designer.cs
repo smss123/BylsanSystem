@@ -54,11 +54,15 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.DGVContents = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVContents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +76,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.DGVProducts);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -157,9 +162,9 @@
             // 
             // CloseBtn
             // 
-            this.CloseBtn.Location = new System.Drawing.Point(219, 338);
+            this.CloseBtn.Location = new System.Drawing.Point(207, 333);
             this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(75, 23);
+            this.CloseBtn.Size = new System.Drawing.Size(87, 28);
             this.CloseBtn.TabIndex = 18;
             this.CloseBtn.Text = "Close";
             this.CloseBtn.UseVisualStyleBackColor = true;
@@ -277,9 +282,9 @@
             // 
             // SaveChangesBtn
             // 
-            this.SaveChangesBtn.Location = new System.Drawing.Point(49, 333);
+            this.SaveChangesBtn.Location = new System.Drawing.Point(17, 333);
             this.SaveChangesBtn.Name = "SaveChangesBtn";
-            this.SaveChangesBtn.Size = new System.Drawing.Size(153, 28);
+            this.SaveChangesBtn.Size = new System.Drawing.Size(184, 28);
             this.SaveChangesBtn.TabIndex = 19;
             this.SaveChangesBtn.Text = "Save Changes";
             this.SaveChangesBtn.UseVisualStyleBackColor = true;
@@ -309,6 +314,24 @@
             this.Column5.Name = "Column5";
             this.Column5.Width = 40;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.DGVContents);
+            this.groupBox4.Location = new System.Drawing.Point(12, 342);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(393, 125);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Product Comtents";
+            // 
+            // DGVContents
+            // 
+            this.DGVContents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVContents.Location = new System.Drawing.Point(6, 21);
+            this.DGVContents.Name = "DGVContents";
+            this.DGVContents.Size = new System.Drawing.Size(381, 85);
+            this.DGVContents.TabIndex = 0;
+            // 
             // FrmFactoryOrderProductShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,6 +360,8 @@
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVContents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -371,5 +396,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView DGVContents;
     }
 }

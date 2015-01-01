@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using XamaDataLayer.Helper_Classes;
-
+using Xprema.XExtention;
 using System.Threading;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
+using XamaDataLayer.Main_Store;
 
 namespace Bylsan_System.FactoryForms
 {
@@ -28,7 +29,7 @@ namespace Bylsan_System.FactoryForms
         private void PopulateGrd()
         {
             Operation.BeginOperation(this);
-            ChkToDeliver.Visible = false;
+          
              var q = TagOrder.OrderProducts.ToList();//OrderProductsCmd.GetAllByOrderID(TaregtOrder);
             this.Invoke((MethodInvoker)delegate
             {
@@ -38,6 +39,9 @@ namespace Bylsan_System.FactoryForms
                      DGVProducts.Rows.Add(new string[] { item .ID .ToString (),item .ProductID .ToString (),
                      item .Qty .ToString ()
                      });
+
+
+                   
                 }
               
 
@@ -50,6 +54,8 @@ namespace Bylsan_System.FactoryForms
 
         private void FrmFactoryOrderProductShow_Load(object sender, EventArgs e)
         {
+
+            ChkToDeliver.Visible = false;
             PhotoBox.Image = null;
             //================================
             Thr = new Thread(PopulateGrd);
@@ -152,6 +158,38 @@ namespace Bylsan_System.FactoryForms
             }
         }
 
+
+        void CreateContents() {
+
+            DGVContents.ColumnCount = 4;
+            DGVContents.Columns[0].HeaderText = "ID";
+            DGVContents.Columns[1].HeaderText = "Item";
+            DGVContents.Columns[2].HeaderText = "QTY";
+            DGVContents.Columns[3].HeaderText = "Unit";
+            DGVContents.DataSource = null;
+            int xproid = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString());
+            var lst  = ProductContentsCmd.GetAllProductConentsByProductID(xproid);
+            DGVContents.Rows.Clear();
+            foreach (var item in lst)
+            {
+                DGVContents.Rows.Add(new string[] {item .ID .ToString (),
+                item .ContentsProductID .ToString (),
+                item .Qty .ToString (),
+                item .unitOfProduct .ToString ()
+                });
+
+
+                float AvailQty = 0;
+                var TargetStore = StoreCmd.GetAvailableQtyByItemID(item.ID);
+                AvailQty = TargetStore.AvailableQty.Value;
+                TargetStore.ItemID = item.ID;
+                TargetStore.AvailableQty -= (long)(item.Qty.ToString () ).ToFloat();
+                TargetStore.Description = "Drawal";
+                StoreCmd.EditStore(TargetStore);
+            }
+            //==============================================================
+
+        }
         private void DGVProducts_MouseDoubleClick_1(object sender, MouseEventArgs e)
         {
             if (DGVProducts.Rows.Count != 0)
@@ -161,6 +199,8 @@ namespace Bylsan_System.FactoryForms
 
                 productThread = new Thread(LoadProdcutInformations);
                 productThread.Start();
+
+                CreateContents();
             }
       
         }

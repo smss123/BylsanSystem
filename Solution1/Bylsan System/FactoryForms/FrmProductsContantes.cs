@@ -165,12 +165,12 @@ namespace Bylsan_System.FactoryForms
                     };
                     ProductContentsCmd.AddProductContents(tb);//z
                     //===================================================
-                    TargetStore.ItemID = itmID;
-                    TargetStore.AvailableQty -= (long)(txtQty.Text).ToFloat();
-                    TargetStore.Description = "Drawal";
-                    StoreCmd.EditStore(TargetStore);
+                    //TargetStore.ItemID = itmID;
+                    //TargetStore.AvailableQty -= (long)(txtQty.Text).ToFloat();
+                    //TargetStore.Description = "Drawal";
+                    //StoreCmd.EditStore(TargetStore);
                     
-                    //==============================================================
+                    ////==============================================================
                    
 
                     Operation.EndOperation(this);
