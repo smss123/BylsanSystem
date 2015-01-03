@@ -30,12 +30,20 @@
         {
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.DGVContents = new System.Windows.Forms.DataGridView();
+            this.DGVProducts = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labCustomerPhone = new System.Windows.Forms.Label();
             this.labCustomerName = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.SaveChangesBtn = new System.Windows.Forms.Button();
             this.CloseBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.ChkToDeliver = new System.Windows.Forms.CheckBox();
@@ -48,21 +56,13 @@
             this.PhotoBox = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.DGVProducts = new System.Windows.Forms.DataGridView();
-            this.SaveChangesBtn = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.DGVContents = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVContents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVContents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,6 +85,69 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "OrderProduct";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.DGVContents);
+            this.groupBox4.Location = new System.Drawing.Point(12, 342);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(393, 125);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Product Comtents";
+            // 
+            // DGVContents
+            // 
+            this.DGVContents.AllowUserToAddRows = false;
+            this.DGVContents.BackgroundColor = System.Drawing.Color.White;
+            this.DGVContents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVContents.Location = new System.Drawing.Point(6, 21);
+            this.DGVContents.Name = "DGVContents";
+            this.DGVContents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVContents.Size = new System.Drawing.Size(381, 85);
+            this.DGVContents.TabIndex = 0;
+            // 
+            // DGVProducts
+            // 
+            this.DGVProducts.AllowUserToAddRows = false;
+            this.DGVProducts.BackgroundColor = System.Drawing.Color.White;
+            this.DGVProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column5});
+            this.DGVProducts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DGVProducts.Location = new System.Drawing.Point(6, 21);
+            this.DGVProducts.Name = "DGVProducts";
+            this.DGVProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGVProducts.Size = new System.Drawing.Size(400, 309);
+            this.DGVProducts.TabIndex = 0;
+            this.DGVProducts.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DGVProducts_MouseDoubleClick_1);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Order Product ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Product Name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Qty";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Ok";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 40;
             // 
             // groupBox2
             // 
@@ -159,6 +222,16 @@
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Product Information";
+            // 
+            // SaveChangesBtn
+            // 
+            this.SaveChangesBtn.Location = new System.Drawing.Point(17, 333);
+            this.SaveChangesBtn.Name = "SaveChangesBtn";
+            this.SaveChangesBtn.Size = new System.Drawing.Size(184, 28);
+            this.SaveChangesBtn.TabIndex = 19;
+            this.SaveChangesBtn.Text = "Save Changes";
+            this.SaveChangesBtn.UseVisualStyleBackColor = true;
+            this.SaveChangesBtn.Click += new System.EventHandler(this.SaveChangesBtn_Click);
             // 
             // CloseBtn
             // 
@@ -263,75 +336,6 @@
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 1;
             // 
-            // DGVProducts
-            // 
-            this.DGVProducts.BackgroundColor = System.Drawing.Color.White;
-            this.DGVProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column5});
-            this.DGVProducts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DGVProducts.Location = new System.Drawing.Point(6, 21);
-            this.DGVProducts.Name = "DGVProducts";
-            this.DGVProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVProducts.Size = new System.Drawing.Size(400, 309);
-            this.DGVProducts.TabIndex = 0;
-            this.DGVProducts.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DGVProducts_MouseDoubleClick_1);
-            // 
-            // SaveChangesBtn
-            // 
-            this.SaveChangesBtn.Location = new System.Drawing.Point(17, 333);
-            this.SaveChangesBtn.Name = "SaveChangesBtn";
-            this.SaveChangesBtn.Size = new System.Drawing.Size(184, 28);
-            this.SaveChangesBtn.TabIndex = 19;
-            this.SaveChangesBtn.Text = "Save Changes";
-            this.SaveChangesBtn.UseVisualStyleBackColor = true;
-            this.SaveChangesBtn.Click += new System.EventHandler(this.SaveChangesBtn_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Order Product ID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Product Name";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Qty";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Ok";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 40;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.DGVContents);
-            this.groupBox4.Location = new System.Drawing.Point(12, 342);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(393, 125);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Product Comtents";
-            // 
-            // DGVContents
-            // 
-            this.DGVContents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVContents.Location = new System.Drawing.Point(6, 21);
-            this.DGVContents.Name = "DGVContents";
-            this.DGVContents.Size = new System.Drawing.Size(381, 85);
-            this.DGVContents.TabIndex = 0;
-            // 
             // FrmFactoryOrderProductShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,14 +358,14 @@
             this.ThemeName = "VisualStudio2012Light";
             this.Load += new System.EventHandler(this.FrmFactoryOrderProductShow_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVContents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGVContents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

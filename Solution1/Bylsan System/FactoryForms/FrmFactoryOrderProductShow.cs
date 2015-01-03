@@ -54,7 +54,17 @@ namespace Bylsan_System.FactoryForms
 
         private void FrmFactoryOrderProductShow_Load(object sender, EventArgs e)
         {
+            DGVContents.ColumnCount = 4;
+            DGVContents.Columns[0].HeaderText = "ID";
+            DGVContents.Columns[0].Width = 50;
+            DGVContents.Columns[1].HeaderText = "Item";
+            DGVContents.Columns[1].Width = 120;
+            DGVContents.Columns[2].HeaderText = "QTY";
+            DGVContents.Columns[2].Width = 50;
+            DGVContents.Columns[3].HeaderText = "Unit";
+            DGVContents.DataSource = null;
 
+            //==================================
             ChkToDeliver.Visible = false;
             PhotoBox.Image = null;
             //================================
@@ -161,11 +171,11 @@ namespace Bylsan_System.FactoryForms
 
         void CreateContents() {
 
-            DGVContents.ColumnCount = 4;
-            DGVContents.Columns[0].HeaderText = "ID";
-            DGVContents.Columns[1].HeaderText = "Item";
-            DGVContents.Columns[2].HeaderText = "QTY";
-            DGVContents.Columns[3].HeaderText = "Unit";
+            //DGVContents.ColumnCount = 4;
+            //DGVContents.Columns[0].HeaderText = "ID";
+            //DGVContents.Columns[1].HeaderText = "Item";
+            //DGVContents.Columns[2].HeaderText = "QTY";
+            //DGVContents.Columns[3].HeaderText = "Unit";
             DGVContents.DataSource = null;
             int xproid = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString());
             var lst  = ProductContentsCmd.GetAllProductConentsByProductID(xproid);
