@@ -114,7 +114,7 @@
             this.groupBox1.Controls.Add(this.itemNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(911, 284);
+            this.groupBox1.Size = new System.Drawing.Size(911, 280);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
@@ -143,7 +143,7 @@
             this.AddBtn.TabIndex = 5;
             this.AddBtn.Text = "Add";
             this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddBtn.ThemeName = "VisualStudio2012Light";
+            this.AddBtn.ThemeName = "Office2010Black";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // BrowseBtn
@@ -197,7 +197,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(935, 309);
+            this.ClientSize = new System.Drawing.Size(935, 308);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(943, 342);
@@ -211,7 +211,7 @@
             this.RootElement.MaxSize = new System.Drawing.Size(943, 342);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddSellItem";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmAddSellItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox1.ResumeLayout(false);

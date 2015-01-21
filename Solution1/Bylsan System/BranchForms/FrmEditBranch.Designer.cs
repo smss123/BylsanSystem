@@ -97,7 +97,7 @@
             this.EmployeeManagerComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.EmployeeManagerComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // EmployeeManagerComboBox.NestedRadGridView
+            // 
             // 
             this.EmployeeManagerComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.EmployeeManagerComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -185,7 +185,7 @@
             this.EmployeeManagerComboBox.Size = new System.Drawing.Size(195, 20);
             this.EmployeeManagerComboBox.TabIndex = 2;
             this.EmployeeManagerComboBox.TabStop = false;
-            this.EmployeeManagerComboBox.ThemeName = "VisualStudio2012Light";
+            this.EmployeeManagerComboBox.ThemeName = "Office2010Black";
             // 
             // employeeBindingSource
             // 
@@ -203,7 +203,7 @@
             this.AddBtn.TabStop = false;
             this.AddBtn.Text = "Save";
             this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddBtn.ThemeName = "VisualStudio2012Light";
+            this.AddBtn.ThemeName = "Office2010Black";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // label2
@@ -250,7 +250,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(357, 243);
+            this.ClientSize = new System.Drawing.Size(357, 242);
             this.Controls.Add(this.BranchgroupBox);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(365, 276);
@@ -262,9 +262,10 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(365, 276);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Branch";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmEditBranch_Load);
             this.BranchgroupBox.ResumeLayout(false);
             this.BranchgroupBox.PerformLayout();

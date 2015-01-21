@@ -77,7 +77,7 @@
             this.groupBox1.Controls.Add(this.expenssesNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(370, 227);
+            this.groupBox1.Size = new System.Drawing.Size(370, 223);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -93,7 +93,7 @@
             this.AddBtn.TabIndex = 3;
             this.AddBtn.Text = "Add";
             this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddBtn.ThemeName = "VisualStudio2012Light";
+            this.AddBtn.ThemeName = "Office2010Black";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // descriptionTextBox
@@ -128,7 +128,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(394, 251);
+            this.ClientSize = new System.Drawing.Size(394, 247);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(402, 281);
@@ -141,8 +141,8 @@
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(402, 281);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAddExpensses";
-            this.ThemeName = "VisualStudio2012Light";
+            this.Text = "Add Expensses";
+            this.ThemeName = "Office2010Black";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();

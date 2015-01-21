@@ -96,7 +96,7 @@ namespace Bylsan_System.MainStoreForms
                 if (ChkStore.ID != 0)
                 {
                     // Edit AvailableQty
-                    ChkStore.ItemID = int.Parse(ItemColumnComboBox.SelectedValue.ToString());
+                    ChkStore.ProductID = int.Parse(ItemColumnComboBox.SelectedValue.ToString());
                     ChkStore.AvailableQty += int.Parse(QtyTextBox.Text);
                     ChkStore.Description = DescriptiontextBox.Text;
 
@@ -117,7 +117,7 @@ namespace Bylsan_System.MainStoreForms
                 // new 
                 Store tb = new Store
                 {
-                    ItemID = int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
+                    ProductID = int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
                     AvailableQty = int.Parse(QtyTextBox.Text),
                     Description = DescriptiontextBox.Text
                 };

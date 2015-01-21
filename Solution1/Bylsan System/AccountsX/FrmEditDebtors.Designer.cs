@@ -103,7 +103,7 @@
             this.groupBox1.Controls.Add(this.debtorNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(380, 208);
+            this.groupBox1.Size = new System.Drawing.Size(380, 213);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -118,11 +118,12 @@
             this.SaveBtn.TabIndex = 10;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SaveBtn.ThemeName = "VisualStudio2012Light";
+            this.SaveBtn.ThemeName = "Office2010Black";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // debtorDescriptionTextBox1
             // 
+            this.debtorDescriptionTextBox1.BackColor = System.Drawing.SystemColors.Info;
             this.debtorDescriptionTextBox1.Location = new System.Drawing.Point(124, 105);
             this.debtorDescriptionTextBox1.Multiline = true;
             this.debtorDescriptionTextBox1.Name = "debtorDescriptionTextBox1";
@@ -131,6 +132,7 @@
             // 
             // addresssTextBox
             // 
+            this.addresssTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.addresssTextBox.Location = new System.Drawing.Point(124, 76);
             this.addresssTextBox.Name = "addresssTextBox";
             this.addresssTextBox.Size = new System.Drawing.Size(221, 20);
@@ -138,6 +140,7 @@
             // 
             // phoneNumberTextBox
             // 
+            this.phoneNumberTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.phoneNumberTextBox.Location = new System.Drawing.Point(124, 46);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(221, 20);
@@ -145,6 +148,7 @@
             // 
             // debtorNameTextBox
             // 
+            this.debtorNameTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.debtorNameTextBox.Location = new System.Drawing.Point(124, 18);
             this.debtorNameTextBox.Name = "debtorNameTextBox";
             this.debtorNameTextBox.Size = new System.Drawing.Size(221, 20);
@@ -159,7 +163,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(404, 238);
+            this.ClientSize = new System.Drawing.Size(404, 237);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(412, 271);
@@ -171,9 +175,10 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(412, 271);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmEditDebtors";
-            this.ThemeName = "VisualStudio2012Light";
+            this.Text = "Edit Debtors";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmEditDebtors_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

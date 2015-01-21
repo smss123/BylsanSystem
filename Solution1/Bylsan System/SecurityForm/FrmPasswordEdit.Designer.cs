@@ -59,7 +59,7 @@
             this.groupBox1.Controls.Add(this.OldPasswordText);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(327, 194);
+            this.groupBox1.Size = new System.Drawing.Size(327, 190);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Change Password";
@@ -74,7 +74,7 @@
             this.SaveBtn.TabIndex = 14;
             this.SaveBtn.Text = "Save Changes";
             this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SaveBtn.ThemeName = "VisualStudio2012Light";
+            this.SaveBtn.ThemeName = "Office2010Black";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // label3
@@ -139,7 +139,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(351, 218);
+            this.ClientSize = new System.Drawing.Size(351, 217);
             this.Controls.Add(this.groupBox1);
             this.MaximumSize = new System.Drawing.Size(359, 251);
             this.MinimumSize = new System.Drawing.Size(359, 251);
@@ -149,9 +149,10 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(359, 251);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPasswordEdit";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmPasswordEdit_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

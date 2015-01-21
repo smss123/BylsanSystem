@@ -105,7 +105,7 @@
             this.Addbtn.TabIndex = 2;
             this.Addbtn.Text = "Add";
             this.Addbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Addbtn.ThemeName = "VisualStudio2012Light";
+            this.Addbtn.ThemeName = "Office2010Black";
             this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
             // errorProvider1
@@ -117,7 +117,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(377, 180);
+            this.ClientSize = new System.Drawing.Size(377, 179);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(385, 213);
@@ -129,9 +129,10 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(385, 213);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Customer";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Addbtn)).EndInit();

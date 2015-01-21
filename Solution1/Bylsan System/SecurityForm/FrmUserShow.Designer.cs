@@ -135,7 +135,7 @@
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Edit";
             gridViewCommandColumn1.Name = "EditCol";
-            gridViewCommandColumn1.Width = 60;
+            gridViewCommandColumn1.Width = 59;
             this.UserGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
@@ -147,10 +147,10 @@
             this.UserGridView.Name = "UserGridView";
             this.UserGridView.ReadOnly = true;
             this.UserGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.UserGridView.Size = new System.Drawing.Size(813, 450);
+            this.UserGridView.Size = new System.Drawing.Size(813, 449);
             this.UserGridView.TabIndex = 0;
             this.UserGridView.Text = "radGridView1";
-            this.UserGridView.ThemeName = "VisualStudio2012Light";
+            this.UserGridView.ThemeName = "Office2010Black";
             this.UserGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.UserGridView_CommandCellClick);
             // 
             // userBindingSource
@@ -159,7 +159,7 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 467);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 466);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(813, 22);
             this.statusStrip1.TabIndex = 2;
@@ -170,7 +170,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(813, 489);
+            this.ClientSize = new System.Drawing.Size(813, 488);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.UserGridView);
             this.Controls.Add(this.toolStrip1);
@@ -182,9 +182,10 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(821, 522);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmUserShow";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmUserShow_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

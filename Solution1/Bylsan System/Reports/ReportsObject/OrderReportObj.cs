@@ -22,7 +22,7 @@ namespace Bylsan_System.Reports.ReportsObject
         public string OrderStatus { get; set; }
         public double TotalAmount { get; set; }
         public DateTime OrderDate { get; set; }
-        public int DeliverdToBranch { get; set; }
+        public string DeliverdToBranch { get; set; }
 
 
         ////////////////OrderProduct

@@ -52,6 +52,8 @@ namespace Bylsan_System
             Operation.Allproducts = ProductsCmd.GetAllProducts();
             Operation.AllBranches = BranchsCmd.GetAllBranchs();
             Operation.AllSellItems = SellItemsCmd.GetAllSellItems();
+            Operation.AllOrder = OrdersCmd.GetAllOrders();
+            Operation.AllCustomer = CustomersCmd.GetAllCustmers();
         
         }
         void ActivatePermessions()

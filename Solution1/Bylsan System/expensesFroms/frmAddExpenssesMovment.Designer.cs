@@ -86,7 +86,7 @@
             this.groupBox1.Controls.Add(this.amountTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(345, 270);
+            this.groupBox1.Size = new System.Drawing.Size(345, 266);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
@@ -155,7 +155,7 @@
             this.AccountsComboBox.Size = new System.Drawing.Size(231, 20);
             this.AccountsComboBox.TabIndex = 1;
             this.AccountsComboBox.TabStop = false;
-            this.AccountsComboBox.ThemeName = "VisualStudio2012Light";
+            this.AccountsComboBox.ThemeName = "Office2010Black";
             // 
             // accountBindingSource
             // 
@@ -172,7 +172,7 @@
             this.AddBtn.TabIndex = 3;
             this.AddBtn.Text = "Add";
             this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddBtn.ThemeName = "VisualStudio2012Light";
+            this.AddBtn.ThemeName = "Office2010Black";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // descriptionTextBox
@@ -202,7 +202,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(369, 294);
+            this.ClientSize = new System.Drawing.Size(369, 290);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(377, 324);
@@ -214,9 +214,10 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(377, 324);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddExpenssesMovment";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.frmAddExpenssesMovment_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

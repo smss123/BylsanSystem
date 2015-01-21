@@ -54,6 +54,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.ReceiptVoucherButton = new Telerik.WinControls.UI.RadButton();
             this.PrintBtn = new Telerik.WinControls.UI.RadButton();
+            this.btnBack = new Telerik.WinControls.UI.RadButton();
             this.OkeyBtn = new Telerik.WinControls.UI.RadButton();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
@@ -61,6 +62,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReceiptVoucherButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrintBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OkeyBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
@@ -248,9 +250,10 @@
             // 
             this.panel1.Controls.Add(this.ReceiptVoucherButton);
             this.panel1.Controls.Add(this.PrintBtn);
+            this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.OkeyBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 424);
+            this.panel1.Location = new System.Drawing.Point(0, 423);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(632, 46);
             this.panel1.TabIndex = 9;
@@ -265,7 +268,7 @@
             this.ReceiptVoucherButton.TabIndex = 2;
             this.ReceiptVoucherButton.Text = "print  Receipt Voucher";
             this.ReceiptVoucherButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ReceiptVoucherButton.ThemeName = "VisualStudio2012Light";
+            this.ReceiptVoucherButton.ThemeName = "Office2010Black";
             // 
             // PrintBtn
             // 
@@ -277,8 +280,19 @@
             this.PrintBtn.TabIndex = 1;
             this.PrintBtn.Text = "Print bill";
             this.PrintBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.PrintBtn.ThemeName = "VisualStudio2012Light";
+            this.PrintBtn.ThemeName = "Office2010Black";
             this.PrintBtn.Click += new System.EventHandler(this.PrintBtn_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(320, 4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(109, 38);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.Text = "Back";
+            this.btnBack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBack.ThemeName = "Office2010Black";
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // OkeyBtn
             // 
@@ -289,7 +303,7 @@
             this.OkeyBtn.TabIndex = 0;
             this.OkeyBtn.Text = "Ok";
             this.OkeyBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.OkeyBtn.ThemeName = "VisualStudio2012Light";
+            this.OkeyBtn.ThemeName = "Office2010Black";
             this.OkeyBtn.Click += new System.EventHandler(this.OkeyBtn_Click);
             // 
             // radGridView1
@@ -321,7 +335,7 @@
             gridViewTextBoxColumn4.Expression = "ColProductPrice * ColQty";
             gridViewTextBoxColumn4.HeaderText = "Price";
             gridViewTextBoxColumn4.Name = "ColPrice";
-            gridViewTextBoxColumn4.Width = 157;
+            gridViewTextBoxColumn4.Width = 156;
             gridViewTextBoxColumn5.FieldName = "ProductID";
             gridViewTextBoxColumn5.HeaderText = "ProductID";
             gridViewTextBoxColumn5.IsVisible = false;
@@ -338,14 +352,14 @@
             this.radGridView1.Size = new System.Drawing.Size(629, 245);
             this.radGridView1.TabIndex = 14;
             this.radGridView1.Text = "radGridView1";
-            this.radGridView1.ThemeName = "VisualStudio2012Light";
+            this.radGridView1.ThemeName = "Office2010Black";
             // 
             // FrmTotalOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(632, 470);
+            this.ClientSize = new System.Drawing.Size(632, 469);
             this.Controls.Add(this.radGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CustomerInfomationGroupBox);
@@ -357,15 +371,17 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(640, 503);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTotalOrder";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmTotalOrder_Load_1);
             this.CustomerInfomationGroupBox.ResumeLayout(false);
             this.CustomerInfomationGroupBox.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ReceiptVoucherButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrintBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OkeyBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
@@ -400,5 +416,6 @@
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private Telerik.WinControls.UI.RadButton ReceiptVoucherButton;
         private Telerik.WinControls.UI.RadButton PrintBtn;
+        private Telerik.WinControls.UI.RadButton btnBack;
     }
 }

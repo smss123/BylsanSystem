@@ -140,7 +140,7 @@ namespace Bylsan_System.MainStoreForms
             th.Start();
 
             XStoreManegerID = TregatStorManeger.ID;
-            StoreComboBox.Text = TregatStorManeger.Store.ItemID.ToString();
+            StoreComboBox.Text = TregatStorManeger.Store.ProductID.ToString();
             processTypeComboBox.Text = TregatStorManeger.ProcessType;
             priceTextBox.Text = TregatStorManeger.Price.ToString();
             descriptionTextBox.Text = TregatStorManeger.Description;

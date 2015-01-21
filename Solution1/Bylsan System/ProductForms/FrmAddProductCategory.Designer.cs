@@ -87,7 +87,7 @@
             this.AddBtn.TabIndex = 3;
             this.AddBtn.Text = "Add";
             this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddBtn.ThemeName = "VisualStudio2012Light";
+            this.AddBtn.ThemeName = "Office2010Black";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // descriptionTextBox
@@ -116,7 +116,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(393, 220);
+            this.ClientSize = new System.Drawing.Size(393, 219);
             this.Controls.Add(this.ProductCategorygroupBox);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(401, 253);
@@ -128,9 +128,10 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(401, 253);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Product Category";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmAddProductCategory_Load);
             this.ProductCategorygroupBox.ResumeLayout(false);
             this.ProductCategorygroupBox.PerformLayout();

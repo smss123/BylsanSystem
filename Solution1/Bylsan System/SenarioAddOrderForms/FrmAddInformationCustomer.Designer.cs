@@ -166,11 +166,13 @@
             this.InformationsBox.Location = new System.Drawing.Point(13, 18);
             this.InformationsBox.Multiline = true;
             this.InformationsBox.Name = "InformationsBox";
-            this.InformationsBox.Size = new System.Drawing.Size(462, 110);
+            this.InformationsBox.Size = new System.Drawing.Size(462, 102);
             this.InformationsBox.TabIndex = 0;
             // 
             // customerNameTextBox
             // 
+            this.customerNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.customerNameTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.customerNameTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.customerNameTextBox.Location = new System.Drawing.Point(110, 66);
             this.customerNameTextBox.Name = "customerNameTextBox";
@@ -179,6 +181,8 @@
             // 
             // phoneNumberTextBox
             // 
+            this.phoneNumberTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.phoneNumberTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.phoneNumberTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.phoneNumberTextBox.Location = new System.Drawing.Point(110, 28);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
@@ -217,9 +221,10 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAddInformationCustomer";
-            this.ThemeName = "VisualStudio2012Light";
+            this.Text = "Add Information Customer";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmAddInformationCustomer_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

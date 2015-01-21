@@ -88,7 +88,7 @@
             this.NextBtn.Size = new System.Drawing.Size(127, 37);
             this.NextBtn.TabIndex = 5;
             this.NextBtn.Text = "Next";
-            this.NextBtn.ThemeName = "Windows8";
+            this.NextBtn.ThemeName = "Office2010Black";
             this.NextBtn.Click += new System.EventHandler(this.NextBtn_Click);
             // 
             // frmManagePoint
@@ -107,9 +107,10 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmManagePoint";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.frmManagePoint_Load);
             ((System.ComponentModel.ISupportInitialize)(this.systemSettingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NextBtn)).EndInit();

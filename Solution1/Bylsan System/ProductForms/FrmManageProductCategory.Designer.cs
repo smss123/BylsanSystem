@@ -161,7 +161,7 @@
             gridViewCommandColumn2.HeaderText = "Delete";
             gridViewCommandColumn2.Name = "DeleteColm";
             gridViewCommandColumn2.UseDefaultText = true;
-            gridViewCommandColumn2.Width = 46;
+            gridViewCommandColumn2.Width = 45;
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
@@ -177,7 +177,7 @@
             this.radGridView1.Size = new System.Drawing.Size(639, 290);
             this.radGridView1.TabIndex = 0;
             this.radGridView1.Text = "radGridView1";
-            this.radGridView1.ThemeName = "VisualStudio2012Light";
+            this.radGridView1.ThemeName = "Office2010Black";
             // 
             // productCategoryBindingSource
             // 
@@ -197,9 +197,10 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmManageProductCategory";
-            this.ThemeName = "VisualStudio2012Light";
+            this.Text = "Manage Product Category";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmManageProductCategory_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

@@ -19,6 +19,7 @@ namespace Bylsan_System.Reports.ReportsObject
         public string ProductPublicName { get; set; }
         public double ProductPrice { get; set; }
         public string QuotationDescription { get; set; }
+        public string  QuotaionID { get; set; }
      
 
     }

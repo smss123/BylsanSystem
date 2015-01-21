@@ -29,16 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CmbToAccount = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CmbFromAccount = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.SaveBtn = new System.Windows.Forms.Button();
@@ -49,17 +52,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.CmbFromAccount = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.CmbToAccount = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount.EditorControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbToAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbToAccount.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbToAccount.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount.EditorControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,87 +85,76 @@
             this.groupBox1.Text = "Private withdrawals";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label2
+            // CmbToAccount
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 15);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "The Amount";
+            this.CmbToAccount.DataSource = this.accountBindingSource;
+            this.CmbToAccount.DisplayMember = "AccountName";
             // 
-            // txtAmount
+            // CmbToAccount.NestedRadGridView
             // 
-            this.txtAmount.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(105, 34);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(63, 23);
-            this.txtAmount.TabIndex = 9;
-            this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
+            this.CmbToAccount.EditorControl.BackColor = System.Drawing.SystemColors.Window;
+            this.CmbToAccount.EditorControl.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CmbToAccount.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.CmbToAccount.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CmbToAccount.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.CmbToAccount.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // SaveBtn
+            // CmbToAccount.NestedRadGridView
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(105, 216);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(128, 32);
-            this.SaveBtn.TabIndex = 8;
-            this.SaveBtn.Text = "Save";
-            this.SaveBtn.UseVisualStyleBackColor = true;
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            this.CmbToAccount.EditorControl.MasterTemplate.AllowAddNewRow = false;
+            this.CmbToAccount.EditorControl.MasterTemplate.AllowCellContextMenu = false;
+            this.CmbToAccount.EditorControl.MasterTemplate.AllowColumnChooser = false;
+            this.CmbToAccount.EditorControl.MasterTemplate.AutoGenerateColumns = false;
+            this.CmbToAccount.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewDecimalColumn1.DataType = typeof(int);
+            gridViewDecimalColumn1.EnableExpressionEditor = false;
+            gridViewDecimalColumn1.FieldName = "ID";
+            gridViewDecimalColumn1.HeaderText = "ID";
+            gridViewDecimalColumn1.IsAutoGenerated = true;
+            gridViewDecimalColumn1.IsVisible = false;
+            gridViewDecimalColumn1.Name = "ID";
+            gridViewDecimalColumn1.Width = 64;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "AccountName";
+            gridViewTextBoxColumn1.HeaderText = "AccountName";
+            gridViewTextBoxColumn1.IsAutoGenerated = true;
+            gridViewTextBoxColumn1.Name = "AccountName";
+            gridViewTextBoxColumn1.Width = 74;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "Description";
+            gridViewTextBoxColumn2.HeaderText = "Description";
+            gridViewTextBoxColumn2.IsAutoGenerated = true;
+            gridViewTextBoxColumn2.Name = "Description";
+            gridViewTextBoxColumn2.Width = 76;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "AccountCategory.AccountCategoryName";
+            gridViewTextBoxColumn3.HeaderText = "Category";
+            gridViewTextBoxColumn3.Name = "Category";
+            gridViewTextBoxColumn3.Width = 72;
+            this.CmbToAccount.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewDecimalColumn1,
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3});
+            this.CmbToAccount.EditorControl.MasterTemplate.DataSource = this.accountBindingSource;
+            this.CmbToAccount.EditorControl.MasterTemplate.EnableGrouping = false;
+            this.CmbToAccount.EditorControl.MasterTemplate.ShowFilteringRow = false;
+            this.CmbToAccount.EditorControl.Name = "NestedRadGridView";
+            this.CmbToAccount.EditorControl.ReadOnly = true;
+            this.CmbToAccount.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.CmbToAccount.EditorControl.ShowGroupPanel = false;
+            this.CmbToAccount.EditorControl.Size = new System.Drawing.Size(240, 150);
+            this.CmbToAccount.EditorControl.TabIndex = 0;
+            this.CmbToAccount.Location = new System.Drawing.Point(105, 101);
+            this.CmbToAccount.Name = "CmbToAccount";
+            this.CmbToAccount.Size = new System.Drawing.Size(312, 20);
+            this.CmbToAccount.TabIndex = 16;
+            this.CmbToAccount.TabStop = false;
+            this.CmbToAccount.ThemeName = "Office2010Black";
             // 
-            // label5
+            // accountBindingSource
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(102, 146);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 15);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Description";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(49, 112);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 15);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "To";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "From";
-            // 
-            // lblAvailableAmount
-            // 
-            this.lblAvailableAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblAvailableAmount.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvailableAmount.Location = new System.Drawing.Point(318, 28);
-            this.lblAvailableAmount.Name = "lblAvailableAmount";
-            this.lblAvailableAmount.Size = new System.Drawing.Size(99, 29);
-            this.lblAvailableAmount.TabIndex = 4;
-            this.lblAvailableAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(211, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 15);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Available Amount";
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(105, 162);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(312, 48);
-            this.txtDescription.TabIndex = 2;
+            this.accountBindingSource.DataSource = typeof(XamaDataLayer.Account);
             // 
             // CmbFromAccount
             // 
@@ -213,7 +202,7 @@
             gridViewTextBoxColumn6.FieldName = "AccountCategory.AccountCategoryName";
             gridViewTextBoxColumn6.HeaderText = "Category";
             gridViewTextBoxColumn6.Name = "Category";
-            gridViewTextBoxColumn6.Width = 63;
+            gridViewTextBoxColumn6.Width = 64;
             this.CmbFromAccount.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn2,
             gridViewTextBoxColumn4,
@@ -236,83 +225,95 @@
             this.CmbFromAccount.Size = new System.Drawing.Size(312, 20);
             this.CmbFromAccount.TabIndex = 15;
             this.CmbFromAccount.TabStop = false;
-            this.CmbFromAccount.ThemeName = "VisualStudio2012Light";
+            this.CmbFromAccount.ThemeName = "Office2010Black";
             // 
-            // CmbToAccount
+            // label2
             // 
-            this.CmbToAccount.DataSource = this.accountBindingSource;
-            this.CmbToAccount.DisplayMember = "AccountName";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 15);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "The Amount";
             // 
-            // CmbToAccount.NestedRadGridView
+            // txtAmount
             // 
-            this.CmbToAccount.EditorControl.BackColor = System.Drawing.SystemColors.Window;
-            this.CmbToAccount.EditorControl.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CmbToAccount.EditorControl.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.CmbToAccount.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.CmbToAccount.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.CmbToAccount.EditorControl.Location = new System.Drawing.Point(0, 0);
+            this.txtAmount.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmount.Location = new System.Drawing.Point(105, 34);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(89, 23);
+            this.txtAmount.TabIndex = 9;
+            this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
-            // CmbToAccount.NestedRadGridView
+            // SaveBtn
             // 
-            this.CmbToAccount.EditorControl.MasterTemplate.AllowAddNewRow = false;
-            this.CmbToAccount.EditorControl.MasterTemplate.AllowCellContextMenu = false;
-            this.CmbToAccount.EditorControl.MasterTemplate.AllowColumnChooser = false;
-            this.CmbToAccount.EditorControl.MasterTemplate.AutoGenerateColumns = false;
-            this.CmbToAccount.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn1.DataType = typeof(int);
-            gridViewDecimalColumn1.EnableExpressionEditor = false;
-            gridViewDecimalColumn1.FieldName = "ID";
-            gridViewDecimalColumn1.HeaderText = "ID";
-            gridViewDecimalColumn1.IsAutoGenerated = true;
-            gridViewDecimalColumn1.IsVisible = false;
-            gridViewDecimalColumn1.Name = "ID";
-            gridViewDecimalColumn1.Width = 64;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "AccountName";
-            gridViewTextBoxColumn1.HeaderText = "AccountName";
-            gridViewTextBoxColumn1.IsAutoGenerated = true;
-            gridViewTextBoxColumn1.Name = "AccountName";
-            gridViewTextBoxColumn1.Width = 74;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "Description";
-            gridViewTextBoxColumn2.HeaderText = "Description";
-            gridViewTextBoxColumn2.IsAutoGenerated = true;
-            gridViewTextBoxColumn2.Name = "Description";
-            gridViewTextBoxColumn2.Width = 76;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "AccountCategory.AccountCategoryName";
-            gridViewTextBoxColumn3.HeaderText = "Category";
-            gridViewTextBoxColumn3.Name = "Category";
-            gridViewTextBoxColumn3.Width = 71;
-            this.CmbToAccount.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn1,
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3});
-            this.CmbToAccount.EditorControl.MasterTemplate.DataSource = this.accountBindingSource;
-            this.CmbToAccount.EditorControl.MasterTemplate.EnableGrouping = false;
-            this.CmbToAccount.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.CmbToAccount.EditorControl.Name = "NestedRadGridView";
-            this.CmbToAccount.EditorControl.ReadOnly = true;
-            this.CmbToAccount.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.CmbToAccount.EditorControl.ShowGroupPanel = false;
-            this.CmbToAccount.EditorControl.Size = new System.Drawing.Size(240, 150);
-            this.CmbToAccount.EditorControl.TabIndex = 0;
-            this.CmbToAccount.Location = new System.Drawing.Point(105, 112);
-            this.CmbToAccount.Name = "CmbToAccount";
-            this.CmbToAccount.Size = new System.Drawing.Size(312, 20);
-            this.CmbToAccount.TabIndex = 16;
-            this.CmbToAccount.TabStop = false;
-            this.CmbToAccount.ThemeName = "VisualStudio2012Light";
+            this.SaveBtn.Location = new System.Drawing.Point(333, 227);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(128, 32);
+            this.SaveBtn.TabIndex = 8;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
-            // accountBindingSource
+            // label5
             // 
-            this.accountBindingSource.DataSource = typeof(XamaDataLayer.Account);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(102, 124);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 15);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Description";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(77, 101);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(20, 15);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "To";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(61, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "From";
+            // 
+            // lblAvailableAmount
+            // 
+            this.lblAvailableAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblAvailableAmount.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAvailableAmount.Location = new System.Drawing.Point(318, 28);
+            this.lblAvailableAmount.Name = "lblAvailableAmount";
+            this.lblAvailableAmount.Size = new System.Drawing.Size(99, 29);
+            this.lblAvailableAmount.TabIndex = 4;
+            this.lblAvailableAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(211, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 15);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Available Amount";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(105, 140);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(312, 48);
+            this.txtDescription.TabIndex = 2;
             // 
             // FrmPrivatewithdrawals
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(496, 306);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -322,19 +323,20 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmPrivatewithdrawals";
-            this.ThemeName = "VisualStudio2012Light";
+            this.Text = "Private withdrawals";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmPrivatewithdrawals_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount.EditorControl.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount.EditorControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbToAccount.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbToAccount.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbToAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount.EditorControl.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount.EditorControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

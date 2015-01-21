@@ -134,7 +134,7 @@
             this.SaveBtn.TabIndex = 5;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SaveBtn.ThemeName = "VisualStudio2012Light";
+            this.SaveBtn.ThemeName = "Office2010Black";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // BrowseBtn
@@ -179,7 +179,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblstatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 308);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 307);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(360, 22);
             this.statusStrip1.TabIndex = 2;
@@ -196,7 +196,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(360, 330);
+            this.ClientSize = new System.Drawing.Size(360, 329);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
@@ -209,9 +209,10 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(368, 363);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditSellItem";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmEditSellItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox1.ResumeLayout(false);

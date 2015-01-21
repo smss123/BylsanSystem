@@ -39,21 +39,22 @@ namespace Bylsan_System.ProductForms
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewImageColumn gridViewImageColumn1 = new Telerik.WinControls.UI.GridViewImageColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnPrintBarcode = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ProductManagmentBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProductgroupBox = new System.Windows.Forms.GroupBox();
             this.ProductGridView = new Telerik.WinControls.UI.RadGridView();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.ProductManagmentBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.ProductgroupBox.SuspendLayout();
@@ -105,6 +106,11 @@ namespace Bylsan_System.ProductForms
             this.RefreshBtn.Text = "Refresh";
             this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
+            // 
             // btnPrintBarcode
             // 
             this.btnPrintBarcode.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintBarcode.Image")));
@@ -114,6 +120,26 @@ namespace Bylsan_System.ProductForms
             this.btnPrintBarcode.Size = new System.Drawing.Size(119, 36);
             this.btnPrintBarcode.Text = "Print Bar Code";
             this.btnPrintBarcode.Click += new System.EventHandler(this.btnPrintBarcode_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            // 
+            // ProductManagmentBtn
+            // 
+            this.ProductManagmentBtn.Image = ((System.Drawing.Image)(resources.GetObject("ProductManagmentBtn.Image")));
+            this.ProductManagmentBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ProductManagmentBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ProductManagmentBtn.Name = "ProductManagmentBtn";
+            this.ProductManagmentBtn.Size = new System.Drawing.Size(147, 36);
+            this.ProductManagmentBtn.Text = "Product Managment";
+            this.ProductManagmentBtn.Click += new System.EventHandler(this.ProductManagmentBtn_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
             // 
             // statusStrip1
             // 
@@ -128,8 +154,8 @@ namespace Bylsan_System.ProductForms
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(12, 17);
+            this.toolStripStatusLabel1.Text = "*";
             // 
             // ProductgroupBox
             // 
@@ -156,50 +182,47 @@ namespace Bylsan_System.ProductForms
             // 
             this.ProductGridView.MasterTemplate.AutoGenerateColumns = false;
             this.ProductGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn1.DataType = typeof(int);
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "ID";
             gridViewDecimalColumn1.HeaderText = "ID";
             gridViewDecimalColumn1.IsAutoGenerated = true;
             gridViewDecimalColumn1.Name = "ID";
-            gridViewDecimalColumn1.Width = 184;
+            gridViewDecimalColumn1.Width = 171;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "Product_Name";
             gridViewTextBoxColumn1.HeaderText = "Product_Name";
             gridViewTextBoxColumn1.IsAutoGenerated = true;
             gridViewTextBoxColumn1.Name = "Product_Name";
-            gridViewTextBoxColumn1.Width = 184;
+            gridViewTextBoxColumn1.Width = 171;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "Product_Description";
             gridViewTextBoxColumn2.HeaderText = "Product_Description";
             gridViewTextBoxColumn2.IsAutoGenerated = true;
             gridViewTextBoxColumn2.Name = "Product_Description";
-            gridViewTextBoxColumn2.Width = 184;
-            gridViewTextBoxColumn3.DataType = typeof(System.Nullable<double>);
+            gridViewTextBoxColumn2.Width = 171;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "ProductPrice";
             gridViewTextBoxColumn3.HeaderText = "Price";
             gridViewTextBoxColumn3.Name = "ColPrice";
-            gridViewTextBoxColumn3.Width = 140;
-            gridViewDecimalColumn2.DataType = typeof(System.Nullable<int>);
+            gridViewTextBoxColumn3.Width = 130;
             gridViewDecimalColumn2.EnableExpressionEditor = false;
             gridViewDecimalColumn2.FieldName = "CateogryID";
             gridViewDecimalColumn2.HeaderText = "CateogryID";
             gridViewDecimalColumn2.IsAutoGenerated = true;
             gridViewDecimalColumn2.Name = "CateogryID";
-            gridViewDecimalColumn2.Width = 155;
+            gridViewDecimalColumn2.Width = 143;
             gridViewCommandColumn1.DefaultText = "Edit";
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Edit";
             gridViewCommandColumn1.Name = "EditCol";
             gridViewCommandColumn1.UseDefaultText = true;
-            gridViewCommandColumn1.Width = 49;
+            gridViewCommandColumn1.Width = 46;
             gridViewCommandColumn2.DefaultText = "Delete";
             gridViewCommandColumn2.EnableExpressionEditor = false;
             gridViewCommandColumn2.HeaderText = "Delete";
             gridViewCommandColumn2.Name = "DeleteCol";
             gridViewCommandColumn2.UseDefaultText = true;
-            gridViewCommandColumn2.Width = 46;
+            gridViewCommandColumn2.Width = 43;
             gridViewImageColumn1.EnableExpressionEditor = false;
             gridViewImageColumn1.FieldName = "Img";
             gridViewImageColumn1.HeaderText = "column1";
@@ -207,7 +230,12 @@ namespace Bylsan_System.ProductForms
             gridViewImageColumn1.Name = "column1";
             gridViewImageColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewImageColumn1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            gridViewImageColumn1.Width = 60;
+            gridViewImageColumn1.Width = 54;
+            gridViewCommandColumn3.DefaultText = "Componant";
+            gridViewCommandColumn3.EnableExpressionEditor = false;
+            gridViewCommandColumn3.Name = "column2";
+            gridViewCommandColumn3.UseDefaultText = true;
+            gridViewCommandColumn3.Width = 73;
             this.ProductGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
@@ -216,7 +244,8 @@ namespace Bylsan_System.ProductForms
             gridViewDecimalColumn2,
             gridViewCommandColumn1,
             gridViewCommandColumn2,
-            gridViewImageColumn1});
+            gridViewImageColumn1,
+            gridViewCommandColumn3});
             this.ProductGridView.MasterTemplate.DataSource = this.productBindingSource;
             this.ProductGridView.MasterTemplate.EnableFiltering = true;
             this.ProductGridView.Name = "ProductGridView";
@@ -224,42 +253,14 @@ namespace Bylsan_System.ProductForms
             this.ProductGridView.Size = new System.Drawing.Size(1014, 523);
             this.ProductGridView.TabIndex = 0;
             this.ProductGridView.Text = "radGridView1";
-            this.ProductGridView.ThemeName = "VisualStudio2012Light";
+            this.ProductGridView.ThemeName = "Office2010Black";
             this.ProductGridView.Click += new System.EventHandler(this.ProductGridView_Click);
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(XamaDataLayer.Product);
-            // 
-            // ProductManagmentBtn
-            // 
-            this.ProductManagmentBtn.Image = ((System.Drawing.Image)(resources.GetObject("ProductManagmentBtn.Image")));
-            this.ProductManagmentBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ProductManagmentBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ProductManagmentBtn.Name = "ProductManagmentBtn";
-            this.ProductManagmentBtn.Size = new System.Drawing.Size(147, 36);
-            this.ProductManagmentBtn.Text = "Product Managment";
-            this.ProductManagmentBtn.Click += new System.EventHandler(this.ProductManagmentBtn_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
             // 
             // frmManageProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1020, 605);
             this.Controls.Add(this.ProductgroupBox);
             this.Controls.Add(this.statusStrip1);
@@ -269,9 +270,10 @@ namespace Bylsan_System.ProductForms
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Product";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.frmManageProduct_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

@@ -44,6 +44,12 @@ namespace Bylsan_System.ProductForms
                 Operation.EndOperation(this);
                 Operation.ShowToustOk("Product Deleted", this);
             }
+            if (col == 8)
+            {
+                frmContentx frm = new frmContentx();
+                frm.SelectedProduct = (Product)ProductGridView.CurrentRow.DataBoundItem;
+                frm.ShowDialog();
+            }
         }
 
         private void frmManageProduct_Load(object sender, EventArgs e)

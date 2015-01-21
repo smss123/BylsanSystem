@@ -35,10 +35,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CmbCategories = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtAccountName = new System.Windows.Forms.TextBox();
             this.btnAdd = new Telerik.WinControls.UI.RadButton();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             accountNameLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -46,8 +46,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,6 +121,7 @@
             this.CmbCategories.TabIndex = 4;
             this.CmbCategories.TabStop = false;
             this.CmbCategories.Text = "CmbCategories";
+            this.CmbCategories.ThemeName = "Office2010Black";
             this.CmbCategories.SelectedIndexChanged += new System.EventHandler(this.CmbCategories_SelectedIndexChanged);
             // 
             // txtDescription
@@ -131,6 +132,10 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(253, 98);
             this.txtDescription.TabIndex = 3;
+            // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataSource = typeof(XamaDataLayer.Account);
             // 
             // txtAccountName
             // 
@@ -147,11 +152,8 @@
             this.btnAdd.Size = new System.Drawing.Size(110, 24);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
+            this.btnAdd.ThemeName = "Office2010Black";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // accountBindingSource
-            // 
-            this.accountBindingSource.DataSource = typeof(XamaDataLayer.Account);
             // 
             // frmAddAccount
             // 
@@ -166,16 +168,18 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "frmAddAccount";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Add Account";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.frmAddAccount_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

@@ -116,7 +116,7 @@
             this.Accountstatementbtn.Size = new System.Drawing.Size(110, 24);
             this.Accountstatementbtn.TabIndex = 3;
             this.Accountstatementbtn.Text = "Account statement";
-            this.Accountstatementbtn.ThemeName = "VisualStudio2012Light";
+            this.Accountstatementbtn.ThemeName = "Office2010Black";
             this.Accountstatementbtn.Click += new System.EventHandler(this.Accountstatementbtn_Click);
             // 
             // DetailedReportBtn
@@ -126,7 +126,7 @@
             this.DetailedReportBtn.Size = new System.Drawing.Size(110, 24);
             this.DetailedReportBtn.TabIndex = 2;
             this.DetailedReportBtn.Text = "Detailed Report";
-            this.DetailedReportBtn.ThemeName = "VisualStudio2012Light";
+            this.DetailedReportBtn.ThemeName = "Office2010Black";
             this.DetailedReportBtn.Click += new System.EventHandler(this.DetailedReportBtn_Click);
             // 
             // label2
@@ -159,9 +159,10 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmViewOrdersReport";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

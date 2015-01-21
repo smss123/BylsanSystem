@@ -35,9 +35,14 @@
             this.DGVProducts = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblOrderDelviryDate = new System.Windows.Forms.Label();
+            this.lblOrderDate = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labCustomerPhone = new System.Windows.Forms.Label();
@@ -68,9 +73,9 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 503);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 600);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(789, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(871, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -81,7 +86,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(429, 503);
+            this.groupBox1.Size = new System.Drawing.Size(528, 600);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "OrderProduct";
@@ -89,9 +94,9 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.DGVContents);
-            this.groupBox4.Location = new System.Drawing.Point(12, 342);
+            this.groupBox4.Location = new System.Drawing.Point(8, 440);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(393, 125);
+            this.groupBox4.Size = new System.Drawing.Size(512, 125);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Product Comtents";
@@ -104,24 +109,27 @@
             this.DGVContents.Location = new System.Drawing.Point(6, 21);
             this.DGVContents.Name = "DGVContents";
             this.DGVContents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVContents.Size = new System.Drawing.Size(381, 85);
+            this.DGVContents.Size = new System.Drawing.Size(498, 85);
             this.DGVContents.TabIndex = 0;
             // 
             // DGVProducts
             // 
             this.DGVProducts.AllowUserToAddRows = false;
+            this.DGVProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVProducts.BackgroundColor = System.Drawing.Color.White;
             this.DGVProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
+            this.ColProductName,
             this.Column3,
             this.Column5});
             this.DGVProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DGVProducts.Location = new System.Drawing.Point(6, 21);
             this.DGVProducts.Name = "DGVProducts";
             this.DGVProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVProducts.Size = new System.Drawing.Size(400, 309);
+            this.DGVProducts.Size = new System.Drawing.Size(514, 411);
             this.DGVProducts.TabIndex = 0;
             this.DGVProducts.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DGVProducts_MouseDoubleClick_1);
             // 
@@ -133,9 +141,14 @@
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Product Name";
+            this.Column2.HeaderText = "Product BarCode";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            // 
+            // ColProductName
+            // 
+            this.ColProductName.HeaderText = "Product Name";
+            this.ColProductName.Name = "ColProductName";
             // 
             // Column3
             // 
@@ -147,26 +160,69 @@
             // 
             this.Column5.HeaderText = "Ok";
             this.Column5.Name = "Column5";
-            this.Column5.Width = 40;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.lblOrderDelviryDate);
+            this.groupBox2.Controls.Add(this.lblOrderDate);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.labCustomerPhone);
             this.groupBox2.Controls.Add(this.labCustomerName);
-            this.groupBox2.Location = new System.Drawing.Point(455, 12);
+            this.groupBox2.Location = new System.Drawing.Point(544, 8);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(317, 107);
+            this.groupBox2.Size = new System.Drawing.Size(317, 140);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Customer Information";
+            this.groupBox2.Text = "Order Information";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(15, 106);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(116, 13);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "Order Delvery Date :";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(58, 82);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 13);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Order Date :";
+            // 
+            // lblOrderDelviryDate
+            // 
+            this.lblOrderDelviryDate.AutoSize = true;
+            this.lblOrderDelviryDate.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderDelviryDate.Location = new System.Drawing.Point(136, 106);
+            this.lblOrderDelviryDate.Name = "lblOrderDelviryDate";
+            this.lblOrderDelviryDate.Size = new System.Drawing.Size(112, 13);
+            this.lblOrderDelviryDate.TabIndex = 4;
+            this.lblOrderDelviryDate.Text = "labCustomerPhone:";
+            // 
+            // lblOrderDate
+            // 
+            this.lblOrderDate.AutoSize = true;
+            this.lblOrderDate.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderDate.Location = new System.Drawing.Point(136, 82);
+            this.lblOrderDate.Name = "lblOrderDate";
+            this.lblOrderDate.Size = new System.Drawing.Size(112, 13);
+            this.lblOrderDate.TabIndex = 5;
+            this.lblOrderDate.Text = "labCustomerPhone:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 57);
+            this.label1.Location = new System.Drawing.Point(29, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 13);
             this.label1.TabIndex = 3;
@@ -176,7 +232,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(28, 30);
+            this.label2.Location = new System.Drawing.Point(32, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 13);
             this.label2.TabIndex = 2;
@@ -186,7 +242,7 @@
             // 
             this.labCustomerPhone.AutoSize = true;
             this.labCustomerPhone.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labCustomerPhone.Location = new System.Drawing.Point(146, 57);
+            this.labCustomerPhone.Location = new System.Drawing.Point(136, 59);
             this.labCustomerPhone.Name = "labCustomerPhone";
             this.labCustomerPhone.Size = new System.Drawing.Size(112, 13);
             this.labCustomerPhone.TabIndex = 1;
@@ -196,7 +252,7 @@
             // 
             this.labCustomerName.AutoSize = true;
             this.labCustomerName.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labCustomerName.Location = new System.Drawing.Point(149, 30);
+            this.labCustomerName.Location = new System.Drawing.Point(136, 32);
             this.labCustomerName.Name = "labCustomerName";
             this.labCustomerName.Size = new System.Drawing.Size(109, 13);
             this.labCustomerName.TabIndex = 0;
@@ -216,9 +272,9 @@
             this.groupBox3.Controls.Add(this.TxtDescription);
             this.groupBox3.Controls.Add(this.PhotoBox);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(455, 125);
+            this.groupBox3.Location = new System.Drawing.Point(544, 152);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(314, 388);
+            this.groupBox3.Size = new System.Drawing.Size(314, 424);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Product Information";
@@ -341,7 +397,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(789, 525);
+            this.ClientSize = new System.Drawing.Size(871, 622);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -355,7 +411,7 @@
             this.RootElement.MaxSize = new System.Drawing.Size(0, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmFactoryOrderProductShow";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmFactoryOrderProductShow_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -396,11 +452,16 @@
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private System.Windows.Forms.DataGridView DGVProducts;
         private System.Windows.Forms.Button SaveChangesBtn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView DGVContents;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.Label lblOrderDelviryDate;
+        public System.Windows.Forms.Label lblOrderDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
     }
 }

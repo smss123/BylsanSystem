@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Net.Mail;
 using Bylsan_System.SellSystemForms;
+using Bylsan_System.MainStoreForms;
 namespace Bylsan_System
 {
     static class Program
@@ -32,7 +33,7 @@ namespace Bylsan_System
             Application.ThreadException += Application_ThreadException;
             Application.Run(new FrmLogin());
            // Application.Run(new FrmAddSellIStore());
-           
+            //Application.Run(new frmTransferItems());
 
             //Application.Run(new Form1());
         }

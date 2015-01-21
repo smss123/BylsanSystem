@@ -15,10 +15,15 @@ namespace Bylsan_System
         public static List <Branch >  AllBranches { get; set; }
         public static List <SellItem > AllSellItems  { get; set; }
 
+        public static List<Order> AllOrder = new List<Order>();
+        public static List<Customer> AllCustomer = new List<Customer>();
+
+
 
        public static void ShowToustOk(string msg, Control frm)
        {
-           ToastNotification.Show(frm, msg, null, 1000, eToastGlowColor.Green, eToastPosition.MiddleCenter);
+          // ToastNotification.Show(frm, msg, null, 1000, eToastGlowColor.Green, eToastPosition.MiddleCenter);
+           MessageBox.Show(msg, "");
        }
 
        public static void BeginOperation(Control frm)

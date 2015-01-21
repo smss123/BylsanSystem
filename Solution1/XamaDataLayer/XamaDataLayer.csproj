@@ -94,6 +94,7 @@
     <Compile Include="MailServer\InBoxCmd.cs" />
     <Compile Include="MailServer\OutBoxCmd.cs" />
     <Compile Include="Main Store\ItemsCmd.cs" />
+    <Compile Include="Main Store\PurchasesCmd.cs" />
     <Compile Include="Main Store\StoreCmd.cs" />
     <Compile Include="Main Store\StoreDrawalCmd.cs" />
     <Compile Include="Main Store\StoreManagerCmd.cs" />

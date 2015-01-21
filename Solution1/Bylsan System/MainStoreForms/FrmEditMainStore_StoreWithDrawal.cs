@@ -167,7 +167,7 @@ namespace Bylsan_System.MainStoreForms
             th.Start();
             XDrawalID = TregatDrawal.ID;
             ItemComboBox.Text = TregatDrawal.Item.ItemName;
-            StoreComboBox.Text = TregatDrawal.Store.ItemID.ToString();
+            StoreComboBox.Text = TregatDrawal.Store.ProductID.ToString();
             qtyTextBox.Text = TregatDrawal.Qty.ToString();
             commentTextBox.Text = TregatDrawal.Comment;
 

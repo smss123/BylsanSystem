@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn9 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn10 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn11 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn12 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn3 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.ADDbtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DGVAccountsDaily = new Telerik.WinControls.UI.RadGridView();
             this.accountDailyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ADDbtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAccountsDaily)).BeginInit();
@@ -64,6 +64,31 @@
             this.toolStrip1.Size = new System.Drawing.Size(803, 39);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // ADDbtn
+            // 
+            this.ADDbtn.Image = global::Bylsan_System.Properties.Resources.Add;
+            this.ADDbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ADDbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ADDbtn.Name = "ADDbtn";
+            this.ADDbtn.Size = new System.Drawing.Size(65, 36);
+            this.ADDbtn.Text = "Add";
+            this.ADDbtn.Click += new System.EventHandler(this.ADDbtn_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // RefreshBtn
+            // 
+            this.RefreshBtn.Image = global::Bylsan_System.Properties.Resources.Refrech;
+            this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Size = new System.Drawing.Size(79, 36);
+            this.RefreshBtn.Text = "Refresh";
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // statusStrip1
             // 
@@ -98,62 +123,62 @@
             // 
             this.DGVAccountsDaily.MasterTemplate.AutoGenerateColumns = false;
             this.DGVAccountsDaily.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn9.DataType = typeof(int);
-            gridViewDecimalColumn9.EnableExpressionEditor = false;
-            gridViewDecimalColumn9.FieldName = "ID";
-            gridViewDecimalColumn9.HeaderText = "ID";
-            gridViewDecimalColumn9.IsAutoGenerated = true;
-            gridViewDecimalColumn9.Name = "ID";
-            gridViewDecimalColumn9.Width = 112;
-            gridViewDecimalColumn10.DataType = typeof(string);
-            gridViewDecimalColumn10.EnableExpressionEditor = false;
-            gridViewDecimalColumn10.FieldName = "Account.AccountName";
-            gridViewDecimalColumn10.HeaderText = "AccountName";
-            gridViewDecimalColumn10.IsAutoGenerated = true;
-            gridViewDecimalColumn10.Name = "AccountName";
-            gridViewDecimalColumn10.Width = 112;
-            gridViewDecimalColumn11.DataType = typeof(System.Nullable<double>);
-            gridViewDecimalColumn11.EnableExpressionEditor = false;
-            gridViewDecimalColumn11.FieldName = "TotalIn";
-            gridViewDecimalColumn11.HeaderText = "TotalIn";
-            gridViewDecimalColumn11.IsAutoGenerated = true;
-            gridViewDecimalColumn11.Name = "TotalIn";
-            gridViewDecimalColumn11.Width = 112;
-            gridViewDecimalColumn12.DataType = typeof(System.Nullable<double>);
-            gridViewDecimalColumn12.EnableExpressionEditor = false;
-            gridViewDecimalColumn12.FieldName = "TotalOut";
-            gridViewDecimalColumn12.HeaderText = "TotalOut";
-            gridViewDecimalColumn12.IsAutoGenerated = true;
-            gridViewDecimalColumn12.Name = "TotalOut";
-            gridViewDecimalColumn12.Width = 112;
-            gridViewDateTimeColumn3.DataType = typeof(System.Nullable<System.DateTime>);
-            gridViewDateTimeColumn3.EnableExpressionEditor = false;
-            gridViewDateTimeColumn3.FieldName = "DateOfProcess";
-            gridViewDateTimeColumn3.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            gridViewDateTimeColumn3.HeaderText = "DateOfProcess";
-            gridViewDateTimeColumn3.IsAutoGenerated = true;
-            gridViewDateTimeColumn3.Name = "DateOfProcess";
-            gridViewDateTimeColumn3.Width = 112;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "Description";
-            gridViewTextBoxColumn5.HeaderText = "Description";
-            gridViewTextBoxColumn5.IsAutoGenerated = true;
-            gridViewTextBoxColumn5.Name = "Description";
-            gridViewTextBoxColumn5.Width = 112;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "CommandArg";
-            gridViewTextBoxColumn6.HeaderText = "CommandArg";
-            gridViewTextBoxColumn6.IsAutoGenerated = true;
-            gridViewTextBoxColumn6.Name = "CommandArg";
-            gridViewTextBoxColumn6.Width = 112;
+            gridViewDecimalColumn1.DataType = typeof(int);
+            gridViewDecimalColumn1.EnableExpressionEditor = false;
+            gridViewDecimalColumn1.FieldName = "ID";
+            gridViewDecimalColumn1.HeaderText = "ID";
+            gridViewDecimalColumn1.IsAutoGenerated = true;
+            gridViewDecimalColumn1.Name = "ID";
+            gridViewDecimalColumn1.Width = 112;
+            gridViewDecimalColumn2.DataType = typeof(string);
+            gridViewDecimalColumn2.EnableExpressionEditor = false;
+            gridViewDecimalColumn2.FieldName = "Account.AccountName";
+            gridViewDecimalColumn2.HeaderText = "AccountName";
+            gridViewDecimalColumn2.IsAutoGenerated = true;
+            gridViewDecimalColumn2.Name = "AccountName";
+            gridViewDecimalColumn2.Width = 112;
+            gridViewDecimalColumn3.DataType = typeof(System.Nullable<double>);
+            gridViewDecimalColumn3.EnableExpressionEditor = false;
+            gridViewDecimalColumn3.FieldName = "TotalIn";
+            gridViewDecimalColumn3.HeaderText = "TotalIn";
+            gridViewDecimalColumn3.IsAutoGenerated = true;
+            gridViewDecimalColumn3.Name = "TotalIn";
+            gridViewDecimalColumn3.Width = 112;
+            gridViewDecimalColumn4.DataType = typeof(System.Nullable<double>);
+            gridViewDecimalColumn4.EnableExpressionEditor = false;
+            gridViewDecimalColumn4.FieldName = "TotalOut";
+            gridViewDecimalColumn4.HeaderText = "TotalOut";
+            gridViewDecimalColumn4.IsAutoGenerated = true;
+            gridViewDecimalColumn4.Name = "TotalOut";
+            gridViewDecimalColumn4.Width = 112;
+            gridViewDateTimeColumn1.DataType = typeof(System.Nullable<System.DateTime>);
+            gridViewDateTimeColumn1.EnableExpressionEditor = false;
+            gridViewDateTimeColumn1.FieldName = "DateOfProcess";
+            gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            gridViewDateTimeColumn1.HeaderText = "DateOfProcess";
+            gridViewDateTimeColumn1.IsAutoGenerated = true;
+            gridViewDateTimeColumn1.Name = "DateOfProcess";
+            gridViewDateTimeColumn1.Width = 112;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "Description";
+            gridViewTextBoxColumn1.HeaderText = "Description";
+            gridViewTextBoxColumn1.IsAutoGenerated = true;
+            gridViewTextBoxColumn1.Name = "Description";
+            gridViewTextBoxColumn1.Width = 112;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "CommandArg";
+            gridViewTextBoxColumn2.HeaderText = "CommandArg";
+            gridViewTextBoxColumn2.IsAutoGenerated = true;
+            gridViewTextBoxColumn2.Name = "CommandArg";
+            gridViewTextBoxColumn2.Width = 111;
             this.DGVAccountsDaily.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn9,
-            gridViewDecimalColumn10,
-            gridViewDecimalColumn11,
-            gridViewDecimalColumn12,
-            gridViewDateTimeColumn3,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6});
+            gridViewDecimalColumn1,
+            gridViewDecimalColumn2,
+            gridViewDecimalColumn3,
+            gridViewDecimalColumn4,
+            gridViewDateTimeColumn1,
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2});
             this.DGVAccountsDaily.MasterTemplate.DataSource = this.accountDailyBindingSource;
             this.DGVAccountsDaily.MasterTemplate.EnableFiltering = true;
             this.DGVAccountsDaily.Name = "DGVAccountsDaily";
@@ -161,36 +186,11 @@
             this.DGVAccountsDaily.Size = new System.Drawing.Size(797, 451);
             this.DGVAccountsDaily.TabIndex = 0;
             this.DGVAccountsDaily.Text = "DGVAccountsDaily";
-            this.DGVAccountsDaily.ThemeName = "VisualStudio2012Light";
+            this.DGVAccountsDaily.ThemeName = "Office2010Black";
             // 
             // accountDailyBindingSource
             // 
             this.accountDailyBindingSource.DataSource = typeof(XamaDataLayer.AccountDaily);
-            // 
-            // ADDbtn
-            // 
-            this.ADDbtn.Image = global::Bylsan_System.Properties.Resources.Add;
-            this.ADDbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ADDbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ADDbtn.Name = "ADDbtn";
-            this.ADDbtn.Size = new System.Drawing.Size(65, 36);
-            this.ADDbtn.Text = "Add";
-            this.ADDbtn.Click += new System.EventHandler(this.ADDbtn_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
-            // 
-            // RefreshBtn
-            // 
-            this.RefreshBtn.Image = global::Bylsan_System.Properties.Resources.Refrech;
-            this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(79, 36);
-            this.RefreshBtn.Text = "Refresh";
-            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // frmAccountDailySHow
             // 
@@ -206,9 +206,10 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAccountDailySHow";
-            this.ThemeName = "VisualStudio2012Light";
+            this.Text = "Account Daily Show";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.frmAccountDailySHow_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

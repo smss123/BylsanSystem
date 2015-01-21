@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.DGVOrders = new Telerik.WinControls.UI.RadGridView();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
@@ -49,7 +51,7 @@
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 496);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(649, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1038, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -67,38 +69,49 @@
             // 
             this.DGVOrders.MasterTemplate.AutoGenerateColumns = false;
             this.DGVOrders.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.Name = "ID";
+            gridViewTextBoxColumn1.Width = 108;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "OrderName";
+            gridViewTextBoxColumn2.HeaderText = "Order Name";
+            gridViewTextBoxColumn2.Name = "OrderName";
+            gridViewTextBoxColumn2.Width = 281;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "OrderDate";
+            gridViewTextBoxColumn3.HeaderText = "Order Date";
+            gridViewTextBoxColumn3.Name = "OrdDate";
+            gridViewTextBoxColumn3.Width = 185;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "ID";
-            gridViewTextBoxColumn4.HeaderText = "ID";
-            gridViewTextBoxColumn4.Name = "ID";
-            gridViewTextBoxColumn4.Width = 79;
+            gridViewTextBoxColumn4.HeaderText = "Order Deliver Date";
+            gridViewTextBoxColumn4.Name = "column1";
+            gridViewTextBoxColumn4.Width = 148;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "OrderName";
-            gridViewTextBoxColumn5.HeaderText = "Order Name";
-            gridViewTextBoxColumn5.Name = "OrderName";
-            gridViewTextBoxColumn5.Width = 299;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "OrderDate";
-            gridViewTextBoxColumn6.HeaderText = "Order Date";
-            gridViewTextBoxColumn6.Name = "OrdDate";
-            gridViewTextBoxColumn6.Width = 201;
-            gridViewCommandColumn2.EnableExpressionEditor = false;
-            gridViewCommandColumn2.HeaderText = "Enter";
-            gridViewCommandColumn2.Name = "EnterBtn";
-            gridViewCommandColumn2.Width = 48;
+            gridViewTextBoxColumn5.FieldName = "OrderStatus";
+            gridViewTextBoxColumn5.HeaderText = "Status";
+            gridViewTextBoxColumn5.Name = "column2";
+            gridViewTextBoxColumn5.Width = 156;
+            gridViewCommandColumn1.EnableExpressionEditor = false;
+            gridViewCommandColumn1.HeaderText = "Enter";
+            gridViewCommandColumn1.Name = "EnterBtn";
+            gridViewCommandColumn1.Width = 139;
             this.DGVOrders.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
             gridViewTextBoxColumn4,
             gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewCommandColumn2});
+            gridViewCommandColumn1});
             this.DGVOrders.MasterTemplate.EnableFiltering = true;
             this.DGVOrders.Name = "DGVOrders";
             this.DGVOrders.ReadOnly = true;
             this.DGVOrders.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DGVOrders.Size = new System.Drawing.Size(643, 436);
+            this.DGVOrders.Size = new System.Drawing.Size(1032, 436);
             this.DGVOrders.TabIndex = 1;
             this.DGVOrders.Text = "DGVOrders";
-            this.DGVOrders.ThemeName = "VisualStudio2012Light";
+            this.DGVOrders.ThemeName = "Office2010Black";
             this.DGVOrders.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.MasterTemplate_CommandCellClick);
             this.DGVOrders.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DGVOrders_MouseDoubleClick_1);
             // 
@@ -108,7 +121,7 @@
             this.Refreshbtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(649, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(1038, 39);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -128,7 +141,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(649, 457);
+            this.groupBox1.Size = new System.Drawing.Size(1038, 457);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Orders";
@@ -138,7 +151,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(649, 518);
+            this.ClientSize = new System.Drawing.Size(1038, 518);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
@@ -147,9 +160,10 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmFactoryOrderShow";
-            this.ThemeName = "VisualStudio2012Light";
+            this.Text = "Factory Order Show";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmFactoryOrderShow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders)).EndInit();

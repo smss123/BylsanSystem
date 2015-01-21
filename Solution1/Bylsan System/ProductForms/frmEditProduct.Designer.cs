@@ -160,7 +160,7 @@
             this.CategoryComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CategoryComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // CategoryComboBox.NestedRadGridView
+            // 
             // 
             this.CategoryComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.CategoryComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -177,7 +177,7 @@
             this.CategoryComboBox.Size = new System.Drawing.Size(240, 20);
             this.CategoryComboBox.TabIndex = 4;
             this.CategoryComboBox.TabStop = false;
-            this.CategoryComboBox.ThemeName = "Windows8";
+            this.CategoryComboBox.ThemeName = "Office2010Black";
             // 
             // AddBtn
             // 
@@ -189,7 +189,7 @@
             this.AddBtn.TabIndex = 8;
             this.AddBtn.Text = "Save";
             this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddBtn.ThemeName = "Windows8";
+            this.AddBtn.ThemeName = "Office2010Black";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // BrowseBtn
@@ -199,7 +199,7 @@
             this.BrowseBtn.Size = new System.Drawing.Size(80, 24);
             this.BrowseBtn.TabIndex = 6;
             this.BrowseBtn.Text = "...";
-            this.BrowseBtn.ThemeName = "Windows8";
+            this.BrowseBtn.ThemeName = "Office2010Black";
             this.BrowseBtn.Click += new System.EventHandler(this.BrowseBtn_Click_1);
             // 
             // productpictureBox
@@ -292,9 +292,10 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditProduct";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.frmEditProduct_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

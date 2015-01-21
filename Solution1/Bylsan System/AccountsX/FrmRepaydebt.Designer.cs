@@ -67,12 +67,13 @@
             this.groupBox1.Controls.Add(this.TotalDebttextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(332, 258);
+            this.groupBox1.Size = new System.Drawing.Size(332, 260);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // DebetfromcomboBox
             // 
+            this.DebetfromcomboBox.BackColor = System.Drawing.SystemColors.Info;
             this.DebetfromcomboBox.FormattingEnabled = true;
             this.DebetfromcomboBox.Location = new System.Drawing.Point(96, 88);
             this.DebetfromcomboBox.Name = "DebetfromcomboBox";
@@ -93,13 +94,13 @@
             this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddBtn.Image = global::Bylsan_System.Properties.Resources.Add;
             this.AddBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.AddBtn.Location = new System.Drawing.Point(16, 216);
+            this.AddBtn.Location = new System.Drawing.Point(6, 217);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(109, 37);
             this.AddBtn.TabIndex = 2;
             this.AddBtn.Text = "Add";
             this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddBtn.ThemeName = "VisualStudio2012Light";
+            this.AddBtn.ThemeName = "Office2010Black";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // label3
@@ -140,6 +141,7 @@
             // 
             // RemainingtextBox
             // 
+            this.RemainingtextBox.BackColor = System.Drawing.SystemColors.Info;
             this.RemainingtextBox.Location = new System.Drawing.Point(96, 120);
             this.RemainingtextBox.Name = "RemainingtextBox";
             this.RemainingtextBox.ReadOnly = true;
@@ -149,6 +151,7 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.BackColor = System.Drawing.SystemColors.Info;
             this.txtDescription.Location = new System.Drawing.Point(96, 144);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -157,6 +160,7 @@
             // 
             // PaymenttextBox
             // 
+            this.PaymenttextBox.BackColor = System.Drawing.SystemColors.Info;
             this.PaymenttextBox.Location = new System.Drawing.Point(96, 62);
             this.PaymenttextBox.Name = "PaymenttextBox";
             this.PaymenttextBox.Size = new System.Drawing.Size(125, 20);
@@ -164,6 +168,7 @@
             // 
             // TotalDebttextBox
             // 
+            this.TotalDebttextBox.BackColor = System.Drawing.SystemColors.Info;
             this.TotalDebttextBox.Location = new System.Drawing.Point(96, 36);
             this.TotalDebttextBox.Name = "TotalDebttextBox";
             this.TotalDebttextBox.ReadOnly = true;
@@ -180,7 +185,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(356, 285);
+            this.ClientSize = new System.Drawing.Size(356, 284);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(364, 318);
@@ -192,9 +197,10 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(364, 318);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmRepaydebt";
-            this.ThemeName = "VisualStudio2012Light";
+            this.Text = "Repay debt";
+            this.ThemeName = "Office2010Black";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();

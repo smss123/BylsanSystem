@@ -156,7 +156,7 @@
             this.groupBox1.Controls.Add(label4);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(390, 211);
+            this.groupBox1.Size = new System.Drawing.Size(390, 222);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -170,11 +170,12 @@
             this.addBtn.TabIndex = 7;
             this.addBtn.Text = "add";
             this.addBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.addBtn.ThemeName = "VisualStudio2012Light";
+            this.addBtn.ThemeName = "Office2010Black";
             this.addBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // txtAccountBox
             // 
+            this.txtAccountBox.BackColor = System.Drawing.SystemColors.Info;
             this.txtAccountBox.Location = new System.Drawing.Point(143, 29);
             this.txtAccountBox.Name = "txtAccountBox";
             this.txtAccountBox.Size = new System.Drawing.Size(220, 20);
@@ -182,6 +183,7 @@
             // 
             // txtDescriptionBox
             // 
+            this.txtDescriptionBox.BackColor = System.Drawing.SystemColors.Info;
             this.txtDescriptionBox.Location = new System.Drawing.Point(143, 67);
             this.txtDescriptionBox.Multiline = true;
             this.txtDescriptionBox.Name = "txtDescriptionBox";
@@ -197,8 +199,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(414, 238);
+            this.ClientSize = new System.Drawing.Size(414, 237);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(422, 271);
             this.MinimizeBox = false;
@@ -209,9 +212,10 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(422, 271);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAddAccountCategory";
-            this.ThemeName = "VisualStudio2012Light";
+            this.Text = "Add Account Category";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmAddAccountCategory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl)).EndInit();

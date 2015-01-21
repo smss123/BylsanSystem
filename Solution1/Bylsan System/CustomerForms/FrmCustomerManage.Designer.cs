@@ -195,7 +195,7 @@
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Edit";
             gridViewCommandColumn1.Name = "EditCol";
-            gridViewCommandColumn1.Width = 62;
+            gridViewCommandColumn1.Width = 61;
             gridViewCommandColumn1.WrapText = true;
             this.DGVCustomers.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
@@ -212,7 +212,7 @@
             this.DGVCustomers.Size = new System.Drawing.Size(834, 263);
             this.DGVCustomers.TabIndex = 0;
             this.DGVCustomers.Text = "radGridView1";
-            this.DGVCustomers.ThemeName = "VisualStudio2012Light";
+            this.DGVCustomers.ThemeName = "Office2010Black";
             this.DGVCustomers.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.DGVCustomers_CommandCellClick);
             this.DGVCustomers.Click += new System.EventHandler(this.CustomerGridView_Click);
             // 
@@ -234,9 +234,10 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Management Customer";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmCustomerManage_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

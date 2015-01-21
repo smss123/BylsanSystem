@@ -27,7 +27,7 @@ namespace Bylsan_System.Reports.ReportCommand
                 ls.Add(new ItemsStoreReportObj()
                 {
                     StorId = item.ID,
-                    itemName = item.Item.ItemName,
+                    itemName = item.Product.Product_Name,
                     Description = item.Description,
                     AvailableQty = item.AvailableQty.Value,
                     // ExpirationDate 

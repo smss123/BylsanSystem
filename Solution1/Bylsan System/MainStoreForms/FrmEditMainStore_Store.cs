@@ -57,7 +57,7 @@ namespace Bylsan_System.MainStoreForms
         {
             FillComboBoxItme();
             XStorId = treagtStore.ID;
-            ItemColumnComboBox.Text = treagtStore.Item.ItemName;
+            ItemColumnComboBox.Text = treagtStore.Product.Product_Name;
             AvailableQtyTextBox.Text = treagtStore.AvailableQty.ToString();
             DescriptiontextBox.Text = treagtStore.Description;
 
@@ -109,7 +109,7 @@ namespace Bylsan_System.MainStoreForms
                 Store tb = new Store
                 {
                     ID = XStorId,
-                    ItemID = int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
+                    ProductID = int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
                     AvailableQty = int.Parse(AvailableQtyTextBox.Text),
                     Description = DescriptiontextBox.Text
 

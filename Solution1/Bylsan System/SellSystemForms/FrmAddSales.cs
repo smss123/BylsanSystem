@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using Telerik.WinControls;
-
-using XamaDataLayer;
-using XamaDataLayer.SellSystem;
-using Bylsan_System.SellSystemForms;
-using System.Threading;
-using XamaDataLayer.Security;
 using Bylsan_System.Reports.ReportCommand;
 using Bylsan_System.Reports.ReportsObject;
+using XamaDataLayer;
+using XamaDataLayer.Security;
+using XamaDataLayer.SellSystem;
+using Xprema.XExtention;
+using Telerik.WinControls;
+using XamaDataLayer.BranchCmd;
+using System.Threading;
+using System.Data.Linq;
+using System.Linq;
+using XamaDataLayer.Helper_Classes;
+using XamaDataLayer.Accountant;
 namespace Bylsan_System.SellSystemForms
 {
     public partial class FrmAddSales : Telerik.WinControls.UI.RadForm
@@ -24,107 +25,29 @@ namespace Bylsan_System.SellSystemForms
             imageList1.ImageSize = new Size(70, 70);
         }
 
-        #region " ^^^ Populate ListView Items "
-        void PopulateListItems()
+        private void LoadProduct()
         {
-            ListItems.View = View.Tile ;
-            ListItems.Columns.Add("ID", 50, HorizontalAlignment.Center);
-            ListItems.Columns.Add("Item Name ", 270, HorizontalAlignment.Center);
-            ListItems.Columns.Add("Description", 300, HorizontalAlignment.Center);
-            ListItems.Columns.Add("Price", 100, HorizontalAlignment.Center);
-
-            ListItems.LargeImageList = imageList1;
-
             Operation.BeginOperation(this);
-            int ImgIndx = 0;
-            var AllSellItems = Operation.AllSellItems;
-
-            ListItems.Items.Clear();
-
-            this.Invoke((MethodInvoker)delegate
-            {
-
-                foreach (var item in AllSellItems)
-                {
-                    ListViewItem Itm = new ListViewItem(item.ID.ToString(), ImgIndx);
-                    Itm.SubItems.Add(item.ItemName.ToString());
-                    Itm.SubItems.Add(item.Description.ToString());
-                    Itm.SubItems.Add(item.ItemPrice.ToString());
-                    imageList1.Images.Add(item.ItemIcon);
-                    ListItems.Items.Add(Itm);
-                    ImgIndx++;
-                }
+            var q =  ProductsCmd.GetProductDetailsForSale();
+            this.Invoke((MethodInvoker)delegate {
+                productBindingSource.DataSource = q;
             });
-
             Operation.EndOperation(this);
+            th.Abort();
         }
-        #endregion 
-
+        Thread th = null;
         private void FrmAddSales_Load(object sender, EventArgs e)
        {
            CmbPaymentTypes.Items.AddRange(new string[] {"Cash Onley","Visa Card Onley","Both" });
-           txtCash.Enabled = false; txtVisaCard.Enabled = false;
-           PopulateListItems();
+          
+           th = new Thread(LoadProduct);
+           th.Start();
+        
         }
 
         private  int xItemID { get; set; }
         private int xStorID { get; set; }
-        private void ListItems_MouseClick(object sender, MouseEventArgs e)
-        {
-           
-          
 
-                if (ListItems.Items.Count != 0)
-                {
-                    xItemID = 0;
-                    xItemID = int.Parse(ListItems.SelectedItems[0].Text);
-                    //===================================================
-
-                    var ChkAvailable = SellStoreCmd.GetSellStoreByItemID(xItemID);
-                    xStorID = ChkAvailable.ID;
-                    if (ChkAvailable.Qty == 0)
-                    {
-                        Operation.ShowToustOk("Not Available .. Qty = 0 ", this);
-                        return;
-                    }
-
-                    //===================================================
-                    Application.DoEvents(); 
-                    //==================================================
-
-                    if (DGVSellItems.Rows.Count != 0)
-                    {
-                        for (int i = 0; i < DGVSellItems.Rows.Count; i++)
-                        {
-                            if (int.Parse(DGVSellItems.Rows[i].Cells[0].Value.ToString()) == xItemID)
-                            {
-                                DGVSellItems.Rows[i].Cells[4].Value = int.Parse(DGVSellItems.Rows[i].Cells[4].Value.ToString()) + 1;
-                                DGVSellItems.Rows[i].Cells[3].Value = (int.Parse(ListItems.SelectedItems[0].SubItems[3].Text) + int.Parse(DGVSellItems.Rows[i].Cells[3].Value.ToString()));
-                                CalcTotal();
-                                SalesIt ();
-                                return;
-                            }
-                        }
-                    }
-            
-
-                        DGVSellItems.Rows.Add(new string[] 
-                            {
-                                xItemID.ToString(),
-                                ListItems.SelectedItems[0].SubItems[1].Text,
-                                ListItems.SelectedItems[0].SubItems[2].Text,
-                                ListItems.SelectedItems[0].SubItems[3].Text,
-                                "1"
-                               
-                            });
-                        SalesIt();
-                        CalcTotal();
-                }
-               
-                                                
-       
-           
-        }
 
 
         void SalesIt()
@@ -140,107 +63,251 @@ namespace Bylsan_System.SellSystemForms
         StoreOperationManager OptrTb = new StoreOperationManager();
         private void Okeybtn_Click(object sender, EventArgs e)
         {
-            if (CmbPaymentTypes.Text == "Both")
+            if (BillCostBox.Text.Todouble() > txtCustomerPay.Value.ToString().Todouble())
             {
-                if (txtVisaCard.Text == "" || txtCash.Text == "") { Operation.ShowToustOk("Enter the apportionment payment", this); return; }
+                if (MessageBox.Show("The amount paid is less than the amount required \n The customer will be added in the box debts that continued operation .", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    SaveBill();
+                    MessageBox.Show("Done");
+                    NewBill();
+                }
             }
+            else
+            {
+                SaveBill();
+                MessageBox.Show("Done");
+                NewBill();
+            }
+        }
+
+        private void SaveBill()
+        {
+            var q = new Customer();
+            string billNumber = (DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Second + DateTime.Now.Millisecond).ToString();
+             BillReportCommand cmd = new BillReportCommand();
+             List<RptBillObj> ls = new List<RptBillObj>();
+             TxtBillNumber.Text = billNumber;
             try
             {
-                if (DGVSellItems.Rows.Count != 0)
+                q = Operation.AllCustomer.Where(p => p.PhoneNumber == txtCustomerPhoneNumber.Text).Take(1).Single();
+
+                Bill bil = new Bill()
+                {
+                    BillDate = DateTime.Now,
+                    BillNumber = billNumber,
+                    BillTotal = BillCostBox.Text.Todouble(),
+                    paytype = CmbPaymentTypes.Text,
+                    CustomerID = q.ID,
+                    UserID = UserInfo.CurrentUserID
+                };
+               
+                foreach (var row in DGVSellItems.Rows)
+                {
+                    bil.BillItems.Add(new BillItem()
+                    {
+
+                        ItemID = row.Cells[0].Value.ToString().ToInt(),
+                        Qty = long.Parse(row.Cells[0].Value.ToString())
+
+                    });
+                    try
+                    {
+                        SellStoreCmd.EditQty(row.Cells[0].Value.ToString().ToInt(),
+                        UserInfo.CurrnetUser.Branch_ID.ToString().ToInt(),
+                        long.Parse(row.Cells[4].Value.ToString()));
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message);
+
+                    }
+                   
+
+                }
+               
+                BillsCmd.AddBill(bil);
+                try
+                {
+
+                    AccountDailyCmd.AddAccountDaily(new AccountDaily()
+                    {
+                        Account = bil.Customer.Account,
+                        DateOfProcess = DateTime.Now,
+                        CommandArg = Guid.NewGuid().ToString(),
+                        Description = string.Format("عبارة عن مبلغ مطلوب من فاتورة رقم{0 } ", billNumber),
+                        TotalIn = 0,
+                        TotalOut = txtCustomerPay.Value.ToString().Todouble(),
+                    });
+                    AccountDailyCmd.AddAccountDaily(new AccountDaily()
+                    {
+                        Account = bil.Customer.Account,
+                        DateOfProcess = DateTime.Now,
+                        CommandArg = Guid.NewGuid().ToString(),
+                        Description = string.Format("عبارة عن مبلغ مطلوب من فاتورة رقم{0 } ", billNumber),
+                        TotalIn = txtCustomerPay.Value.ToString().Todouble(),
+                        TotalOut = 0,
+                    });
+                    AccountDailyCmd.AddAccountDaily(new AccountDaily()
+                    {
+                        AccountID = 10,
+                        DateOfProcess = DateTime.Now,
+                        CommandArg = Guid.NewGuid().ToString(),
+                        Description = "مبلغ مودع من فاتورة",
+                        TotalIn = txtCustomerPay.Value.ToString().Todouble(),
+                        TotalOut = 0,
+                    });
+
+
+                }
+                catch (System.NullReferenceException ex)
                 {
 
 
-                    TxtBillNumber.Text = DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Day.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + DateTime.Now.Millisecond.ToString();
-                    if (TxtBillNumber.Text == "")
-                    {
-                        Operation.ShowToustOk("Insert Bill Number ", this);
-                        return;
-                    }
-                    // Compute Total Bill Cost :
-                    double tot = 0;
-                    foreach (var rw  in DGVSellItems .Rows )
-                    {
-                        tot += int.Parse(rw.Cells[3].Value.ToString()); 
-                    }
-                    // Just Display Total Cost To User Onley :
-                    BillCostBox.Text =  tot.ToString ();
-
-
-                    // Save bill :
-                    Bill btb = new Bill()
-                    {
-                        BillDate = DateTime.Now,
-                        BillNumber =  TxtBillNumber.Text ,// شوف طريقة لأدخال رقم الفاتورة سواء كان يدوي  أو تلقائي يعني عداد 
-                        UserID = UserInfo.CurrentUserID,
-                        BillTotal =  tot ,
-                        paytype =  CmbPaymentTypes .Text  ,
-                        description = string .Format ( " Pay by Cash : {0}  , pay by visa card :  {1}  ", txtCash .Text ,txtVisaCard .Text )
-
-                    };
-                    BillsCmd.AddBill(btb);
-
-                    // Save At BillItem :
-                    BillItem billtb = new BillItem();
-                    List<BillItem> billItem = new List<BillItem>();
-                    foreach (var rw in DGVSellItems.Rows)
-                    {
-                        billtb = new BillItem()
-                        {
-                            ItemID = int.Parse(rw.Cells[0].Value.ToString()),
-                            Qty = int.Parse(rw.Cells[4].Value.ToString()),
-                            Bill_ID = BillsCmd.GetMaxBill(),
-                        };
-                        billItem.Add(billtb);
-                        BillItemsCmd.AddBillItmes(billtb);
-                        //=======================================================
-                        // Save At : StoreOperationManager
-
-                         var xSellStore =   SellStoreCmd .GetSellStoreByItemID (int.Parse(rw.Cells[0].Value.ToString()));
-                        
-                         OptrTb = new StoreOperationManager()
-                         {                            
-                             StoreID = xSellStore .ID  ,
-                             ProcessType = "Darwal", // ســحب
-                             ProcessDate = DateTime .Now ,
-                             Qty = int.Parse(rw.Cells[4].Value.ToString()),
-                             UserID = XamaDataLayer.Security .UserInfo .CurrentUserID 
-                         };
-                         StoreOperationManagerCmd.AddStoreOperationManager(OptrTb);
-                        //=======================================================
-                    }
-                    Operation.ShowToustOk("Bill Has Been Saved ..", this);
-                    BillReportCommand printBill = new BillReportCommand();
-                    btb.BillItems.AddRange(billItem);
-                    List<RptBillObj> ls = new List<RptBillObj>();
-
-                    foreach (var item in btb.BillItems)
-                    {
-                        ls.Add(new RptBillObj() { 
-                         ID = btb.ID,
-                          Total = btb.BillTotal,
-                           BillDate= DateTime.Now,
-                            ItemName = item.SellItem.ItemName,
-                             Qty = item.Qty.ToString(),
-                              Amount  = item.Qty* item.SellItem.ItemPrice,
-                               UnitPrice= item.SellItem.ItemPrice,
-                         User = UserInfo.CurrnetUser.UserName
-                        
-                        
-                        });
-                    }
-                    printBill.PrintBill(ls);
-                    DGVSellItems.Rows.Clear();
-                    BillCostBox.Text = "";
-                    txtBarCode.Text = "";
-                    TxtBillNumber.Text = "";
                 }
+                foreach (var row in DGVSellItems.Rows)
+                {
+                    ls.Add(new RptBillObj()
+                    {
+                        BillDate = bil.BillDate,
+                        ItemName = row.Cells[1].Value.ToString(),
+                        Qty = row.Cells[4].Value.ToString(),
+                        ID = bil.BillNumber.ToInt(),
+                        Amount = row.Cells[3].Value.ToString().Todouble(),
+                        User = UserInfo.CurrnetUser.UserName,
+                        Total = bil.BillTotal,
+
+
+                    });
+                }
+                cmd.PrintBill(ls);
+
+
             }
             catch (Exception)
             {
+                if (txtCustomerPhoneNumber.Text == "" && txtCustomerName.Text == "")
+                {
+                    CustomerInformations.WatingCustomer = null;
+                }
+                else
+                {
+                    CustomerInformations.WatingCustomer = new Customer()
+                    {
+                        CustomerName = txtCustomerName.Text,
+                        PhoneNumber = txtCustomerPhoneNumber.Text,
+                        Points = 0
+                    };
+                }
+                Bill bil = new Bill()
+                {
+                    BillDate = DateTime.Now,
+                    BillNumber = TxtBillNumber.Text,
+                    BillTotal = BillCostBox.Text.Todouble(),
+                    paytype = CmbPaymentTypes.Text,
+                    Customer = CustomerInformations.WatingCustomer
+                };
+                
+                foreach (var row in DGVSellItems.Rows)
+                {
+                    bil.BillItems.Add(new BillItem()
+                    {
 
+                        ItemID = row.Cells[0].Value.ToString().ToInt(),
+                        Qty = long.Parse(row.Cells[0].Value.ToString())
+
+                    });
+                    try
+                    {
+                        SellStoreCmd.EditQty(row.Cells[0].Value.ToString().ToInt(),
+                        UserInfo.CurrnetUser.Branch_ID.ToString().ToInt(),
+                        long.Parse(row.Cells[4].Value.ToString()));
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message);
+
+                    }
+
+                }
+                BillsCmd.AddBill(bil);
+                try
+                {
+
+                    AccountDailyCmd.AddAccountDaily(new AccountDaily()
+                    {
+                        Account = bil.Customer.Account,
+                        DateOfProcess = DateTime.Now,
+                        CommandArg = Guid.NewGuid().ToString(),
+                        Description = string.Format("عبارة عن مبلغ مطلوب من فاتورة رقم{0 } ", billNumber),
+                        TotalIn = 0,
+                        TotalOut = txtCustomerPay.Value.ToString().Todouble(),
+                    });
+                    AccountDailyCmd.AddAccountDaily(new AccountDaily()
+                    {
+                        Account = bil.Customer.Account,
+                        DateOfProcess = DateTime.Now,
+                        CommandArg = Guid.NewGuid().ToString(),
+                        Description = string.Format("عبارة عن مبلغ مطلوب من فاتورة رقم{0 } ", billNumber),
+                        TotalIn = txtCustomerPay.Value.ToString().Todouble(),
+                        TotalOut = 0,
+                    });
+                    AccountDailyCmd.AddAccountDaily(new AccountDaily()
+                    {
+                        AccountID= 10,
+                        DateOfProcess = DateTime.Now,
+                        CommandArg = Guid.NewGuid().ToString(),
+                        Description = "مبلغ مودع من فاتورة",
+                        TotalIn = txtCustomerPay.Value.ToString().Todouble(),
+                        TotalOut = 0,
+                    });
+
+
+                }
+                catch (System.NullReferenceException ex)
+                {
+                    
+                   
+                }
+                
+                foreach (var row in DGVSellItems.Rows)
+                {
+                    ls.Add(new RptBillObj()
+                    {
+                        BillDate = bil.BillDate,
+                        ItemName = row.Cells[1].Value.ToString(),
+                        Qty = row.Cells[4].Value.ToString(),
+                        ID = bil.BillNumber.ToInt(),
+                        Amount = row.Cells[3].Value.ToString().Todouble(),
+                        User = UserInfo.CurrnetUser.UserName,
+                        Total = bil.BillTotal,
+
+
+                    });
+                }
+                cmd.PrintBill(ls);
 
             }
         }
+
+        private void NewBill()
+        {
+            DGVSellItems.Rows.Clear();
+            txtCustomerName.Text = "";
+            txtCustomerPhoneNumber.Text = "";
+            txtCustomerPay.Value = 0;
+            txtBarCode.Text = "";
+            txtCash.Text = "";
+            txtVisaCard.Text = "";
+            TxtBillNumber.Text = "";
+        }
+
+
+
+                  
+        
+    
 
         private void TxtBillNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -266,55 +333,55 @@ namespace Bylsan_System.SellSystemForms
         {
             if (e.KeyData == Keys.Enter)
             {
-                if (ListItems.Items.Count != 0)
+                Product q = new Product();
+                try
                 {
-                    xItemID = 0;
+                    q = Operation.Allproducts.Where(p => p.ID == int.Parse(txtBarCode.Text)).Take(1).Single();
 
-                    var GetItem = SellItemsCmd.GetSellItemByID(int.Parse(txtBarCode.Text.ToString()));
-                    if (GetItem.Count == 0)
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Item Not Found");
+                    txtBarCode.Text = "";
+                    return;
+                }
+                
+
+                if (DGVSellItems.Rows.Count != 0)
+                {
+                    for (int i = 0; i < DGVSellItems.Rows.Count; i++)
                     {
-                        Operation.ShowToustOk("This Item Not Found ", this);
-
-                    }
-                    else
-                    {
-
-
-                        xItemID = GetItem[0].ID;
-                        Application.DoEvents();
-                        //==================================================
-
-                        if (DGVSellItems.Rows.Count != 0)
+                        if (int.Parse(DGVSellItems.Rows[i].Cells[0].Value.ToString()) == q.ID)
                         {
-                            for (int i = 0; i < DGVSellItems.Rows.Count; i++)
-                            {
-                                if (int.Parse(DGVSellItems.Rows[i].Cells[0].Value.ToString()) == xItemID)
-                                {
-                                    DGVSellItems.Rows[i].Cells[4].Value = int.Parse(DGVSellItems.Rows[i].Cells[4].Value.ToString()) + 1;
-                                    DGVSellItems.Rows[i].Cells[3].Value = (int.Parse(ListItems.SelectedItems[0].SubItems[3].Text) + int.Parse(DGVSellItems.Rows[i].Cells[3].Value.ToString()));
-                                    CalcTotal();
-                                    return;
-                                }
-                            }
+                            DGVSellItems.Rows[i].Cells[4].Value = int.Parse(DGVSellItems.Rows[i].Cells[4].Value.ToString()) + 1;
+                            DGVSellItems.Rows[i].Cells[3].Value = (double.Parse(radGridView1.CurrentRow.Cells[3].Value.ToString()) + double.Parse(DGVSellItems.Rows[i].Cells[3].Value.ToString()));
+                            CalcTotal();
+                            txtBarCode.Clear();
+                            txtBarCode.Focus();
+                            return;
                         }
-
-
-                        DGVSellItems.Rows.Add(new string[] 
-                            {
-                                xItemID.ToString(),
-                               GetItem[0].ItemName,// ListItems.SelectedItems[0].SubItems[1].Text,
-                                GetItem[0].Description,//ListItems.SelectedItems[0].SubItems[2].Text,
-                               GetItem[0].ItemPrice.ToString(), //ListItems.SelectedItems[0].SubItems[3].Text,
-                                "1"
-                            });
-
-                        CalcTotal();
-                       
                     }
                 }
 
+
+                DGVSellItems.Rows.Add(new string[] 
+                            {
+                               q.ID.ToString(),
+                               q.PublicName,// ListItems.SelectedItems[0].SubItems[1].Text,
+                               "",//ListItems.SelectedItems[0].SubItems[2].Text,
+                               q.ProductPrice.ToString(), //ListItems.SelectedItems[0].SubItems[3].Text,
+                                "1"
+                            });
+
                 txtBarCode.Clear();
                 txtBarCode.Focus();
+
+                 CalcTotal();
+                       
+                //    }
+                //}
+
+               
 
             }
             
@@ -355,14 +422,7 @@ namespace Bylsan_System.SellSystemForms
 
         private void CmbPaymentTypes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CmbPaymentTypes.Text == "Both")
-            {
-                txtCash.Enabled = true ; txtVisaCard.Enabled = true ;
-            }
-            else
-            {
-                txtCash.Enabled = false; txtVisaCard.Enabled = false;
-            }
+         
         }
 
         private void txtCash_KeyPress(object sender, KeyPressEventArgs e)
@@ -373,6 +433,75 @@ namespace Bylsan_System.SellSystemForms
         private void txtVisaCard_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void radGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            Product q = new Product();
+            try
+            {
+                q = Operation.Allproducts.Where(p => p.ID == int.Parse(radGridView1.CurrentRow.Cells[0].Value.ToString())).Take(1).Single();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Item Not Found");
+                txtBarCode.Text = "";
+                return;
+            }
+
+
+            if (DGVSellItems.Rows.Count != 0)
+            {
+                for (int i = 0; i < DGVSellItems.Rows.Count; i++)
+                {
+                    if (int.Parse(DGVSellItems.Rows[i].Cells[0].Value.ToString()) == q.ID)
+                    {
+                        DGVSellItems.Rows[i].Cells[4].Value = int.Parse(DGVSellItems.Rows[i].Cells[4].Value.ToString()) + 1;
+                        DGVSellItems.Rows[i].Cells[3].Value = (double.Parse(radGridView1.CurrentRow.Cells[3].Value.ToString()) + double.Parse(DGVSellItems.Rows[i].Cells[3].Value.ToString()));
+                        CalcTotal();
+                        txtBarCode.Clear();
+                        txtBarCode.Focus();
+                        return;
+                    }
+                }
+            }
+
+
+            DGVSellItems.Rows.Add(new string[] 
+                            {
+                               q.ID.ToString(),
+                               q.PublicName,// ListItems.SelectedItems[0].SubItems[1].Text,
+                               "",//ListItems.SelectedItems[0].SubItems[2].Text,
+                               q.ProductPrice.ToString(), //ListItems.SelectedItems[0].SubItems[3].Text,
+                                "1"
+                            });
+
+            txtBarCode.Clear();
+            txtBarCode.Focus();
+
+            CalcTotal();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BillCostBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCash_TextChanged(object sender, EventArgs e)
+        {
+            txtCustomerPay.Value = decimal.Parse( (txtCash.Text.Todouble() + txtVisaCard.Text.Todouble()).ToString());
+
+        }
+
+        private void txtVisaCard_TextChanged(object sender, EventArgs e)
+        {
+            txtCustomerPay.Value = decimal.Parse((txtCash.Text.Todouble() + txtVisaCard.Text.Todouble()).ToString());
         }
 
        

@@ -79,7 +79,7 @@
             this.groupBox1.Controls.Add(this.amountTextBox);
             this.groupBox1.Location = new System.Drawing.Point(8, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 270);
+            this.groupBox1.Size = new System.Drawing.Size(353, 266);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
@@ -95,7 +95,7 @@
             this.Savebtn.TabIndex = 3;
             this.Savebtn.Text = "Save";
             this.Savebtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Savebtn.ThemeName = "VisualStudio2012Light";
+            this.Savebtn.ThemeName = "Office2010Black";
             this.Savebtn.Click += new System.EventHandler(this.Savebtn_Click);
             // 
             // descriptionTextBox
@@ -121,7 +121,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(369, 294);
+            this.ClientSize = new System.Drawing.Size(369, 290);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(377, 324);
@@ -133,9 +133,10 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(377, 324);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditExpenssesMovment";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.frmEditExpenssesMovment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox1.ResumeLayout(false);

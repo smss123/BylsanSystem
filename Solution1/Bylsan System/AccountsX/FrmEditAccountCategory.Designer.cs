@@ -90,11 +90,12 @@
             this.SaveBtn.TabIndex = 4;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SaveBtn.ThemeName = "VisualStudio2012Light";
+            this.SaveBtn.ThemeName = "Office2010Black";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // descriptionTextBox
             // 
+            this.descriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.descriptionTextBox.Location = new System.Drawing.Point(144, 66);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
@@ -103,6 +104,7 @@
             // 
             // accountCategoryNameTextBox
             // 
+            this.accountCategoryNameTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.accountCategoryNameTextBox.Location = new System.Drawing.Point(144, 35);
             this.accountCategoryNameTextBox.Name = "accountCategoryNameTextBox";
             this.accountCategoryNameTextBox.Size = new System.Drawing.Size(209, 20);
@@ -124,9 +126,10 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmEditAccountCategory";
-            this.ThemeName = "VisualStudio2012Light";
+            this.Text = "Edit Account Category";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmEditAccountCategory_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

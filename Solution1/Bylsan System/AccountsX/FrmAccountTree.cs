@@ -28,12 +28,12 @@ namespace Bylsan_System.AccountsX
         void PopulateTreeAccounts()
         {
             Operation.BeginOperation(this);
-            var AcctCategories = AccountCategoryCmd.GetAll();
+            var acctCategories = AccountCategoryCmd.GetAll();
             
         
             this.Invoke((MethodInvoker)delegate {
 
-                foreach (var item in AcctCategories)
+                foreach (var item in acctCategories)
                 {
                     
                     TreeAccounts.Nodes[0].Nodes.Add("" ,item.AccountCategoryName, 1);
@@ -85,12 +85,12 @@ namespace Bylsan_System.AccountsX
             if (TreeAccounts.Nodes.Count != 0)
             {
                 Broom();
-                var Accts = AccountsCmd.GetAccountByName(e.Node.Text);
-                foreach (var Actitem in Accts)
+                var accts = AccountsCmd.GetAccountByName(e.Node.Text);
+                foreach (var actitem in accts)
                 {
-                    AcctID = Actitem.ID;
-                    txtAccountName.Text = Actitem.AccountName;
-                    txtDescription.Text = Actitem.Description;
+                    AcctID = actitem.ID;
+                    txtAccountName.Text = actitem.AccountName;
+                    txtDescription.Text = actitem.Description;
                     
                 }
             
@@ -101,11 +101,11 @@ namespace Bylsan_System.AccountsX
         void GetAccountDetails()
         {
             Operation.BeginOperation(this);
-            var GetCurrentAccount = AccountDailyCmd .GetAllAccountDailyByAccountID(AcctID );
+            var getCurrentAccount = AccountDailyCmd .GetAllAccountDailyByAccountID(AcctID );
             this.Invoke((MethodInvoker)delegate {
-                DGVAccountsDaily.DataSource = GetCurrentAccount;
-               double Balance = AccountDailyCmd.GetBalanceByAccountID (AcctID );
-               txtBalance.Text = Balance.ToString();
+                DGVAccountsDaily.DataSource = getCurrentAccount;
+               double balance = AccountDailyCmd.GetBalanceByAccountID (AcctID );
+               txtBalance.Text = balance.ToString();
             });
             Operation.EndOperation(this);
         }

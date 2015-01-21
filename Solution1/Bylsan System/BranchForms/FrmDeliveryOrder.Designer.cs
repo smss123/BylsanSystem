@@ -171,7 +171,7 @@
             gridViewCommandColumn1.HeaderText = "ShowOrder";
             gridViewCommandColumn1.Name = "ShowOrderCol";
             gridViewCommandColumn1.UseDefaultText = true;
-            gridViewCommandColumn1.Width = 101;
+            gridViewCommandColumn1.Width = 100;
             this.DGVDelivery.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
@@ -191,7 +191,7 @@
             this.DGVDelivery.Size = new System.Drawing.Size(913, 428);
             this.DGVDelivery.TabIndex = 0;
             this.DGVDelivery.Text = "radGridView1";
-            this.DGVDelivery.ThemeName = "VisualStudio2012Light";
+            this.DGVDelivery.ThemeName = "Office2010Black";
             this.DGVDelivery.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.DGVDelivery_CommandCellClick);
             // 
             // orderBindingSource
@@ -212,8 +212,10 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "FrmDeliveryOrder";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Delivery Order";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmDeliveryOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);

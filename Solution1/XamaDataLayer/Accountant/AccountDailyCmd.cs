@@ -54,38 +54,38 @@ namespace XamaDataLayer.Accountant
 
 
 
-        public static List<AccountDaily> GetAllAccountDailyByAccountID(int ACTID)
+        public static List<AccountDaily> GetAllAccountDailyByAccountID(int actid)
         {
             db = new DbDataContext();
             var dy = (from d in db.AccountDailies
                      orderby d.DateOfProcess ascending
-                     where d.AccountID == ACTID
+                     where d.AccountID == actid
                      select d).ToList();
             return dy;
         }
         public static double  GetBalanceByAccountID(int ACTID)
         {
-            double NetBalance = 0;
+            double netBalance = 0;
             try
             {
                 db = new DbDataContext();
 
-                var  TotIn = (from d in db.AccountDailies
+                var  totIn = (from d in db.AccountDailies
                      orderby d.DateOfProcess ascending
                      where d.AccountID == ACTID
                      select  d.TotalIn ).Sum (  );
 
-                var TotOut = (from d in db.AccountDailies
+                var totOut = (from d in db.AccountDailies
                          orderby d.DateOfProcess ascending
                          where d.AccountID == ACTID
                          select d.TotalOut).Sum();
-                NetBalance = TotIn.Value - TotOut.Value;
+                netBalance = totIn.Value - totOut.Value;
 
-                return NetBalance;
+                return netBalance;
             }
             catch (Exception)
             {
-                return  NetBalance = 0;
+                return  netBalance = 0;
             }
         }
     }

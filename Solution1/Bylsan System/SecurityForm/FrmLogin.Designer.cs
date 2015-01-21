@@ -38,6 +38,7 @@
             this.EnterBtn = new Telerik.WinControls.UI.RadButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.GroupLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ExitBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EnterBtn)).BeginInit();
@@ -100,6 +101,7 @@
             this.ExitBtn.Size = new System.Drawing.Size(122, 37);
             this.ExitBtn.TabIndex = 10;
             this.ExitBtn.Text = "Exit";
+            this.ExitBtn.ThemeName = "Office2010Black";
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // EnterBtn
@@ -109,6 +111,7 @@
             this.EnterBtn.Size = new System.Drawing.Size(122, 37);
             this.EnterBtn.TabIndex = 9;
             this.EnterBtn.Text = "Enter";
+            this.EnterBtn.ThemeName = "Office2010Black";
             this.EnterBtn.Click += new System.EventHandler(this.EnterBtn_Click);
             // 
             // errorProvider1
@@ -120,7 +123,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(359, 237);
+            this.ClientSize = new System.Drawing.Size(359, 236);
             this.Controls.Add(this.EnterBtn);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.GroupLogin);
@@ -136,7 +139,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.GroupLogin.ResumeLayout(false);
             this.GroupLogin.PerformLayout();
@@ -159,5 +162,6 @@
         private Telerik.WinControls.UI.RadButton ExitBtn;
         private Telerik.WinControls.UI.RadButton EnterBtn;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

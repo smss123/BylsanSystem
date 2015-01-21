@@ -25,7 +25,7 @@ namespace XamaDataLayer.Main_Store
             q.ID = tb.ID;
             q.AvailableQty = tb.AvailableQty;
             q.Description = tb.Description;
-            q.ItemID = tb.ItemID;
+          //  q.ItemID = tb.ItemID;
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Edit ", " Edit Item", "  Edit selected  store At Main Store ");
 
@@ -49,7 +49,7 @@ namespace XamaDataLayer.Main_Store
         {
             db = new DbDataContext();
             var lst = (from i in db.Stores
-                      where i.ItemID == ItmId
+                      where i.ProductID == ItmId
                       orderby i.ID ascending
                       select i).Single();
             return lst;
@@ -59,7 +59,7 @@ namespace XamaDataLayer.Main_Store
         {
             db = new DbDataContext();
             var Rec = (from i in db.Stores
-                      where i.ItemID == ItmId
+                       where i.ProductID == ItmId
                       select i).Single ();
             return Rec;
         }

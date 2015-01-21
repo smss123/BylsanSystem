@@ -218,7 +218,7 @@
             gridViewCommandColumn2.HeaderText = "Delete";
             gridViewCommandColumn2.Name = "DelteCol";
             gridViewCommandColumn2.UseDefaultText = true;
-            gridViewCommandColumn2.Width = 90;
+            gridViewCommandColumn2.Width = 89;
             this.EmployeeGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
@@ -237,7 +237,7 @@
             this.EmployeeGridView.Size = new System.Drawing.Size(1151, 505);
             this.EmployeeGridView.TabIndex = 0;
             this.EmployeeGridView.Text = "EmployeeGridView";
-            this.EmployeeGridView.ThemeName = "VisualStudio2012Light";
+            this.EmployeeGridView.ThemeName = "Office2010Black";
             this.EmployeeGridView.Click += new System.EventHandler(this.EmployeeGridView_Click);
             // 
             // employeeBindingSource
@@ -258,9 +258,10 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Managent Employee";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmEmployeeManage_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

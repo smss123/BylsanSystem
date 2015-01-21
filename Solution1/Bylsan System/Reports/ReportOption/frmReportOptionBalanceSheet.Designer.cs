@@ -95,7 +95,7 @@
             this.SaveBtn.TabIndex = 5;
             this.SaveBtn.Text = "Ok";
             this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SaveBtn.ThemeName = "VisualStudio2012Light";
+            this.SaveBtn.ThemeName = "Office2010Black";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // AllYearcheckBox
@@ -112,7 +112,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(308, 154);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(308, 153);
             this.Controls.Add(this.AllYearcheckBox);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.groupBox1);
@@ -124,9 +125,10 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(316, 187);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Balance Sheet Option";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.frmReportOptionBalanceSheet_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

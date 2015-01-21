@@ -67,12 +67,13 @@
             this.groupBox1.Controls.Add(this.TotalDebttextBox);
             this.groupBox1.Location = new System.Drawing.Point(8, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(302, 257);
+            this.groupBox1.Size = new System.Drawing.Size(302, 253);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
             // DebetfromcomboBox
             // 
+            this.DebetfromcomboBox.BackColor = System.Drawing.SystemColors.Info;
             this.DebetfromcomboBox.FormattingEnabled = true;
             this.DebetfromcomboBox.ItemHeight = 13;
             this.DebetfromcomboBox.Location = new System.Drawing.Point(104, 82);
@@ -91,6 +92,7 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.BackColor = System.Drawing.SystemColors.Info;
             this.txtDescription.Location = new System.Drawing.Point(104, 139);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -108,7 +110,7 @@
             this.AddBtn.TabIndex = 4;
             this.AddBtn.Text = "Add";
             this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddBtn.ThemeName = "VisualStudio2012Light";
+            this.AddBtn.ThemeName = "Office2010Black";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // label4
@@ -150,6 +152,7 @@
             // 
             // TotaltextBox
             // 
+            this.TotaltextBox.BackColor = System.Drawing.SystemColors.Info;
             this.TotaltextBox.Location = new System.Drawing.Point(104, 111);
             this.TotaltextBox.Name = "TotaltextBox";
             this.TotaltextBox.ReadOnly = true;
@@ -159,6 +162,7 @@
             // 
             // AmountofDebttextBox
             // 
+            this.AmountofDebttextBox.BackColor = System.Drawing.SystemColors.Info;
             this.AmountofDebttextBox.Location = new System.Drawing.Point(104, 56);
             this.AmountofDebttextBox.Name = "AmountofDebttextBox";
             this.AmountofDebttextBox.Size = new System.Drawing.Size(109, 20);
@@ -166,6 +170,7 @@
             // 
             // TotalDebttextBox
             // 
+            this.TotalDebttextBox.BackColor = System.Drawing.SystemColors.Info;
             this.TotalDebttextBox.Location = new System.Drawing.Point(104, 30);
             this.TotalDebttextBox.Name = "TotalDebttextBox";
             this.TotalDebttextBox.ReadOnly = true;
@@ -182,7 +187,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(326, 282);
+            this.ClientSize = new System.Drawing.Size(326, 281);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(334, 315);
@@ -194,9 +199,10 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(334, 315);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAddDebt";
-            this.ThemeName = "VisualStudio2012Light";
+            this.Text = "Add Debt";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmAddDebt_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

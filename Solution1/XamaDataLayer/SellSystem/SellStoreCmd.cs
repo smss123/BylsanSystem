@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace XamaDataLayer.SellSystem
 {
@@ -71,10 +72,36 @@ namespace XamaDataLayer.SellSystem
         public static SellStore GetSellStoreByItemID( int ItmId)
         {
             db = new DbDataContext();
-            var lst = (from i in db.SellStores
+             var lst = (from i in db.SellStores
                         where i.ItemID == ItmId
                         select i).Single();
             return lst;
+        }
+
+        public static void EditQty(int productID, int branchID, long editedQty)
+        {
+            var q = new SellStore();
+            try
+            {
+                 q = db.SellStores.Where(p => p.ItemID == productID && p.branchID == branchID).Take(1).Single();
+
+                int qty = int.Parse( q.Qty.Value.ToString());
+                if (editedQty > qty)
+                {
+                   if( MessageBox.Show("Your product not availble in your store\n you want to continue ?","",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+                   {
+                       q.Qty = qty - editedQty;
+                       db.SubmitChanges();
+                   }
+                }
+               
+
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Your product not availble in your store");
+            }
         }
     }
 }

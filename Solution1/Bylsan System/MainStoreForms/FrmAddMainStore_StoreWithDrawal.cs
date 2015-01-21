@@ -169,7 +169,7 @@ namespace Bylsan_System.MainStoreForms
 
         void RollOutQty()
         {
-            xStoreTb.ItemID = XItemID;
+            xStoreTb.ProductID = XItemID;
             xStoreTb.AvailableQty -= int.Parse(qtyTextBox.Text);
             xStoreTb.Description = "Roll Out ";
             StoreCmd.EditStore(xStoreTb);

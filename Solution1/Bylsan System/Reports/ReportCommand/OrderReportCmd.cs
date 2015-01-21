@@ -1,11 +1,10 @@
-﻿using Bylsan_System.Reports.ReportsObject;
-using Microsoft.Reporting.WinForms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Bylsan_System.Reports.ReportsObject;
+using Microsoft.Reporting.WinForms;
 using XamaDataLayer.BranchCmd;
+using Xprema.XExtention;
 
 namespace Bylsan_System.Reports.ReportCommand
 {
@@ -40,7 +39,7 @@ namespace Bylsan_System.Reports.ReportCommand
                     OrderDeliveryDate = item.Order.OrderDeliveryDate.Value,
                     OrderStatus = item.Order.OrderStatus,
                     TotalAmount = item.Order.TotalAmount.Value,
-                    DeliverdToBranch = item.Order.DeliverdToBranch.Value,
+                    DeliverdToBranch = item.Order.DeliverdToBranch.ToString(),
 
                     ////informationOrderPrduct
                     ProductName = item.Product.Product_Name,
@@ -91,7 +90,7 @@ namespace Bylsan_System.Reports.ReportCommand
                     OrderDeliveryDate = item.Order.OrderDeliveryDate.Value,
                     OrderStatus = item.Order.OrderStatus,
                     TotalAmount = item.Order.TotalAmount.Value,
-                    DeliverdToBranch = item.Order.DeliverdToBranch.Value,
+                    DeliverdToBranch = item.Order.DeliverdToBranch.ToString(),
 
                    // informationOrderPrduct
                     ProductName = item.Product.Product_Name,
@@ -142,7 +141,7 @@ namespace Bylsan_System.Reports.ReportCommand
                     OrderDeliveryDate = item.OrderDeliveryDate.Value,
                     OrderStatus = item.OrderStatus,
                     TotalAmount = item.TotalAmount.Value,
-                    DeliverdToBranch = item.DeliverdToBranch.Value,
+                    DeliverdToBranch = item.DeliverdToBranch.ToString(),
                    
                 });
             }
@@ -169,28 +168,25 @@ namespace Bylsan_System.Reports.ReportCommand
             {
 
                 ls.Add(new OrderReportObj()
-                {////////////
+                {
+                    ////////////
                     /// information Order And Customer
                     OrderIdID = item.Order.ID,
                     CustomerName = item.Order.Customer.CustomerName,
                     CustomerPhoneNumber = item.Order.Customer.PhoneNumber,
                     OrderType = item.Order.OrderType,
-                    OrderDate = item.Order.OrderDate.Value,
+                    OrderDate = item.Order.OrderDate.ToString().ToDateTime(),
                     OrderDelivery = item.Order.OrderDelivery,
                     OrderVerify = item.Order.OrderVerify,
-                    OrderDeliveryDate = item.Order.OrderDeliveryDate.Value,
-                    TotalAmount = item.Order.TotalAmount.Value,
-                    DeliverdToBranch = item.Order.DeliverdToBranch.Value,
+                    OrderDeliveryDate = item.Order.OrderDeliveryDate.ToString().ToDateTime(),
+                    TotalAmount = item.Order.TotalAmount.ToString().Todouble(),
+                    DeliverdToBranch = BranchsCmd.GetBranchByBarnchID(item.Order.DeliverdToBranch.ToString().ToInt()).Branch_Name,
 
                     ////informationOrderPrduct
                     ProductName = item.Product.PublicName,
                     Qty = item.Qty.Value,
                     ProductPrice = item.Product.ProductPrice.Value,
                     OrderProductStatus = item.Status,
-
-
-
-
                 });
             }
             rs.Name = "DataSet1";

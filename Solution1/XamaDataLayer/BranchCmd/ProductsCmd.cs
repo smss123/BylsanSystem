@@ -85,5 +85,24 @@ namespace XamaDataLayer.BranchCmd
                       select p).ToList();
             return LST;
         }
+        public static List<Product> GetProductDetailsForSale()
+        {
+
+            var q = (from i in db.Products where i.ProductType=="product" select new {i.ID, i.Product_Name,i.PublicName,i.ProductPrice,i.ProductUnit,i.ProductType});
+            List<Product> ls = new List<Product>();
+            foreach (var item in q)
+            {
+                ls.Add(new Product() { 
+                 ID= item.ID,
+                  PublicName= item.PublicName,
+                   ProductType=item.ProductType,
+                    ProductUnit=item.ProductUnit,
+                    Product_Name=item.Product_Name,
+                    ProductPrice =item.ProductPrice
+                      
+                });
+            }
+            return ls;
+        }
     }
 }

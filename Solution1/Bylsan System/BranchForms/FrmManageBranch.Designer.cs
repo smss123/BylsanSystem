@@ -189,7 +189,7 @@
             gridViewCommandColumn2.HeaderText = "Delete";
             gridViewCommandColumn2.Name = "DeleteCol";
             gridViewCommandColumn2.UseDefaultText = true;
-            gridViewCommandColumn2.Width = 43;
+            gridViewCommandColumn2.Width = 42;
             this.BranchGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
@@ -206,7 +206,7 @@
             this.BranchGridView.Size = new System.Drawing.Size(1002, 456);
             this.BranchGridView.TabIndex = 0;
             this.BranchGridView.Text = "BranchGridView";
-            this.BranchGridView.ThemeName = "VisualStudio2012Light";
+            this.BranchGridView.ThemeName = "Office2010Black";
             this.BranchGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.BranchGridView_CommandCellClick);
             this.BranchGridView.Click += new System.EventHandler(this.BranchGridView_Click);
             // 
@@ -228,9 +228,10 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Branch";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmManageBranch_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

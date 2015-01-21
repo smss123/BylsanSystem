@@ -36,7 +36,7 @@ namespace Bylsan_System.FactoryForms
                 foreach (var item in q)
                 {
                  
-                     DGVProducts.Rows.Add(new string[] { item .ID .ToString (),item .ProductID .ToString (),
+                     DGVProducts.Rows.Add(new string[] { item .ID .ToString (),item .ProductID .ToString (),item.Product.Product_Name,
                      item .Qty .ToString ()
                      });
 
@@ -149,7 +149,7 @@ namespace Bylsan_System.FactoryForms
             for (int i = 0; i < DGVProducts.Rows.Count; i++)
             {
               
-                DataGridViewCheckBoxCell chkchecking = DGVProducts.Rows[i].Cells[3] as DataGridViewCheckBoxCell;
+                DataGridViewCheckBoxCell chkchecking = DGVProducts.Rows[i].Cells[4] as DataGridViewCheckBoxCell;
                 if (Convert.ToBoolean(chkchecking.Value) == true)
                 {
                     
@@ -192,7 +192,7 @@ namespace Bylsan_System.FactoryForms
                 float AvailQty = 0;
                 var TargetStore = StoreCmd.GetAvailableQtyByItemID(item.ID);
                 AvailQty = TargetStore.AvailableQty.Value;
-                TargetStore.ItemID = item.ID;
+                TargetStore.ProductID = item.ID;
                 TargetStore.AvailableQty -= (long)(item.Qty.ToString () ).ToFloat();
                 TargetStore.Description = "Drawal";
                 StoreCmd.EditStore(TargetStore);

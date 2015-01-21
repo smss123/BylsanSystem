@@ -88,5 +88,11 @@ namespace Bylsan_System.MainStoreForms
         {
             FrmManageMainStore_Store_Load(sender, e);
         }
+
+        private void btnStorePurchases_Click(object sender, EventArgs e)
+        {
+            frmStorePurchases frm = new frmStorePurchases();
+            frm.ShowDialog();
+        }
     }
 }

@@ -24,6 +24,7 @@ namespace XamaDataLayer.BranchCmd
                       orderby c.CustomerName ascending
                       select c).ToList();
             return lst;
+          
         }
 
 

@@ -26,16 +26,16 @@ namespace Bylsan_System.designerForms
 
         public int IDImageAddress { get; set; }
         public int TaregtOrder { get; set; }
+        public Order SelectedOrder { get; set; }
 
         Thread Thr;
         private void PopulateGrd()
         {
             Operation.BeginOperation(this);
-            var q = OrderProductsCmd.GetAllByOrderID(TaregtOrder);//.Where(p=>p.Status.Contains("To Deliver"));
+            var q = SelectedOrder.OrderProducts.ToList();//OrderProductsCmd.GetAllByOrderID(TaregtOrder);//.Where(p=>p.Status.Contains("To Deliver"));
             this.Invoke((MethodInvoker)delegate 
             {
                 DGVProducts.DataSource = q; 
-       
             });
             Operation.EndOperation(this);
             this.Thr.Abort();
@@ -47,6 +47,8 @@ namespace Bylsan_System.designerForms
            //================================
             Thr = new Thread(PopulateGrd);
             Thr.Start();
+            lblOrderDate.Text = SelectedOrder.OrderDate.ToString();
+            lblOrderDelviryDate.Text = SelectedOrder.OrderDeliveryDate. ToString();
         }
 
        
@@ -76,7 +78,7 @@ namespace Bylsan_System.designerForms
             {
                 Operation.BeginOperation(this);
 
-                int prdid = int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString());
+                int prdid = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString());
                 imageList1.Images.Clear();
                 var lst = (from p in OrderProuctAttachmentCmd.GetOneAttachmentByOrderProductID(prdid) select p).ToList();
                 this.Invoke((MethodInvoker)delegate
@@ -106,7 +108,7 @@ namespace Bylsan_System.designerForms
 
                     var getcurrentProductInfo = (OrderProduct)DGVProducts.CurrentRow.DataBoundItem;//ProductsCmd.GetProductByID(prdid);
 
-                    SelectedProductPhotoBox.Image = getcurrentProductInfo.Product.Img;
+                   // SelectedProductPhotoBox.Image = (Image)getcurrentProductInfo.Product.Img;
                     lblPoductName.Text = getcurrentProductInfo.Product.Product_Name;
                     lblPrice.Text = "[none]";
                     
@@ -282,6 +284,11 @@ namespace Bylsan_System.designerForms
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DGVProducts_Click(object sender, EventArgs e)
         {
 
         }

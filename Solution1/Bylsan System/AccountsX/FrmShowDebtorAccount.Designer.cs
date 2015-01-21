@@ -143,7 +143,7 @@
             gridViewTextBoxColumn5.FieldName = "DateOfProcess";
             gridViewTextBoxColumn5.HeaderText = "DateOfProcess";
             gridViewTextBoxColumn5.Name = "DateOfPrpcess";
-            gridViewTextBoxColumn5.Width = 247;
+            gridViewTextBoxColumn5.Width = 246;
             this.DGVDebtors.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -157,7 +157,7 @@
             this.DGVDebtors.Size = new System.Drawing.Size(703, 383);
             this.DGVDebtors.TabIndex = 2;
             this.DGVDebtors.Text = "radGridView1";
-            this.DGVDebtors.ThemeName = "VisualStudio2012Light";
+            this.DGVDebtors.ThemeName = "Office2010Black";
             // 
             // FrmShowDebtorAccount
             // 
@@ -173,9 +173,10 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmShowDebtorAccount";
-            this.ThemeName = "VisualStudio2012Light";
+            this.Text = "Show Debtor Account";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmShowDebtorAccount_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

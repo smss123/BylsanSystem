@@ -170,7 +170,7 @@
             gridViewCommandColumn2.EnableExpressionEditor = false;
             gridViewCommandColumn2.HeaderText = "Delete";
             gridViewCommandColumn2.Name = "DeleteCol";
-            gridViewCommandColumn2.Width = 80;
+            gridViewCommandColumn2.Width = 79;
             this.SellitmeGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
@@ -186,7 +186,7 @@
             this.SellitmeGridView.Size = new System.Drawing.Size(906, 462);
             this.SellitmeGridView.TabIndex = 0;
             this.SellitmeGridView.Text = "radGridView1";
-            this.SellitmeGridView.ThemeName = "VisualStudio2012Light";
+            this.SellitmeGridView.ThemeName = "Office2010Black";
             this.SellitmeGridView.CellClick += new Telerik.WinControls.UI.GridViewCellEventHandler(this.SellitmeGridView_CellClick);
             this.SellitmeGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.SellitmeGridView_CommandCellClick);
             // 
@@ -208,9 +208,10 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmManageSellItem";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmManageSellItem_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

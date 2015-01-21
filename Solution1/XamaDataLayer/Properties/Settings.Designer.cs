@@ -48,8 +48,8 @@ namespace XamaDataLayer.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=jasmine.arvixe.com;Initial Catalog=Cloud_Bylsan1;User ID=xama;Passwor" +
-            "d=Pa$$w0rd")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=jasmine.arvixe.com;Initial Catalog=Cloud_Bylsan;User ID=xama;Password" +
+            "=Pa$$w0rd")]
         public string Cloud_BylsanConnectionString {
             get {
                 return ((string)(this["Cloud_BylsanConnectionString"]));

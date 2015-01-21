@@ -75,7 +75,7 @@
             QtyLabel.AutoSize = true;
             QtyLabel.Location = new System.Drawing.Point(37, 57);
             QtyLabel.Name = "QtyLabel";
-            QtyLabel.Size = new System.Drawing.Size(51, 13);
+            QtyLabel.Size = new System.Drawing.Size(52, 13);
             QtyLabel.TabIndex = 2;
             QtyLabel.Text = "Add Qty:";
             // 
@@ -124,7 +124,7 @@
             this.groupBox1.Controls.Add(itemNameLabel);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(355, 302);
+            this.groupBox1.Size = new System.Drawing.Size(355, 290);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Main Store";
@@ -226,7 +226,7 @@
             this.Addbtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.Addbtn.Image = global::Bylsan_System.Properties.Resources.Add;
             this.Addbtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Addbtn.Location = new System.Drawing.Point(12, 253);
+            this.Addbtn.Location = new System.Drawing.Point(8, 248);
             this.Addbtn.Name = "Addbtn";
             this.Addbtn.Size = new System.Drawing.Size(109, 37);
             this.Addbtn.TabIndex = 4;

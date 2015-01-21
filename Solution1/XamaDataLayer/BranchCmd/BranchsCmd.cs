@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using XamaDataLayer.Main_Store;
 
 namespace XamaDataLayer.BranchCmd
 {
@@ -83,6 +84,50 @@ namespace XamaDataLayer.BranchCmd
             db.Branches.DeleteOnSubmit(b);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Delete  ", "Delete Branch ", " Delete Selected  Branch's Informations  ");
+        }
+
+        public static bool TransferFromToBranch(Branch frmBranch, Branch ToBranch, Product itemID, int qty,int loginedUser)
+        {
+            var StoreInfo = db.SellStores.Where(p => p.branchID == frmBranch.ID && p.ItemID == itemID.ID).Take(1).Single();
+            if (StoreInfo.Qty<qty)
+            {
+                throw new Exception("this Qty is Greater than Avaliable ");
+            }
+            var toStore = db.SellStores.Where(p => p.branchID == frmBranch.ID && p.ItemID == itemID.ID).Take(1).Single();
+            if (toStore == null)
+            {
+                db.SellStores.InsertOnSubmit(new SellStore() { 
+                 branchID= ToBranch.ID,
+                  Qty= qty,
+                   ItemID=itemID.ID,
+                });
+
+            }
+            else
+            {
+                StoreInfo.Qty =(int)StoreInfo.Qty - qty;
+                db.StoreOperationManagers.InsertOnSubmit(new StoreOperationManager() { 
+                 ProcessDate = DateTime.Now,
+                 ProcessType = "Darwal",
+                   Qty=qty,
+                    StoreID = StoreInfo.ID,
+                     UserID= loginedUser
+                
+                });
+                toStore.Qty = (int)toStore.Qty + qty;
+                db.StoreOperationManagers.InsertOnSubmit(new StoreOperationManager()
+                {
+                    ProcessDate = DateTime.Now,
+                    ProcessType = "Deposit",
+                    Qty = qty,
+                    StoreID = toStore.ID,
+                    UserID = loginedUser
+
+                });
+                db.SubmitChanges();
+            }
+
+            return true;
         }
     }
 }

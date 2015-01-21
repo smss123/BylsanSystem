@@ -89,17 +89,19 @@
             this.groupBox1.Controls.Add(this.itemNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(355, 237);
+            this.groupBox1.Size = new System.Drawing.Size(355, 228);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Item";
             // 
             // ItemTypecomboBox
             // 
+            this.ItemTypecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ItemTypecomboBox.FormattingEnabled = true;
             this.ItemTypecomboBox.Items.AddRange(new object[] {
             "item product",
-            "item row material"});
+            "item row material",
+            "All"});
             this.ItemTypecomboBox.Location = new System.Drawing.Point(97, 139);
             this.ItemTypecomboBox.Name = "ItemTypecomboBox";
             this.ItemTypecomboBox.Size = new System.Drawing.Size(234, 21);

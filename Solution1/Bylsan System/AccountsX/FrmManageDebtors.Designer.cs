@@ -168,7 +168,7 @@
             gridViewCommandColumn2.EnableExpressionEditor = false;
             gridViewCommandColumn2.HeaderText = "Show Account";
             gridViewCommandColumn2.Name = "ShowAccount";
-            gridViewCommandColumn2.Width = 88;
+            gridViewCommandColumn2.Width = 87;
             this.DGVDebitors.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewDecimalColumn1,
             gridViewTextBoxColumn1,
@@ -185,7 +185,7 @@
             this.DGVDebitors.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DGVDebitors.Size = new System.Drawing.Size(1169, 437);
             this.DGVDebitors.TabIndex = 0;
-            this.DGVDebitors.ThemeName = "VisualStudio2012Light";
+            this.DGVDebitors.ThemeName = "Office2010Black";
             this.DGVDebitors.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.DGVDebitors_CommandCellClick);
             // 
             // debtorBindingSource
@@ -206,9 +206,10 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmManageDebtors";
-            this.ThemeName = "VisualStudio2012Light";
+            this.Text = "Manage Debtors";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmManageDebtors_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

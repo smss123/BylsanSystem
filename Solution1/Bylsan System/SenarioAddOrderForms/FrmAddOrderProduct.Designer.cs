@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddOrderProduct));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
@@ -47,16 +47,23 @@
             this.CustomerPhoneLab = new System.Windows.Forms.Label();
             this.CustomerNameLab = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.ckBracode = new System.Windows.Forms.RadioButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.itemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
-            this.ListViewProductes = new System.Windows.Forms.ListView();
+            this.CollapseBtn = new System.Windows.Forms.Button();
+            this.ExpandAll = new System.Windows.Forms.Button();
+            this.TreeCategories = new System.Windows.Forms.TreeView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.titleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.largeIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CollapseBtn = new System.Windows.Forms.Button();
-            this.ExpandAll = new System.Windows.Forms.Button();
-            this.TreeCategories = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
@@ -66,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nextBtn)).BeginInit();
             this.CustomerInfomationGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -147,7 +155,7 @@
             this.nextBtn.Size = new System.Drawing.Size(144, 39);
             this.nextBtn.TabIndex = 0;
             this.nextBtn.Text = "Next";
-            this.nextBtn.ThemeName = "VisualStudio2012Light";
+            this.nextBtn.ThemeName = "Office2010Black";
             this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click_1);
             // 
             // CustomerInfomationGroupBox
@@ -194,8 +202,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.ckBracode);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.radGridView1);
-            this.groupBox1.Controls.Add(this.ListViewProductes);
             this.groupBox1.Controls.Add(this.CollapseBtn);
             this.groupBox1.Controls.Add(this.ExpandAll);
             this.groupBox1.Controls.Add(this.TreeCategories);
@@ -206,6 +218,77 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(440, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Search item";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(272, 32);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(94, 17);
+            this.radioButton2.TabIndex = 16;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "by Item Name";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // ckBracode
+            // 
+            this.ckBracode.AutoSize = true;
+            this.ckBracode.Location = new System.Drawing.Point(176, 32);
+            this.ckBracode.Name = "ckBracode";
+            this.ckBracode.Size = new System.Drawing.Size(82, 17);
+            this.ckBracode.TabIndex = 16;
+            this.ckBracode.TabStop = true;
+            this.ckBracode.Text = "By Barcode";
+            this.ckBracode.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(512, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(232, 20);
+            this.textBox1.TabIndex = 15;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.itemID,
+            this.ItemName,
+            this.ItemPrice});
+            this.dataGridView1.Location = new System.Drawing.Point(176, 56);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(568, 248);
+            this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // itemID
+            // 
+            this.itemID.DataPropertyName = "ID";
+            this.itemID.HeaderText = "Item BarCode";
+            this.itemID.Name = "itemID";
+            // 
+            // ItemName
+            // 
+            this.ItemName.DataPropertyName = "Product_Name";
+            this.ItemName.HeaderText = "Item Name";
+            this.ItemName.Name = "ItemName";
+            // 
+            // ItemPrice
+            // 
+            this.ItemPrice.DataPropertyName = "ProductPrice";
+            this.ItemPrice.HeaderText = "Price";
+            this.ItemPrice.Name = "ItemPrice";
             // 
             // radGridView1
             // 
@@ -219,51 +302,65 @@
             // radGridView1
             // 
             this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.FieldName = "Product.Product_Name";
-            gridViewTextBoxColumn1.HeaderText = "Name";
-            gridViewTextBoxColumn1.Name = "ColName";
-            gridViewTextBoxColumn1.Width = 98;
-            gridViewTextBoxColumn2.Expression = "";
-            gridViewTextBoxColumn2.FieldName = "Qty";
-            gridViewTextBoxColumn2.HeaderText = "Qty";
-            gridViewTextBoxColumn2.Name = "ColQty";
-            gridViewTextBoxColumn2.Width = 98;
-            gridViewTextBoxColumn3.FieldName = "Product.ProductPrice";
-            gridViewTextBoxColumn3.HeaderText = "Product Price";
-            gridViewTextBoxColumn3.Name = "ColProductPrice";
-            gridViewTextBoxColumn3.Width = 98;
-            gridViewTextBoxColumn4.EnableExpressionEditor = true;
-            gridViewTextBoxColumn4.Expression = "ColProductPrice * ColQty";
-            gridViewTextBoxColumn4.HeaderText = "Price";
-            gridViewTextBoxColumn4.Name = "ColPrice";
-            gridViewTextBoxColumn4.Width = 96;
+            gridViewTextBoxColumn9.FieldName = "Product.Product_Name";
+            gridViewTextBoxColumn9.HeaderText = "Name";
+            gridViewTextBoxColumn9.Name = "ColName";
+            gridViewTextBoxColumn9.Width = 98;
+            gridViewTextBoxColumn10.Expression = "";
+            gridViewTextBoxColumn10.FieldName = "Qty";
+            gridViewTextBoxColumn10.HeaderText = "Qty";
+            gridViewTextBoxColumn10.Name = "ColQty";
+            gridViewTextBoxColumn10.Width = 98;
+            gridViewTextBoxColumn11.FieldName = "Product.ProductPrice";
+            gridViewTextBoxColumn11.HeaderText = "Product Price";
+            gridViewTextBoxColumn11.Name = "ColProductPrice";
+            gridViewTextBoxColumn11.Width = 98;
+            gridViewTextBoxColumn12.EnableExpressionEditor = true;
+            gridViewTextBoxColumn12.Expression = "ColProductPrice * ColQty";
+            gridViewTextBoxColumn12.HeaderText = "Price";
+            gridViewTextBoxColumn12.Name = "ColPrice";
+            gridViewTextBoxColumn12.Width = 95;
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4});
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12});
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.radGridView1.Size = new System.Drawing.Size(406, 304);
             this.radGridView1.TabIndex = 13;
             this.radGridView1.Text = "radGridView1";
-            this.radGridView1.ThemeName = "VisualStudio2012Light";
+            this.radGridView1.ThemeName = "Office2010Black";
             // 
-            // ListViewProductes
+            // CollapseBtn
             // 
-            this.ListViewProductes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ListViewProductes.ContextMenuStrip = this.contextMenuStrip1;
-            this.ListViewProductes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ListViewProductes.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListViewProductes.ForeColor = System.Drawing.Color.Blue;
-            this.ListViewProductes.FullRowSelect = true;
-            this.ListViewProductes.GridLines = true;
-            this.ListViewProductes.Location = new System.Drawing.Point(186, 19);
-            this.ListViewProductes.Name = "ListViewProductes";
-            this.ListViewProductes.Size = new System.Drawing.Size(575, 305);
-            this.ListViewProductes.TabIndex = 7;
-            this.ListViewProductes.UseCompatibleStateImageBehavior = false;
-            this.ListViewProductes.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListViewProductes_MouseClick);
+            this.CollapseBtn.Location = new System.Drawing.Point(89, 283);
+            this.CollapseBtn.Name = "CollapseBtn";
+            this.CollapseBtn.Size = new System.Drawing.Size(75, 23);
+            this.CollapseBtn.TabIndex = 6;
+            this.CollapseBtn.Text = "Collapse All";
+            this.CollapseBtn.UseVisualStyleBackColor = true;
+            this.CollapseBtn.Click += new System.EventHandler(this.CollapesBtn_Click);
+            // 
+            // ExpandAll
+            // 
+            this.ExpandAll.Location = new System.Drawing.Point(12, 283);
+            this.ExpandAll.Name = "ExpandAll";
+            this.ExpandAll.Size = new System.Drawing.Size(75, 23);
+            this.ExpandAll.TabIndex = 2;
+            this.ExpandAll.Text = "Expand All";
+            this.ExpandAll.UseVisualStyleBackColor = true;
+            this.ExpandAll.Click += new System.EventHandler(this.ExpanedAll_Click);
+            // 
+            // TreeCategories
+            // 
+            this.TreeCategories.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TreeCategories.LineColor = System.Drawing.Color.Blue;
+            this.TreeCategories.Location = new System.Drawing.Point(12, 19);
+            this.TreeCategories.Name = "TreeCategories";
+            this.TreeCategories.Size = new System.Drawing.Size(152, 260);
+            this.TreeCategories.TabIndex = 5;
+            this.TreeCategories.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeCategories_NodeMouseClick);
             // 
             // contextMenuStrip1
             // 
@@ -303,36 +400,6 @@
             this.largeIconToolStripMenuItem.Text = "LargeIcon";
             this.largeIconToolStripMenuItem.Click += new System.EventHandler(this.largeIconToolStripMenuItem_Click);
             // 
-            // CollapseBtn
-            // 
-            this.CollapseBtn.Location = new System.Drawing.Point(89, 283);
-            this.CollapseBtn.Name = "CollapseBtn";
-            this.CollapseBtn.Size = new System.Drawing.Size(75, 23);
-            this.CollapseBtn.TabIndex = 6;
-            this.CollapseBtn.Text = "Collapse All";
-            this.CollapseBtn.UseVisualStyleBackColor = true;
-            this.CollapseBtn.Click += new System.EventHandler(this.CollapesBtn_Click);
-            // 
-            // ExpandAll
-            // 
-            this.ExpandAll.Location = new System.Drawing.Point(12, 283);
-            this.ExpandAll.Name = "ExpandAll";
-            this.ExpandAll.Size = new System.Drawing.Size(75, 23);
-            this.ExpandAll.TabIndex = 2;
-            this.ExpandAll.Text = "Expand All";
-            this.ExpandAll.UseVisualStyleBackColor = true;
-            this.ExpandAll.Click += new System.EventHandler(this.ExpanedAll_Click);
-            // 
-            // TreeCategories
-            // 
-            this.TreeCategories.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TreeCategories.LineColor = System.Drawing.Color.Blue;
-            this.TreeCategories.Location = new System.Drawing.Point(12, 19);
-            this.TreeCategories.Name = "TreeCategories";
-            this.TreeCategories.Size = new System.Drawing.Size(152, 260);
-            this.TreeCategories.TabIndex = 5;
-            this.TreeCategories.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.TreeCategories_NodeMouseClick);
-            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -363,7 +430,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmAddOrderProduct_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -374,6 +441,8 @@
             this.CustomerInfomationGroupBox.ResumeLayout(false);
             this.CustomerInfomationGroupBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -400,7 +469,6 @@
         private System.Windows.Forms.Label ProductDescriotionLab;
         private System.Windows.Forms.Label ProductNameLab;
         private System.Windows.Forms.PictureBox PhotoBox;
-        private System.Windows.Forms.ListView ListViewProductes;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem titleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
@@ -411,5 +479,13 @@
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.ImageList imageList2;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton ckBracode;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemPrice;
     }
 }
