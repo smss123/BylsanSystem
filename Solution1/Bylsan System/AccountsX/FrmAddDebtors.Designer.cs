@@ -103,7 +103,7 @@
             this.groupBox1.Controls.Add(this.txtDebtorName);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(390, 214);
+            this.groupBox1.Size = new System.Drawing.Size(390, 211);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -159,7 +159,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(404, 238);
+            this.ClientSize = new System.Drawing.Size(404, 241);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(422, 271);
@@ -173,7 +173,7 @@
             this.RootElement.MaxSize = new System.Drawing.Size(422, 271);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddDebtors";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmAddDebtors_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

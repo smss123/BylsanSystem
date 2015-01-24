@@ -63,7 +63,7 @@
             this.qtyTextBox = new System.Windows.Forms.TextBox();
             this.costAmountNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+         //   this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.billNumberTextBox = new System.Windows.Forms.TextBox();
             this.productBarcodeTextBox = new System.Windows.Forms.TextBox();
             this.expierdDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -86,7 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.costAmountNumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+         //   ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountIDComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountIDComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountIDComboBox.EditorControl.MasterTemplate)).BeginInit();
@@ -200,7 +200,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pictureEdit1);
+          //  this.groupBox1.Controls.Add(this.pictureEdit1);
             this.groupBox1.Controls.Add(billNumberLabel);
             this.groupBox1.Controls.Add(this.billNumberTextBox);
             this.groupBox1.Controls.Add(productBarcodeLabel);
@@ -227,15 +227,15 @@
             // 
             // pictureEdit1
             // 
-            this.pictureEdit1.EditValue = global::Bylsan_System.Properties.Resources.Folders_OS_Info_Metro_icon;
-            this.pictureEdit1.Location = new System.Drawing.Point(424, 152);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Size = new System.Drawing.Size(24, 24);
-            this.pictureEdit1.TabIndex = 19;
-            this.pictureEdit1.ToolTip = "To show the details of the product barcode type or number passed the device and t" +
-    "he Inter Press";
-            this.pictureEdit1.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.pictureEdit1.ToolTipTitle = "info About Barcode";
+    //        this.pictureEdit1.EditValue = global::Bylsan_System.Properties.Resources.Folders_OS_Info_Metro_icon;
+    //        this.pictureEdit1.Location = new System.Drawing.Point(424, 152);
+    //        this.pictureEdit1.Name = "pictureEdit1";
+    //        this.pictureEdit1.Size = new System.Drawing.Size(24, 24);
+    //        this.pictureEdit1.TabIndex = 19;
+    //        this.pictureEdit1.ToolTip = "To show the details of the product barcode type or number passed the device and t" +
+    //"he Inter Press";
+    //        this.pictureEdit1.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+    //        this.pictureEdit1.ToolTipTitle = "info About Barcode";
             // 
             // billNumberTextBox
             // 
@@ -628,7 +628,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.costAmountNumericUpDown)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountIDComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountIDComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountIDComboBox)).EndInit();
@@ -666,7 +666,7 @@
         private System.Windows.Forms.TextBox productBarcodeTextBox;
         private System.Windows.Forms.DateTimePicker expierdDateDateTimePicker;
         private System.Windows.Forms.TextBox billNumberTextBox;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        //private DevExpress.XtraEditors.PictureEdit pictureEdit1;
 
     }
 }

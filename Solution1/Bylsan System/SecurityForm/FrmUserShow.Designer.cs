@@ -147,7 +147,7 @@
             this.UserGridView.Name = "UserGridView";
             this.UserGridView.ReadOnly = true;
             this.UserGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.UserGridView.Size = new System.Drawing.Size(813, 449);
+            this.UserGridView.Size = new System.Drawing.Size(813, 453);
             this.UserGridView.TabIndex = 0;
             this.UserGridView.Text = "radGridView1";
             this.UserGridView.ThemeName = "Office2010Black";
@@ -159,7 +159,7 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 466);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 470);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(813, 22);
             this.statusStrip1.TabIndex = 2;
@@ -170,7 +170,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(813, 488);
+            this.ClientSize = new System.Drawing.Size(813, 492);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.UserGridView);
             this.Controls.Add(this.toolStrip1);

@@ -37,7 +37,7 @@ namespace Bylsan_System
         public MainForm()
         {
             InitializeComponent();
-            ActivatePermessions();
+          //  ActivatePermessions();
             btnManagecustomerPoint.Click += btnManagecustomerPoint_Click;
         }
 
@@ -79,7 +79,7 @@ namespace Bylsan_System
 
                 return;
             }
-          
+
         }
 
         #region "    "

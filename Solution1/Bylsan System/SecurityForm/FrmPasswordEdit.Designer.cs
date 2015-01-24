@@ -139,7 +139,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(351, 217);
+            this.ClientSize = new System.Drawing.Size(351, 221);
             this.Controls.Add(this.groupBox1);
             this.MaximumSize = new System.Drawing.Size(359, 251);
             this.MinimumSize = new System.Drawing.Size(359, 251);
