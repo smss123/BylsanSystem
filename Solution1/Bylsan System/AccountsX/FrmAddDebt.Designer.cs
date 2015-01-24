@@ -43,6 +43,7 @@
             this.TotalDebttextBox = new System.Windows.Forms.TextBox();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -65,9 +66,9 @@
             this.groupBox1.Controls.Add(this.TotaltextBox);
             this.groupBox1.Controls.Add(this.AmountofDebttextBox);
             this.groupBox1.Controls.Add(this.TotalDebttextBox);
-            this.groupBox1.Location = new System.Drawing.Point(8, 10);
+            this.groupBox1.Location = new System.Drawing.Point(12, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(302, 253);
+            this.groupBox1.Size = new System.Drawing.Size(302, 255);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -102,9 +103,9 @@
             // AddBtn
             // 
             this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddBtn.Image = global::Bylsan_System.Properties.Resources.Add;
+            this.AddBtn.Image = global::Bylsan_System.Properties.Resources.Add1;
             this.AddBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.AddBtn.Location = new System.Drawing.Point(6, 201);
+            this.AddBtn.Location = new System.Drawing.Point(13, 206);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(109, 37);
             this.AddBtn.TabIndex = 4;
@@ -229,5 +230,6 @@
         private System.Windows.Forms.ComboBox DebetfromcomboBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

@@ -29,45 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label DescriptionLabel;
-            System.Windows.Forms.Label AvailableQtyLabel;
             System.Windows.Forms.Label itemNameLabel;
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ItemColumnComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.DescriptiontextBox = new System.Windows.Forms.TextBox();
-            this.SaveBtn = new Telerik.WinControls.UI.RadButton();
-            this.AvailableQtyTextBox = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.Label AvailableQtyLabel;
+            System.Windows.Forms.Label DescriptionLabel;
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            DescriptionLabel = new System.Windows.Forms.Label();
-            AvailableQtyLabel = new System.Windows.Forms.Label();
+            this.AvailableQtyTextBox = new System.Windows.Forms.TextBox();
+            this.SaveBtn = new Telerik.WinControls.UI.RadButton();
+            this.DescriptiontextBox = new System.Windows.Forms.TextBox();
+            this.ItemColumnComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             itemNameLabel = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            AvailableQtyLabel = new System.Windows.Forms.Label();
+            DescriptionLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // DescriptionLabel
+            // errorProvider1
             // 
-            DescriptionLabel.AutoSize = true;
-            DescriptionLabel.Location = new System.Drawing.Point(10, 94);
-            DescriptionLabel.Name = "DescriptionLabel";
-            DescriptionLabel.Size = new System.Drawing.Size(69, 13);
-            DescriptionLabel.TabIndex = 10;
-            DescriptionLabel.Text = "Description:";
-            // 
-            // AvailableQtyLabel
-            // 
-            AvailableQtyLabel.AutoSize = true;
-            AvailableQtyLabel.Location = new System.Drawing.Point(6, 64);
-            AvailableQtyLabel.Name = "AvailableQtyLabel";
-            AvailableQtyLabel.Size = new System.Drawing.Size(74, 13);
-            AvailableQtyLabel.TabIndex = 6;
-            AvailableQtyLabel.Text = "AvailableQty:";
+            this.errorProvider1.ContainerControl = this;
             // 
             // itemNameLabel
             // 
@@ -78,24 +64,55 @@
             itemNameLabel.TabIndex = 5;
             itemNameLabel.Text = "Item Name:";
             // 
-            // groupBox1
+            // AvailableQtyTextBox
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.ItemColumnComboBox);
-            this.groupBox1.Controls.Add(this.DescriptiontextBox);
-            this.groupBox1.Controls.Add(this.SaveBtn);
-            this.groupBox1.Controls.Add(DescriptionLabel);
-            this.groupBox1.Controls.Add(AvailableQtyLabel);
-            this.groupBox1.Controls.Add(this.AvailableQtyTextBox);
-            this.groupBox1.Controls.Add(itemNameLabel);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(376, 241);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Edit Main Store";
+            this.AvailableQtyTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.AvailableQtyTextBox.Location = new System.Drawing.Point(81, 60);
+            this.AvailableQtyTextBox.Name = "AvailableQtyTextBox";
+            this.AvailableQtyTextBox.Size = new System.Drawing.Size(152, 20);
+            this.AvailableQtyTextBox.TabIndex = 2;
+            this.AvailableQtyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AvailableQtyTextBox_KeyPress);
+            // 
+            // AvailableQtyLabel
+            // 
+            AvailableQtyLabel.AutoSize = true;
+            AvailableQtyLabel.Location = new System.Drawing.Point(6, 64);
+            AvailableQtyLabel.Name = "AvailableQtyLabel";
+            AvailableQtyLabel.Size = new System.Drawing.Size(73, 13);
+            AvailableQtyLabel.TabIndex = 6;
+            AvailableQtyLabel.Text = "AvailableQty:";
+            // 
+            // DescriptionLabel
+            // 
+            DescriptionLabel.AutoSize = true;
+            DescriptionLabel.Location = new System.Drawing.Point(10, 94);
+            DescriptionLabel.Name = "DescriptionLabel";
+            DescriptionLabel.Size = new System.Drawing.Size(69, 13);
+            DescriptionLabel.TabIndex = 10;
+            DescriptionLabel.Text = "Description:";
+            // 
+            // SaveBtn
+            // 
+            this.SaveBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveBtn.Image = global::Bylsan_System.Properties.Resources.Save;
+            this.SaveBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SaveBtn.Location = new System.Drawing.Point(19, 186);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(109, 37);
+            this.SaveBtn.TabIndex = 4;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SaveBtn.ThemeName = "Office2010Black";
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
+            // DescriptiontextBox
+            // 
+            this.DescriptiontextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.DescriptiontextBox.Location = new System.Drawing.Point(81, 90);
+            this.DescriptiontextBox.Multiline = true;
+            this.DescriptiontextBox.Name = "DescriptiontextBox";
+            this.DescriptiontextBox.Size = new System.Drawing.Size(274, 75);
+            this.DescriptiontextBox.TabIndex = 3;
             // 
             // ItemColumnComboBox
             // 
@@ -124,50 +141,33 @@
             this.ItemColumnComboBox.Size = new System.Drawing.Size(274, 20);
             this.ItemColumnComboBox.TabIndex = 1;
             this.ItemColumnComboBox.TabStop = false;
-            this.ItemColumnComboBox.ThemeName = "VisualStudio2012Light";
+            this.ItemColumnComboBox.ThemeName = "Office2010Black";
             // 
-            // DescriptiontextBox
+            // groupBox1
             // 
-            this.DescriptiontextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.DescriptiontextBox.Location = new System.Drawing.Point(81, 90);
-            this.DescriptiontextBox.Multiline = true;
-            this.DescriptiontextBox.Name = "DescriptiontextBox";
-            this.DescriptiontextBox.Size = new System.Drawing.Size(274, 75);
-            this.DescriptiontextBox.TabIndex = 3;
-            // 
-            // SaveBtn
-            // 
-            this.SaveBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveBtn.Image = global::Bylsan_System.Properties.Resources.Save;
-            this.SaveBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.SaveBtn.Location = new System.Drawing.Point(19, 186);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(109, 37);
-            this.SaveBtn.TabIndex = 4;
-            this.SaveBtn.Text = "Save";
-            this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SaveBtn.ThemeName = "VisualStudio2012Light";
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
-            // 
-            // AvailableQtyTextBox
-            // 
-            this.AvailableQtyTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.AvailableQtyTextBox.Location = new System.Drawing.Point(81, 60);
-            this.AvailableQtyTextBox.Name = "AvailableQtyTextBox";
-            this.AvailableQtyTextBox.Size = new System.Drawing.Size(152, 20);
-            this.AvailableQtyTextBox.TabIndex = 2;
-            this.AvailableQtyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AvailableQtyTextBox_KeyPress);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.ItemColumnComboBox);
+            this.groupBox1.Controls.Add(this.DescriptiontextBox);
+            this.groupBox1.Controls.Add(this.SaveBtn);
+            this.groupBox1.Controls.Add(DescriptionLabel);
+            this.groupBox1.Controls.Add(AvailableQtyLabel);
+            this.groupBox1.Controls.Add(this.AvailableQtyTextBox);
+            this.groupBox1.Controls.Add(itemNameLabel);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(376, 241);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Edit Main Store";
             // 
             // FrmEditMainStore_Store
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(400, 268);
+            this.ClientSize = new System.Drawing.Size(400, 271);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(408, 301);
@@ -181,15 +181,15 @@
             this.RootElement.MaxSize = new System.Drawing.Size(408, 301);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditMainStore_Store";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmEditMainStore_Store_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemColumnComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -197,12 +197,12 @@
 
         #endregion
 
+        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private Telerik.WinControls.UI.RadMultiColumnComboBox ItemColumnComboBox;
         private System.Windows.Forms.TextBox DescriptiontextBox;
         private Telerik.WinControls.UI.RadButton SaveBtn;
         private System.Windows.Forms.TextBox AvailableQtyTextBox;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private Telerik.WinControls.UI.RadMultiColumnComboBox ItemColumnComboBox;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

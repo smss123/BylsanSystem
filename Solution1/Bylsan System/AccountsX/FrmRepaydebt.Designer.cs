@@ -41,8 +41,8 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.PaymenttextBox = new System.Windows.Forms.TextBox();
             this.TotalDebttextBox = new System.Windows.Forms.TextBox();
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -67,7 +67,7 @@
             this.groupBox1.Controls.Add(this.TotalDebttextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(332, 260);
+            this.groupBox1.Size = new System.Drawing.Size(332, 256);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -75,7 +75,7 @@
             // 
             this.DebetfromcomboBox.BackColor = System.Drawing.SystemColors.Info;
             this.DebetfromcomboBox.FormattingEnabled = true;
-            this.DebetfromcomboBox.Location = new System.Drawing.Point(96, 88);
+            this.DebetfromcomboBox.Location = new System.Drawing.Point(91, 67);
             this.DebetfromcomboBox.Name = "DebetfromcomboBox";
             this.DebetfromcomboBox.Size = new System.Drawing.Size(166, 21);
             this.DebetfromcomboBox.TabIndex = 2;
@@ -83,7 +83,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 88);
+            this.label4.Location = new System.Drawing.Point(27, 67);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 15;
@@ -94,7 +94,7 @@
             this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddBtn.Image = global::Bylsan_System.Properties.Resources.Add;
             this.AddBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.AddBtn.Location = new System.Drawing.Point(6, 217);
+            this.AddBtn.Location = new System.Drawing.Point(8, 205);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(109, 37);
             this.AddBtn.TabIndex = 2;
@@ -106,7 +106,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 152);
+            this.label3.Location = new System.Drawing.Point(19, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 5;
@@ -115,7 +115,7 @@
             // Remaininglabel
             // 
             this.Remaininglabel.AutoSize = true;
-            this.Remaininglabel.Location = new System.Drawing.Point(30, 124);
+            this.Remaininglabel.Location = new System.Drawing.Point(25, 103);
             this.Remaininglabel.Name = "Remaininglabel";
             this.Remaininglabel.Size = new System.Drawing.Size(65, 13);
             this.Remaininglabel.TabIndex = 5;
@@ -124,7 +124,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 65);
+            this.label2.Location = new System.Drawing.Point(29, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 4;
@@ -133,7 +133,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 39);
+            this.label1.Location = new System.Drawing.Point(21, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 3;
@@ -142,7 +142,7 @@
             // RemainingtextBox
             // 
             this.RemainingtextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.RemainingtextBox.Location = new System.Drawing.Point(96, 120);
+            this.RemainingtextBox.Location = new System.Drawing.Point(91, 99);
             this.RemainingtextBox.Name = "RemainingtextBox";
             this.RemainingtextBox.ReadOnly = true;
             this.RemainingtextBox.Size = new System.Drawing.Size(125, 20);
@@ -152,7 +152,7 @@
             // txtDescription
             // 
             this.txtDescription.BackColor = System.Drawing.SystemColors.Info;
-            this.txtDescription.Location = new System.Drawing.Point(96, 144);
+            this.txtDescription.Location = new System.Drawing.Point(91, 123);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(218, 56);
@@ -161,7 +161,7 @@
             // PaymenttextBox
             // 
             this.PaymenttextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.PaymenttextBox.Location = new System.Drawing.Point(96, 62);
+            this.PaymenttextBox.Location = new System.Drawing.Point(91, 41);
             this.PaymenttextBox.Name = "PaymenttextBox";
             this.PaymenttextBox.Size = new System.Drawing.Size(125, 20);
             this.PaymenttextBox.TabIndex = 1;
@@ -169,7 +169,7 @@
             // TotalDebttextBox
             // 
             this.TotalDebttextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.TotalDebttextBox.Location = new System.Drawing.Point(96, 36);
+            this.TotalDebttextBox.Location = new System.Drawing.Point(91, 15);
             this.TotalDebttextBox.Name = "TotalDebttextBox";
             this.TotalDebttextBox.ReadOnly = true;
             this.TotalDebttextBox.Size = new System.Drawing.Size(125, 20);
@@ -219,12 +219,12 @@
         private System.Windows.Forms.Label Remaininglabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private Telerik.WinControls.UI.RadButton AddBtn;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ComboBox DebetfromcomboBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label3;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

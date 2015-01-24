@@ -42,7 +42,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.DescriptiontextBox = new System.Windows.Forms.TextBox();
             this.ImageListProducuts = new System.Windows.Forms.ImageList(this.components);
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OkyBtn)).BeginInit();
@@ -95,7 +95,7 @@
             this.OkyBtn.Size = new System.Drawing.Size(60, 24);
             this.OkyBtn.TabIndex = 6;
             this.OkyBtn.Text = "Oky";
-            this.OkyBtn.ThemeName = "VisualStudio2012Light";
+            this.OkyBtn.ThemeName = "Office2010Black";
             this.OkyBtn.Click += new System.EventHandler(this.OkyBtn_Click);
             // 
             // label2
@@ -114,7 +114,7 @@
             this.BrwoseBtn.Size = new System.Drawing.Size(110, 24);
             this.BrwoseBtn.TabIndex = 4;
             this.BrwoseBtn.Text = "Upload Image";
-            this.BrwoseBtn.ThemeName = "VisualStudio2012Light";
+            this.BrwoseBtn.ThemeName = "Office2010Black";
             this.BrwoseBtn.Click += new System.EventHandler(this.BrwoseBtn_Click);
             // 
             // PathTextBox
@@ -131,7 +131,7 @@
             this.RemoveBtn.Size = new System.Drawing.Size(59, 24);
             this.RemoveBtn.TabIndex = 2;
             this.RemoveBtn.Text = "<<";
-            this.RemoveBtn.ThemeName = "VisualStudio2012Light";
+            this.RemoveBtn.ThemeName = "Office2010Black";
             this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
             // 
             // label3
@@ -215,8 +215,8 @@
         private Telerik.WinControls.UI.RadButton BrwoseBtn;
         private System.Windows.Forms.ImageList ImageListProducuts;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

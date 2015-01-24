@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMailServer));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.NewBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.FoldersGroupBox = new Telerik.WinControls.UI.RadGroupBox();
             this.SentBtn = new Telerik.WinControls.UI.RadButton();
@@ -46,6 +47,7 @@
             this.DeleteBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.MessagesListView = new System.Windows.Forms.ListView();
             this.GroupDisplayMessage = new System.Windows.Forms.GroupBox();
+            this.ReplayBtn = new System.Windows.Forms.Button();
             this.labMessageDate = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,7 +57,7 @@
             this.labUserName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.ReplayBtn = new System.Windows.Forms.Button();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FoldersGroupBox)).BeginInit();
             this.FoldersGroupBox.SuspendLayout();
@@ -64,36 +66,51 @@
             ((System.ComponentModel.ISupportInitialize)(this.InBoxBtn)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.GroupDisplayMessage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NewBtn,
-            this.RefreshBtn});
+            this.toolStripSeparator1,
+            this.RefreshBtn,
+            this.toolStripSeparator2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(758, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(758, 39);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // NewBtn
             // 
-            this.NewBtn.Image = ((System.Drawing.Image)(resources.GetObject("NewBtn.Image")));
+            this.NewBtn.Image = global::Bylsan_System.Properties.Resources.Massege;
+            this.NewBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.NewBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.NewBtn.Name = "NewBtn";
-            this.NewBtn.Size = new System.Drawing.Size(100, 22);
+            this.NewBtn.Size = new System.Drawing.Size(116, 36);
             this.NewBtn.Text = "New Message";
             this.NewBtn.Click += new System.EventHandler(this.NewBtn_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
             // RefreshBtn
             // 
-            this.RefreshBtn.Image = ((System.Drawing.Image)(resources.GetObject("RefreshBtn.Image")));
+            this.RefreshBtn.Image = global::Bylsan_System.Properties.Resources.Refrech;
+            this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(66, 22);
+            this.RefreshBtn.Size = new System.Drawing.Size(82, 36);
             this.RefreshBtn.Text = "Refresh";
             this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
             // statusStrip1
             // 
@@ -112,12 +129,12 @@
             this.FoldersGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.FoldersGroupBox.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office;
             this.FoldersGroupBox.HeaderText = "Folders";
-            this.FoldersGroupBox.Location = new System.Drawing.Point(0, 25);
+            this.FoldersGroupBox.Location = new System.Drawing.Point(0, 39);
             this.FoldersGroupBox.Name = "FoldersGroupBox";
-            this.FoldersGroupBox.Size = new System.Drawing.Size(136, 390);
+            this.FoldersGroupBox.Size = new System.Drawing.Size(136, 376);
             this.FoldersGroupBox.TabIndex = 3;
             this.FoldersGroupBox.Text = "Folders";
-            this.FoldersGroupBox.ThemeName = "Windows8";
+            this.FoldersGroupBox.ThemeName = "Office2010Black";
             // 
             // SentBtn
             // 
@@ -128,7 +145,7 @@
             this.SentBtn.TabIndex = 2;
             this.SentBtn.Text = "Sent";
             this.SentBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SentBtn.ThemeName = "Windows8";
+            this.SentBtn.ThemeName = "Office2010Black";
             this.SentBtn.Click += new System.EventHandler(this.SentBtn_Click);
             // 
             // DraftsBtn
@@ -140,7 +157,7 @@
             this.DraftsBtn.TabIndex = 1;
             this.DraftsBtn.Text = "Drafts";
             this.DraftsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DraftsBtn.ThemeName = "Windows8";
+            this.DraftsBtn.ThemeName = "Office2010Black";
             this.DraftsBtn.Click += new System.EventHandler(this.DraftsBtn_Click);
             // 
             // InBoxBtn
@@ -152,7 +169,7 @@
             this.InBoxBtn.TabIndex = 0;
             this.InBoxBtn.Text = "Inbox";
             this.InBoxBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.InBoxBtn.ThemeName = "Windows8";
+            this.InBoxBtn.ThemeName = "Office2010Black";
             this.InBoxBtn.Click += new System.EventHandler(this.InBoxBtn_Click);
             // 
             // contextMenuStrip1
@@ -206,9 +223,9 @@
             this.MessagesListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MessagesListView.FullRowSelect = true;
             this.MessagesListView.GridLines = true;
-            this.MessagesListView.Location = new System.Drawing.Point(136, 25);
+            this.MessagesListView.Location = new System.Drawing.Point(136, 39);
             this.MessagesListView.Name = "MessagesListView";
-            this.MessagesListView.Size = new System.Drawing.Size(622, 390);
+            this.MessagesListView.Size = new System.Drawing.Size(622, 376);
             this.MessagesListView.TabIndex = 4;
             this.MessagesListView.UseCompatibleStateImageBehavior = false;
             this.MessagesListView.MouseHover += new System.EventHandler(this.MessagesListView_MouseHover);
@@ -233,13 +250,24 @@
             this.GroupDisplayMessage.TabStop = false;
             this.GroupDisplayMessage.Text = "Selected Message";
             // 
+            // ReplayBtn
+            // 
+            this.ReplayBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ReplayBtn.Location = new System.Drawing.Point(352, 319);
+            this.ReplayBtn.Name = "ReplayBtn";
+            this.ReplayBtn.Size = new System.Drawing.Size(75, 23);
+            this.ReplayBtn.TabIndex = 9;
+            this.ReplayBtn.Text = "Replay";
+            this.ReplayBtn.UseVisualStyleBackColor = true;
+            this.ReplayBtn.Click += new System.EventHandler(this.ReplayBtn_Click);
+            // 
             // labMessageDate
             // 
             this.labMessageDate.AutoSize = true;
             this.labMessageDate.ForeColor = System.Drawing.Color.White;
             this.labMessageDate.Location = new System.Drawing.Point(88, 324);
             this.labMessageDate.Name = "labMessageDate";
-            this.labMessageDate.Size = new System.Drawing.Size(27, 13);
+            this.labMessageDate.Size = new System.Drawing.Size(22, 13);
             this.labMessageDate.TabIndex = 8;
             this.labMessageDate.Text = ".....";
             // 
@@ -257,7 +285,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(28, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "The Message ";
             // 
@@ -278,7 +306,7 @@
             this.labSubject.ForeColor = System.Drawing.Color.White;
             this.labSubject.Location = new System.Drawing.Point(110, 47);
             this.labSubject.Name = "labSubject";
-            this.labSubject.Size = new System.Drawing.Size(27, 13);
+            this.labSubject.Size = new System.Drawing.Size(22, 13);
             this.labSubject.TabIndex = 4;
             this.labSubject.Text = ".....";
             // 
@@ -287,7 +315,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(28, 47);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Subject :";
             // 
@@ -297,7 +325,7 @@
             this.labUserName.ForeColor = System.Drawing.Color.White;
             this.labUserName.Location = new System.Drawing.Point(110, 25);
             this.labUserName.Name = "labUserName";
-            this.labUserName.Size = new System.Drawing.Size(27, 13);
+            this.labUserName.Size = new System.Drawing.Size(22, 13);
             this.labUserName.TabIndex = 2;
             this.labUserName.Text = ".....";
             // 
@@ -320,17 +348,6 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
-            // ReplayBtn
-            // 
-            this.ReplayBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ReplayBtn.Location = new System.Drawing.Point(352, 319);
-            this.ReplayBtn.Name = "ReplayBtn";
-            this.ReplayBtn.Size = new System.Drawing.Size(75, 23);
-            this.ReplayBtn.TabIndex = 9;
-            this.ReplayBtn.Text = "Replay";
-            this.ReplayBtn.UseVisualStyleBackColor = true;
-            this.ReplayBtn.Click += new System.EventHandler(this.ReplayBtn_Click);
-            // 
             // frmMailServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,8 +359,13 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmMailServer";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMailServer";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.frmMailServer_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -355,6 +377,7 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.GroupDisplayMessage.ResumeLayout(false);
             this.GroupDisplayMessage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,5 +411,8 @@
         private System.Windows.Forms.Label labMessageDate;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button ReplayBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

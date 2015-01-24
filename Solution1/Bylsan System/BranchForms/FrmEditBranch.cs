@@ -90,7 +90,7 @@ namespace Bylsan_System.BranchForms
 
 
             this.Cursor = Cursors.WaitCursor;
-            employeeBindingSource.DataSource = EmployeesCmd.GetAllEmployees();
+            EmployeeManagerComboBox.DataSource = EmployeesCmd.GetAllEmployees();
             EmployeeManagerComboBox.DisplayMember = "Emp_Name";
             EmployeeManagerComboBox.ValueMember = "ID";
             this.Cursor = Cursors.Default;

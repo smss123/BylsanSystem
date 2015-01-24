@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
@@ -40,16 +39,15 @@
             this.ADDbtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DGVAccountsDaily = new Telerik.WinControls.UI.RadGridView();
-            this.accountDailyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAccountsDaily)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAccountsDaily.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountDailyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,27 +56,28 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ADDbtn,
             this.toolStripSeparator1,
-            this.RefreshBtn});
+            this.RefreshBtn,
+            this.toolStripSeparator2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(803, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(803, 40);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // ADDbtn
             // 
-            this.ADDbtn.Image = global::Bylsan_System.Properties.Resources.Add;
+            this.ADDbtn.Image = global::Bylsan_System.Properties.Resources.Add1;
             this.ADDbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ADDbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ADDbtn.Name = "ADDbtn";
-            this.ADDbtn.Size = new System.Drawing.Size(65, 36);
+            this.ADDbtn.Size = new System.Drawing.Size(66, 37);
             this.ADDbtn.Text = "Add";
             this.ADDbtn.Click += new System.EventHandler(this.ADDbtn_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
             // 
             // RefreshBtn
             // 
@@ -86,9 +85,14 @@
             this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(79, 36);
+            this.RefreshBtn.Size = new System.Drawing.Size(82, 37);
             this.RefreshBtn.Text = "Refresh";
             this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
             // 
             // statusStrip1
             // 
@@ -102,9 +106,9 @@
             // 
             this.groupBox1.Controls.Add(this.DGVAccountsDaily);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 39);
+            this.groupBox1.Location = new System.Drawing.Point(0, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(803, 472);
+            this.groupBox1.Size = new System.Drawing.Size(803, 471);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account Daily Data";
@@ -179,18 +183,13 @@
             gridViewDateTimeColumn1,
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2});
-            this.DGVAccountsDaily.MasterTemplate.DataSource = this.accountDailyBindingSource;
             this.DGVAccountsDaily.MasterTemplate.EnableFiltering = true;
             this.DGVAccountsDaily.Name = "DGVAccountsDaily";
             this.DGVAccountsDaily.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DGVAccountsDaily.Size = new System.Drawing.Size(797, 451);
+            this.DGVAccountsDaily.Size = new System.Drawing.Size(797, 450);
             this.DGVAccountsDaily.TabIndex = 0;
             this.DGVAccountsDaily.Text = "DGVAccountsDaily";
             this.DGVAccountsDaily.ThemeName = "Office2010Black";
-            // 
-            // accountDailyBindingSource
-            // 
-            this.accountDailyBindingSource.DataSource = typeof(XamaDataLayer.AccountDaily);
             // 
             // frmAccountDailySHow
             // 
@@ -216,7 +215,6 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVAccountsDaily.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAccountsDaily)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountDailyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -227,12 +225,12 @@
 
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private System.Windows.Forms.GroupBox groupBox1;
         private Telerik.WinControls.UI.RadGridView DGVAccountsDaily;
-        private System.Windows.Forms.BindingSource accountDailyBindingSource;
         private System.Windows.Forms.ToolStripButton ADDbtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton RefreshBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

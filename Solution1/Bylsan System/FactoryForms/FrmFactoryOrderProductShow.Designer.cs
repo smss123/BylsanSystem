@@ -60,7 +60,7 @@
             this.TxtDescription = new System.Windows.Forms.TextBox();
             this.PhotoBox = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVContents)).BeginInit();
@@ -449,7 +449,6 @@
         private System.Windows.Forms.CheckBox ChkToDeliver;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button CloseBtn;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private System.Windows.Forms.DataGridView DGVProducts;
         private System.Windows.Forms.Button SaveChangesBtn;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -463,5 +462,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

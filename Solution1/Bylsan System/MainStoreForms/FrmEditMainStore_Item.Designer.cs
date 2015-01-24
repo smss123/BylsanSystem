@@ -38,7 +38,7 @@
             this.itemDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.itemNameTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             itemTypeLabel = new System.Windows.Forms.Label();
             itemDescriptionLabel = new System.Windows.Forms.Label();
             itemNameLabel = new System.Windows.Forms.Label();
@@ -119,7 +119,7 @@
             this.SaveBtn.TabIndex = 6;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SaveBtn.ThemeName = "VisualStudio2012Light";
+            this.SaveBtn.ThemeName = "Office2010Black";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // itemDescriptionTextBox
@@ -148,9 +148,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(379, 267);
+            this.ClientSize = new System.Drawing.Size(379, 270);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(387, 300);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(387, 300);
             this.Name = "FrmEditMainStore_Item";
             // 
@@ -160,7 +162,7 @@
             this.RootElement.MaxSize = new System.Drawing.Size(387, 300);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditMainStore_Item";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmEditMainStore_Item_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -179,6 +181,6 @@
         private System.Windows.Forms.TextBox itemNameTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ComboBox ItemTypecomboBox;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

@@ -113,7 +113,7 @@
             // 
             this.Accountstatementbtn.Location = new System.Drawing.Point(180, 90);
             this.Accountstatementbtn.Name = "Accountstatementbtn";
-            this.Accountstatementbtn.Size = new System.Drawing.Size(110, 24);
+            this.Accountstatementbtn.Size = new System.Drawing.Size(143, 42);
             this.Accountstatementbtn.TabIndex = 3;
             this.Accountstatementbtn.Text = "Account statement";
             this.Accountstatementbtn.ThemeName = "Office2010Black";
@@ -123,7 +123,7 @@
             // 
             this.DetailedReportBtn.Location = new System.Drawing.Point(12, 90);
             this.DetailedReportBtn.Name = "DetailedReportBtn";
-            this.DetailedReportBtn.Size = new System.Drawing.Size(110, 24);
+            this.DetailedReportBtn.Size = new System.Drawing.Size(131, 42);
             this.DetailedReportBtn.TabIndex = 2;
             this.DetailedReportBtn.Text = "Detailed Report";
             this.DetailedReportBtn.ThemeName = "Office2010Black";

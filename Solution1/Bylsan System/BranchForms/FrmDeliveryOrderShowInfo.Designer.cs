@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -51,13 +50,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvproducts = new Telerik.WinControls.UI.RadGridView();
-            this.orderProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OkyBtn)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvproducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvproducts.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderProductBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,7 +100,7 @@
             this.OkyBtn.TabIndex = 14;
             this.OkyBtn.Text = "Oky";
             this.OkyBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.OkyBtn.ThemeName = "VisualStudio2012Light";
+            this.OkyBtn.ThemeName = "Office2010Black";
             this.OkyBtn.Click += new System.EventHandler(this.OkyBtn_Click);
             // 
             // PaymentRemainingtextBox
@@ -276,7 +274,6 @@
             gridViewTextBoxColumn2,
             gridViewDecimalColumn2,
             gridViewTextBoxColumn3});
-            this.dgvproducts.MasterTemplate.DataSource = this.orderProductBindingSource;
             this.dgvproducts.Name = "dgvproducts";
             this.dgvproducts.ReadOnly = true;
             this.dgvproducts.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -284,10 +281,6 @@
             this.dgvproducts.TabIndex = 0;
             this.dgvproducts.Text = "OrderGridView";
             this.dgvproducts.ThemeName = "Office2010Black";
-            // 
-            // orderProductBindingSource
-            // 
-            this.orderProductBindingSource.DataSource = typeof(XamaDataLayer.OrderProduct);
             // 
             // FrmDeliveryOrderShowInfo
             // 
@@ -314,7 +307,6 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvproducts.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvproducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderProductBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -337,9 +329,9 @@
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
         private Telerik.WinControls.UI.RadGridView dgvproducts;
-        private System.Windows.Forms.BindingSource orderProductBindingSource;
         private Telerik.WinControls.UI.RadButton OkyBtn;
         private System.Windows.Forms.TextBox PaymentRemainingtextBox;
         public System.Windows.Forms.Label label6;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

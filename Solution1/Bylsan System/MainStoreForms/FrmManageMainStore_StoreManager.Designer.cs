@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageMainStore_StoreManager));
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -44,13 +43,12 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.ReportBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.StoreManagerGridView = new Telerik.WinControls.UI.RadGridView();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -65,12 +63,10 @@
             this.Addbtn,
             this.toolStripSeparator1,
             this.RefreshBtn,
-            this.toolStripSeparator2,
-            this.ReportBtn,
-            this.toolStripSeparator3});
+            this.toolStripSeparator2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(846, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(846, 40);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -80,14 +76,14 @@
             this.Addbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Addbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Addbtn.Name = "Addbtn";
-            this.Addbtn.Size = new System.Drawing.Size(92, 36);
+            this.Addbtn.Size = new System.Drawing.Size(93, 37);
             this.Addbtn.Text = "Add item";
             this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
             // 
             // RefreshBtn
             // 
@@ -95,28 +91,14 @@
             this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(103, 36);
+            this.RefreshBtn.Size = new System.Drawing.Size(106, 37);
             this.RefreshBtn.Text = "RefreshData";
             this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
-            // 
-            // ReportBtn
-            // 
-            this.ReportBtn.Image = ((System.Drawing.Image)(resources.GetObject("ReportBtn.Image")));
-            this.ReportBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ReportBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ReportBtn.Name = "ReportBtn";
-            this.ReportBtn.Size = new System.Drawing.Size(90, 36);
-            this.ReportBtn.Text = "Print Report";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
             // 
             // statusStrip1
             // 
@@ -139,12 +121,11 @@
             this.groupBox1.Controls.Add(this.StoreManagerGridView);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 39);
+            this.groupBox1.Location = new System.Drawing.Point(0, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(846, 472);
+            this.groupBox1.Size = new System.Drawing.Size(846, 471);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // StoreManagerGridView
             // 
@@ -203,7 +184,7 @@
             gridViewCommandColumn2.EnableExpressionEditor = false;
             gridViewCommandColumn2.HeaderText = "Delete";
             gridViewCommandColumn2.Name = "Delete";
-            gridViewCommandColumn2.Width = 62;
+            gridViewCommandColumn2.Width = 61;
             this.StoreManagerGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -220,10 +201,10 @@
             this.StoreManagerGridView.Name = "StoreManagerGridView";
             this.StoreManagerGridView.ReadOnly = true;
             this.StoreManagerGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.StoreManagerGridView.Size = new System.Drawing.Size(840, 451);
+            this.StoreManagerGridView.Size = new System.Drawing.Size(840, 450);
             this.StoreManagerGridView.TabIndex = 0;
             this.StoreManagerGridView.Text = "radGridView1";
-            this.StoreManagerGridView.ThemeName = "VisualStudio2012Light";
+            this.StoreManagerGridView.ThemeName = "Office2010Black";
             this.StoreManagerGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.StoreManagerGridView_CommandCellClick);
             // 
             // FrmManageMainStore_StoreManager
@@ -241,7 +222,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmManageMainStore_StoreManager";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmManageMainStore_StoreManager_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -266,9 +247,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton RefreshBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton ReportBtn;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

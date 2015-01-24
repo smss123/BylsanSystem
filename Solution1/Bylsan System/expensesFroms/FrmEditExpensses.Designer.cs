@@ -37,6 +37,7 @@
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.expenssesNameTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             descriptionLabel = new System.Windows.Forms.Label();
             expenssesNameLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -75,7 +76,7 @@
             this.groupBox1.Controls.Add(this.expenssesNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(370, 223);
+            this.groupBox1.Size = new System.Drawing.Size(370, 219);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit Data";
@@ -120,7 +121,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(394, 250);
+            this.ClientSize = new System.Drawing.Size(394, 254);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(402, 284);
@@ -154,6 +155,7 @@
         private System.Windows.Forms.TextBox descriptionTextBox;
         private System.Windows.Forms.TextBox expenssesNameTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
 
     }
 }

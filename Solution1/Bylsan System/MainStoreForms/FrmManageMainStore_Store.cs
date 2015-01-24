@@ -94,5 +94,10 @@ namespace Bylsan_System.MainStoreForms
             frmStorePurchases frm = new frmStorePurchases();
             frm.ShowDialog();
         }
+
+        private void ReportBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

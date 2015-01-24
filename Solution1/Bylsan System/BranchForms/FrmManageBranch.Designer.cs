@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -45,14 +44,12 @@
             this.txtStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.BranchGroupBox = new System.Windows.Forms.GroupBox();
             this.BranchGridView = new Telerik.WinControls.UI.RadGridView();
-            this.branchBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.BranchGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BranchGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BranchGridView.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.branchBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +62,7 @@
             this.toolStripSeparator2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1008, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(1008, 40);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -75,14 +72,14 @@
             this.AddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(105, 36);
+            this.AddBtn.Size = new System.Drawing.Size(106, 37);
             this.AddBtn.Text = "Add Branch";
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
             // 
             // RefreshBtn
             // 
@@ -90,13 +87,13 @@
             this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(106, 36);
+            this.RefreshBtn.Size = new System.Drawing.Size(109, 37);
             this.RefreshBtn.Text = "Refresh Data";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
             // 
             // statusStrip1
             // 
@@ -118,9 +115,9 @@
             // 
             this.BranchGroupBox.Controls.Add(this.BranchGridView);
             this.BranchGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BranchGroupBox.Location = new System.Drawing.Point(0, 39);
+            this.BranchGroupBox.Location = new System.Drawing.Point(0, 40);
             this.BranchGroupBox.Name = "BranchGroupBox";
-            this.BranchGroupBox.Size = new System.Drawing.Size(1008, 477);
+            this.BranchGroupBox.Size = new System.Drawing.Size(1008, 476);
             this.BranchGroupBox.TabIndex = 2;
             this.BranchGroupBox.TabStop = false;
             this.BranchGroupBox.Text = "Branch Data";
@@ -198,21 +195,16 @@
             gridViewDecimalColumn2,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
-            this.BranchGridView.MasterTemplate.DataSource = this.branchBindingSource;
             this.BranchGridView.MasterTemplate.EnableFiltering = true;
             this.BranchGridView.Name = "BranchGridView";
             this.BranchGridView.ReadOnly = true;
             this.BranchGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.BranchGridView.Size = new System.Drawing.Size(1002, 456);
+            this.BranchGridView.Size = new System.Drawing.Size(1002, 455);
             this.BranchGridView.TabIndex = 0;
             this.BranchGridView.Text = "BranchGridView";
             this.BranchGridView.ThemeName = "Office2010Black";
             this.BranchGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.BranchGridView_CommandCellClick);
             this.BranchGridView.Click += new System.EventHandler(this.BranchGridView_Click);
-            // 
-            // branchBindingSource
-            // 
-            this.branchBindingSource.DataSource = typeof(XamaDataLayer.Branch);
             // 
             // FrmManageBranch
             // 
@@ -240,7 +232,6 @@
             this.BranchGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BranchGridView.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BranchGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.branchBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -253,12 +244,11 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.GroupBox BranchGroupBox;
         private Telerik.WinControls.UI.RadGridView BranchGridView;
-        private System.Windows.Forms.BindingSource branchBindingSource;
         private System.Windows.Forms.ToolStripButton AddBtn;
         private System.Windows.Forms.ToolStripStatusLabel txtStatus;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton RefreshBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

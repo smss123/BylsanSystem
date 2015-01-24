@@ -42,7 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             descriptionLabel = new System.Windows.Forms.Label();
             priceLabel = new System.Windows.Forms.Label();
             processTypeLabel = new System.Windows.Forms.Label();
@@ -142,7 +142,7 @@
             this.StoreComboBox.Size = new System.Drawing.Size(239, 20);
             this.StoreComboBox.TabIndex = 0;
             this.StoreComboBox.TabStop = false;
-            this.StoreComboBox.ThemeName = "VisualStudio2012Light";
+            this.StoreComboBox.ThemeName = "Office2010Black";
             // 
             // descriptionTextBox
             // 
@@ -200,7 +200,7 @@
             this.SaveBtn.TabIndex = 5;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SaveBtn.ThemeName = "VisualStudio2012Light";
+            this.SaveBtn.ThemeName = "Office2010Black";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             this.SaveBtn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SaveBtn_KeyPress);
             // 
@@ -213,7 +213,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(381, 296);
+            this.ClientSize = new System.Drawing.Size(381, 299);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(389, 329);
@@ -227,7 +227,7 @@
             this.RootElement.MaxSize = new System.Drawing.Size(389, 329);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditMainStore_StoreManager";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmEditMainStore_StoreManager_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -252,6 +252,6 @@
         private Telerik.WinControls.UI.RadButton SaveBtn;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private Telerik.WinControls.UI.RadMultiColumnComboBox StoreComboBox;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

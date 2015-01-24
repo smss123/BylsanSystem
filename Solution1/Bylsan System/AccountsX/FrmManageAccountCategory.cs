@@ -48,6 +48,17 @@ namespace Bylsan_System.AccountsX
             }
         }
 
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            FrmAddAccountCategory frm = new FrmAddAccountCategory();
+            frm.ShowDialog();
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            FrmManageAccountCategory_Load(null, null);
+        }
+
 
 
     }

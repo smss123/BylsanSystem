@@ -37,14 +37,15 @@
             this.SubjectBox = new System.Windows.Forms.TextBox();
             this.UsersAutoCompleteBox = new Telerik.WinControls.UI.RadAutoCompleteBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SendBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsersAutoCompleteBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -56,21 +57,24 @@
             this.groupBox1.Controls.Add(this.SubjectBox);
             this.groupBox1.Controls.Add(this.UsersAutoCompleteBox);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 41);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(556, 330);
+            this.groupBox1.Size = new System.Drawing.Size(556, 359);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Send Message";
             // 
             // SendBtn
             // 
-            this.SendBtn.Location = new System.Drawing.Point(49, 293);
+            this.SendBtn.Image = global::Bylsan_System.Properties.Resources._1422157177_Forward;
+            this.SendBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SendBtn.Location = new System.Drawing.Point(69, 304);
             this.SendBtn.Name = "SendBtn";
-            this.SendBtn.Size = new System.Drawing.Size(105, 31);
-            this.SendBtn.TabIndex = 7;
+            this.SendBtn.Size = new System.Drawing.Size(95, 30);
+            this.SendBtn.TabIndex = 8;
             this.SendBtn.Text = "Send";
-            this.SendBtn.ThemeName = "Windows8";
+            this.SendBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SendBtn.ThemeName = "Office2010Black";
             this.SendBtn.Click += new System.EventHandler(this.SendBtn_Click);
             // 
             // TheMessageBox
@@ -87,7 +91,7 @@
             this.SubjectLabl.AutoSize = true;
             this.SubjectLabl.Location = new System.Drawing.Point(7, 107);
             this.SubjectLabl.Name = "SubjectLabl";
-            this.SubjectLabl.Size = new System.Drawing.Size(49, 13);
+            this.SubjectLabl.Size = new System.Drawing.Size(52, 13);
             this.SubjectLabl.TabIndex = 5;
             this.SubjectLabl.Text = "Message";
             // 
@@ -96,7 +100,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(20, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Subject";
             // 
@@ -117,27 +121,17 @@
             this.UsersAutoCompleteBox.Size = new System.Drawing.Size(399, 26);
             this.UsersAutoCompleteBox.TabIndex = 2;
             this.UsersAutoCompleteBox.Text = "Select Users;";
-            this.UsersAutoCompleteBox.ThemeName = "Windows8";
+            this.UsersAutoCompleteBox.ThemeName = "Office2010Black";
             this.UsersAutoCompleteBox.TextBlockFormatting += new Telerik.WinControls.UI.TextBlockFormattingEventHandler(this.radAutoCompleteBox1_TextBlockFormatting);
-          //  this.UsersAutoCompleteBox.TabIndexChanged += new System.EventHandler(this.radAutoCompleteBox1_TabIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(24, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 13);
+            this.label1.Size = new System.Drawing.Size(22, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "To:";
-           // this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(580, 25);
-            this.toolStrip1.TabIndex = 1;
-            this.toolStrip1.Text = "toolStrip1";
             // 
             // statusStrip1
             // 
@@ -158,17 +152,22 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(580, 409);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmSendMail";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Send Mail";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmSendMail_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SendBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UsersAutoCompleteBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,9 +177,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private Telerik.WinControls.UI.RadButton SendBtn;
         private System.Windows.Forms.Label SubjectLabl;
         private System.Windows.Forms.Label label2;
         private Telerik.WinControls.Themes.Windows8Theme windows8Theme1;
@@ -188,5 +185,7 @@
         public Telerik.WinControls.UI.RadAutoCompleteBox UsersAutoCompleteBox;
         public System.Windows.Forms.TextBox TheMessageBox;
         public System.Windows.Forms.TextBox SubjectBox;
+        private Telerik.WinControls.UI.RadButton SendBtn;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

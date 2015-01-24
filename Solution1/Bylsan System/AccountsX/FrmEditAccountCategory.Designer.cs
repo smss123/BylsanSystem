@@ -31,11 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label descriptionLabel;
             System.Windows.Forms.Label accountCategoryNameLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditAccountCategory));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.accountCategoryNameTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             descriptionLabel = new System.Windows.Forms.Label();
             accountCategoryNameLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -75,14 +77,14 @@
             this.groupBox1.Controls.Add(this.accountCategoryNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(368, 188);
+            this.groupBox1.Size = new System.Drawing.Size(368, 184);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
             // SaveBtn
             // 
             this.SaveBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveBtn.Image = global::Bylsan_System.Properties.Resources.Save;
+            this.SaveBtn.Image = ((System.Drawing.Image)(resources.GetObject("SaveBtn.Image")));
             this.SaveBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.SaveBtn.Location = new System.Drawing.Point(15, 141);
             this.SaveBtn.Name = "SaveBtn";
@@ -121,11 +123,16 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(393, 215);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(401, 249);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(401, 249);
             this.Name = "FrmEditAccountCategory";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.RootElement.MaxSize = new System.Drawing.Size(401, 249);
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Account Category";
@@ -147,5 +154,6 @@
         private System.Windows.Forms.TextBox descriptionTextBox;
         private System.Windows.Forms.TextBox accountCategoryNameTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

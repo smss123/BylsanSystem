@@ -62,7 +62,7 @@
             this.RefreshBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(645, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(645, 40);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -72,13 +72,13 @@
             this.Addbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Addbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Addbtn.Name = "Addbtn";
-            this.Addbtn.Size = new System.Drawing.Size(65, 36);
+            this.Addbtn.Size = new System.Drawing.Size(66, 37);
             this.Addbtn.Text = "Add";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
             // 
             // RefreshBtn
             // 
@@ -86,7 +86,7 @@
             this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(79, 36);
+            this.RefreshBtn.Size = new System.Drawing.Size(82, 37);
             this.RefreshBtn.Text = "Refresh";
             // 
             // statusStrip1
@@ -109,9 +109,9 @@
             // 
             this.groupBox1.Controls.Add(this.radGridView1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 39);
+            this.groupBox1.Location = new System.Drawing.Point(0, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(645, 311);
+            this.groupBox1.Size = new System.Drawing.Size(645, 310);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Product Category Data";
@@ -174,7 +174,7 @@
             sortDescriptor1});
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radGridView1.Size = new System.Drawing.Size(639, 290);
+            this.radGridView1.Size = new System.Drawing.Size(639, 289);
             this.radGridView1.TabIndex = 0;
             this.radGridView1.Text = "radGridView1";
             this.radGridView1.ThemeName = "Office2010Black";

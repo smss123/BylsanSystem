@@ -18,7 +18,7 @@ using Telerik.WinControls.UI;
 
 namespace Bylsan_System.MailForms
 {
-    public partial class frmMailServer : Form
+    public partial class frmMailServer : RadForm
     {
         public frmMailServer()
         {

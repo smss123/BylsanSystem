@@ -40,7 +40,7 @@
             this.supplierPhoneTextBox = new System.Windows.Forms.TextBox();
             this.supplierNameTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             supplierNameLabel = new System.Windows.Forms.Label();
             supplierPhoneLabel = new System.Windows.Forms.Label();
             addressLabel = new System.Windows.Forms.Label();
@@ -119,7 +119,7 @@
             this.Addbtn.TabIndex = 5;
             this.Addbtn.Text = "Add";
             this.Addbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Addbtn.ThemeName = "VisualStudio2012Light";
+            this.Addbtn.ThemeName = "Office2010Black";
             this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
             // descriptionTextBox
@@ -164,7 +164,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(400, 285);
+            this.ClientSize = new System.Drawing.Size(400, 288);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(408, 318);
@@ -178,7 +178,7 @@
             this.RootElement.MaxSize = new System.Drawing.Size(408, 318);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddMainStore_Supplier";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmAddMainStore_Supplier_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -198,6 +198,6 @@
         private System.Windows.Forms.TextBox supplierNameTextBox;
         private Telerik.WinControls.UI.RadButton Addbtn;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

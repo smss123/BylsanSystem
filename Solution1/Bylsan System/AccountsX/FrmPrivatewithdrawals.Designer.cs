@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -39,24 +38,23 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.CmbToAccount = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CmbFromAccount = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
-            this.SaveBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblAvailableAmount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbToAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbToAccount.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbToAccount.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount.EditorControl.MasterTemplate)).BeginInit();
@@ -65,11 +63,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radButton1);
             this.groupBox1.Controls.Add(this.CmbToAccount);
             this.groupBox1.Controls.Add(this.CmbFromAccount);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtAmount);
-            this.groupBox1.Controls.Add(this.SaveBtn);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -77,17 +75,29 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtDescription);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(18, 32);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(467, 265);
+            this.groupBox1.Size = new System.Drawing.Size(430, 270);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Private withdrawals";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // radButton1
+            // 
+            this.radButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radButton1.Image = global::Bylsan_System.Properties.Resources.Save;
+            this.radButton1.Location = new System.Drawing.Point(16, 217);
+            this.radButton1.Name = "radButton1";
+            this.radButton1.Size = new System.Drawing.Size(110, 37);
+            this.radButton1.TabIndex = 17;
+            this.radButton1.Text = "Save";
+            this.radButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.radButton1.ThemeName = "Office2010Black";
+            this.radButton1.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
             // CmbToAccount
             // 
-            this.CmbToAccount.DataSource = this.accountBindingSource;
             this.CmbToAccount.DisplayMember = "AccountName";
             // 
             // CmbToAccount.NestedRadGridView
@@ -99,7 +109,7 @@
             this.CmbToAccount.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.CmbToAccount.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // CmbToAccount.NestedRadGridView
+            // 
             // 
             this.CmbToAccount.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.CmbToAccount.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -136,7 +146,6 @@
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3});
-            this.CmbToAccount.EditorControl.MasterTemplate.DataSource = this.accountBindingSource;
             this.CmbToAccount.EditorControl.MasterTemplate.EnableGrouping = false;
             this.CmbToAccount.EditorControl.MasterTemplate.ShowFilteringRow = false;
             this.CmbToAccount.EditorControl.Name = "NestedRadGridView";
@@ -145,20 +154,15 @@
             this.CmbToAccount.EditorControl.ShowGroupPanel = false;
             this.CmbToAccount.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.CmbToAccount.EditorControl.TabIndex = 0;
-            this.CmbToAccount.Location = new System.Drawing.Point(105, 101);
+            this.CmbToAccount.Location = new System.Drawing.Point(84, 99);
             this.CmbToAccount.Name = "CmbToAccount";
             this.CmbToAccount.Size = new System.Drawing.Size(312, 20);
             this.CmbToAccount.TabIndex = 16;
             this.CmbToAccount.TabStop = false;
             this.CmbToAccount.ThemeName = "Office2010Black";
             // 
-            // accountBindingSource
-            // 
-            this.accountBindingSource.DataSource = typeof(XamaDataLayer.Account);
-            // 
             // CmbFromAccount
             // 
-            this.CmbFromAccount.DataSource = this.accountBindingSource;
             this.CmbFromAccount.DisplayMember = "AccountName";
             // 
             // CmbFromAccount.NestedRadGridView
@@ -170,7 +174,7 @@
             this.CmbFromAccount.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.CmbFromAccount.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // CmbFromAccount.NestedRadGridView
+            // 
             // 
             this.CmbFromAccount.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.CmbFromAccount.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -208,7 +212,6 @@
             gridViewTextBoxColumn4,
             gridViewTextBoxColumn5,
             gridViewTextBoxColumn6});
-            this.CmbFromAccount.EditorControl.MasterTemplate.DataSource = this.accountBindingSource;
             this.CmbFromAccount.EditorControl.MasterTemplate.EnableGrouping = false;
             this.CmbFromAccount.EditorControl.MasterTemplate.ShowFilteringRow = false;
             sortDescriptor1.PropertyName = "ID";
@@ -220,7 +223,7 @@
             this.CmbFromAccount.EditorControl.ShowGroupPanel = false;
             this.CmbFromAccount.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.CmbFromAccount.EditorControl.TabIndex = 0;
-            this.CmbFromAccount.Location = new System.Drawing.Point(105, 75);
+            this.CmbFromAccount.Location = new System.Drawing.Point(84, 73);
             this.CmbFromAccount.Name = "CmbFromAccount";
             this.CmbFromAccount.Size = new System.Drawing.Size(312, 20);
             this.CmbFromAccount.TabIndex = 15;
@@ -230,83 +233,73 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 39);
+            this.label2.Location = new System.Drawing.Point(15, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 15);
+            this.label2.Size = new System.Drawing.Size(77, 15);
             this.label2.TabIndex = 10;
-            this.label2.Text = "The Amount";
+            this.label2.Text = "The Amount:";
             // 
             // txtAmount
             // 
             this.txtAmount.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(105, 34);
+            this.txtAmount.Location = new System.Drawing.Point(92, 36);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(89, 23);
+            this.txtAmount.Size = new System.Drawing.Size(85, 23);
             this.txtAmount.TabIndex = 9;
             this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
-            // 
-            // SaveBtn
-            // 
-            this.SaveBtn.Location = new System.Drawing.Point(333, 227);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(128, 32);
-            this.SaveBtn.TabIndex = 8;
-            this.SaveBtn.Text = "Save";
-            this.SaveBtn.UseVisualStyleBackColor = true;
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(102, 124);
+            this.label5.Location = new System.Drawing.Point(3, 140);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 15);
+            this.label5.Size = new System.Drawing.Size(75, 15);
             this.label5.TabIndex = 7;
-            this.label5.Text = "Description";
+            this.label5.Text = "Description:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(77, 101);
+            this.label4.Location = new System.Drawing.Point(54, 99);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 15);
+            this.label4.Size = new System.Drawing.Size(24, 15);
             this.label4.TabIndex = 6;
-            this.label4.Text = "To";
+            this.label4.Text = "To:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(61, 75);
+            this.label3.Location = new System.Drawing.Point(38, 73);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 15);
+            this.label3.Size = new System.Drawing.Size(40, 15);
             this.label3.TabIndex = 5;
-            this.label3.Text = "From";
+            this.label3.Text = "From:";
             // 
             // lblAvailableAmount
             // 
             this.lblAvailableAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAvailableAmount.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvailableAmount.Location = new System.Drawing.Point(318, 28);
+            this.lblAvailableAmount.Location = new System.Drawing.Point(314, 36);
             this.lblAvailableAmount.Name = "lblAvailableAmount";
-            this.lblAvailableAmount.Size = new System.Drawing.Size(99, 29);
+            this.lblAvailableAmount.Size = new System.Drawing.Size(82, 23);
             this.lblAvailableAmount.TabIndex = 4;
             this.lblAvailableAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(211, 38);
+            this.label1.Location = new System.Drawing.Point(200, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 15);
+            this.label1.Size = new System.Drawing.Size(105, 15);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Available Amount";
+            this.label1.Text = "Available Amount:";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(105, 140);
+            this.txtDescription.Location = new System.Drawing.Point(84, 137);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(312, 48);
+            this.txtDescription.Size = new System.Drawing.Size(312, 70);
             this.txtDescription.TabIndex = 2;
             // 
             // FrmPrivatewithdrawals
@@ -314,7 +307,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(496, 306);
+            this.ClientSize = new System.Drawing.Size(459, 296);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -330,10 +323,10 @@
             this.Load += new System.EventHandler(this.FrmPrivatewithdrawals_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbToAccount.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbToAccount.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbToAccount)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbFromAccount)).EndInit();
@@ -345,7 +338,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -354,9 +346,9 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAmount;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private Telerik.WinControls.UI.RadMultiColumnComboBox CmbToAccount;
-        private System.Windows.Forms.BindingSource accountBindingSource;
         private Telerik.WinControls.UI.RadMultiColumnComboBox CmbFromAccount;
+        private Telerik.WinControls.UI.RadButton radButton1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

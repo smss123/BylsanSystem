@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label qtyLabel;
             System.Windows.Forms.Label itemIDLabel;
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.qtyTextBox = new System.Windows.Forms.TextBox();
             this.ItemComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             qtyLabel = new System.Windows.Forms.Label();
             itemIDLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -53,7 +53,7 @@
             qtyLabel.AutoSize = true;
             qtyLabel.Location = new System.Drawing.Point(21, 59);
             qtyLabel.Name = "qtyLabel";
-            qtyLabel.Size = new System.Drawing.Size(28, 13);
+            qtyLabel.Size = new System.Drawing.Size(27, 13);
             qtyLabel.TabIndex = 11;
             qtyLabel.Text = "Qty:";
             // 
@@ -136,14 +136,14 @@
             this.ItemComboBox.Size = new System.Drawing.Size(221, 20);
             this.ItemComboBox.TabIndex = 1;
             this.ItemComboBox.TabStop = false;
-            this.ItemComboBox.ThemeName = "VisualStudio2012Light";
+            this.ItemComboBox.ThemeName = "Office2010Black";
             // 
             // FrmEditSellIStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(332, 175);
+            this.ClientSize = new System.Drawing.Size(332, 179);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(340, 209);
@@ -174,11 +174,11 @@
 
         #endregion
 
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.GroupBox groupBox1;
         private Telerik.WinControls.UI.RadMultiColumnComboBox ItemComboBox;
         private Telerik.WinControls.UI.RadButton SaveBtn;
         private System.Windows.Forms.TextBox qtyTextBox;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

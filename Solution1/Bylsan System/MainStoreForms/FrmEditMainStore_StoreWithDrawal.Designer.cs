@@ -40,6 +40,7 @@
             this.commentTextBox = new System.Windows.Forms.TextBox();
             this.qtyTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             storeIDLabel = new System.Windows.Forms.Label();
             commentLabel = new System.Windows.Forms.Label();
             qtyLabel = new System.Windows.Forms.Label();
@@ -123,7 +124,7 @@
             this.ItemComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ItemComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // ItemComboBox.NestedRadGridView
             // 
             this.ItemComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.ItemComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -152,7 +153,7 @@
             this.StoreComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.StoreComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // StoreComboBox.NestedRadGridView
             // 
             this.StoreComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.StoreComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -176,13 +177,13 @@
             this.SaveBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveBtn.Image = global::Bylsan_System.Properties.Resources.Save;
             this.SaveBtn.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.SaveBtn.Location = new System.Drawing.Point(16, 167);
+            this.SaveBtn.Location = new System.Drawing.Point(20, 184);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(109, 37);
             this.SaveBtn.TabIndex = 4;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.SaveBtn.ThemeName = "VisualStudio2012Light";
+            this.SaveBtn.ThemeName = "Office2010Black";
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // commentTextBox
@@ -224,7 +225,7 @@
             this.RootElement.MaxSize = new System.Drawing.Size(0, 0);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditMainStore_StoreWithDrawal";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmEditMainStore_StoreWithDrawal_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -250,5 +251,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private Telerik.WinControls.UI.RadMultiColumnComboBox ItemComboBox;
         private Telerik.WinControls.UI.RadMultiColumnComboBox StoreComboBox;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

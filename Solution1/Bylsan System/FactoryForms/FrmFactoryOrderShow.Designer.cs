@@ -36,10 +36,10 @@
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.DGVOrders = new Telerik.WinControls.UI.RadGridView();
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Refreshbtn = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders.MasterTemplate)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -131,7 +131,7 @@
             this.Refreshbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Refreshbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Refreshbtn.Name = "Refreshbtn";
-            this.Refreshbtn.Size = new System.Drawing.Size(79, 36);
+            this.Refreshbtn.Size = new System.Drawing.Size(82, 36);
             this.Refreshbtn.Text = "Refresh";
             this.Refreshbtn.Click += new System.EventHandler(this.Refreshbtn_Click);
             // 
@@ -180,9 +180,9 @@
 
         private System.Windows.Forms.StatusStrip statusStrip1;
         private Telerik.WinControls.UI.RadGridView DGVOrders;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton Refreshbtn;
         private System.Windows.Forms.GroupBox groupBox1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

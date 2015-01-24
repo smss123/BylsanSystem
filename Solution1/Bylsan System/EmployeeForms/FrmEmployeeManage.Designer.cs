@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
@@ -49,14 +48,12 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.EmplyeegroupBox = new System.Windows.Forms.GroupBox();
             this.EmployeeGridView = new Telerik.WinControls.UI.RadGridView();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.EmplyeegroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeGridView.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +66,7 @@
             this.toolStripSeparator2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1157, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(1157, 40);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -79,13 +76,13 @@
             this.AddBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AddBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(120, 36);
+            this.AddBtn.Size = new System.Drawing.Size(121, 37);
             this.AddBtn.Text = "Add Employee";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
             // 
             // RefreshBtn
             // 
@@ -93,13 +90,13 @@
             this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(106, 36);
+            this.RefreshBtn.Size = new System.Drawing.Size(109, 37);
             this.RefreshBtn.Text = "Refresh Data";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
             // 
             // statusStrip1
             // 
@@ -121,9 +118,9 @@
             // 
             this.EmplyeegroupBox.Controls.Add(this.EmployeeGridView);
             this.EmplyeegroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EmplyeegroupBox.Location = new System.Drawing.Point(0, 39);
+            this.EmplyeegroupBox.Location = new System.Drawing.Point(0, 40);
             this.EmplyeegroupBox.Name = "EmplyeegroupBox";
-            this.EmplyeegroupBox.Size = new System.Drawing.Size(1157, 526);
+            this.EmplyeegroupBox.Size = new System.Drawing.Size(1157, 525);
             this.EmplyeegroupBox.TabIndex = 2;
             this.EmplyeegroupBox.TabStop = false;
             this.EmplyeegroupBox.Text = "Emplyee Data";
@@ -231,18 +228,13 @@
             gridViewTextBoxColumn6,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
-            this.EmployeeGridView.MasterTemplate.DataSource = this.employeeBindingSource;
             this.EmployeeGridView.Name = "EmployeeGridView";
             this.EmployeeGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.EmployeeGridView.Size = new System.Drawing.Size(1151, 505);
+            this.EmployeeGridView.Size = new System.Drawing.Size(1151, 504);
             this.EmployeeGridView.TabIndex = 0;
             this.EmployeeGridView.Text = "EmployeeGridView";
             this.EmployeeGridView.ThemeName = "Office2010Black";
             this.EmployeeGridView.Click += new System.EventHandler(this.EmployeeGridView_Click);
-            // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataSource = typeof(XamaDataLayer.Employee);
             // 
             // FrmEmployeeManage
             // 
@@ -270,7 +262,6 @@
             this.EmplyeegroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeGridView.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -283,12 +274,11 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.GroupBox EmplyeegroupBox;
         private Telerik.WinControls.UI.RadGridView EmployeeGridView;
-        private System.Windows.Forms.BindingSource employeeBindingSource;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripButton AddBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton RefreshBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

@@ -36,7 +36,7 @@
             this.ItemComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
             this.qtyTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             itemIDLabel = new System.Windows.Forms.Label();
             qtyLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -62,7 +62,7 @@
             qtyLabel.AutoSize = true;
             qtyLabel.Location = new System.Drawing.Point(11, 60);
             qtyLabel.Name = "qtyLabel";
-            qtyLabel.Size = new System.Drawing.Size(28, 13);
+            qtyLabel.Size = new System.Drawing.Size(27, 13);
             qtyLabel.TabIndex = 2;
             qtyLabel.Text = "Qty:";
             // 
@@ -124,7 +124,7 @@
             this.ItemComboBox.Size = new System.Drawing.Size(233, 20);
             this.ItemComboBox.TabIndex = 1;
             this.ItemComboBox.TabStop = false;
-            this.ItemComboBox.ThemeName = "VisualStudio2012Light";
+            this.ItemComboBox.ThemeName = "Office2010Black";
             // 
             // qtyTextBox
             // 
@@ -144,7 +144,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(344, 170);
+            this.ClientSize = new System.Drawing.Size(344, 174);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(352, 204);
@@ -177,9 +177,9 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private Telerik.WinControls.UI.RadMultiColumnComboBox ItemComboBox;
         private System.Windows.Forms.TextBox qtyTextBox;
         private Telerik.WinControls.UI.RadButton AddBtn;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

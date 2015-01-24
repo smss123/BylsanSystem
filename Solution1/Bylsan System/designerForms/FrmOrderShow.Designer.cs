@@ -35,10 +35,10 @@
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.DGVOrders = new Telerik.WinControls.UI.RadGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Refreshbtn = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders.MasterTemplate)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -69,7 +69,7 @@
             gridViewTextBoxColumn2.FieldName = "OrderName";
             gridViewTextBoxColumn2.HeaderText = "Order Name";
             gridViewTextBoxColumn2.Name = "OrderName";
-            gridViewTextBoxColumn2.Width = 217;
+            gridViewTextBoxColumn2.Width = 216;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "OrderDate";
             gridViewTextBoxColumn3.HeaderText = "Order Date";
@@ -97,7 +97,7 @@
             this.DGVOrders.Size = new System.Drawing.Size(827, 493);
             this.DGVOrders.TabIndex = 1;
             this.DGVOrders.Text = "radGridView1";
-            this.DGVOrders.ThemeName = "VisualStudio2012Light";
+            this.DGVOrders.ThemeName = "Office2010Black";
             this.DGVOrders.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.MasterTemplate_CommandCellClick);
             this.DGVOrders.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DGVOrders_MouseDoubleClick);
             // 
@@ -125,7 +125,7 @@
             this.Refreshbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Refreshbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Refreshbtn.Name = "Refreshbtn";
-            this.Refreshbtn.Size = new System.Drawing.Size(79, 36);
+            this.Refreshbtn.Size = new System.Drawing.Size(82, 36);
             this.Refreshbtn.Text = "Refresh";
             this.Refreshbtn.Click += new System.EventHandler(this.Refreshbtn_Click);
             // 
@@ -156,7 +156,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmOrderShow";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmOrderShow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders)).EndInit();
@@ -173,9 +173,9 @@
 
         private Telerik.WinControls.UI.RadGridView DGVOrders;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton Refreshbtn;
         private System.Windows.Forms.GroupBox groupBox1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

@@ -126,6 +126,11 @@ namespace Bylsan_System.BranchForms
 
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            FrmDeliveryOrder_Load(null, null);
+        }
+
 
     }
 }

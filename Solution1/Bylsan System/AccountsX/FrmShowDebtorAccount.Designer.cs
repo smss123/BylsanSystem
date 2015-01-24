@@ -41,7 +41,7 @@
             this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.DGVDebtors = new Telerik.WinControls.UI.RadGridView();
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDebtors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDebtors.MasterTemplate)).BeginInit();
@@ -58,7 +58,7 @@
             this.RefreshBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(703, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(703, 40);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -68,14 +68,14 @@
             this.AddDebtBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AddDebtBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.AddDebtBtn.Name = "AddDebtBtn";
-            this.AddDebtBtn.Size = new System.Drawing.Size(93, 36);
+            this.AddDebtBtn.Size = new System.Drawing.Size(94, 37);
             this.AddDebtBtn.Text = "Add Debt";
             this.AddDebtBtn.Click += new System.EventHandler(this.AddDebtBtn_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
             // 
             // RepaydebBtn
             // 
@@ -83,14 +83,14 @@
             this.RepaydebBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RepaydebBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RepaydebBtn.Name = "RepaydebBtn";
-            this.RepaydebBtn.Size = new System.Drawing.Size(98, 36);
+            this.RepaydebBtn.Size = new System.Drawing.Size(99, 37);
             this.RepaydebBtn.Text = "Repay deb";
             this.RepaydebBtn.Click += new System.EventHandler(this.RepaydebBtn_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
             // 
             // RefreshBtn
             // 
@@ -98,7 +98,7 @@
             this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(79, 36);
+            this.RefreshBtn.Size = new System.Drawing.Size(82, 37);
             this.RefreshBtn.Text = "Refresh";
             this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
@@ -118,7 +118,7 @@
             this.DGVDebtors.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.DGVDebtors.ForeColor = System.Drawing.SystemColors.ControlText;
             this.DGVDebtors.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DGVDebtors.Location = new System.Drawing.Point(0, 39);
+            this.DGVDebtors.Location = new System.Drawing.Point(0, 40);
             // 
             // DGVDebtors
             // 
@@ -154,7 +154,7 @@
             this.DGVDebtors.Name = "DGVDebtors";
             this.DGVDebtors.ReadOnly = true;
             this.DGVDebtors.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DGVDebtors.Size = new System.Drawing.Size(703, 383);
+            this.DGVDebtors.Size = new System.Drawing.Size(703, 382);
             this.DGVDebtors.TabIndex = 2;
             this.DGVDebtors.Text = "radGridView1";
             this.DGVDebtors.ThemeName = "Office2010Black";
@@ -198,6 +198,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton RefreshBtn;
         private Telerik.WinControls.UI.RadGridView DGVDebtors;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

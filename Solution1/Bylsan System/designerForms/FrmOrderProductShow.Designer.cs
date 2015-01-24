@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -41,11 +41,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.SelectedProductPhotoBox = new System.Windows.Forms.PictureBox();
             this.DGVProducts = new Telerik.WinControls.UI.RadGridView();
-            this.CloseBtn = new System.Windows.Forms.Button();
             this.PhotoBox = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TxtDescription = new System.Windows.Forms.TextBox();
-            this.NextPhotoBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -57,10 +55,12 @@
             this.labCustomerPhone = new System.Windows.Forms.Label();
             this.labCustomerName = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.SavePhotoBtn = new System.Windows.Forms.Button();
-            this.UploadBtn = new System.Windows.Forms.Button();
+            this.SaveBtn = new Telerik.WinControls.UI.RadButton();
+            this.CloseBtn = new Telerik.WinControls.UI.RadButton();
+            this.SavePhotoBtn = new Telerik.WinControls.UI.RadButton();
+            this.UploadBtn = new Telerik.WinControls.UI.RadButton();
+            this.NextPhotoBtn = new Telerik.WinControls.UI.RadButton();
             this.SizeLab = new System.Windows.Forms.Label();
-            this.SaveBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.HghtBox = new System.Windows.Forms.TextBox();
             this.WthBox = new System.Windows.Forms.TextBox();
@@ -68,7 +68,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SelectedProductPhotoBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProducts)).BeginInit();
@@ -76,6 +76,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SavePhotoBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UploadBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NextPhotoBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,31 +168,31 @@
             // 
             this.DGVProducts.MasterTemplate.AutoGenerateColumns = false;
             this.DGVProducts.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "ID";
-            gridViewTextBoxColumn5.HeaderText = "ID";
-            gridViewTextBoxColumn5.Name = "ID";
-            gridViewTextBoxColumn5.Width = 52;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "ProductID";
-            gridViewTextBoxColumn6.HeaderText = "Product BarCode";
-            gridViewTextBoxColumn6.Name = "ProductBarcode";
-            gridViewTextBoxColumn6.Width = 104;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "Product.Product_Name";
-            gridViewTextBoxColumn7.HeaderText = "Product Name";
-            gridViewTextBoxColumn7.Name = "Product_Name";
-            gridViewTextBoxColumn7.Width = 184;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "Qty";
-            gridViewTextBoxColumn8.HeaderText = "Quantity";
-            gridViewTextBoxColumn8.Name = "Quantity";
-            gridViewTextBoxColumn8.Width = 88;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.Name = "ID";
+            gridViewTextBoxColumn1.Width = 52;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "ProductID";
+            gridViewTextBoxColumn2.HeaderText = "Product BarCode";
+            gridViewTextBoxColumn2.Name = "ProductBarcode";
+            gridViewTextBoxColumn2.Width = 104;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "Product.Product_Name";
+            gridViewTextBoxColumn3.HeaderText = "Product Name";
+            gridViewTextBoxColumn3.Name = "Product_Name";
+            gridViewTextBoxColumn3.Width = 184;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "Qty";
+            gridViewTextBoxColumn4.HeaderText = "Quantity";
+            gridViewTextBoxColumn4.Name = "Quantity";
+            gridViewTextBoxColumn4.Width = 88;
             this.DGVProducts.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4});
             this.DGVProducts.MasterTemplate.EnableFiltering = true;
             this.DGVProducts.Name = "DGVProducts";
             this.DGVProducts.ReadOnly = true;
@@ -198,16 +203,6 @@
             this.DGVProducts.ThemeName = "Office2010Black";
             this.DGVProducts.Click += new System.EventHandler(this.DGVProducts_Click);
             this.DGVProducts.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DGVProducts_MouseDoubleClick);
-            // 
-            // CloseBtn
-            // 
-            this.CloseBtn.Location = new System.Drawing.Point(17, 366);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(130, 36);
-            this.CloseBtn.TabIndex = 6;
-            this.CloseBtn.Text = "Close";
-            this.CloseBtn.UseVisualStyleBackColor = true;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
             // 
             // PhotoBox
             // 
@@ -236,16 +231,6 @@
             this.TxtDescription.ReadOnly = true;
             this.TxtDescription.Size = new System.Drawing.Size(262, 51);
             this.TxtDescription.TabIndex = 2;
-            // 
-            // NextPhotoBtn
-            // 
-            this.NextPhotoBtn.Location = new System.Drawing.Point(162, 291);
-            this.NextPhotoBtn.Name = "NextPhotoBtn";
-            this.NextPhotoBtn.Size = new System.Drawing.Size(126, 34);
-            this.NextPhotoBtn.TabIndex = 4;
-            this.NextPhotoBtn.Text = "Next Photo >>";
-            this.NextPhotoBtn.UseVisualStyleBackColor = true;
-            this.NextPhotoBtn.Click += new System.EventHandler(this.NextPhotoBtn_Click);
             // 
             // label3
             // 
@@ -355,16 +340,16 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.SaveBtn);
+            this.groupBox3.Controls.Add(this.CloseBtn);
             this.groupBox3.Controls.Add(this.SavePhotoBtn);
+            this.groupBox3.Controls.Add(this.UploadBtn);
             this.groupBox3.Controls.Add(this.NextPhotoBtn);
             this.groupBox3.Controls.Add(this.PhotoBox);
-            this.groupBox3.Controls.Add(this.UploadBtn);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.TxtDescription);
-            this.groupBox3.Controls.Add(this.CloseBtn);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.SizeLab);
-            this.groupBox3.Controls.Add(this.SaveBtn);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Location = new System.Drawing.Point(496, 176);
             this.groupBox3.Name = "groupBox3";
@@ -374,25 +359,55 @@
             this.groupBox3.Text = "Designing Zoon";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
+            // SaveBtn
+            // 
+            this.SaveBtn.Location = new System.Drawing.Point(178, 372);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(110, 29);
+            this.SaveBtn.TabIndex = 13;
+            this.SaveBtn.Text = "Save Changes";
+            this.SaveBtn.ThemeName = "Office2010Black";
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
+            // CloseBtn
+            // 
+            this.CloseBtn.Location = new System.Drawing.Point(17, 372);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(110, 29);
+            this.CloseBtn.TabIndex = 12;
+            this.CloseBtn.Text = "Close";
+            this.CloseBtn.ThemeName = "Office2010Black";
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            // 
             // SavePhotoBtn
             // 
-            this.SavePhotoBtn.Location = new System.Drawing.Point(17, 326);
+            this.SavePhotoBtn.Location = new System.Drawing.Point(17, 327);
             this.SavePhotoBtn.Name = "SavePhotoBtn";
-            this.SavePhotoBtn.Size = new System.Drawing.Size(271, 34);
-            this.SavePhotoBtn.TabIndex = 11;
+            this.SavePhotoBtn.Size = new System.Drawing.Size(271, 29);
+            this.SavePhotoBtn.TabIndex = 12;
             this.SavePhotoBtn.Text = "Save the image to your computer";
-            this.SavePhotoBtn.UseVisualStyleBackColor = true;
+            this.SavePhotoBtn.ThemeName = "Office2010Black";
             this.SavePhotoBtn.Click += new System.EventHandler(this.SavePhotoBtn_Click);
             // 
             // UploadBtn
             // 
             this.UploadBtn.Location = new System.Drawing.Point(17, 291);
             this.UploadBtn.Name = "UploadBtn";
-            this.UploadBtn.Size = new System.Drawing.Size(130, 34);
-            this.UploadBtn.TabIndex = 8;
+            this.UploadBtn.Size = new System.Drawing.Size(110, 29);
+            this.UploadBtn.TabIndex = 11;
             this.UploadBtn.Text = "Upload New Image";
-            this.UploadBtn.UseVisualStyleBackColor = true;
+            this.UploadBtn.ThemeName = "Office2010Black";
             this.UploadBtn.Click += new System.EventHandler(this.UploadBtn_Click);
+            // 
+            // NextPhotoBtn
+            // 
+            this.NextPhotoBtn.Location = new System.Drawing.Point(178, 291);
+            this.NextPhotoBtn.Name = "NextPhotoBtn";
+            this.NextPhotoBtn.Size = new System.Drawing.Size(110, 29);
+            this.NextPhotoBtn.TabIndex = 10;
+            this.NextPhotoBtn.Text = "Next Photo >>";
+            this.NextPhotoBtn.ThemeName = "Office2010Black";
+            this.NextPhotoBtn.Click += new System.EventHandler(this.NextPhotoBtn_Click);
             // 
             // SizeLab
             // 
@@ -402,16 +417,6 @@
             this.SizeLab.Size = new System.Drawing.Size(45, 13);
             this.SizeLab.TabIndex = 10;
             this.SizeLab.Text = "SizeLab";
-            // 
-            // SaveBtn
-            // 
-            this.SaveBtn.Location = new System.Drawing.Point(178, 362);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(110, 40);
-            this.SaveBtn.TabIndex = 5;
-            this.SaveBtn.Text = "Save Changes";
-            this.SaveBtn.UseVisualStyleBackColor = true;
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // label5
             // 
@@ -502,6 +507,11 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SaveBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SavePhotoBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UploadBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NextPhotoBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -522,12 +532,8 @@
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox PhotoBox;
-        private System.Windows.Forms.Button CloseBtn;
-        private System.Windows.Forms.Button SaveBtn;
-    private System.Windows.Forms.Button NextPhotoBtn;
-     
+
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Button UploadBtn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label SizeLab;
         private System.Windows.Forms.Label label5;
@@ -535,17 +541,21 @@
         private System.Windows.Forms.TextBox WthBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ImageList imageList2;
-        private System.Windows.Forms.Button SavePhotoBtn;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblPoductName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox SelectedProductPhotoBox;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         public System.Windows.Forms.Label label14;
         public System.Windows.Forms.Label label12;
         public System.Windows.Forms.Label lblOrderDelviryDate;
         public System.Windows.Forms.Label lblOrderDate;
+        private Telerik.WinControls.UI.RadButton NextPhotoBtn;
+        private Telerik.WinControls.UI.RadButton SaveBtn;
+        private Telerik.WinControls.UI.RadButton CloseBtn;
+        private Telerik.WinControls.UI.RadButton SavePhotoBtn;
+        private Telerik.WinControls.UI.RadButton UploadBtn;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

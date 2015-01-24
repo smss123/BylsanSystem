@@ -77,7 +77,7 @@ namespace Bylsan_System.ProductForms
             this.toolStripSeparator4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1020, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(1020, 40);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -87,14 +87,14 @@ namespace Bylsan_System.ProductForms
             this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(65, 36);
+            this.toolStripButton1.Size = new System.Drawing.Size(66, 37);
             this.toolStripButton1.Text = "Add";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
             // 
             // RefreshBtn
             // 
@@ -102,14 +102,14 @@ namespace Bylsan_System.ProductForms
             this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(79, 36);
+            this.RefreshBtn.Size = new System.Drawing.Size(82, 37);
             this.RefreshBtn.Text = "Refresh";
             this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 40);
             // 
             // btnPrintBarcode
             // 
@@ -117,14 +117,14 @@ namespace Bylsan_System.ProductForms
             this.btnPrintBarcode.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnPrintBarcode.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPrintBarcode.Name = "btnPrintBarcode";
-            this.btnPrintBarcode.Size = new System.Drawing.Size(119, 36);
+            this.btnPrintBarcode.Size = new System.Drawing.Size(119, 37);
             this.btnPrintBarcode.Text = "Print Bar Code";
             this.btnPrintBarcode.Click += new System.EventHandler(this.btnPrintBarcode_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
             // 
             // ProductManagmentBtn
             // 
@@ -132,14 +132,14 @@ namespace Bylsan_System.ProductForms
             this.ProductManagmentBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ProductManagmentBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ProductManagmentBtn.Name = "ProductManagmentBtn";
-            this.ProductManagmentBtn.Size = new System.Drawing.Size(147, 36);
+            this.ProductManagmentBtn.Size = new System.Drawing.Size(151, 37);
             this.ProductManagmentBtn.Text = "Product Managment";
             this.ProductManagmentBtn.Click += new System.EventHandler(this.ProductManagmentBtn_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 40);
             // 
             // statusStrip1
             // 
@@ -161,9 +161,9 @@ namespace Bylsan_System.ProductForms
             // 
             this.ProductgroupBox.Controls.Add(this.ProductGridView);
             this.ProductgroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductgroupBox.Location = new System.Drawing.Point(0, 39);
+            this.ProductgroupBox.Location = new System.Drawing.Point(0, 40);
             this.ProductgroupBox.Name = "ProductgroupBox";
-            this.ProductgroupBox.Size = new System.Drawing.Size(1020, 544);
+            this.ProductgroupBox.Size = new System.Drawing.Size(1020, 543);
             this.ProductgroupBox.TabIndex = 2;
             this.ProductgroupBox.TabStop = false;
             this.ProductgroupBox.Text = "Product Data";
@@ -250,7 +250,7 @@ namespace Bylsan_System.ProductForms
             this.ProductGridView.MasterTemplate.EnableFiltering = true;
             this.ProductGridView.Name = "ProductGridView";
             this.ProductGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ProductGridView.Size = new System.Drawing.Size(1014, 523);
+            this.ProductGridView.Size = new System.Drawing.Size(1014, 522);
             this.ProductGridView.TabIndex = 0;
             this.ProductGridView.Text = "radGridView1";
             this.ProductGridView.ThemeName = "Office2010Black";

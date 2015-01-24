@@ -33,7 +33,6 @@
             System.Windows.Forms.Label addresssLabel;
             System.Windows.Forms.Label phoneNumberLabel;
             System.Windows.Forms.Label debtorNameLabel;
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
             this.debtorDescriptionTextBox1 = new System.Windows.Forms.TextBox();
@@ -41,6 +40,7 @@
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.debtorNameTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             debtorDescriptionLabel1 = new System.Windows.Forms.Label();
             addresssLabel = new System.Windows.Forms.Label();
             phoneNumberLabel = new System.Windows.Forms.Label();
@@ -103,7 +103,7 @@
             this.groupBox1.Controls.Add(this.debtorNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(380, 213);
+            this.groupBox1.Size = new System.Drawing.Size(380, 209);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -191,7 +191,6 @@
 
         #endregion
 
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private System.Windows.Forms.GroupBox groupBox1;
         private Telerik.WinControls.UI.RadButton SaveBtn;
         private System.Windows.Forms.TextBox debtorDescriptionTextBox1;
@@ -199,5 +198,6 @@
         private System.Windows.Forms.TextBox phoneNumberTextBox;
         private System.Windows.Forms.TextBox debtorNameTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

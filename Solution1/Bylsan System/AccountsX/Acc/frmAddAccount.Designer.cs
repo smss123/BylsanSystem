@@ -54,7 +54,7 @@
             // accountNameLabel
             // 
             accountNameLabel.AutoSize = true;
-            accountNameLabel.Location = new System.Drawing.Point(58, 71);
+            accountNameLabel.Location = new System.Drawing.Point(8, 50);
             accountNameLabel.Name = "accountNameLabel";
             accountNameLabel.Size = new System.Drawing.Size(84, 13);
             accountNameLabel.TabIndex = 0;
@@ -63,7 +63,7 @@
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(73, 97);
+            descriptionLabel.Location = new System.Drawing.Point(23, 76);
             descriptionLabel.Name = "descriptionLabel";
             descriptionLabel.Size = new System.Drawing.Size(69, 13);
             descriptionLabel.TabIndex = 2;
@@ -72,7 +72,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(83, 42);
+            label1.Location = new System.Drawing.Point(33, 21);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(62, 13);
             label1.TabIndex = 0;
@@ -80,15 +80,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.CmbCategories);
             this.groupBox1.Controls.Add(descriptionLabel);
             this.groupBox1.Controls.Add(this.txtDescription);
             this.groupBox1.Controls.Add(label1);
             this.groupBox1.Controls.Add(accountNameLabel);
             this.groupBox1.Controls.Add(this.txtAccountName);
-            this.groupBox1.Location = new System.Drawing.Point(5, 24);
+            this.groupBox1.Location = new System.Drawing.Point(12, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(443, 204);
+            this.groupBox1.Size = new System.Drawing.Size(391, 247);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -103,7 +104,7 @@
             this.CmbCategories.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.CmbCategories.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // 
+            // CmbCategories.NestedRadGridView
             // 
             this.CmbCategories.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.CmbCategories.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -115,19 +116,18 @@
             this.CmbCategories.EditorControl.ShowGroupPanel = false;
             this.CmbCategories.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.CmbCategories.EditorControl.TabIndex = 0;
-            this.CmbCategories.Location = new System.Drawing.Point(148, 42);
+            this.CmbCategories.Location = new System.Drawing.Point(98, 21);
             this.CmbCategories.Name = "CmbCategories";
             this.CmbCategories.Size = new System.Drawing.Size(253, 20);
             this.CmbCategories.TabIndex = 4;
             this.CmbCategories.TabStop = false;
-            this.CmbCategories.Text = "CmbCategories";
             this.CmbCategories.ThemeName = "Office2010Black";
             this.CmbCategories.SelectedIndexChanged += new System.EventHandler(this.CmbCategories_SelectedIndexChanged);
             // 
             // txtDescription
             // 
             this.txtDescription.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "Description", true));
-            this.txtDescription.Location = new System.Drawing.Point(148, 94);
+            this.txtDescription.Location = new System.Drawing.Point(98, 73);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(253, 98);
@@ -140,16 +140,18 @@
             // txtAccountName
             // 
             this.txtAccountName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountBindingSource, "AccountName", true));
-            this.txtAccountName.Location = new System.Drawing.Point(148, 68);
+            this.txtAccountName.Location = new System.Drawing.Point(98, 47);
             this.txtAccountName.Name = "txtAccountName";
             this.txtAccountName.Size = new System.Drawing.Size(253, 20);
             this.txtAccountName.TabIndex = 1;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(337, 234);
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = global::Bylsan_System.Properties.Resources.Add;
+            this.btnAdd.Location = new System.Drawing.Point(11, 195);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(110, 24);
+            this.btnAdd.Size = new System.Drawing.Size(116, 34);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.ThemeName = "Office2010Black";
@@ -160,9 +162,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(481, 271);
-            this.Controls.Add(this.btnAdd);
+            this.ClientSize = new System.Drawing.Size(415, 271);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(423, 305);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(423, 305);
             this.Name = "frmAddAccount";
             // 
             // 

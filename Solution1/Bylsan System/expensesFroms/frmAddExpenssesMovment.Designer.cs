@@ -35,21 +35,19 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.AccountsComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
-            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.amountTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             amountLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AccountsComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountsComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountsComboBox.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -86,7 +84,7 @@
             this.groupBox1.Controls.Add(this.amountTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(345, 266);
+            this.groupBox1.Size = new System.Drawing.Size(345, 262);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
@@ -94,7 +92,6 @@
             // 
             // AccountsComboBox
             // 
-            this.AccountsComboBox.DataSource = this.accountBindingSource;
             // 
             // AccountsComboBox.NestedRadGridView
             // 
@@ -141,7 +138,6 @@
             gridViewTextBoxColumn3,
             gridViewTextBoxColumn4,
             gridViewDecimalColumn4});
-            this.AccountsComboBox.EditorControl.MasterTemplate.DataSource = this.accountBindingSource;
             this.AccountsComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.AccountsComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
             this.AccountsComboBox.EditorControl.Name = "NestedRadGridView";
@@ -156,10 +152,6 @@
             this.AccountsComboBox.TabIndex = 1;
             this.AccountsComboBox.TabStop = false;
             this.AccountsComboBox.ThemeName = "Office2010Black";
-            // 
-            // accountBindingSource
-            // 
-            this.accountBindingSource.DataSource = typeof(XamaDataLayer.Account);
             // 
             // AddBtn
             // 
@@ -202,7 +194,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(369, 290);
+            this.ClientSize = new System.Drawing.Size(369, 294);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(377, 324);
@@ -224,7 +216,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.AccountsComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountsComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountsComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -234,13 +225,12 @@
 
         #endregion
 
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox descriptionTextBox;
         private System.Windows.Forms.TextBox amountTextBox;
         private Telerik.WinControls.UI.RadButton AddBtn;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private Telerik.WinControls.UI.RadMultiColumnComboBox AccountsComboBox;
-        private System.Windows.Forms.BindingSource accountBindingSource;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

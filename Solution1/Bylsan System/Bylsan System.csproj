@@ -1009,6 +1009,10 @@
     <Content Include="Lib\Xprema.dll" />
     <Content Include="Lib\Xprema.pdb" />
     <Content Include="NewIcon.ico" />
+    <None Include="Resources\1422157177_Forward.png" />
+    <None Include="Resources\Massege.png" />
+    <None Include="Resources\editColm.png" />
+    <None Include="Resources\Add1.png" />
     <None Include="Resources\Green.png" />
     <None Include="Resources\Blue.png" />
     <None Include="Resources\Office-Customer-Male-Light-icon.png" />

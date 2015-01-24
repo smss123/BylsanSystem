@@ -67,8 +67,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TxtBillNumber = new System.Windows.Forms.TextBox();
             this.DGVSellItems = new Telerik.WinControls.UI.RadGridView();
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
@@ -102,7 +102,7 @@
             this.RefreshBTn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RefreshBTn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshBTn.Name = "RefreshBTn";
-            this.RefreshBTn.Size = new System.Drawing.Size(79, 36);
+            this.RefreshBTn.Size = new System.Drawing.Size(82, 36);
             this.RefreshBTn.Text = "Refresh";
             // 
             // toolStripSeparator1
@@ -542,7 +542,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private Telerik.WinControls.UI.RadButton Okeybtn;
         private Telerik.WinControls.UI.RadGridView DGVSellItems;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox BillCostBox;
         private System.Windows.Forms.ImageList imageList1;
@@ -564,5 +563,6 @@
         private System.Windows.Forms.NumericUpDown txtCustomerPay;
         private Telerik.WinControls.UI.RadTextBox txtCustomerName;
         private Telerik.WinControls.UI.RadTextBox txtCustomerPhoneNumber;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

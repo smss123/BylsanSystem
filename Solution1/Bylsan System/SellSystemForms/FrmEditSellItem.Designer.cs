@@ -33,7 +33,6 @@
             System.Windows.Forms.Label itemPriceLabel;
             System.Windows.Forms.Label descriptionLabel;
             System.Windows.Forms.Label itemNameLabel;
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SellItemBox = new System.Windows.Forms.TextBox();
@@ -44,6 +43,7 @@
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblstatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             label1 = new System.Windows.Forms.Label();
             itemPriceLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
@@ -144,7 +144,7 @@
             this.BrowseBtn.Size = new System.Drawing.Size(51, 24);
             this.BrowseBtn.TabIndex = 4;
             this.BrowseBtn.Text = "...";
-            this.BrowseBtn.ThemeName = "VisualStudio2012Light";
+            this.BrowseBtn.ThemeName = "Office2010Black";
             this.BrowseBtn.Click += new System.EventHandler(this.BrowseBtn_Click);
             // 
             // pictureBox1
@@ -230,7 +230,6 @@
 
         #endregion
 
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.GroupBox groupBox1;
         private Telerik.WinControls.UI.RadButton SaveBtn;
@@ -241,5 +240,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblstatus;
         private System.Windows.Forms.TextBox SellItemBox;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

@@ -40,14 +40,12 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.ReportBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnStorePurchases = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.StoreGridView = new Telerik.WinControls.UI.RadGridView();
-            this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.btnStorePurchases = new System.Windows.Forms.ToolStripButton();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -63,12 +61,10 @@
             this.toolStripSeparator1,
             this.RefreshBtn,
             this.toolStripSeparator2,
-            this.ReportBtn,
-            this.toolStripSeparator3,
             this.btnStorePurchases});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(936, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(936, 40);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -78,14 +74,14 @@
             this.Addbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.Addbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Addbtn.Name = "Addbtn";
-            this.Addbtn.Size = new System.Drawing.Size(92, 36);
+            this.Addbtn.Size = new System.Drawing.Size(93, 37);
             this.Addbtn.Text = "Add item";
             this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
             // 
             // RefreshBtn
             // 
@@ -93,28 +89,24 @@
             this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(103, 36);
+            this.RefreshBtn.Size = new System.Drawing.Size(106, 37);
             this.RefreshBtn.Text = "RefreshData";
             this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
             // 
-            // ReportBtn
+            // btnStorePurchases
             // 
-            this.ReportBtn.Image = ((System.Drawing.Image)(resources.GetObject("ReportBtn.Image")));
-            this.ReportBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ReportBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ReportBtn.Name = "ReportBtn";
-            this.ReportBtn.Size = new System.Drawing.Size(90, 36);
-            this.ReportBtn.Text = "Print Report";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
+            this.btnStorePurchases.Image = ((System.Drawing.Image)(resources.GetObject("btnStorePurchases.Image")));
+            this.btnStorePurchases.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnStorePurchases.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnStorePurchases.Name = "btnStorePurchases";
+            this.btnStorePurchases.Size = new System.Drawing.Size(125, 37);
+            this.btnStorePurchases.Text = "Store Purchases";
+            this.btnStorePurchases.Click += new System.EventHandler(this.btnStorePurchases_Click);
             // 
             // statusStrip1
             // 
@@ -136,9 +128,9 @@
             // 
             this.groupBox1.Controls.Add(this.StoreGridView);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 39);
+            this.groupBox1.Location = new System.Drawing.Point(0, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(936, 491);
+            this.groupBox1.Size = new System.Drawing.Size(936, 490);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Store Data";
@@ -176,7 +168,7 @@
             gridViewTextBoxColumn4.FieldName = "Description";
             gridViewTextBoxColumn4.HeaderText = "Description";
             gridViewTextBoxColumn4.Name = "Description";
-            gridViewTextBoxColumn4.Width = 344;
+            gridViewTextBoxColumn4.Width = 343;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.HeaderText = "Edit";
             gridViewTextBoxColumn5.Name = "EditCol";
@@ -184,7 +176,7 @@
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.HeaderText = "Delete";
             gridViewTextBoxColumn6.Name = "DeleteCol";
-            gridViewTextBoxColumn6.Width = 71;
+            gridViewTextBoxColumn6.Width = 70;
             this.StoreGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -195,20 +187,11 @@
             this.StoreGridView.Name = "StoreGridView";
             this.StoreGridView.ReadOnly = true;
             this.StoreGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.StoreGridView.Size = new System.Drawing.Size(930, 470);
+            this.StoreGridView.Size = new System.Drawing.Size(930, 469);
             this.StoreGridView.TabIndex = 0;
             this.StoreGridView.Text = "MainStorGridView";
-            this.StoreGridView.ThemeName = "VisualStudio2012Light";
+            this.StoreGridView.ThemeName = "Office2010Black";
             this.StoreGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.StoreGridView_CommandCellClick);
-            // 
-            // btnStorePurchases
-            // 
-            this.btnStorePurchases.Image = ((System.Drawing.Image)(resources.GetObject("btnStorePurchases.Image")));
-            this.btnStorePurchases.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnStorePurchases.Name = "btnStorePurchases";
-            this.btnStorePurchases.Size = new System.Drawing.Size(110, 36);
-            this.btnStorePurchases.Text = "Store Purchases";
-            this.btnStorePurchases.Click += new System.EventHandler(this.btnStorePurchases_Click);
             // 
             // FrmManageMainStore_Store
             // 
@@ -224,7 +207,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "FrmManageMainStore_Store";
-            this.ThemeName = "VisualStudio2012Light";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmManageMainStore_Store_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -250,9 +233,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton RefreshBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton ReportBtn;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private Telerik.WinControls.Themes.VisualStudio2012LightTheme visualStudio2012LightTheme1;
         private System.Windows.Forms.ToolStripButton btnStorePurchases;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }
