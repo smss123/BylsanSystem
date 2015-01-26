@@ -45,14 +45,15 @@
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.DGVOrders = new Telerik.WinControls.UI.RadGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Refreshbtn = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.DGVOrders = new Telerik.WinControls.UI.RadGridView();
             this.groupBox1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders.MasterTemplate)).BeginInit();
+            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -61,37 +62,10 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(879, 366);
+            this.groupBox1.Size = new System.Drawing.Size(1032, 366);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Orders";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Refreshbtn});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(879, 39);
-            this.toolStrip1.TabIndex = 5;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // Refreshbtn
-            // 
-            this.Refreshbtn.Image = global::Bylsan_System.Properties.Resources.Refrech;
-            this.Refreshbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.Refreshbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Refreshbtn.Name = "Refreshbtn";
-            this.Refreshbtn.Size = new System.Drawing.Size(82, 36);
-            this.Refreshbtn.Text = "Refresh";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 405);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(879, 22);
-            this.statusStrip1.TabIndex = 4;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // DGVOrders
             // 
@@ -101,7 +75,7 @@
             this.DGVOrders.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.DGVOrders.ForeColor = System.Drawing.SystemColors.ControlText;
             this.DGVOrders.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DGVOrders.Location = new System.Drawing.Point(3, 16);
+            this.DGVOrders.Location = new System.Drawing.Point(3, 18);
             // 
             // DGVOrders
             // 
@@ -112,69 +86,71 @@
             gridViewTextBoxColumn1.HeaderText = "ID";
             gridViewTextBoxColumn1.Name = "ID";
             gridViewTextBoxColumn1.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn1.Width = 41;
+            gridViewTextBoxColumn1.Width = 49;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "OrderName";
             gridViewTextBoxColumn2.HeaderText = "Order Name";
             gridViewTextBoxColumn2.Name = "OrderName";
-            gridViewTextBoxColumn2.Width = 109;
+            gridViewTextBoxColumn2.Width = 129;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "OrderDate";
             gridViewTextBoxColumn3.HeaderText = "Order Date";
             gridViewTextBoxColumn3.Name = "OrdDate";
-            gridViewTextBoxColumn3.Width = 65;
+            gridViewTextBoxColumn3.Width = 77;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "OrderType";
             gridViewTextBoxColumn4.HeaderText = "Order Type";
             gridViewTextBoxColumn4.Name = "OrderType";
-            gridViewTextBoxColumn4.Width = 47;
+            gridViewTextBoxColumn4.Width = 56;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.FieldName = "TotalAmount";
             gridViewTextBoxColumn5.HeaderText = "Total Amount";
             gridViewTextBoxColumn5.Name = "TotalAmount";
+            gridViewTextBoxColumn5.Width = 59;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.FieldName = "Branch_ID";
             gridViewTextBoxColumn6.HeaderText = "Branch_ID";
             gridViewTextBoxColumn6.Name = "Branch_ID";
-            gridViewTextBoxColumn6.Width = 56;
+            gridViewTextBoxColumn6.Width = 66;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
             gridViewTextBoxColumn7.FieldName = "OrderVerify";
             gridViewTextBoxColumn7.HeaderText = "Order Verify";
             gridViewTextBoxColumn7.Name = "OrderVerify";
+            gridViewTextBoxColumn7.Width = 59;
             gridViewTextBoxColumn8.EnableExpressionEditor = false;
             gridViewTextBoxColumn8.FieldName = "OrderDelivery";
             gridViewTextBoxColumn8.HeaderText = "Order Delivery";
             gridViewTextBoxColumn8.Name = "OrderDelivery";
-            gridViewTextBoxColumn8.Width = 53;
+            gridViewTextBoxColumn8.Width = 63;
             gridViewTextBoxColumn9.EnableExpressionEditor = false;
             gridViewTextBoxColumn9.FieldName = "OrderDeliveryDate";
             gridViewTextBoxColumn9.HeaderText = "Delivery Date";
             gridViewTextBoxColumn9.Name = "ColDevliverDate";
+            gridViewTextBoxColumn9.Width = 59;
             gridViewTextBoxColumn10.EnableExpressionEditor = false;
             gridViewTextBoxColumn10.FieldName = "DeliverdToBranch";
             gridViewTextBoxColumn10.HeaderText = "Deliverd To Branch";
             gridViewTextBoxColumn10.Name = "DeliverdToBranch";
-            gridViewTextBoxColumn10.Width = 63;
+            gridViewTextBoxColumn10.Width = 75;
             gridViewTextBoxColumn11.EnableExpressionEditor = false;
             gridViewTextBoxColumn11.FieldName = "OrderStatus";
             gridViewTextBoxColumn11.HeaderText = "Order Status";
             gridViewTextBoxColumn11.Name = "OrderStatus";
-            gridViewTextBoxColumn11.Width = 39;
+            gridViewTextBoxColumn11.Width = 46;
             gridViewTextBoxColumn12.EnableExpressionEditor = false;
             gridViewTextBoxColumn12.FieldName = "Customer.CustomerName";
             gridViewTextBoxColumn12.HeaderText = "Customer";
             gridViewTextBoxColumn12.Name = "Customer";
-            gridViewTextBoxColumn12.Width = 55;
+            gridViewTextBoxColumn12.Width = 65;
             gridViewTextBoxColumn13.EnableExpressionEditor = false;
             gridViewTextBoxColumn13.FieldName = "Customer.PhoneNumber";
             gridViewTextBoxColumn13.HeaderText = "Customer PhoneNumber";
             gridViewTextBoxColumn13.Name = "PhoneNumber";
-            gridViewTextBoxColumn13.Width = 42;
             gridViewTextBoxColumn14.EnableExpressionEditor = false;
             gridViewTextBoxColumn14.FieldName = "Comment";
             gridViewTextBoxColumn14.HeaderText = "Comment";
             gridViewTextBoxColumn14.Name = "Comment";
-            gridViewTextBoxColumn14.Width = 102;
+            gridViewTextBoxColumn14.Width = 122;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Edit";
             gridViewCommandColumn1.MaxWidth = 45;
@@ -204,26 +180,61 @@
             this.DGVOrders.Name = "DGVOrders";
             this.DGVOrders.ReadOnly = true;
             this.DGVOrders.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DGVOrders.Size = new System.Drawing.Size(873, 347);
+            this.DGVOrders.Size = new System.Drawing.Size(1026, 345);
             this.DGVOrders.TabIndex = 2;
             this.DGVOrders.Text = "radGridView1";
             this.DGVOrders.ThemeName = "Office2010Black";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Refreshbtn});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1032, 39);
+            this.toolStrip1.TabIndex = 5;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // Refreshbtn
+            // 
+            this.Refreshbtn.Image = global::Bylsan_System.Properties.Resources.Refrech;
+            this.Refreshbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.Refreshbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Refreshbtn.Name = "Refreshbtn";
+            this.Refreshbtn.Size = new System.Drawing.Size(82, 36);
+            this.Refreshbtn.Text = "Refresh";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 405);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1032, 22);
+            this.statusStrip1.TabIndex = 4;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // FrmOrderManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 427);
+            this.ClientSize = new System.Drawing.Size(1032, 427);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Name = "FrmOrderManage";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmOrderManage";
+            this.ThemeName = "Office2010Black";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox1.ResumeLayout(false);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
