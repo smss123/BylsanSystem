@@ -463,6 +463,24 @@
     <Compile Include="MainStoreForms\frmStorePurchases.Designer.cs">
       <DependentUpon>frmStorePurchases.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagmentOrderForms\FrmOrderManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagmentOrderForms\FrmOrderManage.Designer.cs">
+      <DependentUpon>FrmOrderManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagmentOrderForms\FrmrOrderProductEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagmentOrderForms\FrmrOrderProductEdit.Designer.cs">
+      <DependentUpon>FrmrOrderProductEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagmentOrderForms\FrmrOrderProductShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagmentOrderForms\FrmrOrderProductShow.Designer.cs">
+      <DependentUpon>FrmrOrderProductShow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Operation.cs" />
     <Compile Include="ProductForms\frmContentx.cs">
       <SubType>Form</SubType>
@@ -826,6 +844,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainStoreForms\frmStorePurchases.resx">
       <DependentUpon>frmStorePurchases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagmentOrderForms\FrmOrderManage.resx">
+      <DependentUpon>FrmOrderManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagmentOrderForms\FrmrOrderProductEdit.resx">
+      <DependentUpon>FrmrOrderProductEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagmentOrderForms\FrmrOrderProductShow.resx">
+      <DependentUpon>FrmrOrderProductShow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForms\frmAddProduct.resx">
       <DependentUpon>frmAddProduct.cs</DependentUpon>
@@ -1405,6 +1432,7 @@
       <FileType>Satellite</FileType>
     </PublishFile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
