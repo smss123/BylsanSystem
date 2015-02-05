@@ -75,6 +75,7 @@
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
+            this.btnReport = new Telerik.WinControls.UI.RadButton();
             productIDLabel = new System.Windows.Forms.Label();
             qtyLabel = new System.Windows.Forms.Label();
             costAmountLabel = new System.Windows.Forms.Label();
@@ -101,6 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,7 +120,7 @@
             qtyLabel.AutoSize = true;
             qtyLabel.Location = new System.Drawing.Point(88, 59);
             qtyLabel.Name = "qtyLabel";
-            qtyLabel.Size = new System.Drawing.Size(27, 13);
+            qtyLabel.Size = new System.Drawing.Size(28, 13);
             qtyLabel.TabIndex = 3;
             qtyLabel.Text = "Qty:";
             // 
@@ -143,11 +145,11 @@
             // accountIDLabel
             // 
             accountIDLabel.AutoSize = true;
-            accountIDLabel.Location = new System.Drawing.Point(56, 179);
+            accountIDLabel.Location = new System.Drawing.Point(67, 179);
             accountIDLabel.Name = "accountIDLabel";
-            accountIDLabel.Size = new System.Drawing.Size(66, 13);
+            accountIDLabel.Size = new System.Drawing.Size(55, 13);
             accountIDLabel.TabIndex = 9;
-            accountIDLabel.Text = "Account ID:";
+            accountIDLabel.Text = "Account :";
             // 
             // expierdDateLabel
             // 
@@ -191,7 +193,6 @@
             // costAmountNumericUpDown
             // 
             this.costAmountNumericUpDown.BackColor = System.Drawing.SystemColors.Info;
-            this.costAmountNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.purchaseBindingSource, "CostAmount", true));
             this.costAmountNumericUpDown.Location = new System.Drawing.Point(128, 80);
             this.costAmountNumericUpDown.Name = "costAmountNumericUpDown";
             this.costAmountNumericUpDown.Size = new System.Drawing.Size(288, 20);
@@ -199,6 +200,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnReport);
             this.groupBox1.Controls.Add(billNumberLabel);
             this.groupBox1.Controls.Add(this.billNumberTextBox);
             this.groupBox1.Controls.Add(productBarcodeLabel);
@@ -243,7 +245,6 @@
             // 
             // expierdDateDateTimePicker
             // 
-            this.expierdDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.purchaseBindingSource, "expierdDate", true));
             this.expierdDateDateTimePicker.Location = new System.Drawing.Point(128, 128);
             this.expierdDateDateTimePicker.Name = "expierdDateDateTimePicker";
             this.expierdDateDateTimePicker.Size = new System.Drawing.Size(288, 20);
@@ -309,7 +310,7 @@
             this.accountIDComboBox.Size = new System.Drawing.Size(288, 20);
             this.accountIDComboBox.TabIndex = 14;
             this.accountIDComboBox.TabStop = false;
-            this.accountIDComboBox.ThemeName = "VisualStudio2012Light";
+            this.accountIDComboBox.ThemeName = "Office2010Black";
             this.accountIDComboBox.ValueMember = "ID";
             // 
             // accountBindingSource
@@ -394,7 +395,7 @@
             this.supplierIDComboBox.Size = new System.Drawing.Size(288, 20);
             this.supplierIDComboBox.TabIndex = 13;
             this.supplierIDComboBox.TabStop = false;
-            this.supplierIDComboBox.ThemeName = "VisualStudio2012Light";
+            this.supplierIDComboBox.ThemeName = "Office2010Black";
             this.supplierIDComboBox.ValueMember = "ID";
             // 
             // supplierBindingSource
@@ -484,7 +485,7 @@
             this.productIDComboBox.Size = new System.Drawing.Size(288, 20);
             this.productIDComboBox.TabIndex = 12;
             this.productIDComboBox.TabStop = false;
-            this.productIDComboBox.ThemeName = "VisualStudio2012Light";
+            this.productIDComboBox.ThemeName = "Office2010Black";
             this.productIDComboBox.ValueMember = "ID";
             // 
             // productBindingSource
@@ -594,6 +595,16 @@
             this.radGridView1.Text = "radGridView1";
             this.radGridView1.ThemeName = "Office2010Black";
             // 
+            // btnReport
+            // 
+            this.btnReport.Location = new System.Drawing.Point(244, 230);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(110, 40);
+            this.btnReport.TabIndex = 18;
+            this.btnReport.Text = "Reports";
+            this.btnReport.ThemeName = "Office2010Black";
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
             // frmStorePurchases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -631,6 +642,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -654,6 +666,7 @@
         private System.Windows.Forms.DateTimePicker expierdDateDateTimePicker;
         private System.Windows.Forms.TextBox billNumberTextBox;
         private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
+        private Telerik.WinControls.UI.RadButton btnReport;
         //private DevExpress.XtraEditors.PictureEdit pictureEdit1;
 
     }

@@ -17,15 +17,12 @@ namespace Bylsan_System.AccountsX
         public Debtor DebtorInfo { get; set; }
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            #region "  CheckFillTextBox "
-
-            if (PaymenttextBox.Text == "")
+            if (PaymenttextBox.Text == string.Empty)
             {
-
                 PaymenttextBox.BackColor = Color.OrangeRed;
 
                 PaymenttextBox.Focus();
-                errorProvider1.SetError(this.PaymenttextBox, "Please Enter Payment  ");
+                errorProvider1.SetError(PaymenttextBox, "Please Enter Payment  ");
 
                 return;
             }
@@ -33,29 +30,22 @@ namespace Bylsan_System.AccountsX
             {
                 PaymenttextBox.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
 
-            #endregion
 
-            AccountDaily deptSide = new AccountDaily()
-            {
-                AccountID = DebtorInfo.AccountID,
+
+            var deptSide = new AccountDaily()
+            { AccountID = DebtorInfo.AccountID,
                 DateOfProcess = DateTime.Now,
                 Description = "this New Debet to Account for :" + txtDescription.Text,
                 TotalOut = PaymenttextBox.Text.Todouble(),
-                TotalIn = 0d,
-
-            };
-            AccountDaily tre = new AccountDaily()
-            {
-                AccountID = DebetfromcomboBox.SelectedValue.ToString().ToInt(),
+                TotalIn = 0d, };
+            var tre = new AccountDaily()
+            { AccountID = DebetfromcomboBox.SelectedValue.ToString().ToInt(),
                 DateOfProcess = DateTime.Now,
                 Description = "this New Debet to Account for :" + txtDescription.Text,
                 TotalOut = PaymenttextBox.Text.Todouble(),
-                TotalIn = 0d,
-
-            };
+                TotalIn = 0d, };
             Operation.BeginOperation(this);
             AccountDailyCmd.AddAccountDaily(deptSide);
             AccountDailyCmd.AddAccountDaily(tre);

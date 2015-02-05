@@ -80,7 +80,7 @@
             qtyLabel.AutoSize = true;
             qtyLabel.Location = new System.Drawing.Point(44, 52);
             qtyLabel.Name = "qtyLabel";
-            qtyLabel.Size = new System.Drawing.Size(27, 13);
+            qtyLabel.Size = new System.Drawing.Size(28, 13);
             qtyLabel.TabIndex = 13;
             qtyLabel.Text = "Qty:";
             // 
@@ -112,7 +112,6 @@
             this.groupBox1.Size = new System.Drawing.Size(337, 227);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // ItemComboBox
             // 
@@ -124,7 +123,7 @@
             this.ItemComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ItemComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // ItemComboBox.NestedRadGridView
+            // 
             // 
             this.ItemComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.ItemComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -153,7 +152,7 @@
             this.StoreComboBox.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.StoreComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // StoreComboBox.NestedRadGridView
+            // 
             // 
             this.StoreComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.StoreComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -223,8 +222,9 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(0, 0);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmEditMainStore_StoreWithDrawal";
+            this.Text = "Store With Drawal";
             this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmEditMainStore_StoreWithDrawal_Load);
             this.groupBox1.ResumeLayout(false);

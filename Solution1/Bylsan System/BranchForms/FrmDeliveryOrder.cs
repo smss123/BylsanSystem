@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using Telerik.WinControls;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 using System.Threading;
@@ -19,22 +14,25 @@ namespace Bylsan_System.BranchForms
         {
             InitializeComponent();
         }
-        Thread ThreadDelivery;
+        private Thread ThreadDelivery;
 
-        #region "    ^^^ Populate Delivery Grid     "
 
-        void PopualteGrid()
+
+        private void PopualteGrid()
         {
             var Deliver = new object();
-            using (FactoryZoon Cmd = new FactoryZoon())
+            using (var Cmd = new FactoryZoon())
             {
-                Deliver = Cmd.GetAllInProducting();
-
+                Deliver = Cmd.GetAllToDeliver();
             }
 
-            this.Invoke((MethodInvoker)delegate { DGVDelivery.DataSource = Deliver; }); ThreadDelivery.Abort();
+            this.Invoke((MethodInvoker)delegate
+            {
+                DGVDelivery.DataSource = Deliver;
+            });
+            ThreadDelivery.Abort();
         }
-        #endregion
+
 
         private void FrmDeliveryOrder_Load(object sender, EventArgs e)
         {
@@ -43,9 +41,9 @@ namespace Bylsan_System.BranchForms
         }
 
 
-        #region "     Save Changes    "
 
-        Thread ThreadChanges;
+
+        private Thread ThreadChanges;
         private void OkeyBtn_Click(object sender, EventArgs e)
         {
             ThreadChanges = new Thread(SaveAllChanges);
@@ -54,40 +52,28 @@ namespace Bylsan_System.BranchForms
 
         public int OrderID { get; set; }
         public Order MyOrder { get; set; }
-        void SaveAllChanges()
+        private void SaveAllChanges()
         {
-            Order OrderTb = new Order();
             try
             {
                 this.Invoke((MethodInvoker)delegate
                 {
                     foreach (var row in DGVDelivery.Rows)
                     {
-
                         OrderID = int.Parse(row.Cells[0].Value.ToString());
                         MyOrder = (Order)row.DataBoundItem;
 
                         if (Convert.ToBoolean(row.Cells[7].Value.ToString()) == true)
                         {
-
                             MyOrder. OrderStatus = "Done";
 
-                            MyOrder.OrderDeliveryDate = DateTime.Now;   
-                            
-                          
-
+                            MyOrder.OrderDeliveryDate = DateTime.Now;
                         }
                         else
                         {
-
-
-
                             MyOrder.OrderStatus = "To Deliver";
-                           
-
                         }
                         OrdersCmd.EditOrderStatusOnly(MyOrder, MyOrder.ID);
-
                     }
 
 
@@ -98,15 +84,12 @@ namespace Bylsan_System.BranchForms
             }
             catch (Exception)
             {
-
-
             }
 
             MessageBox.Show("Saved Changes");
             ThreadChanges.Abort();
-
         }
-        #endregion
+
 
         private void DGVDelivery_CommandCellClick(object sender, EventArgs e)
         {
@@ -114,23 +97,18 @@ namespace Bylsan_System.BranchForms
 
             if (col == 8)
             {
-
                 Operation.BeginOperation(this);
-                FrmDeliveryOrderShowInfo frm = new FrmDeliveryOrderShowInfo();
-                Order tb = (Order)DGVDelivery.CurrentRow.DataBoundItem;
+                var frm = new FrmDeliveryOrderShowInfo();
+                var tb = (Order)DGVDelivery.CurrentRow.DataBoundItem;
                 frm.TargetOrder = tb;
                 frm.ShowDialog();
                 Operation.EndOperation(this);
-
             }
-
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             FrmDeliveryOrder_Load(null, null);
         }
-
-
     }
 }

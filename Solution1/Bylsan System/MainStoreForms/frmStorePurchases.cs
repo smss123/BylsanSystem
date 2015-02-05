@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bylsan_System.Reports.ReportOption;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 using Telerik.WinControls;
@@ -19,9 +20,9 @@ namespace Bylsan_System.MainStoreForms
 
         private void frmStorePurchases_Load(object sender, EventArgs e)
         {
-            productBindingSource.DataSource = ProductsCmd.GetAllProducts(); // Operation.Allproducts;
+            productBindingSource.DataSource = ProductsCmd.GetAllProducts();
             productIDComboBox.MultiColumnComboBoxElement.DropDownWidth = 500;
-            
+
             supplierBindingSource.DataSource = SuppliersCmd.GetAllSuppliers();
             supplierIDComboBox.MultiColumnComboBoxElement.DropDownWidth = 500;
 
@@ -32,20 +33,19 @@ namespace Bylsan_System.MainStoreForms
 
         private void radButton1_Click(object sender, EventArgs e)
         {
-           if( PurchasesCmd.NewPurchases(new XamaDataLayer.Purchase() { 
-             AccountID = accountIDComboBox.SelectedValue.ToString().ToInt(),
-              CostAmount= costAmountNumericUpDown.Value.ToString().Todouble(),
+            if ( PurchasesCmd.NewPurchases(new XamaDataLayer.Purchase() { AccountID = accountIDComboBox.SelectedValue.ToString().ToInt(),
+              CostAmount = costAmountNumericUpDown.Value.ToString().Todouble(),
                ProductID = productIDComboBox.SelectedValue.ToString().ToInt(),
                 SupplierID = supplierIDComboBox.SelectedValue.ToString().ToInt(),
                  Qty = qtyTextBox.Text,
                   BillNumber = billNumberTextBox.Text,
-                   expierdDate=expierdDateDateTimePicker.Value,
+                   expierdDate = expierdDateDateTimePicker.Value,
                     ProductBarcode = productBarcodeTextBox.Text,
                      SerialNumber = Guid.NewGuid()
-           }))
-           {
-               RadMessageBox.Show("Saved", "_");
-           }
+            }))
+            {
+                RadMessageBox.Show("Saved", "_");
+            }
         }
 
         private void productBarcodeTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -58,15 +58,18 @@ namespace Bylsan_System.MainStoreForms
                     productIDComboBox.SelectedValue = q.ProductID;
                     qtyTextBox.Text = "1";
                     costAmountNumericUpDown.Value = 0;
-
- 
                 }
                 catch (Exception ex)
                 {
-
-                    productBarcodeTextBox.Text = ex.Message;//"Barcode Not Found";
+                    productBarcodeTextBox.Text = ex.Message;
                 }
             }
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            frmPurchases frm = new frmPurchases();
+            frm.ShowDialog();
         }
     }
 }

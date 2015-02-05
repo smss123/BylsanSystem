@@ -42,6 +42,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.ProductComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qtyTextBox = new System.Windows.Forms.TextBox();
             this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@
             this.PreBtn = new Telerik.WinControls.UI.RadButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             qtyLabel = new System.Windows.Forms.Label();
             statusLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
@@ -63,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ProductComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductComboBox.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
@@ -74,7 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.NextBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PreBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +83,7 @@
             qtyLabel.AutoSize = true;
             qtyLabel.Location = new System.Drawing.Point(44, 63);
             qtyLabel.Name = "qtyLabel";
-            qtyLabel.Size = new System.Drawing.Size(27, 13);
+            qtyLabel.Size = new System.Drawing.Size(28, 13);
             qtyLabel.TabIndex = 2;
             qtyLabel.Text = "Qty:";
             // 
@@ -127,7 +127,7 @@
             this.ProductComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ProductComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // ProductComboBox.NestedRadGridView
+            // 
             // 
             this.ProductComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.ProductComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -209,6 +209,10 @@
             this.ProductComboBox.TabStop = false;
             this.ProductComboBox.ThemeName = "Office2010Black";
             // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(XamaDataLayer.Product);
+            // 
             // qtyTextBox
             // 
             this.qtyTextBox.Location = new System.Drawing.Point(79, 60);
@@ -281,6 +285,7 @@
             this.SaveBtn.TabIndex = 6;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.ThemeName = "Office2010Black";
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // UploadBtn
             // 
@@ -335,10 +340,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(XamaDataLayer.Product);
-            // 
             // FrmrOrderProductEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,6 +360,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ProductComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
@@ -371,7 +373,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.NextBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PreBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

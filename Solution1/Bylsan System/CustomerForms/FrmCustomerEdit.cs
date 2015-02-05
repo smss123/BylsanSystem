@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
 using XamaDataLayer;
@@ -27,12 +23,9 @@ namespace Bylsan_System.CustomerForms
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
-          
-
-         
         }
 
-    
+
 
         private void FrmCustomerEdit_Load(object sender, EventArgs e)
         {
@@ -42,16 +35,12 @@ namespace Bylsan_System.CustomerForms
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-
-            #region "  CheckFillTextBox "
-
-            if (customerNameTextBox.Text == "")
+            if (customerNameTextBox.Text == string.Empty)
             {
-
                 customerNameTextBox.BackColor = Color.OrangeRed;
 
                 customerNameTextBox.Focus();
-                errorProvider1.SetError(this.customerNameTextBox, "Please Enter Customer Name");
+                errorProvider1.SetError(customerNameTextBox, "Please Enter Customer Name");
 
                 return;
             }
@@ -59,15 +48,13 @@ namespace Bylsan_System.CustomerForms
             {
                 customerNameTextBox.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
-            if (phoneNumberTextBox.Text == "")
+            if (phoneNumberTextBox.Text == string.Empty)
             {
-
                 phoneNumberTextBox.BackColor = Color.OrangeRed;
 
                 phoneNumberTextBox.Focus();
-                errorProvider1.SetError(this.phoneNumberTextBox, "Please Enter PhoneNumber");
+                errorProvider1.SetError(phoneNumberTextBox, "Please Enter PhoneNumber");
 
                 return;
             }
@@ -75,10 +62,9 @@ namespace Bylsan_System.CustomerForms
             {
                 phoneNumberTextBox.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
 
-            #endregion
+
 
 
             if (CustomersCmd.EditCustomer(new Customer()

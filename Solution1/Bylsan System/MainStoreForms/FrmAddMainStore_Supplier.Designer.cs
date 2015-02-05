@@ -103,7 +103,7 @@
             this.groupBox1.Controls.Add(this.supplierNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(375, 257);
+            this.groupBox1.Size = new System.Drawing.Size(375, 253);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
@@ -164,7 +164,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(400, 288);
+            this.ClientSize = new System.Drawing.Size(400, 284);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(408, 318);
@@ -176,8 +176,9 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(408, 318);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAddMainStore_Supplier";
+            this.Text = "Supplier";
             this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmAddMainStore_Supplier_Load);
             this.groupBox1.ResumeLayout(false);

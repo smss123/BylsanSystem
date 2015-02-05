@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Helper_Classes;
 using Telerik.WinControls.UI;
+
 namespace Bylsan_System.designerForms
 {
     public partial class FrmOrderShow : RadForm
@@ -21,19 +18,18 @@ namespace Bylsan_System.designerForms
             InitializeComponent();
         }
 
-        FrmOrderProductShow FrmProdShow = new FrmOrderProductShow();
+        private FrmOrderProductShow FrmProdShow = new FrmOrderProductShow();
 
-        Thread Thr ;
-        Thread CustomerThread;
+        private Thread Thr ;
+        private Thread CustomerThread;
 
         private void RefreshData()
         {
-
             Operation.BeginOperation(this);
             var q = new object();
-            using (FactoryZoon FactoryZoonCmd = new FactoryZoon())
+            using (var FactoryZoonCmd = new FactoryZoon())
             {
-                q = FactoryZoonCmd.GetAllOrdersInDesigner(); //Operation.AllOrder.Where(o => o.OrderStatus == "In Designer");
+                q = FactoryZoonCmd.GetAllOrdersInDesigner();
             }
             this.Invoke((MethodInvoker)delegate
             {
@@ -47,46 +43,41 @@ namespace Bylsan_System.designerForms
                         item.Cells[0].Style.BackColor = Color.FromArgb(255, 102, 154, 255);
                         item.Cells[1].Style.BackColor = Color.FromArgb(255, 102, 154, 255);
                         item.Cells[2].Style.BackColor = Color.FromArgb(255, 102, 154, 255);
-
                     }
                 }
             });
             Operation.EndOperation(this);
-            this.Thr.Abort();
+            Thr.Abort();
         }
 
         private void PopulateGrd()
         {
-            
             Operation.BeginOperation(this);
             var q = new object();
-            using (FactoryZoon FactoryZoonCmd = new FactoryZoon())
+            using (var FactoryZoonCmd = new FactoryZoon())
             {
-                q = Operation.AllOrder.Where(o=>o.OrderStatus == "In Designer");
+                q = Operation.AllOrder.Where(o => o.OrderStatus == "In Designer");
             }
-            this.Invoke((MethodInvoker)delegate 
+            this.Invoke((MethodInvoker)delegate
             {
 
                 DGVOrders.DataSource = q;
                 foreach (var item in DGVOrders.Rows)
                 {
                     var itm = (Order)item.DataBoundItem;
-                    if (itm.OrderStatus=="In Designer")
+                    if (itm.OrderStatus == "In Designer")
                     {
                         item.Cells[0].Style.BackColor = Color.FromArgb(255, 102, 154, 255);
                         item.Cells[1].Style.BackColor = Color.FromArgb(255, 102, 154, 255);
                         item.Cells[2].Style.BackColor = Color.FromArgb(255, 102, 154, 255);
-
                     }
                 }
             });
             Operation.EndOperation (this);
-            this.Thr.Abort();
+            Thr.Abort();
         }
         private void FrmOrderShow_Load(object sender, EventArgs e)
         {
-            
-
             Thr = new Thread(PopulateGrd );
             Thr.Start();
         }
@@ -94,24 +85,25 @@ namespace Bylsan_System.designerForms
         public int SelectedOrderID { get; set; }
         private void DGVOrders_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-          
         }
 
         private void LoadingCustomerData()
         {
             this.Invoke((MethodInvoker)delegate
-           {
-               FrmProdShow.labCustomerName.Text = "Loading Info ..";
-               FrmProdShow.labCustomerPhone.Text = "Loading Info ..";
-           });
-            var Lst = (from c in OrdersCmd.GetAllOrderByID(SelectedOrderID) select c).Single();
-            var cust = (from c in CustomersCmd.GetAllCustmers() where c.ID == Lst.CustomerID select c).Single();
+            {
+                FrmProdShow.labCustomerName.Text = "Loading Info ..";
+                FrmProdShow.labCustomerPhone.Text = "Loading Info ..";
+            });
+            var Lst = (from c in OrdersCmd.GetAllOrderByID(SelectedOrderID)
+                        select c).Single();
+            var cust = (from c in CustomersCmd.GetAllCustmers()
+                         where c.ID == Lst.CustomerID
+                         select c).Single();
 
             this.Invoke((MethodInvoker)delegate
             {
-             
-             FrmProdShow.labCustomerName.Text = cust.CustomerName.ToString();
-             FrmProdShow.labCustomerPhone .Text = cust.PhoneNumber .ToString();
+                FrmProdShow.labCustomerName.Text = cust.CustomerName.ToString();
+                FrmProdShow.labCustomerPhone .Text = cust.PhoneNumber .ToString();
             });
 
             CustomerThread.Abort() ;
@@ -133,13 +125,10 @@ namespace Bylsan_System.designerForms
                     FrmProdShow.TaregtOrder = SelectedOrderID;
                     FrmProdShow.SelectedOrder = (Order)DGVOrders.CurrentRow.DataBoundItem;
                     FrmProdShow.ShowDialog();
-
                 }
             }
             catch (Exception)
             {
-
-
             }
         }
 
@@ -148,6 +137,5 @@ namespace Bylsan_System.designerForms
             Thr = new Thread(PopulateGrd);
             Thr.Start();
         }
-        
     }
 }

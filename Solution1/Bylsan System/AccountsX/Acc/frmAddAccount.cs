@@ -1,19 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using Telerik.WinControls;
 using Telerik.WinControls.Data;
-//===========================
-using Telerik.WinControls.UI;
 using XamaDataLayer;
-using XamaDataLayer.BranchCmd;
-using XamaDataLayer.Helper_Classes;
 using XamaDataLayer.Accountant;
-//==========================
+
 namespace Bylsan_System.AccountsX.Acc
 {
     public partial class frmAddAccount : Telerik.WinControls.UI.RadForm
@@ -27,34 +18,33 @@ namespace Bylsan_System.AccountsX.Acc
             Operation.BeginOperation(this);
             this.Invoke((MethodInvoker)delegate
             {
-                this.CmbCategories.MultiColumnComboBoxElement.DropDownWidth = 550;
-                this.CmbCategories.AutoFilter = true;
-                this.CmbCategories.DisplayMember = "AccountCategoryName";
-                this.CmbCategories.ValueMember = "ID";
+                CmbCategories.MultiColumnComboBoxElement.DropDownWidth = 550;
+                CmbCategories.AutoFilter = true;
+                CmbCategories.DisplayMember = "AccountCategoryName";
+                CmbCategories.ValueMember = "ID";
             });
 
 
             var q = AccountCategoryCmd.GetAll();
-        
+
             this.Invoke((MethodInvoker)delegate
             {
 
                 CmbCategories.DataSource = q;
 
-                CompositeFilterDescriptor compositeFilter = new CompositeFilterDescriptor();
-                FilterDescriptor prodName = new FilterDescriptor("AccountCategoryName", FilterOperator.Contains, "");
+                var compositeFilter = new CompositeFilterDescriptor();
+                var prodName = new FilterDescriptor("AccountCategoryName", FilterOperator.Contains, string.Empty);
                 compositeFilter.FilterDescriptors.Add(prodName);
                 compositeFilter.LogicalOperator = FilterLogicalOperator.Or;
-                this.CmbCategories.EditorControl.FilterDescriptors.Add(compositeFilter);
+                CmbCategories.EditorControl.FilterDescriptors.Add(compositeFilter);
 
 
 
             });
 
             Operation.EndOperation(this);
-
         }
-      
+
         private void frmAddAccount_Load(object sender, EventArgs e)
         {
             FillCategoreisCombo();
@@ -65,10 +55,9 @@ namespace Bylsan_System.AccountsX.Acc
             if (AcctCategID != 0)
             {
                 Operation.BeginOperation(this);
-                Account tb = new Account()
-                {
-                    CategoryID = AcctCategID
-                    ,
+                var tb = new Account()
+                { CategoryID = AcctCategID
+                ,
                     AccountName = txtAccountName.Text,
                     Description = txtDescription.Text
                 };
@@ -80,18 +69,13 @@ namespace Bylsan_System.AccountsX.Acc
 
 
 
-        #region " Save At Two Tables {Account & AccountCategory ^^^  Both} "
+
 
         public int AcctCategID { get; set; }
         private void CmbCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
             AcctCategID = 0;
             AcctCategID = int.Parse(CmbCategories.SelectedValue.ToString());
-
-
         }
-
-        
-        #endregion 
     }
 }

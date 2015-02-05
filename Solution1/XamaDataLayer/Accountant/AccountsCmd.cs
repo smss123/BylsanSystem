@@ -46,7 +46,7 @@ namespace XamaDataLayer.Accountant
         public static List<Account> GetAllAccounts()
         {
             db = new DbDataContext();
-            return db.Accounts.ToList();
+            return db.Accounts.OrderByDescending(p=>p.CategoryID).ToList();
         }
 
         public static List<Account> GetAccountByCategoryID(int categID)
@@ -88,6 +88,17 @@ namespace XamaDataLayer.Accountant
 
             var allTotalIn = db.AccountDailies.Where(p => p.AccountID == accountID).Sum(p => p.TotalIn);
             var allTotalOut = db.AccountDailies.Where(p => p.AccountID == accountID).Sum(p => p.TotalOut);
+            balance = allTotalIn - allTotalOut;
+
+            return balance;
+        }
+
+        public static double? GetCustomerPayment(int accountID, int orderID)
+        {
+            var balance = (double?)0d;
+
+            var allTotalIn = db.AccountDailies.Where(p => p.AccountID == accountID&&p.CommandArg==orderID.ToString()).Sum(p => p.TotalIn);
+            var allTotalOut = db.AccountDailies.Where(p => p.AccountID == accountID && p.CommandArg == orderID.ToString()).Sum(p => p.TotalOut);
             balance = allTotalIn - allTotalOut;
 
             return balance;

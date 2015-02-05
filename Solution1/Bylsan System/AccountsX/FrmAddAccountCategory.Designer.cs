@@ -38,11 +38,11 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtAccountName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.addBtn = new Telerik.WinControls.UI.RadButton();
             this.txtAccountBox = new System.Windows.Forms.TextBox();
             this.txtDescriptionBox = new System.Windows.Forms.TextBox();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.addBtn = new Telerik.WinControls.UI.RadButton();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             descriptionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -53,8 +53,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories.EditorControl.MasterTemplate)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,9 +157,22 @@
             this.groupBox1.Controls.Add(label4);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(390, 218);
+            this.groupBox1.Size = new System.Drawing.Size(390, 214);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // addBtn
+            // 
+            this.addBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.Image = global::Bylsan_System.Properties.Resources.Add1;
+            this.addBtn.Location = new System.Drawing.Point(11, 163);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(110, 42);
+            this.addBtn.TabIndex = 7;
+            this.addBtn.Text = "add";
+            this.addBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.addBtn.ThemeName = "Office2010Black";
+            this.addBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // txtAccountBox
             // 
@@ -181,19 +194,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // addBtn
-            // 
-            this.addBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBtn.Image = global::Bylsan_System.Properties.Resources.Add1;
-            this.addBtn.Location = new System.Drawing.Point(11, 163);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(110, 42);
-            this.addBtn.TabIndex = 7;
-            this.addBtn.Text = "add";
-            this.addBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.addBtn.ThemeName = "Office2010Black";
-            this.addBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // FrmAddAccountCategory
             // 
@@ -223,8 +223,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.CmbCategories)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

@@ -42,7 +42,7 @@ namespace Bylsan_System.FactoryForms
             });
 
             var q = Operation.Allproducts.Where(p => p.ProductType == "product");
-            var q1 = Operation.Allproducts.Where(p => p.ProductType == "All" || p.ProductType=="Row material").ToList();
+            var q1 = Operation.Allproducts.Where(p => p.ProductType == "All" || p.ProductType == "Row material").ToList();
             Invoke((MethodInvoker)delegate
             {
                 CmbItems.DataSource = q1;
@@ -205,7 +205,6 @@ namespace Bylsan_System.FactoryForms
 
         private void label4_Click(object sender, EventArgs e)
         {
-
         }
 
         private List<ProductContent> ls = new List<ProductContent>();
@@ -218,7 +217,7 @@ namespace Bylsan_System.FactoryForms
             };
             p.Qty = long.Parse(txtQty.Text);
             ls.Add(p);
-            dataGridView1.DataSource = "";
+            dataGridView1.DataSource = string.Empty;
             dataGridView1.DataSource = ls;
         }
     }

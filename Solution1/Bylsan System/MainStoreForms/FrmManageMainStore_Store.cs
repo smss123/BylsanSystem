@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.Main_Store;
+
 namespace Bylsan_System.MainStoreForms
 {
     public partial class FrmManageMainStore_Store : RadForm
@@ -21,11 +17,11 @@ namespace Bylsan_System.MainStoreForms
             InitializeComponent();
             RadMessageBox.SetThemeName("VisualStudio2012Light");
         }
-        Thread th;
+        private Thread th;
         private void FrmManageMainStore_Store_Load(object sender, EventArgs e)
         {
-           th = new Thread(Loading);
-           th.Start();
+            th = new Thread(Loading);
+            th.Start();
         }
 
         private void Loading()
@@ -35,7 +31,7 @@ namespace Bylsan_System.MainStoreForms
                 lblStatus.Text = "Loading ...";
             });
             Operation.BeginOperation(this);
-            var q = StoreCmd.GetAllStores();  //StoreManagerCmd.GetAllStoreManager();
+            var q = StoreCmd.GetAllStores();
             this.Invoke((MethodInvoker)delegate
             {
                 StoreGridView.DataSource = q;
@@ -51,7 +47,7 @@ namespace Bylsan_System.MainStoreForms
         private void Addbtn_Click(object sender, EventArgs e)
         {
             Operation.BeginOperation(this);
-            FrmAddMainStore_Store frm = new FrmAddMainStore_Store();
+            var frm = new FrmAddMainStore_Store();
             frm.ShowDialog();
             Operation.EndOperation(this);
         }
@@ -60,28 +56,25 @@ namespace Bylsan_System.MainStoreForms
         {
             var col = StoreGridView.CurrentColumn.Index;
 
-             if (col == 4)
-             {
-                 Operation.BeginOperation(this);
-                 FrmEditMainStore_Store frm = new FrmEditMainStore_Store();
-                 frm.treagtStore = (Store)this.StoreGridView.CurrentRow.DataBoundItem;
-                 frm.ShowDialog();
-                 this.FrmManageMainStore_Store_Load(null, null);
-                 Operation.EndOperation(this);
-             }
+            if (col == 4)
+            {
+                Operation.BeginOperation(this);
+                var frm = new FrmEditMainStore_Store();
+                frm.treagtStore = (Store)StoreGridView.CurrentRow.DataBoundItem;
+                frm.ShowDialog();
+                FrmManageMainStore_Store_Load(null, null);
+                Operation.EndOperation(this);
+            }
 
-             if (col == 5)
-             {
-                 if (RadMessageBox.Show(this, "Do you want to delete", "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
-                 {
-                     Operation.BeginOperation(this);
-                     ItemsCmd.DeleteItemAt(((Store)this.StoreGridView.CurrentRow.DataBoundItem).ID);
-                     Operation.EndOperation(this);
-                 }
-             }
-
-
-
+            if (col == 5)
+            {
+                if (RadMessageBox.Show(this, "Do you want to delete", "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+                {
+                    Operation.BeginOperation(this);
+                    ItemsCmd.DeleteItemAt(((Store)StoreGridView.CurrentRow.DataBoundItem).ID);
+                    Operation.EndOperation(this);
+                }
+            }
         }
 
         private void RefreshBtn_Click(object sender, EventArgs e)
@@ -91,13 +84,12 @@ namespace Bylsan_System.MainStoreForms
 
         private void btnStorePurchases_Click(object sender, EventArgs e)
         {
-            frmStorePurchases frm = new frmStorePurchases();
+            var frm = new frmStorePurchases();
             frm.ShowDialog();
         }
 
         private void ReportBtn_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

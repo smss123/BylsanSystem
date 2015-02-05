@@ -39,7 +39,7 @@
             this.RemoveBtn = new Telerik.WinControls.UI.RadButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCustomerText = new System.Windows.Forms.TextBox();
             this.DescriptiontextBox = new System.Windows.Forms.TextBox();
             this.ImageListProducuts = new System.Windows.Forms.ImageList(this.components);
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
@@ -61,7 +61,7 @@
             this.groupBox1.Controls.Add(this.RemoveBtn);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtCustomerText);
             this.groupBox1.Controls.Add(this.DescriptiontextBox);
             this.groupBox1.Location = new System.Drawing.Point(11, 12);
             this.groupBox1.Name = "groupBox1";
@@ -152,13 +152,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Description:";
             // 
-            // textBox1
+            // txtCustomerText
             // 
-            this.textBox1.Location = new System.Drawing.Point(8, 128);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(276, 52);
-            this.textBox1.TabIndex = 0;
+            this.txtCustomerText.Location = new System.Drawing.Point(8, 128);
+            this.txtCustomerText.Multiline = true;
+            this.txtCustomerText.Name = "txtCustomerText";
+            this.txtCustomerText.Size = new System.Drawing.Size(276, 52);
+            this.txtCustomerText.TabIndex = 0;
             // 
             // DescriptiontextBox
             // 
@@ -216,7 +216,7 @@
         private System.Windows.Forms.ImageList ImageListProducuts;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCustomerText;
         private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

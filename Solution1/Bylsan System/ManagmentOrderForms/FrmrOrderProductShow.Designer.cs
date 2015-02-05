@@ -35,23 +35,23 @@
             System.Windows.Forms.Label orderStatusLabel;
             System.Windows.Forms.Label orderVerifyLabel;
             System.Windows.Forms.Label totalAmountLabel;
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn12 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn27 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn28 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn4 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn29 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn13 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn30 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn31 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn5 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn14 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn32 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn15 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn33 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn34 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn35 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn36 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn5 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn2 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn2 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn3 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn4 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.OrderInformationGroup = new Telerik.WinControls.UI.RadGroupBox();
             this.SaveBtn = new Telerik.WinControls.UI.RadButton();
@@ -64,13 +64,13 @@
             this.orderDeliveryTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.BranchComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.branchBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.CustomerComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.radGroupBox2 = new Telerik.WinControls.UI.RadGroupBox();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.orderProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.branchBindingSource = new System.Windows.Forms.BindingSource(this.components);
             orderDeliveryLabel = new System.Windows.Forms.Label();
             orderDeliveryDateLabel = new System.Windows.Forms.Label();
             commentLabel = new System.Windows.Forms.Label();
@@ -84,16 +84,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.BranchComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BranchComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BranchComboBox.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.branchBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerComboBox.EditorControl.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
             this.radGroupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderProductBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.branchBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,12 +198,14 @@
             this.SaveBtn.TabIndex = 16;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.ThemeName = "Office2010Black";
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // totalAmountTextBox
             // 
             this.totalAmountTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "TotalAmount", true));
             this.totalAmountTextBox.Location = new System.Drawing.Point(88, 143);
             this.totalAmountTextBox.Name = "totalAmountTextBox";
+            this.totalAmountTextBox.ReadOnly = true;
             this.totalAmountTextBox.Size = new System.Drawing.Size(100, 20);
             this.totalAmountTextBox.TabIndex = 15;
             // 
@@ -216,16 +218,22 @@
             this.orderVerifyTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "OrderVerify", true));
             this.orderVerifyTextBox.Location = new System.Drawing.Point(88, 108);
             this.orderVerifyTextBox.Name = "orderVerifyTextBox";
+            this.orderVerifyTextBox.ReadOnly = true;
             this.orderVerifyTextBox.Size = new System.Drawing.Size(259, 20);
             this.orderVerifyTextBox.TabIndex = 13;
             // 
             // orderStatusComboBox
             // 
             this.orderStatusComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "OrderStatus", true));
+            this.orderStatusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.orderStatusComboBox.FormattingEnabled = true;
+            this.orderStatusComboBox.Items.AddRange(new object[] {
+            "In Designer",
+            "in producting ",
+            "To Deliver"});
             this.orderStatusComboBox.Location = new System.Drawing.Point(88, 78);
             this.orderStatusComboBox.Name = "orderStatusComboBox";
-            this.orderStatusComboBox.Size = new System.Drawing.Size(136, 21);
+            this.orderStatusComboBox.Size = new System.Drawing.Size(274, 21);
             this.orderStatusComboBox.TabIndex = 11;
             // 
             // commentTextBox
@@ -242,7 +250,7 @@
             this.orderDeliveryDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.orderBindingSource, "OrderDeliveryDate", true));
             this.orderDeliveryDateDateTimePicker.Location = new System.Drawing.Point(743, 65);
             this.orderDeliveryDateDateTimePicker.Name = "orderDeliveryDateDateTimePicker";
-            this.orderDeliveryDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.orderDeliveryDateDateTimePicker.Size = new System.Drawing.Size(246, 20);
             this.orderDeliveryDateDateTimePicker.TabIndex = 7;
             // 
             // orderDeliveryTextBox
@@ -250,7 +258,7 @@
             this.orderDeliveryTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.orderBindingSource, "OrderDelivery", true));
             this.orderDeliveryTextBox.Location = new System.Drawing.Point(743, 39);
             this.orderDeliveryTextBox.Name = "orderDeliveryTextBox";
-            this.orderDeliveryTextBox.Size = new System.Drawing.Size(200, 20);
+            this.orderDeliveryTextBox.Size = new System.Drawing.Size(246, 20);
             this.orderDeliveryTextBox.TabIndex = 5;
             // 
             // label2
@@ -282,45 +290,45 @@
             this.BranchComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.BranchComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
             this.BranchComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn12.DataType = typeof(int);
-            gridViewDecimalColumn12.EnableExpressionEditor = false;
-            gridViewDecimalColumn12.FieldName = "ID";
-            gridViewDecimalColumn12.HeaderText = "ID";
-            gridViewDecimalColumn12.IsAutoGenerated = true;
-            gridViewDecimalColumn12.IsVisible = false;
-            gridViewDecimalColumn12.Name = "ID";
-            gridViewDecimalColumn12.Width = 121;
-            gridViewTextBoxColumn27.EnableExpressionEditor = false;
-            gridViewTextBoxColumn27.FieldName = "Branch_Name";
-            gridViewTextBoxColumn27.HeaderText = "Branch_Name";
-            gridViewTextBoxColumn27.IsAutoGenerated = true;
-            gridViewTextBoxColumn27.Name = "Branch_Name";
-            gridViewTextBoxColumn27.Width = 56;
-            gridViewTextBoxColumn28.EnableExpressionEditor = false;
-            gridViewTextBoxColumn28.FieldName = "Branch_Description";
-            gridViewTextBoxColumn28.HeaderText = "Branch_Description";
-            gridViewTextBoxColumn28.IsAutoGenerated = true;
-            gridViewTextBoxColumn28.Name = "Branch_Description";
-            gridViewTextBoxColumn28.Width = 70;
-            gridViewDateTimeColumn4.DataType = typeof(System.Nullable<System.DateTime>);
-            gridViewDateTimeColumn4.EnableExpressionEditor = false;
-            gridViewDateTimeColumn4.FieldName = "CreatedDate";
-            gridViewDateTimeColumn4.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            gridViewDateTimeColumn4.HeaderText = "CreatedDate";
-            gridViewDateTimeColumn4.IsAutoGenerated = true;
-            gridViewDateTimeColumn4.Name = "CreatedDate";
-            gridViewDateTimeColumn4.Width = 43;
-            gridViewTextBoxColumn29.EnableExpressionEditor = false;
-            gridViewTextBoxColumn29.FieldName = "Employee.Emp_Name";
-            gridViewTextBoxColumn29.HeaderText = "Manager";
-            gridViewTextBoxColumn29.Name = "Employee.Emp_Name";
-            gridViewTextBoxColumn29.Width = 54;
+            gridViewDecimalColumn1.DataType = typeof(int);
+            gridViewDecimalColumn1.EnableExpressionEditor = false;
+            gridViewDecimalColumn1.FieldName = "ID";
+            gridViewDecimalColumn1.HeaderText = "ID";
+            gridViewDecimalColumn1.IsAutoGenerated = true;
+            gridViewDecimalColumn1.IsVisible = false;
+            gridViewDecimalColumn1.Name = "ID";
+            gridViewDecimalColumn1.Width = 121;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "Branch_Name";
+            gridViewTextBoxColumn1.HeaderText = "Branch_Name";
+            gridViewTextBoxColumn1.IsAutoGenerated = true;
+            gridViewTextBoxColumn1.Name = "Branch_Name";
+            gridViewTextBoxColumn1.Width = 56;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "Branch_Description";
+            gridViewTextBoxColumn2.HeaderText = "Branch_Description";
+            gridViewTextBoxColumn2.IsAutoGenerated = true;
+            gridViewTextBoxColumn2.Name = "Branch_Description";
+            gridViewTextBoxColumn2.Width = 70;
+            gridViewDateTimeColumn1.DataType = typeof(System.Nullable<System.DateTime>);
+            gridViewDateTimeColumn1.EnableExpressionEditor = false;
+            gridViewDateTimeColumn1.FieldName = "CreatedDate";
+            gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            gridViewDateTimeColumn1.HeaderText = "CreatedDate";
+            gridViewDateTimeColumn1.IsAutoGenerated = true;
+            gridViewDateTimeColumn1.Name = "CreatedDate";
+            gridViewDateTimeColumn1.Width = 43;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "Employee.Emp_Name";
+            gridViewTextBoxColumn3.HeaderText = "Manager";
+            gridViewTextBoxColumn3.Name = "Employee.Emp_Name";
+            gridViewTextBoxColumn3.Width = 54;
             this.BranchComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn12,
-            gridViewTextBoxColumn27,
-            gridViewTextBoxColumn28,
-            gridViewDateTimeColumn4,
-            gridViewTextBoxColumn29});
+            gridViewDecimalColumn1,
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewDateTimeColumn1,
+            gridViewTextBoxColumn3});
             this.BranchComboBox.EditorControl.MasterTemplate.DataSource = this.branchBindingSource;
             this.BranchComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.BranchComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
@@ -336,6 +344,10 @@
             this.BranchComboBox.TabIndex = 2;
             this.BranchComboBox.TabStop = false;
             this.BranchComboBox.ThemeName = "Office2010Black";
+            // 
+            // branchBindingSource
+            // 
+            this.branchBindingSource.DataSource = typeof(XamaDataLayer.Branch);
             // 
             // label1
             // 
@@ -366,38 +378,38 @@
             this.CustomerComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.CustomerComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
             this.CustomerComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn13.DataType = typeof(int);
-            gridViewDecimalColumn13.EnableExpressionEditor = false;
-            gridViewDecimalColumn13.FieldName = "ID";
-            gridViewDecimalColumn13.HeaderText = "ID";
-            gridViewDecimalColumn13.IsAutoGenerated = true;
-            gridViewDecimalColumn13.IsVisible = false;
-            gridViewDecimalColumn13.Name = "ID";
-            gridViewTextBoxColumn30.EnableExpressionEditor = false;
-            gridViewTextBoxColumn30.FieldName = "CustomerName";
-            gridViewTextBoxColumn30.HeaderText = "Customer Name";
-            gridViewTextBoxColumn30.IsAutoGenerated = true;
-            gridViewTextBoxColumn30.Name = "CustomerName";
-            gridViewTextBoxColumn30.Width = 74;
-            gridViewTextBoxColumn31.EnableExpressionEditor = false;
-            gridViewTextBoxColumn31.FieldName = "PhoneNumber";
-            gridViewTextBoxColumn31.HeaderText = "Phone Number";
-            gridViewTextBoxColumn31.IsAutoGenerated = true;
-            gridViewTextBoxColumn31.Name = "PhoneNumber";
-            gridViewTextBoxColumn31.Width = 74;
-            gridViewDateTimeColumn5.DataType = typeof(System.Nullable<System.DateTime>);
-            gridViewDateTimeColumn5.EnableExpressionEditor = false;
-            gridViewDateTimeColumn5.FieldName = "CreateDate";
-            gridViewDateTimeColumn5.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            gridViewDateTimeColumn5.HeaderText = "Create Date";
-            gridViewDateTimeColumn5.IsAutoGenerated = true;
-            gridViewDateTimeColumn5.Name = "CreateDate";
-            gridViewDateTimeColumn5.Width = 74;
+            gridViewDecimalColumn2.DataType = typeof(int);
+            gridViewDecimalColumn2.EnableExpressionEditor = false;
+            gridViewDecimalColumn2.FieldName = "ID";
+            gridViewDecimalColumn2.HeaderText = "ID";
+            gridViewDecimalColumn2.IsAutoGenerated = true;
+            gridViewDecimalColumn2.IsVisible = false;
+            gridViewDecimalColumn2.Name = "ID";
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "CustomerName";
+            gridViewTextBoxColumn4.HeaderText = "Customer Name";
+            gridViewTextBoxColumn4.IsAutoGenerated = true;
+            gridViewTextBoxColumn4.Name = "CustomerName";
+            gridViewTextBoxColumn4.Width = 74;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "PhoneNumber";
+            gridViewTextBoxColumn5.HeaderText = "Phone Number";
+            gridViewTextBoxColumn5.IsAutoGenerated = true;
+            gridViewTextBoxColumn5.Name = "PhoneNumber";
+            gridViewTextBoxColumn5.Width = 74;
+            gridViewDateTimeColumn2.DataType = typeof(System.Nullable<System.DateTime>);
+            gridViewDateTimeColumn2.EnableExpressionEditor = false;
+            gridViewDateTimeColumn2.FieldName = "CreateDate";
+            gridViewDateTimeColumn2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            gridViewDateTimeColumn2.HeaderText = "Create Date";
+            gridViewDateTimeColumn2.IsAutoGenerated = true;
+            gridViewDateTimeColumn2.Name = "CreateDate";
+            gridViewDateTimeColumn2.Width = 74;
             this.CustomerComboBox.EditorControl.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn13,
-            gridViewTextBoxColumn30,
-            gridViewTextBoxColumn31,
-            gridViewDateTimeColumn5});
+            gridViewDecimalColumn2,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewDateTimeColumn2});
             this.CustomerComboBox.EditorControl.MasterTemplate.DataSource = this.customerBindingSource;
             this.CustomerComboBox.EditorControl.MasterTemplate.EnableGrouping = false;
             this.CustomerComboBox.EditorControl.MasterTemplate.ShowFilteringRow = false;
@@ -413,6 +425,10 @@
             this.CustomerComboBox.TabIndex = 0;
             this.CustomerComboBox.TabStop = false;
             this.CustomerComboBox.ThemeName = "Office2010Black";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(XamaDataLayer.Customer);
             // 
             // radGroupBox2
             // 
@@ -444,61 +460,62 @@
             this.radGridView1.MasterTemplate.AllowSearchRow = true;
             this.radGridView1.MasterTemplate.AutoGenerateColumns = false;
             this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewDecimalColumn14.DataType = typeof(int);
-            gridViewDecimalColumn14.EnableExpressionEditor = false;
-            gridViewDecimalColumn14.FieldName = "ID";
-            gridViewDecimalColumn14.HeaderText = "ID";
-            gridViewDecimalColumn14.IsAutoGenerated = true;
-            gridViewDecimalColumn14.Name = "ID";
-            gridViewDecimalColumn14.Width = 72;
-            gridViewTextBoxColumn32.EnableExpressionEditor = false;
-            gridViewTextBoxColumn32.FieldName = "Product.Product_Name";
-            gridViewTextBoxColumn32.HeaderText = "Product";
-            gridViewTextBoxColumn32.IsAutoGenerated = true;
-            gridViewTextBoxColumn32.Name = "Product";
-            gridViewTextBoxColumn32.Width = 210;
-            gridViewDecimalColumn15.DataType = typeof(System.Nullable<int>);
-            gridViewDecimalColumn15.EnableExpressionEditor = false;
-            gridViewDecimalColumn15.FieldName = "Qty";
-            gridViewDecimalColumn15.HeaderText = "Qty";
-            gridViewDecimalColumn15.IsAutoGenerated = true;
-            gridViewDecimalColumn15.Name = "Qty";
-            gridViewDecimalColumn15.Width = 85;
-            gridViewTextBoxColumn33.DataType = typeof(System.Nullable<double>);
-            gridViewTextBoxColumn33.EnableExpressionEditor = false;
-            gridViewTextBoxColumn33.FieldName = "Product.ProductPrice";
-            gridViewTextBoxColumn33.HeaderText = "Price";
-            gridViewTextBoxColumn33.Name = "ProductPrice";
-            gridViewTextBoxColumn33.Width = 124;
-            gridViewTextBoxColumn34.EnableExpressionEditor = false;
-            gridViewTextBoxColumn34.FieldName = "Description";
-            gridViewTextBoxColumn34.HeaderText = "Description";
-            gridViewTextBoxColumn34.IsAutoGenerated = true;
-            gridViewTextBoxColumn34.Name = "Description";
-            gridViewTextBoxColumn34.Width = 170;
-            gridViewTextBoxColumn35.EnableExpressionEditor = false;
-            gridViewTextBoxColumn35.FieldName = "Status";
-            gridViewTextBoxColumn35.HeaderText = "Status";
-            gridViewTextBoxColumn35.IsAutoGenerated = true;
-            gridViewTextBoxColumn35.Name = "Status";
-            gridViewTextBoxColumn35.Width = 98;
-            gridViewTextBoxColumn36.EnableExpressionEditor = false;
-            gridViewTextBoxColumn36.HeaderText = "Total";
-            gridViewTextBoxColumn36.Name = "Total";
-            gridViewTextBoxColumn36.Width = 121;
-            gridViewCommandColumn5.EnableExpressionEditor = false;
-            gridViewCommandColumn5.HeaderText = "Edit";
-            gridViewCommandColumn5.Name = "EditCol";
-            gridViewCommandColumn5.Width = 117;
+            gridViewDecimalColumn3.DataType = typeof(int);
+            gridViewDecimalColumn3.EnableExpressionEditor = false;
+            gridViewDecimalColumn3.FieldName = "ID";
+            gridViewDecimalColumn3.HeaderText = "ID";
+            gridViewDecimalColumn3.IsAutoGenerated = true;
+            gridViewDecimalColumn3.Name = "ID";
+            gridViewDecimalColumn3.Width = 72;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "Product.Product_Name";
+            gridViewTextBoxColumn6.HeaderText = "Product";
+            gridViewTextBoxColumn6.IsAutoGenerated = true;
+            gridViewTextBoxColumn6.Name = "Product";
+            gridViewTextBoxColumn6.Width = 210;
+            gridViewDecimalColumn4.DataType = typeof(System.Nullable<int>);
+            gridViewDecimalColumn4.EnableExpressionEditor = false;
+            gridViewDecimalColumn4.FieldName = "Qty";
+            gridViewDecimalColumn4.HeaderText = "Qty";
+            gridViewDecimalColumn4.IsAutoGenerated = true;
+            gridViewDecimalColumn4.Name = "Qty";
+            gridViewDecimalColumn4.Width = 85;
+            gridViewTextBoxColumn7.DataType = typeof(System.Nullable<double>);
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "Product.ProductPrice";
+            gridViewTextBoxColumn7.HeaderText = "Price";
+            gridViewTextBoxColumn7.Name = "ProductPrice";
+            gridViewTextBoxColumn7.Width = 124;
+            gridViewTextBoxColumn8.EnableExpressionEditor = false;
+            gridViewTextBoxColumn8.FieldName = "Description";
+            gridViewTextBoxColumn8.HeaderText = "Description";
+            gridViewTextBoxColumn8.IsAutoGenerated = true;
+            gridViewTextBoxColumn8.Name = "Description";
+            gridViewTextBoxColumn8.Width = 170;
+            gridViewTextBoxColumn9.EnableExpressionEditor = false;
+            gridViewTextBoxColumn9.FieldName = "Status";
+            gridViewTextBoxColumn9.HeaderText = "Status";
+            gridViewTextBoxColumn9.IsAutoGenerated = true;
+            gridViewTextBoxColumn9.Name = "Status";
+            gridViewTextBoxColumn9.Width = 98;
+            gridViewTextBoxColumn10.EnableExpressionEditor = true;
+            gridViewTextBoxColumn10.Expression = "Qty * ProductPrice ";
+            gridViewTextBoxColumn10.HeaderText = "Total";
+            gridViewTextBoxColumn10.Name = "Total";
+            gridViewTextBoxColumn10.Width = 121;
+            gridViewCommandColumn1.EnableExpressionEditor = false;
+            gridViewCommandColumn1.HeaderText = "Edit";
+            gridViewCommandColumn1.Name = "EditCol";
+            gridViewCommandColumn1.Width = 117;
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewDecimalColumn14,
-            gridViewTextBoxColumn32,
-            gridViewDecimalColumn15,
-            gridViewTextBoxColumn33,
-            gridViewTextBoxColumn34,
-            gridViewTextBoxColumn35,
-            gridViewTextBoxColumn36,
-            gridViewCommandColumn5});
+            gridViewDecimalColumn3,
+            gridViewTextBoxColumn6,
+            gridViewDecimalColumn4,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10,
+            gridViewCommandColumn1});
             this.radGridView1.MasterTemplate.DataSource = this.orderProductBindingSource;
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.ReadOnly = true;
@@ -510,15 +527,8 @@
             // 
             // orderProductBindingSource
             // 
-            this.orderProductBindingSource.DataSource = typeof(XamaDataLayer.OrderProduct);
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataSource = typeof(XamaDataLayer.Customer);
-            // 
-            // branchBindingSource
-            // 
-            this.branchBindingSource.DataSource = typeof(XamaDataLayer.Branch);
+            this.orderProductBindingSource.DataMember = "OrderProducts";
+            this.orderProductBindingSource.DataSource = this.orderBindingSource;
             // 
             // FrmrOrderProductShow
             // 
@@ -534,8 +544,9 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmrOrderProductShow";
+            this.Text = "Order Product Show";
             this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmrOrderProductShow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.OrderInformationGroup)).EndInit();
@@ -546,16 +557,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.BranchComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BranchComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BranchComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.branchBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerComboBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).EndInit();
             this.radGroupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderProductBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.branchBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

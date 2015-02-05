@@ -202,8 +202,9 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmManageMainStore_Item";
+            this.Text = "Item";
             this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmManageMainStore_Item_Load);
             this.toolStrip1.ResumeLayout(false);

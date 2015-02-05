@@ -54,6 +54,7 @@ namespace XamaDataLayer.BranchCmd
                       select c).ToList();
             return lst;
         }
+     
         public static bool EditCustomer(Customer tb, int xid)
         {
             db = new DbDataContext();

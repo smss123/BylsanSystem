@@ -1,21 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using XamaDataLayer;
 using XamaDataLayer.Helper_Classes;
 using XamaDataLayer.Accountant;
-using Telerik.WinControls.Data;
-using XamaDataLayer.BranchCmd;
 using System.Threading;
 using Xprema.XExtention;
 using Telerik.WinControls.UI;
-using XamaDataLayer.Main_Store;
+using Telerik.WinControls.Data;
+
 namespace Bylsan_System.AccountsX
 {
     public partial class FrmPrivatewithdrawals : RadForm
@@ -23,66 +17,68 @@ namespace Bylsan_System.AccountsX
         public FrmPrivatewithdrawals()
         {
             InitializeComponent();
-           
-            
         }
-        Thread th;
+        private Thread th;
         public void FillBrnchCombo()
         {
-
-            this.CmbFromAccount.MultiColumnComboBoxElement.DropDownWidth = 550;
-            this.CmbToAccount.MultiColumnComboBoxElement.DropDownWidth = 550;
+            CmbFromAccount.MultiColumnComboBoxElement.DropDownWidth = 550;
+            CmbToAccount.MultiColumnComboBoxElement.DropDownWidth = 550;
             Operation.BeginOperation(this);
 
             this.Invoke((MethodInvoker)delegate
             {
-                this.CmbFromAccount.AutoFilter = true;
-                this.CmbFromAccount.ValueMember = "ID";
-                this.CmbFromAccount.DisplayMember = "AccountName";
+                CmbFromAccount.AutoFilter = true;
+                CmbFromAccount.ValueMember = "ID";
+                CmbFromAccount.DisplayMember = "AccountName";
 
-                ////
 
-                this.CmbToAccount.AutoFilter = true;
-                this.CmbToAccount.ValueMember = "ID";
-                this.CmbToAccount.DisplayMember = "AccountName";
+
+                CmbToAccount.AutoFilter = true;
+                CmbToAccount.ValueMember = "ID";
+                CmbToAccount.DisplayMember = "AccountName";
             });
 
 
             var q = AccountsCmd.GetAllAccounts();
+            List<Account> ls = new List<Account>();
+            foreach (var item in q)
+            {
+                ls.Add(item);
+            }
             this.Invoke((MethodInvoker)delegate
             {
                 CmbFromAccount.DataSource = q;
-                FilterDescriptor filter = new FilterDescriptor();
-                filter.PropertyName = this.CmbFromAccount.DisplayMember;
+                var filter = new FilterDescriptor();
+                filter.PropertyName = CmbFromAccount.DisplayMember;
                 filter.Operator = FilterOperator.Contains;
-                this.CmbFromAccount.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+                CmbFromAccount.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
 
-                ////
-                CmbToAccount.DataSource = q;
-                FilterDescriptor filter1 = new FilterDescriptor();
-                filter1.PropertyName = this.CmbToAccount.DisplayMember;
+
+                CmbToAccount.DataSource = ls;
+                var filter1 = new FilterDescriptor();
+                filter1.PropertyName = CmbToAccount.DisplayMember;
                 filter1.Operator = FilterOperator.Contains;
-                this.CmbToAccount.EditorControl.MasterTemplate.FilterDescriptors.Add(filter1);
+                CmbToAccount.EditorControl.MasterTemplate.FilterDescriptors.Add(filter1);
 
 
 
 
             });
             Operation.EndOperation(this);
-           
+
             th.Abort();
         }
         private void FrmPrivatewithdrawals_Load(object sender, EventArgs e)
         {
-            th = new Thread(FillBrnchCombo); th.Start();
+            th = new Thread(FillBrnchCombo);
+            th.Start();
         }
 
         private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char ch = e.KeyChar;
+            var ch = e.KeyChar;
             if (ch == 46 &&  txtAmount.Text.IndexOf(".") != -1)
             {
-
                 e.Handled = true;
                 return;
             }
@@ -98,16 +94,19 @@ namespace Bylsan_System.AccountsX
         {
             try
             {
-                if (CmbFromAccount.Text == CmbToAccount.Text) { Operation.ShowToustOk("Transfer the amount from the same account unacceptable.", this); return; }
-                if(Convert.ToDouble (txtAmount .Text .ToString ()) > Convert .ToDouble (lblAvailableAmount .Text .ToString ()))
+                if (CmbFromAccount.Text == CmbToAccount.Text)
+                {
+                    Operation.ShowToustOk("Transfer the amount from the same account unacceptable.", this);
+                    return;
+                }
+                if (Convert.ToDouble (txtAmount .Text .ToString ()) > Convert .ToDouble (lblAvailableAmount .Text .ToString ()))
                 {
                     Operation.ShowToustOk("The amount is not available.", this);
                     return ;
                 }
 
-                // Start Save AT AccountDaily :
-                AccountDaily tb = new AccountDaily() {
-               AccountID = FromAccount_ID ,
+
+                var tb = new AccountDaily() { AccountID = FromAccount_ID ,
                  DateOfProcess = DateTime .Now ,
                   TotalIn = 0f,
                   TotalOut = txtAmount .Text .Todouble (),
@@ -116,48 +115,40 @@ namespace Bylsan_System.AccountsX
                 AccountDailyCmd.AddAccountDaily(tb);
 
 
-                AccountDaily xtb = new AccountDaily()
-                {
-                     AccountID = ToAccount_ID ,
+                var xtb = new AccountDaily()
+                { AccountID = ToAccount_ID ,
                     DateOfProcess = DateTime.Now,
                     TotalIn = txtAmount.Text.Todouble(),
                     TotalOut = 0f,
                     Description = txtDescription.Text.ToString()
                 };
                 AccountDailyCmd.AddAccountDaily(xtb);
-
-                //================================================
-             
-
-
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                
-                
+                MessageBox.Show(ex.ToString());
             }
         }
         public int FromAccount_ID { get; set; }
         public int ToAccount_ID { get; set; }
         private void CmbFromAccount_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CmbFromAccount.Text != "")
+            if (CmbFromAccount.Text != string.Empty)
             {
-                lblAvailableAmount.Text = "";
+                lblAvailableAmount.Text = string.Empty;
                 FromAccount_ID = 0;
                 var TargetAccount = AccountsCmd.GetOneAccountByName(CmbFromAccount.Text);
                 FromAccount_ID = TargetAccount.ID;
                 lblAvailableAmount.Text = AccountantWatcher.GetFreeBalance(TargetAccount .ID ).ToString ();
-
             }
         }
         private void CmbToAccount_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CmbToAccount.Text != "")
+            if (CmbToAccount.Text != string.Empty)
             {
                 ToAccount_ID = 0;
-                var TargetAccount = AccountsCmd.GetOneAccountByName(CmbToAccount .Text );
-                ToAccount_ID = TargetAccount.ID;
+                var targetAccount =  //AccountsCmd.GetOneAccountByName(CmbToAccount .Text );
+                ToAccount_ID = targetAccount.ID;
             }
         }
 
@@ -165,15 +156,6 @@ namespace Bylsan_System.AccountsX
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
         }
-
-    
-
-      
-
-      
-
-      
     }
 }

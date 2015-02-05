@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddOrderProduct));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
@@ -52,9 +52,6 @@
             this.ckBracode = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.itemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.CollapseBtn = new System.Windows.Forms.Button();
             this.ExpandAll = new System.Windows.Forms.Button();
@@ -67,6 +64,9 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
+            this.itemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoBox)).BeginInit();
@@ -260,6 +260,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -268,27 +270,10 @@
             this.ItemPrice});
             this.dataGridView1.Location = new System.Drawing.Point(176, 56);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(568, 248);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // itemID
-            // 
-            this.itemID.DataPropertyName = "ID";
-            this.itemID.HeaderText = "Item BarCode";
-            this.itemID.Name = "itemID";
-            // 
-            // ItemName
-            // 
-            this.ItemName.DataPropertyName = "Product_Name";
-            this.ItemName.HeaderText = "Item Name";
-            this.ItemName.Name = "ItemName";
-            // 
-            // ItemPrice
-            // 
-            this.ItemPrice.DataPropertyName = "ProductPrice";
-            this.ItemPrice.HeaderText = "Price";
-            this.ItemPrice.Name = "ItemPrice";
             // 
             // radGridView1
             // 
@@ -302,29 +287,32 @@
             // radGridView1
             // 
             this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn9.FieldName = "Product.Product_Name";
-            gridViewTextBoxColumn9.HeaderText = "Name";
-            gridViewTextBoxColumn9.Name = "ColName";
-            gridViewTextBoxColumn9.Width = 98;
-            gridViewTextBoxColumn10.Expression = "";
-            gridViewTextBoxColumn10.FieldName = "Qty";
-            gridViewTextBoxColumn10.HeaderText = "Qty";
-            gridViewTextBoxColumn10.Name = "ColQty";
-            gridViewTextBoxColumn10.Width = 98;
-            gridViewTextBoxColumn11.FieldName = "Product.ProductPrice";
-            gridViewTextBoxColumn11.HeaderText = "Product Price";
-            gridViewTextBoxColumn11.Name = "ColProductPrice";
-            gridViewTextBoxColumn11.Width = 98;
-            gridViewTextBoxColumn12.EnableExpressionEditor = true;
-            gridViewTextBoxColumn12.Expression = "ColProductPrice * ColQty";
-            gridViewTextBoxColumn12.HeaderText = "Price";
-            gridViewTextBoxColumn12.Name = "ColPrice";
-            gridViewTextBoxColumn12.Width = 95;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "Product.Product_Name";
+            gridViewTextBoxColumn1.HeaderText = "Name";
+            gridViewTextBoxColumn1.Name = "ColName";
+            gridViewTextBoxColumn1.Width = 98;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "Qty";
+            gridViewTextBoxColumn2.HeaderText = "Qty";
+            gridViewTextBoxColumn2.Name = "ColQty";
+            gridViewTextBoxColumn2.Width = 98;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "Product.ProductPrice";
+            gridViewTextBoxColumn3.HeaderText = "Product Price";
+            gridViewTextBoxColumn3.Name = "ColProductPrice";
+            gridViewTextBoxColumn3.Width = 98;
+            gridViewTextBoxColumn4.EnableExpressionEditor = true;
+            gridViewTextBoxColumn4.Expression = "ColProductPrice * ColQty";
+            gridViewTextBoxColumn4.HeaderText = "Price";
+            gridViewTextBoxColumn4.Name = "ColPrice";
+            gridViewTextBoxColumn4.ReadOnly = true;
+            gridViewTextBoxColumn4.Width = 95;
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn9,
-            gridViewTextBoxColumn10,
-            gridViewTextBoxColumn11,
-            gridViewTextBoxColumn12});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4});
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.radGridView1.Size = new System.Drawing.Size(406, 304);
@@ -413,6 +401,30 @@
             this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // itemID
+            // 
+            this.itemID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.itemID.DataPropertyName = "ID";
+            this.itemID.HeaderText = "Item BarCode";
+            this.itemID.Name = "itemID";
+            this.itemID.ReadOnly = true;
+            // 
+            // ItemName
+            // 
+            this.ItemName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ItemName.DataPropertyName = "Product_Name";
+            this.ItemName.HeaderText = "Item Name";
+            this.ItemName.Name = "ItemName";
+            this.ItemName.ReadOnly = true;
+            // 
+            // ItemPrice
+            // 
+            this.ItemPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ItemPrice.DataPropertyName = "ProductPrice";
+            this.ItemPrice.HeaderText = "Price";
+            this.ItemPrice.Name = "ItemPrice";
+            this.ItemPrice.ReadOnly = true;
+            // 
             // FrmAddOrderProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,6 +440,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.ThemeName = "Office2010Black";
@@ -483,9 +496,9 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemPrice;
-        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
     }
 }

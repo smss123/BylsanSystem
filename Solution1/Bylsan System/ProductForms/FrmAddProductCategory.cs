@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
@@ -22,15 +17,12 @@ namespace Bylsan_System.ProductForms
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            #region "  CheckFillTextBox "
-
-            if (productCategoryNameTextBox.Text == "")
+            if (productCategoryNameTextBox.Text == string.Empty)
             {
-
                 productCategoryNameTextBox.BackColor = Color.OrangeRed;
 
                 productCategoryNameTextBox.Focus();
-                errorProvider1.SetError(this.productCategoryNameTextBox, "Please Enter Category name");
+                errorProvider1.SetError(productCategoryNameTextBox, "Please Enter Category name");
 
                 return;
             }
@@ -38,11 +30,10 @@ namespace Bylsan_System.ProductForms
             {
                 productCategoryNameTextBox.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
-            #endregion
 
-            ProductCategory tb = new ProductCategory()
+
+            var tb = new ProductCategory()
             { ProductCategoryName = productCategoryNameTextBox.Text, Description = descriptionTextBox.Text };
             Operation.BeginOperation(this);
             if (CategoriesCmd.AddCategory(tb))
@@ -52,12 +43,10 @@ namespace Bylsan_System.ProductForms
                 descriptionTextBox.Clear();
             }
             Operation.EndOperation(this);
-          
         }
 
         private void FrmAddProductCategory_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

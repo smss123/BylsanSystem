@@ -20,14 +20,12 @@ namespace Bylsan_System.BranchForms
             frombranch.DataSource = q;
             toBranch.DataSource = q;
             itemSelectedcombo.DataSource = ProductsCmd.GetAllProducts();
-                
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
             BranchsCmd.TransferFromToBranch((Branch)new Branch() { ID = frombranch.SelectedValue.ToString().ToInt() },
                 (Branch)new Branch() { ID = toBranch.SelectedValue.ToString().ToInt() }, (Product)new Product() { ID = itemSelectedcombo.SelectedValue.ToString().ToInt() }, 1, 1);
-
         }
     }
 }

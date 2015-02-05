@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using XamaDataLayer.Helper_Classes;
 
 using System.Threading;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
-using Xprema.XExtention;
 using Telerik.WinControls.UI;
-using Telerik.WinControls;
+
 namespace Bylsan_System.designerForms
 {
     public partial class FrmOrderProductShow : RadForm
@@ -28,70 +23,62 @@ namespace Bylsan_System.designerForms
         public int TaregtOrder { get; set; }
         public Order SelectedOrder { get; set; }
 
-        Thread Thr;
+        private Thread Thr;
         private void PopulateGrd()
         {
             Operation.BeginOperation(this);
-            var q = SelectedOrder.OrderProducts.ToList();//OrderProductsCmd.GetAllByOrderID(TaregtOrder);//.Where(p=>p.Status.Contains("To Deliver"));
-            this.Invoke((MethodInvoker)delegate 
+            var q = SelectedOrder.OrderProducts.ToList();
+            this.Invoke((MethodInvoker)delegate
             {
-                DGVProducts.DataSource = q; 
+                DGVProducts.DataSource = q;
             });
             Operation.EndOperation(this);
-            this.Thr.Abort();
+            Thr.Abort();
         }
         private void FrmOrderProductShow_Load(object sender, EventArgs e)
         {
-          
             PhotoBox.Image = null;
-           //================================
+
             Thr = new Thread(PopulateGrd);
             Thr.Start();
             lblOrderDate.Text = SelectedOrder.OrderDate.ToString();
             lblOrderDelviryDate.Text = SelectedOrder.OrderDeliveryDate. ToString();
         }
 
-       
+
         private void DGVProducts_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Operation.BeginOperation(this);
             if (DGVProducts.Rows.Count != 0)
             {
-
-               Thread  AttachThread = new Thread(LoadAttachments);
+                var  AttachThread = new Thread(LoadAttachments);
                 AttachThread.Start();
             }
             Operation.EndOperation(this);
-
-           
-           
         }
-        List<Image> ListPictures = new List<Image >();
+        private List<Image> ListPictures = new List<Image >();
 
-        void LoadAttachments()
+        private void LoadAttachments()
         {
-            //SelectedProductPhotoBox.Image =null;
-            //lblPoductName.Text = "";
-            ////lblPrice.Text = "";
             ListPictures.Clear();
             try
             {
                 Operation.BeginOperation(this);
 
-                int prdid = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString());
+                var prdid = int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString());
                 imageList1.Images.Clear();
-                var lst = (from p in OrderProuctAttachmentCmd.GetOneAttachmentByOrderProductID(prdid) select p).ToList();
+                var lst = (from p in OrderProuctAttachmentCmd.GetOneAttachmentByOrderProductID(prdid)
+                            select p).ToList();
                 this.Invoke((MethodInvoker)delegate
                 {
 
                     PhotoBox.Image = null;
 
-                    //============================================
+                    OrderProduct ats = (OrderProduct)DGVProducts.CurrentRow.DataBoundItem;
 
                     Application.DoEvents();
-                    foreach (var item in lst)
+                    foreach (var item in ats.OrderProuctAttachments.ToList())
                     {
-
                         TxtDescription.Text = item.Description;
                         PhotoBox.Image = item.imageX;
 
@@ -99,25 +86,19 @@ namespace Bylsan_System.designerForms
 
                         IDImageAddress = item.ID;
 
-                        //================================
+
 
                         ListPictures.Add(item.imageX);
                     }
-                    //==============================================
-                    //-- Display Selected Product Information : 
 
-                    var getcurrentProductInfo = (OrderProduct)DGVProducts.CurrentRow.DataBoundItem;//ProductsCmd.GetProductByID(prdid);
 
-                   // SelectedProductPhotoBox.Image = (Image)getcurrentProductInfo.Product.Img;
+
+                    var getcurrentProductInfo = (OrderProduct)DGVProducts.CurrentRow.DataBoundItem;
+
+
                     lblPoductName.Text = getcurrentProductInfo.Product.Product_Name;
                     lblPrice.Text = "[none]";
-                    
-
-                    //=============================================
                 });
-
-                //AttachThread.Abort();
-
             }
             catch (NullReferenceException ex)
             {
@@ -128,15 +109,13 @@ namespace Bylsan_System.designerForms
             Operation.EndOperation(this);
         }
 
-   
 
-        int i = 0;
+
+        private int i = 0;
         private void NextPhotoBtn_Click(object sender, EventArgs e)
         {
-
             if (PhotoBox.Image != null)
             {
-        
                 if (ListPictures.Count != 0 && i < ListPictures .Count )
                 {
                     PhotoBox.Image = null;
@@ -149,21 +128,16 @@ namespace Bylsan_System.designerForms
                     PhotoBox.Image = null;
                     PhotoBox.Image = ListPictures[i];
                 }
-               
-                
             }
         }
 
- 
 
-    
+
+
         private void SaveBtn_Click(object sender, EventArgs e)
-        {     
-                     
-          
-            OrderProduct tb = new OrderProduct() {
-                OrderID = TaregtOrder,
-                Description = TxtDescription.Text,//
+        {
+            var tb = new OrderProduct() { OrderID = TaregtOrder,
+                Description = TxtDescription.Text,
                 Qty = int.Parse(DGVProducts.CurrentRow.Cells[2].Value.ToString()),
                 ProductID = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString()),
             ImageX = PhotoBox .Image  ,
@@ -172,26 +146,22 @@ namespace Bylsan_System.designerForms
             OrderProductsCmd.EditOrderProductStatus(tb, int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString()));
 
 
-            Order Otb = new Order() {
-                OrderStatus = "in producting "
+            var Otb = new Order() { OrderStatus = "in producting "
             };
             OrdersCmd.EditOrderStatusOnly (Otb, TaregtOrder);
 
 
             MessageBox.Show("Changes Was Saved ...");
 
-           var cellPlaceHolder = DGVProducts.TableElement.GetCellElement(DGVProducts .CurrentRow , DGVProducts.Columns[0]);
-           cellPlaceHolder.DrawFill = true;
-                 cellPlaceHolder.BackColor = System.Drawing.Color.Pink;
-//cellPlaceHolder.ResetValue(LightVisualElement.DrawFillProperty, Telerik.WinControls.ValueResetFlags.Local);
-//cellPlaceHolder.ResetValue(VisualElement.BackColorProperty, ValueResetFlags.Local);
-        
+            var cellPlaceHolder = DGVProducts.TableElement.GetCellElement(DGVProducts .CurrentRow , DGVProducts.Columns[0]);
+            cellPlaceHolder.DrawFill = true;
+            cellPlaceHolder.BackColor = System.Drawing.Color.Pink;
         }
 
 
-        #region "   Upload  Photo    "
 
-        OpenFileDialog Op = new OpenFileDialog();
+
+        private OpenFileDialog Op = new OpenFileDialog();
 
         private void UploadBtn_Click(object sender, EventArgs e)
         {
@@ -203,34 +173,29 @@ namespace Bylsan_System.designerForms
                 PhotoBox.Image = Image.FromFile(Op.FileName);
 
                 this.Cursor = Cursors.Default;
-
             }
         }
-        byte[] byteImg1;
+        private byte[] byteImg1;
         private void ConvertCarsPhotoes()
         {
-
-            if (Op.FileName != "")
+            if (Op.FileName != string.Empty)
             {
-
                 this.Cursor = Cursors.WaitCursor;
-                Image img = Image.FromFile(Op.FileName);
+                var img = Image.FromFile(Op.FileName);
                 byteImg1 = PhotosConverter.ImageToByteArray(img);
                 this.Cursor = Cursors.Default;
-
             }
             else
             {
                 byteImg1 = null;
             }
-
         }
 
 
-        #endregion 
 
-        #region "      Save Photo At Computer         "
-        SaveFileDialog SvDialog = new SaveFileDialog();
+
+
+        private SaveFileDialog SvDialog = new SaveFileDialog();
         private void SavePhotoBtn_Click(object sender, EventArgs e)
         {
             if (PhotoBox.Image != null)
@@ -241,11 +206,10 @@ namespace Bylsan_System.designerForms
                 SvDialog.ShowDialog();
 
 
-                if (SvDialog.FileName != "" && PhotoBox.Image != null)
+                if (SvDialog.FileName != string.Empty && PhotoBox.Image != null)
                 {
-
-                    System.IO.FileStream fs =
-                       (System.IO.FileStream)SvDialog.OpenFile();
+                    var fs =
+                    (System.IO.FileStream)SvDialog.OpenFile();
 
                     switch (SvDialog.FilterIndex)
                     {
@@ -268,15 +232,14 @@ namespace Bylsan_System.designerForms
                     fs.Close();
                 }
             }
-            
         }
-        #endregion
+
         private void CloseBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
 
-        #region " UnUsed  "
+
 
         public static Image ResizeImage(Image imgToResize, Size size)
         {
@@ -285,19 +248,10 @@ namespace Bylsan_System.designerForms
 
         private void groupBox3_Enter(object sender, EventArgs e)
         {
-
         }
 
         private void DGVProducts_Click(object sender, EventArgs e)
         {
-
         }
-
-        //int  w = int .Parse (WthBox.Text); int h = int .Parse (HghtBox.Text);    
-        //Image Img = pictureBox1.Image;
-        //Img = ResizeImage(Img , new Size(w, h));
-        //byteImg1 = PhotosConverter.ImageToByteArray(Img);
-        #endregion
-
     }
 }

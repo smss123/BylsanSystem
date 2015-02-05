@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.Main_Store;
@@ -23,15 +18,12 @@ namespace Bylsan_System.MainStoreForms
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            #region "  CheckFillTextBox "
-
-            if (itemNameTextBox.Text == "")
+            if (itemNameTextBox.Text == string.Empty)
             {
-
                 itemNameTextBox.BackColor = Color.OrangeRed;
 
                 itemNameTextBox.Focus();
-                errorProvider1.SetError(this.itemNameTextBox, "Please Enter itemName name");
+                errorProvider1.SetError(itemNameTextBox, "Please Enter itemName name");
 
                 return;
             }
@@ -39,32 +31,30 @@ namespace Bylsan_System.MainStoreForms
             {
                 itemNameTextBox.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
 
-            #endregion
+
 
             Operation.BeginOperation(this);
-           if( ItemsCmd.EditItem(new Item() {
-             ItemName= itemNameTextBox.Text,
-              ItemDescription= itemDescriptionTextBox.Text,
+            if ( ItemsCmd.EditItem(new Item() {
+             ItemName = itemNameTextBox.Text,
+              ItemDescription = itemDescriptionTextBox.Text,
                ItemType = ItemTypecomboBox.Text
-           }, this.TragetItem.ID))
-           {
-               Operation.ShowToustOk("Item Has Been Saved..", this);
-           }
-           itemNameTextBox.Clear();
-           itemDescriptionTextBox.Clear();
-           ItemTypecomboBox.SelectedIndex = -1;
+            }, TragetItem.ID))
+            {
+                Operation.ShowToustOk("Item Has Been Saved..", this);
+            }
+            itemNameTextBox.Clear();
+            itemDescriptionTextBox.Clear();
+            ItemTypecomboBox.SelectedIndex = -1;
             Operation.EndOperation(this);
-
         }
 
         private void FrmEditMainStore_Item_Load(object sender, EventArgs e)
         {
-            itemNameTextBox.Text = this.TragetItem.ItemName;
-            itemDescriptionTextBox.Text = this.TragetItem.ItemDescription;
-            ItemTypecomboBox.SelectedText = this.TragetItem.ItemType;
+            itemNameTextBox.Text = TragetItem.ItemName;
+            itemDescriptionTextBox.Text = TragetItem.ItemDescription;
+            ItemTypecomboBox.SelectedText = TragetItem.ItemType;
         }
     }
 }

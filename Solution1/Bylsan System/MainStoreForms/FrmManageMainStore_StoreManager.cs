@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
@@ -22,7 +17,7 @@ namespace Bylsan_System.MainStoreForms
             InitializeComponent();
             RadMessageBox.SetThemeName("VisualStudio2012Light");
         }
-        Thread th;
+        private Thread th;
         private void Loading()
         {
             toolStrip1.Invoke((MethodInvoker)delegate
@@ -30,7 +25,7 @@ namespace Bylsan_System.MainStoreForms
                 lblStatus.Text = "Loading ...";
             });
             Operation.BeginOperation(this);
-            var q = StoreManagerCmd.GetAllStoreManager(); //StoreCmd.GetAllStores();
+            var q = StoreManagerCmd.GetAllStoreManager();
             this.Invoke((MethodInvoker)delegate
             {
                 StoreManagerGridView.DataSource = q;
@@ -50,8 +45,6 @@ namespace Bylsan_System.MainStoreForms
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
-            
-
         }
 
         private void StoreManagerGridView_CommandCellClick(object sender, EventArgs e)
@@ -61,10 +54,10 @@ namespace Bylsan_System.MainStoreForms
             if (col == 7)
             {
                 Operation.BeginOperation(this);
-                FrmEditMainStore_StoreManager frm = new FrmEditMainStore_StoreManager();
-                frm.TregatStorManeger = (StoreManager)this.StoreManagerGridView.CurrentRow.DataBoundItem;
+                var frm = new FrmEditMainStore_StoreManager();
+                frm.TregatStorManeger = (StoreManager)StoreManagerGridView.CurrentRow.DataBoundItem;
                 frm.ShowDialog();
-                this.FrmManageMainStore_StoreManager_Load(null, null);
+                FrmManageMainStore_StoreManager_Load(null, null);
                 Operation.EndOperation(this);
             }
 
@@ -73,7 +66,7 @@ namespace Bylsan_System.MainStoreForms
                 if (RadMessageBox.Show(this, "Do you want to delete", "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
                     Operation.BeginOperation(this);
-                    ItemsCmd.DeleteItemAt(((StoreManager)this.StoreManagerGridView.CurrentRow.DataBoundItem).ID);
+                    ItemsCmd.DeleteItemAt(((StoreManager)StoreManagerGridView.CurrentRow.DataBoundItem).ID);
                     Operation.EndOperation(this);
                 }
             }
@@ -83,14 +76,5 @@ namespace Bylsan_System.MainStoreForms
         {
             FrmManageMainStore_StoreManager_Load(sender, e);
         }
-
-      
-
-
-
-
-
-
-
     }
 }

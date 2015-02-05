@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using Telerik.WinControls;
 using Telerik.WinControls.Data;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
@@ -16,17 +12,17 @@ namespace Bylsan_System.SecurityForm
 {
     public partial class FrmAddUser : Telerik.WinControls.UI.RadForm
     {
-        Thread th;
+        private Thread th;
         public void FillBrnchCombo()
         {
             Operation.BeginOperation(this);
             this.Invoke((MethodInvoker)delegate
             {
 
-                this.BranshComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
-                this.BranshComboBox.AutoFilter = true;
-                this.BranshComboBox.DisplayMember = "Branch_Name";
-                this.BranshComboBox.ValueMember = "ID";
+                BranshComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
+                BranshComboBox.AutoFilter = true;
+                BranshComboBox.DisplayMember = "Branch_Name";
+                BranshComboBox.ValueMember = "ID";
 
             });
 
@@ -35,11 +31,11 @@ namespace Bylsan_System.SecurityForm
             {
 
                 BranshComboBox.DataSource = q;
-                CompositeFilterDescriptor compositeFilter = new CompositeFilterDescriptor();
-                FilterDescriptor prodName = new FilterDescriptor("Branch_Name", FilterOperator.Contains, "");
+                var compositeFilter = new CompositeFilterDescriptor();
+                var prodName = new FilterDescriptor("Branch_Name", FilterOperator.Contains, string.Empty);
                 compositeFilter.FilterDescriptors.Add(prodName);
                 compositeFilter.LogicalOperator = FilterLogicalOperator.Or;
-                this.BranshComboBox.EditorControl.FilterDescriptors.Add(compositeFilter);
+                BranshComboBox.EditorControl.FilterDescriptors.Add(compositeFilter);
 
             });
             Operation.EndOperation(this);
@@ -55,21 +51,16 @@ namespace Bylsan_System.SecurityForm
         {
             th = new Thread(FillBrnchCombo);
             th.Start();
-
-
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            #region "  CheckFillTextBox "
-
-            if (userNameTextBox.Text == "")
+            if (userNameTextBox.Text == string.Empty)
             {
-
                 userNameTextBox.BackColor = Color.OrangeRed;
 
                 userNameTextBox.Focus();
-                errorProvider1.SetError(this.userNameTextBox, "Please Enter UserName");
+                errorProvider1.SetError(userNameTextBox, "Please Enter UserName");
 
                 return;
             }
@@ -77,17 +68,15 @@ namespace Bylsan_System.SecurityForm
             {
                 userNameTextBox.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
 
 
-            if (passwordsTextBox.Text == "")
+            if (passwordsTextBox.Text == string.Empty)
             {
-
                 passwordsTextBox.BackColor = Color.OrangeRed;
 
                 passwordsTextBox.Focus();
-                errorProvider1.SetError(this.passwordsTextBox, "Please Enter Password");
+                errorProvider1.SetError(passwordsTextBox, "Please Enter Password");
 
                 return;
             }
@@ -95,7 +84,6 @@ namespace Bylsan_System.SecurityForm
             {
                 passwordsTextBox.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
 
 
@@ -104,7 +92,7 @@ namespace Bylsan_System.SecurityForm
                 BranshComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
 
                 BranshComboBox.Focus();
-                errorProvider1.SetError(this.BranshComboBox, "Please Enter Bransh");
+                errorProvider1.SetError(BranshComboBox, "Please Enter Bransh");
 
                 return;
             }
@@ -114,17 +102,12 @@ namespace Bylsan_System.SecurityForm
                 errorProvider1.Clear();
             }
 
-            #endregion
 
-            User tb = new User
-            {
 
-                UserName = userNameTextBox.Text,
+            var tb = new User
+            { UserName = userNameTextBox.Text,
                 Passwords = passwordsTextBox.Text,
-                Branch_ID = int.Parse(BranshComboBox.SelectedValue.ToString()),
-
-
-            };
+                Branch_ID = int.Parse(BranshComboBox.SelectedValue.ToString()), };
             UserCmd.AddUser(tb);
             Operation.ShowToustOk("User Has Been Saved", this);
             foreach (Control item in groupBox1.Controls)

@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
@@ -25,16 +21,12 @@ namespace Bylsan_System.MainStoreForms
         public Supplier TreagetSupplier { get; set; }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            #region "  CheckFillTextBox "
-
-
-            if (supplierNameTextBox.Text == "")
+            if (supplierNameTextBox.Text == string.Empty)
             {
-
                 supplierNameTextBox.BackColor = Color.OrangeRed;
 
                 supplierNameTextBox.Focus();
-                errorProvider1.SetError(this.supplierNameTextBox, "Please Enter Name");
+                errorProvider1.SetError(supplierNameTextBox, "Please Enter Name");
 
                 return;
             }
@@ -42,27 +34,23 @@ namespace Bylsan_System.MainStoreForms
             {
                 supplierNameTextBox.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
 
-            #endregion
+
             if (RadMessageBox.Show(this, "Do you Want To Save", "Save Changes", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
                 Operation.BeginOperation(this);
-                Supplier tb = new Supplier
+                var tb = new Supplier
                 ()
-                 {
-                     ID = SupplierID,
+                { ID = SupplierID,
                      Address = addressTextBox.Text,
                      Description = descriptionTextBox.Text,
                      SupplierName = supplierNameTextBox.Text,
                      SupplierPhone = supplierPhoneTextBox.Text
 
-                 };
+                };
                 SuppliersCmd.EditSupplier(tb);
-                {
-                    Operation.ShowToustOk("Supplier has been Saved ..", this);
-                }
+                Operation.ShowToustOk("Supplier has been Saved ..", this);
                 foreach (Control item in groupBox1.Controls)
                 {
                     if (item is TextBox)

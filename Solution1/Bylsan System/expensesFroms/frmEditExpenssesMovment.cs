@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using XamaDataLayer;
@@ -23,15 +20,12 @@ namespace Bylsan_System.expensesFroms
 
         private void Savebtn_Click(object sender, EventArgs e)
         {
-            #region "  CheckFillTextBox "
-
-            if (amountTextBox.Text == "")
+            if (amountTextBox.Text == string.Empty)
             {
-
                 amountTextBox.BackColor = Color.OrangeRed;
 
                 amountTextBox.Focus();
-                errorProvider1.SetError(this.amountTextBox, "Please Enter Amount ");
+                errorProvider1.SetError(amountTextBox, "Please Enter Amount ");
 
                 return;
             }
@@ -39,31 +33,26 @@ namespace Bylsan_System.expensesFroms
             {
                 amountTextBox.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
-            #endregion
+
             if (RadMessageBox.Show(this, "Do you Want To Save", "Save Changes", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
                 Operation.BeginOperation(this);
-                ExpenssesMovment tb = new ExpenssesMovment()
-                {
-                    ID = XId,
+                var tb = new ExpenssesMovment()
+                { ID = XId,
                     Amount = double.Parse(amountTextBox.Text),
-                    Description = descriptionTextBox.Text,
-
-                };
+                    Description = descriptionTextBox.Text, };
                 ExpenssesMovmentCmd.EditExpMovment(tb);
             }
-             Operation.EndOperation(this);
-             Operation.ShowToustOk("Expenss Has Been Saved", this);
+            Operation.EndOperation(this);
+            Operation.ShowToustOk("Expenss Has Been Saved", this);
         }
 
         private void amountTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char ch = e.KeyChar;
+            var ch = e.KeyChar;
             if (ch == 46 && amountTextBox.Text.IndexOf(".") != -1)
             {
-
                 e.Handled = true;
                 return;
             }

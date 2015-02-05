@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
@@ -24,15 +19,12 @@ namespace Bylsan_System.ProductForms
         public ProductCategory TragetCategory { get; set; }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            #region "  CheckFillTextBox "
-
-            if (productCategoryNameTextBox.Text == "")
+            if (productCategoryNameTextBox.Text == string.Empty)
             {
-
                 productCategoryNameTextBox.BackColor = Color.OrangeRed;
 
                 productCategoryNameTextBox.Focus();
-                errorProvider1.SetError(this.productCategoryNameTextBox, "Please Enter Category name");
+                errorProvider1.SetError(productCategoryNameTextBox, "Please Enter Category name");
 
                 return;
             }
@@ -40,23 +32,20 @@ namespace Bylsan_System.ProductForms
             {
                 productCategoryNameTextBox.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
-            #endregion
 
 
-           
-                ProductCategory tb = new ProductCategory() 
-                { ProductCategoryName = productCategoryNameTextBox.Text, Description = descriptionTextBox.Text };
-                Operation.BeginOperation(this);
-                if ( CategoriesCmd.EditCategory(tb, TragetCategory.ID))
-                {
-                    Operation.ShowToustOk("Category Has Been saved", this);
-                    productCategoryNameTextBox.Clear();
-                    descriptionTextBox.Clear();
-                }
-                Operation.EndOperation(this);
-                 
+
+
+            var tb = new ProductCategory() { ProductCategoryName = productCategoryNameTextBox.Text, Description = descriptionTextBox.Text };
+            Operation.BeginOperation(this);
+            if ( CategoriesCmd.EditCategory(tb, TragetCategory.ID))
+            {
+                Operation.ShowToustOk("Category Has Been saved", this);
+                productCategoryNameTextBox.Clear();
+                descriptionTextBox.Clear();
+            }
+            Operation.EndOperation(this);
         }
 
         private void FrmEditProductCategory_Load(object sender, EventArgs e)
@@ -64,6 +53,6 @@ namespace Bylsan_System.ProductForms
             productCategoryNameTextBox.Text = TragetCategory.ProductCategoryName;
             descriptionTextBox.Text = TragetCategory.Description;
         }
-        }
     }
+}
 

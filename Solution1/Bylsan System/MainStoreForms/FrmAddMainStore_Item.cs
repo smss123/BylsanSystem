@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Telerik.WinControls.UI;
 using XamaDataLayer.Main_Store;
+
 namespace Bylsan_System.MainStoreForms
 {
     public partial class FrmAddMainStore_Item : RadForm
@@ -20,15 +16,12 @@ namespace Bylsan_System.MainStoreForms
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
-            #region "  CheckFillTextBox "
-
-            if (itemNameTextBox.Text == "")
+            if (itemNameTextBox.Text == string.Empty)
             {
-
                 itemNameTextBox.BackColor = Color.OrangeRed;
 
                 itemNameTextBox.Focus();
-                errorProvider1.SetError(this.itemNameTextBox, "Please Enter itemName name");
+                errorProvider1.SetError(itemNameTextBox, "Please Enter itemName name");
 
                 return;
             }
@@ -36,19 +29,17 @@ namespace Bylsan_System.MainStoreForms
             {
                 itemNameTextBox.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
 
-            #endregion
+
 
             Operation.BeginOperation(this);
             try
             {
-                var xChekItem = ItemsCmd.ChekByName(itemDescriptionTextBox.Text);
+                ItemsCmd.ChekByName(itemDescriptionTextBox.Text);
                 Operation.ShowToustOk("Item Existed .... ", this);
                 Operation.EndOperation(this);
                 return;
-
             }
             catch (Exception)
             {
@@ -67,13 +58,11 @@ namespace Bylsan_System.MainStoreForms
             }
 
 
-         Operation.EndOperation(this);
-
+            Operation.EndOperation(this);
         }
 
         private void FrmAddMainStore_Item_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

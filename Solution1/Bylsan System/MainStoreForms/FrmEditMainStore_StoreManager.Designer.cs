@@ -88,7 +88,7 @@
             qtyInOrOutLabel.AutoSize = true;
             qtyInOrOutLabel.Location = new System.Drawing.Point(6, 49);
             qtyInOrOutLabel.Name = "qtyInOrOutLabel";
-            qtyInOrOutLabel.Size = new System.Drawing.Size(79, 13);
+            qtyInOrOutLabel.Size = new System.Drawing.Size(80, 13);
             qtyInOrOutLabel.TabIndex = 12;
             qtyInOrOutLabel.Text = "Qty In Or Out:";
             // 
@@ -110,7 +110,7 @@
             this.groupBox1.Controls.Add(this.SaveBtn);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(357, 272);
+            this.groupBox1.Size = new System.Drawing.Size(357, 268);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit";
@@ -213,7 +213,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(381, 299);
+            this.ClientSize = new System.Drawing.Size(381, 295);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(389, 329);
@@ -225,8 +225,9 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(389, 329);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmEditMainStore_StoreManager";
+            this.Text = "Store Manager";
             this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmEditMainStore_StoreManager_Load);
             this.groupBox1.ResumeLayout(false);

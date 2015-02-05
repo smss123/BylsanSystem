@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.Data;
 using Telerik.WinControls.UI;
 using XamaDataLayer.BranchCmd;
-using XamaDataLayer.BranchCmd;
 using Xprema.XExtention;
+
 namespace Bylsan_System.BranchForms
 {
-    
     public partial class FrmAddBranch : RadForm
     {
         public FrmAddBranch()
@@ -29,10 +23,10 @@ namespace Bylsan_System.BranchForms
         }
         private void LoadEmployee()
         {
-            this.EmployeeManagerComboBox.MultiColumnComboBoxElement.DropDownWidth = 1000;
-            this.EmployeeManagerComboBox.AutoFilter = true;
-            this.EmployeeManagerComboBox.DisplayMember = "Emp_Name";
-            
+            EmployeeManagerComboBox.MultiColumnComboBoxElement.DropDownWidth = 1000;
+            EmployeeManagerComboBox.AutoFilter = true;
+            EmployeeManagerComboBox.DisplayMember = "Emp_Name";
+
             this.Enabled = false;
 
 
@@ -46,29 +40,25 @@ namespace Bylsan_System.BranchForms
 
 
 
-            this.EmployeeManagerComboBox.AutoFilter = true;
-            CompositeFilterDescriptor compositeFilter = new CompositeFilterDescriptor();
-            FilterDescriptor prodName = new FilterDescriptor("Emp_Name", FilterOperator.Contains, "");
-            FilterDescriptor prodQuantity = new FilterDescriptor("PhoneNumber", FilterOperator.Contains, "");
+            EmployeeManagerComboBox.AutoFilter = true;
+            var compositeFilter = new CompositeFilterDescriptor();
+            var prodName = new FilterDescriptor("Emp_Name", FilterOperator.Contains, string.Empty);
+            var prodQuantity = new FilterDescriptor("PhoneNumber", FilterOperator.Contains, string.Empty);
             compositeFilter.FilterDescriptors.Add(prodName);
             compositeFilter.FilterDescriptors.Add(prodQuantity);
             compositeFilter.LogicalOperator = FilterLogicalOperator.Or;
 
-            this.EmployeeManagerComboBox.EditorControl.FilterDescriptors.Add(compositeFilter);
-
+            EmployeeManagerComboBox.EditorControl.FilterDescriptors.Add(compositeFilter);
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            #region "  CheckFillTextBox "
-
-            if (txtBranchName.Text == "")
+            if (txtBranchName.Text == string.Empty)
             {
-
                 txtBranchName.BackColor = Color.OrangeRed;
 
                 txtBranchName.Focus();
-                errorProvider1.SetError(this.txtBranchName, "Please Enter Branch name");
+                errorProvider1.SetError(txtBranchName, "Please Enter Branch name");
 
                 return;
             }
@@ -76,15 +66,13 @@ namespace Bylsan_System.BranchForms
             {
                 txtBranchName.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
 
             if (EmployeeManagerComboBox.SelectedValue == null)
             {
-
                 EmployeeManagerComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
                 EmployeeManagerComboBox.Focus();
-                errorProvider1.SetError(this.EmployeeManagerComboBox, "Please Manager Branch name");
+                errorProvider1.SetError(EmployeeManagerComboBox, "Please Manager Branch name");
                 return;
             }
             else
@@ -93,7 +81,7 @@ namespace Bylsan_System.BranchForms
                 errorProvider1.Clear();
             }
 
-            #endregion
+
 
             Operation.BeginOperation(this);
             if (BranchsCmd.AddNewBranch(new XamaDataLayer.Branch()
@@ -107,7 +95,7 @@ namespace Bylsan_System.BranchForms
                 txtBranchName.Clear();
                 txtBranchDescription.Clear();
             }
-           
+
             Operation.EndOperation(this);
         }
     }

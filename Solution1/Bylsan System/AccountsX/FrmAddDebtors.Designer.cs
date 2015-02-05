@@ -103,7 +103,7 @@
             this.groupBox1.Controls.Add(this.txtDebtorName);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(390, 209);
+            this.groupBox1.Size = new System.Drawing.Size(390, 205);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -171,8 +171,9 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(422, 271);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAddDebtors";
+            this.Text = "Add Debtors";
             this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmAddDebtors_Load);
             this.groupBox1.ResumeLayout(false);

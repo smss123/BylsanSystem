@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Helper_Classes;
 using Xprema.XExtention;
+
 namespace Bylsan_System.ProductForms
 {
     public partial class frmEditProduct : RadForm
@@ -26,36 +23,35 @@ namespace Bylsan_System.ProductForms
         private void FillCategoreisCombo()
         {
             Operation.BeginOperation(this);
-            this.Invoke((MethodInvoker)delegate {
+            this.Invoke((MethodInvoker)delegate
+            {
 
-                this.CategoryComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
-                this.CategoryComboBox.AutoFilter = true;
-                this.CategoryComboBox.DisplayMember = "ProductCategoryName";
-                this.CategoryComboBox.ValueMember = "ID";
-                this.lblstatus.Text = "Loading ...";
+                CategoryComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
+                CategoryComboBox.AutoFilter = true;
+                CategoryComboBox.DisplayMember = "ProductCategoryName";
+                CategoryComboBox.ValueMember = "ID";
+                lblstatus.Text = "Loading ...";
             });
-           
-          var q = CategoriesCmd.GetAllCategories();
-          this.Invoke((MethodInvoker)delegate {
 
-              CategoryComboBox.DataSource = q;
-              CategoryComboBox.SelectedValue = TragetProduct.CateogryID;
-              this.lblstatus.Text = "Compelete ..";
-          });
-          Operation.EndOperation(this);
+            var q = CategoriesCmd.GetAllCategories();
+            this.Invoke((MethodInvoker)delegate
+            {
+
+                CategoryComboBox.DataSource = q;
+                CategoryComboBox.SelectedValue = TragetProduct.CateogryID;
+                lblstatus.Text = "Compelete ..";
+            });
+            Operation.EndOperation(this);
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            #region "  CheckFillTextBox "
-
-            if (product_NameTextBox.Text == "")
+            if (product_NameTextBox.Text == string.Empty)
             {
-
                 product_NameTextBox.BackColor = Color.OrangeRed;
 
                 product_NameTextBox.Focus();
-                errorProvider1.SetError(this.product_NameTextBox, "Please Select  product name");
+                errorProvider1.SetError(product_NameTextBox, "Please Select  product name");
 
                 return;
             }
@@ -63,22 +59,22 @@ namespace Bylsan_System.ProductForms
             {
                 product_NameTextBox.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
-            #endregion
+
 
             if (int.Parse(CategoryComboBox.SelectedValue.ToString()) != 0)
             {
-              Thread th = new Thread(EditProdoct);
-              th.Start();
+                var th = new Thread(EditProdoct);
+                th.Start();
             }
         }
 
         private void EditProdoct()
         {
             Operation.BeginOperation(this);
-            Product tb = new Product();
-            this.Invoke((MethodInvoker)delegate{
+            var tb = new Product();
+            this.Invoke((MethodInvoker)delegate
+            {
                 lblstatus.Text = "Editing...";
                 tb = new Product
                 {
@@ -88,28 +84,27 @@ namespace Bylsan_System.ProductForms
                     CateogryID = int.Parse(CategoryComboBox.SelectedValue.ToString()),
                      ProductPrice = txtprice.Text.Todouble(),
                      PublicName = publicNameTextBox.Text,
-                      ProductUnit= productUnitTextBox.Text
-                }; 
-            
+                      ProductUnit = productUnitTextBox.Text
+                };
             });
 
-           
+
             ProductsCmd.EditProduct(tb, TragetProduct.ID);
             Operation.EndOperation(this);
-            this.Invoke((MethodInvoker)delegate {
+            this.Invoke((MethodInvoker)delegate
+            {
 
                 Operation.ShowToustOk("Product Has Been Edited..", this);
 
-                this.lblstatus.Text = "Complete Edited ..";
-            
+                lblstatus.Text = "Complete Edited ..";
             });
         }
 
 
 
-        #region "    ^^^ Brwose Photo    "
 
-        OpenFileDialog Op = new OpenFileDialog();
+
+        private OpenFileDialog Op = new OpenFileDialog();
 
         private void BrowseBtn_Click(object sender, EventArgs e)
         {
@@ -120,37 +115,32 @@ namespace Bylsan_System.ProductForms
                 Op.Filter = "Image Files(*.png; *.jpg; *.bmp)|*.png; *.jpg; *.bmp";
                 productpictureBox.Image = Image.FromFile(Op.FileName);
                 this.Cursor = Cursors.Default;
-
             }
         }
-        byte[] byteImg1;
+        private byte[] byteImg1;
         private void ConvertCarsPhotoes()
         {
-
-            if (Op.FileName != "")
+            if (Op.FileName != string.Empty)
             {
-
                 this.Cursor = Cursors.WaitCursor;
-                Image img = Image.FromFile(Op.FileName);
+                var img = Image.FromFile(Op.FileName);
                 byteImg1 = PhotosConverter.ImageToByteArray(img);
                 this.Cursor = Cursors.Default;
-
             }
             else
             {
                 byteImg1 = null;
             }
-
         }
 
 
-        #endregion 
+
 
         private void frmEditProduct_Load(object sender, EventArgs e)
         {
             Operation.BeginOperation(this);
-          Thread th = new Thread(FillCategoreisCombo);
-          th.Start();
+            var th = new Thread(FillCategoreisCombo);
+            th.Start();
             product_NameTextBox.Text = TragetProduct.Product_Name;
             product_DescriptionTextBox.Text = TragetProduct.Product_Description;
             productpictureBox.Image = TragetProduct.Img;
@@ -159,7 +149,6 @@ namespace Bylsan_System.ProductForms
 
             txtprice.Text = TragetProduct.ProductPrice.ToString();
             Operation.EndOperation(this);
-
         }
 
         private void BrowseBtn_Click_1(object sender, EventArgs e)
@@ -171,7 +160,6 @@ namespace Bylsan_System.ProductForms
                 Op.Filter = "Image Files(*.png; *.jpg; *.bmp)|*.png; *.jpg; *.bmp";
                 productpictureBox.Image = Image.FromFile(Op.FileName);
                 this.Cursor = Cursors.Default;
-
             }
         }
     }

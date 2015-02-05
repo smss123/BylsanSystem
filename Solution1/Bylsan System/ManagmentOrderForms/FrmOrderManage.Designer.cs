@@ -39,9 +39,6 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -62,7 +59,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1032, 366);
+            this.groupBox1.Size = new System.Drawing.Size(1121, 366);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Orders";
@@ -86,71 +83,57 @@
             gridViewTextBoxColumn1.HeaderText = "ID";
             gridViewTextBoxColumn1.Name = "ID";
             gridViewTextBoxColumn1.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn1.Width = 49;
+            gridViewTextBoxColumn1.Width = 65;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "OrderName";
             gridViewTextBoxColumn2.HeaderText = "Order Name";
             gridViewTextBoxColumn2.Name = "OrderName";
-            gridViewTextBoxColumn2.Width = 129;
+            gridViewTextBoxColumn2.Width = 174;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "OrderDate";
             gridViewTextBoxColumn3.HeaderText = "Order Date";
             gridViewTextBoxColumn3.Name = "OrdDate";
-            gridViewTextBoxColumn3.Width = 77;
+            gridViewTextBoxColumn3.Width = 105;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "OrderType";
             gridViewTextBoxColumn4.HeaderText = "Order Type";
             gridViewTextBoxColumn4.Name = "OrderType";
-            gridViewTextBoxColumn4.Width = 56;
+            gridViewTextBoxColumn4.Width = 77;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "TotalAmount";
-            gridViewTextBoxColumn5.HeaderText = "Total Amount";
-            gridViewTextBoxColumn5.Name = "TotalAmount";
-            gridViewTextBoxColumn5.Width = 59;
+            gridViewTextBoxColumn5.FieldName = "OrderVerify";
+            gridViewTextBoxColumn5.HeaderText = "Order Verify";
+            gridViewTextBoxColumn5.Name = "OrderVerify";
+            gridViewTextBoxColumn5.Width = 80;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "Branch_ID";
-            gridViewTextBoxColumn6.HeaderText = "Branch_ID";
-            gridViewTextBoxColumn6.Name = "Branch_ID";
-            gridViewTextBoxColumn6.Width = 66;
+            gridViewTextBoxColumn6.FieldName = "OrderDeliveryDate";
+            gridViewTextBoxColumn6.HeaderText = "Delivery Date";
+            gridViewTextBoxColumn6.Name = "ColDevliverDate";
+            gridViewTextBoxColumn6.Width = 80;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "OrderVerify";
-            gridViewTextBoxColumn7.HeaderText = "Order Verify";
-            gridViewTextBoxColumn7.Name = "OrderVerify";
-            gridViewTextBoxColumn7.Width = 59;
+            gridViewTextBoxColumn7.FieldName = "DeliverdToBranch";
+            gridViewTextBoxColumn7.HeaderText = "Deliverd To Branch";
+            gridViewTextBoxColumn7.Name = "DeliverdToBranch";
+            gridViewTextBoxColumn7.Width = 103;
             gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "OrderDelivery";
-            gridViewTextBoxColumn8.HeaderText = "Order Delivery";
-            gridViewTextBoxColumn8.Name = "OrderDelivery";
-            gridViewTextBoxColumn8.Width = 63;
+            gridViewTextBoxColumn8.FieldName = "OrderStatus";
+            gridViewTextBoxColumn8.HeaderText = "Order Status";
+            gridViewTextBoxColumn8.Name = "OrderStatus";
+            gridViewTextBoxColumn8.Width = 62;
             gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "OrderDeliveryDate";
-            gridViewTextBoxColumn9.HeaderText = "Delivery Date";
-            gridViewTextBoxColumn9.Name = "ColDevliverDate";
-            gridViewTextBoxColumn9.Width = 59;
+            gridViewTextBoxColumn9.FieldName = "Customer.CustomerName";
+            gridViewTextBoxColumn9.HeaderText = "Customer";
+            gridViewTextBoxColumn9.Name = "Customer";
+            gridViewTextBoxColumn9.Width = 88;
             gridViewTextBoxColumn10.EnableExpressionEditor = false;
-            gridViewTextBoxColumn10.FieldName = "DeliverdToBranch";
-            gridViewTextBoxColumn10.HeaderText = "Deliverd To Branch";
-            gridViewTextBoxColumn10.Name = "DeliverdToBranch";
-            gridViewTextBoxColumn10.Width = 75;
+            gridViewTextBoxColumn10.FieldName = "Customer.PhoneNumber";
+            gridViewTextBoxColumn10.HeaderText = "Customer PhoneNumber";
+            gridViewTextBoxColumn10.Name = "PhoneNumber";
+            gridViewTextBoxColumn10.Width = 65;
             gridViewTextBoxColumn11.EnableExpressionEditor = false;
-            gridViewTextBoxColumn11.FieldName = "OrderStatus";
-            gridViewTextBoxColumn11.HeaderText = "Order Status";
-            gridViewTextBoxColumn11.Name = "OrderStatus";
-            gridViewTextBoxColumn11.Width = 46;
-            gridViewTextBoxColumn12.EnableExpressionEditor = false;
-            gridViewTextBoxColumn12.FieldName = "Customer.CustomerName";
-            gridViewTextBoxColumn12.HeaderText = "Customer";
-            gridViewTextBoxColumn12.Name = "Customer";
-            gridViewTextBoxColumn12.Width = 65;
-            gridViewTextBoxColumn13.EnableExpressionEditor = false;
-            gridViewTextBoxColumn13.FieldName = "Customer.PhoneNumber";
-            gridViewTextBoxColumn13.HeaderText = "Customer PhoneNumber";
-            gridViewTextBoxColumn13.Name = "PhoneNumber";
-            gridViewTextBoxColumn14.EnableExpressionEditor = false;
-            gridViewTextBoxColumn14.FieldName = "Comment";
-            gridViewTextBoxColumn14.HeaderText = "Comment";
-            gridViewTextBoxColumn14.Name = "Comment";
-            gridViewTextBoxColumn14.Width = 122;
+            gridViewTextBoxColumn11.FieldName = "Comment";
+            gridViewTextBoxColumn11.HeaderText = "Comment";
+            gridViewTextBoxColumn11.Name = "Comment";
+            gridViewTextBoxColumn11.Width = 162;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Edit";
             gridViewCommandColumn1.MaxWidth = 45;
@@ -169,9 +152,6 @@
             gridViewTextBoxColumn9,
             gridViewTextBoxColumn10,
             gridViewTextBoxColumn11,
-            gridViewTextBoxColumn12,
-            gridViewTextBoxColumn13,
-            gridViewTextBoxColumn14,
             gridViewCommandColumn1});
             this.DGVOrders.MasterTemplate.EnableFiltering = true;
             sortDescriptor1.PropertyName = "ID";
@@ -180,7 +160,7 @@
             this.DGVOrders.Name = "DGVOrders";
             this.DGVOrders.ReadOnly = true;
             this.DGVOrders.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DGVOrders.Size = new System.Drawing.Size(1026, 345);
+            this.DGVOrders.Size = new System.Drawing.Size(1115, 345);
             this.DGVOrders.TabIndex = 2;
             this.DGVOrders.Text = "radGridView1";
             this.DGVOrders.ThemeName = "Office2010Black";
@@ -191,7 +171,7 @@
             this.Refreshbtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1032, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(1121, 39);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -208,7 +188,7 @@
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 405);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1032, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1121, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -216,7 +196,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 427);
+            this.ClientSize = new System.Drawing.Size(1121, 427);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
@@ -225,10 +205,12 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmOrderManage";
+            this.Text = "Order Manage";
             this.ThemeName = "Office2010Black";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmOrderManage_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders)).EndInit();

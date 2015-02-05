@@ -1,18 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Telerik.WinControls.UI;
 using XamaDataLayer;
-using XamaDataLayer.BranchCmd;
-using XamaDataLayer.Helper_Classes;
 using XamaDataLayer.Accountant;
-//==========================
+
 
 
 namespace Bylsan_System.AccountsX
@@ -24,24 +17,21 @@ namespace Bylsan_System.AccountsX
             InitializeComponent();
         }
 
-      
+
         private void FrmAddAccountCategory_Load(object sender, EventArgs e)
         {
-            txtAccountName.Text = ""; txtDescriptionBox.Text = "";
-            
+            txtAccountName.Text = string.Empty;
+            txtDescriptionBox.Text = string.Empty;
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            #region "  CheckFillTextBox "
-
-            if (txtAccountBox.Text == "")
+            if (txtAccountBox.Text == string.Empty)
             {
-
                 txtAccountBox.BackColor = Color.OrangeRed;
 
                 txtAccountBox.Focus();
-                errorProvider1.SetError(this.txtAccountBox, "Please Enter account Category Name ");
+                errorProvider1.SetError(txtAccountBox, "Please Enter account Category Name ");
 
                 return;
             }
@@ -49,25 +39,20 @@ namespace Bylsan_System.AccountsX
             {
                 txtAccountBox.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
 
-            #endregion
-            
+
+
             try
             {
-                
                 Operation.BeginOperation(this);
-                AccountCategory tb = new AccountCategory() 
-                { AccountCategoryName = txtAccountBox .Text , Description = txtDescriptionBox.Text  };
+                var tb = new AccountCategory() { AccountCategoryName = txtAccountBox .Text , Description = txtDescriptionBox.Text  };
                 AccountCategoryCmd.AddAccountCategory(tb);
                 Operation.EndOperation(this);
                 Operation.ShowToustOk("Account Was Created", this);
             }
             catch (Exception)
             {
-                
-                
             }
         }
     }

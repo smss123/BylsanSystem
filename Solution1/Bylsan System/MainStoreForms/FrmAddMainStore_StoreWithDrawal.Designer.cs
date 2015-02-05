@@ -69,7 +69,7 @@
             qtyLabel.AutoSize = true;
             qtyLabel.Location = new System.Drawing.Point(41, 54);
             qtyLabel.Name = "qtyLabel";
-            qtyLabel.Size = new System.Drawing.Size(27, 13);
+            qtyLabel.Size = new System.Drawing.Size(28, 13);
             qtyLabel.TabIndex = 2;
             qtyLabel.Text = "Qty:";
             // 
@@ -96,7 +96,7 @@
             this.groupBox1.Controls.Add(this.CmbItems);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(341, 203);
+            this.groupBox1.Size = new System.Drawing.Size(341, 199);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
@@ -208,7 +208,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(366, 234);
+            this.ClientSize = new System.Drawing.Size(366, 230);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(374, 264);
@@ -220,8 +220,9 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(374, 264);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAddMainStore_StoreWithDrawal";
+            this.Text = "Store WithDrawal";
             this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmAddMainStore_StoreWithDrawal_Load);
             this.groupBox1.ResumeLayout(false);

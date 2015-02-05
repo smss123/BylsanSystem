@@ -11,6 +11,7 @@ namespace XamaDataLayer.Main_Store
        static  DbDataContext db = new DbDataContext();
         public static bool NewPurchases(Purchase p)
         {
+            p.dateOfProcess = DateTime.Now;
             p.SerialNumber = Guid.NewGuid();
             db.Purchases.InsertOnSubmit(p);
             var q = new Store();

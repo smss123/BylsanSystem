@@ -71,7 +71,7 @@ namespace XamaDataLayer.SellSystem
             db = new DbDataContext();
             var lst = (from b in db.Bills
                       orderby b.ID ascending
-                      where b.BillDate == dat
+                      where b.BillDate.Value.Year == dat.Year && b.BillDate.Value.Month==dat.Month && b.BillDate.Value.Day == dat.Day
                       select b).ToList();
             return lst;
         }

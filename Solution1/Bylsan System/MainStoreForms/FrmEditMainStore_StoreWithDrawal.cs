@@ -7,6 +7,7 @@ using Telerik.WinControls.Data;
 using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.Main_Store;
+
 namespace Bylsan_System.MainStoreForms
 {
     public partial class FrmEditMainStore_StoreWithDrawal : RadForm
@@ -21,15 +22,14 @@ namespace Bylsan_System.MainStoreForms
 
         private void fillCombo()
         {
-            #region "  fillItem "
-            this.ItemComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
+            ItemComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
             Operation.BeginOperation(this);
 
             this.Invoke((MethodInvoker)delegate
             {
-                this.ItemComboBox.AutoFilter = true;
-                this.ItemComboBox.ValueMember = "ID";
-                this.ItemComboBox.DisplayMember = "ItemName";
+                ItemComboBox.AutoFilter = true;
+                ItemComboBox.ValueMember = "ID";
+                ItemComboBox.DisplayMember = "ItemName";
             });
 
 
@@ -37,29 +37,29 @@ namespace Bylsan_System.MainStoreForms
             this.Invoke((MethodInvoker)delegate
             {
                 ItemComboBox.DataSource = q;
-                FilterDescriptor filter = new FilterDescriptor();
-                filter.PropertyName = this.ItemComboBox.DisplayMember;
+                var filter = new FilterDescriptor();
+                filter.PropertyName = ItemComboBox.DisplayMember;
                 filter.Operator = FilterOperator.Contains;
-                this.ItemComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+                ItemComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
 
 
 
 
             });
             Operation.EndOperation(this);
-            #endregion
 
-            //
-            #region "  fillStore "
 
-            this.StoreComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
+
+
+
+            StoreComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
             Operation.BeginOperation(this);
 
             this.Invoke((MethodInvoker)delegate
             {
-                this.StoreComboBox.AutoFilter = true;
-                this.StoreComboBox.ValueMember = "ID";
-                this.StoreComboBox.DisplayMember = "ItemID";
+                StoreComboBox.AutoFilter = true;
+                StoreComboBox.ValueMember = "ID";
+                StoreComboBox.DisplayMember = "ItemID";
             });
 
 
@@ -67,29 +67,26 @@ namespace Bylsan_System.MainStoreForms
             this.Invoke((MethodInvoker)delegate
             {
                 StoreComboBox.DataSource = q1;
-                FilterDescriptor filter = new FilterDescriptor();
-                filter.PropertyName = this.StoreComboBox.DisplayMember;
+                var filter = new FilterDescriptor();
+                filter.PropertyName = StoreComboBox.DisplayMember;
                 filter.Operator = FilterOperator.Contains;
-                this.StoreComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+                StoreComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
 
 
 
 
             });
             Operation.EndOperation(this);
-            #endregion
-
         }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            #region "  CheckFillTextBox "
             if (ItemComboBox.SelectedValue == null)
             {
                 ItemComboBox.MultiColumnComboBoxElement.BackColor = Color.OrangeRed;
 
 
                 ItemComboBox.Focus();
-                errorProvider1.SetError(this.ItemComboBox, "Please Enter Item ");
+                errorProvider1.SetError(ItemComboBox, "Please Enter Item ");
 
                 return;
             }
@@ -97,15 +94,13 @@ namespace Bylsan_System.MainStoreForms
             {
                 ItemComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
-            if (qtyTextBox.Text == "")
+            if (qtyTextBox.Text == string.Empty)
             {
-
                 qtyTextBox.BackColor = Color.OrangeRed;
 
                 qtyTextBox.Focus();
-                errorProvider1.SetError(this.qtyTextBox, "Please Enter Qty ");
+                errorProvider1.SetError(qtyTextBox, "Please Enter Qty ");
 
                 return;
             }
@@ -113,7 +108,6 @@ namespace Bylsan_System.MainStoreForms
             {
                 qtyTextBox.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
 
 
@@ -123,7 +117,7 @@ namespace Bylsan_System.MainStoreForms
 
 
                 StoreComboBox.Focus();
-                errorProvider1.SetError(this.StoreComboBox, "Please Enter Store ");
+                errorProvider1.SetError(StoreComboBox, "Please Enter Store ");
 
                 return;
             }
@@ -131,46 +125,33 @@ namespace Bylsan_System.MainStoreForms
             {
                 StoreComboBox.MultiColumnComboBoxElement.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
 
 
 
 
 
-            #endregion
+
 
             if (RadMessageBox.Show(this, "Do you Want To Save", "Save Changes", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
             {
                 Operation.BeginOperation(this);
-                StoreWithDrawal tb = new StoreWithDrawal()
-                {
-                    ID=XDrawalID,
-                    ItemID = int.Parse(ItemComboBox.SelectedValue.ToString()),
-                    StoreID = int.Parse(StoreComboBox.SelectedValue.ToString()),
-                    Qty = int.Parse(qtyTextBox.Text),
-                    Comment = commentTextBox.Text,
 
-
-                };
-         //       StoreDrawalCmd.ed(tb);
 
                 Operation.ShowToustOk("StoreDrawal Saved", this);
                 Operation.EndOperation(this);
             }
-
         }
 
         private void FrmEditMainStore_StoreWithDrawal_Load(object sender, EventArgs e)
         {
-            Thread th = new Thread(fillCombo);
+            var th = new Thread(fillCombo);
             th.Start();
             XDrawalID = TregatDrawal.ID;
             ItemComboBox.Text = TregatDrawal.Item.ItemName;
             StoreComboBox.Text = TregatDrawal.Store.ProductID.ToString();
             qtyTextBox.Text = TregatDrawal.Qty.ToString();
             commentTextBox.Text = TregatDrawal.Comment;
-
         }
 
         private void qtyTextBox_KeyPress(object sender, KeyPressEventArgs e)

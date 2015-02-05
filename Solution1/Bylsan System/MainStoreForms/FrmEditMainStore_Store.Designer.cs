@@ -51,10 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // itemNameLabel
             // 
             itemNameLabel.AutoSize = true;
@@ -64,21 +60,12 @@
             itemNameLabel.TabIndex = 5;
             itemNameLabel.Text = "Item Name:";
             // 
-            // AvailableQtyTextBox
-            // 
-            this.AvailableQtyTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.AvailableQtyTextBox.Location = new System.Drawing.Point(81, 60);
-            this.AvailableQtyTextBox.Name = "AvailableQtyTextBox";
-            this.AvailableQtyTextBox.Size = new System.Drawing.Size(152, 20);
-            this.AvailableQtyTextBox.TabIndex = 2;
-            this.AvailableQtyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AvailableQtyTextBox_KeyPress);
-            // 
             // AvailableQtyLabel
             // 
             AvailableQtyLabel.AutoSize = true;
             AvailableQtyLabel.Location = new System.Drawing.Point(6, 64);
             AvailableQtyLabel.Name = "AvailableQtyLabel";
-            AvailableQtyLabel.Size = new System.Drawing.Size(73, 13);
+            AvailableQtyLabel.Size = new System.Drawing.Size(74, 13);
             AvailableQtyLabel.TabIndex = 6;
             AvailableQtyLabel.Text = "AvailableQty:";
             // 
@@ -90,6 +77,19 @@
             DescriptionLabel.Size = new System.Drawing.Size(69, 13);
             DescriptionLabel.TabIndex = 10;
             DescriptionLabel.Text = "Description:";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // AvailableQtyTextBox
+            // 
+            this.AvailableQtyTextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.AvailableQtyTextBox.Location = new System.Drawing.Point(81, 60);
+            this.AvailableQtyTextBox.Name = "AvailableQtyTextBox";
+            this.AvailableQtyTextBox.Size = new System.Drawing.Size(152, 20);
+            this.AvailableQtyTextBox.TabIndex = 2;
+            this.AvailableQtyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AvailableQtyTextBox_KeyPress);
             // 
             // SaveBtn
             // 
@@ -157,7 +157,7 @@
             this.groupBox1.Controls.Add(itemNameLabel);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(376, 241);
+            this.groupBox1.Size = new System.Drawing.Size(376, 237);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit Main Store";
@@ -167,7 +167,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(400, 271);
+            this.ClientSize = new System.Drawing.Size(400, 267);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(408, 301);
@@ -179,8 +179,9 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(408, 301);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmEditMainStore_Store";
+            this.Text = "Store";
             this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmEditMainStore_Store_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

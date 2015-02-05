@@ -28,13 +28,13 @@ namespace XamaDataLayer.SettingX
                        select i).Take(1).Single();
             return lst;
         }
-        public static bool EditSettingValue(string StrVal, string ID)
+        public static bool EditSettingValue(string StrVal, int ID)
         {
             var state = false;
             db = new DbDataContext();
             var lst = (from i in db.SystemSettings
                        orderby i.ID ascending
-                       where i.SerialNumber.ToString() == ID
+                       where i.ID== ID
                        select i).Take(1).Single();
 
             lst.SettingValue = StrVal;

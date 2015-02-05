@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Telerik.WinControls.UI;
 using XamaDataLayer;
-using XamaDataLayer.BranchCmd;
 using System.Threading;
 using Xprema.XExtention;
 using XamaDataLayer.Accountant;
+using Telerik.WinControls.UI;
+
 namespace Bylsan_System.AccountsX
 {
     public partial class FrmAddDebt : RadForm
@@ -24,27 +19,21 @@ namespace Bylsan_System.AccountsX
         public Debtor DebtorInfo { get; set; }
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
-        void DebtorAmount()
+        private void DebtorAmount()
         {
             DebetfromcomboBox.DataSource = AccountsCmd.GetAllAccounts();
             DebetfromcomboBox.DisplayMember = "AccountName";
             DebetfromcomboBox.ValueMember = "ID";
-
         }
         private void AddBtn_Click(object sender, EventArgs e)
         {
-
-            #region "  CheckFillTextBox "
-
-            if (AmountofDebttextBox.Text == "")
+            if (AmountofDebttextBox.Text == string.Empty)
             {
-
                 AmountofDebttextBox.BackColor = Color.OrangeRed;
 
                 AmountofDebttextBox.Focus();
-                errorProvider1.SetError(this.AmountofDebttextBox, "Please Enter  Amount  ");
+                errorProvider1.SetError(AmountofDebttextBox, "Please Enter  Amount  ");
 
                 return;
             }
@@ -52,42 +41,33 @@ namespace Bylsan_System.AccountsX
             {
                 AmountofDebttextBox.BackColor = Color.White;
                 errorProvider1.Clear();
-
             }
 
-            #endregion
-            AccountDaily deptSide = new AccountDaily()
-            {
-                AccountID = DebtorInfo.AccountID,
+
+            var deptSide = new AccountDaily()
+            { AccountID = DebtorInfo.AccountID,
                 DateOfProcess = DateTime.Now,
                 Description = "this New Debet to Account for :" + txtDescription.Text,
                 TotalOut = AmountofDebttextBox.Text.Todouble(),
-                TotalIn = 0d,
-
-            };
-            AccountDaily tre = new AccountDaily()
-            {
-                AccountID = DebetfromcomboBox.SelectedValue.ToString().ToInt(),
+                TotalIn = 0d, };
+            var tre = new AccountDaily()
+            { AccountID = DebetfromcomboBox.SelectedValue.ToString().ToInt(),
                 DateOfProcess = DateTime.Now,
                 Description = "this New Debet to Account for :" + txtDescription.Text,
                 TotalOut = AmountofDebttextBox.Text.Todouble(),
-                TotalIn = 0d,
-
-            };
+                TotalIn = 0d, };
             Operation.BeginOperation(this);
             AccountDailyCmd.AddAccountDaily(deptSide);
             AccountDailyCmd.AddAccountDaily(tre);
             Operation.EndOperation(this);
             Operation.ShowToustOk("saved ..", this);
-
-
-
         }
 
         private void FrmAddDebt_Load(object sender, EventArgs e)
         {
             TotalDebttextBox.Text = "Loading ..";
-            Thread th = new Thread(DebtorAmount); th.Start();
+            var th = new Thread(DebtorAmount);
+            th.Start();
         }
     }
 }

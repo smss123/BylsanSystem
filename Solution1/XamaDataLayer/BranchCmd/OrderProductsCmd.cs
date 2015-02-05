@@ -11,6 +11,7 @@ namespace XamaDataLayer.BranchCmd
         public static bool AddOrderProduct(OrderProduct tb)
         {
             db = new DbDataContext();
+           
             db.OrderProducts.InsertOnSubmit(tb);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Add  ", "Add Order Product ", " Add New Order Product's Informations  ");
