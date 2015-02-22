@@ -32,7 +32,7 @@ namespace Bylsan_System
 
         private static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
         {
-            RadMessageBox.Show("Oops , Same error here,\n" + e.Exception.ToString(), "error");
+            RadMessageBox.Show("Oops , Same error here,\n" + e.Exception.Message, "error");
 
             var bmpScreenshot = new Bitmap(Screen.PrimaryScreen.Bounds.Width,
                             Screen.PrimaryScreen.Bounds.Height,

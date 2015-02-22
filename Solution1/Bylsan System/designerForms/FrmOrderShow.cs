@@ -49,7 +49,32 @@ namespace Bylsan_System.designerForms
             Operation.EndOperation(this);
             Thr.Abort();
         }
+        private void RefreshGrd()
+        {
+            Operation.BeginOperation(this);
+            var q = new object();
+            using (var FactoryZoonCmd = new FactoryZoon())
+            {
+                q = FactoryZoonCmd.GetAllOrdersInDesigner(); //Operation.AllOrder.Where(o => o.OrderStatus == "In Designer");
+            }
+            this.Invoke((MethodInvoker)delegate
+            {
 
+                DGVOrders.DataSource = q;
+                foreach (var item in DGVOrders.Rows)
+                {
+                    var itm = (Order)item.DataBoundItem;
+                    if (itm.OrderStatus == "In Designer")
+                    {
+                        item.Cells[0].Style.BackColor = Color.FromArgb(255, 102, 154, 255);
+                        item.Cells[1].Style.BackColor = Color.FromArgb(255, 102, 154, 255);
+                        item.Cells[2].Style.BackColor = Color.FromArgb(255, 102, 154, 255);
+                    }
+                }
+            });
+            Operation.EndOperation(this);
+            Thr.Abort();
+        }
         private void PopulateGrd()
         {
             Operation.BeginOperation(this);
@@ -134,8 +159,8 @@ namespace Bylsan_System.designerForms
 
         private void Refreshbtn_Click(object sender, EventArgs e)
         {
-            Thr = new Thread(PopulateGrd);
-            Thr.Start();
+            Operation.AllOrder = OrdersCmd.GetAllOrders();
+            FrmOrderShow_Load(null,null);
         }
     }
 }

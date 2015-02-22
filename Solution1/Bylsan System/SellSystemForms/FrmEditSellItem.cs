@@ -16,7 +16,7 @@ namespace Bylsan_System.SellSystemForms
             InitializeComponent();
         }
 
-        public SellItem  TargetItem { get; set; }
+        public Product  TargetItem { get; set; }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
@@ -61,22 +61,22 @@ namespace Bylsan_System.SellSystemForms
         private void EditSellItem()
         {
             Operation.BeginOperation(this);
-            var tb = new SellItem();
+            //var tb = new SellItem();
 
-            this.Invoke((MethodInvoker)delegate
-            {
-                lblstatus.Text = "Editing...";
-                tb = new  SellItem {
-                   ItemName = SellItemBox .Text ,
-                   Description = descriptionTextBox .Text ,
-                   ItemPrice =  int .Parse (itemPriceTextBox .Text) ,
-                   ItemIcon = pictureBox1 .Image ,
-                };
+            //this.Invoke((MethodInvoker)delegate
+            //{
+            //    lblstatus.Text = "Editing...";
+            //    tb = new  SellItem {
+            //       ItemName = SellItemBox .Text ,
+            //       Description = descriptionTextBox .Text ,
+            //       ItemPrice =  int .Parse (itemPriceTextBox .Text) ,
+            //       ItemIcon = pictureBox1 .Image ,
+            //    };
 
-            });
+            //});
 
 
-            SellItemsCmd .EditSellItem (tb, TargetItem.ID  );
+           // SellItemsCmd .EditSellItem (tb, TargetItem.ID  );
             Operation.EndOperation(this);
             this.Invoke((MethodInvoker)delegate
             {
@@ -118,10 +118,10 @@ namespace Bylsan_System.SellSystemForms
             Operation.BeginOperation(this);
 
 
-            SellItemBox.Text = TargetItem.ItemName;
-            itemPriceTextBox.Text =  TargetItem.ItemPrice.ToString () ;
-            descriptionTextBox.Text = TargetItem.Description;
-            pictureBox1.Image = TargetItem.ItemIcon;
+            SellItemBox.Text = TargetItem.Product_Name;
+            itemPriceTextBox.Text =  TargetItem.ProductPrice.ToString () ;
+            descriptionTextBox.Text = TargetItem.Product_Description;
+            pictureBox1.Image = TargetItem.Img;
 
             Operation.EndOperation(this);
         }

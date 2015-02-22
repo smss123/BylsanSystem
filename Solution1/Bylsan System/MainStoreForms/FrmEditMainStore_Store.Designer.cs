@@ -157,7 +157,7 @@
             this.groupBox1.Controls.Add(itemNameLabel);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(376, 237);
+            this.groupBox1.Size = new System.Drawing.Size(376, 225);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit Main Store";

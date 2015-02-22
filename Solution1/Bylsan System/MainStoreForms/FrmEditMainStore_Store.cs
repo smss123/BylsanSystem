@@ -33,7 +33,7 @@ namespace Bylsan_System.MainStoreForms
             });
 
 
-            var q = ItemsCmd.GetAllItems();
+            var q = Operation.Allproducts;
             this.Invoke((MethodInvoker)delegate
             {
                 ItemColumnComboBox.DataSource = q;

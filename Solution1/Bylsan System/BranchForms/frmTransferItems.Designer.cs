@@ -109,7 +109,7 @@
             qtyLabel.AutoSize = true;
             qtyLabel.Location = new System.Drawing.Point(42, 251);
             qtyLabel.Name = "qtyLabel";
-            qtyLabel.Size = new System.Drawing.Size(71, 13);
+            qtyLabel.Size = new System.Drawing.Size(72, 13);
             qtyLabel.TabIndex = 7;
             qtyLabel.Text = "Transfer Qty:";
             // 
@@ -330,6 +330,9 @@
             this.itemSelectedcombo.TabStop = false;
             this.itemSelectedcombo.ThemeName = "Office2010Black";
             this.itemSelectedcombo.ValueMember = "ID";
+            this.itemSelectedcombo.DropDownClosed += new Telerik.WinControls.UI.RadPopupClosedEventHandler(this.itemSelectedcombo_DropDownClosed);
+            this.itemSelectedcombo.SelectedIndexChanged += new System.EventHandler(this.itemSelectedcombo_SelectedIndexChanged);
+            this.itemSelectedcombo.TextChanged += new System.EventHandler(this.itemSelectedcombo_TextChanged);
             // 
             // groupBox2
             // 

@@ -22,7 +22,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -111,46 +111,16 @@
     <Reference Include="System.Xml">
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.WinControls, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2014.3.1021.40\Telerik.WinControls.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.WinControls.GridView, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2014.3.1021.40\Telerik.WinControls.GridView.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2014.3.1021.40\Telerik.WinControls.Themes.Breeze.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2014.3.1021.40\Telerik.WinControls.Themes.Office2007Black.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2014.3.1021.40\Telerik.WinControls.Themes.Office2010Black.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2014.3.1021.40\Telerik.WinControls.Themes.VisualStudio2012Dark.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2014.3.1021.40\Telerik.WinControls.Themes.VisualStudio2012Light.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2014.3.1021.40\Telerik.WinControls.Themes.Windows8.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.WinControls.UI, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2014.3.1021.40\Telerik.WinControls.UI.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="TelerikCommon, Version=2014.3.1021.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
-      <HintPath>..\lib\RCWF\2014.3.1021.40\TelerikCommon.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="Telerik.WinControls, Version=2014.3.1202.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2014.3.1202.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2014.3.1202.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2014.3.1202.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2014.3.1202.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Dark, Version=2014.3.1202.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.VisualStudio2012Light, Version=2014.3.1202.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2014.3.1202.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2014.3.1202.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2014.3.1202.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Xprema, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\Xprema.dll</HintPath>
@@ -270,6 +240,24 @@
     </Compile>
     <Compile Include="BranchForms\FrmManageBranch.Designer.cs">
       <DependentUpon>FrmManageBranch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BranchForms\frmOrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BranchForms\frmOrderDetails.Designer.cs">
+      <DependentUpon>frmOrderDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BranchForms\frmRequestOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BranchForms\frmRequestOrder.Designer.cs">
+      <DependentUpon>frmRequestOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BranchForms\frmReviceBranchOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BranchForms\frmReviceBranchOrder.Designer.cs">
+      <DependentUpon>frmReviceBranchOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="BranchForms\frmTransferItems.cs">
       <SubType>Form</SubType>
@@ -463,6 +451,12 @@
     <Compile Include="MainStoreForms\FrmEditMainStore_Supplier.Designer.cs">
       <DependentUpon>FrmEditMainStore_Supplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainStoreForms\frmMainToBranchTranfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainStoreForms\frmMainToBranchTranfer.Designer.cs">
+      <DependentUpon>frmMainToBranchTranfer.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainStoreForms\FrmManageMainStore_Item.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -492,6 +486,12 @@
     </Compile>
     <Compile Include="MainStoreForms\FrmManageMainStore_Supplier.Designer.cs">
       <DependentUpon>FrmManageMainStore_Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainStoreForms\frmPurchusOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainStoreForms\frmPurchusOrder.Designer.cs">
+      <DependentUpon>frmPurchusOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="MainStoreForms\frmStorePurchases.cs">
       <SubType>Form</SubType>
@@ -566,6 +566,12 @@
     <Compile Include="ProductForms\FrmManageProductCategory.Designer.cs">
       <DependentUpon>FrmManageProductCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductForms\frmPrintBarCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductForms\frmPrintBarCode.Designer.cs">
+      <DependentUpon>frmPrintBarCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductForms\frmProductSaleStatistis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -589,6 +595,7 @@
     <Compile Include="Reports\ReportCommand\ExpenssesMovmenReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\ItemBarcodeReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\ItemsStoreReportCmd.cs" />
+    <Compile Include="Reports\ReportCommand\OrderPurchesesCmd.cs" />
     <Compile Include="Reports\ReportCommand\OrderReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\PurchasesReportCmd.cs" />
     <Compile Include="Reports\ReportCommand\QuotationReportCmd.cs" />
@@ -615,6 +622,7 @@
     <Compile Include="Reports\ReportsObject\CustomerReportObj.cs" />
     <Compile Include="Reports\ReportsObject\EmployeeReportObj.cs" />
     <Compile Include="Reports\ReportsObject\ItemBarcodeReportObj.cs" />
+    <Compile Include="Reports\ReportsObject\OrderPurchesesObj.cs" />
     <Compile Include="Reports\ReportsObject\PaymentVoucherReportObj.cs" />
     <Compile Include="Reports\ReportsObject\ExpenssesMovmentReportObj.cs" />
     <Compile Include="Reports\ReportsObject\ItemsStoreReportObj.cs" />
@@ -726,6 +734,18 @@
     <Compile Include="SenarioAddOrderForms\FrmPrintQuotation.Designer.cs">
       <DependentUpon>FrmPrintQuotation.cs</DependentUpon>
     </Compile>
+    <Compile Include="SenarioAddOrderForms\frmReturnBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SenarioAddOrderForms\frmReturnBill.Designer.cs">
+      <DependentUpon>frmReturnBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SenarioAddOrderForms\frmSpAttachment].cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SenarioAddOrderForms\frmSpAttachment].Designer.cs">
+      <DependentUpon>frmSpAttachment].cs</DependentUpon>
+    </Compile>
     <Compile Include="SenarioAddOrderForms\FrmSpecialOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -801,6 +821,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BranchForms\FrmManageBranch.resx">
       <DependentUpon>FrmManageBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BranchForms\frmOrderDetails.resx">
+      <DependentUpon>frmOrderDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BranchForms\frmRequestOrder.resx">
+      <DependentUpon>frmRequestOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BranchForms\frmReviceBranchOrder.resx">
+      <DependentUpon>frmReviceBranchOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BranchForms\frmTransferItems.resx">
       <DependentUpon>frmTransferItems.cs</DependentUpon>
@@ -898,6 +927,9 @@
     <EmbeddedResource Include="MainStoreForms\FrmEditMainStore_Supplier.resx">
       <DependentUpon>FrmEditMainStore_Supplier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainStoreForms\frmMainToBranchTranfer.resx">
+      <DependentUpon>frmMainToBranchTranfer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainStoreForms\FrmManageMainStore_Item.resx">
       <DependentUpon>FrmManageMainStore_Item.cs</DependentUpon>
     </EmbeddedResource>
@@ -912,6 +944,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainStoreForms\FrmManageMainStore_Supplier.resx">
       <DependentUpon>FrmManageMainStore_Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainStoreForms\frmPurchusOrder.resx">
+      <DependentUpon>frmPurchusOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainStoreForms\frmStorePurchases.resx">
       <DependentUpon>frmStorePurchases.cs</DependentUpon>
@@ -948,6 +983,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForms\FrmManageProductCategory.resx">
       <DependentUpon>FrmManageProductCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductForms\frmPrintBarCode.resx">
+      <DependentUpon>frmPrintBarCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductForms\frmProductSaleStatistis.resx">
       <DependentUpon>frmProductSaleStatistis.cs</DependentUpon>
@@ -988,6 +1026,7 @@
     <EmbeddedResource Include="Reports\Sheets\RepOrderFollow.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RepReceiptVoucher.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RptBalanceSheet.rdlc" />
+    <EmbeddedResource Include="Reports\Sheets\rptOrderPurcheses.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RptPurchases.rdlc" />
     <EmbeddedResource Include="SecurityForm\FrmAddUser.resx">
       <DependentUpon>FrmAddUser.cs</DependentUpon>
@@ -1040,6 +1079,12 @@
     <EmbeddedResource Include="SenarioAddOrderForms\FrmPrintQuotation.resx">
       <DependentUpon>FrmPrintQuotation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SenarioAddOrderForms\frmReturnBill.resx">
+      <DependentUpon>frmReturnBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SenarioAddOrderForms\frmSpAttachment].resx">
+      <DependentUpon>frmSpAttachment].cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SenarioAddOrderForms\FrmSpecialOrder.resx">
       <DependentUpon>FrmSpecialOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -1054,6 +1099,7 @@
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.ExpenssesMovmentReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.ItemBarcodeReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.ItemsStoreReportObj.datasource" />
+    <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.OrderPurchesesObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.OrderReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.PaymentVoucherReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.PurchasesObj.datasource" />
@@ -1078,6 +1124,7 @@
     <None Include="Properties\DataSources\XamaDataLayer.Order.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.OrderProduct.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.OrderProuctAttachment.datasource" />
+    <None Include="Properties\DataSources\XamaDataLayer.OrderPurch.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.OutBox.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.Product.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.ProductCategory.datasource" />

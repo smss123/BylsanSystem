@@ -19,18 +19,19 @@ namespace Bylsan_System.MainStoreForms
         }
         private void FillComboBoxItme()
         {
-            ItemColumnComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
+          
             Operation.BeginOperation(this);
 
             this.Invoke((MethodInvoker)delegate
             {
+                ItemColumnComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
                 ItemColumnComboBox.AutoFilter = true;
                 ItemColumnComboBox.ValueMember = "ID";
-                ItemColumnComboBox.DisplayMember = "ItemName";
+                ItemColumnComboBox.DisplayMember = "Product_Name";
             });
 
 
-            var q = ItemsCmd.GetAllItems();
+            var q = Operation.Allproducts;
             this.Invoke((MethodInvoker)delegate
             {
                 ItemColumnComboBox.DataSource = q;
@@ -38,10 +39,6 @@ namespace Bylsan_System.MainStoreForms
                 filter.PropertyName = ItemColumnComboBox.DisplayMember;
                 filter.Operator = FilterOperator.Contains;
                 ItemColumnComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-
-
-
-
             });
             Operation.EndOperation(this);
         }
@@ -165,7 +162,7 @@ namespace Bylsan_System.MainStoreForms
             TotalPrice = int.Parse(txtUnitPrice.Text.ToString()) * int.Parse(QtyTextBox.Text.ToString());
 
             var stb = new Store_Sell()
-            { ItemID = int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
+            { ProductID = int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
                 UnitPrice = int.Parse(txtUnitPrice.Text.ToString()),
                 Price = TotalPrice,
                 DateOfProcess = DateTime.Now,

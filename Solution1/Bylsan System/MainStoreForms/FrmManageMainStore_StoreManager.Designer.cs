@@ -220,6 +220,7 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmManageMainStore_StoreManager";
             this.ThemeName = "Office2010Black";

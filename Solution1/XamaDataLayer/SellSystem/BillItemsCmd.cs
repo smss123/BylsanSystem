@@ -27,7 +27,7 @@ namespace XamaDataLayer.SellSystem
             db = new DbDataContext();
             var bl = db.BillItems.Where(b => b.ID == xid && b.Bill_ID == bllId).SingleOrDefault();
             bl.Bill_ID = tb.Bill_ID;
-            bl.ItemID = tb.ItemID;
+            bl.ProductID = tb.ProductID;
             bl.Qty = tb.Qty;
             db.SubmitChanges();
             return bl;
@@ -45,7 +45,7 @@ namespace XamaDataLayer.SellSystem
         {
             db = new DbDataContext();
             var lst = (from i in db.BillItems
-                      orderby i.ItemID ascending
+                       orderby i.ProductID ascending
                       where i.Bill_ID == BLLId
                       select i).ToList();
             return lst;

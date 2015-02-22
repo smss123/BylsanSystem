@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-
 using XamaDataLayer;
+using XamaDataLayer.Security;
 using XamaDataLayer.SellSystem;
 
 namespace Bylsan_System.SellSystemForms
@@ -49,6 +49,7 @@ namespace Bylsan_System.SellSystemForms
                 qtyTextBox.BackColor = Color.White;
                 errorProvider1.Clear();
             }
+            EditStore();
         }
 
 
@@ -61,12 +62,12 @@ namespace Bylsan_System.SellSystemForms
             {
                 tb = new  SellStore {
                     ItemID =  int .Parse (ItemComboBox .SelectedValue .ToString ()) , Qty  = int .Parse (qtyTextBox .Text ), };
-                SellStoreCmd.EditSellStore(tb, TargetStore.ID);
+                SellStoreCmd.EditSellStore(tb, TargetStore.ID,UserInfo.CurrnetUser.Branch_ID.Value);
 
             });
 
 
-            SellStoreCmd.EditSellStore(tb, TargetStore.ID);
+            SellStoreCmd.EditSellStore(tb, TargetStore.ID, UserInfo.CurrnetUser.Branch_ID.Value);
             Operation.EndOperation(this);
             this.Invoke((MethodInvoker)delegate
             {
@@ -79,9 +80,10 @@ namespace Bylsan_System.SellSystemForms
 
         private void FrmEditSellIStore_Load(object sender, EventArgs e)
         {
+            ItemComboBox.DataSource = Operation.Allproducts;
             Operation.BeginOperation(this);
             qtyTextBox.Text = TargetStore.Qty.ToString ();
-            ItemComboBox.Text = TargetStore.ItemID.ToString();
+            ItemComboBox.SelectedValue = TargetStore.ItemID.ToString();
 
             Operation.EndOperation(this);
         }

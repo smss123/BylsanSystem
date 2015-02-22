@@ -57,20 +57,20 @@ namespace Bylsan_System.SellSystemForms
             try
             {
                 Operation.BeginOperation(this);
-                SellItemsCmd.GetSellItemByName(itemNameTextBox.Text);
+              //  SellItemsCmd.GetSellItemByName(itemNameTextBox.Text);
                 Operation.ShowToustOk("........Item Sell  Has Been Exist  .......", this);
                 Operation.EndOperation(this);
                 return;
             }
             catch (Exception)
             {
-                var tb = new SellItem()
-                { ItemName = itemNameTextBox.Text,
-                    ItemIcon = pictureBox1.Image,
-                    Description = descriptionTextBox.Text,
-                    ItemPrice = int.Parse(itemPriceTextBox.Text), };
+               // var tb = new SellItem()
+               // { ItemName = itemNameTextBox.Text,
+               //     ItemIcon = pictureBox1.Image,
+               //     Description = descriptionTextBox.Text,
+               //     ItemPrice = int.Parse(itemPriceTextBox.Text), };
 
-                SellItemsCmd.AddSellItems(tb);
+               //// SellItemsCmd.AddSellItems(tb);
 
                 Operation.ShowToustOk("Item Sell  Has Been Saved", this);
                 foreach (Control item in groupBox1.Controls)
@@ -114,7 +114,7 @@ namespace Bylsan_System.SellSystemForms
 
         private void FrmAddSellItem_Load(object sender, EventArgs e)
         {
-            DGVSellItems.DataSource = SellItemsCmd.GetAllSellItems();
+            //DGVSellItems.DataSource = SellItemsCmd.GetAllSellItems();
         }
     }
 }

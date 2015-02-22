@@ -58,6 +58,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.Color.White;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Addbtn,
             this.toolStripSeparator1,
@@ -77,6 +78,7 @@
             this.Addbtn.Name = "Addbtn";
             this.Addbtn.Size = new System.Drawing.Size(93, 37);
             this.Addbtn.Text = "Add item";
+            this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
             // toolStripSeparator1
             // 
@@ -229,8 +231,9 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmManageMainStore_StoreWithDrawal";
+            this.Text = "Store WithDrawal";
             this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmManageMainStore_StoreWithDrawal_Load);
             this.toolStrip1.ResumeLayout(false);

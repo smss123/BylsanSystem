@@ -21,23 +21,23 @@ namespace XamaDataLayer.SellSystem
 
 
 
-        public static SellStore EditSellStore(SellStore tb, int xid)
+        public static SellStore EditSellStore(SellStore tb, int xid, int branchID)
         {
             db = new DbDataContext();
-            var sll = db.SellStores.Where(s => s.ID == xid).SingleOrDefault();
+            var sll = db.SellStores.Where(s => s.ID == xid&& s.branchID==branchID).SingleOrDefault();
             sll.ItemID = tb.ItemID;
             sll.Qty = tb.Qty;
-            sll.branchID = tb.branchID;
+           // sll.branchID = tb.branchID;
             db.SubmitChanges();
             return sll;
         }
 
 
 
-        public static SellStore EditQtyInSellStore(SellStore tb, int xid)
+        public static SellStore EditQtyInSellStore(SellStore tb, int xid, int branchid)
         {
             db = new DbDataContext();
-            var sll = db.SellStores.Where(s => s.ID == xid).SingleOrDefault();
+            var sll = db.SellStores.Where(s => s.ID == xid&&s.branchID==branchid).SingleOrDefault();
             sll.ItemID = tb.ItemID;
             sll.Qty += tb.Qty;
             sll.branchID = tb.branchID;
@@ -45,35 +45,46 @@ namespace XamaDataLayer.SellSystem
             return sll;
         }
 
-        public static SellStore Sales_EditQtyInSellStore(SellStore tb, int xid)
+        public static SellStore Sales_EditQtyInSellStore(SellStore tb, int xid, int branchid)
         {
             db = new DbDataContext();
-            var sll = db.SellStores.Where(s => s.ID == xid).SingleOrDefault();
+            var sll = db.SellStores.Where(s => s.ID == xid && s.branchID==branchid).SingleOrDefault();
             sll.ItemID = tb.ItemID;
             sll.Qty = tb.Qty;
             sll.branchID = tb.branchID;
             db.SubmitChanges();
             return sll;
         }
-        public static void DeleteSellStore(int xid)
+        public static void DeleteSellStore(int xid,int branchID)
         {
-            db = new DbDataContext();
-            var sll = db.SellStores.Where(s => s.ID == xid).SingleOrDefault();
-            db.SellStores.DeleteOnSubmit(sll);
-            db.SubmitChanges();
+            try
+            {
+                db = new DbDataContext();
+                var sll = db.SellStores.Where(s => s.ID == xid && s.branchID == branchID).SingleOrDefault();
+                db.SellStores.DeleteOnSubmit(sll);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+               if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint "))
+               {
+                   throw new Exception("Can't Delete Because its link on other processes in stock an sales");
+               }
+            }
         }
 
-        public static List<SellStore> GetAllSellStore()
+        public static List<SellStore> GetAllSellStore(int branch)
         {
             db = new DbDataContext();
-            return db.SellStores.ToList();
+            return db.SellStores.Where(p=>p.branchID==branch).ToList();
         }
 
-        public static SellStore GetSellStoreByItemID( int ItmId)
+        public static SellStore GetSellStoreByItemID( int ItmId, int branchID)
         {
             db = new DbDataContext();
+            
              var lst = (from i in db.SellStores
-                        where i.ItemID == ItmId
+                        where i.ItemID == ItmId&&i.branchID==branchID
                         select i).Single();
             return lst;
         }
@@ -83,18 +94,24 @@ namespace XamaDataLayer.SellSystem
             var q = new SellStore();
             try
             {
+                db = new DbDataContext();
                  q = db.SellStores.Where(p => p.ItemID == productID && p.branchID == branchID).Take(1).Single();
 
                 int qty = int.Parse( q.Qty.Value.ToString());
-                if (editedQty > qty)
+                if (editedQty < qty)
                 {
-                   if( MessageBox.Show("Your product not availble in your store\n you want to continue ?","",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
-                   {
-                       q.Qty = qty - editedQty;
-                       db.SubmitChanges();
-                   }
+                    q.Qty = qty - editedQty;
+
                 }
-               
+                else
+                {
+                    if (MessageBox.Show("Your product not availble in your store\n you want to continue ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        q.Qty = qty - editedQty;
+
+                    }
+                }
+                db.SubmitChanges();
 
             }
             catch (Exception)

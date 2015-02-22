@@ -36,25 +36,25 @@ namespace Bylsan_System.MainStoreForms
             Operation.BeginOperation(this);
             try
             {
-                ItemsCmd.ChekByName(itemDescriptionTextBox.Text);
+                //ItemsCmd.ChekByName(itemDescriptionTextBox.Text);
                 Operation.ShowToustOk("Item Existed .... ", this);
                 Operation.EndOperation(this);
                 return;
             }
             catch (Exception)
             {
-                if (ItemsCmd.AddNewItem(new XamaDataLayer.Item()
-                {
+                //if (ItemsCmd.AddNewItem(new XamaDataLayer.Item()
+                //{
 
-                    ItemDescription = itemDescriptionTextBox.Text,
-                    ItemName = itemNameTextBox.Text,
-                    ItemType = ItemTypecomboBox.Text
+                //    ItemDescription = itemDescriptionTextBox.Text,
+                //    ItemName = itemNameTextBox.Text,
+                //    ItemType = ItemTypecomboBox.Text
 
-                }))
-                {
-                    Operation.ShowToustOk("Item Saved", this);
-                }
-                Operation.EndOperation(this);
+                //}))
+                //{
+                //    Operation.ShowToustOk("Item Saved", this);
+                //}
+                //Operation.EndOperation(this);
             }
 
 

@@ -26,7 +26,7 @@
         <Top>3.5072cm</Top>
         <Left>3.14947cm</Left>
         <Height>0.62646cm</Height>
-        <Width>3.77074cm</Width>
+        <Width>4.31431cm</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -196,6 +196,7 @@
                   <FontFamily>times New Roman</FontFamily>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
+                  <Format>dd/MM/yyyy</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -208,7 +209,7 @@
         <Top>4.27477cm</Top>
         <Left>3.14947cm</Left>
         <Height>0.62646cm</Height>
-        <Width>3.77074cm</Width>
+        <Width>4.31431cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -244,7 +245,7 @@
         <Top>5.1129cm</Top>
         <Left>3.14947cm</Left>
         <Height>0.62646cm</Height>
-        <Width>3.77074cm</Width>
+        <Width>4.31431cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -308,7 +309,9 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Remaining</rd:DefaultName>
@@ -342,7 +345,9 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
@@ -366,7 +371,7 @@
         <Top>8.35393cm</Top>
         <Left>0.67028cm</Left>
         <Height>0cm</Height>
-        <Width>18.98037cm</Width>
+        <Width>17.84349cm</Width>
         <ZIndex>10</ZIndex>
         <Style>
           <Border>
@@ -515,10 +520,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>bondNumber</rd:DefaultName>
-        <Top>12.01539cm</Top>
-        <Left>3.69304cm</Left>
+        <Top>11.69164cm</Top>
+        <Left>3.01835cm</Left>
         <Height>0.62646cm</Height>
-        <Width>3.77074cm</Width>
+        <Width>4.31431cm</Width>
         <ZIndex>15</ZIndex>
         <Style>
           <Border>
@@ -551,8 +556,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>bondNumber</rd:DefaultName>
-        <Top>12.01539cm</Top>
-        <Left>10.50719cm</Left>
+        <Top>11.69164cm</Top>
+        <Left>9.8325cm</Left>
         <Height>0.62646cm</Height>
         <Width>8.55015cm</Width>
         <ZIndex>16</ZIndex>
@@ -587,8 +592,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>12.01539cm</Top>
-        <Left>1.57227cm</Left>
+        <Top>11.69164cm</Top>
+        <Left>0.89758cm</Left>
         <Height>0.62646cm</Height>
         <Width>1.94438cm</Width>
         <ZIndex>17</ZIndex>
@@ -624,8 +629,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>12.01539cm</Top>
-        <Left>8.88913cm</Left>
+        <Top>11.69164cm</Top>
+        <Left>8.21444cm</Left>
         <Height>0.62646cm</Height>
         <Width>1.44167cm</Width>
         <ZIndex>18</ZIndex>
@@ -661,8 +666,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>12.81824cm</Top>
-        <Left>1.57227cm</Left>
+        <Top>12.49449cm</Top>
+        <Left>0.89758cm</Left>
         <Height>0.62646cm</Height>
         <Width>1.94438cm</Width>
         <ZIndex>19</ZIndex>
@@ -689,6 +694,7 @@
                   <FontFamily>times New Roman</FontFamily>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
+                  <Format>dd/MM/yyyy</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -698,10 +704,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>bondDate</rd:DefaultName>
-        <Top>12.78296cm</Top>
-        <Left>3.69304cm</Left>
+        <Top>12.45921cm</Top>
+        <Left>3.01835cm</Left>
         <Height>0.62646cm</Height>
-        <Width>3.77074cm</Width>
+        <Width>4.31431cm</Width>
         <ZIndex>20</ZIndex>
         <Style>
           <Border>
@@ -734,10 +740,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>bondCost</rd:DefaultName>
-        <Top>13.62109cm</Top>
-        <Left>3.69304cm</Left>
+        <Top>13.29734cm</Top>
+        <Left>3.01835cm</Left>
         <Height>0.62646cm</Height>
-        <Width>3.77074cm</Width>
+        <Width>4.31431cm</Width>
         <ZIndex>21</ZIndex>
         <Style>
           <Border>
@@ -770,8 +776,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>13.62109cm</Top>
-        <Left>1.57227cm</Left>
+        <Top>13.29734cm</Top>
+        <Left>0.89758cm</Left>
         <Height>0.62646cm</Height>
         <Width>1.94438cm</Width>
         <ZIndex>22</ZIndex>
@@ -801,12 +807,14 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Remaining</rd:DefaultName>
-        <Top>12.81824cm</Top>
-        <Left>11.31857cm</Left>
+        <Top>12.49449cm</Top>
+        <Left>10.64388cm</Left>
         <Height>0.62646cm</Height>
         <Width>7.73877cm</Width>
         <ZIndex>23</ZIndex>
@@ -835,12 +843,14 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>12.81824cm</Top>
-        <Left>8.88913cm</Left>
+        <Top>12.49449cm</Top>
+        <Left>8.21444cm</Left>
         <Height>0.62646cm</Height>
         <Width>2.28833cm</Width>
         <ZIndex>24</ZIndex>
@@ -872,8 +882,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>15.68212cm</Top>
-        <Left>1.57227cm</Left>
+        <Top>15.35837cm</Top>
+        <Left>0.89758cm</Left>
         <Height>0.6cm</Height>
         <Width>7.28302cm</Width>
         <ZIndex>25</ZIndex>
@@ -908,8 +918,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>10.09145cm</Top>
-        <Left>6.64427cm</Left>
+        <Top>9.7677cm</Top>
+        <Left>5.96958cm</Left>
         <Height>0.94396cm</Height>
         <Width>8.08271cm</Width>
         <ZIndex>26</ZIndex>
@@ -945,8 +955,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>9.41166cm</Top>
-        <Left>6.64427cm</Left>
+        <Top>9.08791cm</Top>
+        <Left>5.96958cm</Left>
         <Height>0.67979cm</Height>
         <Width>8.08271cm</Width>
         <ZIndex>27</ZIndex>
@@ -964,8 +974,8 @@
         <Source>Embedded</Source>
         <Value>BaylasanFinalLogo</Value>
         <Sizing>Fit</Sizing>
-        <Top>9.11651cm</Top>
-        <Left>1.57227cm</Left>
+        <Top>8.79276cm</Top>
+        <Left>0.89758cm</Left>
         <Height>1.9189cm</Height>
         <Width>2.66898cm</Width>
         <ZIndex>28</ZIndex>
@@ -979,7 +989,7 @@
     <Height>6.49454in</Height>
     <Style />
   </Body>
-  <Width>8.12189in</Width>
+  <Width>7.36226in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

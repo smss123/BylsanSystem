@@ -30,18 +30,19 @@ namespace Bylsan_System.BranchForms
             {
                 txtStatus.Text = "Loading ..";
             });
-
+            var q  = new  object();
             try
             {
-                BranchGridView.DataSource = BranchsCmd.GetAllBranchs();
+               q=  BranchsCmd.GetAllBranchs();
             }
             catch (System.InvalidOperationException ex)
             {
-                BranchGridView.DataSource = BranchsCmd.GetAllBranchs();
+               // BranchGridView.DataSource = BranchsCmd.GetAllBranchs();
             }
 
             statusStrip1.Invoke((MethodInvoker)delegate
             {
+                BranchGridView.DataSource =q;
                 txtStatus.Text = "Compelete .. ";
             });
             Operation.EndOperation(this);

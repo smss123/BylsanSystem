@@ -14,7 +14,7 @@ namespace Bylsan_System.MainStoreForms
         {
             InitializeComponent();
         }
-        public Item TragetItem { get; set; }
+        public Product TragetItem { get; set; }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
@@ -36,14 +36,14 @@ namespace Bylsan_System.MainStoreForms
 
 
             Operation.BeginOperation(this);
-            if ( ItemsCmd.EditItem(new Item() {
-             ItemName = itemNameTextBox.Text,
-              ItemDescription = itemDescriptionTextBox.Text,
-               ItemType = ItemTypecomboBox.Text
-            }, TragetItem.ID))
-            {
-                Operation.ShowToustOk("Item Has Been Saved..", this);
-            }
+            //if ( ItemsCmd.EditItem(new Item() {
+            // ItemName = itemNameTextBox.Text,
+            //  ItemDescription = itemDescriptionTextBox.Text,
+            //   ItemType = ItemTypecomboBox.Text
+            //}, TragetItem.ID))
+            //{
+            //    Operation.ShowToustOk("Item Has Been Saved..", this);
+            //}
             itemNameTextBox.Clear();
             itemDescriptionTextBox.Clear();
             ItemTypecomboBox.SelectedIndex = -1;
@@ -52,9 +52,9 @@ namespace Bylsan_System.MainStoreForms
 
         private void FrmEditMainStore_Item_Load(object sender, EventArgs e)
         {
-            itemNameTextBox.Text = TragetItem.ItemName;
-            itemDescriptionTextBox.Text = TragetItem.ItemDescription;
-            ItemTypecomboBox.SelectedText = TragetItem.ItemType;
+            itemNameTextBox.Text = TragetItem.Product_Name;
+            itemDescriptionTextBox.Text = TragetItem.Product_Description;
+            ItemTypecomboBox.SelectedText = TragetItem.ProductType;
         }
     }
 }

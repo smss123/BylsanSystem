@@ -25,12 +25,11 @@ namespace Bylsan_System.MainStoreForms
             this.Invoke((MethodInvoker)delegate
             {
                 CmbItems.AutoFilter = true;
-                CmbItems.ValueMember = "ID";
-                CmbItems.DisplayMember = "ItemName";
+               
             });
 
 
-            var q = ItemsCmd.GetAllItems();
+            var q = Operation.Allproducts;
             this.Invoke((MethodInvoker)delegate
             {
                 CmbItems.DataSource = q;
@@ -80,15 +79,6 @@ namespace Bylsan_System.MainStoreForms
             }
 
 
-
-
-
-
-
-
-
-
-
             if (int.Parse(qtyTextBox.Text.ToString()) > xAvailableQty)
             {
                 Operation.ShowToustOk("Qty Not vvailable ... Sorry", this);
@@ -97,8 +87,29 @@ namespace Bylsan_System.MainStoreForms
             }
 
             Operation.BeginOperation(this);
+            if (CmbItems.Text != null)
+            {
+                try
+                {
+                    XItemID = 0;
+                    XItemID = int.Parse(CmbItems.SelectedValue.ToString());
+
+                    xStoreTb = StoreCmd.GetAvailableQtyByItemID(XItemID);
+                    xAvailableQty = int.Parse(xStoreTb.AvailableQty.ToString());
+
+
+                    var tbx = StoreSalesCmd.GetAllSTore_SellByItemID(XItemID);
+                    ItmUnitPrice = 0;
+                    ItmUnitPrice = int.Parse(tbx.UnitPrice.ToString());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
             var tb = new StoreWithDrawal()
-            { ItemID = XItemID ,
+            { ProductID = XItemID ,
                 StoreID =  xStoreTb .ID ,
                 DateOfProcess = DateTime.Now,
                 Qty = int.Parse(qtyTextBox.Text),
@@ -137,16 +148,23 @@ namespace Bylsan_System.MainStoreForms
         {
             if (CmbItems .Text != null)
             {
-                XItemID = 0;
-                XItemID = int .Parse (CmbItems.SelectedValue.ToString());
+                try
+                {
+                    XItemID = 0;
+                    XItemID = int.Parse(CmbItems.SelectedValue.ToString());
 
-                xStoreTb = StoreCmd.GetAvailableQtyByItemID (XItemID);
-                xAvailableQty = int .Parse (xStoreTb.AvailableQty.ToString ());
+                    xStoreTb = StoreCmd.GetAvailableQtyByItemID(XItemID);
+                    xAvailableQty = int.Parse(xStoreTb.AvailableQty.ToString());
 
 
-                var tb = StoreSalesCmd.GetAllSTore_SellByItemID(XItemID);
-                ItmUnitPrice = 0;
-                ItmUnitPrice = int .Parse (tb.UnitPrice .ToString ());
+                    var tb = StoreSalesCmd.GetAllSTore_SellByItemID(XItemID);
+                    ItmUnitPrice = 0;
+                    ItmUnitPrice = int.Parse(tb.UnitPrice.ToString());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

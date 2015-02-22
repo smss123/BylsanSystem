@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.RefreshBTn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -59,13 +59,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBarCode = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtOrderID = new System.Windows.Forms.TextBox();
             this.TxtBillNumber = new System.Windows.Forms.TextBox();
             this.DGVSellItems = new Telerik.WinControls.UI.RadGridView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
-            this.txtOrderID = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -243,6 +243,7 @@
             this.txtCustomerPhoneNumber.Size = new System.Drawing.Size(212, 27);
             this.txtCustomerPhoneNumber.TabIndex = 3;
             this.txtCustomerPhoneNumber.ThemeName = "Office2010Black";
+            this.txtCustomerPhoneNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerPhoneNumber_KeyDown);
             // 
             // txtCustomerName
             // 
@@ -342,6 +343,17 @@
             this.txtBarCode.TextChanged += new System.EventHandler(this.txtBarCode_TextChanged);
             this.txtBarCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarCode_KeyDown);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Blue;
+            this.label7.Location = new System.Drawing.Point(21, 21);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(139, 25);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Order Number:";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -352,6 +364,19 @@
             this.label2.Size = new System.Drawing.Size(121, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Bill Number: ";
+            // 
+            // txtOrderID
+            // 
+            this.txtOrderID.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtOrderID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrderID.ForeColor = System.Drawing.SystemColors.Info;
+            this.txtOrderID.Location = new System.Drawing.Point(166, 19);
+            this.txtOrderID.Name = "txtOrderID";
+            this.txtOrderID.ReadOnly = true;
+            this.txtOrderID.Size = new System.Drawing.Size(59, 33);
+            this.txtOrderID.TabIndex = 13;
+            this.txtOrderID.Text = "0";
+            this.txtOrderID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBillNumber_KeyPress);
             // 
             // TxtBillNumber
             // 
@@ -375,44 +400,44 @@
             // DGVSellItems
             // 
             this.DGVSellItems.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "ID";
-            gridViewTextBoxColumn6.HeaderText = "ID";
-            gridViewTextBoxColumn6.IsVisible = false;
-            gridViewTextBoxColumn6.Name = "ID";
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "ItemName";
-            gridViewTextBoxColumn7.HeaderText = "Item Name";
-            gridViewTextBoxColumn7.Name = "ItemName";
-            gridViewTextBoxColumn7.Width = 177;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "Description";
-            gridViewTextBoxColumn8.HeaderText = "Description";
-            gridViewTextBoxColumn8.Name = "Description";
-            gridViewTextBoxColumn8.Width = 234;
-            gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "ItemPrice";
-            gridViewTextBoxColumn9.HeaderText = "Item Price";
-            gridViewTextBoxColumn9.Name = "ItemPrice";
-            gridViewTextBoxColumn9.ReadOnly = true;
-            gridViewTextBoxColumn9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn9.Width = 119;
-            gridViewTextBoxColumn10.EnableExpressionEditor = false;
-            gridViewTextBoxColumn10.HeaderText = "Ouantity";
-            gridViewTextBoxColumn10.Name = "Quantity";
-            gridViewTextBoxColumn10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn10.Width = 177;
-            gridViewCommandColumn2.EnableExpressionEditor = false;
-            gridViewCommandColumn2.HeaderText = "-";
-            gridViewCommandColumn2.Name = "colbtn";
-            gridViewCommandColumn2.Width = 61;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "ID";
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "ItemName";
+            gridViewTextBoxColumn2.HeaderText = "Item Name";
+            gridViewTextBoxColumn2.Name = "ItemName";
+            gridViewTextBoxColumn2.Width = 177;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "Description";
+            gridViewTextBoxColumn3.HeaderText = "Description";
+            gridViewTextBoxColumn3.Name = "Description";
+            gridViewTextBoxColumn3.Width = 234;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "ItemPrice";
+            gridViewTextBoxColumn4.HeaderText = "Item Price";
+            gridViewTextBoxColumn4.Name = "ItemPrice";
+            gridViewTextBoxColumn4.ReadOnly = true;
+            gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn4.Width = 119;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.HeaderText = "Ouantity";
+            gridViewTextBoxColumn5.Name = "Quantity";
+            gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn5.Width = 177;
+            gridViewCommandColumn1.EnableExpressionEditor = false;
+            gridViewCommandColumn1.HeaderText = "-";
+            gridViewCommandColumn1.Name = "colbtn";
+            gridViewCommandColumn1.Width = 61;
             this.DGVSellItems.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9,
-            gridViewTextBoxColumn10,
-            gridViewCommandColumn2});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewCommandColumn1});
             this.DGVSellItems.Name = "DGVSellItems";
             this.DGVSellItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DGVSellItems.Size = new System.Drawing.Size(784, 471);
@@ -426,30 +451,6 @@
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // txtOrderID
-            // 
-            this.txtOrderID.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtOrderID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrderID.ForeColor = System.Drawing.SystemColors.Info;
-            this.txtOrderID.Location = new System.Drawing.Point(166, 19);
-            this.txtOrderID.Name = "txtOrderID";
-            this.txtOrderID.ReadOnly = true;
-            this.txtOrderID.Size = new System.Drawing.Size(59, 33);
-            this.txtOrderID.TabIndex = 13;
-            this.txtOrderID.Text = "0";
-            this.txtOrderID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBillNumber_KeyPress);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Blue;
-            this.label7.Location = new System.Drawing.Point(21, 21);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(139, 25);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Order Number:";
             // 
             // FrmAddSales
             // 

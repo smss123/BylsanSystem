@@ -89,6 +89,8 @@ namespace Bylsan_System.ProductForms
                     CateogryID = CategoryComboBox.SelectedValue.ToString().ToInt(), ProductPrice = productPriceTextBox.Text.Todouble(),
                      PublicName = publicNameTextBox.Text,
                       ProductUnit = productUnitTextBox.Text,
+                       LoadingCost = txtLoadingCost.Text.Todouble(),
+                    ProductType = ItemTypecomboBox.Text
                 };
             });
             Operation.BeginOperation(this);
@@ -147,6 +149,13 @@ namespace Bylsan_System.ProductForms
         {
             var th = new Thread(FillCategoreisCombo);
             th.Start();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            double fs = double.Parse(txtLoadingCost.Text) * double.Parse(txtmargint.Text) / 100;
+            fs = fs + double.Parse(txtLoadingCost.Text);
+            productPriceTextBox.Text = fs.ToString();
         }
     }
 }

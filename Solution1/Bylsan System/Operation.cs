@@ -11,7 +11,8 @@ namespace Bylsan_System
         public static List<Product> Allproducts { get; set; }
         public static List<ProductCategory>  Allcategorys { get; set; }
         public static List <Branch >  AllBranches { get; set; }
-        public static List <SellItem > AllSellItems  { get; set; }
+        public static List <Product > AllSellItems  { get; set; }
+        public static List<Debtor> AllDebetor { get; set; }
 
         public static List<Order> AllOrder = new List<Order>();
         public static List<Customer> AllCustomer = new List<Customer>();

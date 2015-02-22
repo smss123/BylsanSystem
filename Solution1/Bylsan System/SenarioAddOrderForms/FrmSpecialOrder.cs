@@ -85,7 +85,7 @@ namespace Bylsan_System.SenarioAddOrderForms
             {
                 ProductID = TragetOrderproduct.ID,
                 Product = TragetOrderproduct,
-                Description ="",
+                Description = string.Format("Description[{0}]\n Customer Text : [{1}]", DescriptiontextBox.Text,txtCustomerText.Text),
                 Qty = 1,
                 Status = "Ordered"
             };
@@ -94,6 +94,7 @@ namespace Bylsan_System.SenarioAddOrderForms
                 OrderProuctAttachment op = new OrderProuctAttachment()
                 {
                      Description= item.Description,
+                      CustomerText= txtCustomerText.Text,
                       imageX= item.imageX,
                        OrderProductID= item.OrderProductID
                 };

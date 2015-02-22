@@ -66,7 +66,7 @@ namespace Bylsan_System.MainStoreForms
                 if (RadMessageBox.Show(this, "Do you want to delete", "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
                     Operation.BeginOperation(this);
-                    ItemsCmd.DeleteItemAt(((StoreManager)StoreManagerGridView.CurrentRow.DataBoundItem).ID);
+                  //  ItemsCmd.DeleteItemAt(((StoreManager)StoreManagerGridView.CurrentRow.DataBoundItem).ID);
                     Operation.EndOperation(this);
                 }
             }

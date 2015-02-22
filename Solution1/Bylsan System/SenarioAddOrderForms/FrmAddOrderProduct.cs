@@ -9,6 +9,7 @@ using System.Threading;
 using Xprema.XExtention;
 using Telerik.WinControls.UI;
 using Telerik.WinControls;
+using Bylsan_System.ManagmentOrderForms;
 
 namespace Bylsan_System.SenarioAddOrderForms
 {
@@ -224,9 +225,15 @@ namespace Bylsan_System.SenarioAddOrderForms
         {
             if (CustomerInformations.OrdrType == "Special")
             {
-                var SFrm = new FrmSpecialOrder();
-                SFrm.TragetOrderproduct = (Product )dataGridView1.CurrentRow.DataBoundItem;
-                SFrm.ShowDialog();
+                //var SFrm = new FrmSpecialOrder();
+                //SFrm.TragetOrderproduct = (Product )dataGridView1.CurrentRow.DataBoundItem;
+                //SFrm.ShowDialog();
+                //radGridView1.DataSource = CustomerInformations.WaitingOrder.OrderProducts.ToList();
+                frmSpAttachment_ frm = new frmSpAttachment_();
+                frm.TragetProduct = (Product)dataGridView1.CurrentRow.DataBoundItem;
+                frm.ShowDialog();
+
+                CustomerInformations.WaitingOrder.OrderProducts.Add(frm.RetrunProduct);
                 radGridView1.DataSource = CustomerInformations.WaitingOrder.OrderProducts.ToList();
                 return;
             }
@@ -269,6 +276,18 @@ namespace Bylsan_System.SenarioAddOrderForms
 
                 radGridView1.DataSource = CustomerInformations.WaitingOrder.OrderProducts.ToList();
             }
+        }
+
+        private void radGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            var q = (OrderProduct)radGridView1.CurrentRow.DataBoundItem;
+            FrmrOrderProductEdit frm = new FrmrOrderProductEdit();
+            frm.TragetOrderProduct = q;
+            frm.ShowDialog();
+            radGridView1.CurrentRow.Cells[0].Value = frm.TragetOrderProduct.Product.Product_Name;
+            radGridView1.CurrentRow.Cells[1].Value = frm.TragetOrderProduct.Qty;
+            radGridView1.CurrentRow.Cells[2].Value = frm.TragetOrderProduct.Product.ProductPrice;
+           
         }
     }
 }

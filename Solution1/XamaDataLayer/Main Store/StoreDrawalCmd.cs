@@ -24,7 +24,7 @@ namespace XamaDataLayer.Main_Store
             db = new DbDataContext();
             var q = db.StoreWithDrawals.Where(d => d.ID == tb.ID).SingleOrDefault();
             q.ID = tb.ID;
-            q.ItemID = tb.ItemID;
+            q.ProductID = tb.ProductID;
             q.Qty = tb.Qty;
 
             q.Comment = tb.Comment;

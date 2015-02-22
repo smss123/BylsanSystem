@@ -28,7 +28,7 @@ namespace XamaDataLayer.Main_Store
             q.UnitPrice = tb.UnitPrice;
             q.DateOfProcess = tb.DateOfProcess;
             q.Comment = tb.Comment;
-            q.ItemID = tb.ItemID;
+            q.ProductID = tb.ProductID;
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Edit  ", " Edit  sell store ", " Edit selected  sell store    At Main Store ");
             return q;
@@ -80,7 +80,7 @@ namespace XamaDataLayer.Main_Store
         {
             var lst = (from s in db.Store_Sells
                        orderby s.DateOfProcess ascending
-                       where s.ItemID  == xid
+                       where s.ProductID  == xid
                        select s).Single ();
             return lst;
         }

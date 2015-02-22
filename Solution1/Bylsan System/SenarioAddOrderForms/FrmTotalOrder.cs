@@ -41,7 +41,7 @@ namespace Bylsan_System.SenarioAddOrderForms
         public string  TragetOrderType { get; set; }
 
 
-
+        string orderID;
         private void FrmTotalOrder_Load_1(object sender, EventArgs e)
         {
             Operation.BeginOperation(this);
@@ -144,8 +144,8 @@ namespace Bylsan_System.SenarioAddOrderForms
                 db.Orders.Attach(otb, true);
 
             }
-          
-           
+
+            orderID = otb.ID.ToString();
          
 
 
@@ -163,16 +163,13 @@ namespace Bylsan_System.SenarioAddOrderForms
                 ordtb.Qty = item.Qty;
                 ordtb.Status = item.Status;
                 OrderProductsCmd.AddOrderProduct(ordtb);
-
-
-
-
                 foreach (var atta in item.OrderProuctAttachments.ToList())
                 {
 
                     var attb = new OrderProuctAttachment()
                                  {
                                      Description = atta.Description,
+                                      CustomerText = atta.CustomerText,
                                      imageX = atta.imageX,
                                      OrderProductID = ordtb.ID,
                                  };
@@ -250,15 +247,16 @@ namespace Bylsan_System.SenarioAddOrderForms
 
             PrintBtn.Enabled = true;
             ReceiptVoucherButton.Enabled = true;
+            OkeyBtn.Enabled = false;
         }
 
 
 
-        private double ComputeDiscount(double TotalCost, double DiscountValue)
+        private double ComputeDiscount(double totalCost, double discountValue)
         {
-            var NetTotalCostPrice = TotalCost - (TotalCost * (DiscountValue / 100));
+            var netTotalCostPrice = totalCost - (totalCost * (discountValue / 100));
 
-            return NetTotalCostPrice;
+            return netTotalCostPrice;
         }
 
 
@@ -284,7 +282,14 @@ namespace Bylsan_System.SenarioAddOrderForms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Application.OpenForms["FrmAddOrderProduct"].Show();
+           // Application.OpenForms["FrmAddOrderProduct"].Show();
+            this.Hide();
+        }
+
+        private void ReceiptVoucherButton_Click(object sender, EventArgs e)
+        {
+            //ExchangebondReportCmd.ShowPayment//(TotalPriceBox.Text);
+            ExchangebondReportCmd.ShowPayment(cost: txtPayment.Text, Dt: DateTime.Now, customerName: NameLab.Text, vnumber: orderID, payVouterCost: "0", rema: (TotalPriceBox.Text.Todouble() - txtPayment.Text.Todouble()).ToString());
         }
     }
 }

@@ -71,7 +71,7 @@ namespace Bylsan_System.MainStoreForms
                 if (RadMessageBox.Show(this, "Do you want to delete", "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
                     Operation.BeginOperation(this);
-                    ItemsCmd.DeleteItemAt(((Store)StoreGridView.CurrentRow.DataBoundItem).ID);
+                    //ItemsCmd.DeleteItemAt(((Store)StoreGridView.CurrentRow.DataBoundItem).ID);
                     Operation.EndOperation(this);
                 }
             }
@@ -90,6 +90,18 @@ namespace Bylsan_System.MainStoreForms
 
         private void ReportBtn_Click(object sender, EventArgs e)
         {
+        }
+
+        private void BtnPurchasesOrder_Click(object sender, EventArgs e)
+        {
+            frmPurchusOrder frm = new frmPurchusOrder();
+            frm.ShowDialog();
+        }
+
+        private void btnTransfer_Click(object sender, EventArgs e)
+        {
+            frmMainToBranchTranfer frm = new frmMainToBranchTranfer();
+            frm.ShowDialog();
         }
     }
 }

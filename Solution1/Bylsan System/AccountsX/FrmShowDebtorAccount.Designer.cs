@@ -42,7 +42,10 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.DGVDebtors = new Telerik.WinControls.UI.RadGridView();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.txtbalance = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDebtors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDebtors.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -104,6 +107,9 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.txtbalance});
             this.statusStrip1.Location = new System.Drawing.Point(0, 422);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(703, 22);
@@ -159,6 +165,18 @@
             this.DGVDebtors.Text = "radGridView1";
             this.DGVDebtors.ThemeName = "Office2010Black";
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(51, 17);
+            this.toolStripStatusLabel1.Text = "Balance:";
+            // 
+            // txtbalance
+            // 
+            this.txtbalance.Name = "txtbalance";
+            this.txtbalance.Size = new System.Drawing.Size(12, 17);
+            this.txtbalance.Text = "*";
+            // 
             // FrmShowDebtorAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +198,8 @@
             this.Load += new System.EventHandler(this.FrmShowDebtorAccount_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDebtors.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDebtors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -199,5 +219,7 @@
         private System.Windows.Forms.ToolStripButton RefreshBtn;
         private Telerik.WinControls.UI.RadGridView DGVDebtors;
         private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel txtbalance;
     }
 }

@@ -103,7 +103,7 @@
             this.groupBox1.Controls.Add(this.supplierNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(390, 256);
+            this.groupBox1.Size = new System.Drawing.Size(390, 252);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit";

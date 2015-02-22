@@ -26,7 +26,7 @@ namespace Bylsan_System.SellSystemForms
 
             Application.DoEvents();
 
-            var q = SellItemsCmd.GetAllSellItems();
+            var q = Operation.Allproducts;
             Application.DoEvents();
 
             Operation.EndOperation(this);
@@ -61,7 +61,7 @@ namespace Bylsan_System.SellSystemForms
             {
                 Operation.BeginOperation(this);
                 var frm = new FrmEditSellItem();
-                var tb = (SellItem)SellitmeGridView.CurrentRow.DataBoundItem;
+                var tb = (Product)SellitmeGridView.CurrentRow.DataBoundItem;
                 frm.TargetItem = tb;
                 frm.ShowDialog();
                 Operation.EndOperation(this);
@@ -71,7 +71,7 @@ namespace Bylsan_System.SellSystemForms
             {
                 Operation.BeginOperation(this);
 
-                SellItemsCmd.DeleteSellItem(int.Parse(SellitmeGridView.CurrentRow.Cells[0].Value.ToString()));
+                //SellItemsCmd.DeleteSellItem(int.Parse(SellitmeGridView.CurrentRow.Cells[0].Value.ToString()));
                 FrmManageSellItem_Load(sender, e);
 
                 Operation.EndOperation(this);

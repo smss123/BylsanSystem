@@ -20,10 +20,12 @@ namespace Bylsan_System.AccountsX
         private void PopulateGrid()
         {
             var AccID = TargetDebtor.AccountID;
+            var Balance = AccountDailyCmd.GetBalanceByAccountID(AccID.Value);
             var lst = AccountDailyCmd.GetAllAccountDailyByAccountID( (int)( AccID ));
             this.Invoke((MethodInvoker)delegate
             {
                 DGVDebtors.DataSource = lst;
+                txtbalance.Text = Balance.ToString();
             });
         }
         private void AddDebtBtn_Click(object sender, EventArgs e)
@@ -36,6 +38,8 @@ namespace Bylsan_System.AccountsX
         private void RepaydebBtn_Click(object sender, EventArgs e)
         {
             var frm = new FrmRepaydebt();
+            frm.Balance = txtbalance.Text;
+            frm.DebtorInfo = TargetDebtor;
             frm.ShowDialog();
         }
 

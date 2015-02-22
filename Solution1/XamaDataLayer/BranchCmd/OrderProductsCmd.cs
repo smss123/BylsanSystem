@@ -20,18 +20,22 @@ namespace XamaDataLayer.BranchCmd
 
         public static OrderProduct EditOrderProduct(OrderProduct tb, int xid)
         {
-            db = new DbDataContext();
-            var ord = db.OrderProducts.Where(oo => oo.ID == xid).SingleOrDefault();
-            ord.OrderID = tb.OrderID;
-            ord.ProductID = tb.ProductID;
-            ord.Qty = tb.Qty;
-            ord.Description = tb.Description;
-            ord.ImageX = tb.ImageX;
+            
+                db = new DbDataContext();
+                var ord = db.OrderProducts.Where(oo => oo.ID == xid).SingleOrDefault();
+                ord.OrderID = tb.OrderID;
+                ord.ProductID = tb.ProductID;
+                ord.Qty = tb.Qty;
+                ord.Description = tb.Description;
+                ord.ImageX = tb.ImageX;
 
-            db.SubmitChanges();
-            XamaDataLayer.Security.UserCmd.SaveHistory("Edit  ", "Edit  Order Product ", " Edit Selected Order Product's Informations  ");
+                db.SubmitChanges();
+                XamaDataLayer.Security.UserCmd.SaveHistory("Edit  ", "Edit  Order Product ", " Edit Selected Order Product's Informations  ");
 
-            return ord;
+                return ord;
+            
+           
+           
         }
         public static OrderProduct EditOrderProductStatus(OrderProduct tb, int xid)
         {

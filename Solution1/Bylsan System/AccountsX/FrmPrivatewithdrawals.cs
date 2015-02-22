@@ -9,6 +9,7 @@ using System.Threading;
 using Xprema.XExtention;
 using Telerik.WinControls.UI;
 using Telerik.WinControls.Data;
+using Telerik.WinControls;
 
 namespace Bylsan_System.AccountsX
 {
@@ -99,14 +100,14 @@ namespace Bylsan_System.AccountsX
                     Operation.ShowToustOk("Transfer the amount from the same account unacceptable.", this);
                     return;
                 }
-                if (Convert.ToDouble (txtAmount .Text .ToString ()) > Convert .ToDouble (lblAvailableAmount .Text .ToString ()))
-                {
-                    Operation.ShowToustOk("The amount is not available.", this);
-                    return ;
-                }
+                //if (Convert.ToDouble (txtAmount .Text .ToString ()) > Convert .ToDouble (lblAvailableAmount .Text .ToString ()))
+                //{
+                //    Operation.ShowToustOk("The amount is not available.", this);
+                //    return ;
+                //}
 
 
-                var tb = new AccountDaily() { AccountID = FromAccount_ID ,
+                var tb = new AccountDaily() { AccountID = CmbFromAccount.SelectedValue.ToString().ToInt() ,
                  DateOfProcess = DateTime .Now ,
                   TotalIn = 0f,
                   TotalOut = txtAmount .Text .Todouble (),
@@ -116,13 +117,15 @@ namespace Bylsan_System.AccountsX
 
 
                 var xtb = new AccountDaily()
-                { AccountID = ToAccount_ID ,
+                { AccountID = CmbToAccount.SelectedValue.ToString().ToInt() ,
                     DateOfProcess = DateTime.Now,
                     TotalIn = txtAmount.Text.Todouble(),
                     TotalOut = 0f,
                     Description = txtDescription.Text.ToString()
                 };
                 AccountDailyCmd.AddAccountDaily(xtb);
+                RadMessageBox.ThemeName = this.ThemeName;
+                RadMessageBox.Show("Done");
             }
             catch (Exception ex)
             {
@@ -147,7 +150,7 @@ namespace Bylsan_System.AccountsX
             if (CmbToAccount.Text != string.Empty)
             {
                 ToAccount_ID = 0;
-                var targetAccount =  //AccountsCmd.GetOneAccountByName(CmbToAccount .Text );
+                var targetAccount = AccountsCmd.GetOneAccountByName(CmbToAccount .Text );
                 ToAccount_ID = targetAccount.ID;
             }
         }

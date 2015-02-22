@@ -47,12 +47,21 @@ namespace XamaDataLayer.Main_Store
 
         public static Store GetAvailableQtyByItemID(int ItmId)
         {
-            db = new DbDataContext();
-            var lst = (from i in db.Stores
-                      where i.ProductID == ItmId
-                      orderby i.ID ascending
-                      select i).Single();
-            return lst;
+            try
+            {
+                db = new DbDataContext();
+                var lst = (from i in db.Stores
+                           where i.ProductID == ItmId
+                           orderby i.ID ascending
+                           select i).Single();
+                return lst;
+            }
+            catch (Exception)
+            {
+                
+                throw new Exception("this product not aviable in Stock");
+            }
+           
         }
 
         public static Store ChekByItemID(int ItmId)

@@ -158,7 +158,7 @@
             // DGVProducts
             // 
             this.DGVProducts.BackColor = System.Drawing.SystemColors.Control;
-            this.DGVProducts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DGVProducts.Cursor = System.Windows.Forms.Cursors.Default;
             this.DGVProducts.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
             this.DGVProducts.ForeColor = System.Drawing.SystemColors.ControlText;
             this.DGVProducts.ImeMode = System.Windows.Forms.ImeMode.NoControl;

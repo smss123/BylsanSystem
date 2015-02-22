@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
@@ -32,11 +33,14 @@ namespace Bylsan_System.ProductForms
             }
             if (col == 6)
             {
-                Operation.BeginOperation(this);
-                var q = (Product)ProductGridView.CurrentRow.DataBoundItem;
-                ProductsCmd.DeleteProduct(q.ID);
-                Operation.EndOperation(this);
-                Operation.ShowToustOk("Product Deleted", this);
+                if (RadMessageBox.Show("You Are sure?", "delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Operation.BeginOperation(this);
+                    var q = (Product)ProductGridView.CurrentRow.DataBoundItem;
+                    ProductsCmd.DeleteProduct(q.ID);
+                    Operation.EndOperation(this);
+                    Operation.ShowToustOk("Product Deleted", this);
+                }
             }
             if (col == 8)
             {
@@ -84,13 +88,14 @@ namespace Bylsan_System.ProductForms
 
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
+            Operation.Allproducts = ProductsCmd.GetAllProducts();
             frmManageProduct_Load(null, null);
         }
 
         private void btnPrintBarcode_Click(object sender, EventArgs e)
         {
-            var cmd = new ItemBarcodeReportCmd();
-            cmd.GetItemStorByDate();
+            frmPrintBarCode frm = new frmPrintBarCode();
+            frm.ShowDialog();
         }
 
 

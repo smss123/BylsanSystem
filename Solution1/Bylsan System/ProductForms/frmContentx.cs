@@ -20,7 +20,7 @@ namespace Bylsan_System.ProductForms
             var q = new object();
             if (loader)
             {
-                var tragetProduct = Operation.Allproducts.Where(p => p.ProductType == "All" || p.ProductType == "Row material").ToList();
+                var tragetProduct = Operation.Allproducts.ToList();
                 var content = (GridViewMultiComboBoxColumn)radGridView1.Columns[1];
                 content.DataSource = tragetProduct;
 

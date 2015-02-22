@@ -67,17 +67,19 @@
             this.groupBox1.Controls.Add(this.TotalDebttextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(332, 256);
+            this.groupBox1.Size = new System.Drawing.Size(332, 252);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // DebetfromcomboBox
             // 
+            this.DebetfromcomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.DebetfromcomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.DebetfromcomboBox.BackColor = System.Drawing.SystemColors.Info;
             this.DebetfromcomboBox.FormattingEnabled = true;
             this.DebetfromcomboBox.Location = new System.Drawing.Point(91, 67);
             this.DebetfromcomboBox.Name = "DebetfromcomboBox";
-            this.DebetfromcomboBox.Size = new System.Drawing.Size(166, 21);
+            this.DebetfromcomboBox.Size = new System.Drawing.Size(218, 21);
             this.DebetfromcomboBox.TabIndex = 2;
             // 
             // label4
@@ -145,7 +147,7 @@
             this.RemainingtextBox.Location = new System.Drawing.Point(91, 99);
             this.RemainingtextBox.Name = "RemainingtextBox";
             this.RemainingtextBox.ReadOnly = true;
-            this.RemainingtextBox.Size = new System.Drawing.Size(125, 20);
+            this.RemainingtextBox.Size = new System.Drawing.Size(218, 20);
             this.RemainingtextBox.TabIndex = 2;
             this.RemainingtextBox.TabStop = false;
             // 
@@ -163,8 +165,9 @@
             this.PaymenttextBox.BackColor = System.Drawing.SystemColors.Info;
             this.PaymenttextBox.Location = new System.Drawing.Point(91, 41);
             this.PaymenttextBox.Name = "PaymenttextBox";
-            this.PaymenttextBox.Size = new System.Drawing.Size(125, 20);
+            this.PaymenttextBox.Size = new System.Drawing.Size(218, 20);
             this.PaymenttextBox.TabIndex = 1;
+            this.PaymenttextBox.TextChanged += new System.EventHandler(this.PaymenttextBox_TextChanged);
             // 
             // TotalDebttextBox
             // 
@@ -172,9 +175,10 @@
             this.TotalDebttextBox.Location = new System.Drawing.Point(91, 15);
             this.TotalDebttextBox.Name = "TotalDebttextBox";
             this.TotalDebttextBox.ReadOnly = true;
-            this.TotalDebttextBox.Size = new System.Drawing.Size(125, 20);
+            this.TotalDebttextBox.Size = new System.Drawing.Size(218, 20);
             this.TotalDebttextBox.TabIndex = 0;
             this.TotalDebttextBox.TabStop = false;
+            this.TotalDebttextBox.TextChanged += new System.EventHandler(this.TotalDebttextBox_TextChanged);
             // 
             // errorProvider1
             // 
@@ -201,6 +205,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Repay debt";
             this.ThemeName = "Office2010Black";
+            this.Load += new System.EventHandler(this.FrmRepaydebt_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddBtn)).EndInit();

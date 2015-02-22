@@ -6,7 +6,9 @@ using System.Windows.Forms;
 using XamaDataLayer;
 using XamaDataLayer.SellSystem;
 using System.Threading;
-
+using System.Linq;
+using System.Data.Linq;
+using XamaDataLayer.Security;
 namespace Bylsan_System.SellSystemForms
 {
     public partial class FrmManageSellIStore : Telerik.WinControls.UI.RadForm
@@ -28,7 +30,8 @@ namespace Bylsan_System.SellSystemForms
 
             Application.DoEvents();
 
-            var q = SellStoreCmd.GetAllSellStore();
+            var q = SellStoreCmd.GetAllSellStore(UserInfo.CurrnetUser.Branch_ID.Value);
+           
             Application.DoEvents();
 
             Operation.EndOperation(this);
@@ -63,7 +66,7 @@ namespace Bylsan_System.SellSystemForms
         private void SellStoreGridView_CommandCellClick(object sender, EventArgs e)
         {
             var col = SellStoreGridView.CurrentColumn.Index;
-            if (col == 3)
+            if (col == 4)
             {
                 Operation.BeginOperation(this);
                 var frm = new FrmEditSellIStore();
@@ -74,15 +77,21 @@ namespace Bylsan_System.SellSystemForms
                 frm.ShowDialog();
                 Operation.EndOperation(this);
             }
-            if (col == 4)
+            if (col == 5)
             {
                 Operation.BeginOperation(this);
 
-                SellStoreCmd.DeleteSellStore(int.Parse(SellStoreGridView.CurrentRow.Cells[0].Value.ToString()));
+                SellStoreCmd.DeleteSellStore(int.Parse(SellStoreGridView.CurrentRow.Cells[0].Value.ToString()),UserInfo.CurrnetUser.Branch_ID.Value);
                 FrmManageSellIStore_Load(sender, e);
 
                 Operation.EndOperation(this);
             }
+        }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            FrmAddSellIStore frm = new FrmAddSellIStore();
+            frm.ShowDialog();
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
@@ -28,6 +29,17 @@ namespace Bylsan_System.ProductForms
                 frm.ShowDialog();
                 LoadCategory();
             }
+            if (col==4)
+            {
+                if (RadMessageBox.Show("You Are sure?","delete",MessageBoxButtons.YesNo,RadMessageIcon.Question)==System.Windows.Forms.DialogResult.Yes)
+                {
+                    var TragetCategory = (ProductCategory)radGridView1.CurrentRow.DataBoundItem;
+                    CategoriesCmd.DeleteCategory(TragetCategory.ID);
+                    Operation.ShowToustOk("deleted ..", this);
+                    LoadCategory();
+                }
+                   
+            }
         }
 
         private void FrmManageProductCategory_Load(object sender, EventArgs e)
@@ -44,11 +56,11 @@ namespace Bylsan_System.ProductForms
                 toolStrip1.Text = "Loading ....";
             });
             Operation.BeginOperation(this);
-            radGridView1.DataSource = CategoriesCmd.GetAllCategories();
+            var q =  CategoriesCmd.GetAllCategories();
             Operation.EndOperation(this);
             statusStrip1.Invoke((MethodInvoker)delegate
             {
-
+                radGridView1.DataSource = q;
                 toolStrip1.Text = "Complete ....";
 
             });

@@ -33,7 +33,7 @@ namespace Bylsan_System.MainStoreForms
             });
 
 
-            var q = ItemsCmd.GetAllItems();
+            var q = Operation.Allproducts;
             this.Invoke((MethodInvoker)delegate
             {
                 ItemComboBox.DataSource = q;
@@ -148,7 +148,7 @@ namespace Bylsan_System.MainStoreForms
             var th = new Thread(fillCombo);
             th.Start();
             XDrawalID = TregatDrawal.ID;
-            ItemComboBox.Text = TregatDrawal.Item.ItemName;
+            ItemComboBox.Text = TregatDrawal.Product.Product_Name;
             StoreComboBox.Text = TregatDrawal.Store.ProductID.ToString();
             qtyTextBox.Text = TregatDrawal.Qty.ToString();
             commentTextBox.Text = TregatDrawal.Comment;

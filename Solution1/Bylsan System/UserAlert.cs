@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using Telerik.WinControls.UI;
 using XamaDataLayer;
 using XamaDataLayer.MailServer;
+using XamaDataLayer.Security;
 using Xprema.XExtention;
 
 namespace Bylsan_System
@@ -35,6 +36,8 @@ namespace Bylsan_System
             AlertTimer.Tick += AlertTimer_Tick;
             AlertTimer.Start();
         }
+
+        int counter = 0;
         private void AlertTimer_Tick(object sender, EventArgs e)
         {
             try
@@ -57,20 +60,29 @@ namespace Bylsan_System
                
             }
            
-
-            var db = new DbDataContext();
-            foreach (var item in db.Stores)
+            if (counter==900)
             {
-                if (item.AvailableQty <= db.ProductMinimummQties.Where(p => p.ID == item.ProductID).Single().MinimumQty.ToInt())
+
+           
+                DbDataContext db = new DbDataContext();
+                foreach (var item in db.Stores)
                 {
-                    Alert = new RadDesktopAlert();
-                    Alert.AutoCloseDelay = 3;
-                    Alert.CaptionText = "Minimum stock Qty";
-                    Alert.ContentText = string .Format("the item {0} now Qty is {1} \n that means its very low.",item.Product.Product_Name,item.AvailableQty.ToString());
-                    Alert.Show();
-                    
+                    if (item.AvailableQty <= db.ProductMinimummQties.Where(p => p.ID == item.ProductID).Single().MinimumQty.ToInt())
+                    {
+                        Alert = new RadDesktopAlert();
+                        Alert.AutoCloseDelay = 3;
+                        Alert.CaptionText = "Minimum stock Qty";
+                        Alert.ContentText = string.Format("the item {0} now Qty is {1} \n that means its very low.", item.Product.Product_Name, item.AvailableQty.ToString());
+                        Alert.Show();
+
+                    }
                 }
+                counter=0;
             }
+            counter++;
+        } 
+           
         }
-    }
+        
+   
 }

@@ -24,6 +24,7 @@ using XamaDataLayer.BranchCmd;
 using XamaDataLayer.SellSystem;
 using Telerik.WinControls.UI;
 using Bylsan_System.ManagmentOrderForms;
+using XamaDataLayer.Accountant;
 
 namespace Bylsan_System
 {
@@ -37,7 +38,28 @@ namespace Bylsan_System
             storeBtn.Click += storeBtn_Click;
             btnHistory.Click += btnHistory_Click;
             btnEditOrder.Click += btnEditOrder_Click;
+            txtTransfer.Click += txtTransfer_Click;
+            btnReturnBill.Click += btnReturnBill_Click;
+            btnBranchStore.Click += btnBranchStore_Click;
             
+        }
+
+        void btnBranchStore_Click(object sender, EventArgs e)
+        {
+            FrmManageSellIStore frm = new FrmManageSellIStore();
+            frm.ShowDialog();
+        }
+
+        void btnReturnBill_Click(object sender, EventArgs e)
+        {
+            frmReturnBill frm = new frmReturnBill();
+            frm.ShowDialog();
+        }
+
+        void txtTransfer_Click(object sender, EventArgs e)
+        {
+            frmTransferItems frm = new frmTransferItems();
+            frm.ShowDialog();
         }
 
         void btnEditOrder_Click(object sender, EventArgs e)
@@ -63,9 +85,10 @@ namespace Bylsan_System
             Operation.Allcategorys = CategoriesCmd.GetAllCategories();
             Operation.Allproducts = ProductsCmd.GetAllProducts();
             Operation.AllBranches = BranchsCmd.GetAllBranchs();
-            Operation.AllSellItems = SellItemsCmd.GetAllSellItems();
+           // Operation.AllSellItems = SellItemsCmd.GetAllSellItems();
             Operation.AllOrder = OrdersCmd.GetAllOrders();
             Operation.AllCustomer = CustomersCmd.GetAllCustmers();
+            Operation.AllDebetor = DebtorsCmd.GetAllDebtors();
         }
         private void ActivatePermessions()
         {
@@ -218,7 +241,7 @@ namespace Bylsan_System
 
         private void storeManagerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new FrmManageMainStore_Store();
+            var frm = new FrmManageMainStore_StoreManager();
             frm.ShowDialog();
         }
 
@@ -592,6 +615,17 @@ namespace Bylsan_System
         private void radPanorama1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void OrderAndSalesGroup_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAddUser frm = new FrmAddUser();
+            frm.ShowDialog();
         }
 
        

@@ -174,7 +174,7 @@ namespace Bylsan_System.Reports.ReportCommand
                     ProductName = item.Product.PublicName,
                     Qty = item.Qty.Value,
                     ProductPrice = item.Product.ProductPrice.Value,
-                    OrderProductStatus = item.Status,
+                    OrderProductStatus = (item.Description),
                 });
             }
             rs.Name = "DataSet1";

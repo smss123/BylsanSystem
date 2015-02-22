@@ -84,7 +84,8 @@ namespace Bylsan_System.ProductForms
                     CateogryID = int.Parse(CategoryComboBox.SelectedValue.ToString()),
                      ProductPrice = txtprice.Text.Todouble(),
                      PublicName = publicNameTextBox.Text,
-                      ProductUnit = productUnitTextBox.Text
+                    ProductUnit = productUnitTextBox.Text,
+                    ProductType = ItemTypecomboBox.Text
                 };
             });
 

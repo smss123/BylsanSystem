@@ -45,5 +45,11 @@ namespace Bylsan_System.MainStoreForms
         private void StoreWithDrawalGridView_CommandCellClick(object sender, EventArgs e)
         {
         }
+
+        private void Addbtn_Click(object sender, EventArgs e)
+        {
+            FrmAddMainStore_StoreWithDrawal frm = new FrmAddMainStore_StoreWithDrawal();
+            frm.ShowDialog();
+        }
     }
 }

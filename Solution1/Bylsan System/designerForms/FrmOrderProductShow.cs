@@ -82,7 +82,7 @@ namespace Bylsan_System.designerForms
                         TxtDescription.Text = item.Description;
                         PhotoBox.Image = item.imageX;
 
-                        imageList1.Images.Add(item.imageX);
+                        imageList1.Images.Add(string.Format("Description=[{0}]\n\n Customer=[{1}]", item.Description,item.CustomerText),item.imageX);
 
                         IDImageAddress = item.ID;
 
@@ -120,6 +120,8 @@ namespace Bylsan_System.designerForms
                 {
                     PhotoBox.Image = null;
                     PhotoBox.Image = ListPictures[i];
+                    TxtDescription.Text = imageList1.Images.Keys[i];
+                    
                     i++;
                 }
                 else
@@ -138,10 +140,11 @@ namespace Bylsan_System.designerForms
         {
             var tb = new OrderProduct() { OrderID = TaregtOrder,
                 Description = TxtDescription.Text,
-                Qty = int.Parse(DGVProducts.CurrentRow.Cells[2].Value.ToString()),
+                Qty = int.Parse(DGVProducts.CurrentRow.Cells[3].Value.ToString()),
                 ProductID = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString()),
             ImageX = PhotoBox .Image  ,
-            Status = "in producting "
+            Status = "in producting ",
+            
             };
             OrderProductsCmd.EditOrderProductStatus(tb, int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString()));
 
@@ -252,6 +255,7 @@ namespace Bylsan_System.designerForms
 
         private void DGVProducts_Click(object sender, EventArgs e)
         {
+
         }
     }
 }

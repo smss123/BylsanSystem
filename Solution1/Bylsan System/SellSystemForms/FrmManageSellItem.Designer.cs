@@ -195,7 +195,7 @@
             // 
             // sellItemBindingSource
             // 
-            this.sellItemBindingSource.DataSource = typeof(XamaDataLayer.SellItem);
+          //  this.sellItemBindingSource.DataSource = typeof(XamaDataLayer.SellItem);
             // 
             // FrmManageSellItem
             // 

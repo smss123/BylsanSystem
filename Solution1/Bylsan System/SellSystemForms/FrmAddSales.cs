@@ -68,7 +68,7 @@ namespace Bylsan_System.SellSystemForms
             var stb = new SellStore()
             { ItemID = xItemID ,
                 Qty = -1, };
-            SellStoreCmd.Sales_EditQtyInSellStore(stb, xStorID );
+            SellStoreCmd.Sales_EditQtyInSellStore(stb, xStorID, UserInfo.CurrnetUser.Branch_ID.Value);
         }
         private void Okeybtn_Click(object sender, EventArgs e)
         {
@@ -77,6 +77,31 @@ namespace Bylsan_System.SellSystemForms
                 if (MessageBox.Show("The amount paid is less than the amount required \n The customer will be added in the box debts that continued operation .", string.Empty, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.Yes)
                 {
                     SaveBill();
+                    //DebtorsCmd
+
+                    if (BillCostBox.Text.Todouble() >= txtCustomerPay.Value.ToString().Todouble())
+                    {
+                       
+                        var a = Operation.AllDebetor.Where(p => p.PhoneNumber == txtCustomerPhoneNumber.Text);
+                        var debeor = new Debtor();
+
+                        if (a.Count() ==  0)
+                        {
+                            a = null;
+
+                             debeor = new Debtor()
+                            {
+                                DebtorName = txtCustomerName.Text,
+                                Addresss = "No Address Here",
+                                DebtorDescription = "no Any",
+                                PhoneNumber = txtCustomerPhoneNumber.Text,
+                            };
+                             DebtorsCmd.AddDebt(debeor);
+                        }
+                       
+                       
+
+                    }
                     MessageBox.Show("Done");
                     NewBill();
                 }
@@ -107,7 +132,7 @@ namespace Bylsan_System.SellSystemForms
                     BillTotal = BillCostBox.Text.Todouble(),
                     paytype = CmbPaymentTypes.Text,
                     CustomerID = q.ID,
-                    UserID = UserInfo.CurrentUserID
+                    UserID = UserInfo.CurrnetUser.ID
                 };
 
                 foreach (var row in DGVSellItems.Rows)
@@ -115,8 +140,9 @@ namespace Bylsan_System.SellSystemForms
                     bil.BillItems.Add(new BillItem()
                     {
 
-                        ItemID = row.Cells[0].Value.ToString().ToInt(),
-                        Qty = long.Parse(row.Cells[0].Value.ToString())
+                        ProductID = row.Cells[0].Value.ToString().ToInt(),
+                        Qty = long.Parse(row.Cells[4].Value.ToString()),
+                         Status="Done"
 
                     });
                     try
@@ -134,51 +160,74 @@ namespace Bylsan_System.SellSystemForms
                 BillsCmd.AddBill(bil);
                 try
                 {
+
+
                     AccountDailyCmd.AddAccountDaily(new AccountDaily()
                     {
-                        Account = bil.Customer.Account,
+
+
+                        AccountID = bil.Customer.AccountID,
                         DateOfProcess = DateTime.Now,
                         CommandArg = Guid.NewGuid().ToString(),
                         Description = string.Format("عبارة عن مبلغ مطلوب من فاتورة رقم{0 } ", billNumber),
                         TotalIn = 0,
-                        TotalOut = txtCustomerPay.Value.ToString().Todouble(),
+                        TotalOut = BillCostBox.Text.Todouble(),
                     });
+
                     AccountDailyCmd.AddAccountDaily(new AccountDaily()
                     {
-                        Account = bil.Customer.Account,
+
+
+                        AccountID = bil.Customer.AccountID,
+                        DateOfProcess = DateTime.Now,
+                        CommandArg = Guid.NewGuid().ToString(),
+                        Description = string.Format("مبلغ مدفوع من العميل مقابل شراء {0 } ", billNumber),
+                        TotalIn = txtCustomerPay.Value.ToString().Todouble(),
+                        TotalOut = 0D,
+                    });
+
+                   
+                    AccountDailyCmd.AddAccountDaily(new AccountDaily()
+                    {
+                        AccountID =UserInfo.CurrnetUser.Branch.AccountID ,
                         DateOfProcess = DateTime.Now,
                         CommandArg = Guid.NewGuid().ToString(),
                         Description = string.Format("عبارة عن مبلغ مطلوب من فاتورة رقم{0 } ", billNumber),
                         TotalIn = txtCustomerPay.Value.ToString().Todouble(),
                         TotalOut = 0,
                     });
-                    AccountDailyCmd.AddAccountDaily(new AccountDaily()
-                    {
-                        AccountID = 10,
-                        DateOfProcess = DateTime.Now,
-                        CommandArg = Guid.NewGuid().ToString(),
-                        Description = "مبلغ مودع من فاتورة",
-                        TotalIn = txtCustomerPay.Value.ToString().Todouble(),
-                        TotalOut = 0,
-                    });
+                    cmd.PrintBill(ls);
+                   
                 }
                 catch (System.NullReferenceException ex)
                 {
+                //    AccountDailyCmd.AddAccountDaily(new AccountDaily()
+                //    {
+                //        AccountID = UserInfo.CurrnetUser.Branch.AccountID,
+                //        DateOfProcess = DateTime.Now,
+                //        CommandArg = Guid.NewGuid().ToString(),
+                //        Description = "مبلغ مودع من فاتورة",
+                //        TotalIn = txtCustomerPay.Value.ToString().Todouble(),
+                //        TotalOut = 0,
+                //    });
+                //}
+                //foreach (var row in DGVSellItems.Rows)
+                //{
+                //    ls.Add(new RptBillObj()
+                //    {
+                //        BillDate = bil.BillDate,
+                //        ItemName = row.Cells[1].Value.ToString(),
+                //        Qty = row.Cells[4].Value.ToString(),
+                //        ID = bil.BillNumber.ToInt(),
+                //        Amount = row.Cells[3].Value.ToString().Todouble() * row.Cells[4].Value.ToString().Todouble(),
+                //        User = UserInfo.CurrnetUser.UserName,
+                //        Total = bil.BillTotal,
+                //    });
+                //}
+                //cmd.PrintBill(ls);
+                    MessageBox.Show("No Customer found to Add To Debet");
+                    return ;
                 }
-                foreach (var row in DGVSellItems.Rows)
-                {
-                    ls.Add(new RptBillObj()
-                    {
-                        BillDate = bil.BillDate,
-                        ItemName = row.Cells[1].Value.ToString(),
-                        Qty = row.Cells[4].Value.ToString(),
-                        ID = bil.BillNumber.ToInt(),
-                        Amount = row.Cells[3].Value.ToString().Todouble() * row.Cells[4].Value.ToString().Todouble(),
-                        User = UserInfo.CurrnetUser.UserName,
-                        Total = bil.BillTotal,
-                    });
-                }
-                cmd.PrintBill(ls);
             }
             catch (Exception)
             {
@@ -208,8 +257,8 @@ namespace Bylsan_System.SellSystemForms
                     bil.BillItems.Add(new BillItem()
                     {
 
-                        ItemID = row.Cells[0].Value.ToString().ToInt(),
-                        Qty = long.Parse(row.Cells[0].Value.ToString())
+                        ProductID = row.Cells[0].Value.ToString().ToInt(),
+                        Qty = long.Parse(row.Cells[4].Value.ToString())
 
                     });
                     try
@@ -374,7 +423,7 @@ namespace Bylsan_System.SellSystemForms
             {
                 Operation.BeginOperation(this);
 
-                var   GetItemPrice  =  SellItemsCmd .GetSellItemByID(int .Parse (DGVSellItems .CurrentRow .Cells [0].Value.ToString ()) )[0].ItemPrice ;
+                var GetItemPrice = 0;// SellItemsCmd .GetSellItemByID(int .Parse (DGVSellItems .CurrentRow .Cells [0].Value.ToString ()) )[0].ItemPrice ;
 
                 DGVSellItems.CurrentRow.Cells[4].Value = int.Parse(DGVSellItems.CurrentRow.Cells[4].Value.ToString()) - 1;
                 DGVSellItems.CurrentRow.Cells[3].Value = int.Parse(DGVSellItems.CurrentRow.Cells[3].Value.ToString()) - GetItemPrice ;
@@ -496,6 +545,24 @@ namespace Bylsan_System.SellSystemForms
 
                 RadMessageBox.ThemeName = this.ThemeName;
                 RadMessageBox.Show("Item Not Found");
+            }
+        }
+
+        private void txtCustomerPhoneNumber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    var q = Operation.AllCustomer.Where(p => p.PhoneNumber == txtCustomerPhoneNumber.Text).Take(1).Single();
+                    txtCustomerName.Text = q.CustomerName;
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Noy Found");
+                }
+              
             }
         }
     }

@@ -44,6 +44,7 @@
             this.addBranchBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.ManagementBranchBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.deliveryOrderBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtTransfer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.ProductDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.addProductCategoryBtn = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,6 +66,8 @@
             this.SettingstoolStrip = new System.Windows.Forms.ToolStripSplitButton();
             this.printersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnHistory = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnEditOrder = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnReturnBill = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
@@ -80,8 +83,8 @@
             this.PrintQuotationBtn = new Telerik.WinControls.UI.RadTileElement();
             this.DesignerOrderBtn = new Telerik.WinControls.UI.RadTileElement();
             this.SalesTileElement = new Telerik.WinControls.UI.RadTileElement();
+            this.btnBranchStore = new Telerik.WinControls.UI.RadTileElement();
             this.tileGroupElement1 = new Telerik.WinControls.UI.TileGroupElement();
-            this.itemsBtn = new Telerik.WinControls.UI.RadTileElement();
             this.storeBtn = new Telerik.WinControls.UI.RadTileElement();
             this.WithDrawalBtn = new Telerik.WinControls.UI.RadTileElement();
             this.SupplierTileElement = new Telerik.WinControls.UI.RadTileElement();
@@ -96,7 +99,6 @@
             this.expensesBtn = new Telerik.WinControls.UI.RadTileElement();
             this.ellipseShape1 = new Telerik.WinControls.EllipseShape();
             this.mediaShape1 = new Telerik.WinControls.Tests.MediaShape();
-            this.btnEditOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).BeginInit();
@@ -123,7 +125,7 @@
             this.SettingstoolStrip});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1366, 58);
+            this.toolStrip1.Size = new System.Drawing.Size(1480, 58);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -146,6 +148,7 @@
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
             this.addUserToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.addUserToolStripMenuItem.Text = "Add User";
+            this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // UserManagementBtn
             // 
@@ -204,7 +207,8 @@
             this.BranchDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addBranchBtn,
             this.ManagementBranchBtn,
-            this.deliveryOrderBtn});
+            this.deliveryOrderBtn,
+            this.txtTransfer});
             this.BranchDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("BranchDropDownButton.Image")));
             this.BranchDropDownButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.BranchDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -215,23 +219,29 @@
             // addBranchBtn
             // 
             this.addBranchBtn.Name = "addBranchBtn";
-            this.addBranchBtn.Size = new System.Drawing.Size(188, 22);
+            this.addBranchBtn.Size = new System.Drawing.Size(201, 22);
             this.addBranchBtn.Text = "Add Branch";
             this.addBranchBtn.Click += new System.EventHandler(this.addBranchBtn_Click);
             // 
             // ManagementBranchBtn
             // 
             this.ManagementBranchBtn.Name = "ManagementBranchBtn";
-            this.ManagementBranchBtn.Size = new System.Drawing.Size(188, 22);
+            this.ManagementBranchBtn.Size = new System.Drawing.Size(201, 22);
             this.ManagementBranchBtn.Text = " Branch Management";
             this.ManagementBranchBtn.Click += new System.EventHandler(this.ManagementBranchBtn_Click);
             // 
             // deliveryOrderBtn
             // 
             this.deliveryOrderBtn.Name = "deliveryOrderBtn";
-            this.deliveryOrderBtn.Size = new System.Drawing.Size(188, 22);
+            this.deliveryOrderBtn.Size = new System.Drawing.Size(201, 22);
             this.deliveryOrderBtn.Text = "Delivery Order";
             this.deliveryOrderBtn.Click += new System.EventHandler(this.deliveryOrderBtn_Click);
+            // 
+            // txtTransfer
+            // 
+            this.txtTransfer.Name = "txtTransfer";
+            this.txtTransfer.Size = new System.Drawing.Size(201, 22);
+            this.txtTransfer.Text = "Transfer item To Branch";
             // 
             // toolStripSeparator4
             // 
@@ -374,7 +384,8 @@
             this.SettingstoolStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.printersToolStripMenuItem,
             this.btnHistory,
-            this.btnEditOrder});
+            this.btnEditOrder,
+            this.btnReturnBill});
             this.SettingstoolStrip.Image = ((System.Drawing.Image)(resources.GetObject("SettingstoolStrip.Image")));
             this.SettingstoolStrip.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.SettingstoolStrip.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -385,21 +396,33 @@
             // printersToolStripMenuItem
             // 
             this.printersToolStripMenuItem.Name = "printersToolStripMenuItem";
-            this.printersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.printersToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.printersToolStripMenuItem.Text = "Printers";
             this.printersToolStripMenuItem.Click += new System.EventHandler(this.printersToolStripMenuItem_Click);
             // 
             // btnHistory
             // 
             this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(152, 22);
+            this.btnHistory.Size = new System.Drawing.Size(128, 22);
             this.btnHistory.Text = "History";
+            // 
+            // btnEditOrder
+            // 
+            this.btnEditOrder.Name = "btnEditOrder";
+            this.btnEditOrder.Size = new System.Drawing.Size(128, 22);
+            this.btnEditOrder.Text = "Edit Order";
+            // 
+            // btnReturnBill
+            // 
+            this.btnReturnBill.Name = "btnReturnBill";
+            this.btnReturnBill.Size = new System.Drawing.Size(128, 22);
+            this.btnReturnBill.Text = "Return Bill";
             // 
             // statusStrip1
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 682);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1366, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1480, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -418,6 +441,7 @@
             // 
             // radPanorama1
             // 
+            this.radPanorama1.ContextMenuStrip = this.contextMenuStrip1;
             this.radPanorama1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radPanorama1.Groups.AddRange(new Telerik.WinControls.RadItem[] {
             this.OrderAndSalesGroup,
@@ -427,7 +451,7 @@
             this.radPanorama1.Name = "radPanorama1";
             this.radPanorama1.RowsCount = 5;
             this.radPanorama1.ShowGroups = true;
-            this.radPanorama1.Size = new System.Drawing.Size(1366, 624);
+            this.radPanorama1.Size = new System.Drawing.Size(1480, 624);
             this.radPanorama1.TabIndex = 4;
             this.radPanorama1.Text = "radPanorama1";
             this.radPanorama1.ThemeName = "Office2010Black";
@@ -446,10 +470,12 @@
             this.SellItemsTileElement,
             this.PrintQuotationBtn,
             this.DesignerOrderBtn,
-            this.SalesTileElement});
+            this.SalesTileElement,
+            this.btnBranchStore});
             this.OrderAndSalesGroup.Name = "OrderAndSalesGroup";
             this.OrderAndSalesGroup.RowsCount = 3;
             this.OrderAndSalesGroup.Text = "Order And Sales";
+            this.OrderAndSalesGroup.Click += new System.EventHandler(this.OrderAndSalesGroup_Click);
             // 
             // NewOrderBtn
             // 
@@ -560,35 +586,32 @@
             this.SalesTileElement.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.SalesTileElement.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
             // 
+            // btnBranchStore
+            // 
+            this.btnBranchStore.AccessibleDescription = "Branch Store";
+            this.btnBranchStore.AccessibleName = "Branch Store";
+            this.btnBranchStore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(141)))), ((int)(((byte)(202)))));
+            this.btnBranchStore.BackgroundImage = global::Bylsan_System.Properties.Resources.Blue;
+            this.btnBranchStore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBranchStore.Column = 2;
+            this.btnBranchStore.Name = "btnBranchStore";
+            this.btnBranchStore.Row = 1;
+            this.btnBranchStore.Text = "Branch Store";
+            // 
             // tileGroupElement1
             // 
             this.tileGroupElement1.AccessibleDescription = "tileGroupElement1";
             this.tileGroupElement1.AccessibleName = "tileGroupElement1";
             this.tileGroupElement1.CellSize = new System.Drawing.Size(170, 170);
             this.tileGroupElement1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.itemsBtn,
-            this.storeBtn,
             this.WithDrawalBtn,
             this.SupplierTileElement,
-            this.storeManagerBtn});
+            this.storeManagerBtn,
+            this.storeBtn});
             this.tileGroupElement1.Name = "tileGroupElement1";
             this.tileGroupElement1.RowsCount = 2;
             this.tileGroupElement1.Shape = this.roundRectShape1;
             this.tileGroupElement1.Text = "Main Store";
-            // 
-            // itemsBtn
-            // 
-            this.itemsBtn.AccessibleDescription = "Items";
-            this.itemsBtn.AccessibleName = "Items";
-            this.itemsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(179)))), ((int)(((byte)(11)))));
-            this.itemsBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("itemsBtn.BackgroundImage")));
-            this.itemsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.itemsBtn.Image = ((System.Drawing.Image)(resources.GetObject("itemsBtn.Image")));
-            this.itemsBtn.Name = "itemsBtn";
-            this.itemsBtn.Text = "Items";
-            this.itemsBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.itemsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.itemsBtn.Click += new System.EventHandler(this.itemsBtn_Click);
             // 
             // storeBtn
             // 
@@ -761,18 +784,12 @@
             this.expensesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.expensesBtn.Click += new System.EventHandler(this.expensesBtn_Click);
             // 
-            // btnEditOrder
-            // 
-            this.btnEditOrder.Name = "btnEditOrder";
-            this.btnEditOrder.Size = new System.Drawing.Size(152, 22);
-            this.btnEditOrder.Text = "Edit Order";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1366, 704);
+            this.ClientSize = new System.Drawing.Size(1480, 704);
             this.Controls.Add(this.radPanorama1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
@@ -843,7 +860,6 @@
         private Telerik.WinControls.UI.RadTileElement DesignerOrderBtn;
         private Telerik.WinControls.UI.RadTileElement SalesTileElement;
         private Telerik.WinControls.UI.TileGroupElement tileGroupElement1;
-        private Telerik.WinControls.UI.RadTileElement itemsBtn;
         private Telerik.WinControls.UI.RadTileElement storeBtn;
         private Telerik.WinControls.UI.RadTileElement WithDrawalBtn;
         private Telerik.WinControls.UI.RadTileElement SupplierTileElement;
@@ -867,5 +883,8 @@
         private Telerik.WinControls.Tests.MediaShape mediaShape1;
         private System.Windows.Forms.ToolStripMenuItem btnHistory;
         private System.Windows.Forms.ToolStripMenuItem btnEditOrder;
+        private System.Windows.Forms.ToolStripMenuItem txtTransfer;
+        private System.Windows.Forms.ToolStripMenuItem btnReturnBill;
+        private Telerik.WinControls.UI.RadTileElement btnBranchStore;
     }
 }

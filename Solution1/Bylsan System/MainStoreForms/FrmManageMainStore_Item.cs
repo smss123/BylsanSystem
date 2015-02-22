@@ -36,7 +36,7 @@ namespace Bylsan_System.MainStoreForms
                 lblStatus.Text = "Loading Item ..";
             });
             Operation.BeginOperation(this);
-            var q = ItemsCmd.GetAllItems();
+            var q = Operation.Allproducts;
             this.Invoke((MethodInvoker)delegate
             {
                 DGVItems.DataSource = q;
@@ -60,7 +60,7 @@ namespace Bylsan_System.MainStoreForms
             if (col == 4)
             {
                 var frm = new FrmEditMainStore_Item();
-                frm.TragetItem = (Item)DGVItems.CurrentRow.DataBoundItem;
+                frm.TragetItem = (Product)DGVItems.CurrentRow.DataBoundItem;
                 frm.ShowDialog();
                 FrmManageMainStore_Item_Load(null, null);
             }
@@ -70,7 +70,7 @@ namespace Bylsan_System.MainStoreForms
                 if (RadMessageBox.Show(this, "Do you want to delete", "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
                     Operation.BeginOperation(this);
-                    ItemsCmd.DeleteItemAt(int .Parse ( DGVItems .CurrentRow .Cells [0].Value .ToString ()));
+                    //ItemsCmd.DeleteItemAt(int .Parse ( DGVItems .CurrentRow .Cells [0].Value .ToString ()));
                     Operation.EndOperation(this);
                 }
             }

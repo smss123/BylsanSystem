@@ -155,8 +155,9 @@ namespace Bylsan_System.FactoryForms
                     broom();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -181,7 +182,7 @@ namespace Bylsan_System.FactoryForms
         {
             try
             {
-                var AllItems = ItemsCmd.GetAllItemsMaterial();
+                var AllItems = Operation.Allproducts;
                 itmID = 0;
                 itmID = (from i in AllItems.ToList()
                           select i.ID).Single();

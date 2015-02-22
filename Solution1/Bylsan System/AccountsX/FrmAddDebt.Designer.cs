@@ -68,7 +68,7 @@
             this.groupBox1.Controls.Add(this.TotalDebttextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(302, 251);
+            this.groupBox1.Size = new System.Drawing.Size(302, 255);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -79,7 +79,7 @@
             this.DebetfromcomboBox.ItemHeight = 13;
             this.DebetfromcomboBox.Location = new System.Drawing.Point(104, 82);
             this.DebetfromcomboBox.Name = "DebetfromcomboBox";
-            this.DebetfromcomboBox.Size = new System.Drawing.Size(126, 21);
+            this.DebetfromcomboBox.Size = new System.Drawing.Size(174, 21);
             this.DebetfromcomboBox.TabIndex = 14;
             // 
             // label3
@@ -157,7 +157,7 @@
             this.TotaltextBox.Location = new System.Drawing.Point(104, 111);
             this.TotaltextBox.Name = "TotaltextBox";
             this.TotaltextBox.ReadOnly = true;
-            this.TotaltextBox.Size = new System.Drawing.Size(109, 20);
+            this.TotaltextBox.Size = new System.Drawing.Size(174, 20);
             this.TotaltextBox.TabIndex = 2;
             this.TotaltextBox.TabStop = false;
             // 
@@ -166,7 +166,7 @@
             this.AmountofDebttextBox.BackColor = System.Drawing.SystemColors.Info;
             this.AmountofDebttextBox.Location = new System.Drawing.Point(104, 56);
             this.AmountofDebttextBox.Name = "AmountofDebttextBox";
-            this.AmountofDebttextBox.Size = new System.Drawing.Size(109, 20);
+            this.AmountofDebttextBox.Size = new System.Drawing.Size(174, 20);
             this.AmountofDebttextBox.TabIndex = 0;
             // 
             // TotalDebttextBox
@@ -175,7 +175,7 @@
             this.TotalDebttextBox.Location = new System.Drawing.Point(104, 30);
             this.TotalDebttextBox.Name = "TotalDebttextBox";
             this.TotalDebttextBox.ReadOnly = true;
-            this.TotalDebttextBox.Size = new System.Drawing.Size(109, 20);
+            this.TotalDebttextBox.Size = new System.Drawing.Size(174, 20);
             this.TotalDebttextBox.TabIndex = 0;
             this.TotalDebttextBox.TabStop = false;
             // 

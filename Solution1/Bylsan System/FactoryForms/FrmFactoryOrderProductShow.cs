@@ -73,7 +73,7 @@ namespace Bylsan_System.FactoryForms
 
             var lst1 = OrderProductsCmd.GetAllByProductID(PrdID);
 
-            var CurrentProduct  =    ProductsCmd.GetProductByID(PrdID);
+            var CurrentProduct = Operation.Allproducts.Where(p => p.ID == PrdID).ToList();
             this.Invoke((MethodInvoker)delegate
             {
                 TxtDescription.Text = lst1[0].Description;
@@ -124,8 +124,10 @@ namespace Bylsan_System.FactoryForms
         {
             var OrderTb = new Order();
 
+
             for (var i = 0; i < DGVProducts.Rows.Count; i++)
             {
+                CreateContents(i);
                 var chkchecking = DGVProducts.Rows[i].Cells[4] as DataGridViewCheckBoxCell;
                 if (Convert.ToBoolean(chkchecking.Value) == true)
                 {
@@ -140,32 +142,45 @@ namespace Bylsan_System.FactoryForms
                 };
 
                 OrdersCmd.EditOrderStatusOnly(OrderTb, TaregtOrder);
+
+               
+                
+
             }
+          
         }
 
 
-        private void CreateContents()
+        private void CreateContents(int row)
         {
             DGVContents.DataSource = null;
-            var xproid = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString());
+            var xproid = int.Parse(DGVProducts.Rows[row].Cells[1].Value.ToString());
             var lst  = ProductContentsCmd.GetAllProductConentsByProductID(xproid);
             DGVContents.Rows.Clear();
             foreach (var item in lst)
             {
-                DGVContents.Rows.Add(new string[] { item .ID .ToString (),
-                item .ContentsProductID .ToString (),
-                item .Qty .ToString (),
-                item .unitOfProduct .ToString ()
-                });
+                try
+                {
+                    DGVContents.Rows.Add(new string[] { item .ID .ToString (),
+                    item .ContentsProductID .ToString (),
+                    item .Qty .ToString (),
+                    item .unitOfProduct .ToString ()
+                    });
 
 
-                float AvailQty = 0;
-                var TargetStore = StoreCmd.GetAvailableQtyByItemID(item.ID);
-                AvailQty = TargetStore.AvailableQty.Value;
-                TargetStore.ProductID = item.ID;
-                TargetStore.AvailableQty -= (long)(item.Qty.ToString () ).ToFloat();
-                TargetStore.Description = "Drawal";
-                StoreCmd.EditStore(TargetStore);
+                    float AvailQty = 0;
+                    var TargetStore = StoreCmd.GetAvailableQtyByItemID(item.ContentsProductID.Value);
+                    AvailQty = TargetStore.AvailableQty.Value;
+                    TargetStore.ProductID = item.ID;
+                    TargetStore.AvailableQty =  TargetStore.AvailableQty -(long)(item.Qty.ToString()).ToFloat();
+                    TargetStore.Description = "Drawal";
+                    StoreCmd.EditStore(TargetStore);
+                    StoreManagerCmd.AddStoreManager(new StoreManager() { DateOfProcess = DateTime.Now, Description="Rol from Factory to Order issue", Price=0, ProcessType="Roll Out", QtyInOrOut=(long)(item.Qty.ToString()).ToFloat(), StoreID = TargetStore.ID });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
         private void DGVProducts_MouseDoubleClick_1(object sender, MouseEventArgs e)
@@ -177,7 +192,7 @@ namespace Bylsan_System.FactoryForms
                 productThread = new Thread(LoadProdcutInformations);
                 productThread.Start();
 
-                CreateContents();
+            //    CreateContents();
             }
         }
     }

@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using XamaDataLayer;
-using XamaDataLayer.SellSystem;
-using System.Threading;
 using XamaDataLayer.Security;
+using XamaDataLayer.SellSystem;
+using Xprema.XExtention;
 
 namespace Bylsan_System.SellSystemForms
 {
@@ -15,7 +15,7 @@ namespace Bylsan_System.SellSystemForms
         {
             InitializeComponent();
         }
-        public SellItem TargetItem { get; set; }
+        public Product TargetItem { get; set; }
 
         private void FillItemsCombo()
         {
@@ -25,15 +25,16 @@ namespace Bylsan_System.SellSystemForms
 
                 ItemComboBox.MultiColumnComboBoxElement.DropDownWidth = 550;
                 ItemComboBox.AutoFilter = true;
-                ItemComboBox.DisplayMember = "ItemName";
-                ItemComboBox.ValueMember = "ID";
+                //ItemComboBox.DisplayMember = "ItemName";
+                //ItemComboBox.ValueMember = "ID";
             });
 
-            var q = SellItemsCmd.GetAllSellItems();
+           // var q = Operation.GetAllSellItems();
+            var q = Operation.Allproducts;
             this.Invoke((MethodInvoker)delegate
             {
 
-                ItemComboBox.DataSource = q;
+                ItemComboBox.DataSource = q;// q;
             });
             Operation.EndOperation(this);
         }
@@ -72,13 +73,13 @@ namespace Bylsan_System.SellSystemForms
             try
             {
                 Operation.BeginOperation(this);
-                var ChekStore = SellStoreCmd.GetSellStoreByItemID(int.Parse(ItemComboBox.SelectedValue.ToString()));
-
-                var Oldtb = new SellStore()
-                { ItemID = int.Parse(ItemComboBox.SelectedValue.ToString()),
+                var chekStore = SellStoreCmd.GetSellStoreByItemID(int.Parse(ItemComboBox.SelectedValue.ToString()), UserInfo.CurrnetUser.Branch_ID.ToString().ToInt());
+                var oldtb = new SellStore()
+                { 
+                    ItemID = int.Parse(ItemComboBox.SelectedValue.ToString()),
                     Qty = int.Parse(qtyTextBox.Text),
                     branchID = UserInfo.CurrnetUser .Branch_ID };
-                SellStoreCmd.EditQtyInSellStore(Oldtb, ChekStore.ID);
+                SellStoreCmd.EditQtyInSellStore(oldtb, chekStore.ID, UserInfo.CurrnetUser.Branch_ID.Value);
 
 
                 WriteStore();
@@ -115,13 +116,15 @@ namespace Bylsan_System.SellSystemForms
 
         private void WriteStore()
         {
-            var xSellStore = SellStoreCmd.GetSellStoreByItemID(int.Parse(ItemComboBox.SelectedValue.ToString()));
+            //int.Parse(ItemComboBox.SelectedValue.ToString()), UserInfo.CurrnetUser.Branch_ID.ToString().ToInt()
+            var xSellStore = SellStoreCmd.GetSellStoreByItemID(int.Parse(ItemComboBox.SelectedValue.ToString()), UserInfo.CurrnetUser.Branch_ID.ToString().ToInt());
             var OptrTb = new StoreOperationManager()
-            { StoreID = xSellStore.ID,
+            { 
+                StoreID = xSellStore.ID,
                 ProcessType = "Deposit",
                 ProcessDate = DateTime.Now,
                 Qty =  int.Parse(qtyTextBox.Text),
-                UserID = XamaDataLayer.Security.UserInfo.CurrentUserID
+                UserID = XamaDataLayer.Security.UserInfo.CurrnetUser.ID.ToString().ToInt()
             };
             StoreOperationManagerCmd.AddStoreOperationManager(OptrTb);
         }
