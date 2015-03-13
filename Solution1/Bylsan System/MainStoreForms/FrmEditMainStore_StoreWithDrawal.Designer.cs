@@ -60,7 +60,7 @@
             // storeIDLabel
             // 
             storeIDLabel.AutoSize = true;
-            storeIDLabel.Location = new System.Drawing.Point(24, 125);
+            storeIDLabel.Location = new System.Drawing.Point(24, 129);
             storeIDLabel.Name = "storeIDLabel";
             storeIDLabel.Size = new System.Drawing.Size(51, 13);
             storeIDLabel.TabIndex = 17;
@@ -87,7 +87,7 @@
             // itemNameLabel
             // 
             itemNameLabel.AutoSize = true;
-            itemNameLabel.Location = new System.Drawing.Point(13, 23);
+            itemNameLabel.Location = new System.Drawing.Point(13, 26);
             itemNameLabel.Name = "itemNameLabel";
             itemNameLabel.Size = new System.Drawing.Size(64, 13);
             itemNameLabel.TabIndex = 12;
@@ -109,7 +109,7 @@
             this.groupBox1.Controls.Add(itemNameLabel);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(337, 227);
+            this.groupBox1.Size = new System.Drawing.Size(337, 240);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 

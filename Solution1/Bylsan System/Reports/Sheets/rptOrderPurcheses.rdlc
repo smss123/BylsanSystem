@@ -1,5 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="Bylsan_SystemReportsReportsObject">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>c74c29ac-1f75-4302-976b-af1a66d12e02</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="OrderDate">
+          <DataField>OrderDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Product">
+          <DataField>Product</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Qty">
+          <DataField>Qty</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Supplaier">
+          <DataField>Supplaier</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Unit">
+          <DataField>Unit</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>Bylsan_SystemReportsReportsObject</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Bylsan_System.Reports.ReportsObject</rd:DataSetName>
+        <rd:TableName>OrderPurchesesObj</rd:TableName>
+        <rd:ObjectDataSourceType>Bylsan_System.Reports.ReportsObject.OrderPurchesesObj, Bylsan System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <Body>
     <ReportItems>
       <Textbox Name="ID">
@@ -9,7 +57,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!ID.Value, "DataSet1")</Value>
+                <Value>=First(Fields!ID.Value, "DataSet1")</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -210,18 +258,18 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>6.01171cm</Width>
+              <Width>2.36681in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.01171cm</Width>
+              <Width>2.36681in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.01171cm</Width>
+              <Width>2.36681in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.23622in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -328,7 +376,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.23622in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -580,55 +628,6 @@
     <ColumnSpacing>1.27cm</ColumnSpacing>
     <Style />
   </Page>
-  <AutoRefresh>0</AutoRefresh>
-  <DataSources>
-    <DataSource Name="Bylsan_SystemReportsReportsObject">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>c74c29ac-1f75-4302-976b-af1a66d12e02</rd:DataSourceID>
-    </DataSource>
-  </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet1">
-      <Query>
-        <DataSourceName>Bylsan_SystemReportsReportsObject</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="OrderDate">
-          <DataField>OrderDate</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Product">
-          <DataField>Product</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Qty">
-          <DataField>Qty</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Supplaier">
-          <DataField>Supplaier</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Unit">
-          <DataField>Unit</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>Bylsan_System.Reports.ReportsObject</rd:DataSetName>
-        <rd:TableName>OrderPurchesesObj</rd:TableName>
-        <rd:ObjectDataSourceType>Bylsan_System.Reports.ReportsObject.OrderPurchesesObj, Bylsan System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
-    </DataSet>
-  </DataSets>
   <EmbeddedImages>
     <EmbeddedImage Name="BaylasanFinalLogo">
       <MIMEType>image/jpeg</MIMEType>
@@ -719,6 +718,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADlLu12XsDBsCPHda6vyjY+T7ErsjxyK9j1XY20b
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//Z</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
-  <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>3ce38463-fa4f-4d5a-b21b-19a097f7e187</rd:ReportID>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
 </Report>

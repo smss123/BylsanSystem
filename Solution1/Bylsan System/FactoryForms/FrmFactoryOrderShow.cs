@@ -30,10 +30,9 @@ namespace Bylsan_System.FactoryForms
             Operation.BeginOperation(this);
 
             var q  = new object ();
-            using ( var cmd = new FactoryZoon ())
-            {
-                q  = cmd.GetAllInProducting();
-            }
+            
+                q = Operation.AllOrder.Where(o => o.OrderStatus == "in producting " || o.OrderStatus == "In Designer").ToList(); //cmd.GetAllInProducting();
+          
 
             this.Invoke((MethodInvoker)delegate
             {
@@ -59,6 +58,14 @@ namespace Bylsan_System.FactoryForms
                     cellPlaceHolder.DrawFill = true;
                     cellPlaceHolder.BackColor = Color.FromArgb(0xDB, 0xA8, 0x00);
 
+                    cellPlaceHolder = DGVOrders.TableElement.GetCellElement(item, DGVOrders.Columns[3]);
+                    cellPlaceHolder.DrawFill = true;
+                    cellPlaceHolder.BackColor = Color.FromArgb(0xDB, 0xA8, 0x00);
+                    
+                    cellPlaceHolder = DGVOrders.TableElement.GetCellElement(item, DGVOrders.Columns[4]);
+                    cellPlaceHolder.DrawFill = true;
+                    cellPlaceHolder.BackColor = Color.FromArgb(0xDB, 0xA8, 0x00);
+
                     cellPlaceHolder = DGVOrders.TableElement.GetCellElement(item, DGVOrders.Columns[5]);
                     ///cellPlaceHolder.Enabled = false;
                 }
@@ -75,11 +82,9 @@ namespace Bylsan_System.FactoryForms
         {
             this.Invoke((MethodInvoker)delegate
             {
-                var Lst = (from c in OrdersCmd.GetAllOrderByID(SelectedOrderID)
+                var Lst = (from c in Operation.AllOrder.Where(p=>p.ID==SelectedOrderID)
                             select c).Single();
-                var cust = (from c in CustomersCmd.GetAllCustmers()
-                             where c.ID == Lst.CustomerID
-                             select c).Single();
+                var cust = Lst.Customer;
                 frmFactory.labCustomerName.Text = cust.CustomerName.ToString();
                 frmFactory.labCustomerPhone.Text = cust.PhoneNumber.ToString();
             });

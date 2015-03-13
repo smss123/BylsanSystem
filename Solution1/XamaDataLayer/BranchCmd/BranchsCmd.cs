@@ -11,6 +11,7 @@ namespace XamaDataLayer.BranchCmd
         public static bool AddNewBranch(Branch tb)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var MyTable =  db.Branches .Where (b => b.Branch_Name .Contains (tb.Branch_Name )).Take(1).SingleOrDefault () ;
             if (MyTable == null)
             {
@@ -27,6 +28,7 @@ namespace XamaDataLayer.BranchCmd
         public static List<Branch> GetAllBranchs()
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var lst = (from b in db.Branches
                       orderby b.CreatedDate ascending
                       select b).ToList();
@@ -37,6 +39,7 @@ namespace XamaDataLayer.BranchCmd
         public static List<Branch> GetAllBranchByAccountID( int AcctId)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var lst = (from b in db.Branches
                       orderby b.CreatedDate ascending
                       where b.AccountID == AcctId
@@ -47,6 +50,7 @@ namespace XamaDataLayer.BranchCmd
         public static List<Branch> GetAllBranchByManagerID(int MangrId)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var lst = (from b in db.Branches
                       orderby b.CreatedDate ascending
                       where b.Manager_ID == MangrId
@@ -56,6 +60,7 @@ namespace XamaDataLayer.BranchCmd
         public static Branch GetBranchByBarnchID(int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var lst = (from b in db.Branches
                       orderby b.CreatedDate ascending
                       where b.ID ==  xid
@@ -65,6 +70,7 @@ namespace XamaDataLayer.BranchCmd
         public static bool EditBranch(Branch tb, int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var b = db.Branches.Where(n => n.ID == xid).SingleOrDefault();
             b.Branch_Name = tb.Branch_Name;
             b.Branch_Description = tb.Branch_Description;
@@ -80,6 +86,7 @@ namespace XamaDataLayer.BranchCmd
         public static void DeleteBranch(int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var b = db.Branches.Where(n => n.ID == xid).SingleOrDefault();
             db.Branches.DeleteOnSubmit(b);
             db.SubmitChanges();

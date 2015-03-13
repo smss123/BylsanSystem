@@ -39,7 +39,6 @@
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.Data.SortDescriptor sortDescriptor1 = new Telerik.WinControls.Data.SortDescriptor();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.Addbtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.RefreshBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -60,30 +59,19 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Addbtn,
             this.toolStripSeparator1,
             this.RefreshBtn,
             this.toolStripSeparator2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(846, 40);
+            this.toolStrip1.Size = new System.Drawing.Size(846, 39);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // Addbtn
-            // 
-            this.Addbtn.Image = global::Bylsan_System.Properties.Resources.Add;
-            this.Addbtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.Addbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Addbtn.Name = "Addbtn";
-            this.Addbtn.Size = new System.Drawing.Size(93, 37);
-            this.Addbtn.Text = "Add item";
-            this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
             // RefreshBtn
             // 
@@ -91,14 +79,14 @@
             this.RefreshBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RefreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(106, 37);
+            this.RefreshBtn.Size = new System.Drawing.Size(106, 36);
             this.RefreshBtn.Text = "RefreshData";
             this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
             // statusStrip1
             // 
@@ -121,9 +109,9 @@
             this.groupBox1.Controls.Add(this.StoreManagerGridView);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 40);
+            this.groupBox1.Location = new System.Drawing.Point(0, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(846, 471);
+            this.groupBox1.Size = new System.Drawing.Size(846, 472);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
@@ -148,7 +136,7 @@
             gridViewTextBoxColumn1.Name = "ID";
             gridViewTextBoxColumn1.Width = 90;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "StoreID";
+            gridViewTextBoxColumn2.FieldName = "Store.Product.Product_Name";
             gridViewTextBoxColumn2.HeaderText = "StoreID";
             gridViewTextBoxColumn2.Name = "StoreID";
             gridViewTextBoxColumn2.Width = 112;
@@ -201,7 +189,7 @@
             this.StoreManagerGridView.Name = "StoreManagerGridView";
             this.StoreManagerGridView.ReadOnly = true;
             this.StoreManagerGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.StoreManagerGridView.Size = new System.Drawing.Size(840, 450);
+            this.StoreManagerGridView.Size = new System.Drawing.Size(840, 451);
             this.StoreManagerGridView.TabIndex = 0;
             this.StoreManagerGridView.Text = "radGridView1";
             this.StoreManagerGridView.ThemeName = "Office2010Black";
@@ -244,7 +232,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.GroupBox groupBox1;
         private Telerik.WinControls.UI.RadGridView StoreManagerGridView;
-        private System.Windows.Forms.ToolStripButton Addbtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton RefreshBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;

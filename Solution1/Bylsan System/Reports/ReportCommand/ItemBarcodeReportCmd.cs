@@ -10,7 +10,7 @@ namespace Bylsan_System.Reports.ReportCommand
 {
     public class ItemBarcodeReportCmd
     {
-        public void GetItemStorByDate(int id, int counter)
+        public void GetItemStorByDate(int id, int counter, DateTime dt)
         {
             var q = ProductsCmd.GetProductByID(id);
             var rs = new ReportDataSource();
@@ -24,7 +24,8 @@ namespace Bylsan_System.Reports.ReportCommand
                     {
                         itemID = item.ID,
                         ItemName = item.PublicName,
-                        ItemPrice = item.ProductPrice.ToString().Todouble()
+                        ItemPrice = item.ProductPrice.ToString().Todouble(),
+                         ExpriedDate = dt.ToShortDateString()
                     });
                 }
             }

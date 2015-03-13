@@ -10,6 +10,7 @@ namespace XamaDataLayer.Accountant
         public static bool AddExpenssesMovment( ExpenssesMovment tb )
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             db.ExpenssesMovments.InsertOnSubmit(tb);
             db.SubmitChanges();
             return true;
@@ -17,6 +18,7 @@ namespace XamaDataLayer.Accountant
         public static ExpenssesMovment EditExpMovment(ExpenssesMovment tb)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var exp = db .ExpenssesMovments .Where (x => x.ID == tb.ID ).SingleOrDefault ();
             exp.ID = tb.ID;
 
@@ -35,6 +37,7 @@ namespace XamaDataLayer.Accountant
             try
             {
                 db = new DbDataContext();
+                db.CommandTimeout = 9000;
                 var exp = db .ExpenssesMovments .Where (x => x.ID == xid ).SingleOrDefault ();
                 db.ExpenssesMovments.DeleteOnSubmit(exp);
                 db.SubmitChanges();
@@ -48,13 +51,14 @@ namespace XamaDataLayer.Accountant
         public static List<ExpenssesMovment> GetAll()
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             return db.ExpenssesMovments.ToList();
         }
 
         public static List<ExpenssesMovment> GetAllExpenssesMovmentByExpID(int expID)
         {
             db = new DbDataContext();
-
+            db.CommandTimeout = 9000;
             var LST = (from c in db.ExpenssesMovments
                        where c.ExpenssesID == expID
                        select c).ToList();
@@ -63,6 +67,7 @@ namespace XamaDataLayer.Accountant
         public static List<ExpenssesMovment> GetAllExpnssesMovmentsByDate( DateTime dat )
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var lst = (from d in db.ExpenssesMovments
                         where d.DateOfProcess == dat
                         select d).ToList();

@@ -47,6 +47,12 @@
             this.ckBracode = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QtyX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.IDProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,12 +66,6 @@
             this.PrintBtn = new Telerik.WinControls.UI.RadButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QtyX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             quotationForLabel = new System.Windows.Forms.Label();
             phoneNumberLabel = new System.Windows.Forms.Label();
             addressForLabel = new System.Windows.Forms.Label();
@@ -253,6 +253,36 @@
             this.dataGridView2.TabIndex = 8;
             this.dataGridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEndEdit);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Product ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Product Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // QtyX
+            // 
+            this.QtyX.HeaderText = "Qty";
+            this.QtyX.Name = "QtyX";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Price";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // amountX
+            // 
+            this.amountX.HeaderText = "Amount";
+            this.amountX.Name = "amountX";
+            // 
+            // ColDescription
+            // 
+            this.ColDescription.HeaderText = "Description";
+            this.ColDescription.Name = "ColDescription";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -374,36 +404,6 @@
             this.imageList1.Images.SetKeyName(0, "eye.png");
             this.imageList1.Images.SetKeyName(1, "award_star_bronze_2.png");
             this.imageList1.Images.SetKeyName(2, "yen coins.ico");
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Product ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Product Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // QtyX
-            // 
-            this.QtyX.HeaderText = "Qty";
-            this.QtyX.Name = "QtyX";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Price";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // amountX
-            // 
-            this.amountX.HeaderText = "Amount";
-            this.amountX.Name = "amountX";
-            // 
-            // ColDescription
-            // 
-            this.ColDescription.HeaderText = "Description";
-            this.ColDescription.Name = "ColDescription";
             // 
             // FrmPrintQuotation
             // 

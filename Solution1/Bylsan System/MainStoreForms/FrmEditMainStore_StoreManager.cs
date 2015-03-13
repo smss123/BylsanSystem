@@ -29,12 +29,12 @@ namespace Bylsan_System.MainStoreForms
             this.Invoke((MethodInvoker)delegate
             {
                 StoreComboBox.AutoFilter = true;
-                StoreComboBox.ValueMember = "ID";
-                StoreComboBox.DisplayMember = "ItemID";
+                StoreComboBox.DisplayMember =  "Product.Product_Name";
+               
             });
 
 
-            var q = StoreCmd.GetAllStores();
+            var q = Operation.AllStore; //StoreCmd.GetAllStores();
             this.Invoke((MethodInvoker)delegate
             {
                 StoreComboBox.DataSource = q;
@@ -42,10 +42,6 @@ namespace Bylsan_System.MainStoreForms
                 filter.PropertyName = StoreComboBox.DisplayMember;
                 filter.Operator = FilterOperator.Contains;
                 StoreComboBox.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-
-
-
-
             });
             Operation.EndOperation(this);
         }

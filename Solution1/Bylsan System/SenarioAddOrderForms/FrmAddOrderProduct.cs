@@ -158,7 +158,7 @@ namespace Bylsan_System.SenarioAddOrderForms
             XamaDataLayer.Security.UserCmd.SaveHistory("Add", "Order Product ", "Add New Order Product  ");
             frm.TragetOrderType = OrderTypeCheckLab.Text;
             frm.ShowDialog();
-            this.Hide();
+            
         }
 
 

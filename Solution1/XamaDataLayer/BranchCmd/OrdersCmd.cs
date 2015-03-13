@@ -12,6 +12,7 @@ namespace XamaDataLayer.BranchCmd
         public static bool AddNewOrder(Order tb)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             db.Orders.InsertOnSubmit(tb);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Add ", "Add Order ", " Add New Order ");
@@ -21,12 +22,9 @@ namespace XamaDataLayer.BranchCmd
         public static Order EditOrderStatusOnly(Order tb, int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var ord = db.Orders.Where(oo => oo.ID == xid).SingleOrDefault();
-
-
             ord.OrderStatus = tb.OrderStatus;
-
-
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Edit ", "Edit  Order ", " Edit Selected  Order ");
 
@@ -36,6 +34,7 @@ namespace XamaDataLayer.BranchCmd
         public static Order EditFullOrder(Order tb, int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var ord = db.Orders.Where(oo => oo.ID == xid).SingleOrDefault();
 
             ord.Branch_ID = tb.Branch_ID;
@@ -61,6 +60,7 @@ namespace XamaDataLayer.BranchCmd
         public static void DeleteOrder(int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var ord = db.Orders.Where(oo => oo.ID == xid).SingleOrDefault();
             db.Orders.DeleteOnSubmit(ord);
             db.SubmitChanges();
@@ -71,12 +71,14 @@ namespace XamaDataLayer.BranchCmd
         public static List<Order> GetAllOrders()
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             return db.Orders.ToList();
         }
 
         public static List<Order> GetAllOrdersInDesigner()
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var Lst = (from o in db.Orders
                       orderby o.OrderDate ascending
                       where
@@ -88,6 +90,7 @@ namespace XamaDataLayer.BranchCmd
         public static List<Order> GetAllOrderByID( int xid  )
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var Lst = (from o in db.Orders
                       where
                           o.ID == xid
@@ -99,6 +102,7 @@ namespace XamaDataLayer.BranchCmd
         public static List<Order> GetAllOrdersByBranchID(int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var Lst = (from o in db.Orders
                       orderby o.OrderDate ascending
                       where
@@ -110,6 +114,7 @@ namespace XamaDataLayer.BranchCmd
         public static List<Order> GetAllOrdersByCustomerID(int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var Lst = (from o in db.Orders
                       orderby o.OrderDate ascending
                       where
@@ -121,6 +126,7 @@ namespace XamaDataLayer.BranchCmd
         public static List<Order> GetAllOrdersByDate(DateTime dat)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var Lst = (from o in db.Orders
                       orderby o.OrderDate ascending
                       where
@@ -131,6 +137,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static List<Order> GetOrdersByCustomerPhone(string phone)
         {
+            db.CommandTimeout = 9000;
             return db.Customers.Where(p => p.PhoneNumber == phone).Take(1).Single().Orders.ToList();
         }
     }

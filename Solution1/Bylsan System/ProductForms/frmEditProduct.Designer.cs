@@ -35,7 +35,7 @@
             System.Windows.Forms.Label publicNameLabel;
             System.Windows.Forms.Label itemTypeLabel;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.productUnitTextBox = new System.Windows.Forms.TextBox();
+            this.ItemTypecomboBox = new System.Windows.Forms.ComboBox();
             this.publicNameTextBox = new System.Windows.Forms.TextBox();
             this.txtprice = new System.Windows.Forms.TextBox();
             this.CategoryComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
@@ -51,7 +51,7 @@
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblstatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.ItemTypecomboBox = new System.Windows.Forms.ComboBox();
+            this.productUnitTextBox = new System.Windows.Forms.ComboBox();
             product_DescriptionLabel = new System.Windows.Forms.Label();
             product_NameLabel = new System.Windows.Forms.Label();
             productUnitLabel = new System.Windows.Forms.Label();
@@ -105,12 +105,21 @@
             publicNameLabel.TabIndex = 24;
             publicNameLabel.Text = "Public Name:";
             // 
+            // itemTypeLabel
+            // 
+            itemTypeLabel.AutoSize = true;
+            itemTypeLabel.Location = new System.Drawing.Point(61, 205);
+            itemTypeLabel.Name = "itemTypeLabel";
+            itemTypeLabel.Size = new System.Drawing.Size(58, 13);
+            itemTypeLabel.TabIndex = 29;
+            itemTypeLabel.Text = "Item Type:";
+            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.productUnitTextBox);
             this.groupBox1.Controls.Add(this.ItemTypecomboBox);
             this.groupBox1.Controls.Add(itemTypeLabel);
             this.groupBox1.Controls.Add(productUnitLabel);
-            this.groupBox1.Controls.Add(this.productUnitTextBox);
             this.groupBox1.Controls.Add(publicNameLabel);
             this.groupBox1.Controls.Add(this.publicNameTextBox);
             this.groupBox1.Controls.Add(this.txtprice);
@@ -132,18 +141,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit Prodct";
             // 
-            // productUnitTextBox
+            // ItemTypecomboBox
             // 
-            this.productUnitTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.productUnitTextBox.Location = new System.Drawing.Point(120, 176);
-            this.productUnitTextBox.Name = "productUnitTextBox";
-            this.productUnitTextBox.Size = new System.Drawing.Size(232, 20);
-            this.productUnitTextBox.TabIndex = 3;
+            this.ItemTypecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ItemTypecomboBox.FormattingEnabled = true;
+            this.ItemTypecomboBox.Items.AddRange(new object[] {
+            "item product",
+            "item row material",
+            "All"});
+            this.ItemTypecomboBox.Location = new System.Drawing.Point(120, 202);
+            this.ItemTypecomboBox.Name = "ItemTypecomboBox";
+            this.ItemTypecomboBox.Size = new System.Drawing.Size(229, 21);
+            this.ItemTypecomboBox.TabIndex = 28;
             // 
             // publicNameTextBox
             // 
             this.publicNameTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.publicNameTextBox.Location = new System.Drawing.Point(120, 152);
+            this.publicNameTextBox.Location = new System.Drawing.Point(117, 152);
             this.publicNameTextBox.Name = "publicNameTextBox";
             this.publicNameTextBox.Size = new System.Drawing.Size(232, 20);
             this.publicNameTextBox.TabIndex = 2;
@@ -152,7 +166,7 @@
             // 
             this.txtprice.Location = new System.Drawing.Point(120, 255);
             this.txtprice.Name = "txtprice";
-            this.txtprice.Size = new System.Drawing.Size(240, 20);
+            this.txtprice.Size = new System.Drawing.Size(229, 20);
             this.txtprice.TabIndex = 5;
             // 
             // CategoryComboBox
@@ -179,7 +193,7 @@
             this.CategoryComboBox.EditorControl.TabIndex = 0;
             this.CategoryComboBox.Location = new System.Drawing.Point(120, 226);
             this.CategoryComboBox.Name = "CategoryComboBox";
-            this.CategoryComboBox.Size = new System.Drawing.Size(232, 20);
+            this.CategoryComboBox.Size = new System.Drawing.Size(229, 20);
             this.CategoryComboBox.TabIndex = 4;
             this.CategoryComboBox.TabStop = false;
             this.CategoryComboBox.ThemeName = "Office2010Black";
@@ -201,7 +215,7 @@
             // 
             this.BrowseBtn.Location = new System.Drawing.Point(280, 282);
             this.BrowseBtn.Name = "BrowseBtn";
-            this.BrowseBtn.Size = new System.Drawing.Size(80, 24);
+            this.BrowseBtn.Size = new System.Drawing.Size(69, 24);
             this.BrowseBtn.TabIndex = 6;
             this.BrowseBtn.Text = "...";
             this.BrowseBtn.ThemeName = "Office2010Black";
@@ -223,7 +237,7 @@
             this.product_DescriptionTextBox.Location = new System.Drawing.Point(117, 73);
             this.product_DescriptionTextBox.Multiline = true;
             this.product_DescriptionTextBox.Name = "product_DescriptionTextBox";
-            this.product_DescriptionTextBox.Size = new System.Drawing.Size(235, 75);
+            this.product_DescriptionTextBox.Size = new System.Drawing.Size(232, 75);
             this.product_DescriptionTextBox.TabIndex = 1;
             // 
             // product_NameTextBox
@@ -231,7 +245,7 @@
             this.product_NameTextBox.BackColor = System.Drawing.SystemColors.Info;
             this.product_NameTextBox.Location = new System.Drawing.Point(117, 36);
             this.product_NameTextBox.Name = "product_NameTextBox";
-            this.product_NameTextBox.Size = new System.Drawing.Size(235, 20);
+            this.product_NameTextBox.Size = new System.Drawing.Size(232, 20);
             this.product_NameTextBox.TabIndex = 0;
             // 
             // label2
@@ -281,27 +295,25 @@
             this.lblstatus.Size = new System.Drawing.Size(12, 17);
             this.lblstatus.Text = "_";
             // 
-            // ItemTypecomboBox
+            // productUnitTextBox
             // 
-            this.ItemTypecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ItemTypecomboBox.FormattingEnabled = true;
-            this.ItemTypecomboBox.Items.AddRange(new object[] {
-            "item product",
-            "item row material",
-            "All"});
-            this.ItemTypecomboBox.Location = new System.Drawing.Point(120, 202);
-            this.ItemTypecomboBox.Name = "ItemTypecomboBox";
-            this.ItemTypecomboBox.Size = new System.Drawing.Size(232, 21);
-            this.ItemTypecomboBox.TabIndex = 28;
-            // 
-            // itemTypeLabel
-            // 
-            itemTypeLabel.AutoSize = true;
-            itemTypeLabel.Location = new System.Drawing.Point(61, 205);
-            itemTypeLabel.Name = "itemTypeLabel";
-            itemTypeLabel.Size = new System.Drawing.Size(58, 13);
-            itemTypeLabel.TabIndex = 29;
-            itemTypeLabel.Text = "Item Type:";
+            this.productUnitTextBox.FormattingEnabled = true;
+            this.productUnitTextBox.Items.AddRange(new object[] {
+            "Number",
+            "Centimeter",
+            "dozen",
+            "feet",
+            "gram",
+            "inch",
+            "Kg",
+            "Liter",
+            "Meter",
+            "Mm",
+            "Piece"});
+            this.productUnitTextBox.Location = new System.Drawing.Point(120, 179);
+            this.productUnitTextBox.Name = "productUnitTextBox";
+            this.productUnitTextBox.Size = new System.Drawing.Size(229, 21);
+            this.productUnitTextBox.TabIndex = 30;
             // 
             // frmEditProduct
             // 
@@ -321,7 +333,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEditProduct";
+            this.Text = "Edit Product";
             this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.frmEditProduct_Load);
             this.groupBox1.ResumeLayout(false);
@@ -358,9 +370,9 @@
         private System.Windows.Forms.ToolStripStatusLabel lblstatus;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtprice;
-        private System.Windows.Forms.TextBox productUnitTextBox;
         private System.Windows.Forms.TextBox publicNameTextBox;
         private System.Windows.Forms.ComboBox ItemTypecomboBox;
+        private System.Windows.Forms.ComboBox productUnitTextBox;
 
     }
 }

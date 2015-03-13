@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageMainStore_Store));
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Addbtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -43,13 +43,13 @@
             this.btnStorePurchases = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.BtnPurchasesOrder = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnTransfer = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.StoreGridView = new Telerik.WinControls.UI.RadGridView();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnTransfer = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -131,6 +131,21 @@
             this.BtnPurchasesOrder.Text = "Purchases Order";
             this.BtnPurchasesOrder.Click += new System.EventHandler(this.BtnPurchasesOrder_Click);
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 55);
+            // 
+            // btnTransfer
+            // 
+            this.btnTransfer.Image = ((System.Drawing.Image)(resources.GetObject("btnTransfer.Image")));
+            this.btnTransfer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnTransfer.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnTransfer.Name = "btnTransfer";
+            this.btnTransfer.Size = new System.Drawing.Size(147, 52);
+            this.btnTransfer.Text = "Transfer Product";
+            this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -172,41 +187,41 @@
             // 
             this.StoreGridView.MasterTemplate.AllowAddNewRow = false;
             this.StoreGridView.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn7.EnableExpressionEditor = false;
-            gridViewTextBoxColumn7.FieldName = "ID";
-            gridViewTextBoxColumn7.HeaderText = "ID";
-            gridViewTextBoxColumn7.Name = "ID";
-            gridViewTextBoxColumn7.Width = 86;
-            gridViewTextBoxColumn8.EnableExpressionEditor = false;
-            gridViewTextBoxColumn8.FieldName = "Product.Product_Name";
-            gridViewTextBoxColumn8.HeaderText = "Product";
-            gridViewTextBoxColumn8.Name = "ItemID";
-            gridViewTextBoxColumn8.Width = 196;
-            gridViewTextBoxColumn9.EnableExpressionEditor = false;
-            gridViewTextBoxColumn9.FieldName = "AvailableQty";
-            gridViewTextBoxColumn9.HeaderText = "AvailableQty";
-            gridViewTextBoxColumn9.Name = "AvailableQty";
-            gridViewTextBoxColumn9.Width = 155;
-            gridViewTextBoxColumn10.EnableExpressionEditor = false;
-            gridViewTextBoxColumn10.FieldName = "Description";
-            gridViewTextBoxColumn10.HeaderText = "Description";
-            gridViewTextBoxColumn10.Name = "Description";
-            gridViewTextBoxColumn10.Width = 343;
-            gridViewTextBoxColumn11.EnableExpressionEditor = false;
-            gridViewTextBoxColumn11.HeaderText = "Edit";
-            gridViewTextBoxColumn11.Name = "EditCol";
-            gridViewTextBoxColumn11.Width = 65;
-            gridViewTextBoxColumn12.EnableExpressionEditor = false;
-            gridViewTextBoxColumn12.HeaderText = "Delete";
-            gridViewTextBoxColumn12.Name = "DeleteCol";
-            gridViewTextBoxColumn12.Width = 70;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.Name = "ID";
+            gridViewTextBoxColumn1.Width = 86;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "Product.Product_Name";
+            gridViewTextBoxColumn2.HeaderText = "Product";
+            gridViewTextBoxColumn2.Name = "ItemID";
+            gridViewTextBoxColumn2.Width = 196;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "AvailableQty";
+            gridViewTextBoxColumn3.HeaderText = "AvailableQty";
+            gridViewTextBoxColumn3.Name = "AvailableQty";
+            gridViewTextBoxColumn3.Width = 155;
+            gridViewTextBoxColumn4.EnableExpressionEditor = false;
+            gridViewTextBoxColumn4.FieldName = "Description";
+            gridViewTextBoxColumn4.HeaderText = "Description";
+            gridViewTextBoxColumn4.Name = "Description";
+            gridViewTextBoxColumn4.Width = 343;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.HeaderText = "Edit";
+            gridViewTextBoxColumn5.Name = "EditCol";
+            gridViewTextBoxColumn5.Width = 65;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.HeaderText = "Delete";
+            gridViewTextBoxColumn6.Name = "DeleteCol";
+            gridViewTextBoxColumn6.Width = 70;
             this.StoreGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn7,
-            gridViewTextBoxColumn8,
-            gridViewTextBoxColumn9,
-            gridViewTextBoxColumn10,
-            gridViewTextBoxColumn11,
-            gridViewTextBoxColumn12});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6});
             this.StoreGridView.Name = "StoreGridView";
             this.StoreGridView.ReadOnly = true;
             this.StoreGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -215,21 +230,6 @@
             this.StoreGridView.Text = "MainStorGridView";
             this.StoreGridView.ThemeName = "Office2010Black";
             this.StoreGridView.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.StoreGridView_CommandCellClick);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 55);
-            // 
-            // btnTransfer
-            // 
-            this.btnTransfer.Image = ((System.Drawing.Image)(resources.GetObject("btnTransfer.Image")));
-            this.btnTransfer.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnTransfer.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnTransfer.Name = "btnTransfer";
-            this.btnTransfer.Size = new System.Drawing.Size(147, 52);
-            this.btnTransfer.Text = "Transfer Product";
-            this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
             // 
             // FrmManageMainStore_Store
             // 

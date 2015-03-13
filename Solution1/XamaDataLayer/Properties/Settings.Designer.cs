@@ -48,11 +48,30 @@ namespace XamaDataLayer.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SEZEROFFICE-PC\\SQL2008;Initial Catalog=soft_Bylsan;Integrated Securit" +
-            "y=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"Data Source=jasmine.arvixe.com;Initial Catalog=App_Bylsan;Persist Security Info=True;User ID=xama;Password=Pa$$w0rd;Max Pool Size=1000;Asynchronous Processing=True;Replication=False;Connect Timeout=900;TrustServerCertificate=False;Load Balance Timeout=9999;Packet Size=32768;User Instance=False;Context Connection=False;MultiSubnetFailover=True;ConnectRetryCount=90")]
         public string Cloud_BylsanConnectionString {
             get {
                 return ((string)(this["Cloud_BylsanConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=|DataDirectory|\\App_Bylsan.sdf;Max Database Size=2047")]
+        public string ClientApp_BylsanConnectionString {
+            get {
+                return ((string)(this["ClientApp_BylsanConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=|DataDirectory|\\App_Bylsan1.sdf;Max Database Size=2047")]
+        public string ClientApp_Bylsan1ConnectionString {
+            get {
+                return ((string)(this["ClientApp_Bylsan1ConnectionString"]));
             }
         }
     }

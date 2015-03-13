@@ -10,6 +10,7 @@ namespace XamaDataLayer.BranchCmd
         public static bool AddCategory(ProductCategory tb)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             db.ProductCategories.InsertOnSubmit(tb);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Add ", "Add Category ", " Add New Category At Branch  ");
@@ -20,6 +21,7 @@ namespace XamaDataLayer.BranchCmd
         public static int  GetCategoryIDByName(string CategName)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var   categ = db.ProductCategories.Where(cat => cat.ProductCategoryName == CategName ).SingleOrDefault();
             var xCategId = 0;
             xCategId = categ.ID;
@@ -28,6 +30,7 @@ namespace XamaDataLayer.BranchCmd
         public static bool EditCategory(ProductCategory tb, int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var categ = db.ProductCategories.Where(cat => cat.ID == xid).SingleOrDefault();
             categ.ProductCategoryName = tb.ProductCategoryName;
             categ.Description = tb.Description;
@@ -38,11 +41,13 @@ namespace XamaDataLayer.BranchCmd
         public static List<ProductCategory> GetAllCategories()
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             return db.ProductCategories.ToList();
         }
         public static void DeleteCategory(int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var categ = db.ProductCategories.Where(cat => cat.ID == xid).SingleOrDefault();
             db.ProductCategories.DeleteOnSubmit(categ);
             db.SubmitChanges();

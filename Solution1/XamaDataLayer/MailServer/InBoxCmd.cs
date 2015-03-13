@@ -11,6 +11,7 @@ namespace XamaDataLayer.MailServer
         public static bool InsertMassegeInBox(Inbox tb)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             db.Inboxes.InsertOnSubmit(tb);
             db.SubmitChanges();
 
@@ -21,6 +22,7 @@ namespace XamaDataLayer.MailServer
         public static Inbox EditMessage(Inbox tb, int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var Msg = db.Inboxes.Where(m => m.ID == xid).SingleOrDefault();
 
             Msg.Status = tb.Status;
@@ -35,6 +37,7 @@ namespace XamaDataLayer.MailServer
             try
             {
                 db = new DbDataContext();
+                db.CommandTimeout = 9000;
                 var Msg = db.Inboxes.Where(m => m.ID == xid).SingleOrDefault();
                 db.Inboxes.DeleteOnSubmit(Msg);
                 db.SubmitChanges();
@@ -49,6 +52,7 @@ namespace XamaDataLayer.MailServer
         public static List<Inbox> GetAllMessages()
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var lst = (from i in db.Inboxes
                       where i.ReciverUserID == XamaDataLayer.Security.UserInfo.CurrentUserID
                       select i).ToList();
@@ -58,6 +62,7 @@ namespace XamaDataLayer.MailServer
         public static List<Inbox > LoadAllMessagesByDate(DateTime dat)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var lst = (from m in db.Inboxes
                       orderby m.ID ascending
                       where m.DateOfMessage == dat

@@ -65,6 +65,7 @@ namespace Bylsan_System
 
            
                 DbDataContext db = new DbDataContext();
+                db.CommandTimeout = 9000;
                 foreach (var item in db.Stores)
                 {
                     if (item.AvailableQty <= db.ProductMinimummQties.Where(p => p.ID == item.ProductID).Single().MinimumQty.ToInt())

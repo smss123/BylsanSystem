@@ -54,7 +54,7 @@ namespace Bylsan_System.BranchForms
 
             AccountDailyCmd.AddAccountDaily(new AccountDaily()
             {
-                AccountID = UserInfo.CurrnetUser.Branch_ID,
+                AccountID = UserInfo.CurrnetUser.Branch.AccountID,
                 CommandArg = TargetOrder.ID.ToString(),
                 DateOfProcess = DateTime.Now,
                 Description = "دفعية عند الاستلام",

@@ -83,66 +83,68 @@
             gridViewTextBoxColumn1.FieldName = "ID";
             gridViewTextBoxColumn1.HeaderText = "ID";
             gridViewTextBoxColumn1.Name = "ID";
-            gridViewTextBoxColumn1.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
-            gridViewTextBoxColumn1.Width = 62;
+            gridViewTextBoxColumn1.Width = 45;
             gridViewTextBoxColumn2.EnableExpressionEditor = false;
             gridViewTextBoxColumn2.FieldName = "OrderName";
             gridViewTextBoxColumn2.HeaderText = "Order Name";
             gridViewTextBoxColumn2.Name = "OrderName";
-            gridViewTextBoxColumn2.Width = 166;
+            gridViewTextBoxColumn2.Width = 92;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "OrderDate";
             gridViewTextBoxColumn3.HeaderText = "Order Date";
             gridViewTextBoxColumn3.Name = "OrdDate";
-            gridViewTextBoxColumn3.Width = 100;
+            gridViewTextBoxColumn3.Width = 97;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "OrderType";
             gridViewTextBoxColumn4.HeaderText = "Order Type";
             gridViewTextBoxColumn4.Name = "OrderType";
-            gridViewTextBoxColumn4.Width = 74;
+            gridViewTextBoxColumn4.Width = 115;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.FieldName = "OrderVerify";
             gridViewTextBoxColumn5.HeaderText = "Order Verify";
             gridViewTextBoxColumn5.Name = "OrderVerify";
-            gridViewTextBoxColumn5.Width = 76;
+            gridViewTextBoxColumn5.Width = 116;
             gridViewTextBoxColumn6.EnableExpressionEditor = false;
             gridViewTextBoxColumn6.FieldName = "OrderDeliveryDate";
             gridViewTextBoxColumn6.HeaderText = "Delivery Date";
             gridViewTextBoxColumn6.Name = "ColDevliverDate";
-            gridViewTextBoxColumn6.Width = 76;
+            gridViewTextBoxColumn6.Width = 115;
             gridViewTextBoxColumn7.EnableExpressionEditor = false;
             gridViewTextBoxColumn7.FieldName = "DeliverdToBranch";
             gridViewTextBoxColumn7.HeaderText = "Deliverd To Branch";
             gridViewTextBoxColumn7.Name = "DeliverdToBranch";
-            gridViewTextBoxColumn7.Width = 98;
+            gridViewTextBoxColumn7.Width = 162;
             gridViewTextBoxColumn8.EnableExpressionEditor = false;
             gridViewTextBoxColumn8.FieldName = "OrderStatus";
             gridViewTextBoxColumn8.HeaderText = "Order Status";
             gridViewTextBoxColumn8.Name = "OrderStatus";
-            gridViewTextBoxColumn8.Width = 59;
+            gridViewTextBoxColumn8.Width = 79;
             gridViewTextBoxColumn9.EnableExpressionEditor = false;
             gridViewTextBoxColumn9.FieldName = "Customer.CustomerName";
             gridViewTextBoxColumn9.HeaderText = "Customer";
             gridViewTextBoxColumn9.Name = "Customer";
-            gridViewTextBoxColumn9.Width = 84;
+            gridViewTextBoxColumn9.Width = 130;
             gridViewTextBoxColumn10.EnableExpressionEditor = false;
             gridViewTextBoxColumn10.FieldName = "Customer.PhoneNumber";
             gridViewTextBoxColumn10.HeaderText = "Customer PhoneNumber";
             gridViewTextBoxColumn10.Name = "PhoneNumber";
-            gridViewTextBoxColumn10.Width = 62;
+            gridViewTextBoxColumn10.Width = 79;
             gridViewTextBoxColumn11.EnableExpressionEditor = false;
             gridViewTextBoxColumn11.FieldName = "Comment";
             gridViewTextBoxColumn11.HeaderText = "Comment";
             gridViewTextBoxColumn11.Name = "Comment";
-            gridViewTextBoxColumn11.Width = 155;
+            gridViewTextBoxColumn11.Width = 18;
             gridViewCommandColumn1.EnableExpressionEditor = false;
             gridViewCommandColumn1.HeaderText = "Edit";
             gridViewCommandColumn1.MaxWidth = 45;
             gridViewCommandColumn1.MinWidth = 45;
             gridViewCommandColumn1.Name = "EditCol";
             gridViewCommandColumn1.Width = 45;
+            gridViewCommandColumn2.EnableExpressionEditor = false;
             gridViewCommandColumn2.HeaderText = "Print Bracode";
             gridViewCommandColumn2.Name = "printParcode";
+            gridViewCommandColumn2.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending;
+            gridViewCommandColumn2.Width = 14;
             this.DGVOrders.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -158,7 +160,7 @@
             gridViewCommandColumn1,
             gridViewCommandColumn2});
             this.DGVOrders.MasterTemplate.EnableFiltering = true;
-            sortDescriptor1.PropertyName = "ID";
+            sortDescriptor1.PropertyName = "printParcode";
             this.DGVOrders.MasterTemplate.SortDescriptors.AddRange(new Telerik.WinControls.Data.SortDescriptor[] {
             sortDescriptor1});
             this.DGVOrders.Name = "DGVOrders";
@@ -168,6 +170,7 @@
             this.DGVOrders.TabIndex = 2;
             this.DGVOrders.Text = "radGridView1";
             this.DGVOrders.ThemeName = "Office2010Black";
+            this.DGVOrders.Click += new System.EventHandler(this.DGVOrders_Click);
             // 
             // toolStrip1
             // 

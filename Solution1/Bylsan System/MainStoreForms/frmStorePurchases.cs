@@ -20,7 +20,7 @@ namespace Bylsan_System.MainStoreForms
 
         private void frmStorePurchases_Load(object sender, EventArgs e)
         {
-            productBindingSource.DataSource = ProductsCmd.GetAllProducts();
+            productBindingSource.DataSource = Operation.Allproducts; // ProductsCmd.GetAllProducts();
             productIDComboBox.MultiColumnComboBoxElement.DropDownWidth = 500;
 
             supplierBindingSource.DataSource = SuppliersCmd.GetAllSuppliers();

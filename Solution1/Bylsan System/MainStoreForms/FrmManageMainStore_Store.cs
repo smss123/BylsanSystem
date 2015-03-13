@@ -31,7 +31,7 @@ namespace Bylsan_System.MainStoreForms
                 lblStatus.Text = "Loading ...";
             });
             Operation.BeginOperation(this);
-            var q = StoreCmd.GetAllStores();
+            var q = Operation.AllStore;//StoreCmd.GetAllStores();
             this.Invoke((MethodInvoker)delegate
             {
                 StoreGridView.DataSource = q;

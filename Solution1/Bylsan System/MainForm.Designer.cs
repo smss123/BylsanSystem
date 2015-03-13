@@ -69,6 +69,7 @@
             this.btnEditOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.btnReturnBill = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.txtLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -85,10 +86,10 @@
             this.SalesTileElement = new Telerik.WinControls.UI.RadTileElement();
             this.btnBranchStore = new Telerik.WinControls.UI.RadTileElement();
             this.tileGroupElement1 = new Telerik.WinControls.UI.TileGroupElement();
-            this.storeBtn = new Telerik.WinControls.UI.RadTileElement();
             this.WithDrawalBtn = new Telerik.WinControls.UI.RadTileElement();
             this.SupplierTileElement = new Telerik.WinControls.UI.RadTileElement();
             this.storeManagerBtn = new Telerik.WinControls.UI.RadTileElement();
+            this.storeBtn = new Telerik.WinControls.UI.RadTileElement();
             this.roundRectShape1 = new Telerik.WinControls.RoundRectShape(this.components);
             this.tileGroupElement2 = new Telerik.WinControls.UI.TileGroupElement();
             this.AccountTreeBtn = new Telerik.WinControls.UI.RadTileElement();
@@ -99,7 +100,9 @@
             this.expensesBtn = new Telerik.WinControls.UI.RadTileElement();
             this.ellipseShape1 = new Telerik.WinControls.EllipseShape();
             this.mediaShape1 = new Telerik.WinControls.Tests.MediaShape();
+            this.pgs = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -420,11 +423,20 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.txtLbl,
+            this.pgs});
             this.statusStrip1.Location = new System.Drawing.Point(0, 682);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1480, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // txtLbl
+            // 
+            this.txtLbl.Name = "txtLbl";
+            this.txtLbl.Size = new System.Drawing.Size(12, 17);
+            this.txtLbl.Text = "_";
             // 
             // contextMenuStrip1
             // 
@@ -613,21 +625,6 @@
             this.tileGroupElement1.Shape = this.roundRectShape1;
             this.tileGroupElement1.Text = "Main Store";
             // 
-            // storeBtn
-            // 
-            this.storeBtn.AccessibleDescription = "store";
-            this.storeBtn.AccessibleName = "store";
-            this.storeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(179)))), ((int)(((byte)(11)))));
-            this.storeBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("storeBtn.BackgroundImage")));
-            this.storeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.storeBtn.Column = 1;
-            this.storeBtn.Image = ((System.Drawing.Image)(resources.GetObject("storeBtn.Image")));
-            this.storeBtn.Name = "storeBtn";
-            this.storeBtn.Text = "store";
-            this.storeBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.storeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.storeBtn.Click += new System.EventHandler(this.storeItemsToolStripMenuItem_Click);
-            // 
             // WithDrawalBtn
             // 
             this.WithDrawalBtn.AccessibleDescription = "With Drawal";
@@ -675,6 +672,21 @@
             this.storeManagerBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.storeManagerBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.storeManagerBtn.Click += new System.EventHandler(this.storeManagerToolStripMenuItem_Click);
+            // 
+            // storeBtn
+            // 
+            this.storeBtn.AccessibleDescription = "store";
+            this.storeBtn.AccessibleName = "store";
+            this.storeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(179)))), ((int)(((byte)(11)))));
+            this.storeBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("storeBtn.BackgroundImage")));
+            this.storeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.storeBtn.Column = 1;
+            this.storeBtn.Image = ((System.Drawing.Image)(resources.GetObject("storeBtn.Image")));
+            this.storeBtn.Name = "storeBtn";
+            this.storeBtn.Text = "store";
+            this.storeBtn.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.storeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.storeBtn.Click += new System.EventHandler(this.storeItemsToolStripMenuItem_Click);
             // 
             // tileGroupElement2
             // 
@@ -784,6 +796,11 @@
             this.expensesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.expensesBtn.Click += new System.EventHandler(this.expensesBtn_Click);
             // 
+            // pgs
+            // 
+            this.pgs.Name = "pgs";
+            this.pgs.Size = new System.Drawing.Size(100, 16);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -807,6 +824,8 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanorama1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -886,5 +905,7 @@
         private System.Windows.Forms.ToolStripMenuItem txtTransfer;
         private System.Windows.Forms.ToolStripMenuItem btnReturnBill;
         private Telerik.WinControls.UI.RadTileElement btnBranchStore;
+        private System.Windows.Forms.ToolStripStatusLabel txtLbl;
+        private System.Windows.Forms.ToolStripProgressBar pgs;
     }
 }

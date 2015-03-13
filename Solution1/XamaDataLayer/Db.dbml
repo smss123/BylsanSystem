@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="soft_Bylsan" Class="DbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SEZEROFFICE-PC\SQL2008;Initial Catalog=soft_Bylsan;Integrated Security=True" SettingsObjectName="XamaDataLayer.Properties.Settings" SettingsPropertyName="Cloud_BylsanConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=jasmine.arvixe.com;Initial Catalog=App_Bylsan;Persist Security Info=True;User ID=xama;Max Pool Size=1000;Asynchronous Processing=True;Replication=False;Connect Timeout=900;TrustServerCertificate=False;Load Balance Timeout=9999;Packet Size=32768;User Instance=False;Context Connection=False;MultiSubnetFailover=True;ConnectRetryCount=90" SettingsObjectName="XamaDataLayer.Properties.Settings" SettingsPropertyName="Cloud_BylsanConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="Accountant.Account" Member="Accounts">
     <Type Name="Account">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

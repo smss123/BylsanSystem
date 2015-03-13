@@ -131,6 +131,7 @@
             this.DGVProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVProducts.Size = new System.Drawing.Size(514, 411);
             this.DGVProducts.TabIndex = 0;
+            this.DGVProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVProducts_CellContentClick);
             this.DGVProducts.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DGVProducts_MouseDoubleClick_1);
             // 
             // Column1
@@ -409,8 +410,9 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.RootElement.MaxSize = new System.Drawing.Size(0, 0);
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmFactoryOrderProductShow";
+            this.Text = "Factory - Order Product Show";
             this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmFactoryOrderProductShow_Load);
             this.groupBox1.ResumeLayout(false);

@@ -33,10 +33,22 @@ namespace Bylsan_System.ProductForms
             {
                 if (RadMessageBox.Show("You Are sure?","delete",MessageBoxButtons.YesNo,RadMessageIcon.Question)==System.Windows.Forms.DialogResult.Yes)
                 {
-                    var TragetCategory = (ProductCategory)radGridView1.CurrentRow.DataBoundItem;
-                    CategoriesCmd.DeleteCategory(TragetCategory.ID);
-                    Operation.ShowToustOk("deleted ..", this);
-                    LoadCategory();
+                    try
+                    {
+                        Operation.BeginOperation(this);
+                        var TragetCategory = (ProductCategory)radGridView1.CurrentRow.DataBoundItem;
+                        CategoriesCmd.DeleteCategory(TragetCategory.ID);
+                        Operation.ShowToustOk("deleted ..", this);
+                        Operation.EndOperation(this);
+                        LoadCategory();
+                    }
+                    catch (Exception)
+                    {
+
+                        RadMessageBox.ThemeName = this.ThemeName;
+                        RadMessageBox.Show("Can't Be Delete because contant many products");
+                        
+                    }
                 }
                    
             }

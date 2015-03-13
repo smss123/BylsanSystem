@@ -10,6 +10,7 @@ namespace XamaDataLayer.BranchCmd
         public static bool AddOrderProductAttachment( OrderProuctAttachment tb)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             db.OrderProuctAttachments.InsertOnSubmit(tb);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Add  ", "Add Attachment ", " Add New Attachment   ");
@@ -18,6 +19,7 @@ namespace XamaDataLayer.BranchCmd
         public static OrderProuctAttachment EditAttachment(OrderProuctAttachment tb, int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var q = db.OrderProuctAttachments.Where(c => c.ID == xid).SingleOrDefault();
             q.OrderProductID = tb.OrderProductID;
             q.imageX = tb.imageX;
@@ -30,6 +32,7 @@ namespace XamaDataLayer.BranchCmd
         public static void DeleteAttachment(int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var q = db.OrderProuctAttachments.Where(c => c.ID == xid).SingleOrDefault();
             db.OrderProuctAttachments.DeleteOnSubmit(q);
             db.SubmitChanges();
@@ -39,12 +42,14 @@ namespace XamaDataLayer.BranchCmd
         public static List<OrderProuctAttachment> GetAllAttachments()
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             return   db.OrderProuctAttachments.ToList();
         }
 
         public static OrderProuctAttachment GetOneAttachmentByID(int xid )
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var q = db.OrderProuctAttachments.Where(c => c.ID == xid).SingleOrDefault();
             return q;
         }
@@ -52,6 +57,7 @@ namespace XamaDataLayer.BranchCmd
         public static  List <OrderProuctAttachment> GetOneAttachmentByOrderProductID(int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var q = (from p in db.OrderProuctAttachments
                       where p.OrderProductID == xid
                       select p).ToList();

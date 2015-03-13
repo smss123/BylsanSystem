@@ -152,9 +152,16 @@ namespace Bylsan_System.Reports.ReportCommand
             var q = OrderProductsCmd.GetAllByOrderID(XOrderID);
             var rs = new ReportDataSource();
             var ls = new List<OrderReportObj>();
-
             foreach (var item in q)
             {
+
+                string Description = "";
+
+                foreach (var itm in item.OrderProuctAttachments)
+                {
+                    Description = Description + string .Format("Customer Text is[{0}] \n description is [{1}]",itm.CustomerText, itm.Description);
+                }
+                
                 ls.Add(new OrderReportObj()
                 {
 
@@ -169,12 +176,12 @@ namespace Bylsan_System.Reports.ReportCommand
                     OrderDeliveryDate = item.Order.OrderDeliveryDate.ToString().ToDateTime(),
                     TotalAmount = item.Order.TotalAmount.ToString().Todouble(),
                     DeliverdToBranch = BranchsCmd.GetBranchByBarnchID(item.Order.DeliverdToBranch.ToString().ToInt()).Branch_Name,
-
-
+                    
+                     OrderProductStatus = Description,
                     ProductName = item.Product.PublicName,
                     Qty = item.Qty.Value,
                     ProductPrice = item.Product.ProductPrice.Value,
-                    OrderProductStatus = (item.Description),
+                   
                 });
             }
             rs.Name = "DataSet1";

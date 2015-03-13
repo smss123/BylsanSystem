@@ -41,8 +41,9 @@ namespace Bylsan_System.MainStoreForms
             catch (Exception ex)
             {
 
-                RadMessageBox.Show(ex.Message);
-                
+              //  RadMessageBox.Show(ex.Message);
+                RadMessageBox.ThemeName = this.ThemeName;
+                RadMessageBox.Show("Oh, no Store to This Product in Branch , \n please let branch define store to this product");
             }
         }
 

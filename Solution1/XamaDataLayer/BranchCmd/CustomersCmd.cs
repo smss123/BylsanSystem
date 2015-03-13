@@ -10,6 +10,7 @@ namespace XamaDataLayer.BranchCmd
         public static bool AddCustomer(Customer tb)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             db.Customers.InsertOnSubmit(tb);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Add ", " Add Customer", " Add New Customer ");
@@ -20,6 +21,7 @@ namespace XamaDataLayer.BranchCmd
         public static List<Customer> GetAllCustmers()
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var lst = (from c in db.Customers
                       orderby c.CustomerName ascending
                       select c).ToList();
@@ -31,6 +33,7 @@ namespace XamaDataLayer.BranchCmd
         public static int GetCustomerIDByName(string nam)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var cust = db.Customers.Where(c => c.CustomerName == nam).SingleOrDefault();
             var xCustID = cust.ID;
             return xCustID;
@@ -38,6 +41,7 @@ namespace XamaDataLayer.BranchCmd
         public static Customer GetAllCustmerByID( int CustId)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var lst = (from c in db.Customers
                       orderby c.CustomerName ascending
                       where c.ID == CustId
@@ -48,6 +52,7 @@ namespace XamaDataLayer.BranchCmd
         public static List<Customer> GetAllCustmerByAccountID(int ActId)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var lst = (from c in db.Customers
                       orderby c.CreateDate  ascending
                       where c.AccountID == ActId
@@ -58,6 +63,7 @@ namespace XamaDataLayer.BranchCmd
         public static bool EditCustomer(Customer tb, int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var c = db.Customers.Where(cc => cc.ID == xid).SingleOrDefault();
 
             c.CustomerName = tb.CustomerName;
@@ -71,6 +77,7 @@ namespace XamaDataLayer.BranchCmd
         public static void DeleteCustomer( int xid )
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var c = db.Customers.Where(cc => cc.ID == xid).SingleOrDefault();
             db.Customers.DeleteOnSubmit(c);
             db.SubmitChanges();
@@ -79,6 +86,7 @@ namespace XamaDataLayer.BranchCmd
         public static List<Customer> GetCustmerByID(int CustId)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var lst = (from c in db.Customers
                       orderby c.CustomerName ascending
                       where c.ID == CustId

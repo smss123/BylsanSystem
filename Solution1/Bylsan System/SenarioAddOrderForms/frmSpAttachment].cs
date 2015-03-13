@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
+using Telerik.WinControls.UI;
 namespace Bylsan_System.SenarioAddOrderForms
 {
-    public partial class frmSpAttachment_ : Form
+    public partial class frmSpAttachment_ : RadForm
     {
         public frmSpAttachment_()
         {

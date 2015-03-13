@@ -1,17 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="Bylsan_SystemReportsReportsObject">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>c1bdf4f2-745f-4e51-9476-7d593cccc77b</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="AvailableQty">
+          <DataField>AvailableQty</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpirationDate">
+          <DataField>ExpirationDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="itemName">
+          <DataField>itemName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StorId">
+          <DataField>StorId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>Bylsan_SystemReportsReportsObject</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Bylsan_System.Reports.ReportsObject</rd:DataSetName>
+        <rd:TableName>ItemsStoreReportObj</rd:TableName>
+        <rd:ObjectDataSourceType>Bylsan_System.Reports.ReportsObject.ItemsStoreReportObj, Bylsan System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <Body>
     <ReportItems>
       <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>19.95324cm</Width>
+              <Width>7.85561in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>2.693cm</Height>
+              <Height>1.06024in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -89,21 +133,21 @@
                           <TablixBody>
                             <TablixColumns>
                               <TablixColumn>
-                                <Width>3.69354cm</Width>
+                                <Width>1.45415in</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>3.95812cm</Width>
+                                <Width>1.55831in</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>4.06396cm</Width>
+                                <Width>1.59998in</Width>
                               </TablixColumn>
                               <TablixColumn>
-                                <Width>7.87396cm</Width>
+                                <Width>3.09998in</Width>
                               </TablixColumn>
                             </TablixColumns>
                             <TablixRows>
                               <TablixRow>
-                                <Height>0.6cm</Height>
+                                <Height>0.23622in</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
@@ -292,7 +336,7 @@
                                 </TablixCells>
                               </TablixRow>
                               <TablixRow>
-                                <Height>0.6cm</Height>
+                                <Height>0.23622in</Height>
                                 <TablixCells>
                                   <TablixCell>
                                     <CellContents>
@@ -307,7 +351,9 @@
                                                 <Style />
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>StorId</rd:DefaultName>
@@ -348,7 +394,9 @@
                                                 <Style />
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>AvailableQty</rd:DefaultName>
@@ -392,7 +440,9 @@
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>ExpirationDate</rd:DefaultName>
@@ -433,7 +483,9 @@
                                                 <Style />
                                               </TextRun>
                                             </TextRuns>
-                                            <Style />
+                                            <Style>
+                                              <TextAlign>Center</TextAlign>
+                                            </Style>
                                           </Paragraph>
                                         </Paragraphs>
                                         <rd:DefaultName>Description</rd:DefaultName>
@@ -487,7 +539,7 @@
                           <Top>1.40229cm</Top>
                           <Left>0.36365cm</Left>
                           <Height>1.2cm</Height>
-                          <Width>19.58959cm</Width>
+                          <Width>19.58958cm</Width>
                           <ZIndex>2</ZIndex>
                           <Style>
                             <Border>
@@ -659,51 +711,6 @@
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
-  <AutoRefresh>0</AutoRefresh>
-  <DataSources>
-    <DataSource Name="Bylsan_SystemReportsReportsObject">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>c1bdf4f2-745f-4e51-9476-7d593cccc77b</rd:DataSourceID>
-    </DataSource>
-  </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet1">
-      <Query>
-        <DataSourceName>Bylsan_SystemReportsReportsObject</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="AvailableQty">
-          <DataField>AvailableQty</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ExpirationDate">
-          <DataField>ExpirationDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="itemName">
-          <DataField>itemName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="StorId">
-          <DataField>StorId</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>Bylsan_System.Reports.ReportsObject</rd:DataSetName>
-        <rd:TableName>ItemsStoreReportObj</rd:TableName>
-        <rd:ObjectDataSourceType>Bylsan_System.Reports.ReportsObject.ItemsStoreReportObj, Bylsan System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
-    </DataSet>
-  </DataSets>
   <EmbeddedImages>
     <EmbeddedImage Name="BaylasanFinalLogo">
       <MIMEType>image/jpeg</MIMEType>
@@ -794,6 +801,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADlLu12XsDBsCPHda6vyjY+T7ErsjxyK9j1XY20b
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//Z</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
-  <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>f52330cb-17dc-46f1-9e30-8e399edd38c2</rd:ReportID>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
 </Report>

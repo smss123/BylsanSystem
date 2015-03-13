@@ -25,7 +25,7 @@ namespace Bylsan_System.MainStoreForms
                 lblStatus.Text = "Loading ...";
             });
             Operation.BeginOperation(this);
-            var q = StoreManagerCmd.GetAllStoreManager();
+            var q = Operation.AllStoreManager; //StoreManagerCmd.GetAllStoreManager();
             this.Invoke((MethodInvoker)delegate
             {
                 StoreManagerGridView.DataSource = q;
@@ -39,12 +39,14 @@ namespace Bylsan_System.MainStoreForms
         }
         private void FrmManageMainStore_StoreManager_Load(object sender, EventArgs e)
         {
+           
             th = new Thread(Loading);
             th.Start();
         }
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
+            
         }
 
         private void StoreManagerGridView_CommandCellClick(object sender, EventArgs e)

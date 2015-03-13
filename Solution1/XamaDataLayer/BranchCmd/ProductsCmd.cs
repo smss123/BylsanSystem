@@ -9,7 +9,7 @@ namespace XamaDataLayer.BranchCmd
         private static DbDataContext db = new DbDataContext();
         public static bool AddProduct(Product tb)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             db.Products.InsertOnSubmit(tb);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Add ", " Product  ", " Add New Product");
@@ -19,7 +19,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static bool EditProduct(Product tb, int xid)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             var prd = db.Products.Where(pp => pp.ID == xid).SingleOrDefault();
             prd.Product_Name = tb.Product_Name;
             prd.Product_Description = tb.Product_Description;
@@ -34,7 +34,7 @@ namespace XamaDataLayer.BranchCmd
         }
         public static void DeleteProduct(int xid)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             var prd = db.Products.Where(pp => pp.ID == xid).SingleOrDefault();
             db.Products.DeleteOnSubmit(prd);
             db.SubmitChanges();
@@ -43,13 +43,13 @@ namespace XamaDataLayer.BranchCmd
         }
         public static List<Product> GetAllProducts()
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             return db.Products.ToList();
         }
 
         public static List<Product> GetAllProducts(bool p)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
          var q = (from i in db.Products select new { i.PublicName, i.ProductPrice, i.ID });
          List<Product> ls = new List<Product>();
          foreach (var item in q)
@@ -68,7 +68,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static List<Product> GetProductByID(int XID)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             var LST = (from p in db.Products
                       where
                           p.ID == XID
@@ -78,7 +78,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static List<Product> GetProductByCategID(int CategID)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             var LST = (from p in db.Products
                       where
                           p.CateogryID == CategID

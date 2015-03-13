@@ -27,7 +27,8 @@ namespace Bylsan_System.designerForms
         private void PopulateGrd()
         {
             Operation.BeginOperation(this);
-            var q = SelectedOrder.OrderProducts.ToList();
+            var q = Operation.AllOrderProduct.Where(p => p.OrderID == SelectedOrder.ID).ToList();  //Operation.AllOrder.Where(p => p.ID == TagOrder.ID).Single().OrderProducts; //TagOrder.OrderProducts.ToList();
+              
             this.Invoke((MethodInvoker)delegate
             {
                 DGVProducts.DataSource = q;
@@ -77,12 +78,12 @@ namespace Bylsan_System.designerForms
                     OrderProduct ats = (OrderProduct)DGVProducts.CurrentRow.DataBoundItem;
 
                     Application.DoEvents();
-                    foreach (var item in ats.OrderProuctAttachments.ToList())
+                    foreach (var item in lst)
                     {
                         TxtDescription.Text = item.Description;
                         PhotoBox.Image = item.imageX;
 
-                        imageList1.Images.Add(string.Format("Description=[{0}]\n\n Customer=[{1}]", item.Description,item.CustomerText),item.imageX);
+                        imageList1.Images.Add(string.Format("Description=[{0}]\n\n Customer=[{1}]\n", item.Description,item.CustomerText),item.imageX);
 
                         IDImageAddress = item.ID;
 

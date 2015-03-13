@@ -77,7 +77,7 @@
             this.groupBox1.Controls.Add(this.accountCategoryNameTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(368, 186);
+            this.groupBox1.Size = new System.Drawing.Size(368, 194);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 

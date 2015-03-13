@@ -17,7 +17,7 @@ namespace Bylsan_System.ProductForms
         private void btnOrint_Click(object sender, EventArgs e)
         {
             var cmd = new ItemBarcodeReportCmd();
-            cmd.GetItemStorByDate(comboBox1.SelectedValue.ToString().ToInt(),numericUpDown1.Value.ToString().ToInt());
+            cmd.GetItemStorByDate(comboBox1.SelectedValue.ToString().ToInt(),numericUpDown1.Value.ToString().ToInt(),dateTimePicker1.Value);
         }
         private void LoadProduct()
         {

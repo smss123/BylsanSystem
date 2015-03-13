@@ -31,7 +31,7 @@ namespace XamaDataLayer.Main_Store
             return q;
         }
 
-        public void DeleteSupplier(int xid)
+        public static void DeleteSupplier(int xid)
         {
             try
             {

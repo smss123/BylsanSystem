@@ -23,8 +23,8 @@ namespace Bylsan_System.ProductForms
                 var tragetProduct = Operation.Allproducts.ToList();
                 var content = (GridViewMultiComboBoxColumn)radGridView1.Columns[1];
                 content.DataSource = tragetProduct;
-
-                q =  db.Products.Where(p => p.ID == SelectedProduct.ID).Take(1).Single();
+                db.CommandTimeout = 90000;
+                q = db.Products.Where(p => p.ID == SelectedProduct.ID).Take(1).Single();
                 productBindingSource.DataSource = q;
             }
             else
@@ -44,7 +44,18 @@ namespace Bylsan_System.ProductForms
         {
             Operation.BeginOperation(this);
             ProductManagmentFunction(true);
-
+            GridViewComboBoxColumn col = (GridViewComboBoxColumn)radGridView1.Columns[3];
+            col.DataSource = new string[] {"Number",
+"Centimeter",
+"dozen",
+"feet",
+"gram",
+"inch",
+"Kg",
+"Liter",
+"Meter",
+"Mm",
+"Piece" };
 
             Operation.EndOperation(this);
         }

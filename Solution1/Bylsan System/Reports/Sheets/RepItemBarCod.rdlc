@@ -11,7 +11,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>3.66176cm</Height>
+              <Height>3.36412cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -37,10 +37,10 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox1</rd:DefaultName>
-                          <Top>1.19711cm</Top>
-                          <Left>0.19564cm</Left>
-                          <Height>0.53778cm</Height>
-                          <Width>2.14138cm</Width>
+                          <Top>0.91489cm</Top>
+                          <Left>0cm</Left>
+                          <Height>0.71276cm</Height>
+                          <Width>2.5cm</Width>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -70,10 +70,10 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox2</rd:DefaultName>
-                          <Top>1.76876cm</Top>
-                          <Left>0.19564cm</Left>
+                          <Top>1.62765cm</Top>
+                          <Left>0cm</Left>
                           <Height>0.54841cm</Height>
-                          <Width>2.14138cm</Width>
+                          <Width>2.5cm</Width>
                           <ZIndex>1</ZIndex>
                           <Style>
                             <Border>
@@ -104,10 +104,9 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>2.31717cm</Top>
-                          <Left>0.07702in</Left>
+                          <Top>2.17606cm</Top>
                           <Height>0.52045cm</Height>
-                          <Width>2.14138cm</Width>
+                          <Width>2.5cm</Width>
                           <ZIndex>2</ZIndex>
                           <Style>
                             <Border>
@@ -140,7 +139,7 @@
                           <rd:DefaultName>Textbox4</rd:DefaultName>
                           <Top>0cm</Top>
                           <Left>0cm</Left>
-                          <Height>1.02072cm</Height>
+                          <Height>0.91489cm</Height>
                           <Width>2.5cm</Width>
                           <ZIndex>3</ZIndex>
                           <Style>
@@ -160,7 +159,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ExpriedDate.Value</Value>
+                                  <Value>="Exp:"+Fields!ExpriedDate.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -172,7 +171,7 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox5</rd:DefaultName>
-                          <Top>2.90817cm</Top>
+                          <Top>2.69651cm</Top>
                           <Left>0cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.5cm</Width>
@@ -217,7 +216,7 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>0.10583cm</Top>
         <Left>0cm</Left>
-        <Height>3.66176cm</Height>
+        <Height>3.36412cm</Height>
         <Width>2.5cm</Width>
         <Style>
           <Border>
@@ -227,7 +226,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.4833in</Height>
+    <Height>1.38337in</Height>
     <Style />
   </Body>
   <Width>0.98425in</Width>

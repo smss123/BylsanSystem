@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="Bylsan_SystemReportsReportsObject">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>e81648f8-2f08-4432-96c4-c0dadb15d71c</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="Cost">
+          <DataField>Cost</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Date">
+          <DataField>Date</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PaymentVoucherName">
+          <DataField>PaymentVoucherName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PaymentVoucherNumber">
+          <DataField>PaymentVoucherNumber</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Remaining">
+          <DataField>Remaining</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>Bylsan_SystemReportsReportsObject</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Bylsan_System.Reports.ReportsObject</rd:DataSetName>
+        <rd:TableName>PaymentVoucherReportObj</rd:TableName>
+        <rd:ObjectDataSourceType>Bylsan_System.Reports.ReportsObject.PaymentVoucherReportObj, Bylsan System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <Body>
     <ReportItems>
       <Textbox Name="bondNumber">
@@ -522,8 +566,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>bondNumber</rd:DefaultName>
-        <Top>9.03275cm</Top>
-        <Left>7.45889cm</Left>
+        <Top>9.17386cm</Top>
+        <Left>7.88222cm</Left>
         <Height>0.62646cm</Height>
         <Width>6.1248cm</Width>
         <ZIndex>15</ZIndex>
@@ -559,7 +603,7 @@
         <Top>9.03275cm</Top>
         <Left>0.35842cm</Left>
         <Height>0.62646cm</Height>
-        <Width>1.94438cm</Width>
+        <Width>1.87382cm</Width>
         <ZIndex>16</ZIndex>
         <Style>
           <Border>
@@ -591,10 +635,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>9.03275cm</Top>
+        <Top>9.13858cm</Top>
         <Left>5.91139cm</Left>
         <Height>0.62646cm</Height>
-        <Width>1.44167cm</Width>
+        <Width>1.73005cm</Width>
         <ZIndex>17</ZIndex>
         <Style>
           <Border>
@@ -629,7 +673,7 @@
         <Top>9.8356cm</Top>
         <Left>0.35842cm</Left>
         <Height>0.62646cm</Height>
-        <Width>1.97966cm</Width>
+        <Width>1.87382cm</Width>
         <ZIndex>18</ZIndex>
         <Style>
           <Border>
@@ -695,8 +739,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>bondCost</rd:DefaultName>
-        <Top>9.8356cm</Top>
-        <Left>7.45889cm</Left>
+        <Top>9.94143cm</Top>
+        <Left>7.88222cm</Left>
         <Height>0.62646cm</Height>
         <Width>6.1248cm</Width>
         <ZIndex>20</ZIndex>
@@ -729,10 +773,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>9.8356cm</Top>
-        <Left>6.22008cm</Left>
+        <Top>9.97671cm</Top>
+        <Left>5.91139cm</Left>
         <Height>0.62646cm</Height>
-        <Width>1.13298cm</Width>
+        <Width>1.73005cm</Width>
         <ZIndex>21</ZIndex>
         <Style>
           <Border>
@@ -764,7 +808,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Remaining</rd:DefaultName>
-        <Top>10.60317cm</Top>
+        <Top>10.77956cm</Top>
         <Left>2.75258cm</Left>
         <Height>0.62646cm</Height>
         <Width>4.60048cm</Width>
@@ -798,7 +842,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>10.63844cm</Top>
+        <Top>10.81483cm</Top>
         <Left>0.35842cm</Left>
         <Height>0.62646cm</Height>
         <Width>2.28833cm</Width>
@@ -968,51 +1012,6 @@
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
-  <AutoRefresh>0</AutoRefresh>
-  <DataSources>
-    <DataSource Name="Bylsan_SystemReportsReportsObject">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>e81648f8-2f08-4432-96c4-c0dadb15d71c</rd:DataSourceID>
-    </DataSource>
-  </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet1">
-      <Query>
-        <DataSourceName>Bylsan_SystemReportsReportsObject</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="Cost">
-          <DataField>Cost</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="Date">
-          <DataField>Date</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="PaymentVoucherName">
-          <DataField>PaymentVoucherName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="PaymentVoucherNumber">
-          <DataField>PaymentVoucherNumber</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="Remaining">
-          <DataField>Remaining</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>Bylsan_System.Reports.ReportsObject</rd:DataSetName>
-        <rd:TableName>PaymentVoucherReportObj</rd:TableName>
-        <rd:ObjectDataSourceType>Bylsan_System.Reports.ReportsObject.PaymentVoucherReportObj, Bylsan System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
-    </DataSet>
-  </DataSets>
   <EmbeddedImages>
     <EmbeddedImage Name="BaylasanFinalLogo">
       <MIMEType>image/jpeg</MIMEType>
@@ -1103,6 +1102,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADlLu12XsDBsCPHda6vyjY+T7ErsjxyK9j1XY20b
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//Z</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
-  <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>8a267ec3-6d40-4de7-837b-415ba0f05f64</rd:ReportID>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
 </Report>

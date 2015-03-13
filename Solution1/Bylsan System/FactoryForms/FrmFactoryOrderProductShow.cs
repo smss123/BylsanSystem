@@ -7,6 +7,7 @@ using System.Threading;
 using XamaDataLayer;
 using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Main_Store;
+using Telerik.WinControls;
 
 namespace Bylsan_System.FactoryForms
 {
@@ -24,16 +25,26 @@ namespace Bylsan_System.FactoryForms
         {
             Operation.BeginOperation(this);
 
-            var q = TagOrder.OrderProducts.ToList();
-            this.Invoke((MethodInvoker)delegate
+            try
             {
-                foreach (var item in q)
+                var q = Operation.AllOrderProduct.Where(p => p.OrderID == TagOrder.ID).ToList();  //Operation.AllOrder.Where(p => p.ID == TagOrder.ID).Single().OrderProducts; //TagOrder.OrderProducts.ToList();
+                this.Invoke((MethodInvoker)delegate
                 {
-                    DGVProducts.Rows.Add(new string[] { item .ID .ToString (), item .ProductID .ToString (), item.Product.Product_Name,
+                    foreach (var item in q)
+                    {
+                        DGVProducts.Rows.Add(new string[] { item .ID .ToString (), item .ProductID .ToString (), item.Product.Product_Name,
                      item .Qty .ToString ()
                      });
-                }
-            });
+                    }
+                });
+
+            }
+            catch (Exception ex) 
+            {
+                RadMessageBox.ThemeName = this.ThemeName;
+                RadMessageBox.Show("No Any Product on this Order");
+                
+            }
             Operation.EndOperation(this);
             Thr.Abort();
         }
@@ -69,19 +80,20 @@ namespace Bylsan_System.FactoryForms
         private void LoadProdcutInformations()
         {
             PrdID = 0;
-            PrdID = int.Parse(DGVProducts.CurrentRow.Cells[1].Value.ToString());
+            int productID = int.Parse(DGVProducts.CurrentRow.Cells[0].Value.ToString());
+            var px = Operation.AllOrderProduct.Where(p => p.ID == productID).Single(); //(OrderProduct)(DGVProducts.CurrentRow.DataBoundItem);
 
-            var lst1 = OrderProductsCmd.GetAllByProductID(PrdID);
+            var lst1 = px; //OrderProductsCmd.GetAllByProductID(PrdID);
 
-            var CurrentProduct = Operation.Allproducts.Where(p => p.ID == PrdID).ToList();
+            //var CurrentProduct = Operation.Allproducts.Where(p => p.ID == PrdID).ToList();
             this.Invoke((MethodInvoker)delegate
             {
-                TxtDescription.Text = lst1[0].Description;
-                PhotoBox.Image = lst1[0].ImageX;
+                TxtDescription.Text = lst1.Description;
+                PhotoBox.Image = lst1.ImageX;
 
 
 
-                lblPoductName.Text = CurrentProduct[0].Product_Name;
+                lblPoductName.Text = lst1.Product.Product_Name;
                 lblPrice.Text = "[none]";
 
 
@@ -105,10 +117,10 @@ namespace Bylsan_System.FactoryForms
         {
             if ( TaregtOrder != 0)
             {
-                var OrderTb = new Order()
+                var orderTb = new Order()
                 { OrderStatus = "To Deliver", };
 
-                OrdersCmd.EditOrderStatusOnly(OrderTb, TaregtOrder);
+                OrdersCmd.EditOrderStatusOnly(orderTb, TaregtOrder);
                 MessageBox.Show("The current product is ready to be sent to the customer");
             }
         }
@@ -122,7 +134,7 @@ namespace Bylsan_System.FactoryForms
 
         private void SaveChangesBtn_Click(object sender, EventArgs e)
         {
-            var OrderTb = new Order();
+            var orderTb = new Order();
 
 
             for (var i = 0; i < DGVProducts.Rows.Count; i++)
@@ -136,12 +148,12 @@ namespace Bylsan_System.FactoryForms
                 }
 
 
-                OrderTb = new Order()
+                orderTb = new Order()
                 {
                     OrderStatus = "To Deliver",
                 };
 
-                OrdersCmd.EditOrderStatusOnly(OrderTb, TaregtOrder);
+                OrdersCmd.EditOrderStatusOnly(orderTb, TaregtOrder);
 
                
                 
@@ -194,6 +206,11 @@ namespace Bylsan_System.FactoryForms
 
             //    CreateContents();
             }
+        }
+
+        private void DGVProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

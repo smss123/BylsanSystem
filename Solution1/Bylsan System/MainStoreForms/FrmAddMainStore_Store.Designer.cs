@@ -153,6 +153,7 @@
             this.ItemColumnComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
             this.ItemColumnComboBox.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.ItemColumnComboBox.EditorControl.MasterTemplate.AutoGenerateColumns = false;
+            this.ItemColumnComboBox.EditorControl.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewDecimalColumn1.DataType = typeof(int);
             gridViewDecimalColumn1.EnableExpressionEditor = false;
             gridViewDecimalColumn1.FieldName = "ID";
@@ -212,6 +213,7 @@
             this.ItemColumnComboBox.Size = new System.Drawing.Size(236, 20);
             this.ItemColumnComboBox.TabIndex = 9;
             this.ItemColumnComboBox.TabStop = false;
+            this.ItemColumnComboBox.ThemeName = "Office2010Black";
             // 
             // productBindingSource
             // 

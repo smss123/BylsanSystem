@@ -11,7 +11,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static bool AddQuotation(Quotation tb)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             db.Quotations.InsertOnSubmit(tb);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Add ", "Quotation  ", " Add Quotation's Informations  ");
@@ -21,7 +21,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static Quotation EditQuotation(Quotation tb, int xid)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             var q = db.Quotations.Where(qq => qq.ID == xid).SingleOrDefault();
             q.PhoneNumber = tb.PhoneNumber;
             q.QuotationFor = tb.QuotationFor;
@@ -36,7 +36,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static void DeleteQuotation(int xid)
         {
-            db = new DbDataContext();
+          db = new DbDataContext();db.CommandTimeout = 9000;db.CommandTimeout = 9000;
             var q = db.Quotations.Where(qq => qq.ID == xid).SingleOrDefault();
             db.Quotations.DeleteOnSubmit(q);
 
@@ -49,7 +49,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static List<Quotation> GetAllQuotations()
         {
-            db = new DbDataContext();
+          db = new DbDataContext();db.CommandTimeout = 9000;db.CommandTimeout = 9000;
             return   db.Quotations.ToList();
         }
     }

@@ -64,11 +64,21 @@ namespace Bylsan_System.BranchForms
             {
                 if (RadMessageBox.Show("Want To Delete?", string.Empty, MessageBoxButtons.YesNo, RadMessageIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    Operation.BeginOperation(this);
-                    BranchsCmd.DeleteBranch(((Branch)BranchGridView.CurrentRow.DataBoundItem).ID);
-                    Operation.ShowToustOk("Branch Has Been Deleted", this);
-                    LoadBranches();
-                    Operation.EndOperation(this);
+                    try
+                    {
+                            Operation.BeginOperation(this);
+                         BranchsCmd.DeleteBranch(((Branch)BranchGridView.CurrentRow.DataBoundItem).ID);
+                         Operation.ShowToustOk("Branch Has Been Deleted", this);
+                            LoadBranches();
+                         Operation.EndOperation(this);
+                    }
+                    catch (Exception EX)
+                    {
+                        RadMessageBox.ThemeName = this.ThemeName;
+                        RadMessageBox.Show("Can't Delete BeCause employees and stores into this branch");
+                        Operation.EndOperation(this);
+                        
+                    }
                 }
             }
         }

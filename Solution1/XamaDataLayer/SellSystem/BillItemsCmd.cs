@@ -10,6 +10,7 @@ namespace XamaDataLayer.SellSystem
         public static bool AddBillItmes(BillItem tb)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             db.BillItems.InsertOnSubmit(tb);
             db.SubmitChanges();
             return true;
@@ -25,6 +26,7 @@ namespace XamaDataLayer.SellSystem
         public static BillItem EditBillItems(BillItem tb, int xid, int bllId)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var bl = db.BillItems.Where(b => b.ID == xid && b.Bill_ID == bllId).SingleOrDefault();
             bl.Bill_ID = tb.Bill_ID;
             bl.ProductID = tb.ProductID;
@@ -36,6 +38,7 @@ namespace XamaDataLayer.SellSystem
         public static void DeleteAt(int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var bl = db.BillItems.Where(b => b.ID == xid ).SingleOrDefault();
             db.BillItems.DeleteOnSubmit(bl);
             db.SubmitChanges();
@@ -44,6 +47,7 @@ namespace XamaDataLayer.SellSystem
         public static List<BillItem> LoadAllBillItemsByBill_ID(int BLLId)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var lst = (from i in db.BillItems
                        orderby i.ProductID ascending
                       where i.Bill_ID == BLLId

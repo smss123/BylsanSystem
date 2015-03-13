@@ -11,6 +11,8 @@ namespace XamaDataLayer.Accountant
         public static bool AddAccountCategory(AccountCategory tb)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
+
             db.AccountCategories.InsertOnSubmit(tb);
             db.SubmitChanges();
            
@@ -21,6 +23,7 @@ namespace XamaDataLayer.Accountant
         public static AccountCategory EditAccountCategory(AccountCategory tb, int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var act = db.AccountCategories.Where(a => a.ID == xid).SingleOrDefault();
             act.AccountCategoryName = tb.AccountCategoryName;
             act.Description = tb.Description;
@@ -34,6 +37,7 @@ namespace XamaDataLayer.Accountant
         public static void DeleteAccountCategory(int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var act = db.AccountCategories.Where(a => a.ID == xid).SingleOrDefault();
             db.AccountCategories.DeleteOnSubmit(act);
 
@@ -43,6 +47,7 @@ namespace XamaDataLayer.Accountant
         public static List<AccountCategory> GetAll()
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var Lst = ( from a in  db.AccountCategories
                          select a ).ToList();
             return Lst;

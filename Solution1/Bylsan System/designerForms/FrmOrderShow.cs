@@ -119,12 +119,9 @@ namespace Bylsan_System.designerForms
                 FrmProdShow.labCustomerName.Text = "Loading Info ..";
                 FrmProdShow.labCustomerPhone.Text = "Loading Info ..";
             });
-            var Lst = (from c in OrdersCmd.GetAllOrderByID(SelectedOrderID)
-                        select c).Single();
-            var cust = (from c in CustomersCmd.GetAllCustmers()
-                         where c.ID == Lst.CustomerID
-                         select c).Single();
+            var Lst = Operation.AllOrder.Where(p=>p.ID == SelectedOrderID).Single();
 
+            var cust = Lst.Customer;
             this.Invoke((MethodInvoker)delegate
             {
                 FrmProdShow.labCustomerName.Text = cust.CustomerName.ToString();

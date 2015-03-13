@@ -35,11 +35,21 @@ namespace Bylsan_System.ProductForms
             {
                 if (RadMessageBox.Show("You Are sure?", "delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    Operation.BeginOperation(this);
-                    var q = (Product)ProductGridView.CurrentRow.DataBoundItem;
-                    ProductsCmd.DeleteProduct(q.ID);
-                    Operation.EndOperation(this);
-                    Operation.ShowToustOk("Product Deleted", this);
+                    try
+                    {
+                        Operation.BeginOperation(this);
+                        var q = (Product)ProductGridView.CurrentRow.DataBoundItem;
+                        ProductsCmd.DeleteProduct(q.ID);
+                        Operation.EndOperation(this);
+                        Operation.ShowToustOk("Product Deleted", this);
+                    }
+                    catch (Exception)
+                    {
+
+                        RadMessageBox.ThemeName = this.ThemeName;
+                        RadMessageBox.Show("Can't Be Delete Because it's in Store");
+                        Operation.EndOperation(this);
+                    }
                 }
             }
             if (col == 8)

@@ -282,8 +282,8 @@ namespace Bylsan_System.SenarioAddOrderForms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-           // Application.OpenForms["FrmAddOrderProduct"].Show();
-            this.Hide();
+            Application.OpenForms["FrmAddOrderProduct"].Show();
+            this.Close();
         }
 
         private void ReceiptVoucherButton_Click(object sender, EventArgs e)

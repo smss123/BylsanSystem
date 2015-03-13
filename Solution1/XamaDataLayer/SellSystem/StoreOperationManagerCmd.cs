@@ -9,7 +9,7 @@ namespace XamaDataLayer.SellSystem
         private static DbDataContext db = new DbDataContext();
         public static bool AddStoreOperationManager(StoreOperationManager tb)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             db.StoreOperationManagers.InsertOnSubmit(tb);
             db.SubmitChanges();
             return true;
@@ -18,7 +18,7 @@ namespace XamaDataLayer.SellSystem
 
         public static StoreOperationManager  EditStoreOperationManager( StoreOperationManager  tb, int xid)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             var storMang = db.StoreOperationManagers.Where(s => s.ID == xid).SingleOrDefault();
 
             storMang.StoreID = tb.StoreID;
@@ -33,7 +33,7 @@ namespace XamaDataLayer.SellSystem
 
         public static void DeleteStoreOpertionManager(int xid)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             var storMang = db.StoreOperationManagers.Where(s => s.ID == xid).SingleOrDefault();
             db.StoreOperationManagers.DeleteOnSubmit(storMang);
             db.SubmitChanges();
@@ -43,13 +43,13 @@ namespace XamaDataLayer.SellSystem
 
         public static List<StoreOperationManager> GetAllStoreOperationManager()
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             return db.StoreOperationManagers.ToList();
         }
 
         public static List<StoreOperationManager> GetAllStoreOperationManagerByDate( DateTime dat )
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             var lst = (from s in db.StoreOperationManagers
                       orderby s.ID ascending
                       where s.ProcessDate == dat
@@ -59,7 +59,7 @@ namespace XamaDataLayer.SellSystem
 
         public static List<StoreOperationManager> GetAllStoreOperationManagerByUserID( int usrId)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             var lst = (from s in db.StoreOperationManagers
                       orderby s.ID ascending
                       where s.UserID == usrId
@@ -68,7 +68,7 @@ namespace XamaDataLayer.SellSystem
         }
         public static List<StoreOperationManager> GetAllStoreOperationManagerByStoreID(int StorId)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             var lst = (from s in db.StoreOperationManagers
                       orderby s.ID ascending
                       where s.StoreID == StorId

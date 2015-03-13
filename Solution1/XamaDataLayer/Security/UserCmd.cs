@@ -120,7 +120,7 @@ namespace XamaDataLayer.Security
 
         private static bool WriteUserHistory(History htb)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             db.Histories.InsertOnSubmit(htb);
             db.SubmitChanges();
             return true;
@@ -152,7 +152,7 @@ namespace XamaDataLayer.Security
 
         public static User EditPassword(User tb, int xid)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             var q = db.Users.Where(u => u.ID == xid).SingleOrDefault();
             q.Passwords = tb.Passwords;
             db.SubmitChanges();

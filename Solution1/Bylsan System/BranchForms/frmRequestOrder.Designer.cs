@@ -35,7 +35,7 @@
             // 
             // radGridView1
             // 
-            this.radGridView1.Location = new System.Drawing.Point(12, 101);
+            this.radGridView1.Location = new System.Drawing.Point(12, 132);
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.Size = new System.Drawing.Size(864, 259);
             this.radGridView1.TabIndex = 0;

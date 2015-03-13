@@ -10,6 +10,7 @@ namespace XamaDataLayer.Accountant
         public static bool AddAccount(Account tb)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             db.Accounts.InsertOnSubmit(tb);
             db.SubmitChanges();
             return true;
@@ -17,7 +18,8 @@ namespace XamaDataLayer.Accountant
 
         public static Account EditAccount(Account tb, int xid)
         {
-            db = new DbDataContext();
+          db = new DbDataContext();db.CommandTimeout = 9000;db.CommandTimeout = 9000;
+            db.CommandTimeout = 9000;
             var act = db.Accounts.Where(a => a.ID == xid).SingleOrDefault();
             act.CategoryID = tb.CategoryID;
             act.AccountName = tb.AccountName;
@@ -31,7 +33,8 @@ namespace XamaDataLayer.Accountant
         {
             try
             {
-                db = new DbDataContext();
+              db = new DbDataContext();db.CommandTimeout = 9000;db.CommandTimeout = 9000;
+                db.CommandTimeout = 9000;
                 var act = db.Accounts.Where(a => a.ID == xid).SingleOrDefault();
                 db.Accounts.DeleteOnSubmit(act);
 
@@ -45,13 +48,15 @@ namespace XamaDataLayer.Accountant
 
         public static List<Account> GetAllAccounts()
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
+            db.CommandTimeout = 9000;
             return db.Accounts.OrderByDescending(p=>p.CategoryID).ToList();
         }
 
         public static List<Account> GetAccountByCategoryID(int categID)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
+            db.CommandTimeout = 9000;
             var ACT = (from g in db.Accounts
                         where g.CategoryID == categID
                         select g).ToList();
@@ -60,7 +65,8 @@ namespace XamaDataLayer.Accountant
 
         public static List<Account> GetAccountByID(int xID)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
+            db.CommandTimeout = 9000;
             var ACT = (from ac in db.Accounts
                         where ac.ID  == xID
                          select ac).ToList();
@@ -68,7 +74,8 @@ namespace XamaDataLayer.Accountant
         }
         public static List<Account> GetAccountByName(string nam)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
+            db.CommandTimeout = 9000;
             var ACT = (from ac in db.Accounts
                         where ac.AccountName  == nam
                          select ac).ToList ();
@@ -76,7 +83,9 @@ namespace XamaDataLayer.Accountant
         }
         public static Account GetOneAccountByName(string nam)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
+            db.CommandTimeout = 9000;
+
             var ACT = (from ac in db.Accounts
                        where ac.AccountName == nam
                        select ac).Single ();

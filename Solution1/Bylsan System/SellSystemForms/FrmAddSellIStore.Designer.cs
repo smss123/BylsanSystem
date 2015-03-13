@@ -41,10 +41,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.AddBtn = new Telerik.WinControls.UI.RadButton();
             this.ItemComboBox = new Telerik.WinControls.UI.RadMultiColumnComboBox();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qtyTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             itemIDLabel = new System.Windows.Forms.Label();
             qtyLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -52,8 +52,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemComboBox.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemComboBox.EditorControl.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +87,7 @@
             this.groupBox1.Controls.Add(itemIDLabel);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(320, 142);
+            this.groupBox1.Size = new System.Drawing.Size(320, 155);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
@@ -201,6 +201,10 @@
             this.ItemComboBox.ThemeName = "Office2010Black";
             this.ItemComboBox.ValueMember = "ID";
             // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(XamaDataLayer.Product);
+            // 
             // qtyTextBox
             // 
             this.qtyTextBox.BackColor = System.Drawing.SystemColors.Info;
@@ -213,10 +217,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(XamaDataLayer.Product);
             // 
             // FrmAddSellIStore
             // 
@@ -246,8 +246,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ItemComboBox.EditorControl.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemComboBox.EditorControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemComboBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

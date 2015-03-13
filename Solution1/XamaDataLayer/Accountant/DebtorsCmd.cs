@@ -11,6 +11,7 @@ namespace XamaDataLayer.Accountant
         public static bool AddDebt(Debtor tb)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             db.Debtors.InsertOnSubmit(tb);
             db.SubmitChanges();
             return true;
@@ -19,6 +20,7 @@ namespace XamaDataLayer.Accountant
         public static Debtor EditDebtor(Debtor tb, int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var q = db.Debtors.Where(d => d.ID == xid).SingleOrDefault();
             q.DebtorName = tb.DebtorName;
             q.Addresss = tb.Addresss;
@@ -34,6 +36,7 @@ namespace XamaDataLayer.Accountant
         public static void DeleteDebtor(int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var q = db.Debtors.Where(d => d.ID == xid).SingleOrDefault();
             db.Debtors.DeleteOnSubmit(q);
 
@@ -44,12 +47,14 @@ namespace XamaDataLayer.Accountant
         public static List<Debtor> GetAllDebtors()
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             return db.Debtors.ToList();
         }
 
         public static Debtor  GetOneDebtorByID( int xid ){
 
               db = new DbDataContext();
+              db.CommandTimeout = 9000;
             var q = db.Debtors.Where(d => d.ID == xid) .Single ();
             return q;
         }

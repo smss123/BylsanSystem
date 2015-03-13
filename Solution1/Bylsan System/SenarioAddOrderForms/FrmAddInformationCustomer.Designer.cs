@@ -31,6 +31,7 @@
             System.Windows.Forms.Label customerNameLabel;
             System.Windows.Forms.Label phoneNumberLabel;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.NextBtn = new Telerik.WinControls.UI.RadButton();
             this.SpecialOrderCheckBox = new System.Windows.Forms.CheckBox();
             this.NormalOrdercheckBox = new System.Windows.Forms.CheckBox();
             this.InformationgroupBox = new System.Windows.Forms.GroupBox();
@@ -43,14 +44,13 @@
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblstatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.NextBtn = new Telerik.WinControls.UI.RadButton();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
             customerNameLabel = new System.Windows.Forms.Label();
             phoneNumberLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NextBtn)).BeginInit();
             this.InformationgroupBox.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NextBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,6 +88,16 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Customer";
+            // 
+            // NextBtn
+            // 
+            this.NextBtn.Location = new System.Drawing.Point(365, 232);
+            this.NextBtn.Name = "NextBtn";
+            this.NextBtn.Size = new System.Drawing.Size(121, 36);
+            this.NextBtn.TabIndex = 7;
+            this.NextBtn.Text = "Next";
+            this.NextBtn.ThemeName = "Office2010Black";
+            this.NextBtn.Click += new System.EventHandler(this.NextBtn_Click);
             // 
             // SpecialOrderCheckBox
             // 
@@ -198,16 +208,6 @@
             this.lblstatus.Size = new System.Drawing.Size(12, 17);
             this.lblstatus.Text = "_";
             // 
-            // NextBtn
-            // 
-            this.NextBtn.Location = new System.Drawing.Point(365, 232);
-            this.NextBtn.Name = "NextBtn";
-            this.NextBtn.Size = new System.Drawing.Size(121, 36);
-            this.NextBtn.TabIndex = 7;
-            this.NextBtn.Text = "Next";
-            this.NextBtn.ThemeName = "Office2010Black";
-            this.NextBtn.Click += new System.EventHandler(this.NextBtn_Click);
-            // 
             // FrmAddInformationCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,11 +228,11 @@
             this.Load += new System.EventHandler(this.FrmAddInformationCustomer_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NextBtn)).EndInit();
             this.InformationgroupBox.ResumeLayout(false);
             this.InformationgroupBox.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NextBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

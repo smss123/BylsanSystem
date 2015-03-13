@@ -13,7 +13,7 @@ namespace XamaDataLayer.Main_Store
             db.StoreManagers.InsertOnSubmit(tb);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Add ", " Add Store Manager", " Add new store manager   At Main Store ");
-
+            db.SubmitChanges();
             return  true ;
         }
 
@@ -29,7 +29,9 @@ namespace XamaDataLayer.Main_Store
 
             q.ProcessType = tb.ProcessType;
             q.Description = tb.Description;
+            db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Edit ", " Edit  Store Manager", " Edit selected  store manager   At Main Store ");
+
             return q;
         }
 
@@ -40,6 +42,7 @@ namespace XamaDataLayer.Main_Store
                 db = new DbDataContext();
                 var q = db.StoreManagers.Where(p => p.ID == xid).SingleOrDefault();
                 db.StoreManagers.DeleteOnSubmit(q);
+                db.SubmitChanges();
                 XamaDataLayer.Security.UserCmd.SaveHistory("Delete ", " Delete Store Manager", "  Delete Selected  store manager   At Main Store ");
             }
             catch (Exception)

@@ -11,7 +11,7 @@ namespace XamaDataLayer.BranchCmd
         public static bool AddOrderProduct(OrderProduct tb)
         {
             db = new DbDataContext();
-           
+            db.CommandTimeout = 9000;
             db.OrderProducts.InsertOnSubmit(tb);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Add  ", "Add Order Product ", " Add New Order Product's Informations  ");
@@ -22,6 +22,7 @@ namespace XamaDataLayer.BranchCmd
         {
             
                 db = new DbDataContext();
+                db.CommandTimeout = 9000;
                 var ord = db.OrderProducts.Where(oo => oo.ID == xid).SingleOrDefault();
                 ord.OrderID = tb.OrderID;
                 ord.ProductID = tb.ProductID;
@@ -40,6 +41,7 @@ namespace XamaDataLayer.BranchCmd
         public static OrderProduct EditOrderProductStatus(OrderProduct tb, int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var ord = db.OrderProducts.Where(oo => oo.ID == xid).SingleOrDefault();
             ord.ProductID = tb.ProductID;
             ord.ImageX = tb.ImageX;
@@ -52,6 +54,7 @@ namespace XamaDataLayer.BranchCmd
         public static void DeleteOrderProduct(int xid)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var ord = db.OrderProducts.Where(oo => oo.ID == xid).SingleOrDefault();
 
             db.OrderProducts.DeleteOnSubmit(ord);
@@ -62,6 +65,7 @@ namespace XamaDataLayer.BranchCmd
         public static List<OrderProduct> GetAll()
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var lst = (from c in db.OrderProducts
                         where c.ID != 0
                         select c).ToList();
@@ -71,6 +75,7 @@ namespace XamaDataLayer.BranchCmd
         public static List<OrderProduct> GetAllByOrderID( int XID )
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var LST = (from p in db.OrderProducts
                       orderby p.ID
                       where p.OrderID == XID
@@ -81,6 +86,7 @@ namespace XamaDataLayer.BranchCmd
         public static List<OrderProduct> GetAllByProductID(int XID)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var LST = (from p in db.OrderProducts
                       orderby p.ID
                       where p.ProductID  == XID
@@ -91,6 +97,7 @@ namespace XamaDataLayer.BranchCmd
         public static OrderProduct GetOneByProductID(int XID)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var LST = (from p in db.OrderProducts
                        orderby p.ID
                        where p.ProductID == XID
@@ -101,7 +108,7 @@ namespace XamaDataLayer.BranchCmd
         public static List<OrderProduct> GetOrderProductByCustomerPhone(  string Phon)
         {
             db = new DbDataContext();
-
+            db.CommandTimeout = 9000;
             var getcustomeridbyphone = (from c in CustomersCmd.GetAllCustmers()
                                        where c.PhoneNumber == Phon
                                          select c).Single();

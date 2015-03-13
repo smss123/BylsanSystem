@@ -36,11 +36,12 @@
             System.Windows.Forms.Label productUnitLabel;
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label4;
+            System.Windows.Forms.Label itemTypeLabel;
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            System.Windows.Forms.Label itemTypeLabel;
             this.ProductgroupBox = new System.Windows.Forms.GroupBox();
+            this.ItemTypecomboBox = new System.Windows.Forms.ComboBox();
             this.productUnitTextBox = new System.Windows.Forms.ComboBox();
             this.publicNameTextBox = new System.Windows.Forms.TextBox();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -59,7 +60,6 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
-            this.ItemTypecomboBox = new System.Windows.Forms.ComboBox();
             product_DescriptionLabel = new System.Windows.Forms.Label();
             product_NameLabel = new System.Windows.Forms.Label();
             productPriceLabel = new System.Windows.Forms.Label();
@@ -144,6 +144,15 @@
             label4.TabIndex = 11;
             label4.Text = "margin% :";
             // 
+            // itemTypeLabel
+            // 
+            itemTypeLabel.AutoSize = true;
+            itemTypeLabel.Location = new System.Drawing.Point(63, 263);
+            itemTypeLabel.Name = "itemTypeLabel";
+            itemTypeLabel.Size = new System.Drawing.Size(58, 13);
+            itemTypeLabel.TabIndex = 17;
+            itemTypeLabel.Text = "Item Type:";
+            // 
             // ProductgroupBox
             // 
             this.ProductgroupBox.Controls.Add(this.ItemTypecomboBox);
@@ -175,12 +184,34 @@
             this.ProductgroupBox.TabStop = false;
             this.ProductgroupBox.Text = "Add Data";
             // 
+            // ItemTypecomboBox
+            // 
+            this.ItemTypecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ItemTypecomboBox.FormattingEnabled = true;
+            this.ItemTypecomboBox.Items.AddRange(new object[] {
+            "item product",
+            "item row material",
+            "All"});
+            this.ItemTypecomboBox.Location = new System.Drawing.Point(122, 260);
+            this.ItemTypecomboBox.Name = "ItemTypecomboBox";
+            this.ItemTypecomboBox.Size = new System.Drawing.Size(202, 21);
+            this.ItemTypecomboBox.TabIndex = 16;
+            // 
             // productUnitTextBox
             // 
             this.productUnitTextBox.FormattingEnabled = true;
             this.productUnitTextBox.Items.AddRange(new object[] {
-            "grm",
-            "kg"});
+            "Number",
+            "Centimeter",
+            "dozen",
+            "feet",
+            "gram",
+            "inch",
+            "Kg",
+            "Liter",
+            "Meter",
+            "Mm",
+            "Piece"});
             this.productUnitTextBox.Location = new System.Drawing.Point(126, 233);
             this.productUnitTextBox.Name = "productUnitTextBox";
             this.productUnitTextBox.Size = new System.Drawing.Size(198, 21);
@@ -257,7 +288,7 @@
             this.CategoryComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.CategoryComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // CategoryComboBox.NestedRadGridView
+            // 
             // 
             this.CategoryComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.CategoryComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -368,28 +399,6 @@
             this.statusStrip1.Size = new System.Drawing.Size(368, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // ItemTypecomboBox
-            // 
-            this.ItemTypecomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ItemTypecomboBox.FormattingEnabled = true;
-            this.ItemTypecomboBox.Items.AddRange(new object[] {
-            "item product",
-            "item row material",
-            "All"});
-            this.ItemTypecomboBox.Location = new System.Drawing.Point(122, 260);
-            this.ItemTypecomboBox.Name = "ItemTypecomboBox";
-            this.ItemTypecomboBox.Size = new System.Drawing.Size(202, 21);
-            this.ItemTypecomboBox.TabIndex = 16;
-            // 
-            // itemTypeLabel
-            // 
-            itemTypeLabel.AutoSize = true;
-            itemTypeLabel.Location = new System.Drawing.Point(63, 263);
-            itemTypeLabel.Name = "itemTypeLabel";
-            itemTypeLabel.Size = new System.Drawing.Size(58, 13);
-            itemTypeLabel.TabIndex = 17;
-            itemTypeLabel.Text = "Item Type:";
             // 
             // frmAddProduct
             // 

@@ -78,6 +78,17 @@ namespace Bylsan_System.MainStoreForms
                 errorProvider1.Clear();
             }
 
+            XItemID = 0;
+            XItemID = int.Parse(CmbItems.SelectedValue.ToString());
+
+            xStoreTb = Operation.AllStore.Where(p => p.ID == XItemID).SingleOrDefault(); //StoreCmd.GetAvailableQtyByItemID(XItemID);
+            xAvailableQty = int.Parse(xStoreTb.AvailableQty.ToString());
+
+
+            var tb = Operation.Allproducts.Where(p => p.ID == XItemID).SingleOrDefault();//StoreSalesCmd.GetAllSTore_SellByItemID(XItemID);
+            ItmUnitPrice = 0;
+            ItmUnitPrice = int.Parse(tb.ProductPrice.ToString());
+
 
             if (int.Parse(qtyTextBox.Text.ToString()) > xAvailableQty)
             {
@@ -94,13 +105,13 @@ namespace Bylsan_System.MainStoreForms
                     XItemID = 0;
                     XItemID = int.Parse(CmbItems.SelectedValue.ToString());
 
-                    xStoreTb = StoreCmd.GetAvailableQtyByItemID(XItemID);
+                    xStoreTb = Operation.AllStore.Where(p => p.ID == XItemID).SingleOrDefault(); //StoreCmd.GetAvailableQtyByItemID(XItemID);
                     xAvailableQty = int.Parse(xStoreTb.AvailableQty.ToString());
 
 
-                    var tbx = StoreSalesCmd.GetAllSTore_SellByItemID(XItemID);
+                    var tbx = Operation.Allproducts.Where(p => p.ID == XItemID).SingleOrDefault() ; //StoreSalesCmd.GetAllSTore_SellByItemID(XItemID);
                     ItmUnitPrice = 0;
-                    ItmUnitPrice = int.Parse(tbx.UnitPrice.ToString());
+                    ItmUnitPrice = int.Parse(tbx.ProductPrice.ToString());
                 }
                 catch (Exception ex)
                 {
@@ -108,14 +119,14 @@ namespace Bylsan_System.MainStoreForms
                 }
             }
 
-            var tb = new StoreWithDrawal()
+            var tbxx= new StoreWithDrawal()
             { ProductID = XItemID ,
                 StoreID =  xStoreTb .ID ,
                 DateOfProcess = DateTime.Now,
                 Qty = int.Parse(qtyTextBox.Text),
                 Comment = commentTextBox.Text + "-- Roll Out Qty   ",
                 UserID = XamaDataLayer.Security.UserInfo.CurrentUserID };
-            StoreDrawalCmd.AddDrawal(tb);
+            StoreDrawalCmd.AddDrawal(tbxx);
 
             RollOutQty();
             WriteAtStoreManagerTable();
@@ -153,13 +164,13 @@ namespace Bylsan_System.MainStoreForms
                     XItemID = 0;
                     XItemID = int.Parse(CmbItems.SelectedValue.ToString());
 
-                    xStoreTb = StoreCmd.GetAvailableQtyByItemID(XItemID);
+                    xStoreTb = Operation.AllStore.Where(p => p.ID == XItemID).SingleOrDefault(); //StoreCmd.GetAvailableQtyByItemID(XItemID);
                     xAvailableQty = int.Parse(xStoreTb.AvailableQty.ToString());
 
 
-                    var tb = StoreSalesCmd.GetAllSTore_SellByItemID(XItemID);
+                    var tb = Operation.Allproducts.Where(p => p.ID == XItemID).SingleOrDefault();//StoreSalesCmd.GetAllSTore_SellByItemID(XItemID);
                     ItmUnitPrice = 0;
-                    ItmUnitPrice = int.Parse(tb.UnitPrice.ToString());
+                    ItmUnitPrice = int.Parse(tb.ProductPrice.ToString());
                 }
                 catch (Exception ex)
                 {

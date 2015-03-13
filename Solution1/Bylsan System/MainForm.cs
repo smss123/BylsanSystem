@@ -25,6 +25,8 @@ using XamaDataLayer.SellSystem;
 using Telerik.WinControls.UI;
 using Bylsan_System.ManagmentOrderForms;
 using XamaDataLayer.Accountant;
+using XamaDataLayer.Main_Store;
+using XamaDataLayer;
 
 namespace Bylsan_System
 {
@@ -72,6 +74,8 @@ namespace Bylsan_System
         {
             frmHisotyTrasAction frm = new frmHisotyTrasAction();
             frm.ShowDialog();
+            frmShowHistory fr = new frmShowHistory();
+            fr.ShowDialog();
         }
 
         private void btnManagecustomerPoint_Click(object sender, EventArgs e)
@@ -82,13 +86,123 @@ namespace Bylsan_System
 
         private void PopulateAll()
         {
-            Operation.Allcategorys = CategoriesCmd.GetAllCategories();
-            Operation.Allproducts = ProductsCmd.GetAllProducts();
-            Operation.AllBranches = BranchsCmd.GetAllBranchs();
-           // Operation.AllSellItems = SellItemsCmd.GetAllSellItems();
-            Operation.AllOrder = OrdersCmd.GetAllOrders();
-            Operation.AllCustomer = CustomersCmd.GetAllCustmers();
-            Operation.AllDebetor = DebtorsCmd.GetAllDebtors();
+            while (true)
+            {
+
+                using (var db = new DbDataContext())
+                {
+                    try
+                    {
+
+                        db.Connection.Open();
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            pgs.Maximum = 100;
+                            pgs.Value = 0;
+                            txtLbl.Text = "Fetching data from server .";
+
+                        });
+
+                        Operation.Allcategorys = db.ProductCategories.ToList(); //CategoriesCmd.GetAllCategories();
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            pgs.Maximum = 100;
+                            pgs.Value = 20;
+                            txtLbl.Text = "Fetching data from server ..";
+
+                        });
+                        Operation.Allproducts = db.Products.ToList(); //ProductsCmd.GetAllProducts();
+
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            pgs.Maximum = 100;
+                            pgs.Value = 40;
+                            txtLbl.Text = "Fetching data from server ...";
+
+                        });
+                        Operation.AllBranches = db.Branches.ToList(); //BranchsCmd.GetAllBranchs();
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            pgs.Maximum = 100;
+                            pgs.Value = 60;
+                            txtLbl.Text = "Fetching data from server .";
+
+                        });
+                        Operation.AllOrder = db.Orders.ToList(); //OrdersCmd.GetAllOrders();
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            pgs.Maximum = 100;
+                            pgs.Value = 80;
+                            txtLbl.Text = "Fetching data from server .. ";
+
+                        });
+                        Operation.AllCustomer = db.Customers.ToList(); //CustomersCmd.GetAllCustmers();
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            pgs.Maximum = 100;
+                            pgs.Value = 90;
+                            txtLbl.Text = "Fetching data from server ...";
+
+                        });
+                        Operation.AllDebetor = db.Debtors.ToList(); //DebtorsCmd.GetAllDebtors();
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            pgs.Maximum = 100;
+                            pgs.Value = 95;
+                            txtLbl.Text = "Fetching data from server .";
+
+                        });
+                        Operation.AllStore = db.Stores.Where(p => p.Product == p.Product).ToList(); //StoreCmd.GetAllStores().Where(p=>p.Product == p.Product).ToList();
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            pgs.Maximum = 100;
+                            pgs.Value = 20;
+                            txtLbl.Text = "Fetching data from server .. ";
+
+                        });
+                        Operation.AllSellStore = db.SellStores.Where(p => p.branchID == UserInfo.CurrnetUser.Branch_ID.Value).Where(p => p.Product == p.Product).ToList(); //SellStoreCmd.GetAllSellStore(UserInfo.CurrnetUser.Branch_ID.Value).Where(p=>p.Product == p.Product).ToList();
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            pgs.Maximum = 150;
+                            pgs.Value = 100;
+                            txtLbl.Text = "Fetching data from server ...";
+
+                        });
+                        Operation.AllStoreManager = db.StoreManagers.Where(p => p.Store == p.Store && p.Store.Product == p.Store.Product).ToList(); //StoreManagerCmd.GetAllStoreManager().Where(p => p.Store == p.Store && p.Store.Product == p.Store.Product).ToList();
+
+
+
+
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            pgs.Maximum = 150;
+                            pgs.Value = 150;
+                            txtLbl.Text = "Fetching data from server ...";
+
+                        });
+                        Operation.AllOrderProduct = db.OrderProducts.ToList();
+
+                        db.Connection.Close();
+
+                    }
+                    catch (Exception ex)
+                    {
+
+
+                        continue;
+                    }
+                    
+                } 
+                      
+                this.Invoke((MethodInvoker)delegate {
+
+                    txtLbl.Text = "Ready ";
+                
+                });
+                Thread.Sleep(10000);
+            
+            }
+           
         }
         private void ActivatePermessions()
         {
@@ -134,7 +248,7 @@ namespace Bylsan_System
 
         private void AddEmloyeebtn_Click(object sender, EventArgs e)
         {
-            var frm = new FrmAddEmployee();
+            var frm = new frmAddAccount();
             frm.ShowDialog();
         }
 
@@ -334,6 +448,7 @@ namespace Bylsan_System
             frm.ShowDialog();
         }
 
+        Thread th;
         private void MainForm_Load(object sender, EventArgs e)
         {
             var Alert = new UserAlert();
@@ -341,7 +456,7 @@ namespace Bylsan_System
             XpremaTrack.WriteTrack();
 
 
-            var th = new Thread(PopulateAll);
+             th = new Thread(PopulateAll);
             th.Start();
         }
 

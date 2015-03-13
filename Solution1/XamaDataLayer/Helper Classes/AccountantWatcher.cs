@@ -14,7 +14,7 @@ namespace XamaDataLayer.Helper_Classes
 
         public static AccountDaily GetMaxTotalInAccount()
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             double MaxTotalIn = 0;
             tb = new AccountDaily();
             MaxTotalIn = (from d in db.AccountDailies
@@ -25,7 +25,7 @@ namespace XamaDataLayer.Helper_Classes
 
         public static AccountDaily GetMaxTotalOutAccount()
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             double MaxTotalOut = 0;
             tb = new AccountDaily();
             MaxTotalOut = (from d in db.AccountDailies
@@ -39,7 +39,7 @@ namespace XamaDataLayer.Helper_Classes
 
         public static AccountDaily GetMinTotalInAccount()
         {
-            db = new DbDataContext();
+          db = new DbDataContext();db.CommandTimeout = 9000;db.CommandTimeout = 9000;
             double MinTotalIn = 0;
             tb = new AccountDaily();
             MinTotalIn = (from d in db.AccountDailies
@@ -50,7 +50,7 @@ namespace XamaDataLayer.Helper_Classes
 
         public static AccountDaily GetMinTotalOutAccount()
         {
-            db = new DbDataContext();
+          db = new DbDataContext();db.CommandTimeout = 9000;db.CommandTimeout = 9000;
             double MinTotalOut = 0;
             tb = new AccountDaily();
             MinTotalOut = (from d in db.AccountDailies
@@ -64,7 +64,7 @@ namespace XamaDataLayer.Helper_Classes
             double NetBalance = 0;
             try
             {
-                db = new DbDataContext();
+              db = new DbDataContext();db.CommandTimeout = 9000;db.CommandTimeout = 9000;
 
                 var TotIn = (from d in db.AccountDailies
                              where d.AccountID == actid 

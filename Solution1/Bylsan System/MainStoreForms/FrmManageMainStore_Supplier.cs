@@ -60,9 +60,21 @@ namespace Bylsan_System.MainStoreForms
             {
                 if (RadMessageBox.Show(this, "Do you want to delete", "Delete", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
                 {
-                    Operation.BeginOperation(this);
-                   // ItemsCmd.DeleteItemAt(((StoreManager)SupplierGridView.CurrentRow.DataBoundItem).ID);
-                    Operation.EndOperation(this);
+                    try
+                    {
+                        Operation.BeginOperation(this);
+
+                        var q = ((Supplier)SupplierGridView.CurrentRow.DataBoundItem).ID;
+
+                        SuppliersCmd.DeleteSupplier(q);
+                        Operation.EndOperation(this);
+                    }
+                    catch (Exception)
+                    {
+
+                        RadMessageBox.ThemeName = this.ThemeName;
+                        RadMessageBox.Show("Can't be Delete Because It's Linked to Stores Products");
+                    }
                 }
             }
         }

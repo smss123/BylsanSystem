@@ -12,6 +12,7 @@ namespace XamaDataLayer.SettingX
         public static SystemSetting GetSettingByID(int id)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var lst = (from i in db.SystemSettings
                        orderby i.ID ascending
                        where i.ID == id
@@ -22,6 +23,7 @@ namespace XamaDataLayer.SettingX
         public static SystemSetting GetSettingBySerialNumber(string id)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var lst = (from i in db.SystemSettings
                        orderby i.ID ascending
                        where i.SerialNumber.ToString() == id
@@ -32,6 +34,7 @@ namespace XamaDataLayer.SettingX
         {
             var state = false;
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var lst = (from i in db.SystemSettings
                        orderby i.ID ascending
                        where i.ID== ID

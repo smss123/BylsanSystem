@@ -1,5 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="Bylsan_SystemReportsReportsObject">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>3afdbac2-3cda-4b17-b88d-080ec411bc68</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="BillDate">
+          <DataField>BillDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ItemName">
+          <DataField>ItemName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Qty">
+          <DataField>Qty</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="UnitPrice">
+          <DataField>UnitPrice</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="User">
+          <DataField>User</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>Bylsan_SystemReportsReportsObject</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Bylsan_System.Reports.ReportsObject</rd:DataSetName>
+        <rd:TableName>RptBillObj</rd:TableName>
+        <rd:ObjectDataSourceType>Bylsan_System.Reports.ReportsObject.RptBillObj, Bylsan System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <Body>
     <ReportItems>
       <Textbox Name="ID">
@@ -50,7 +106,9 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
@@ -84,7 +142,9 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>BillDate</rd:DefaultName>
@@ -117,7 +177,9 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
@@ -214,13 +276,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.35938in</Width>
+              <Width>1.09891in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.48438in</Width>
+              <Width>0.54336in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.48438in</Width>
+              <Width>0.54336in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -238,7 +300,7 @@
                             <TextRun>
                               <Value>Item Name</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -273,7 +335,7 @@
                             <TextRun>
                               <Value>Qty</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -308,7 +370,7 @@
                             <TextRun>
                               <Value>Amount</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -348,7 +410,7 @@
                             <TextRun>
                               <Value>=Fields!ItemName.Value</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -381,7 +443,7 @@
                             <TextRun>
                               <Value>=Fields!Qty.Value</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -414,7 +476,7 @@
                             <TextRun>
                               <Value>=Fields!Amount.Value</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -461,7 +523,7 @@
         <Top>1.66472in</Top>
         <Left>0.02305in</Left>
         <Height>0.53334in</Height>
-        <Width>2.32814in</Width>
+        <Width>2.18564in</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -489,7 +551,7 @@
         <Top>2.44667in</Top>
         <Left>0.79389in</Left>
         <Height>0.17083in</Height>
-        <Width>1.5573in</Width>
+        <Width>1.4148in</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -607,10 +669,10 @@
     <Height>7.00828cm</Height>
     <Style />
   </Body>
-  <Width>5.97202cm</Width>
+  <Width>5.61006cm</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
-    <PageWidth>4cm</PageWidth>
+    <PageWidth>6cm</PageWidth>
     <LeftMargin>0.5cm</LeftMargin>
     <RightMargin>0.5cm</RightMargin>
     <TopMargin>0.5cm</TopMargin>
@@ -618,63 +680,6 @@
     <ColumnSpacing>1.27cm</ColumnSpacing>
     <Style />
   </Page>
-  <AutoRefresh>0</AutoRefresh>
-  <DataSources>
-    <DataSource Name="Bylsan_SystemReportsReportsObject">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>3afdbac2-3cda-4b17-b88d-080ec411bc68</rd:DataSourceID>
-    </DataSource>
-  </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet1">
-      <Query>
-        <DataSourceName>Bylsan_SystemReportsReportsObject</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="Amount">
-          <DataField>Amount</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="BillDate">
-          <DataField>BillDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ItemName">
-          <DataField>ItemName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Qty">
-          <DataField>Qty</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Total">
-          <DataField>Total</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="UnitPrice">
-          <DataField>UnitPrice</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="User">
-          <DataField>User</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>Bylsan_System.Reports.ReportsObject</rd:DataSetName>
-        <rd:TableName>RptBillObj</rd:TableName>
-        <rd:ObjectDataSourceType>Bylsan_System.Reports.ReportsObject.RptBillObj, Bylsan System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
-    </DataSet>
-  </DataSets>
   <EmbeddedImages>
     <EmbeddedImage Name="BaylasanFinalLogo">
       <MIMEType>image/jpeg</MIMEType>
@@ -765,6 +770,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADlLu12XsDBsCPHda6vyjY+T7ErsjxyK9j1XY20b
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//Z</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
-  <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>0e8350b8-fa10-4bc1-9727-1316a87cbf52</rd:ReportID>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
 </Report>

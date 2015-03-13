@@ -10,6 +10,7 @@ namespace XamaDataLayer.Main_Store
         public static bool AddNewStore(Store  tb)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             db.Stores.InsertOnSubmit(tb);
 
             db.SubmitChanges();
@@ -21,10 +22,12 @@ namespace XamaDataLayer.Main_Store
         public static Store EditStore(Store tb)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var q = db.Stores .Where(i => i.ID == tb.ID).SingleOrDefault();
             q.ID = tb.ID;
             q.AvailableQty = tb.AvailableQty;
             q.Description = tb.Description;
+            q.ProductID = tb.ProductID;
           //  q.ItemID = tb.ItemID;
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Edit ", " Edit Item", "  Edit selected  store At Main Store ");
@@ -35,6 +38,7 @@ namespace XamaDataLayer.Main_Store
 
         public static void DeleteStoreAt(int xid)
         {
+            db.CommandTimeout = 9000;
             var q = db.Stores .Where(p => p.ID == xid).SingleOrDefault();
             db.Stores .DeleteOnSubmit(q);
             db.SubmitChanges();
@@ -50,6 +54,7 @@ namespace XamaDataLayer.Main_Store
             try
             {
                 db = new DbDataContext();
+                db.CommandTimeout = 9000;
                 var lst = (from i in db.Stores
                            where i.ProductID == ItmId
                            orderby i.ID ascending
@@ -67,6 +72,7 @@ namespace XamaDataLayer.Main_Store
         public static Store ChekByItemID(int ItmId)
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var Rec = (from i in db.Stores
                        where i.ProductID == ItmId
                       select i).Single ();
@@ -79,6 +85,7 @@ namespace XamaDataLayer.Main_Store
         public static List< Store > GetAllStores()
         {
             db = new DbDataContext();
+            db.CommandTimeout = 9000;
             return db.Stores .ToList();
         }
     }

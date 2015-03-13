@@ -9,7 +9,7 @@ namespace XamaDataLayer.Security
         private static DbDataContext db = new DbDataContext();
         public static bool AddAllSystemPermessions(SystemPermession tb)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             db.SystemPermessions.InsertOnSubmit(tb);
             db.SubmitChanges();
 
@@ -20,7 +20,7 @@ namespace XamaDataLayer.Security
 
         public static List<SystemPermession> GetAllSystemPermession()
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             var q = db.SystemPermessions.ToList();
             return q;
         }
@@ -30,7 +30,7 @@ namespace XamaDataLayer.Security
 
         public static bool AddUserPermessions(UserPermession tb)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             db.UserPermessions .InsertOnSubmit(tb);
             db.SubmitChanges();
 
@@ -57,7 +57,7 @@ namespace XamaDataLayer.Security
 
         public static List<UserPermession> LoadingPermissonsOfCurrentUser()
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             var LST = (from u in db.UserPermessions
                       where u.UserID == UserInfo .CurrentUserID
                       select u).ToList();
@@ -80,7 +80,7 @@ namespace XamaDataLayer.Security
 
         public static bool ClearAllUserPermessions(int usrid)
         {
-            db = new DbDataContext();
+           db = new DbDataContext();db.CommandTimeout = 9000;
             ;
             var tb = new UserPermession();
             var lst = (from u in db.UserPermessions

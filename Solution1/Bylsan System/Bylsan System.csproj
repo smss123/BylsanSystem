@@ -9,10 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Bylsan_System</RootNamespace>
     <AssemblyName>Bylsan System</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\SezerOffice\Desktop\smss\</PublishUrl>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Users\SezerOffice\Desktop\smss\bylan\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -67,6 +68,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar2.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="DSBarCode">
+      <HintPath>D:\Resource\Barcode\barcodectl_demo\TestCtrl\bin\Debug\DSBarCode.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
       <Private>True</Private>
@@ -379,6 +383,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmShowHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowHistory.Designer.cs">
+      <DependentUpon>frmShowHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="MailForms\frmMailServer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -498,6 +508,12 @@
     </Compile>
     <Compile Include="MainStoreForms\frmStorePurchases.Designer.cs">
       <DependentUpon>frmStorePurchases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagmentOrderForms\frmExperDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagmentOrderForms\frmExperDate.Designer.cs">
+      <DependentUpon>frmExperDate.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagmentOrderForms\FrmOrderManage.cs">
       <SubType>Form</SubType>
@@ -891,6 +907,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmShowHistory.resx">
+      <DependentUpon>frmShowHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MailForms\frmMailServer.resx">
       <DependentUpon>frmMailServer.cs</DependentUpon>
     </EmbeddedResource>
@@ -950,6 +969,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainStoreForms\frmStorePurchases.resx">
       <DependentUpon>frmStorePurchases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagmentOrderForms\frmExperDate.resx">
+      <DependentUpon>frmExperDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagmentOrderForms\FrmOrderManage.resx">
       <DependentUpon>FrmOrderManage.cs</DependentUpon>
@@ -1566,6 +1588,126 @@
       <PublishState>Include</PublishState>
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.GridView">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.Themes.Breeze">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.Themes.Office2007Black">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.Themes.Office2010Black">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.Themes.VisualStudio2012Dark">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.Themes.VisualStudio2012Light">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.Themes.Windows8">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Telerik.WinControls.UI">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="TelerikCommon">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="XamaDataLayer">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Xprema">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
   <ItemGroup />

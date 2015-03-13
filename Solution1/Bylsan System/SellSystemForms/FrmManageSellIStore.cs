@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 
+using Telerik.WinControls;
 using XamaDataLayer;
 using XamaDataLayer.SellSystem;
 using System.Threading;
@@ -30,7 +31,7 @@ namespace Bylsan_System.SellSystemForms
 
             Application.DoEvents();
 
-            var q = SellStoreCmd.GetAllSellStore(UserInfo.CurrnetUser.Branch_ID.Value);
+            var q = Operation.AllSellStore; //SellStoreCmd.GetAllSellStore(UserInfo.CurrnetUser.Branch_ID.Value);
            
             Application.DoEvents();
 
@@ -79,12 +80,23 @@ namespace Bylsan_System.SellSystemForms
             }
             if (col == 5)
             {
-                Operation.BeginOperation(this);
+                try
+                {
+                    Operation.BeginOperation(this);
 
-                SellStoreCmd.DeleteSellStore(int.Parse(SellStoreGridView.CurrentRow.Cells[0].Value.ToString()),UserInfo.CurrnetUser.Branch_ID.Value);
-                FrmManageSellIStore_Load(sender, e);
+                    SellStoreCmd.DeleteSellStore(int.Parse(SellStoreGridView.CurrentRow.Cells[0].Value.ToString()), UserInfo.CurrnetUser.Branch_ID.Value);
+                    FrmManageSellIStore_Load(sender, e);
 
-                Operation.EndOperation(this);
+                    Operation.EndOperation(this);
+                }
+                catch (Exception ex)
+                {
+
+                    RadMessageBox.ThemeName = this.ThemeName;
+                    RadMessageBox.Show("Can't Delete Because its link on other processes in stock an sales");
+                    Operation.EndOperation(this);
+                }
+               
             }
         }
 
