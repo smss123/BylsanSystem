@@ -102,20 +102,10 @@
     <Compile Include="SellSystem\SellStoreCmd.cs" />
     <Compile Include="SellSystem\StoreOperationManagerCmd.cs" />
     <Compile Include="SettingX\SettingCmd.cs" />
-    <Compile Include="test\LocalDataCache1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LocalDataCache1.sync</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Db.dbml.layout">
       <DependentUpon>Db.dbml</DependentUpon>
-    </None>
-    <None Include="test\LocalDataCache1.sync">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSyncGenerator</Generator>
-      <LastGenOutput>LocalDataCache1.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
