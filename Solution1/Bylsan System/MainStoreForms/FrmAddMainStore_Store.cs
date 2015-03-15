@@ -158,17 +158,17 @@ namespace Bylsan_System.MainStoreForms
 
         private void WriteAt_StoreSells()
         {
-            TotalPrice = 0;
-            TotalPrice = int.Parse(txtUnitPrice.Text.ToString()) * int.Parse(QtyTextBox.Text.ToString());
+            //TotalPrice = 0;
+            //TotalPrice = int.Parse(txtUnitPrice.Text.ToString()) * int.Parse(QtyTextBox.Text.ToString());
 
-            var stb = new Store_Sell()
-            { ProductID = int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
-                UnitPrice = int.Parse(txtUnitPrice.Text.ToString()),
-                Price = TotalPrice,
-                DateOfProcess = DateTime.Now,
-                UserID = XamaDataLayer.Security.UserInfo.CurrentUserID,
-                SupplierID = xSupplierId, };
-            StoreSalesCmd.AddNewSales(stb);
+            //var stb = new Store_Sell()
+            //{ ProductID = int.Parse(ItemColumnComboBox.SelectedValue.ToString()),
+            //    UnitPrice = int.Parse(txtUnitPrice.Text.ToString()),
+            //    Price = TotalPrice,
+            //    DateOfProcess = DateTime.Now,
+            //    UserID = XamaDataLayer.Security.UserInfo.CurrentUserID,
+            //    SupplierID = xSupplierId, };
+            //StoreSalesCmd.AddNewSales(stb);
         }
 
         private void WriteAtStoreManagerTable()

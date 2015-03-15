@@ -81,10 +81,14 @@ namespace Bylsan_System.SellSystemForms
         private void FrmEditSellIStore_Load(object sender, EventArgs e)
         {
             ItemComboBox.DataSource = Operation.Allproducts;
-            Operation.BeginOperation(this);
-            qtyTextBox.Text = TargetStore.Qty.ToString ();
-            ItemComboBox.SelectedValue = TargetStore.ItemID.ToString();
+            
+        }
 
+        private void FrmEditSellIStore_Shown(object sender, EventArgs e)
+        {
+            Operation.BeginOperation(this);
+            qtyTextBox.Text = TargetStore.Qty.ToString();
+            ItemComboBox.SelectedItem = TargetStore.Product;
             Operation.EndOperation(this);
         }
     }

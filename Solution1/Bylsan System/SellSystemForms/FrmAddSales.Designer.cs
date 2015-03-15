@@ -34,10 +34,8 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.RefreshBTn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn1 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -56,6 +54,8 @@
             this.Okeybtn = new Telerik.WinControls.UI.RadButton();
             this.BillCostBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBarCode = new System.Windows.Forms.TextBox();
@@ -66,7 +66,6 @@
             this.DGVSellItems = new Telerik.WinControls.UI.RadGridView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
@@ -81,31 +80,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGVSellItems.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RefreshBTn,
-            this.toolStripSeparator1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1210, 39);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // RefreshBTn
-            // 
-            this.RefreshBTn.Image = global::Bylsan_System.Properties.Resources.Refrech;
-            this.RefreshBTn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.RefreshBTn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.RefreshBTn.Name = "RefreshBTn";
-            this.RefreshBTn.Size = new System.Drawing.Size(82, 36);
-            this.RefreshBTn.Text = "Refresh";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
             // statusStrip1
             // 
@@ -131,6 +105,8 @@
             this.groupBox2.Controls.Add(this.Okeybtn);
             this.groupBox2.Controls.Add(this.BillCostBox);
             this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtBarCode);
@@ -140,9 +116,9 @@
             this.groupBox2.Controls.Add(this.TxtBillNumber);
             this.groupBox2.Controls.Add(this.DGVSellItems);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 39);
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1210, 611);
+            this.groupBox2.Size = new System.Drawing.Size(1210, 650);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Order";
@@ -237,7 +213,7 @@
             this.txtCustomerPhoneNumber.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtCustomerPhoneNumber.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtCustomerPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerPhoneNumber.Location = new System.Drawing.Point(938, 60);
+            this.txtCustomerPhoneNumber.Location = new System.Drawing.Point(980, 246);
             this.txtCustomerPhoneNumber.Name = "txtCustomerPhoneNumber";
             this.txtCustomerPhoneNumber.NullText = "Enter Phone Number Here";
             this.txtCustomerPhoneNumber.Size = new System.Drawing.Size(212, 27);
@@ -250,7 +226,7 @@
             this.txtCustomerName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtCustomerName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtCustomerName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerName.Location = new System.Drawing.Point(938, 93);
+            this.txtCustomerName.Location = new System.Drawing.Point(980, 279);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.NullText = "Enter Customer Name Here";
             this.txtCustomerName.Size = new System.Drawing.Size(212, 27);
@@ -276,9 +252,9 @@
             // Okeybtn
             // 
             this.Okeybtn.Image = global::Bylsan_System.Properties.Resources.Save;
-            this.Okeybtn.Location = new System.Drawing.Point(1097, 558);
+            this.Okeybtn.Location = new System.Drawing.Point(980, 568);
             this.Okeybtn.Name = "Okeybtn";
-            this.Okeybtn.Size = new System.Drawing.Size(99, 35);
+            this.Okeybtn.Size = new System.Drawing.Size(213, 57);
             this.Okeybtn.TabIndex = 70;
             this.Okeybtn.Text = " Save Bill";
             this.Okeybtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -309,16 +285,38 @@
             this.label6.Text = "Custmer Pay:";
             this.label6.Click += new System.EventHandler(this.label1_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Blue;
+            this.label9.Location = new System.Drawing.Point(818, 248);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(152, 25);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Customer Name:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Blue;
+            this.label8.Location = new System.Drawing.Point(818, 281);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(156, 25);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Customer Phone:";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(842, 128);
+            this.label3.Location = new System.Drawing.Point(599, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 25);
+            this.label3.Size = new System.Drawing.Size(142, 25);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Bar Code:";
+            this.label3.Text = "Enter Bar Code:";
             // 
             // label1
             // 
@@ -336,9 +334,9 @@
             // 
             this.txtBarCode.BackColor = System.Drawing.SystemColors.Info;
             this.txtBarCode.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBarCode.Location = new System.Drawing.Point(938, 128);
+            this.txtBarCode.Location = new System.Drawing.Point(564, 74);
             this.txtBarCode.Name = "txtBarCode";
-            this.txtBarCode.Size = new System.Drawing.Size(212, 33);
+            this.txtBarCode.Size = new System.Drawing.Size(236, 33);
             this.txtBarCode.TabIndex = 5;
             this.txtBarCode.TextChanged += new System.EventHandler(this.txtBarCode_TextChanged);
             this.txtBarCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBarCode_KeyDown);
@@ -399,6 +397,7 @@
             // 
             // DGVSellItems
             // 
+            this.DGVSellItems.MasterTemplate.AutoGenerateColumns = false;
             this.DGVSellItems.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn1.EnableExpressionEditor = false;
             gridViewTextBoxColumn1.FieldName = "ID";
@@ -409,42 +408,56 @@
             gridViewTextBoxColumn2.FieldName = "ItemName";
             gridViewTextBoxColumn2.HeaderText = "Item Name";
             gridViewTextBoxColumn2.Name = "ItemName";
-            gridViewTextBoxColumn2.Width = 177;
+            gridViewTextBoxColumn2.Width = 214;
             gridViewTextBoxColumn3.EnableExpressionEditor = false;
             gridViewTextBoxColumn3.FieldName = "Description";
             gridViewTextBoxColumn3.HeaderText = "Description";
             gridViewTextBoxColumn3.Name = "Description";
-            gridViewTextBoxColumn3.Width = 234;
+            gridViewTextBoxColumn3.Width = 134;
             gridViewTextBoxColumn4.EnableExpressionEditor = false;
             gridViewTextBoxColumn4.FieldName = "ItemPrice";
             gridViewTextBoxColumn4.HeaderText = "Item Price";
-            gridViewTextBoxColumn4.Name = "ItemPrice";
+            gridViewTextBoxColumn4.Name = "ColItemPrice";
             gridViewTextBoxColumn4.ReadOnly = true;
             gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn4.Width = 119;
+            gridViewTextBoxColumn4.Width = 139;
             gridViewTextBoxColumn5.EnableExpressionEditor = false;
             gridViewTextBoxColumn5.HeaderText = "Ouantity";
-            gridViewTextBoxColumn5.Name = "Quantity";
+            gridViewTextBoxColumn5.Name = "ColQuantity";
             gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn5.Width = 177;
-            gridViewCommandColumn1.EnableExpressionEditor = false;
-            gridViewCommandColumn1.HeaderText = "-";
-            gridViewCommandColumn1.Name = "colbtn";
-            gridViewCommandColumn1.Width = 61;
+            gridViewTextBoxColumn5.Width = 89;
+            gridViewComboBoxColumn1.DisplayMember = "ProductUnit";
+            gridViewComboBoxColumn1.EnableExpressionEditor = false;
+            gridViewComboBoxColumn1.HeaderText = "Unit";
+            gridViewComboBoxColumn1.Name = "column1";
+            gridViewComboBoxColumn1.ValueMember = "ProductUnit";
+            gridViewComboBoxColumn1.Width = 114;
+            gridViewTextBoxColumn6.EnableExpressionEditor = true;
+            gridViewTextBoxColumn6.Expression = "ColItemPrice * ColQuantity ";
+            gridViewTextBoxColumn6.HeaderText = "Amount";
+            gridViewTextBoxColumn6.Multiline = true;
+            gridViewTextBoxColumn6.Name = "ColAmount";
+            gridViewTextBoxColumn6.ReadOnly = true;
+            gridViewTextBoxColumn6.Width = 79;
             this.DGVSellItems.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
             gridViewTextBoxColumn4,
             gridViewTextBoxColumn5,
-            gridViewCommandColumn1});
+            gridViewComboBoxColumn1,
+            gridViewTextBoxColumn6});
             this.DGVSellItems.Name = "DGVSellItems";
             this.DGVSellItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DGVSellItems.Size = new System.Drawing.Size(784, 471);
+            this.DGVSellItems.Size = new System.Drawing.Size(784, 533);
             this.DGVSellItems.TabIndex = 50;
             this.DGVSellItems.Text = "DGVItems";
             this.DGVSellItems.ThemeName = "Office2010Black";
+            this.DGVSellItems.ValueChanged += new System.EventHandler(this.MasterTemplate_ValueChanged);
+            this.DGVSellItems.ValueChanging += new Telerik.WinControls.UI.ValueChangingEventHandler(this.MasterTemplate_ValueChanging);
+            this.DGVSellItems.RowsChanged += new Telerik.WinControls.UI.GridViewCollectionChangedEventHandler(this.MasterTemplate_RowsChanged);
             this.DGVSellItems.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.MasterTemplate_CommandCellClick);
+            this.DGVSellItems.Click += new System.EventHandler(this.MasterTemplate_Click);
             // 
             // imageList1
             // 
@@ -460,7 +473,6 @@
             this.ClientSize = new System.Drawing.Size(1210, 672);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.toolStrip1);
             this.Name = "FrmAddSales";
             // 
             // 
@@ -471,8 +483,6 @@
             this.Text = "";
             this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmAddSales_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -495,7 +505,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.GroupBox groupBox2;
         private Telerik.WinControls.UI.RadButton Okeybtn;
@@ -507,8 +516,6 @@
         private System.Windows.Forms.TextBox TxtBillNumber;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBarCode;
-        private System.Windows.Forms.ToolStripButton RefreshBTn;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.BindingSource productBindingSource;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown txtCustomerPay;
@@ -526,5 +533,7 @@
         private Telerik.WinControls.UI.RadButton btnAdd;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtOrderID;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }

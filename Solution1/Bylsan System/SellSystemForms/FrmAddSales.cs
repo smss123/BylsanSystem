@@ -14,6 +14,7 @@ using System.Linq;
 using XamaDataLayer.Helper_Classes;
 using XamaDataLayer.Accountant;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
 
 namespace Bylsan_System.SellSystemForms
 {
@@ -30,7 +31,7 @@ namespace Bylsan_System.SellSystemForms
         private void LoadProduct()
         {
             Operation.BeginOperation(this);
-             q = ProductsCmd.GetProductDetailsForSale();
+            q = Operation.Allproducts;
              var s = LoadOrderID();
 
             this.Invoke((MethodInvoker)delegate
@@ -72,8 +73,15 @@ namespace Bylsan_System.SellSystemForms
         }
         private void Okeybtn_Click(object sender, EventArgs e)
         {
+            
             if (BillCostBox.Text.Todouble() > txtCustomerPay.Value.ToString().Todouble())
             {
+                if (txtCustomerName.Text==""|| txtCustomerPhoneNumber.Text=="")
+                {
+                    MessageBox.Show("Please Enter Customer Info");
+                    return;
+
+                }
                 if (MessageBox.Show("The amount paid is less than the amount required \n The customer will be added in the box debts that continued operation .", string.Empty, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.Yes)
                 {
                     SaveBill();
@@ -400,9 +408,10 @@ namespace Bylsan_System.SellSystemForms
                 DGVSellItems.Rows.Add(new string[] {
                                q.ID.ToString(),
                                q.PublicName,
-                               string.Empty,
+                               q.Product_Description,
                                q.ProductPrice.ToString(),
-                                "1"
+                                "1",
+                                 q.ProductUnit
                             });
 
                 txtBarCode.Clear();
@@ -535,7 +544,7 @@ namespace Bylsan_System.SellSystemForms
                   qty = txtqty.Text;
                 }
 
-                DGVSellItems.Rows.Add(new string[] {selectedProduct.ID.ToString(), txtProductName.Text, selectedProduct.Product_Description, selectedProduct.ProductPrice.ToString(), qty });
+                DGVSellItems.Rows.Add(new string[] { selectedProduct.ID.ToString(), txtProductName.Text, selectedProduct.Product_Description, selectedProduct.ProductPrice.ToString(), qty, selectedProduct.ProductUnit, (selectedProduct.ProductPrice * int.Parse(qty)).ToString() });
                 txtProductName.Text = "";
                 txtqty.Text = "";
                 CalcTotal();
@@ -564,6 +573,49 @@ namespace Bylsan_System.SellSystemForms
                 }
               
             }
+        }
+
+        private void MasterTemplate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MasterTemplate_RowsChanged(object sender, Telerik.WinControls.UI.GridViewCollectionChangedEventArgs e)
+        {
+            //try
+            //{
+            //    double price = double.Parse(DGVSellItems.CurrentRow.Cells[3].Value.ToString());
+            //    double qty = (double.Parse(DGVSellItems.CurrentRow.Cells[4].Value.ToString()));
+
+            //    double str = (price * qty);
+
+            //   DGVSellItems.CurrentRow.Cells[6].Value = str;
+
+            //}
+            //catch (System.NullReferenceException ex)
+            //{
+
+            //    return;
+            //}catch(System.StackOverflowException ex1)
+            //{
+            //    return;
+            //}
+        }
+
+        private void RefreshBTn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MasterTemplate_ValueChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void MasterTemplate_ValueChanging(object sender, Telerik.WinControls.UI.ValueChangingEventArgs e)
+        {
+            //DGVSellItems
+           
         }
     }
 }
