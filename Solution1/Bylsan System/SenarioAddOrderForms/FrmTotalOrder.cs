@@ -100,7 +100,7 @@ namespace Bylsan_System.SenarioAddOrderForms
             {
                 custId = CustomerInformations.WatingCustomer.ID;
                 custmerAccountID = CustomerInformations.WatingCustomer.AccountID;
-                CustomerInformations.WatingCustomer.Points = CustomerInformations.WatingCustomer.Points + (TotalPriceBox.Text.Todouble() * SettingCmd.GetSettingByID(1).SettingValue.Todouble()).ToString().ToInt();
+                CustomerInformations.WatingCustomer.Points = CustomerInformations.WatingCustomer.Points + (TotalPriceBox.Text.Todouble() * SettingCmd.GetSettingByID(2).SettingValue.Todouble()).ToString().ToInt();
                 CustomersCmd.EditCustomer(CustomerInformations.WatingCustomer, CustomerInformations.WatingCustomer.ID);
             }
 

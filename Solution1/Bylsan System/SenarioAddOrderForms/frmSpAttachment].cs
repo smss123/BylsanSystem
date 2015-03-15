@@ -24,22 +24,13 @@ namespace Bylsan_System.SenarioAddOrderForms
         public OrderProduct RetrunProduct { get; set; }
         private void frmSpAttachment__Load(object sender, EventArgs e)
         {
-           
+            this.radGridView1.TableElement.RowHeight = 80; 
 
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentCell.ColumnIndex==1)
-            {
-                OpenFileDialog op = new OpenFileDialog();
-                if (op.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    dataGridView1.CurrentCell.Value = Image.FromFile(op.FileName);
-
-                }
-
-            }
+           
             
         }
 
@@ -50,7 +41,7 @@ namespace Bylsan_System.SenarioAddOrderForms
             RetrunProduct.Product = TragetProduct;
             RetrunProduct.Product.ProductPrice = TragetProduct.ProductPrice;
             RetrunProduct.Qty = 1;
-            foreach (DataGridViewRow item in dataGridView1.Rows)
+            foreach (GridViewRowInfo item in radGridView1.Rows)
             {
                 try
                 {
@@ -71,6 +62,20 @@ namespace Bylsan_System.SenarioAddOrderForms
                 
             }
             this.Close();
+        }
+
+        private void radGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (radGridView1.CurrentCell.ColumnIndex == 1)
+            {
+                OpenFileDialog op = new OpenFileDialog();
+                if (op.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    radGridView1.CurrentCell.Value = Image.FromFile(op.FileName);
+
+                }
+
+            }
         }
     }
 }

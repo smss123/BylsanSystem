@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSpAttachment_));
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewImageColumn gridViewImageColumn1 = new Telerik.WinControls.UI.GridViewImageColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.orderProuctAttachmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderProuctAttachmentsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -44,15 +48,13 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.orderProuctAttachmentsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imageXDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerTextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
+            this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             ((System.ComponentModel.ISupportInitialize)(this.orderProuctAttachmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderProuctAttachmentsBindingNavigator)).BeginInit();
             this.orderProuctAttachmentsBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,55 +186,66 @@
             this.orderProuctAttachmentsBindingNavigatorSaveItem.Text = "Save Data";
             this.orderProuctAttachmentsBindingNavigatorSaveItem.Click += new System.EventHandler(this.orderProuctAttachmentsBindingNavigatorSaveItem_Click);
             // 
-            // dataGridView1
+            // radGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.imageXDataGridViewImageColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.customerTextDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.orderProuctAttachmentsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 46);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(962, 414);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            this.radGridView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(146)))), ((int)(((byte)(146)))));
+            this.radGridView1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.radGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radGridView1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.radGridView1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.radGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.radGridView1.Location = new System.Drawing.Point(0, 25);
             // 
-            // iDDataGridViewTextBoxColumn
+            // radGridView1
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // imageXDataGridViewImageColumn
-            // 
-            this.imageXDataGridViewImageColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.imageXDataGridViewImageColumn.DataPropertyName = "imageX";
-            this.imageXDataGridViewImageColumn.HeaderText = "imageX";
-            this.imageXDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.imageXDataGridViewImageColumn.Name = "imageXDataGridViewImageColumn";
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // customerTextDataGridViewTextBoxColumn
-            // 
-            this.customerTextDataGridViewTextBoxColumn.DataPropertyName = "CustomerText";
-            this.customerTextDataGridViewTextBoxColumn.HeaderText = "CustomerText";
-            this.customerTextDataGridViewTextBoxColumn.Name = "customerTextDataGridViewTextBoxColumn";
+            this.radGridView1.MasterTemplate.AutoGenerateColumns = false;
+            this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewDecimalColumn1.DataType = typeof(int);
+            gridViewDecimalColumn1.EnableExpressionEditor = false;
+            gridViewDecimalColumn1.FieldName = "ID";
+            gridViewDecimalColumn1.HeaderText = "ID";
+            gridViewDecimalColumn1.IsAutoGenerated = true;
+            gridViewDecimalColumn1.IsVisible = false;
+            gridViewDecimalColumn1.Name = "ID";
+            gridViewImageColumn1.EnableExpressionEditor = false;
+            gridViewImageColumn1.FieldName = "imageX";
+            gridViewImageColumn1.HeaderText = "imageX";
+            gridViewImageColumn1.ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            gridViewImageColumn1.IsAutoGenerated = true;
+            gridViewImageColumn1.Name = "imageX";
+            gridViewImageColumn1.Width = 218;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "Description";
+            gridViewTextBoxColumn1.HeaderText = "Description";
+            gridViewTextBoxColumn1.IsAutoGenerated = true;
+            gridViewTextBoxColumn1.Name = "Description";
+            gridViewTextBoxColumn1.Width = 393;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "CustomerText";
+            gridViewTextBoxColumn2.HeaderText = "CustomerText";
+            gridViewTextBoxColumn2.IsAutoGenerated = true;
+            gridViewTextBoxColumn2.Name = "CustomerText";
+            gridViewTextBoxColumn2.Width = 357;
+            this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewDecimalColumn1,
+            gridViewImageColumn1,
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2});
+            this.radGridView1.MasterTemplate.DataSource = this.orderProuctAttachmentsBindingSource;
+            this.radGridView1.Name = "radGridView1";
+            this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.radGridView1.Size = new System.Drawing.Size(986, 446);
+            this.radGridView1.TabIndex = 2;
+            this.radGridView1.Text = "radGridView1";
+            this.radGridView1.ThemeName = "Office2010Black";
+            this.radGridView1.DoubleClick += new System.EventHandler(this.radGridView1_DoubleClick);
             // 
             // frmSpAttachment_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 471);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.radGridView1);
             this.Controls.Add(this.orderProuctAttachmentsBindingNavigator);
             this.Name = "frmSpAttachment_";
             // 
@@ -248,7 +261,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.orderProuctAttachmentsBindingNavigator)).EndInit();
             this.orderProuctAttachmentsBindingNavigator.ResumeLayout(false);
             this.orderProuctAttachmentsBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -271,10 +285,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton orderProuctAttachmentsBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn imageXDataGridViewImageColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerTextDataGridViewTextBoxColumn;
+        private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
+        private Telerik.WinControls.UI.RadGridView radGridView1;
     }
 }
