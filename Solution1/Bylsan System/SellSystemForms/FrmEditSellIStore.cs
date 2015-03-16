@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
+using Telerik.WinControls;
+using Telerik.WinControls.Data;
 using XamaDataLayer;
+using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Security;
 using XamaDataLayer.SellSystem;
 
@@ -16,7 +20,7 @@ namespace Bylsan_System.SellSystemForms
         }
 
 
-
+          Thread th;
 
 
         public  SellStore TargetStore   { get; set; }
@@ -49,47 +53,61 @@ namespace Bylsan_System.SellSystemForms
                 qtyTextBox.BackColor = Color.White;
                 errorProvider1.Clear();
             }
-            EditStore();
+            if (RadMessageBox.Show(this, "Do you want to save", "Save", MessageBoxButtons.YesNo, RadMessageIcon.Question) == DialogResult.Yes)
+            {
+                Operation.BeginOperation(this);
+
+
+                SellStore tb = new SellStore()
+                {
+                    ID=TargetStore.ID,
+                    ItemID=int.Parse(ItemComboBox.SelectedValue.ToString()),
+                    Qty=int.Parse(qtyTextBox.Text),
+                };
+                SellStoreCmd.EditSellStore(tb);
+                Operation.EndOperation(this);
+                RadMessageBox.Show("Save Done", "Done", MessageBoxButtons.OK, RadMessageIcon.Info);
+            }
         }
-
-
-        private void EditStore()
+      
+        private void LoodStore()
         {
             Operation.BeginOperation(this);
-            var tb = new SellStore();
+            Operation.BeginOperation(this);
 
             this.Invoke((MethodInvoker)delegate
             {
-                tb = new  SellStore {
-                    ItemID =  int .Parse (ItemComboBox .SelectedValue .ToString ()) , Qty  = int .Parse (qtyTextBox .Text ), };
-                SellStoreCmd.EditSellStore(tb, TargetStore.ID,UserInfo.CurrnetUser.Branch_ID.Value);
+                this.ItemComboBox.MultiColumnComboBoxElement.DropDownWidth = 1000;
 
+                this.ItemComboBox.AutoFilter = true;
+                this.ItemComboBox.ValueMember = "ID";
+                this.ItemComboBox.DisplayMember = "Product_Name";
             });
+            var q = ProductsCmd.GetAllProducts();
+            this.Invoke((MethodInvoker)delegate
+            {
+                ItemComboBox.DataSource = q;
+                this.ItemComboBox.AutoFilter = true;
+                CompositeFilterDescriptor compositeFilter = new CompositeFilterDescriptor();
+                FilterDescriptor ProName = new FilterDescriptor("Product_Name", FilterOperator.Contains, "");
+                 compositeFilter.FilterDescriptors.Add(ProName);
+                compositeFilter.LogicalOperator = FilterLogicalOperator.Or;
 
-
-            SellStoreCmd.EditSellStore(tb, TargetStore.ID, UserInfo.CurrnetUser.Branch_ID.Value);
+                this.ItemComboBox.EditorControl.FilterDescriptors.Add(compositeFilter);
+                //
+                qtyTextBox.Text = TargetStore.Qty.ToString();
+                ItemComboBox.Text = TargetStore.Product.Product_Name;
+            });
             Operation.EndOperation(this);
-            this.Invoke((MethodInvoker)delegate
-            {
 
-                Operation.ShowToustOk("Sell Store  Has Been Edited..", this);
-
-
-            });
+            th.Abort();
         }
 
         private void FrmEditSellIStore_Load(object sender, EventArgs e)
         {
-            ItemComboBox.DataSource = Operation.Allproducts;
-            
-        }
-
-        private void FrmEditSellIStore_Shown(object sender, EventArgs e)
-        {
-            Operation.BeginOperation(this);
-            qtyTextBox.Text = TargetStore.Qty.ToString();
-            ItemComboBox.SelectedItem = TargetStore.Product;
-            Operation.EndOperation(this);
+            th = new Thread(LoodStore);
+            th.Start();
+           
         }
     }
 }
