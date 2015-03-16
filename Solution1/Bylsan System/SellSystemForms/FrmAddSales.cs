@@ -129,7 +129,7 @@ namespace Bylsan_System.SellSystemForms
             var billNumber = (DateTime.Now.Year + DateTime.Now.Month + DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Second + DateTime.Now.Millisecond).ToString();
             var cmd = new BillReportCommand();
             var ls = new List<RptBillObj>();
-            TxtBillNumber.Text = billNumber;
+            
             try
             {
                 q = Operation.AllCustomer.Where(p => p.PhoneNumber == txtCustomerPhoneNumber.Text).Take(1).Single();
@@ -254,7 +254,7 @@ namespace Bylsan_System.SellSystemForms
                 }
                 var bil = new Bill()
                 { BillDate = DateTime.Now,
-                    BillNumber = TxtBillNumber.Text,
+                    BillNumber = billNumber,
                     BillTotal = BillCostBox.Text.Todouble(),
                     paytype = CmbPaymentTypes.Text,
                     Customer = CustomerInformations.WatingCustomer
@@ -313,6 +313,15 @@ namespace Bylsan_System.SellSystemForms
                 }
                 catch (System.NullReferenceException ex)
                 {
+                    AccountDailyCmd.AddAccountDaily(new AccountDaily()
+                    {
+                        AccountID = 10,
+                        DateOfProcess = DateTime.Now,
+                        CommandArg = Guid.NewGuid().ToString(),
+                        Description = "مبلغ مودع من فاتورة",
+                        TotalIn = txtCustomerPay.Value.ToString().Todouble(),
+                        TotalOut = 0,
+                    });
                 }
 
                 foreach (var row in DGVSellItems.Rows)
@@ -326,6 +335,7 @@ namespace Bylsan_System.SellSystemForms
                         Amount = row.Cells[3].Value.ToString().Todouble(),
                         User = UserInfo.CurrnetUser.UserName,
                         Total = bil.BillTotal,
+                         Payment= txtCustomerPay.Value.ToString()
 
 
                     });
@@ -343,7 +353,7 @@ namespace Bylsan_System.SellSystemForms
             txtBarCode.Text = string.Empty;
             txtCash.Text = string.Empty;
             txtVisaCard.Text = string.Empty;
-            TxtBillNumber.Text = string.Empty;
+          
         }
 
 

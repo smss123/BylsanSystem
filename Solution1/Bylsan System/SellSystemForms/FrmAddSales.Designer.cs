@@ -60,9 +60,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtBarCode = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtOrderID = new System.Windows.Forms.TextBox();
-            this.TxtBillNumber = new System.Windows.Forms.TextBox();
             this.DGVSellItems = new Telerik.WinControls.UI.RadGridView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
@@ -111,9 +109,7 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtBarCode);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtOrderID);
-            this.groupBox2.Controls.Add(this.TxtBillNumber);
             this.groupBox2.Controls.Add(this.DGVSellItems);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
@@ -352,17 +348,6 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "Order Number:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Blue;
-            this.label2.Location = new System.Drawing.Point(859, 442);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 25);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Bill Number: ";
-            // 
             // txtOrderID
             // 
             this.txtOrderID.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -375,16 +360,6 @@
             this.txtOrderID.TabIndex = 13;
             this.txtOrderID.Text = "0";
             this.txtOrderID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBillNumber_KeyPress);
-            // 
-            // TxtBillNumber
-            // 
-            this.TxtBillNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBillNumber.Location = new System.Drawing.Point(987, 442);
-            this.TxtBillNumber.Name = "TxtBillNumber";
-            this.TxtBillNumber.ReadOnly = true;
-            this.TxtBillNumber.Size = new System.Drawing.Size(206, 33);
-            this.TxtBillNumber.TabIndex = 13;
-            this.TxtBillNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBillNumber_KeyPress);
             // 
             // DGVSellItems
             // 
@@ -512,8 +487,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox BillCostBox;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TxtBillNumber;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBarCode;
         private System.Windows.Forms.BindingSource productBindingSource;
