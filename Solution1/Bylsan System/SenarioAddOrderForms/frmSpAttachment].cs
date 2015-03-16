@@ -24,7 +24,8 @@ namespace Bylsan_System.SenarioAddOrderForms
         public OrderProduct RetrunProduct { get; set; }
         private void frmSpAttachment__Load(object sender, EventArgs e)
         {
-            this.radGridView1.TableElement.RowHeight = 80; 
+            this.radGridView1.TableElement.RowHeight = 80;
+            orderProuctAttachmentsBindingSource.DataSource = RetrunProduct.OrderProuctAttachments;
 
         }
 
