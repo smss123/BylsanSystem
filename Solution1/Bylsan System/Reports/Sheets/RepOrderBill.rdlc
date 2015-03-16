@@ -547,16 +547,16 @@
               <Width>5.2392cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.85095cm</Width>
+              <Width>7.58997cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.3122cm</Width>
+              <Width>1.80408cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.55296cm</Width>
+              <Width>1.48622cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.99572cm</Width>
+              <Width>1.83155cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -618,7 +618,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Status</Value>
+                              <Value>Description/Customer text</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
