@@ -14,5 +14,6 @@ namespace Bylsan_System.Reports.ReportsObject
         public string  Qty { get; set; }
         public  double? UnitPrice { get; set; }
         public double? Amount { get; set; }
+        public string  Payment { get; set; }
     }
 }

@@ -1,61 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
-  <DataSources>
-    <DataSource Name="Bylsan_SystemReportsReportsObject">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>3afdbac2-3cda-4b17-b88d-080ec411bc68</rd:DataSourceID>
-    </DataSource>
-  </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet1">
-      <Fields>
-        <Field Name="Amount">
-          <DataField>Amount</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="BillDate">
-          <DataField>BillDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="ID">
-          <DataField>ID</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ItemName">
-          <DataField>ItemName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Qty">
-          <DataField>Qty</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Total">
-          <DataField>Total</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="UnitPrice">
-          <DataField>UnitPrice</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
-        <Field Name="User">
-          <DataField>User</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>Bylsan_SystemReportsReportsObject</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <rd:DataSetInfo>
-        <rd:DataSetName>Bylsan_System.Reports.ReportsObject</rd:DataSetName>
-        <rd:TableName>RptBillObj</rd:TableName>
-        <rd:ObjectDataSourceType>Bylsan_System.Reports.ReportsObject.RptBillObj, Bylsan System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
-      </rd:DataSetInfo>
-    </DataSet>
-  </DataSets>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
       <Textbox Name="ID">
@@ -79,7 +23,7 @@
         </Paragraphs>
         <rd:DefaultName>ID</rd:DefaultName>
         <Top>1.09528in</Top>
-        <Left>0.7418in</Left>
+        <Left>0.7449in</Left>
         <Height>0.1625in</Height>
         <Width>1.10833in</Width>
         <Style>
@@ -113,7 +57,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>1.09528in</Top>
-        <Left>0.02305in</Left>
+        <Left>0.02615in</Left>
         <Height>0.1625in</Height>
         <Width>0.6493in</Width>
         <ZIndex>1</ZIndex>
@@ -149,7 +93,7 @@
         </Paragraphs>
         <rd:DefaultName>BillDate</rd:DefaultName>
         <Top>1.32722in</Top>
-        <Left>0.7418in</Left>
+        <Left>0.7449in</Left>
         <Height>0.1625in</Height>
         <Width>1.10833in</Width>
         <ZIndex>2</ZIndex>
@@ -184,7 +128,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
         <Top>1.32722in</Top>
-        <Left>0.02305in</Left>
+        <Left>0.02615in</Left>
         <Height>0.1625in</Height>
         <Width>0.67708in</Width>
         <ZIndex>3</ZIndex>
@@ -220,8 +164,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total</rd:DefaultName>
-        <Top>2.23417in</Top>
-        <Left>0.54736in</Left>
+        <Top>2.22584in</Top>
+        <Left>0.94976in</Left>
         <Height>0.16667in</Height>
         <Width>1in</Width>
         <ZIndex>4</ZIndex>
@@ -257,9 +201,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
         <Top>2.23417in</Top>
-        <Left>0.02305in</Left>
+        <Left>0.02615in</Left>
         <Height>0.175in</Height>
-        <Width>0.52083in</Width>
+        <Width>0.85416in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -521,9 +465,9 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>1.66472in</Top>
-        <Left>0.02305in</Left>
+        <Left>0.02615in</Left>
         <Height>0.53334in</Height>
-        <Width>2.18564in</Width>
+        <Width>2.18563in</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -548,8 +492,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>User</rd:DefaultName>
-        <Top>2.44667in</Top>
-        <Left>0.79389in</Left>
+        <Top>3.17331in</Top>
+        <Left>0.79699in</Left>
         <Height>0.17083in</Height>
         <Width>1.4148in</Width>
         <ZIndex>7</ZIndex>
@@ -580,8 +524,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>2.4425in</Top>
-        <Left>0.02305in</Left>
+        <Top>3.16914in</Top>
+        <Left>0.02615in</Left>
         <Height>0.175in</Height>
         <Width>0.74306in</Width>
         <ZIndex>8</ZIndex>
@@ -601,7 +545,7 @@
         <Value>BaylasanFinalLogo</Value>
         <Sizing>FitProportional</Sizing>
         <Top>0.42016cm</Top>
-        <Left>0.20777cm</Left>
+        <Left>0.21565cm</Left>
         <Height>1.5cm</Height>
         <Width>1.5cm</Width>
         <ZIndex>9</ZIndex>
@@ -651,7 +595,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.42016cm</Top>
-        <Left>1.8136cm</Left>
+        <Left>1.82148cm</Left>
         <Height>1.5cm</Height>
         <Width>3.79646cm</Width>
         <ZIndex>10</ZIndex>
@@ -665,11 +609,155 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Payment">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Payment.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Payment</rd:DefaultName>
+        <Top>6.25661cm</Top>
+        <Left>2.41239cm</Left>
+        <Height>0.53685cm</Height>
+        <Width>2.54cm</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox8">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Payment:</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox6</rd:DefaultName>
+        <Top>2.47861in</Top>
+        <Left>0.02615in</Left>
+        <Height>0.175in</Height>
+        <Width>0.85416in</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Payment2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=double.Parse(First(Fields!Amount.Value, "DataSet1").ToString())-double.Parse(First(Fields!Payment.Value, "DataSet1").ToString())</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Payment</rd:DefaultName>
+        <Top>6.96984cm</Top>
+        <Left>2.41239cm</Left>
+        <Height>0.53685cm</Height>
+        <Width>2.54cm</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox10">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>remaining:</Value>
+                <Style>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox6</rd:DefaultName>
+        <Top>2.75941in</Top>
+        <Left>0.02615in</Left>
+        <Height>0.175in</Height>
+        <Width>0.85416in</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>LightGrey</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>7.00828cm</Height>
+    <Height>8.49411cm</Height>
     <Style />
   </Body>
-  <Width>5.61006cm</Width>
+  <Width>7.36647cm</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>6cm</PageWidth>
@@ -680,6 +768,67 @@
     <ColumnSpacing>1.27cm</ColumnSpacing>
     <Style />
   </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="Bylsan_SystemReportsReportsObject">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>3afdbac2-3cda-4b17-b88d-080ec411bc68</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>Bylsan_SystemReportsReportsObject</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="BillDate">
+          <DataField>BillDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ItemName">
+          <DataField>ItemName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Payment">
+          <DataField>Payment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Qty">
+          <DataField>Qty</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="UnitPrice">
+          <DataField>UnitPrice</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="User">
+          <DataField>User</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Bylsan_System.Reports.ReportsObject</rd:DataSetName>
+        <rd:TableName>RptBillObj</rd:TableName>
+        <rd:ObjectDataSourceType>Bylsan_System.Reports.ReportsObject.RptBillObj, Bylsan System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
   <EmbeddedImages>
     <EmbeddedImage Name="BaylasanFinalLogo">
       <MIMEType>image/jpeg</MIMEType>
@@ -770,6 +919,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADlLu12XsDBsCPHda6vyjY+T7ErsjxyK9j1XY20b
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//Z</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
-  <rd:ReportID>0e8350b8-fa10-4bc1-9727-1316a87cbf52</rd:ReportID>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>0e8350b8-fa10-4bc1-9727-1316a87cbf52</rd:ReportID>
 </Report>
