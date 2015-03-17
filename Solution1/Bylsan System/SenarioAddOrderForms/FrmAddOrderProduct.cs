@@ -281,12 +281,10 @@ namespace Bylsan_System.SenarioAddOrderForms
         private void radGridView1_DoubleClick(object sender, EventArgs e)
         {
             var q = (OrderProduct)radGridView1.CurrentRow.DataBoundItem;
-            FrmrOrderProductEdit frm = new FrmrOrderProductEdit();
-            frm.TragetOrderProduct = q;
+            frmSpAttachment_ frm = new frmSpAttachment_();
+            frm.RetrunProduct = q;
             frm.ShowDialog();
-            radGridView1.CurrentRow.Cells[0].Value = frm.TragetOrderProduct.Product.Product_Name;
-            radGridView1.CurrentRow.Cells[1].Value = frm.TragetOrderProduct.Qty;
-            radGridView1.CurrentRow.Cells[2].Value = frm.TragetOrderProduct.Product.ProductPrice;
+           
            
         }
     }

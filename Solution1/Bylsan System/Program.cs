@@ -65,7 +65,7 @@ namespace Bylsan_System
 
             SmtpServer.Port = 587;
             SmtpServer.Credentials = new System.Net.NetworkCredential("support@xprema.net", "1234");
-            SmtpServer.EnableSsl = false;
+            SmtpServer.EnableSsl = true;
 
             SmtpServer.Send(mail);
         }
