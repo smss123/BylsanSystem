@@ -29,78 +29,35 @@ namespace WindowsFormsApplication1
         //    Remotedb.SubmitChanges();
         //}
 
-        public void LoadFromLocal()
+        public void LoadFromRemote()
         {
-            DbDataContext localdb = new DbDataContext(Properties.Settings.Default.LocalConnection);
             DbDataContext remotedb = new DbDataContext(Properties.Settings.Default.RemoteConnection);
-            foreach (var item in localdb.AccountCategories)
+            DbDataContext localdb = new DbDataContext(Properties.Settings.Default.LocalConnection);
+          
+            foreach (var item in remotedb.AccountCategories)
             {
                 try
                 {
-                    var q = remotedb.AccountCategories.Where(p => p.ID == item.ID).Single();
-                    item.AccountCategoryName = q.AccountCategoryName;
-                    item.Description = q.Description;
-                    item.ID = q.ID;
+                    var q = localdb.AccountCategories.Where(p => p.ID == item.ID).Single();
+                    q.AccountCategoryName = item.AccountCategoryName;
+                    q.Description=item.Description ;
+                    q.ID = item.ID;
                     localdb.SubmitChanges();
                 }
                 catch (Exception ex)
                 {
-                    remotedb.AccountCategories.InsertOnSubmit(new AccountCategory() { 
+                    localdb.AccountCategories.InsertOnSubmit(new AccountCategory() { 
                      AccountCategoryName = item.AccountCategoryName,
                       Description= item.Description,
                        ID = item.ID
                     });
-                    remotedb.SubmitChanges();
-                }
-            }
-
-            foreach (var item in localdb.Accounts)
-            {
-                try
-                {
-                    var q = remotedb.Accounts.Where(p => p.ID == item.ID).Single();
-                    item.AccountName = q.AccountName;
-                    item.CategoryID = q.CategoryID;
-                    item.ID = q.ID;
-                    item.Description = q.Description;
                     localdb.SubmitChanges();
                 }
-                catch (Exception ex)
-                {
-                    remotedb.Accounts.InsertOnSubmit(new Account()
-                    {
-                        AccountName = item.AccountName,
-                        CategoryID = item.CategoryID,
-                        ID = item.ID,
-                        Description = item.Description,
-                    });
-                    remotedb.SubmitChanges();
-                }
             }
 
-            //foreach (var item in localdb.AccountDailies)
-            //{
-            //    try
-            //    {
-            //        var q = remotedb.AccountDailies.Where(p => p.ID == item.ID).Single();
-            //        item.AccountID = q.AccountID;
-            //        item.CommandArg = q.CommandArg;
-            //        item.DateOfProcess = q.DateOfProcess;
-            //        item.Description = q.Description;
-            //        localdb.SubmitChanges();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        remotedb.AccountDailies.InsertOnSubmit(new AccountDaily()
-            //        {
-            //            AccountName = item.AccountName,
-            //            CategoryID = item.CategoryID,
-            //            ID = item.ID,
-            //            Description = item.Description,
-            //        });
-            //        remotedb.SubmitChanges();
-            //    }
-            //}
+            
+
+            
             
         }
     }
