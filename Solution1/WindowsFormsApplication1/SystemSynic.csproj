@@ -54,6 +54,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SynicLoadFromLocal.cs" />
+    <Compile Include="SynicLoadFromRemote.cs" />
     <EmbeddedResource Include="frmSynic.resx">
       <DependentUpon>frmSynic.cs</DependentUpon>
     </EmbeddedResource>
