@@ -590,8 +590,19 @@ namespace Bylsan_System.SellSystemForms
 
         }
 
+        private void CalcAmount()
+        {
+            double totalAmount = 0;
+
+            foreach (GridViewRowInfo item in DGVSellItems.Rows)
+            {
+                
+            }
+        }
+
         private void MasterTemplate_RowsChanged(object sender, Telerik.WinControls.UI.GridViewCollectionChangedEventArgs e)
         {
+
             //try
             //{
             //    double price = double.Parse(DGVSellItems.CurrentRow.Cells[3].Value.ToString());

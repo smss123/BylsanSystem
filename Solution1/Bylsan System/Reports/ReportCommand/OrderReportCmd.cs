@@ -159,7 +159,7 @@ namespace Bylsan_System.Reports.ReportCommand
 
                 foreach (var itm in item.OrderProuctAttachments)
                 {
-                    Description = Description + string .Format("Customer Text is[{0}] \n description is [{1}]",itm.CustomerText, itm.Description);
+                    Description = Description + string .Format("Customer Text is[{0}] \n description is [{1}]\n",itm.CustomerText, itm.Description);
                 }
                 
                 ls.Add(new OrderReportObj()
