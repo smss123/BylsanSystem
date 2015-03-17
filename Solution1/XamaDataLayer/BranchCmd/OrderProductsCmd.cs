@@ -76,11 +76,12 @@ namespace XamaDataLayer.BranchCmd
         {
             db = new DbDataContext();
             db.CommandTimeout = 9000;
-            var LST = (from p in db.OrderProducts
-                      orderby p.ID
-                      where p.OrderID == XID
-                      select p).ToList();
-            return LST;
+            //var LST = (from p in db.OrderProducts
+            //          orderby p.ID
+            //          where p.OrderID == XID
+            //          select p).ToList();
+            //return LST;
+            return db.OrderProducts.Where(p => p.OrderID == XID).ToList();
         }
 
         public static List<OrderProduct> GetAllByProductID(int XID)

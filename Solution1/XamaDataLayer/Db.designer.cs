@@ -20,7 +20,6 @@ namespace XamaDataLayer
 	using System.Linq.Expressions;
 	using System.ComponentModel;
 	using System;
-    using System.Drawing;
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="soft_Bylsan")]
@@ -1138,7 +1137,7 @@ namespace XamaDataLayer
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL ", IsPrimaryKey=true)]
 		public int ID
 		{
 			get
@@ -3041,7 +3040,7 @@ namespace XamaDataLayer
 		
 		private string _Description;
 		
-		private Image _ImageX;
+		private System.Data.Linq.Binary _ImageX;
 		
 		private string _Status;
 		
@@ -3065,7 +3064,7 @@ namespace XamaDataLayer
     partial void OnQtyChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
-    partial void OnImageXChanging(Image value);
+    partial void OnImageXChanging(System.Data.Linq.Binary value);
     partial void OnImageXChanged();
     partial void OnStatusChanging(string value);
     partial void OnStatusChanged();
@@ -3188,7 +3187,7 @@ namespace XamaDataLayer
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageX", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public Image ImageX
+		public System.Data.Linq.Binary ImageX
 		{
 			get
 			{
@@ -3349,7 +3348,7 @@ namespace XamaDataLayer
 		
 		private int _ID;
 		
-		private Image _imageX;
+		private System.Data.Linq.Binary _imageX;
 		
 		private System.Nullable<int> _OrderProductID;
 		
@@ -3365,7 +3364,7 @@ namespace XamaDataLayer
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnimageXChanging(Image value);
+    partial void OnimageXChanging(System.Data.Linq.Binary value);
     partial void OnimageXChanged();
     partial void OnOrderProductIDChanging(System.Nullable<int> value);
     partial void OnOrderProductIDChanged();
@@ -3402,7 +3401,7 @@ namespace XamaDataLayer
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imageX", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public Image imageX
+		public System.Data.Linq.Binary imageX
 		{
 			get
 			{
@@ -7114,7 +7113,7 @@ namespace XamaDataLayer
 		
 		private string _SettingValue;
 		
-		private Image _BinaryValue;
+		private System.Data.Linq.Binary _BinaryValue;
 		
 		private System.Nullable<System.Guid> _SerialNumber;
 		
@@ -7130,7 +7129,7 @@ namespace XamaDataLayer
     partial void OnSettingNameChanged();
     partial void OnSettingValueChanging(string value);
     partial void OnSettingValueChanged();
-    partial void OnBinaryValueChanging(Image value);
+    partial void OnBinaryValueChanging(System.Data.Linq.Binary value);
     partial void OnBinaryValueChanged();
     partial void OnSerialNumberChanging(System.Nullable<System.Guid> value);
     partial void OnSerialNumberChanged();
@@ -7204,7 +7203,7 @@ namespace XamaDataLayer
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BinaryValue", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public Image BinaryValue
+		public System.Data.Linq.Binary BinaryValue
 		{
 			get
 			{
@@ -8921,7 +8920,7 @@ namespace XamaDataLayer
 		
 		private System.Nullable<int> _CateogryID;
 		
-		private Image _Img;
+		private System.Data.Linq.Binary _Img;
 		
 		private string _PublicName;
 		
@@ -8969,7 +8968,7 @@ namespace XamaDataLayer
     partial void OnProduct_DescriptionChanged();
     partial void OnCateogryIDChanging(System.Nullable<int> value);
     partial void OnCateogryIDChanged();
-    partial void OnImgChanging(Image value);
+    partial void OnImgChanging(System.Data.Linq.Binary value);
     partial void OnImgChanged();
     partial void OnPublicNameChanging(string value);
     partial void OnPublicNameChanged();
@@ -9085,7 +9084,7 @@ namespace XamaDataLayer
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Img", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public Image Img
+		public System.Data.Linq.Binary Img
 		{
 			get
 			{

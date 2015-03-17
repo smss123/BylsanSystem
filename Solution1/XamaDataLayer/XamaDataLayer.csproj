@@ -55,6 +55,7 @@
     <Compile Include="Accountant\DebtorsCmd.cs" />
     <Compile Include="Accountant\ExpenssesCmd.cs" />
     <Compile Include="Accountant\ExpenssesMovmentCmd.cs" />
+    <Compile Include="ApiCounter.cs" />
     <Compile Include="BranchCmd\BranchsCmd.cs" />
     <Compile Include="BranchCmd\CategoriesCmd.cs" />
     <Compile Include="BranchCmd\CustomersCmd.cs" />

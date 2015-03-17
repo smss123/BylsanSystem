@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
+using XamaDataLayer;
 using XamaDataLayer.Security;
 
 namespace Bylsan_System.SecurityForm
@@ -81,7 +82,9 @@ namespace Bylsan_System.SecurityForm
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            ApiCounter p = new ApiCounter();
+          //  MessageBox.Show(p.GetNumber().ToString());
+            //Application.Exit();
         }
     }
 }

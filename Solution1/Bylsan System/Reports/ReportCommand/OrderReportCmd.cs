@@ -150,6 +150,8 @@ namespace Bylsan_System.Reports.ReportCommand
         public void GetOrderBill(int XOrderID)
         {
             var q = OrderProductsCmd.GetAllByOrderID(XOrderID);
+
+            
             var rs = new ReportDataSource();
             var ls = new List<OrderReportObj>();
             foreach (var item in q)
@@ -157,7 +159,7 @@ namespace Bylsan_System.Reports.ReportCommand
 
                 string Description = "";
 
-                foreach (var itm in item.OrderProuctAttachments)
+                foreach (var itm in OrderProuctAttachmentCmd.GetOneAttachmentByOrderProductID(item.ID))
                 {
                     Description = Description + string .Format("Customer Text is[{0}] \n description is [{1}]\n",itm.CustomerText, itm.Description);
                 }

@@ -30,7 +30,7 @@
   </Table>
   <Table Name="Accountant.AccountCategory" Member="AccountCategories">
     <Type Name="AccountCategory">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID" AutoSync="OnInsert" Type="System.Int32" DbType="Int NOT NULL " IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="AccountCategoryName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="AccountCategory_Account" Member="Accounts" ThisKey="ID" OtherKey="CategoryID" Type="Account" />
