@@ -25,6 +25,7 @@ namespace Bylsan_System.SenarioAddOrderForms
         private void frmSpAttachment__Load(object sender, EventArgs e)
         {
             this.radGridView1.TableElement.RowHeight = 80; 
+            
 
         }
 

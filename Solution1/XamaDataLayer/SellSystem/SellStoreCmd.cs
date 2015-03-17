@@ -85,7 +85,7 @@ namespace XamaDataLayer.SellSystem
             
              var lst = (from i in db.SellStores
                         where i.ItemID == ItmId&&i.branchID==branchID
-                        select i).Single();
+                        select i).Take(1).Single();
             return lst;
         }
 
