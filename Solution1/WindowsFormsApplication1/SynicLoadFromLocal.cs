@@ -915,7 +915,7 @@ namespace WindowsFormsApplication1
                     q.ProcessType = item.ProcessType;
                     q.Price = item.Price;
                     q.Description = item.Description;
-                  
+                    localdb.SubmitChanges();
                 }
                 catch (Exception ex)
                 {
@@ -951,7 +951,7 @@ namespace WindowsFormsApplication1
                     q.Qty = item.Qty;
                     q.Comment = item.Comment;
                     q.UserID = item.UserID;
-
+                    localdb.SubmitChanges();
                 }
                 catch (Exception ex)
                 {
@@ -985,7 +985,7 @@ namespace WindowsFormsApplication1
                     q.SupplierPhone = item.SupplierPhone;
                     q.Address = item.Address;
                     q.Description = item.Description;
-                    
+                    localdb.SubmitChanges();
 
                 }
                 catch (Exception ex)
@@ -1019,7 +1019,7 @@ namespace WindowsFormsApplication1
                     q.ActionName = item.ActionName;
                     q.Description = item.Description;
                     q.UserID = item.UserID;
-
+                    localdb.SubmitChanges();
 
                 }
                 catch (Exception ex)
@@ -1052,7 +1052,7 @@ namespace WindowsFormsApplication1
                     q.ID = item.ID;
                     q.Permession = item.Permession;
                     q.Description = item.Description;
-                  
+                    localdb.SubmitChanges();
 
                 }
                 catch (Exception ex)
@@ -1085,7 +1085,7 @@ namespace WindowsFormsApplication1
                     q.BinaryValue = item.BinaryValue;
                     q.SerialNumber = item.SerialNumber;
                     q.CommandArg = item.CommandArg;
-
+                    localdb.SubmitChanges();
 
                 }
                 catch (Exception ex)
@@ -1120,7 +1120,7 @@ namespace WindowsFormsApplication1
                     q.SystemPermessionID = item.SystemPermessionID;
                     q.UserID = item.UserID;
                     q.PermessionValue = item.PermessionValue;
-                   
+                    localdb.SubmitChanges();
 
                 }
                 catch (Exception ex)
@@ -1153,7 +1153,7 @@ namespace WindowsFormsApplication1
                     q.Passwords = item.Passwords;
                     q.Branch_ID = item.Branch_ID;
 
-
+                    localdb.SubmitChanges();
                 }
                 catch (Exception ex)
                 {
@@ -1190,7 +1190,7 @@ namespace WindowsFormsApplication1
                     q.description = item.description;
                     q.CustomerID = item.CustomerID;
 
-
+                    localdb.SubmitChanges();
                 }
                 catch (Exception ex)
                 {
@@ -1228,8 +1228,8 @@ namespace WindowsFormsApplication1
                     q.Bill_ID = item.Bill_ID;
                     q.Status = item.Status;
                    // q.WZN = item.WZN;
-                   
 
+                    localdb.SubmitChanges();
 
                 }
                 catch (Exception ex)
@@ -1264,8 +1264,8 @@ namespace WindowsFormsApplication1
                     q.ItemID = item.ItemID;
                     q.Qty = item.Qty;
                     q.branchID = item.branchID;
-                   
 
+                    localdb.SubmitChanges();
 
 
                 }
@@ -1303,7 +1303,7 @@ namespace WindowsFormsApplication1
                     q.ProcessType = item.ProcessType;
                     q.UserID = item.UserID;
 
-
+                    localdb.SubmitChanges();
 
                 }
                 catch (Exception ex)
