@@ -4,14 +4,14 @@ using System.Linq;
 
 namespace XamaDataLayer.BranchCmd
 {
-    public static  class OrdersCmd
+    public    class OrdersCmd:ApiCounter
     {
-        private static DbDataContext db = new DbDataContext();
+      
 
 
         public static bool AddNewOrder(Order tb)
         {
-            db = new DbDataContext();
+            
             db.CommandTimeout = 9000;
             db.Orders.InsertOnSubmit(tb);
             db.SubmitChanges();
@@ -21,7 +21,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static Order EditOrderStatusOnly(Order tb, int xid)
         {
-            db = new DbDataContext();
+            
             db.CommandTimeout = 9000;
             var ord = db.Orders.Where(oo => oo.ID == xid).SingleOrDefault();
             ord.OrderStatus = tb.OrderStatus;
@@ -33,7 +33,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static Order EditFullOrder(Order tb, int xid)
         {
-            db = new DbDataContext();
+             
             db.CommandTimeout = 9000;
             var ord = db.Orders.Where(oo => oo.ID == xid).SingleOrDefault();
 
@@ -59,7 +59,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static void DeleteOrder(int xid)
         {
-            db = new DbDataContext();
+            
             db.CommandTimeout = 9000;
             var ord = db.Orders.Where(oo => oo.ID == xid).SingleOrDefault();
             db.Orders.DeleteOnSubmit(ord);

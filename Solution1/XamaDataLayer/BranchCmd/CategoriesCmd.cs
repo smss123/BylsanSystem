@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 
 namespace XamaDataLayer.BranchCmd
 {
-    public static  class CategoriesCmd
+    public    class CategoriesCmd:ApiCounter
     {
         private static DbDataContext db = new DbDataContext();
         public static bool AddCategory(ProductCategory tb)
         {
-            db = new DbDataContext();
+            tb.ID = GetNumber();
             db.CommandTimeout = 9000;
             db.ProductCategories.InsertOnSubmit(tb);
             db.SubmitChanges();
@@ -18,18 +19,10 @@ namespace XamaDataLayer.BranchCmd
         }
 
 
-        public static int  GetCategoryIDByName(string CategName)
-        {
-            db = new DbDataContext();
-            db.CommandTimeout = 9000;
-            var   categ = db.ProductCategories.Where(cat => cat.ProductCategoryName == CategName ).SingleOrDefault();
-            var xCategId = 0;
-            xCategId = categ.ID;
-            return xCategId;
-        }
+       
         public static bool EditCategory(ProductCategory tb, int xid)
         {
-            db = new DbDataContext();
+            
             db.CommandTimeout = 9000;
             var categ = db.ProductCategories.Where(cat => cat.ID == xid).SingleOrDefault();
             categ.ProductCategoryName = tb.ProductCategoryName;
@@ -40,13 +33,18 @@ namespace XamaDataLayer.BranchCmd
         }
         public static List<ProductCategory> GetAllCategories()
         {
-            db = new DbDataContext();
+            var com = CompiledQuery.Compile(
+                (DbDataContext dbx) =>
+                 dbx.ProductCategories.ToList()
+         );
             db.CommandTimeout = 9000;
-            return db.ProductCategories.ToList();
+            return com(db);
+
+           
         }
         public static void DeleteCategory(int xid)
         {
-            db = new DbDataContext();
+            
             db.CommandTimeout = 9000;
             var categ = db.ProductCategories.Where(cat => cat.ID == xid).SingleOrDefault();
             db.ProductCategories.DeleteOnSubmit(categ);

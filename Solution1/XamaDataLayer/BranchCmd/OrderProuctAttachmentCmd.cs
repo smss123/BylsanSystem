@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 
 namespace XamaDataLayer.BranchCmd
 {
-    public  class OrderProuctAttachmentCmd
+    public  class OrderProuctAttachmentCmd:ApiCounter
     {
-        private static DbDataContext db = new DbDataContext();
+      
         public static bool AddOrderProductAttachment( OrderProuctAttachment tb)
         {
-            db = new DbDataContext();
+            tb.ID = GetNumber();
             db.CommandTimeout = 9000;
             db.OrderProuctAttachments.InsertOnSubmit(tb);
             db.SubmitChanges();
@@ -18,7 +19,7 @@ namespace XamaDataLayer.BranchCmd
         }
         public static OrderProuctAttachment EditAttachment(OrderProuctAttachment tb, int xid)
         {
-            db = new DbDataContext();
+            
             db.CommandTimeout = 9000;
             var q = db.OrderProuctAttachments.Where(c => c.ID == xid).SingleOrDefault();
             q.OrderProductID = tb.OrderProductID;
@@ -31,7 +32,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static void DeleteAttachment(int xid)
         {
-            db = new DbDataContext();
+             
             db.CommandTimeout = 9000;
             var q = db.OrderProuctAttachments.Where(c => c.ID == xid).SingleOrDefault();
             db.OrderProuctAttachments.DeleteOnSubmit(q);
@@ -41,27 +42,40 @@ namespace XamaDataLayer.BranchCmd
 
         public static List<OrderProuctAttachment> GetAllAttachments()
         {
-            db = new DbDataContext();
+            var com = CompiledQuery.Compile(
+             (DbDataContext dbx) =>
+            dbx.OrderProuctAttachments.ToList()
+                                        );
             db.CommandTimeout = 9000;
-            return   db.OrderProuctAttachments.ToList();
+            return com(db);
+             
         }
 
         public static OrderProuctAttachment GetOneAttachmentByID(int xid )
         {
-            db = new DbDataContext();
+            var com = CompiledQuery.Compile(
+            (DbDataContext dbx) =>
+                        dbx.OrderProuctAttachments.Where(c => c.ID == xid).SingleOrDefault()
+                                       );
             db.CommandTimeout = 9000;
-            var q = db.OrderProuctAttachments.Where(c => c.ID == xid).SingleOrDefault();
-            return q;
+            return com(db);
+
+           
         }
 
         public static  List <OrderProuctAttachment> GetOneAttachmentByOrderProductID(int xid)
         {
-            db = new DbDataContext();
+            var com = CompiledQuery.Compile(
+           (DbDataContext dbx) =>
+                       (from p in dbx.OrderProuctAttachments
+                        where p.OrderProductID == xid
+                        select p).ToList()
+
+                                      );
             db.CommandTimeout = 9000;
-            var q = (from p in db.OrderProuctAttachments
-                      where p.OrderProductID == xid
-                      select p).ToList();
-            return q;
+            return com(db);
+
+             
         }
     }
 }

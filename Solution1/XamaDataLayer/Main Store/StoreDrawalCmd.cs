@@ -4,12 +4,12 @@ using System.Linq;
 
 namespace XamaDataLayer.Main_Store
 {
-    public  class StoreDrawalCmd
+    public  class StoreDrawalCmd:ApiCounter
     {
         private static DbDataContext db = new DbDataContext();
         public static bool AddDrawal(StoreWithDrawal tb)
         {
-            db = new DbDataContext();
+           
             db.StoreWithDrawals.InsertOnSubmit(tb);
             db.SubmitChanges();
 
@@ -21,7 +21,7 @@ namespace XamaDataLayer.Main_Store
 
         public static StoreWithDrawal EditStoreWithDrawal(StoreWithDrawal tb)
         {
-            db = new DbDataContext();
+            
             var q = db.StoreWithDrawals.Where(d => d.ID == tb.ID).SingleOrDefault();
             q.ID = tb.ID;
             q.ProductID = tb.ProductID;
@@ -40,7 +40,7 @@ namespace XamaDataLayer.Main_Store
         {
             try
             {
-                db = new DbDataContext();
+                
                 var q = db.StoreWithDrawals.Where(d => d.ID == xid).SingleOrDefault();
                 db.StoreWithDrawals.DeleteOnSubmit(q);
                 db.SubmitChanges();

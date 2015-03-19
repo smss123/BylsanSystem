@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using XamaDataLayer.Helper_Classes;
 
 namespace XamaDataLayer.Accountant
 {
-    public static  class AccountCategoryCmd
+    public    class AccountCategoryCmd:ApiCounter
     {
-        private static DbDataContext db = new DbDataContext();
+     
         public static bool AddAccountCategory(AccountCategory tb)
         {
-            db = new DbDataContext();
+           
             db.CommandTimeout = 9000;
 
+
+            tb.ID = ApiCounter.GetNumber();
             db.AccountCategories.InsertOnSubmit(tb);
             db.SubmitChanges();
            
@@ -22,7 +25,6 @@ namespace XamaDataLayer.Accountant
 
         public static AccountCategory EditAccountCategory(AccountCategory tb, int xid)
         {
-            db = new DbDataContext();
             db.CommandTimeout = 9000;
             var act = db.AccountCategories.Where(a => a.ID == xid).SingleOrDefault();
             act.AccountCategoryName = tb.AccountCategoryName;
@@ -36,7 +38,6 @@ namespace XamaDataLayer.Accountant
 
         public static void DeleteAccountCategory(int xid)
         {
-            db = new DbDataContext();
             db.CommandTimeout = 9000;
             var act = db.AccountCategories.Where(a => a.ID == xid).SingleOrDefault();
             db.AccountCategories.DeleteOnSubmit(act);
@@ -46,10 +47,16 @@ namespace XamaDataLayer.Accountant
 
         public static List<AccountCategory> GetAll()
         {
-            db = new DbDataContext();
+            var com = CompiledQuery.Compile(
+                (DbDataContext dbx) =>
+                    ( from a in  dbx.AccountCategories
+                                             select a ).ToList()
+                );
+            {
+                db = new DbDataContext();
+            }
             db.CommandTimeout = 9000;
-            var Lst = ( from a in  db.AccountCategories
-                         select a ).ToList();
+            var Lst = com(db);
             return Lst;
         }
     }

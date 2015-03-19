@@ -65,6 +65,10 @@ namespace Bylsan_System.AccountsX.Acc
                 Operation.EndOperation(this);
                 Operation.ShowToustOk("Account Has Been Created Now ", this);
             }
+            else
+            {
+                Operation.ShowToustOk("Please Select Category",this);
+            }
         }
 
 

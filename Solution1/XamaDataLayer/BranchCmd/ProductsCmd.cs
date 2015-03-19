@@ -4,12 +4,12 @@ using System.Linq;
 
 namespace XamaDataLayer.BranchCmd
 {
-    public static  class ProductsCmd
+    public    class ProductsCmd:ApiCounter
     {
         private static DbDataContext db = new DbDataContext();
         public static bool AddProduct(Product tb)
         {
-           db = new DbDataContext();db.CommandTimeout = 9000;
+            db.CommandTimeout = 9000;
             db.Products.InsertOnSubmit(tb);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Add ", " Product  ", " Add New Product");
@@ -19,7 +19,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static bool EditProduct(Product tb, int xid)
         {
-           db = new DbDataContext();db.CommandTimeout = 9000;
+            db.CommandTimeout = 9000;
             var prd = db.Products.Where(pp => pp.ID == xid).SingleOrDefault();
             prd.Product_Name = tb.Product_Name;
             prd.Product_Description = tb.Product_Description;
@@ -34,7 +34,7 @@ namespace XamaDataLayer.BranchCmd
         }
         public static void DeleteProduct(int xid)
         {
-           db = new DbDataContext();db.CommandTimeout = 9000;
+            db.CommandTimeout = 9000;
             var prd = db.Products.Where(pp => pp.ID == xid).SingleOrDefault();
             db.Products.DeleteOnSubmit(prd);
             db.SubmitChanges();
@@ -87,7 +87,7 @@ namespace XamaDataLayer.BranchCmd
         }
         public static List<Product> GetProductDetailsForSale()
         {
-
+            db = new DbDataContext();
             var q = (from i in db.Products where i.ProductType=="product" select new {i.ID, i.Product_Name,i.PublicName,i.ProductPrice,i.ProductUnit,i.ProductType});
             List<Product> ls = new List<Product>();
             foreach (var item in q)

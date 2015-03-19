@@ -4,12 +4,12 @@ using System.Linq;
 
 namespace XamaDataLayer.Main_Store
 {
-    public    class StoreCmd
+    public    class StoreCmd:ApiCounter
     {
-        private static DbDataContext db = new DbDataContext();
+       
         public static bool AddNewStore(Store  tb)
         {
-            db = new DbDataContext();
+            
             db.CommandTimeout = 9000;
             db.Stores.InsertOnSubmit(tb);
 
@@ -21,7 +21,7 @@ namespace XamaDataLayer.Main_Store
 
         public static Store EditStore(Store tb)
         {
-            db = new DbDataContext();
+             
             db.CommandTimeout = 9000;
             var q = db.Stores .Where(i => i.ID == tb.ID).SingleOrDefault();
             q.ID = tb.ID;

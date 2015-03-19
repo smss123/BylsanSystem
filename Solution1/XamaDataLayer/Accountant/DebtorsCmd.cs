@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 
 namespace XamaDataLayer.Accountant
 {
-    public  class DebtorsCmd
+    public  class DebtorsCmd:ApiCounter
     {
-        private static DbDataContext db = new DbDataContext();
+      
 
         public static bool AddDebt(Debtor tb)
         {
-            db = new DbDataContext();
+            tb.ID = ApiCounter.GetNumber();
             db.CommandTimeout = 9000;
             db.Debtors.InsertOnSubmit(tb);
             db.SubmitChanges();
@@ -19,7 +20,7 @@ namespace XamaDataLayer.Accountant
 
         public static Debtor EditDebtor(Debtor tb, int xid)
         {
-            db = new DbDataContext();
+           
             db.CommandTimeout = 9000;
             var q = db.Debtors.Where(d => d.ID == xid).SingleOrDefault();
             q.DebtorName = tb.DebtorName;
@@ -35,7 +36,7 @@ namespace XamaDataLayer.Accountant
 
         public static void DeleteDebtor(int xid)
         {
-            db = new DbDataContext();
+          
             db.CommandTimeout = 9000;
             var q = db.Debtors.Where(d => d.ID == xid).SingleOrDefault();
             db.Debtors.DeleteOnSubmit(q);
@@ -46,17 +47,20 @@ namespace XamaDataLayer.Accountant
 
         public static List<Debtor> GetAllDebtors()
         {
-            db = new DbDataContext();
+            var com = CompiledQuery.Compile(
+                    (DbDataContext dbx) =>
+                       dbx.Debtors.ToList()
+             );
             db.CommandTimeout = 9000;
-            return db.Debtors.ToList();
+            return com(db) ;
         }
 
-        public static Debtor  GetOneDebtorByID( int xid ){
-
-              db = new DbDataContext();
-              db.CommandTimeout = 9000;
-            var q = db.Debtors.Where(d => d.ID == xid) .Single ();
-            return q;
+        public static Debtor  GetOneDebtorByID( int xid )
+        {
+            Func<DbDataContext, int, Debtor> com = CompiledQuery.Compile(
+                (DbDataContext dbx, int id) => dbx.Debtors.Where(d => d.ID == id).Single());
+            db.CommandTimeout = 9000;
+            return com(db,xid); 
         }
     }
 }

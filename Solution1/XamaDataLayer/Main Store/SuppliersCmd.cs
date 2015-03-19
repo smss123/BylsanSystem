@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 
 namespace XamaDataLayer.Main_Store
@@ -48,7 +49,11 @@ namespace XamaDataLayer.Main_Store
         }
         public static List<Supplier> GetAllSuppliers()
         {
-            return db.Suppliers.ToList();
+            var com = CompiledQuery.Compile(
+                (DbDataContext dbx )=>
+                    dbx.Suppliers.ToList()     
+                );
+            return com(db);
         }
     }
 }

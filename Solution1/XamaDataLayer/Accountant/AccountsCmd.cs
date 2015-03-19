@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 
 namespace XamaDataLayer.Accountant
 {
-    public static class AccountsCmd
+    public   class AccountsCmd:ApiCounter
     {
-        private static DbDataContext db = new DbDataContext();
+       
         public static bool AddAccount(Account tb)
         {
-            db = new DbDataContext();
+            tb.ID = ApiCounter.GetNumber();
             db.CommandTimeout = 9000;
             db.Accounts.InsertOnSubmit(tb);
             db.SubmitChanges();
@@ -18,7 +19,7 @@ namespace XamaDataLayer.Accountant
 
         public static Account EditAccount(Account tb, int xid)
         {
-          db = new DbDataContext();db.CommandTimeout = 9000;db.CommandTimeout = 9000;
+          
             db.CommandTimeout = 9000;
             var act = db.Accounts.Where(a => a.ID == xid).SingleOrDefault();
             act.CategoryID = tb.CategoryID;
@@ -33,7 +34,7 @@ namespace XamaDataLayer.Accountant
         {
             try
             {
-              db = new DbDataContext();db.CommandTimeout = 9000;db.CommandTimeout = 9000;
+              
                 db.CommandTimeout = 9000;
                 var act = db.Accounts.Where(a => a.ID == xid).SingleOrDefault();
                 db.Accounts.DeleteOnSubmit(act);
@@ -48,55 +49,79 @@ namespace XamaDataLayer.Accountant
 
         public static List<Account> GetAllAccounts()
         {
-           db = new DbDataContext();db.CommandTimeout = 9000;
+            
+           var com = CompiledQuery.Compile(
+               (DbDataContext dbx) =>
+                dbx.Accounts.OrderByDescending(p=>p.CategoryID).ToList()
+                );
             db.CommandTimeout = 9000;
-            return db.Accounts.OrderByDescending(p=>p.CategoryID).ToList();
+            return com(db) ;
         }
 
         public static List<Account> GetAccountByCategoryID(int categID)
-        {
-           db = new DbDataContext();db.CommandTimeout = 9000;
+        { 
+           var com = CompiledQuery.Compile(
+             (DbDataContext dbx, int id) =>
+              (from g in dbx.Accounts
+                                      where g.CategoryID == id
+                                      select g).ToList()
+              );
             db.CommandTimeout = 9000;
-            var ACT = (from g in db.Accounts
-                        where g.CategoryID == categID
-                        select g).ToList();
-            return ACT;
+            return com(db,categID);
         }
 
         public static List<Account> GetAccountByID(int xID)
         {
-           db = new DbDataContext();db.CommandTimeout = 9000;
+            var com = CompiledQuery.Compile(
+            (DbDataContext dbx, int id) =>
+             (from ac in dbx.Accounts
+              where ac.ID == id
+              select ac).ToList()
+             );
             db.CommandTimeout = 9000;
-            var ACT = (from ac in db.Accounts
-                        where ac.ID  == xID
-                         select ac).ToList();
-            return ACT;
+            return com(db,xID);
+
         }
         public static List<Account> GetAccountByName(string nam)
         {
-           db = new DbDataContext();db.CommandTimeout = 9000;
+            var com = CompiledQuery.Compile(
+            (DbDataContext dbx, string n) =>
+             (from ac in dbx.Accounts
+                        where ac.AccountName  == n
+                         select ac).ToList ()
+             );
             db.CommandTimeout = 9000;
-            var ACT = (from ac in db.Accounts
-                        where ac.AccountName  == nam
-                         select ac).ToList ();
-            return ACT;
+            return com(db,nam);
+            
         }
         public static Account GetOneAccountByName(string nam)
         {
-           db = new DbDataContext();db.CommandTimeout = 9000;
+            var com = CompiledQuery.Compile(
+            (DbDataContext dbx, string na) =>
+             (from ac in db.Accounts
+                                    where ac.AccountName == na
+                                    select ac).Single ()
+             );
             db.CommandTimeout = 9000;
-
-            var ACT = (from ac in db.Accounts
-                       where ac.AccountName == nam
-                       select ac).Single ();
-            return ACT;
+            return com(db,nam); 
         }
         public static double? GetAccountBalance(int accountID)
         {
             var balance = (double? )0d;
 
-            var allTotalIn = db.AccountDailies.Where(p => p.AccountID == accountID).Sum(p => p.TotalIn);
-            var allTotalOut = db.AccountDailies.Where(p => p.AccountID == accountID).Sum(p => p.TotalOut);
+            var totalIn = CompiledQuery.Compile(
+                    (DbDataContext dbx) =>
+                        db.AccountDailies.Where(p => p.AccountID == accountID).Sum(p => p.TotalIn)
+             );
+            var allTotalIn = totalIn(db);
+
+            var totalOut = CompiledQuery.Compile(
+                    (DbDataContext dbx) =>
+                        db.AccountDailies.Where(p => p.AccountID == accountID).Sum(p => p.TotalOut)
+             );
+
+            var allTotalOut = totalOut(db);
+
             balance = allTotalIn - allTotalOut;
 
             return balance;
@@ -105,9 +130,19 @@ namespace XamaDataLayer.Accountant
         public static double? GetCustomerPayment(int accountID, int orderID)
         {
             var balance = (double?)0d;
+            var totalIn = CompiledQuery.Compile(
+                   (DbDataContext dbx,int accid,int orderid) =>
+                      db.AccountDailies.Where(p => p.AccountID == accid&&p.CommandArg==orderid.ToString()).Sum(p => p.TotalIn)
+            );
 
-            var allTotalIn = db.AccountDailies.Where(p => p.AccountID == accountID&&p.CommandArg==orderID.ToString()).Sum(p => p.TotalIn);
-            var allTotalOut = db.AccountDailies.Where(p => p.AccountID == accountID && p.CommandArg == orderID.ToString()).Sum(p => p.TotalOut);
+            var allTotalIn = totalIn(db, accountID, orderID);
+
+            var TotalOut = CompiledQuery.Compile(
+                  (DbDataContext dbx, int accid, int orderid) =>
+                   db.AccountDailies.Where(p => p.AccountID == accid && p.CommandArg == orderid.ToString()).Sum(p => p.TotalOut)
+           );
+
+            var allTotalOut = TotalOut(db, accountID, orderID);
             balance = allTotalIn - allTotalOut;
 
             return balance;
@@ -117,26 +152,38 @@ namespace XamaDataLayer.Accountant
         {
             var balance = (double? )0d;
 
-            var allTotalIn = db.AccountDailies.Where(
-            p => p.AccountID == accountID &&
-                 p.DateOfProcess.Value.Year >= fromDate.Year
-                 && p.DateOfProcess.Value.Month >= fromDate.Month &&
-                 p.DateOfProcess.Value.Day >= fromDate.Day &&
+            var totalIn = CompiledQuery.Compile(
+                    (DbDataContext dbx) =>
+                       db.AccountDailies.Where(
+                                   p => p.AccountID == accountID &&
+                                        p.DateOfProcess.Value.Year >= fromDate.Year
+                                        && p.DateOfProcess.Value.Month >= fromDate.Month &&
+                                        p.DateOfProcess.Value.Day >= fromDate.Day &&
+                       
+                                         p.DateOfProcess.Value.Year <= toDate.Year
+                                        && p.DateOfProcess.Value.Month <= toDate.Month &&
+                                        p.DateOfProcess.Value.Day <= toDate.Day
+                       
+                                        ).Sum(p => p.TotalIn)
+             );
 
-                  p.DateOfProcess.Value.Year <= toDate.Year
-                 && p.DateOfProcess.Value.Month <= toDate.Month &&
-                 p.DateOfProcess.Value.Day <= toDate.Day
 
-                 ).Sum(p => p.TotalIn);
-            var allTotalOut = db.AccountDailies.Where(p => p.AccountID == accountID &&
-                 p.DateOfProcess.Value.Year >= fromDate.Year
-                 && p.DateOfProcess.Value.Month >= fromDate.Month &&
-                 p.DateOfProcess.Value.Day >= fromDate.Day &&
+            var allTotalIn = totalIn(db);
 
-                  p.DateOfProcess.Value.Year <= toDate.Year
-                 && p.DateOfProcess.Value.Month <= toDate.Month &&
-                 p.DateOfProcess.Value.Day <= toDate.Day
-                 ).Sum(p => p.TotalOut);
+            var totalOut = CompiledQuery.Compile(
+                    (DbDataContext dbx) =>
+                      db.AccountDailies.Where(p => p.AccountID == accountID &&
+                                       p.DateOfProcess.Value.Year >= fromDate.Year
+                                       && p.DateOfProcess.Value.Month >= fromDate.Month &&
+                                       p.DateOfProcess.Value.Day >= fromDate.Day &&
+                      
+                                        p.DateOfProcess.Value.Year <= toDate.Year
+                                       && p.DateOfProcess.Value.Month <= toDate.Month &&
+                                       p.DateOfProcess.Value.Day <= toDate.Day
+                                       ).Sum(p => p.TotalOut)
+             );
+
+            var allTotalOut =totalOut(db) ;
             balance = allTotalIn - allTotalOut;
 
             return balance;

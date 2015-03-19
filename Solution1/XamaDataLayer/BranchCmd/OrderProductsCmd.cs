@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 
 namespace XamaDataLayer.BranchCmd
 {
-    public static  class OrderProductsCmd
+    public    class OrderProductsCmd:ApiCounter
     {
-        private static DbDataContext db = new DbDataContext();
+     
 
         public static bool AddOrderProduct(OrderProduct tb)
         {
-            db = new DbDataContext();
+            tb.ID = GetNumber();
             db.CommandTimeout = 9000;
             db.OrderProducts.InsertOnSubmit(tb);
             db.SubmitChanges();
@@ -21,7 +22,7 @@ namespace XamaDataLayer.BranchCmd
         public static OrderProduct EditOrderProduct(OrderProduct tb, int xid)
         {
             
-                db = new DbDataContext();
+                 
                 db.CommandTimeout = 9000;
                 var ord = db.OrderProducts.Where(oo => oo.ID == xid).SingleOrDefault();
                 ord.OrderID = tb.OrderID;
@@ -40,7 +41,7 @@ namespace XamaDataLayer.BranchCmd
         }
         public static OrderProduct EditOrderProductStatus(OrderProduct tb, int xid)
         {
-            db = new DbDataContext();
+             
             db.CommandTimeout = 9000;
             var ord = db.OrderProducts.Where(oo => oo.ID == xid).SingleOrDefault();
             ord.ProductID = tb.ProductID;
@@ -53,7 +54,7 @@ namespace XamaDataLayer.BranchCmd
         }
         public static void DeleteOrderProduct(int xid)
         {
-            db = new DbDataContext();
+             
             db.CommandTimeout = 9000;
             var ord = db.OrderProducts.Where(oo => oo.ID == xid).SingleOrDefault();
 
@@ -64,35 +65,40 @@ namespace XamaDataLayer.BranchCmd
 
         public static List<OrderProduct> GetAll()
         {
-            db = new DbDataContext();
+            var com = CompiledQuery.Compile(
+             (DbDataContext dbx) =>
+            (from c in dbx.OrderProducts
+                                    where c.ID != 0
+                                    select c).ToList()
+                                        );
             db.CommandTimeout = 9000;
-            var lst = (from c in db.OrderProducts
-                        where c.ID != 0
-                        select c).ToList();
-            return lst;
+            return com(db);
         }
 
         public static List<OrderProduct> GetAllByOrderID( int XID )
         {
-            db = new DbDataContext();
+            var com = CompiledQuery.Compile(
+              (DbDataContext dbx, int id) =>
+             db.OrderProducts.Where(p => p.OrderID == id).ToList()
+                                         );
             db.CommandTimeout = 9000;
-            //var LST = (from p in db.OrderProducts
-            //          orderby p.ID
-            //          where p.OrderID == XID
-            //          select p).ToList();
-            //return LST;
-            return db.OrderProducts.Where(p => p.OrderID == XID).ToList();
+            return com(db,XID);
+             
         }
 
         public static List<OrderProduct> GetAllByProductID(int XID)
         {
-            db = new DbDataContext();
-            db.CommandTimeout = 9000;
-            var LST = (from p in db.OrderProducts
+              var com = CompiledQuery.Compile(
+              (DbDataContext dbx, int id) =>
+                    (from p in db.OrderProducts
                       orderby p.ID
-                      where p.ProductID  == XID
-                      select p).ToList();
-            return LST;
+                      where p.ProductID  == id
+                      select p).ToList()
+                                         );
+            db.CommandTimeout = 9000;
+            return com(db,XID);
+             
+           
         }
 
         public static OrderProduct GetOneByProductID(int XID)
@@ -108,28 +114,56 @@ namespace XamaDataLayer.BranchCmd
 
         public static List<OrderProduct> GetOrderProductByCustomerPhone(  string Phon)
         {
-            db = new DbDataContext();
-            db.CommandTimeout = 9000;
-            var getcustomeridbyphone = (from c in CustomersCmd.GetAllCustmers()
-                                       where c.PhoneNumber == Phon
-                                         select c).Single();
-            var CustmrID = getcustomeridbyphone.ID;
+            var com_ = CompiledQuery.Compile(
+                
+                (DbDataContext dbx,string ph)=>
+                    dbx.Customers.Where(p => p.PhoneNumber == ph).Single()
+            );
+            var q = com_(db,Phon);
+            var lst = new List<OrderProduct>();
 
-            var GetAllOrders = (from o in OrdersCmd.GetAllOrders()
-                                    where  o.CustomerID == CustmrID
-                                 select o).ToList ();
-
-
-            var Lst = new List<OrderProduct>();
-            foreach (var item in  GetAllOrders)
+            foreach (var item in q.Orders)
             {
-                Lst = (from p in db.OrderProducts
-                           orderby p.ID
-                           where p.OrderID == item .ID
-                           select p).ToList();
+                lst.AddRange(item.OrderProducts.ToList());
             }
 
-            return Lst;
+            //db = new DbDataContext();
+            //db.CommandTimeout = 9000;
+
+            //var com = CompiledQuery.Compile(
+            // (DbDataContext dbx, string  id) =>
+            //       (from c in CustomersCmd.GetAllCustmers()
+            //                                              where c.PhoneNumber == Phon
+            //                                                select c).Single()
+            //                            );
+            //db.CommandTimeout = 9000;
+
+            //var getcustomeridbyphone = com(db, Phon);
+
+            //var CustmrID = getcustomeridbyphone.ID;
+
+            //var com1 = CompiledQuery.Compile(
+            // (DbDataContext dbx, int id) =>
+            //       (from o in OrdersCmd.GetAllOrders()
+            //                                           where  o.CustomerID == id
+            //                                        select o).ToList ()
+            //                            );
+
+            //var GetAllOrders = com1(db,CustmrID);
+
+
+            //var lst = new List<OrderProduct>();
+            ////foreach (var item in  GetAllOrders)
+            ////{
+            ////    Lst = (from p in db.OrderProducts
+            ////               orderby p.ID
+            ////               where p.OrderID == item .ID
+            ////               select p).ToList();
+            ////}
+
+
+
+            return lst;
         }
     }
 }

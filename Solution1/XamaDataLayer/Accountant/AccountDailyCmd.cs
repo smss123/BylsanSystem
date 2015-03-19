@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 
 namespace XamaDataLayer.Accountant
 {
-    public static  class AccountDailyCmd
+    public    class AccountDailyCmd:ApiCounter
     {
-        private static DbDataContext db = new DbDataContext();
+     
         public static bool AddAccountDaily(AccountDaily tb)
         {
-            db = new DbDataContext();
+             tb.ID = ApiCounter.GetNumber();
             db.CommandTimeout = 9000;
             db.AccountDailies.InsertOnSubmit(tb);
             db.SubmitChanges();
@@ -17,7 +18,7 @@ namespace XamaDataLayer.Accountant
         }
         public static AccountDaily EditAccountDaily(AccountDaily tb, int xid)
         {
-            db = new DbDataContext();
+           
             db.CommandTimeout = 9000;
             var dy = db.AccountDailies.Where(d => d.ID == xid).SingleOrDefault();
             dy.AccountID = tb.AccountID;
@@ -29,62 +30,76 @@ namespace XamaDataLayer.Accountant
             db.SubmitChanges();
             return dy;
         }
-
         public static void DeleteAccountDaily(int xid)
         {
-            db = new DbDataContext();
+          
             db.CommandTimeout = 9000;
             var dy = db.AccountDailies.Where(d => d.ID == xid).SingleOrDefault();
             db.AccountDailies.DeleteOnSubmit(dy);
             db.SubmitChanges();
         }
-
         public static List<AccountDaily> GetAllDaily()
         {
-            db = new DbDataContext();
+             
+            var com = CompiledQuery.Compile(
+                (DbDataContext dbx) =>
+                    dbx.AccountDailies.ToList()
+                );
             db.CommandTimeout = 9000;
-            return db.AccountDailies.ToList();
+            return com(db) ;
         }
-
         public static List<AccountDaily> GetAllAccountDailyByDate( DateTime dat )
         {
-            db = new DbDataContext();
-            db.CommandTimeout = 9000;
-            var dy = (from d in db.AccountDailies
+             
+            
+            var com = CompiledQuery.Compile(
+                (DbDataContext dbx) =>
+                   (from d in dbx.AccountDailies
                      orderby d.DateOfProcess ascending
                      where d.DateOfProcess == dat
-                     select d).ToList();
-            return dy;
+                     select d).ToList()
+                );
+            db.CommandTimeout = 9000;
+            return com(db);
         }
-
-
-
         public static List<AccountDaily> GetAllAccountDailyByAccountID(int actid)
         {
-            db = new DbDataContext();
-            db.CommandTimeout = 9000;
-            var dy = (from d in db.AccountDailies
+
+            var com = CompiledQuery.Compile(
+               (DbDataContext dbx) =>
+                  (from d in dbx.AccountDailies
                      orderby d.DateOfProcess ascending
                      where d.AccountID == actid
-                     select d).ToList();
-            return dy;
+                     select d).ToList()
+               );
+            db.CommandTimeout = 9000;
+            return com(db);
         }
         public static double  GetBalanceByAccountID(int ACTID)
         {
             double netBalance = 0;
             try
             {
-                db = new DbDataContext();
+                
                 db.CommandTimeout = 9000;
-                var  totIn = (from d in db.AccountDailies
+                var com = CompiledQuery.Compile(
+                (DbDataContext dbx) =>
+                 (from d in dbx.AccountDailies
                      orderby d.DateOfProcess ascending
                      where d.AccountID == ACTID
-                     select  d.TotalIn ).Sum (  );
+                     select  d.TotalIn ).Sum (  )
+                 );
+                db.CommandTimeout = 9000;
+                var totIn = com(db);
 
-                var totOut = (from d in db.AccountDailies
+                var com1 = CompiledQuery.Compile(
+                (DbDataContext dbx) =>
+                 (from d in dbx.AccountDailies
                          orderby d.DateOfProcess ascending
                          where d.AccountID == ACTID
-                         select d.TotalOut).Sum();
+                         select d.TotalOut).Sum()
+                 );
+                var totOut = com1(db);
                 netBalance = totIn.Value - totOut.Value;
 
                 return netBalance;

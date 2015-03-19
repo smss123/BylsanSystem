@@ -7,9 +7,9 @@ using System.Diagnostics;
 
 namespace XamaDataLayer.Helper_Classes
 {
-    public  class FactoryZoon  : IDisposable
+    public  class FactoryZoon  :ApiCounter, IDisposable
     {
-        private static DbDataContext db = new DbDataContext();
+      
         ~FactoryZoon()
         {
             GC.Collect();

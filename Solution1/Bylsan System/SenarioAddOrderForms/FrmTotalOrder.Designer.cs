@@ -58,6 +58,8 @@
             this.OkeyBtn = new Telerik.WinControls.UI.RadButton();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
+            this.txtCommint = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.CustomerInfomationGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReceiptVoucherButton)).BeginInit();
@@ -71,11 +73,13 @@
             // 
             // CustomerInfomationGroupBox
             // 
+            this.CustomerInfomationGroupBox.Controls.Add(this.txtCommint);
             this.CustomerInfomationGroupBox.Controls.Add(this.txtDiscountBox);
             this.CustomerInfomationGroupBox.Controls.Add(this.OrderTypeLab);
             this.CustomerInfomationGroupBox.Controls.Add(this.label8);
             this.CustomerInfomationGroupBox.Controls.Add(this.txtBranches);
             this.CustomerInfomationGroupBox.Controls.Add(this.txtPayment);
+            this.CustomerInfomationGroupBox.Controls.Add(this.label9);
             this.CustomerInfomationGroupBox.Controls.Add(this.label1);
             this.CustomerInfomationGroupBox.Controls.Add(this.TotalPriceBox);
             this.CustomerInfomationGroupBox.Controls.Add(this.label6);
@@ -91,7 +95,7 @@
             this.CustomerInfomationGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.CustomerInfomationGroupBox.Location = new System.Drawing.Point(0, 0);
             this.CustomerInfomationGroupBox.Name = "CustomerInfomationGroupBox";
-            this.CustomerInfomationGroupBox.Size = new System.Drawing.Size(632, 167);
+            this.CustomerInfomationGroupBox.Size = new System.Drawing.Size(695, 267);
             this.CustomerInfomationGroupBox.TabIndex = 7;
             this.CustomerInfomationGroupBox.TabStop = false;
             this.CustomerInfomationGroupBox.Text = "Customer Infomation";
@@ -253,9 +257,9 @@
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.OkeyBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 423);
+            this.panel1.Location = new System.Drawing.Point(0, 524);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(632, 46);
+            this.panel1.Size = new System.Drawing.Size(695, 46);
             this.panel1.TabIndex = 9;
             // 
             // ReceiptVoucherButton
@@ -314,7 +318,7 @@
             this.radGridView1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.radGridView1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.radGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radGridView1.Location = new System.Drawing.Point(0, 173);
+            this.radGridView1.Location = new System.Drawing.Point(0, 273);
             // 
             // radGridView1
             // 
@@ -322,21 +326,21 @@
             gridViewTextBoxColumn1.FieldName = "Product.Product_Name";
             gridViewTextBoxColumn1.HeaderText = "Name";
             gridViewTextBoxColumn1.Name = "ColName";
-            gridViewTextBoxColumn1.Width = 152;
+            gridViewTextBoxColumn1.Width = 168;
             gridViewTextBoxColumn2.Expression = "";
             gridViewTextBoxColumn2.FieldName = "Qty";
             gridViewTextBoxColumn2.HeaderText = "Qty";
             gridViewTextBoxColumn2.Name = "ColQty";
-            gridViewTextBoxColumn2.Width = 152;
+            gridViewTextBoxColumn2.Width = 168;
             gridViewTextBoxColumn3.FieldName = "Product.ProductPrice";
             gridViewTextBoxColumn3.HeaderText = "Product Price";
             gridViewTextBoxColumn3.Name = "ColProductPrice";
-            gridViewTextBoxColumn3.Width = 152;
+            gridViewTextBoxColumn3.Width = 168;
             gridViewTextBoxColumn4.EnableExpressionEditor = true;
             gridViewTextBoxColumn4.Expression = "ColProductPrice * ColQty";
             gridViewTextBoxColumn4.HeaderText = "Price";
             gridViewTextBoxColumn4.Name = "ColPrice";
-            gridViewTextBoxColumn4.Width = 156;
+            gridViewTextBoxColumn4.Width = 174;
             gridViewTextBoxColumn5.FieldName = "ProductID";
             gridViewTextBoxColumn5.HeaderText = "ProductID";
             gridViewTextBoxColumn5.IsVisible = false;
@@ -350,28 +354,43 @@
             gridViewTextBoxColumn5});
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radGridView1.Size = new System.Drawing.Size(629, 245);
+            this.radGridView1.Size = new System.Drawing.Size(695, 245);
             this.radGridView1.TabIndex = 14;
             this.radGridView1.Text = "radGridView1";
             this.radGridView1.ThemeName = "Office2010Black";
+            // 
+            // txtCommint
+            // 
+            this.txtCommint.Location = new System.Drawing.Point(398, 156);
+            this.txtCommint.Multiline = true;
+            this.txtCommint.Name = "txtCommint";
+            this.txtCommint.Size = new System.Drawing.Size(212, 93);
+            this.txtCommint.TabIndex = 12;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(339, 156);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(59, 13);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Comment:";
             // 
             // FrmTotalOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(632, 469);
+            this.ClientSize = new System.Drawing.Size(695, 570);
             this.Controls.Add(this.radGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CustomerInfomationGroupBox);
-            this.MaximumSize = new System.Drawing.Size(640, 503);
-            this.MinimumSize = new System.Drawing.Size(640, 503);
             this.Name = "FrmTotalOrder";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.RootElement.MaxSize = new System.Drawing.Size(640, 503);
+            this.RootElement.MaxSize = new System.Drawing.Size(0, 0);
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTotalOrder";
@@ -418,5 +437,7 @@
         private Telerik.WinControls.UI.RadButton ReceiptVoucherButton;
         private Telerik.WinControls.UI.RadButton PrintBtn;
         private Telerik.WinControls.UI.RadButton btnBack;
+        private System.Windows.Forms.TextBox txtCommint;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 
 namespace XamaDataLayer.BranchCmd
 {
-    public static class EmployeesCmd
+    public   class EmployeesCmd:ApiCounter
     {
         private static DbDataContext db = new DbDataContext();
         public static bool AddEmployee(Employee tb)
         {
-            db = new DbDataContext();
+            tb.ID = GetNumber();
             db.CommandTimeout = 9000;
             db.Employees.InsertOnSubmit(tb);
             db.SubmitChanges();
@@ -18,28 +19,21 @@ namespace XamaDataLayer.BranchCmd
         }
         public static List<Employee> GetAllEmployees()
         {
-            db = new DbDataContext();
+            var com = CompiledQuery.Compile(
+              (DbDataContext dbx) =>
+             (from m in dbx.Employees
+                                    orderby m.Emp_Name ascending
+                                    select m).ToList()
+                                         );
             db.CommandTimeout = 9000;
-            var emp = (from m in db.Employees
-                       orderby m.Emp_Name ascending
-                       select m).ToList();
-            return emp;
+            return com(db);
         }
 
 
-        public static int GetEmployeeIdByHisName(string nam)
-        {
-            db = new DbDataContext();
-            db.CommandTimeout = 9000;
-            var emp = db.Employees.Where(m => m.Emp_Name == nam ).SingleOrDefault();
-            var xid = 0;
-            xid = emp.ID;
-
-            return xid;
-        }
+    
         public static bool EditEmployee(Employee tb, int xid)
         {
-            db = new DbDataContext();
+             
             db.CommandTimeout = 9000;
             var emp = db.Employees.Where(m => m.ID == xid).SingleOrDefault();
             emp.Emp_Name = tb.Emp_Name;
@@ -57,7 +51,7 @@ namespace XamaDataLayer.BranchCmd
         }
         public static void DeleteEmployee(int xid)
         {
-            db = new DbDataContext();
+            
             db.CommandTimeout = 9000;
             var emp = db.Employees.Where(m => m.ID == xid).SingleOrDefault();
             db.Employees.DeleteOnSubmit(emp);

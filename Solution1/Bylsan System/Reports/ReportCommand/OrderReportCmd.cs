@@ -65,9 +65,9 @@ namespace Bylsan_System.Reports.ReportCommand
         }
 
 
-        public void GetOrderProductsCustomerPhone(string Phone)
+        public void GetOrderProductsCustomerPhone(string phone)
         {
-            var q = OrderProductsCmd.GetOrderProductByCustomerPhone(Phone);
+            var q = OrderProductsCmd.GetOrderProductByCustomerPhone(phone);
             var rs = new ReportDataSource();
             var ls = new List<OrderReportObj>();
 

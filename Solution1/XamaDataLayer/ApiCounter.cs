@@ -7,10 +7,13 @@ namespace XamaDataLayer
 {
     public class ApiCounter
     {
-        public int GetNumber()
+        public static DbDataContext db = new DbDataContext();
+        public static int GetNumber()
         {
             byte[] buffer = Guid.NewGuid().ToByteArray();
-            return BitConverter.ToInt16(buffer, 8) + int.Parse(DateTime.Now.Ticks.ToString());
+            decimal retVal;
+            retVal = (long)BitConverter.ToInt16(buffer, 4);// +int.Parse(DateTime.Now.Millisecond.ToString());   
+            return int.Parse((retVal).ToString());
         }
     }
 }

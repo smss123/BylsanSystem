@@ -74,5 +74,16 @@ namespace XamaDataLayer.Properties {
                 return ((string)(this["ClientApp_Bylsan1ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=jasmine.arvixe.com;Initial Catalog=App_Bylsan;User ID=xama;Password=P" +
+            "a$$w0rd")]
+        public string soft_BylsanConnectionString1 {
+            get {
+                return ((string)(this["soft_BylsanConnectionString1"]));
+            }
+        }
     }
 }

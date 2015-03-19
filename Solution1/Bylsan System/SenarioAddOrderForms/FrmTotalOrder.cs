@@ -127,7 +127,7 @@ namespace Bylsan_System.SenarioAddOrderForms
             otb.OrderDate = DateTime.Now;
             otb.TotalAmount =  (TotalPriceBox.Text).Todouble();
             otb.Branch_ID = UserInfo.CurrnetUser.Branch_ID;
-            otb.Comment = string.Empty;
+            otb.Comment = txtCommint.Text;
             otb.OrderVerify = "from Branch";
             //otb.CustomerID = custId;
             otb.OrderDeliveryDate = receiptdateTimePicker.Value;
@@ -135,7 +135,9 @@ namespace Bylsan_System.SenarioAddOrderForms
             otb.CustomerID = custId;
 
             if (otb.ID==0)
-            {
+            
+           {
+               otb.ID = ApiCounter.GetNumber();
                 db.Orders.InsertOnSubmit(otb);
                 db.SubmitChanges();
             }

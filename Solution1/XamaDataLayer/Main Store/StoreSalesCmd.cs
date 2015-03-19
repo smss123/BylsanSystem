@@ -4,13 +4,13 @@ using System.Linq;
 
 namespace XamaDataLayer.Main_Store
 {
-    public  class StoreSalesCmd
+    public  class StoreSalesCmd:ApiCounter
     {
-        private static DbDataContext db = new DbDataContext();
+      
 
         public static bool AddNewSales(Store_Sell tb)
         {
-            db = new DbDataContext();
+             
             db.Store_Sells.InsertOnSubmit(tb);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Add ", " Add sell store ", " Add new sell store    At Main Store ");
@@ -20,7 +20,7 @@ namespace XamaDataLayer.Main_Store
 
         public Store_Sell EditStore_Sell(Store_Sell tb, int xid)
         {
-            db = new DbDataContext();
+             
             var q = db.Store_Sells .Where(i => i.ID == xid).SingleOrDefault();
             q.UserID = tb.UserID;
             q.Price = tb.Price;
@@ -35,16 +35,12 @@ namespace XamaDataLayer.Main_Store
         }
         public void DeleteStore_SellAt(int xid)
         {
-            try
-            {
+            
                 var q = db.Store_Sells.Where(p => p.ID == xid).SingleOrDefault();
                 db.Store_Sells.DeleteOnSubmit(q);
                 db.SubmitChanges();
                 XamaDataLayer.Security.UserCmd.SaveHistory("Delete ", " Delete sell store ", " Delete selected  sell store  from  Main Store ");
-            }
-            catch (Exception)
-            {
-            }
+             
         }
 
 
@@ -53,11 +49,13 @@ namespace XamaDataLayer.Main_Store
 
         public static List<Store_Sell> GetAllSTore_Sell()
         {
+            db = new DbDataContext();
             return db.Store_Sells.ToList();
         }
 
         public static List<Store_Sell> GetAllSTore_SellByUserID( int xid)
         {
+            db = new DbDataContext();
             var lst = (from s in db.Store_Sells
                        orderby s.DateOfProcess ascending
                        where s.UserID == xid
@@ -67,6 +65,7 @@ namespace XamaDataLayer.Main_Store
 
         public static List<Store_Sell> GetAllSTore_SellBySupplierID(int xid)
         {
+            db = new DbDataContext();
             var lst = (from s in db.Store_Sells
                        orderby s.DateOfProcess ascending
                        where s.SupplierID  == xid
@@ -78,6 +77,7 @@ namespace XamaDataLayer.Main_Store
 
         public static Store_Sell GetAllSTore_SellByItemID(int xid)
         {
+            db = new DbDataContext();
             var lst = (from s in db.Store_Sells
                        orderby s.DateOfProcess ascending
                        where s.ProductID  == xid
@@ -87,6 +87,7 @@ namespace XamaDataLayer.Main_Store
 
         public static List<Store_Sell> GetAllSTore_SellByDate(DateTime dat)
         {
+            db = new DbDataContext();
             var lst = (from s in db.Store_Sells
                        orderby s.DateOfProcess ascending
                        where s.DateOfProcess == dat

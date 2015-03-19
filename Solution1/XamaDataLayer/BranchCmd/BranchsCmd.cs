@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using XamaDataLayer.Main_Store;
 
 namespace XamaDataLayer.BranchCmd
 {
-    public static  class BranchsCmd
+    public    class BranchsCmd:ApiCounter
     {
-        private static DbDataContext db = new DbDataContext();
+    
         public static bool AddNewBranch(Branch tb)
         {
-            db = new DbDataContext();
+           
             db.CommandTimeout = 9000;
             var MyTable =  db.Branches .Where (b => b.Branch_Name .Contains (tb.Branch_Name )).Take(1).SingleOrDefault () ;
             if (MyTable == null)
             {
+                tb.ID = GetNumber();
                 db.Branches.InsertOnSubmit(tb);
                 db.SubmitChanges();
                 XamaDataLayer.Security.UserCmd.SaveHistory("Add  ", "Add Branch ", " Add New Branch's Informations  ");
@@ -27,49 +29,57 @@ namespace XamaDataLayer.BranchCmd
         }
         public static List<Branch> GetAllBranchs()
         {
-            db = new DbDataContext();
+            var com = CompiledQuery.Compile(
+                   (DbDataContext dbx) =>
+                    (from b in dbx.Branches
+                                          orderby b.CreatedDate ascending
+                                          select b).ToList()
+            );
             db.CommandTimeout = 9000;
-            var lst = (from b in db.Branches
-                      orderby b.CreatedDate ascending
-                      select b).ToList();
-            return lst;
+            return com(db);
         }
 
 
         public static List<Branch> GetAllBranchByAccountID( int AcctId)
         {
-            db = new DbDataContext();
+            var com = CompiledQuery.Compile(
+                  (DbDataContext dbx, int id) =>
+                   (from b in dbx.Branches
+                                         orderby b.CreatedDate ascending
+                                         where b.AccountID == id
+                                         select b).ToList()
+           );
             db.CommandTimeout = 9000;
-            var lst = (from b in db.Branches
-                      orderby b.CreatedDate ascending
-                      where b.AccountID == AcctId
-                      select b).ToList();
-            return lst;
+            return com(db,AcctId);
         }
 
         public static List<Branch> GetAllBranchByManagerID(int MangrId)
         {
-            db = new DbDataContext();
+            var com = CompiledQuery.Compile(
+                  (DbDataContext dbx, int id) =>
+                   (from b in dbx.Branches
+                                         orderby b.CreatedDate ascending
+                                         where b.Manager_ID == id
+                                         select b).ToList()
+           );
             db.CommandTimeout = 9000;
-            var lst = (from b in db.Branches
-                      orderby b.CreatedDate ascending
-                      where b.Manager_ID == MangrId
-                      select b).ToList();
-            return lst;
+            return com(db, MangrId);
         }
         public static Branch GetBranchByBarnchID(int xid)
         {
-            db = new DbDataContext();
+            var com = CompiledQuery.Compile(
+                  (DbDataContext dbx, int id) =>
+                   (from b in dbx.Branches
+                                         orderby b.CreatedDate ascending
+                                         where b.ID ==  id
+                                         select b).Single()
+           );
             db.CommandTimeout = 9000;
-            var lst = (from b in db.Branches
-                      orderby b.CreatedDate ascending
-                      where b.ID ==  xid
-                      select b).Single();
-            return lst;
+            return com(db, xid);
         }
         public static bool EditBranch(Branch tb, int xid)
         {
-            db = new DbDataContext();
+            
             db.CommandTimeout = 9000;
             var b = db.Branches.Where(n => n.ID == xid).SingleOrDefault();
             b.Branch_Name = tb.Branch_Name;
@@ -85,7 +95,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static void DeleteBranch(int xid)
         {
-            db = new DbDataContext();
+           
             db.CommandTimeout = 9000;
             var b = db.Branches.Where(n => n.ID == xid).SingleOrDefault();
             db.Branches.DeleteOnSubmit(b);
@@ -93,18 +103,20 @@ namespace XamaDataLayer.BranchCmd
             XamaDataLayer.Security.UserCmd.SaveHistory("Delete  ", "Delete Branch ", " Delete Selected  Branch's Informations  ");
         }
 
-        public static bool TransferFromToBranch(Branch frmBranch, Branch ToBranch, Product itemID, int qty,int loginedUser)
+        public static bool TransferFromToBranch(Branch frmBranch, Branch toBranch, Product itemID, int qty,int loginedUser)
         {
-            var StoreInfo = db.SellStores.Where(p => p.branchID == frmBranch.ID && p.ItemID == itemID.ID).Take(1).Single();
-            if (StoreInfo.Qty<qty)
+            var storeInfo = db.SellStores.Where(p => p.branchID == frmBranch.ID && p.ItemID == itemID.ID).Take(1).Single();
+            if (storeInfo.Qty<qty)
             {
                 throw new Exception("this Qty is Greater than Avaliable ");
             }
             var toStore = db.SellStores.Where(p => p.branchID == frmBranch.ID && p.ItemID == itemID.ID).Take(1).Single();
             if (toStore == null)
             {
+
                 db.SellStores.InsertOnSubmit(new SellStore() { 
-                 branchID= ToBranch.ID,
+                     ID = GetNumber(),
+                 branchID= toBranch.ID,
                   Qty= qty,
                    ItemID=itemID.ID,
                 });
@@ -112,12 +124,12 @@ namespace XamaDataLayer.BranchCmd
             }
             else
             {
-                StoreInfo.Qty =(int)StoreInfo.Qty - qty;
+                storeInfo.Qty =(int)storeInfo.Qty - qty;
                 db.StoreOperationManagers.InsertOnSubmit(new StoreOperationManager() { 
                  ProcessDate = DateTime.Now,
                  ProcessType = "Darwal",
                    Qty=qty,
-                    StoreID = StoreInfo.ID,
+                    StoreID = storeInfo.ID,
                      UserID= loginedUser
                 
                 });

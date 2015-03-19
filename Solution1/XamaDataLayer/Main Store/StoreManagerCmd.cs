@@ -4,12 +4,12 @@ using System.Linq;
 
 namespace XamaDataLayer.Main_Store
 {
-    public   class StoreManagerCmd
+    public   class StoreManagerCmd:ApiCounter
     {
-        private static DbDataContext db = new DbDataContext();
+     
         public static bool AddStoreManager(StoreManager tb)
         {
-            db = new DbDataContext();
+             
             db.StoreManagers.InsertOnSubmit(tb);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Add ", " Add Store Manager", " Add new store manager   At Main Store ");
@@ -19,7 +19,7 @@ namespace XamaDataLayer.Main_Store
 
         public static StoreManager EditStoreManager(StoreManager tb)
         {
-            db = new DbDataContext();
+          
 
             var q = db.StoreManagers.Where(p => p.ID == tb.ID).SingleOrDefault();
             q.ID = tb.ID;
@@ -37,17 +37,13 @@ namespace XamaDataLayer.Main_Store
 
         public void DeleteStoreManagerAt(int xid)
         {
-            try
-            {
-                db = new DbDataContext();
+            
+                
                 var q = db.StoreManagers.Where(p => p.ID == xid).SingleOrDefault();
                 db.StoreManagers.DeleteOnSubmit(q);
                 db.SubmitChanges();
                 XamaDataLayer.Security.UserCmd.SaveHistory("Delete ", " Delete Store Manager", "  Delete Selected  store manager   At Main Store ");
-            }
-            catch (Exception)
-            {
-            }
+             
         }
 
         public static List<StoreManager> GetAllStoreManager()

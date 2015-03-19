@@ -10,7 +10,7 @@ namespace XamaDataLayer.MailServer
 
         public static bool OutBoxMessage(OutBox  tb)
         {
-            db = new DbDataContext();
+            
             db.OutBoxes .InsertOnSubmit(tb);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Send ", " Message  ", " Sent Message  ");
@@ -19,7 +19,7 @@ namespace XamaDataLayer.MailServer
 
         public static OutBox  EditMessage(OutBox tb, int xid)
         {
-            db = new DbDataContext();
+             
             var Msg = db.OutBoxes .Where(m => m.ID == xid).SingleOrDefault();
 
             Msg.Status = tb.Status;
@@ -33,7 +33,7 @@ namespace XamaDataLayer.MailServer
         {
             try
             {
-                db = new DbDataContext();
+                
                 var Msg = db.OutBoxes .Where(m => m.ID == xid).SingleOrDefault();
                 db.OutBoxes .DeleteOnSubmit(Msg);
                 db.SubmitChanges();

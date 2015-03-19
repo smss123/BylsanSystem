@@ -4,12 +4,8 @@ using System.Linq;
 
 namespace XamaDataLayer.Security
 {
-    public    class UserCmd
+    public    class UserCmd : ApiCounter
     {
-        private static  DbDataContext db = new DbDataContext();
-
-
-
         public static bool AddUser(User tb)
         {
             db.Users.InsertOnSubmit(tb);
@@ -105,6 +101,7 @@ namespace XamaDataLayer.Security
         public  static  void UserLogOut()
         {
             var htb = new History();
+            htb.ID = GetNumber();
             htb.ActionName = "User LogOut";
             htb.DateOfProcess = DateTime.Now;
             htb.HistoryAction = "User LogOut ";
@@ -120,7 +117,8 @@ namespace XamaDataLayer.Security
 
         private static bool WriteUserHistory(History htb)
         {
-           db = new DbDataContext();db.CommandTimeout = 9000;
+            db.CommandTimeout = 9000;
+            htb.ID = GetNumber();
             db.Histories.InsertOnSubmit(htb);
             db.SubmitChanges();
             return true;
@@ -133,7 +131,8 @@ namespace XamaDataLayer.Security
         {
             db = new DbDataContext();
             var tb = new History()
-            { ActionName = xActionName ,
+            {ID=GetNumber(),
+                ActionName = xActionName ,
                HistoryAction =  xHistoryAction ,
                Description = string.Format( descript + " | By User :  " +  XamaDataLayer.Security.UserInfo.CurrentUserName),
                DateOfProcess = DateTime.Now,
@@ -152,7 +151,8 @@ namespace XamaDataLayer.Security
 
         public static User EditPassword(User tb, int xid)
         {
-           db = new DbDataContext();db.CommandTimeout = 9000;
+            db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var q = db.Users.Where(u => u.ID == xid).SingleOrDefault();
             q.Passwords = tb.Passwords;
             db.SubmitChanges();

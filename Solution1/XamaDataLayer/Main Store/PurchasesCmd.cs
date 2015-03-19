@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace XamaDataLayer.Main_Store
 {
-    public class PurchasesCmd
+    public class PurchasesCmd:ApiCounter
     {
-       static  DbDataContext db = new DbDataContext();
+     
         public static bool NewPurchases(Purchase p)
         {
             p.dateOfProcess = DateTime.Now;
@@ -99,6 +99,7 @@ namespace XamaDataLayer.Main_Store
 
         public static List<Purchase> GetAll()
         {
+            db = new DbDataContext();
             return db.Purchases.ToList();
         }
     }

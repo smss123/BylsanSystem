@@ -68,15 +68,24 @@ namespace Bylsan_System
                 db.CommandTimeout = 9000;
                 foreach (var item in db.Stores)
                 {
-                    if (item.AvailableQty <= db.ProductMinimummQties.Where(p => p.ID == item.ProductID).Single().MinimumQty.ToInt())
+                    try
                     {
-                        Alert = new RadDesktopAlert();
-                        Alert.AutoCloseDelay = 3;
-                        Alert.CaptionText = "Minimum stock Qty";
-                        Alert.ContentText = string.Format("the item {0} now Qty is {1} \n that means its very low.", item.Product.Product_Name, item.AvailableQty.ToString());
-                        Alert.Show();
+                        if (item.AvailableQty <= db.ProductMinimummQties.Where(p => p.ID == item.ProductID).Single().MinimumQty.ToInt())
+                        {
+                            Alert = new RadDesktopAlert();
+                            Alert.AutoCloseDelay = 3;
+                            Alert.CaptionText = "Minimum stock Qty";
+                            Alert.ContentText = string.Format("the item {0} now Qty is {1} \n that means its very low.", item.Product.Product_Name, item.AvailableQty.ToString());
+                            Alert.Show();
 
+                        }
                     }
+                    catch (Exception)
+                    {
+
+                        continue;
+                    }
+                   
                 }
                 counter=0;
             }

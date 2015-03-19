@@ -10,7 +10,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static bool AddQuotationProduct(QuotationProduct tb)
         {
-           db = new DbDataContext();db.CommandTimeout = 9000;
+           db.CommandTimeout = 9000;
             db.QuotationProducts.InsertOnSubmit(tb);
             db.SubmitChanges();
 
@@ -20,7 +20,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static QuotationProduct EditQuotationProduct(QuotationProduct tb, int xid)
         {
-          db = new DbDataContext();db.CommandTimeout = 9000;db.CommandTimeout = 9000;
+            db.CommandTimeout = 9000;
             var q = db.QuotationProducts.Where(n => n.id == xid).SingleOrDefault();
             q.ProductID = tb.ProductID;
             q.QuotationID = tb.QuotationID;
@@ -35,7 +35,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static void DeleteQuotationProduct(int xid)
         {
-          db = new DbDataContext();db.CommandTimeout = 9000;db.CommandTimeout = 9000;
+           db.CommandTimeout = 9000;
             var q = db.QuotationProducts.Where(n => n.id == xid).SingleOrDefault();
             db.QuotationProducts.DeleteOnSubmit(q);
 
@@ -48,13 +48,14 @@ namespace XamaDataLayer.BranchCmd
 
         public static List<QuotationProduct> GetAllQuotationProducts()
         {
-          db = new DbDataContext();db.CommandTimeout = 9000;db.CommandTimeout = 9000;
+          db = new DbDataContext();db.CommandTimeout = 9000;
             return db.QuotationProducts.ToList();
         }
 
         public static List<QuotationProduct> GetQuotationProductByProductID( int ProdctId)
         {
-          db = new DbDataContext();db.CommandTimeout = 9000;db.CommandTimeout = 9000;
+          db = new DbDataContext();
+            db.CommandTimeout = 9000;
             var LST = (from i in db.QuotationProducts
                         where i.ProductID == ProdctId
                         select i).ToList();
@@ -63,7 +64,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static List<QuotationProduct> GetQuotationProductByQuotationID(int quotionId)
         {
-          db = new DbDataContext();db.CommandTimeout = 9000;db.CommandTimeout = 9000;
+          db = new DbDataContext();db.CommandTimeout = 9000; 
             var LST = (from i in db.QuotationProducts
                         where i.QuotationID  == quotionId
                         select i).ToList();

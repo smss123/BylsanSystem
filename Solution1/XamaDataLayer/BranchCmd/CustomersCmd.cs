@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 
 namespace XamaDataLayer.BranchCmd
 {
-    public static  class CustomersCmd
+    public    class CustomersCmd:ApiCounter
     {
-        private static DbDataContext db = new DbDataContext();
+       
         public static bool AddCustomer(Customer tb)
         {
-            db = new DbDataContext();
+            tb.ID = GetNumber();    
             db.CommandTimeout = 9000;
             db.Customers.InsertOnSubmit(tb);
             db.SubmitChanges();
@@ -20,49 +21,27 @@ namespace XamaDataLayer.BranchCmd
 
         public static List<Customer> GetAllCustmers()
         {
-            db = new DbDataContext();
+            var com = CompiledQuery.Compile(
+               (DbDataContext dbx) =>
+                (from c in dbx.Customers
+                                      orderby c.CustomerName ascending
+                                      select c)
+        );
             db.CommandTimeout = 9000;
-            var lst = (from c in db.Customers
-                      orderby c.CustomerName ascending
-                      select c).ToList();
-            return lst;
+            return com(db).ToList();
+
+            
           
         }
 
 
-        public static int GetCustomerIDByName(string nam)
-        {
-            db = new DbDataContext();
-            db.CommandTimeout = 9000;
-            var cust = db.Customers.Where(c => c.CustomerName == nam).SingleOrDefault();
-            var xCustID = cust.ID;
-            return xCustID;
-        }
-        public static Customer GetAllCustmerByID( int CustId)
-        {
-            db = new DbDataContext();
-            db.CommandTimeout = 9000;
-            var lst = (from c in db.Customers
-                      orderby c.CustomerName ascending
-                      where c.ID == CustId
-                      select c).Single();
-            return lst;
-        }
-
-        public static List<Customer> GetAllCustmerByAccountID(int ActId)
-        {
-            db = new DbDataContext();
-            db.CommandTimeout = 9000;
-            var lst = (from c in db.Customers
-                      orderby c.CreateDate  ascending
-                      where c.AccountID == ActId
-                      select c).ToList();
-            return lst;
-        }
+     
+     
+     
      
         public static bool EditCustomer(Customer tb, int xid)
         {
-            db = new DbDataContext();
+            
             db.CommandTimeout = 9000;
             var c = db.Customers.Where(cc => cc.ID == xid).SingleOrDefault();
 
@@ -76,7 +55,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static void DeleteCustomer( int xid )
         {
-            db = new DbDataContext();
+            
             db.CommandTimeout = 9000;
             var c = db.Customers.Where(cc => cc.ID == xid).SingleOrDefault();
             db.Customers.DeleteOnSubmit(c);
@@ -85,13 +64,16 @@ namespace XamaDataLayer.BranchCmd
         }
         public static List<Customer> GetCustmerByID(int CustId)
         {
-            db = new DbDataContext();
+            var com = CompiledQuery.Compile(
+              (DbDataContext dbx) =>
+              (from c in dbx.Customers
+                                    orderby c.CustomerName ascending
+                                    where c.ID == CustId
+                                    select c).ToList ()
+                                         );
             db.CommandTimeout = 9000;
-            var lst = (from c in db.Customers
-                      orderby c.CustomerName ascending
-                      where c.ID == CustId
-                      select c).ToList ();
-            return lst;
+            return com(db);
+             
         }
     }
 }
