@@ -28,5 +28,9 @@ namespace XamaDataLayer.Helper_Classes
         public static string CustmrName { get; set; }
         public static string CustmrPhone { get; set; }
         public static  string  OrdrType { get; set; }
+
+
+        public static Order CurOrder;
+        public static Customer CurrCustomer;
     }
 }

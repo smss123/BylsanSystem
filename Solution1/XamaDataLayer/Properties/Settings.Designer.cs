@@ -48,7 +48,7 @@ namespace XamaDataLayer.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"Data Source=jasmine.arvixe.com;Initial Catalog=App_Bylsan;Persist Security Info=True;User ID=xama;Password=Pa$$w0rd;Max Pool Size=1000;Asynchronous Processing=True;Replication=False;Connect Timeout=900;TrustServerCertificate=False;Load Balance Timeout=9999;Packet Size=32768;User Instance=False;Context Connection=False;MultiSubnetFailover=True;ConnectRetryCount=90")]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"Data Source=jasmine.arvixe.com;Initial Catalog=App_Bylsan;Persist Security Info=True;User ID=xama;Password=Pa$$w0rd;Max Pool Size=1000;Asynchronous Processing=True;MultipleActiveResultSets=True;Replication=False;Connect Timeout=900;TrustServerCertificate=False;Load Balance Timeout=9999;Packet Size=32768;User Instance=False;Context Connection=False;MultiSubnetFailover=True;ConnectRetryCount=90")]
         public string Cloud_BylsanConnectionString {
             get {
                 return ((string)(this["Cloud_BylsanConnectionString"]));
@@ -83,6 +83,17 @@ namespace XamaDataLayer.Properties {
         public string soft_BylsanConnectionString1 {
             get {
                 return ((string)(this["soft_BylsanConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SEZEROFFICE-PC\\SQL2008;Initial Catalog=soft_Bylsan;Integrated Securit" +
+            "y=True")]
+        public string soft_BylsanConnectionString2 {
+            get {
+                return ((string)(this["soft_BylsanConnectionString2"]));
             }
         }
     }

@@ -94,7 +94,7 @@ namespace Bylsan_System
                     try
                     {
 
-                        db.Connection.Open();
+                        
                         this.Invoke((MethodInvoker)delegate
                         {
                             pgs.Maximum = 100;
@@ -182,7 +182,7 @@ namespace Bylsan_System
                         });
                         Operation.AllOrderProduct = db.OrderProducts.ToList();
 
-                        db.Connection.Close();
+                      
 
                     }
                     catch (Exception ex)
@@ -248,7 +248,7 @@ namespace Bylsan_System
 
         private void AddEmloyeebtn_Click(object sender, EventArgs e)
         {
-            var frm = new frmAddAccount();
+            var frm = new FrmAddEmployee();
             frm.ShowDialog();
         }
 
@@ -455,7 +455,128 @@ namespace Bylsan_System
             Alert.ActivateTimer();
             XpremaTrack.WriteTrack();
 
+            foreach (var item in UserInfo.CurrnetUser.UserPermessions)
+            {
+                if (item.SystemPermession.Permession == "New Order")
+               {
+                   NewOrderBtn.Enabled = bool.Parse(item.PermessionValue);
+               }
+                if (item.SystemPermession.Permession == "View Order Report")
+                {
+                    ReportOrderBtn.Enabled = bool.Parse(item.PermessionValue);
+                }
 
+                if (item.SystemPermession.Permession == "Factory Control")
+                {
+                    FactoryOrderBtn.Enabled = bool.Parse(item.PermessionValue);
+                }
+
+                if (item.SystemPermession.Permession == "Desinger Control")
+                {
+                    DesignerOrderBtn.Enabled = bool.Parse(item.PermessionValue);
+                }
+
+                if (item.SystemPermession.Permession == "Branch Store")
+                {
+                    btnBranchStore.Enabled = bool.Parse(item.PermessionValue);
+                }
+
+                //--------------------------------------------------------
+                if (item.SystemPermession.Permession == "Sales Control")
+                {
+                    SalesTileElement.Enabled = bool.Parse(item.PermessionValue);
+                }
+
+                if (item.SystemPermession.Permession == "Quotaion Control")
+                {
+                    PrintQuotationBtn.Enabled = bool.Parse(item.PermessionValue);
+                }
+
+                if (item.SystemPermession.Permession == "Main Store ")
+                {
+                    storeBtn.Enabled =bool.Parse(item.PermessionValue);
+                }
+                if (item.SystemPermession.Permession == "Store Manager")
+                {
+                    storeManagerBtn.Enabled = bool.Parse(item.PermessionValue);
+                }
+                if (item.SystemPermession.Permession == "with Drewal")
+                {
+                    WithDrawalBtn.Enabled = bool.Parse(item.PermessionValue);
+                }
+                if (item.SystemPermession.Permession == "Supplier")
+                {
+                    SupplierTileElement.Enabled = bool.Parse(item.PermessionValue);
+                }
+
+                if (item.SystemPermession.Permession == "Accout Tree")
+                {
+                    AccountTreeBtn.Enabled = bool.Parse(item.PermessionValue);
+                }
+
+                if (item.SystemPermession.Permession == "Accounts Show")
+                {
+                    ShowAccountsBtn.Enabled = bool.Parse(item.PermessionValue);
+                }
+
+                if (item.SystemPermession.Permession == "Account Category")
+                {
+                    AccountCategoryTileElement3.Enabled = bool.Parse(item.PermessionValue);
+                }
+
+                if (item.SystemPermession.Permession == "Debtor Control")
+                {
+                    DebitorsTileElement.Enabled = bool.Parse(item.PermessionValue);
+                }
+
+                if (item.SystemPermession.Permession == "Account Daily Control")
+                {
+                    AccountDailyBtn.Enabled = bool.Parse(item.PermessionValue);
+                }
+
+                if (item.SystemPermession.Permession == "Expenses Control")
+                {
+                    expensesBtn.Enabled = bool.Parse(item.PermessionValue);
+                }
+
+                if (item.SystemPermession.Permession == "User Control")
+                {
+                    UserDropDownButton.Enabled = bool.Parse(item.PermessionValue);
+                }
+
+                if (item.SystemPermession.Permession == "Employee")
+                {
+                    EmployeeDropDownButton.Enabled = bool.Parse(item.PermessionValue);
+                }
+
+                if (item.SystemPermession.Permession == "Branch ")
+                {
+                    BranchDropDownButton.Enabled =bool.Parse(item.PermessionValue);
+                }
+
+                if (item.SystemPermession.Permession == "Product")
+                {
+                    ProductDropDownButton.Enabled = bool.Parse(item.PermessionValue);
+                }
+
+                if (item.SystemPermession.Permession == "Customer")
+                {
+                    toolStripDropDownButton5.Enabled = bool.Parse(item.PermessionValue);
+                }
+
+                if (item.SystemPermession.Permession == "Mail")
+                {
+                    MailBtn.Enabled = bool.Parse(item.PermessionValue);
+                }
+                if (item.SystemPermession.Permession == "Settings")
+                {
+                    SettingstoolStrip.Enabled = bool.Parse(item.PermessionValue);
+                }
+                //--------------------------------------------------------
+
+                //UserDropDownButton
+
+            } 
              th = new Thread(PopulateAll);
             th.Start();
         }

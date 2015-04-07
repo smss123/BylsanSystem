@@ -40,6 +40,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOrint)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -69,7 +70,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(60, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Product :";
             // 
@@ -89,6 +90,7 @@
             this.btnOrint.Size = new System.Drawing.Size(94, 34);
             this.btnOrint.TabIndex = 3;
             this.btnOrint.Text = "Print";
+            this.btnOrint.ThemeName = "Office2010Black";
             this.btnOrint.Click += new System.EventHandler(this.btnOrint_Click);
             // 
             // dateTimePicker1
@@ -120,13 +122,19 @@
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.comboBox1);
             this.Name = "frmPrintBarCode";
+            // 
+            // 
+            // 
+            this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Print BarCode";
+            this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.frmPrintBarCode_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOrint)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

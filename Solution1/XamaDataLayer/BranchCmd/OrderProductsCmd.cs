@@ -79,10 +79,10 @@ namespace XamaDataLayer.BranchCmd
         {
             var com = CompiledQuery.Compile(
               (DbDataContext dbx, int id) =>
-             db.OrderProducts.Where(p => p.OrderID == id).ToList()
+             db.OrderProducts.Where(p => p.OrderID == id)
                                          );
             db.CommandTimeout = 9000;
-            return com(db,XID);
+            return com(db, XID).ToList();
              
         }
 
@@ -93,10 +93,10 @@ namespace XamaDataLayer.BranchCmd
                     (from p in db.OrderProducts
                       orderby p.ID
                       where p.ProductID  == id
-                      select p).ToList()
+                      select p)
                                          );
             db.CommandTimeout = 9000;
-            return com(db,XID);
+            return com(db, XID).ToList();
              
            
         }

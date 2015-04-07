@@ -50,13 +50,13 @@ namespace XamaDataLayer.Accountant
             var com = CompiledQuery.Compile(
                 (DbDataContext dbx) =>
                     ( from a in  dbx.AccountCategories
-                                             select a ).ToList()
+                                             select a ) 
                 );
             {
                 db = new DbDataContext();
             }
             db.CommandTimeout = 9000;
-            var Lst = com(db);
+            var Lst = com(db).ToList();
             return Lst;
         }
     }

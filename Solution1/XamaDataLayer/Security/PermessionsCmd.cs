@@ -4,12 +4,13 @@ using System.Linq;
 
 namespace XamaDataLayer.Security
 {
-    public  static  class PermessionsCmd
+    public     class PermessionsCmd:ApiCounter
     {
-        private static DbDataContext db = new DbDataContext();
+     
         public static bool AddAllSystemPermessions(SystemPermession tb)
         {
-           db = new DbDataContext();db.CommandTimeout = 9000;
+            tb.ID = GetNumber();
+           db.CommandTimeout = 9000;
             db.SystemPermessions.InsertOnSubmit(tb);
             db.SubmitChanges();
 
@@ -20,7 +21,7 @@ namespace XamaDataLayer.Security
 
         public static List<SystemPermession> GetAllSystemPermession()
         {
-           db = new DbDataContext();db.CommandTimeout = 9000;
+           db.CommandTimeout = 9000;
             var q = db.SystemPermessions.ToList();
             return q;
         }
@@ -30,12 +31,32 @@ namespace XamaDataLayer.Security
 
         public static bool AddUserPermessions(UserPermession tb)
         {
-           db = new DbDataContext();db.CommandTimeout = 9000;
-            db.UserPermessions .InsertOnSubmit(tb);
-            db.SubmitChanges();
+            //Violation of PRIMARY KEY
+            try
+            {
+                db.CommandTimeout = 9000;
+                db.UserPermessions.InsertOnSubmit(tb);
+                db.SubmitChanges();
 
-            UserCmd.SaveHistory("Add ", "Permessions ", "Geven User Some Of  Permessions  ");
-            return true;
+                UserCmd.SaveHistory("Add ", "Permessions ", "Geven User Some Of  Permessions  ");
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                if (ex.Message.Contains("Violation of PRIMARY KEY"))
+                {
+                    tb.ID = ApiCounter.GetNumber();
+                    db.CommandTimeout = 9000;
+                    db.UserPermessions.InsertOnSubmit(tb);
+                    db.SubmitChanges();
+
+                    UserCmd.SaveHistory("Add ", "Permessions ", "Geven User Some Of  Permessions  ");
+                    return true;
+                }
+                return false;
+            }
+          
         }
 
         public static bool EditPermessionValue(UserPermession u, int xxUserID)

@@ -29,14 +29,31 @@ namespace XamaDataLayer.BranchCmd
         }
         public static List<Branch> GetAllBranchs()
         {
-            var com = CompiledQuery.Compile(
-                   (DbDataContext dbx) =>
-                    (from b in dbx.Branches
-                                          orderby b.CreatedDate ascending
-                                          select b).ToList()
-            );
-            db.CommandTimeout = 9000;
-            return com(db);
+            try
+            {
+                var com = CompiledQuery.Compile(
+                  (DbDataContext dbx) =>
+                   (from b in dbx.Branches
+                    orderby b.CreatedDate ascending
+                    select b)
+           );
+                db.CommandTimeout = 9000;
+                return com(db).ToList();
+            }
+            catch (Exception)
+            {
+
+                db = new DbDataContext();
+                var com = CompiledQuery.Compile(
+                  (DbDataContext dbx) =>
+                   (from b in dbx.Branches
+                    orderby b.CreatedDate ascending
+                    select b)
+           );
+                db.CommandTimeout = 9000;
+                return com(db).ToList();
+            }
+           
         }
 
 
@@ -110,11 +127,12 @@ namespace XamaDataLayer.BranchCmd
             {
                 throw new Exception("this Qty is Greater than Avaliable ");
             }
-            var toStore = db.SellStores.Where(p => p.branchID == frmBranch.ID && p.ItemID == itemID.ID).Take(1).Single();
+            var toStore = db.SellStores.Where(p => p.branchID == toBranch.ID && p.ItemID == itemID.ID).Take(1).Single();
             if (toStore == null)
             {
 
                 db.SellStores.InsertOnSubmit(new SellStore() { 
+                    
                      ID = GetNumber(),
                  branchID= toBranch.ID,
                   Qty= qty,
@@ -126,6 +144,7 @@ namespace XamaDataLayer.BranchCmd
             {
                 storeInfo.Qty =(int)storeInfo.Qty - qty;
                 db.StoreOperationManagers.InsertOnSubmit(new StoreOperationManager() { 
+                     ID=ApiCounter.GetNumber(),
                  ProcessDate = DateTime.Now,
                  ProcessType = "Darwal",
                    Qty=qty,
@@ -136,6 +155,7 @@ namespace XamaDataLayer.BranchCmd
                 toStore.Qty = (int)toStore.Qty + qty;
                 db.StoreOperationManagers.InsertOnSubmit(new StoreOperationManager()
                 {
+                     ID= ApiCounter.GetNumber(),
                     ProcessDate = DateTime.Now,
                     ProcessType = "Deposit",
                     Qty = qty,

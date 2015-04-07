@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 
 namespace XamaDataLayer.Main_Store
@@ -9,7 +10,7 @@ namespace XamaDataLayer.Main_Store
      
         public static bool AddStoreManager(StoreManager tb)
         {
-             
+            tb.ID = GetNumber();
             db.StoreManagers.InsertOnSubmit(tb);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Add ", " Add Store Manager", " Add new store manager   At Main Store ");
@@ -54,22 +55,38 @@ namespace XamaDataLayer.Main_Store
 
         public static List<StoreManager> GetAllStoreManagerByStoreID( int STorId)
         {
-            db = new DbDataContext();
-            var lst = (from m in db.StoreManagers
-                       orderby m.DateOfProcess ascending
-                       where m.StoreID == STorId
-                       select m).ToList();
-            return lst;
+            var com = CompiledQuery.Compile(
+                (DbDataContext dbx) =>
+                     (from m in dbx.StoreManagers
+                      orderby m.DateOfProcess ascending
+                      where m.StoreID == STorId
+                      select m)
+                );
+            {
+                db = new DbDataContext();
+            }
+            db.CommandTimeout = 9000;
+
+            return com(db).ToList();
         }
 
         public static List<StoreManager> GetAllStoreManagerByProcessType( string Procctype)
         {
-            db = new DbDataContext();
-            var lst = (from m in db.StoreManagers
-                       orderby m.DateOfProcess ascending
-                       where m.ProcessType == Procctype
-                       select m).ToList();
-            return lst;
+            var com = CompiledQuery.Compile(
+               (DbDataContext dbx) =>
+                   (from m in dbx.StoreManagers
+                    orderby m.DateOfProcess ascending
+                    where m.ProcessType == Procctype
+                    select m)
+               );
+            {
+                db = new DbDataContext();
+            }
+            db.CommandTimeout = 9000;
+
+            return com(db).ToList();
+
+         
         }
     }
 }

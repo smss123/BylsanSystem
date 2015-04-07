@@ -4,10 +4,11 @@ using System.Windows.Forms;
 using Bylsan_System.Reports.ReportCommand;
 using Xprema.XExtention;
 using System.Threading;
+using Telerik.WinControls.UI;
 
 namespace Bylsan_System.ProductForms
 {
-    public partial class frmPrintBarCode : Form
+    public partial class frmPrintBarCode : RadForm
     {
         public frmPrintBarCode()
         {

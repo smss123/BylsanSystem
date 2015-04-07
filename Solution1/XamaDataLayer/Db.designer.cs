@@ -142,10 +142,13 @@ namespace XamaDataLayer
     partial void InsertSellStore(SellStore instance);
     partial void UpdateSellStore(SellStore instance);
     partial void DeleteSellStore(SellStore instance);
+    partial void InsertMailAttachment(MailAttachment instance);
+    partial void UpdateMailAttachment(MailAttachment instance);
+    partial void DeleteMailAttachment(MailAttachment instance);
     #endregion
 		
 		public DbDataContext() : 
-				base(global::XamaDataLayer.Properties.Settings.Default.soft_BylsanConnectionString1, mappingSource)
+				base(global::XamaDataLayer.Properties.Settings.Default.Cloud_BylsanConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -469,6 +472,14 @@ namespace XamaDataLayer
 				return this.GetTable<SellStore>();
 			}
 		}
+		
+		public System.Data.Linq.Table<MailAttachment> MailAttachments
+		{
+			get
+			{
+				return this.GetTable<MailAttachment>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="Accountant.Account")]
@@ -588,7 +599,7 @@ namespace XamaDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", DbType="Int")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryID", AutoSync=AutoSync.OnInsert, DbType="Int")]
 		public System.Nullable<int> CategoryID
 		{
 			get
@@ -2276,7 +2287,7 @@ namespace XamaDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", AutoSync=AutoSync.OnInsert, DbType="Int")]
 		public System.Nullable<int> AccountID
 		{
 			get
@@ -2514,7 +2525,7 @@ namespace XamaDataLayer
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int ID
 		{
 			get
@@ -2614,7 +2625,7 @@ namespace XamaDataLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", DbType="Int")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountID", AutoSync=AutoSync.OnInsert, DbType="Int")]
 		public System.Nullable<int> AccountID
 		{
 			get
@@ -4894,7 +4905,7 @@ namespace XamaDataLayer
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID
 		{
 			get
@@ -5674,6 +5685,8 @@ namespace XamaDataLayer
 		
 		private string _Status;
 		
+		private EntitySet<MailAttachment> _MailAttachments;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -5696,6 +5709,7 @@ namespace XamaDataLayer
 		
 		public Inbox()
 		{
+			this._MailAttachments = new EntitySet<MailAttachment>(new Action<MailAttachment>(this.attach_MailAttachments), new Action<MailAttachment>(this.detach_MailAttachments));
 			OnCreated();
 		}
 		
@@ -5839,6 +5853,19 @@ namespace XamaDataLayer
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Inbox_MailAttachment", Storage="_MailAttachments", ThisKey="ID", OtherKey="IDMessageID")]
+		public EntitySet<MailAttachment> MailAttachments
+		{
+			get
+			{
+				return this._MailAttachments;
+			}
+			set
+			{
+				this._MailAttachments.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -5857,6 +5884,18 @@ namespace XamaDataLayer
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_MailAttachments(MailAttachment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Inbox = this;
+		}
+		
+		private void detach_MailAttachments(MailAttachment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Inbox = null;
 		}
 	}
 	
@@ -10238,6 +10277,181 @@ namespace XamaDataLayer
 		{
 			this.SendPropertyChanging();
 			entity.SellStore = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="MailServer.MailAttachment")]
+	public partial class MailAttachment : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private Image _AttachmentX;
+		
+		private string _Description;
+		
+		private System.Nullable<int> _IDMessageID;
+		
+		private EntityRef<Inbox> _Inbox;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnAttachmentXChanging(Image value);
+    partial void OnAttachmentXChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnIDMessageIDChanging(System.Nullable<int> value);
+    partial void OnIDMessageIDChanged();
+    #endregion
+		
+		public MailAttachment()
+		{
+			this._Inbox = default(EntityRef<Inbox>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AttachmentX", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public Image AttachmentX
+		{
+			get
+			{
+				return this._AttachmentX;
+			}
+			set
+			{
+				if ((this._AttachmentX != value))
+				{
+					this.OnAttachmentXChanging(value);
+					this.SendPropertyChanging();
+					this._AttachmentX = value;
+					this.SendPropertyChanged("AttachmentX");
+					this.OnAttachmentXChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="NVarChar(500)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDMessageID", DbType="Int")]
+		public System.Nullable<int> IDMessageID
+		{
+			get
+			{
+				return this._IDMessageID;
+			}
+			set
+			{
+				if ((this._IDMessageID != value))
+				{
+					if (this._Inbox.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIDMessageIDChanging(value);
+					this.SendPropertyChanging();
+					this._IDMessageID = value;
+					this.SendPropertyChanged("IDMessageID");
+					this.OnIDMessageIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Inbox_MailAttachment", Storage="_Inbox", ThisKey="IDMessageID", OtherKey="ID", IsForeignKey=true, DeleteRule="CASCADE")]
+		public Inbox Inbox
+		{
+			get
+			{
+				return this._Inbox.Entity;
+			}
+			set
+			{
+				Inbox previousValue = this._Inbox.Entity;
+				if (((previousValue != value) 
+							|| (this._Inbox.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Inbox.Entity = null;
+						previousValue.MailAttachments.Remove(this);
+					}
+					this._Inbox.Entity = value;
+					if ((value != null))
+					{
+						value.MailAttachments.Add(this);
+						this._IDMessageID = value.ID;
+					}
+					else
+					{
+						this._IDMessageID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Inbox");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

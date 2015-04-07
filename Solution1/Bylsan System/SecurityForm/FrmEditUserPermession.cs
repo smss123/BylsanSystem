@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using XamaDataLayer;
+using XamaDataLayer.BranchCmd;
 using XamaDataLayer.Security;
 
 namespace Bylsan_System.SecurityForm
@@ -17,6 +18,7 @@ namespace Bylsan_System.SecurityForm
         private void FrmEditUserPermession_Load(object sender, EventArgs e)
         {
             ReFrishData();
+            branchBindingSource.DataSource = BranchsCmd.GetAllBranchs();
         }
         private UserPermession px = new UserPermession();
         private void ReFrishData()
@@ -49,8 +51,10 @@ namespace Bylsan_System.SecurityForm
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             var xValue = string.Empty;
-
-
+            TragetUser.Passwords = passwordsTextBox.Text;
+            TragetUser.UserName = userNameTextBox.Text;
+            
+            UserCmd.EditPassword(TragetUser,TragetUser.ID);
 
             PermessionsCmd.ClearAllUserPermessions(XUserId);
 
@@ -70,8 +74,10 @@ namespace Bylsan_System.SecurityForm
                 px.SystemPermessionID = int.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString());
                 px.PermessionValue = xValue;
                 px.UserID = XUserId;
+                px.ID = ApiCounter.GetNumber();
                 PermessionsCmd.AddUserPermessions(px);
             }
+
 
 
             MessageBox.Show(" Changes Was Saved ..");

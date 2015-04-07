@@ -76,6 +76,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "";
             this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.frmExperDate_Load);
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();

@@ -9,6 +9,7 @@ namespace XamaDataLayer.BranchCmd
         private static DbDataContext db = new DbDataContext();
         public static bool AddProduct(Product tb)
         {
+           
             db.CommandTimeout = 9000;
             db.Products.InsertOnSubmit(tb);
             db.SubmitChanges();

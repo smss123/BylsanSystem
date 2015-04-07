@@ -30,8 +30,8 @@ namespace Bylsan_System.FactoryForms
             Operation.BeginOperation(this);
 
             var q  = new object ();
-            
-                q = Operation.AllOrder.Where(o => o.OrderStatus == "in producting " || o.OrderStatus == "In Designer").ToList(); //cmd.GetAllInProducting();
+
+            q = Operation.AllOrder.Where(o => o.OrderStatus.Contains("in producting ") || o.OrderStatus.Contains("In Designer")).ToList(); //cmd.GetAllInProducting();
           
 
             this.Invoke((MethodInvoker)delegate
@@ -41,35 +41,44 @@ namespace Bylsan_System.FactoryForms
             });
 
 
-            foreach (var item in DGVOrders.Rows)
-            {
-                if (((Order)item.DataBoundItem).OrderStatus == "In Designer")
-                {
-                    var cellPlaceHolder = DGVOrders.TableElement.GetCellElement(item, DGVOrders.Columns[0]);
-                    cellPlaceHolder.DrawFill = true;
-                    cellPlaceHolder.BackColor = Color.FromArgb(0xDB, 0xA8, 0x00);
+            //foreach (var item in DGVOrders.Rows)
+            //{
+            //    if (((Order)item.DataBoundItem).OrderStatus == "In Designer")
+            //    {
+            //        try
+            //        {
+            //            var cellPlaceHolder = DGVOrders.TableElement.GetCellElement(item, DGVOrders.Columns[0]);
+            //        cellPlaceHolder.DrawFill = true;
+            //        cellPlaceHolder.BackColor = Color.FromArgb(0xDB, 0xA8, 0x00);
 
 
-                    cellPlaceHolder = DGVOrders.TableElement.GetCellElement(item, DGVOrders.Columns[1]);
-                    cellPlaceHolder.DrawFill = true;
-                    cellPlaceHolder.BackColor = Color.FromArgb(0xDB, 0xA8, 0x00);
+            //        cellPlaceHolder = DGVOrders.TableElement.GetCellElement(item, DGVOrders.Columns[1]);
+            //        cellPlaceHolder.DrawFill = true;
+            //        cellPlaceHolder.BackColor = Color.FromArgb(0xDB, 0xA8, 0x00);
 
-                    cellPlaceHolder = DGVOrders.TableElement.GetCellElement(item, DGVOrders.Columns[2]);
-                    cellPlaceHolder.DrawFill = true;
-                    cellPlaceHolder.BackColor = Color.FromArgb(0xDB, 0xA8, 0x00);
+            //        cellPlaceHolder = DGVOrders.TableElement.GetCellElement(item, DGVOrders.Columns[2]);
+            //        cellPlaceHolder.DrawFill = true;
+            //        cellPlaceHolder.BackColor = Color.FromArgb(0xDB, 0xA8, 0x00);
 
-                    cellPlaceHolder = DGVOrders.TableElement.GetCellElement(item, DGVOrders.Columns[3]);
-                    cellPlaceHolder.DrawFill = true;
-                    cellPlaceHolder.BackColor = Color.FromArgb(0xDB, 0xA8, 0x00);
+            //        cellPlaceHolder = DGVOrders.TableElement.GetCellElement(item, DGVOrders.Columns[3]);
+            //        cellPlaceHolder.DrawFill = true;
+            //        cellPlaceHolder.BackColor = Color.FromArgb(0xDB, 0xA8, 0x00);
                     
-                    cellPlaceHolder = DGVOrders.TableElement.GetCellElement(item, DGVOrders.Columns[4]);
-                    cellPlaceHolder.DrawFill = true;
-                    cellPlaceHolder.BackColor = Color.FromArgb(0xDB, 0xA8, 0x00);
+            //        cellPlaceHolder = DGVOrders.TableElement.GetCellElement(item, DGVOrders.Columns[4]);
+            //        cellPlaceHolder.DrawFill = true;
+            //        cellPlaceHolder.BackColor = Color.FromArgb(0xDB, 0xA8, 0x00);
 
-                    cellPlaceHolder = DGVOrders.TableElement.GetCellElement(item, DGVOrders.Columns[5]);
-                    ///cellPlaceHolder.Enabled = false;
-                }
-            }
+            //        cellPlaceHolder = DGVOrders.TableElement.GetCellElement(item, DGVOrders.Columns[5]);
+            //        ///cellPlaceHolder.Enabled = false;
+            //        ///
+            //        }catch(Exception ex)
+            //        {
+            //            return;
+            //        }
+                    
+                    
+            //    }
+           // }
             Operation.EndOperation(this);
             Thr.Abort();
         }
@@ -110,8 +119,6 @@ namespace Bylsan_System.FactoryForms
 
                     frmFactory.TaregtOrder = SelectedOrderID;
                     frmFactory.TagOrder = (Order)DGVOrders.CurrentRow.DataBoundItem;
-
-
                     frmFactory.ShowDialog();
                 }
             }

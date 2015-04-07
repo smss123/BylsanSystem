@@ -49,10 +49,10 @@ namespace XamaDataLayer.Accountant
         {
             var com = CompiledQuery.Compile(
                     (DbDataContext dbx) =>
-                       dbx.Debtors.ToList()
+                       dbx.Debtors 
              );
             db.CommandTimeout = 9000;
-            return com(db) ;
+            return com(db).ToList() ;
         }
 
         public static Debtor  GetOneDebtorByID( int xid )

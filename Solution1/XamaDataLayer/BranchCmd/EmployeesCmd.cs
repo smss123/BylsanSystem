@@ -23,10 +23,10 @@ namespace XamaDataLayer.BranchCmd
               (DbDataContext dbx) =>
              (from m in dbx.Employees
                                     orderby m.Emp_Name ascending
-                                    select m).ToList()
+                                    select m)
                                          );
             db.CommandTimeout = 9000;
-            return com(db);
+            return com(db).ToList();
         }
 
 

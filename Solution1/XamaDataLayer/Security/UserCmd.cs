@@ -8,6 +8,7 @@ namespace XamaDataLayer.Security
     {
         public static bool AddUser(User tb)
         {
+            tb.ID = GetNumber();
             db.Users.InsertOnSubmit(tb);
             db.SubmitChanges();
 
@@ -17,7 +18,8 @@ namespace XamaDataLayer.Security
             foreach (var item in parmList)
             {
                 var userprm = new UserPermession()
-                { PermessionValue = false.ToString(),
+                { ID=ApiCounter.GetNumber(),
+                    PermessionValue = false.ToString(),
                    SystemPermession = item,
                    User = tb
                 };
@@ -46,7 +48,6 @@ namespace XamaDataLayer.Security
         public User  EditUser(User tb, int xid)
         {
             var q = db.Users.Where(p => p.ID == xid).SingleOrDefault();
-
             q.UserName = tb.UserName;
             q.Passwords = tb.Passwords;
             db.SubmitChanges();
@@ -55,15 +56,11 @@ namespace XamaDataLayer.Security
 
         public  static  void DeleteUserAt(int xid)
         {
-            try
-            {
+            
                 var q = db.Users.Where(p => p.ID == xid).SingleOrDefault();
                 db.Users.DeleteOnSubmit(q);
                 db .SubmitChanges ();
-            }
-            catch (Exception)
-            {
-            }
+            
         }
         public static List<User> GetAllUsers()
         {
@@ -75,6 +72,7 @@ namespace XamaDataLayer.Security
 
         public static User Login(string usr, string pwd)
         {
+
             var q = db.Users .Where(p => p.UserName == usr && p.Passwords == pwd).ToList();
             if (q.Count == 0 || q.Count == -1)
             {
@@ -87,6 +85,7 @@ namespace XamaDataLayer.Security
                 UserInfo.CurrentUserPassword = q[0].Passwords;
 
                 var htb = new History();
+                htb.ID = GetNumber();
                 htb.ActionName = "User LogIn";
                 htb.DateOfProcess = DateTime.Now;
                 htb.HistoryAction = "User LogIn ";
@@ -117,11 +116,27 @@ namespace XamaDataLayer.Security
 
         private static bool WriteUserHistory(History htb)
         {
-            db.CommandTimeout = 9000;
-            htb.ID = GetNumber();
-            db.Histories.InsertOnSubmit(htb);
-            db.SubmitChanges();
-            return true;
+            try
+            {
+                db.CommandTimeout = 9000;
+                htb.ID = GetNumber();
+                db.Histories.InsertOnSubmit(htb);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+              if(ex.Message.Contains("Violation of PRIMARY KEY"))
+              {
+                  db.CommandTimeout = 9000;
+                  htb.ID = GetNumber();
+                  db.Histories.InsertOnSubmit(htb);
+                  db.SubmitChanges();
+                  return true;
+              }
+                //Violation of PRIMARY KEY
+            }
+            return false;
         }
 
 
@@ -129,16 +144,42 @@ namespace XamaDataLayer.Security
 
         public static  void SaveHistory(string xActionName, string xHistoryAction, string descript)
         {
-            db = new DbDataContext();
-            var tb = new History()
-            {ID=GetNumber(),
-                ActionName = xActionName ,
-               HistoryAction =  xHistoryAction ,
-               Description = string.Format( descript + " | By User :  " +  XamaDataLayer.Security.UserInfo.CurrentUserName),
-               DateOfProcess = DateTime.Now,
-               UserID = XamaDataLayer.Security.UserInfo.CurrentUserID, };
-            db.Histories.InsertOnSubmit(tb);
-            db.SubmitChanges();
+            try
+            {
+                db = new DbDataContext();
+                var tb = new History()
+                {
+                    ID = GetNumber(),
+                    ActionName = xActionName,
+                    HistoryAction = xHistoryAction,
+                    Description = string.Format("{0} | By User :  {1}", descript, XamaDataLayer.Security.UserInfo.CurrentUserName),
+                    DateOfProcess = DateTime.Now,
+                    UserID = XamaDataLayer.Security.UserInfo.CurrentUserID,
+                };
+                db.Histories.InsertOnSubmit(tb);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("Violation of PRIMARY KEY"))
+                {
+                    db = new DbDataContext();
+                    var tb = new History()
+                    {
+                        ID = GetNumber(),
+                        ActionName = xActionName,
+                        HistoryAction = xHistoryAction,
+                        Description = string.Format("{0} | By User :  {1}", descript, XamaDataLayer.Security.UserInfo.CurrentUserName),
+                        DateOfProcess = DateTime.Now,
+                        UserID = XamaDataLayer.Security.UserInfo.CurrentUserID,
+                    };
+                    db.Histories.InsertOnSubmit(tb);
+                    db.SubmitChanges();
+
+                }
+                return;
+            }
+           
         }
 
 

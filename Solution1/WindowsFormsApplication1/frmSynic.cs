@@ -31,37 +31,36 @@ namespace WindowsFormsApplication1
              Properties.Settings.Default.RemoteConnection = txtRemote.Text;
              Properties.Settings.Default.Save();
              MessageBox.Show("saved");
-            //Thread th = new Thread(()=>{
+            Thread th = new Thread(()=>
+            
+                     {
 
-            //    LoadFromLocal sy = new LoadFromLocal();
-            //    while (true)
-            //    {
-            //        this.Invoke((MethodInvoker)delegate
-            //        {
+                         SynicLoadFromRemote r = new SynicLoadFromRemote();
+                         SynicLoadFromLocal l = new SynicLoadFromLocal();
 
-            //            progressBar1.Value = 0;
+                         while (true)
+                         {
 
-            //        });
-            //        sy.LoadFromLocal();
-            //        this.Invoke((MethodInvoker)delegate {
+                             r.LoadFromLocal();
+                             this.Invoke((MethodInvoker)delegate {
 
-            //            progressBar1.Value = 50;
-                    
-            //        });
-            //        sy.LoadFromRemote();
-            //        this.Invoke((MethodInvoker)delegate
-            //        {
+                                 progressBar1.Value = 50;
+                             
+                             });
+                             l.LoadFromRemote();
+                             this.Invoke((MethodInvoker)delegate
+                             {
 
-            //            progressBar1.Value = 100;
+                                 progressBar1.Value = 100;
 
-            //        });
-            //    }
-
-              
+                             });
+                         }
             
             
-            //});
-            //th.Start();
+                     }
+           
+           );
+           th.Start();
         }
     }
 }

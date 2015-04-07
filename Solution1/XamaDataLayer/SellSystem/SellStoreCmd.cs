@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace XamaDataLayer.SellSystem
 {
-    public static  class SellStoreCmd
+    public    class SellStoreCmd:ApiCounter
     {
         private static DbDataContext db = new DbDataContext();
         public static bool AddSellStore(SellStore tb)
         {
-            db = new DbDataContext();
+            tb.ID = GetNumber();
             db.SellStores.InsertOnSubmit(tb);
             db.SubmitChanges();
 
@@ -23,7 +24,7 @@ namespace XamaDataLayer.SellSystem
 
         public static bool EditSellStore(SellStore tb)
         {
-            db = new DbDataContext();
+            
             var q = db.SellStores.Where(d => d.ID == tb.ID).SingleOrDefault();
             q.ItemID = tb.ItemID;
             q.Qty = tb.Qty;
@@ -36,7 +37,7 @@ namespace XamaDataLayer.SellSystem
 
         public static SellStore EditQtyInSellStore(SellStore tb, int xid, int branchid)
         {
-            db = new DbDataContext();
+            
             var sll = db.SellStores.Where(s => s.ID == xid&&s.branchID==branchid).SingleOrDefault();
             sll.ItemID = tb.ItemID;
             sll.Qty += tb.Qty;
@@ -47,7 +48,7 @@ namespace XamaDataLayer.SellSystem
 
         public static SellStore Sales_EditQtyInSellStore(SellStore tb, int xid, int branchid)
         {
-            db = new DbDataContext();
+          
             var sll = db.SellStores.Where(s => s.ID == xid && s.branchID==branchid).SingleOrDefault();
             sll.ItemID = tb.ItemID;
             sll.Qty = tb.Qty;
@@ -59,7 +60,7 @@ namespace XamaDataLayer.SellSystem
         {
             try
             {
-                db = new DbDataContext();
+                
                 var sll = db.SellStores.Where(s => s.ID == xid && s.branchID == branchID).SingleOrDefault();
                 db.SellStores.DeleteOnSubmit(sll);
                 db.SubmitChanges();
@@ -82,11 +83,20 @@ namespace XamaDataLayer.SellSystem
         public static SellStore GetSellStoreByItemID( int ItmId, int branchID)
         {
             db = new DbDataContext();
+            var com = CompiledQuery.Compile(
+                   (DbDataContext dbx) =>
+                             (from i in db.SellStores
+                                                     where i.ItemID == ItmId&&i.branchID==branchID
+                                                     select i).Take(1).Single()
+                );
+            {
+                db = new DbDataContext();
+            }
+            db.CommandTimeout = 9000;
+
+            return com(db);
             
-             var lst = (from i in db.SellStores
-                        where i.ItemID == ItmId&&i.branchID==branchID
-                        select i).Take(1).Single();
-            return lst;
+         
         }
 
         public static void EditQty(int productID, int branchID, long editedQty)

@@ -35,10 +35,10 @@ namespace XamaDataLayer.BranchCmd
         {
             var com = CompiledQuery.Compile(
                 (DbDataContext dbx) =>
-                 dbx.ProductCategories.ToList()
+                 dbx.ProductCategories 
          );
             db.CommandTimeout = 9000;
-            return com(db);
+            return com(db).ToList();
 
            
         }

@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="soft_Bylsan" Class="DbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=jasmine.arvixe.com;Initial Catalog=App_Bylsan;User ID=xama" SettingsObjectName="XamaDataLayer.Properties.Settings" SettingsPropertyName="soft_BylsanConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=jasmine.arvixe.com;Initial Catalog=App_Bylsan;Persist Security Info=True;User ID=xama;Max Pool Size=1000;Asynchronous Processing=True;MultipleActiveResultSets=True;Replication=False;Connect Timeout=900;TrustServerCertificate=False;Load Balance Timeout=9999;Packet Size=32768;User Instance=False;Context Connection=False;MultiSubnetFailover=True;ConnectRetryCount=90" SettingsObjectName="XamaDataLayer.Properties.Settings" SettingsPropertyName="Cloud_BylsanConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="Accountant.Account" Member="Accounts">
     <Type Name="Account">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="AccountName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CategoryID" AutoSync="OnInsert" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Account_AccountDaily" Member="AccountDailies" ThisKey="ID" OtherKey="AccountID" Type="AccountDaily" />
       <Association Name="Account_Debtor" Member="Debtors" ThisKey="ID" OtherKey="AccountID" Type="Debtor" />
       <Association Name="Account_Expenss" Member="Expensses" ThisKey="ID" OtherKey="AccountID" Type="Expenss" />
@@ -86,7 +86,7 @@
       <Column Name="Branch_Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
       <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Manager_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="AccountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccountID" AutoSync="OnInsert" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Branch_Order" Member="Orders" ThisKey="ID" OtherKey="Branch_ID" Type="Order" />
       <Association Name="Branch_User" Member="Users" ThisKey="ID" OtherKey="Branch_ID" Type="User" />
       <Association Name="Branch_SellStore" Member="SellStores" ThisKey="ID" OtherKey="branchID" Type="SellStore" />
@@ -96,12 +96,12 @@
   </Table>
   <Table Name="dbo.Customer" Member="Customers">
     <Type Name="Customer">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID" AutoSync="OnInsert" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="CustomerName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Points" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="AccountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccountID" AutoSync="OnInsert" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Customer_Order" Member="Orders" ThisKey="ID" OtherKey="CustomerID" Type="Order" />
       <Association Name="Customer_Bill" Member="Bills" ThisKey="ID" OtherKey="CustomerID" Type="Bill" />
       <Association Name="Account_Customer" Member="Account" ThisKey="AccountID" OtherKey="ID" Type="Account" IsForeignKey="true" />
@@ -204,7 +204,7 @@
   </Table>
   <Table Name="dbo.ProductContents" Member="ProductContents">
     <Type Name="ProductContent">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ContentsProductID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Qty" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
@@ -251,6 +251,7 @@
       <Column Name="SenderUserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ReciverUserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Inbox_MailAttachment" Member="MailAttachments" ThisKey="ID" OtherKey="IDMessageID" Type="MailAttachment" />
     </Type>
   </Table>
   <Table Name="MailServer.OutBox" Member="OutBoxes">
@@ -456,6 +457,15 @@
       <Association Name="SellStore_StoreOperationManager" Member="StoreOperationManagers" ThisKey="ID" OtherKey="StoreID" Type="StoreOperationManager" />
       <Association Name="Branch_SellStore" Member="Branch" ThisKey="branchID" OtherKey="ID" Type="Branch" IsForeignKey="true" />
       <Association Name="Product_SellStore" Member="Product" ThisKey="ItemID" OtherKey="ID" Type="Product" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="MailServer.MailAttachment" Member="MailAttachments">
+    <Type Name="MailAttachment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AttachmentX" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IDMessageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Inbox_MailAttachment" Member="Inbox" ThisKey="IDMessageID" OtherKey="ID" Type="Inbox" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
 </Database>

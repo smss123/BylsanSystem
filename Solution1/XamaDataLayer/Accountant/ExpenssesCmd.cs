@@ -46,10 +46,10 @@ namespace XamaDataLayer.Accountant
         {
             var com = CompiledQuery.Compile(
                     (DbDataContext dbx) =>
-                      db.Expensses.ToList()
+                      db.Expensses 
              );
             db.CommandTimeout = 9000;
-            return com(db) ;
+            return com(db).ToList() ;
         }
 
         public static List<Expenss> GetExpenssesByAccountId( int ActId)

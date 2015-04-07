@@ -52,10 +52,10 @@ namespace XamaDataLayer.Accountant
             
            var com = CompiledQuery.Compile(
                (DbDataContext dbx) =>
-                dbx.Accounts.OrderByDescending(p=>p.CategoryID).ToList()
+                dbx.Accounts.OrderByDescending(p=>p.CategoryID)
                 );
             db.CommandTimeout = 9000;
-            return com(db) ;
+            return com(db).ToList() ;
         }
 
         public static List<Account> GetAccountByCategoryID(int categID)
@@ -64,10 +64,10 @@ namespace XamaDataLayer.Accountant
              (DbDataContext dbx, int id) =>
               (from g in dbx.Accounts
                                       where g.CategoryID == id
-                                      select g).ToList()
+                                      select g) 
               );
             db.CommandTimeout = 9000;
-            return com(db,categID);
+            return com(db,categID).ToList();
         }
 
         public static List<Account> GetAccountByID(int xID)
@@ -76,10 +76,10 @@ namespace XamaDataLayer.Accountant
             (DbDataContext dbx, int id) =>
              (from ac in dbx.Accounts
               where ac.ID == id
-              select ac).ToList()
+              select ac) 
              );
             db.CommandTimeout = 9000;
-            return com(db,xID);
+            return com(db,xID).ToList();
 
         }
         public static List<Account> GetAccountByName(string nam)
@@ -88,10 +88,10 @@ namespace XamaDataLayer.Accountant
             (DbDataContext dbx, string n) =>
              (from ac in dbx.Accounts
                         where ac.AccountName  == n
-                         select ac).ToList ()
+                         select ac)
              );
             db.CommandTimeout = 9000;
-            return com(db,nam);
+            return com(db,nam).ToList();
             
         }
         public static Account GetOneAccountByName(string nam)

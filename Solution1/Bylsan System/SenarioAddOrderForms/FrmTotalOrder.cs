@@ -10,6 +10,7 @@ using Xprema.XExtention;
 using Bylsan_System.Reports.ReportCommand;
 using Telerik.WinControls.UI;
 using XamaDataLayer.SettingX;
+using Telerik.WinControls;
 
 namespace Bylsan_System.SenarioAddOrderForms
 {
@@ -20,23 +21,7 @@ namespace Bylsan_System.SenarioAddOrderForms
             InitializeComponent();
 
 
-            var ListPerm = XamaDataLayer.Security.PermessionsCmd.GetAllUserPermissonsByUserID(XamaDataLayer.Security.UserInfo.CurrnetUser.ID);
-            try
-            {
-                if (Convert.ToBoolean(ListPerm[0].PermessionValue.ToString()) == false)
-                {
-                    txtDiscountBox.Enabled = false;
-                }
-
-                if (Convert.ToBoolean(ListPerm[4].PermessionValue.ToString()) == false)
-                {
-                    PrintBtn.Enabled = false;
-                }
-            }
-            catch (System.ArgumentOutOfRangeException ex)
-            {
-                return;
-            }
+            
         }
         public string  TragetOrderType { get; set; }
 
@@ -44,19 +29,26 @@ namespace Bylsan_System.SenarioAddOrderForms
         string orderID;
         private void FrmTotalOrder_Load_1(object sender, EventArgs e)
         {
+            foreach (var item in UserInfo.CurrnetUser.UserPermessions)
+            {
+                if (item.SystemPermession.Permession == "New Order")
+                {
+                    txtDiscountBox.Enabled = bool.Parse(item.PermessionValue);
+                }
+            }
             Operation.BeginOperation(this);
             txtBranches.DataSource = Operation.AllBranches;
             txtBranches.DisplayMember = "Branch_Name";
             txtBranches.ValueMember = "ID";
-            radGridView1.DataSource = CustomerInformations.WaitingOrder.OrderProducts.ToList();
+            radGridView1.DataSource = CustomerInformations.CurOrder.OrderProducts.ToList();
 
-            var TotalPrice = 0f;
+            var totalPrice = 0f;
 
             foreach (var item in radGridView1.Rows)
             {
-                TotalPrice += item.Cells[3].Value.ToString().ToFloat();
+                totalPrice += item.Cells[3].Value.ToString().ToFloat();
             }
-            TotalPriceBox.Text = TotalPrice.ToString();
+            TotalPriceBox.Text = totalPrice.ToString();
 
             Operation.EndOperation(this);
         }
@@ -74,166 +66,296 @@ namespace Bylsan_System.SenarioAddOrderForms
             {
                 totalCost = Convert.ToDouble(TotalPriceBox.Text.ToString());
             }
+            //var currentBranch = Operation.AllBranches.Where(p => p.ID == txtBranches.SelectedValue.ToString().ToInt ()).Take(1).Single();
+            //var custId = 0;
+            //var custmerAccountID =(int?)0;
 
+         //   CustomerInformations.CurOrder.Customer = CustomerInformations.CurrCustomer;
+            CustomerInformations.CurOrder.OrderName = string.Format("Order_{0}_{1}",CustomerInformations.CurrCustomer.CustomerName,DateTime.Now.ToString());
+            CustomerInformations.CurOrder.OrderDate= DateTime.Now;
+            CustomerInformations.CurOrder.OrderDeliveryDate = receiptdateTimePicker.Value;
+            CustomerInformations.CurOrder.Comment = txtCommint.Text;
+            CustomerInformations.CurOrder.DeliverdToBranch = (int)txtBranches.SelectedValue;
+            CustomerInformations.CurOrder.ID = ApiCounter.GetNumber();
+            CustomerInformations.CurOrder.isOrderBranch = "No";
+            CustomerInformations.CurOrder.OrderDelivery = AddresstextBox.Text;
+            CustomerInformations.CurOrder.OrderStatus = "Ordered";
+            
+          ////Customer 
+          //  var otb = new Order();
+          //  var db = new DbDataContext();
+          //  otb.OrderName = string.Format("{0}_{1}", CustomerInformations.WatingCustomer.CustomerName, DateTime.Now.ToString());
+          //  otb.OrderDelivery = AddresstextBox.Text;
 
-
-            var currentBranch = Operation.AllBranches.Where(p => p.ID == txtBranches.SelectedValue.ToString().ToInt ()).Take(1).Single();
-            var custId = 0;
-            var custmerAccountID = (int? )0;
-            if (CustomerInformations.WatingCustomer.ID == 0)
-            {
-                var ctb = new Customer()
-                {
-                    CustomerName = CustomerInformations.WatingCustomer.CustomerName,
-                    CreateDate = DateTime.Now,
-                    PhoneNumber = CustomerInformations.WatingCustomer.PhoneNumber,
-                    Points = (TotalPriceBox.Text.Todouble() * SettingCmd.GetSettingByID(1).SettingValue.Todouble()).ToString().ToInt(),
-                };
-                CustomersCmd.AddCustomer(ctb);
-
-
-                custId = ctb.ID;
-
-                custmerAccountID = ctb.AccountID;
-            }
-            else
-            {
-                custId = CustomerInformations.WatingCustomer.ID;
-                custmerAccountID = CustomerInformations.WatingCustomer.AccountID;
-                CustomerInformations.WatingCustomer.Points = CustomerInformations.WatingCustomer.Points + (TotalPriceBox.Text.Todouble() * SettingCmd.GetSettingByID(2).SettingValue.Todouble()).ToString().ToInt();
-                CustomersCmd.EditCustomer(CustomerInformations.WatingCustomer, CustomerInformations.WatingCustomer.ID);
-            }
-
-
-            var otb = new Order();
-            var db = new DbDataContext();
-
-       
-            otb.OrderName = string.Format("{0}_{1}", CustomerInformations.WatingCustomer.CustomerName, DateTime.Now.ToString());
-            otb.OrderDelivery = AddresstextBox.Text;
-
-            switch  (  CustomerInformations .OrdrType)
+            switch  (CustomerInformations .OrdrType)
             {
                 case "Special":
-                    otb.OrderStatus = "In Designer";
-                    otb.OrderType = "Special";
+                    CustomerInformations.CurOrder.OrderStatus = "In Designer";
+                    CustomerInformations.CurOrder.OrderType = "Special";
                     break;
                 case "Normal":
-                    otb.OrderStatus = "in producting ";
-                    otb.OrderType = "Normal";
+                    CustomerInformations.CurOrder.OrderStatus = "in producting ";
+                    CustomerInformations.CurOrder.OrderType = "Normal";
                     break;
             }
-            
-            otb.OrderDate = DateTime.Now;
-            otb.TotalAmount =  (TotalPriceBox.Text).Todouble();
-            otb.Branch_ID = UserInfo.CurrnetUser.Branch_ID;
-            otb.Comment = txtCommint.Text;
-            otb.OrderVerify = "from Branch";
-            //otb.CustomerID = custId;
-            otb.OrderDeliveryDate = receiptdateTimePicker.Value;
-            otb.DeliverdToBranch =  (txtBranches.SelectedValue.ToString()).ToInt();
-            otb.CustomerID = custId;
 
-            if (otb.ID==0)
-            
-           {
-               otb.ID = ApiCounter.GetNumber();
-                db.Orders.InsertOnSubmit(otb);
-                db.SubmitChanges();
-            }
-            else
+            CustomerInformations.CurOrder.OrderVerify = "from Branch";
+            CustomerInformations.CurOrder.Branch_ID = UserInfo.CurrnetUser.Branch_ID;
+            CustomerInformations.CurOrder.TotalAmount = (TotalPriceBox.Text).Todouble();
+            CustomerInformations.CurOrder.ID = ApiCounter.GetNumber();
+            foreach (var item in CustomerInformations.CurOrder.OrderProducts)
             {
-                db.Orders.Attach(otb, true);
-
+                item.ID = ApiCounter.GetNumber();
+                foreach (var itm in item.OrderProuctAttachments)
+                {
+                    itm.ID = ApiCounter.GetNumber();
+                }
             }
 
-            orderID = otb.ID.ToString();
+            DbDataContext db = new DbDataContext();
+            Order ord = new Order();
+            int custmerAccountID = 0;
+            try
+            {
+                var q = db.Customers.Where(p => p.ID == CustomerInformations.CurrCustomer.ID).SingleOrDefault();
+               if (q!=null)
+               {
+                  
+                   ord.ID = CustomerInformations.CurOrder.ID;
+                   ord.Branch_ID = CustomerInformations.CurOrder.Branch_ID;
+                   ord.Comment = CustomerInformations.CurOrder.Comment;
+                   ord.DeliverdToBranch = CustomerInformations.CurOrder.DeliverdToBranch;
+                   ord.isOrderBranch = CustomerInformations.CurOrder.isOrderBranch;
+                   ord.OrderDate = CustomerInformations.CurOrder.OrderDate;
+                   ord.OrderDelivery = CustomerInformations.CurOrder.OrderDelivery;
+                   ord.OrderDeliveryDate = CustomerInformations.CurOrder.OrderDeliveryDate;
+                   ord.OrderName = CustomerInformations.CurOrder.OrderName;
+                   ord.OrderStatus = CustomerInformations.CurOrder.OrderStatus;
+                   ord.OrderType = CustomerInformations.CurOrder.OrderType;
+                   ord.OrderVerify = CustomerInformations.CurOrder.OrderVerify;
+                   ord.TotalAmount = CustomerInformations.CurOrder.TotalAmount;
+                   ord.ID = CustomerInformations.CurOrder.ID;
+                   foreach (var item in CustomerInformations.CurOrder.OrderProducts)
+                   {
+                       var itm = new OrderProduct()
+                       {
+                            Description = item.Description,
+                             ID = item.ID,
+                              ImageX = item.ImageX,
+                               ProductID= item.ProductID,
+                                Qty = item.Qty,
+                                 Status = item.Status,
+                                 
+
+
+                       };
+                       foreach (var attach in item.OrderProuctAttachments)
+                       {
+                           OrderProuctAttachment px = new OrderProuctAttachment() { 
+                            CustomerText = attach.CustomerText,
+                             Description= attach.Description,
+                              ID= attach.ID,
+                               imageX = attach.imageX,
+                              
+                           };
+                           itm.OrderProuctAttachments.Add(px);
+                       }
+                       ord.OrderProducts.Add(itm);
+                   }
+                   q.Orders.Add(ord);
+                   db.SubmitChanges();
+                   custmerAccountID = q.ID;
+               }
+               else
+               {
+                   q = new Customer();
+                   q.ID = CustomerInformations.CurrCustomer.ID;
+                   q.CreateDate = CustomerInformations.CurrCustomer.CreateDate;
+                   q.CustomerName = CustomerInformations.CurrCustomer.CustomerName;
+                   q.PhoneNumber = CustomerInformations.CurrCustomer.PhoneNumber;
+                   q.Points = CustomerInformations.CurrCustomer.Points;
+
+                   ord.ID = CustomerInformations.CurOrder.ID;
+                   ord.Branch_ID = CustomerInformations.CurOrder.Branch_ID;
+                   ord.Comment = CustomerInformations.CurOrder.Comment;
+                   ord.DeliverdToBranch = CustomerInformations.CurOrder.DeliverdToBranch;
+                   ord.isOrderBranch = CustomerInformations.CurOrder.isOrderBranch;
+                   ord.OrderDate = CustomerInformations.CurOrder.OrderDate;
+                   ord.OrderDelivery = CustomerInformations.CurOrder.OrderDelivery;
+                   ord.OrderDeliveryDate = CustomerInformations.CurOrder.OrderDeliveryDate;
+                   ord.OrderName = CustomerInformations.CurOrder.OrderName;
+                   ord.OrderStatus = CustomerInformations.CurOrder.OrderStatus;
+                   ord.OrderType = CustomerInformations.CurOrder.OrderType;
+                   ord.OrderVerify = CustomerInformations.CurOrder.OrderVerify;
+                   ord.TotalAmount = CustomerInformations.CurOrder.TotalAmount;
+                   ord.ID = CustomerInformations.CurOrder.ID;
+                   foreach (var item in CustomerInformations.CurOrder.OrderProducts)
+                   {
+                       var itm = new OrderProduct()
+                       {
+                           Description = item.Description,
+                           ID = item.ID,
+                           ImageX = item.ImageX,
+                           ProductID = item.ProductID,
+                           Qty = item.Qty,
+                           Status = item.Status,
+
+
+
+                       };
+                       foreach (var attach in item.OrderProuctAttachments)
+                       {
+                           OrderProuctAttachment px = new OrderProuctAttachment()
+                           {
+                               CustomerText = attach.CustomerText,
+                               Description = attach.Description,
+                               ID = attach.ID,
+                               imageX = attach.imageX,
+
+                           };
+                           itm.OrderProuctAttachments.Add(px);
+                       }
+                       ord.OrderProducts.Add(itm);
+                   }
+
+                   q.Orders.Add(ord);
+                   db.Customers.InsertOnSubmit(q);
+                   db.SubmitChanges();
+                   custmerAccountID = q.ID;
+               }
+            }
+            catch (Exception ex)
+            {
+
+                RadMessageBox.ThemeName = this.ThemeName;
+                RadMessageBox.Show(ex.Message);
+               
+            }
+            
+           // OrdersCmd.AddNewOrder(CustomerInformations.CurOrder);
+
+            //otb.OrderDate = DateTime.Now;
+            //otb.TotalAmount =  (TotalPriceBox.Text).Todouble();
+            //otb.Branch_ID = UserInfo.CurrnetUser.Branch_ID;
+            //otb.Comment = txtCommint.Text;
+            //otb.OrderVerify = "from Branch";
+            ////otb.CustomerID = custId;
+            //otb.OrderDeliveryDate = receiptdateTimePicker.Value;
+            //otb.DeliverdToBranch =  (txtBranches.SelectedValue.ToString()).ToInt();
+            //otb.CustomerID = custId;
+
+           // if (otb.ID==0)
+            
+           //{
+           //    otb.ID = ApiCounter.GetNumber();
+           //     db.Orders.InsertOnSubmit(otb);
+           //     db.SubmitChanges();
+           // }
+           // else
+           // {
+           //     db.Orders.Attach(otb, true);
+
+           // }
+
+           // orderID = otb.ID.ToString();
          
 
 
-            xLastOrderID = otb.ID;
+           // xLastOrderID = otb.ID;
 
 
-            var ordtb = new OrderProduct();
-            foreach (var item in CustomerInformations.WaitingOrder.OrderProducts.ToList())
-            {
-                ordtb = new OrderProduct();
-                ordtb.OrderID = otb.ID;
-                ordtb.Description = item.Description;
-                ordtb.ImageX = item.ImageX;
-                ordtb.ProductID = item.ProductID;
-                ordtb.Qty = item.Qty;
-                ordtb.Status = item.Status;
-                OrderProductsCmd.AddOrderProduct(ordtb);
-                foreach (var atta in item.OrderProuctAttachments.ToList())
-                {
+            //var ordtb = new OrderProduct();
+            //foreach (var item in CustomerInformations.WaitingOrder.OrderProducts.ToList())
+            //{
+            //    ordtb = new OrderProduct();
+            //    ordtb.OrderID = otb.ID;
+            //    ordtb.Description = item.Description;
+            //    ordtb.ImageX = item.ImageX;
+            //    ordtb.ProductID = item.ProductID;
+            //    ordtb.Qty = item.Qty;
+            //    ordtb.Status = item.Status;
+            //    ordtb.ID = ApiCounter.GetNumber();
+            //    OrderProductsCmd.AddOrderProduct(ordtb);
+            //    foreach (var atta in item.OrderProuctAttachments.ToList())
+            //    {
 
-                    var attb = new OrderProuctAttachment()
-                                 {
-                                     Description = atta.Description,
-                                      CustomerText = atta.CustomerText,
-                                     imageX = atta.imageX,
-                                     OrderProductID = ordtb.ID,
-                                 };
+            //        var attb = new OrderProuctAttachment()
+            //                     {
+            //                         Description = atta.Description,
+            //                          CustomerText = atta.CustomerText,
+            //                         imageX = atta.imageX,
+            //                         OrderProductID = ordtb.ID,
+            //                          ID= ApiCounter.GetNumber()
+            //                     };
 
-                    OrderProuctAttachmentCmd.AddOrderProductAttachment(attb);
+            //        OrderProuctAttachmentCmd.AddOrderProductAttachment(attb);
                     
-                }
+            //    }
                 
                 
-            }
+            //}
 
 
 
             var addOrder = new AccountDaily()
             {
-                AccountID = otb.OrderAccount,
+                ID = ApiCounter.GetNumber(),
+                AccountID = ord.OrderAccount,
                 TotalIn = totalCost,
                 TotalOut = 0f,
                 DateOfProcess = DateTime.Now,
-                Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", otb.OrderName, DateTime.Now.ToString(), currentBranch.Branch_Name),
-             CommandArg= otb.ID.ToString()};
+                Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", ord.OrderName, DateTime.Now.ToString(), UserInfo.CurrnetUser.Branch.Branch_Name),
+                CommandArg = ord.ID.ToString()
+            };
             db.AccountDailies.InsertOnSubmit(addOrder);
 
 
             var ordertrs = new AccountDaily()
-            { AccountID = otb.OrderAccount,
+            {
+                ID = ApiCounter.GetNumber(),
+                AccountID = ord.OrderAccount,
                 TotalIn = 0f,
                 TotalOut = totalCost,
                 DateOfProcess = DateTime.Now,
-              Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", otb.OrderName, DateTime.Now.ToString(), currentBranch.Branch_Name),
-              CommandArg = otb.ID.ToString()
+                Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", ord.OrderName, DateTime.Now.ToString(), UserInfo.CurrnetUser.Branch.Branch_Name),
+                CommandArg = ord.ID.ToString()
             };
             db.AccountDailies.InsertOnSubmit(ordertrs);
 
             var CustomerDept = new AccountDaily()
-            { AccountID = custmerAccountID,
+            {
+                ID = ApiCounter.GetNumber(),
+                AccountID = custmerAccountID,
                 TotalIn = 0f,
                 TotalOut = totalCost,
                 DateOfProcess = DateTime.Now,
-                Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", otb.OrderName, DateTime.Now.ToString(), currentBranch.Branch_Name),
-              CommandArg = otb.ID.ToString()
+                Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", ord.OrderName, DateTime.Now.ToString(), UserInfo.CurrnetUser.Branch.Branch_Name),
+                CommandArg = ord.ID.ToString()
             };
             db.AccountDailies.InsertOnSubmit(CustomerDept);
 
 
             var CutomerPay = new AccountDaily()
-            { AccountID = custmerAccountID,
+            {
+                ID = ApiCounter.GetNumber(),
+                AccountID = custmerAccountID,
                 TotalIn = txtPayment.Text.Todouble(),
                 TotalOut = 0f,
                 DateOfProcess = DateTime.Now,
-                Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", otb.OrderName, DateTime.Now.ToString(), currentBranch.Branch_Name),
-              CommandArg = otb.ID.ToString()
+                Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", ord.OrderName, DateTime.Now.ToString(), UserInfo.CurrnetUser.Branch.Branch_Name),
+                CommandArg = ord.ID.ToString()
             };
 
             db.AccountDailies.InsertOnSubmit(CutomerPay);
             var BranchCreated = new AccountDaily()
-            { AccountID = currentBranch.AccountID,
+            {
+                ID = ApiCounter.GetNumber(),
+                AccountID =  UserInfo.CurrnetUser.Branch.AccountID,
                 TotalIn = txtPayment.Text.Todouble(),
                 TotalOut = 0f,
-                DateOfProcess = DateTime.Now,
-                Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", otb.OrderName, DateTime.Now.ToString(), currentBranch.Branch_Name),
-              CommandArg = otb.ID.ToString()
+                DateOfProcess = DateTime.Now,//ord
+                Description = string.Format("Total  Of  A  Order_ Name {0} at time {1}, branch Name {2}", ord.OrderName, DateTime.Now.ToString(), UserInfo.CurrnetUser.Branch.Branch_Name),
+                CommandArg = ord.ID.ToString()
             };
 
             db.AccountDailies.InsertOnSubmit(BranchCreated);
@@ -242,11 +364,12 @@ namespace Bylsan_System.SenarioAddOrderForms
 
 
 
-
+            xLastOrderID = CustomerInformations.CurOrder.ID;
             Operation.EndOperation(this);
 
-            Operation.ShowToustOk("Saved Successfull ....", this);
-
+           
+            RadMessageBox.ThemeName = this.ThemeName;
+            RadMessageBox.Show("Saved Successfull ....");
             PrintBtn.Enabled = true;
             ReceiptVoucherButton.Enabled = true;
             OkeyBtn.Enabled = false;

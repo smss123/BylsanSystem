@@ -5,12 +5,12 @@ using System.Linq;
 
 namespace XamaDataLayer.Main_Store
 {
-    public   class SuppliersCmd
+    public   class SuppliersCmd:ApiCounter
     {
-        private static DbDataContext db = new DbDataContext();
+     
         public static bool AddNewSupplier(Supplier tb)
         {
-            db = new DbDataContext();
+            tb.ID = GetNumber();
             db.Suppliers.InsertOnSubmit(tb);
             db.SubmitChanges();
 
@@ -20,7 +20,7 @@ namespace XamaDataLayer.Main_Store
 
         public static Supplier EditSupplier(Supplier tb)
         {
-            db = new DbDataContext();
+            
             var q = db.Suppliers.Where(d => d.ID == tb.ID).SingleOrDefault();
             q.SupplierName = tb.SupplierName;
             q.SupplierPhone = tb.SupplierPhone;
@@ -36,7 +36,7 @@ namespace XamaDataLayer.Main_Store
         {
             try
             {
-                db = new DbDataContext();
+                 
                 var q = db.Suppliers.Where(d => d.ID == xid).SingleOrDefault();
                 db.Suppliers.DeleteOnSubmit(q);
                 db.SubmitChanges();
@@ -51,9 +51,9 @@ namespace XamaDataLayer.Main_Store
         {
             var com = CompiledQuery.Compile(
                 (DbDataContext dbx )=>
-                    dbx.Suppliers.ToList()     
+                    dbx.Suppliers     
                 );
-            return com(db);
+            return com(db).ToList();
         }
     }
 }

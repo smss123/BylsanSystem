@@ -11,6 +11,7 @@ namespace XamaDataLayer.Main_Store
      
         public static bool NewPurchases(Purchase p)
         {
+            p.ID = GetNumber();
             p.dateOfProcess = DateTime.Now;
             p.SerialNumber = Guid.NewGuid();
             db.Purchases.InsertOnSubmit(p);
@@ -33,17 +34,20 @@ namespace XamaDataLayer.Main_Store
             }
             Expenss saleSide = new Expenss();
             var saleAccount = db.Expensses.Where(acc => acc.ExpenssesName.Contains("حساب المشتريات"));
-            if (saleAccount==null)
+            if (saleAccount.Count()==0)
             {
-                saleSide = new Expenss() { ExpenssesName = "حساب المشتريات", Description= "حساب خاص بالمشتريات عموما"};
+                saleSide = new Expenss() { ExpenssesName = "حساب المشتريات", Description= "حساب خاص بالمشتريات عموما", ID= ApiCounter.GetNumber()};
                 saleSide.Account.AccountDailies.Add(new AccountDaily()
                 {
+                    ID =  ApiCounter.GetNumber(),
                     DateOfProcess = DateTime.Now,
                     Description = "عبارة عن عملية تكلفة شراء اشياء وتم تخزينها في المخزن",
                     TotalOut = p.CostAmount,
                     TotalIn = 0,
                 });
                 saleSide.ExpenssesMovments.Add(new ExpenssesMovment() { 
+                     ID=ApiCounter.GetNumber(),
+
                  DateOfProcess=DateTime.Now,
                   Amount = p.CostAmount,
                    Description= "عبارة عن تكلفة شراء منتجات للمخزن"
@@ -57,6 +61,7 @@ namespace XamaDataLayer.Main_Store
                 saleSide = saleAccount.ToList()[0];
                 saleSide.Account.AccountDailies.Add(new AccountDaily()
                 {
+                     ID =ApiCounter.GetNumber(),
                     DateOfProcess = DateTime.Now,
                     Description = "عبارة عن عملية تكلفة شراء اشياء وتم تخزينها في المخزن",
                     TotalOut = p.CostAmount,
@@ -64,6 +69,7 @@ namespace XamaDataLayer.Main_Store
                 });
                 saleSide.ExpenssesMovments.Add(new ExpenssesMovment()
                 {
+                     ID=ApiCounter.GetNumber(),
                     DateOfProcess = DateTime.Now,
                     Amount = p.CostAmount,
                     Description = "عبارة عن تكلفة شراء منتجات للمخزن"

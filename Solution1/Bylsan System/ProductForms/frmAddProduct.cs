@@ -55,6 +55,7 @@ namespace Bylsan_System.ProductForms
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
+            
             if (product_NameTextBox.Text == string.Empty)
             {
                 product_NameTextBox.BackColor = Color.OrangeRed;
@@ -70,6 +71,10 @@ namespace Bylsan_System.ProductForms
                 errorProvider1.Clear();
             }
 
+            if (txtBarCode.Text=="")
+            {
+                txtBarCode.Text = ApiCounter.GetNumber().ToString();
+            }
             var th = new Thread(AddPro);
             th.Start();
         }
@@ -83,6 +88,7 @@ namespace Bylsan_System.ProductForms
 
                 tb = new Product()
                 {
+                     ID = txtBarCode.Text.ToInt(),
                     Product_Name = product_NameTextBox.Text,
                     Product_Description = product_DescriptionTextBox.Text,
                     Img = productpictureBox.Image,
@@ -99,7 +105,6 @@ namespace Bylsan_System.ProductForms
             {
                 this.Invoke((MethodInvoker)delegate
                 {
-
                     Operation.ShowToustOk("Product Has Been Saved", this);
                     product_DescriptionTextBox.Clear();
                     product_NameTextBox.Clear();

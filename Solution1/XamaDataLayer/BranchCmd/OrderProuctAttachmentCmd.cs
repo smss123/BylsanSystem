@@ -44,10 +44,10 @@ namespace XamaDataLayer.BranchCmd
         {
             var com = CompiledQuery.Compile(
              (DbDataContext dbx) =>
-            dbx.OrderProuctAttachments.ToList()
+            dbx.OrderProuctAttachments
                                         );
             db.CommandTimeout = 9000;
-            return com(db);
+            return com(db).ToList();
              
         }
 
@@ -69,11 +69,11 @@ namespace XamaDataLayer.BranchCmd
            (DbDataContext dbx) =>
                        (from p in dbx.OrderProuctAttachments
                         where p.OrderProductID == xid
-                        select p).ToList()
+                        select p)
 
                                       );
             db.CommandTimeout = 9000;
-            return com(db);
+            return com(db).ToList();
 
              
         }

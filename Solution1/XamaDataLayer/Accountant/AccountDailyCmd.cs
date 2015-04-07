@@ -43,10 +43,10 @@ namespace XamaDataLayer.Accountant
              
             var com = CompiledQuery.Compile(
                 (DbDataContext dbx) =>
-                    dbx.AccountDailies.ToList()
+                    dbx.AccountDailies
                 );
             db.CommandTimeout = 9000;
-            return com(db) ;
+            return com(db).ToList();
         }
         public static List<AccountDaily> GetAllAccountDailyByDate( DateTime dat )
         {
@@ -70,10 +70,10 @@ namespace XamaDataLayer.Accountant
                   (from d in dbx.AccountDailies
                      orderby d.DateOfProcess ascending
                      where d.AccountID == actid
-                     select d).ToList()
+                     select d)
                );
             db.CommandTimeout = 9000;
-            return com(db);
+            return com(db).ToList();
         }
         public static double  GetBalanceByAccountID(int ACTID)
         {

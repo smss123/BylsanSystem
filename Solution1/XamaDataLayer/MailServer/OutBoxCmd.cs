@@ -4,13 +4,13 @@ using System.Linq;
 
 namespace XamaDataLayer.MailServer
 {
-    public static class OutBoxCmd
+    public   class OutBoxCmd:ApiCounter
     {
         private static DbDataContext db = new DbDataContext();
 
         public static bool OutBoxMessage(OutBox  tb)
         {
-            
+            tb.ID = GetNumber();
             db.OutBoxes .InsertOnSubmit(tb);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Send ", " Message  ", " Sent Message  ");

@@ -34,11 +34,13 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.CustomerInfomationGroupBox = new System.Windows.Forms.GroupBox();
+            this.txtCommint = new System.Windows.Forms.TextBox();
             this.txtDiscountBox = new System.Windows.Forms.TextBox();
             this.OrderTypeLab = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtBranches = new System.Windows.Forms.ComboBox();
             this.txtPayment = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TotalPriceBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,8 +60,6 @@
             this.OkeyBtn = new Telerik.WinControls.UI.RadButton();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.visualStudio2012LightTheme1 = new Telerik.WinControls.Themes.VisualStudio2012LightTheme();
-            this.txtCommint = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.CustomerInfomationGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReceiptVoucherButton)).BeginInit();
@@ -100,11 +100,19 @@
             this.CustomerInfomationGroupBox.TabStop = false;
             this.CustomerInfomationGroupBox.Text = "Customer Infomation";
             // 
+            // txtCommint
+            // 
+            this.txtCommint.Location = new System.Drawing.Point(398, 156);
+            this.txtCommint.Multiline = true;
+            this.txtCommint.Name = "txtCommint";
+            this.txtCommint.Size = new System.Drawing.Size(212, 93);
+            this.txtCommint.TabIndex = 12;
+            // 
             // txtDiscountBox
             // 
-            this.txtDiscountBox.Location = new System.Drawing.Point(148, 121);
+            this.txtDiscountBox.Location = new System.Drawing.Point(141, 149);
             this.txtDiscountBox.Name = "txtDiscountBox";
-            this.txtDiscountBox.Size = new System.Drawing.Size(64, 20);
+            this.txtDiscountBox.Size = new System.Drawing.Size(154, 20);
             this.txtDiscountBox.TabIndex = 11;
             this.txtDiscountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDiscountBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscountBox_KeyPress);
@@ -112,7 +120,7 @@
             // OrderTypeLab
             // 
             this.OrderTypeLab.AutoSize = true;
-            this.OrderTypeLab.Location = new System.Drawing.Point(180, 16);
+            this.OrderTypeLab.Location = new System.Drawing.Point(12, 18);
             this.OrderTypeLab.Name = "OrderTypeLab";
             this.OrderTypeLab.Size = new System.Drawing.Size(19, 13);
             this.OrderTypeLab.TabIndex = 1;
@@ -121,7 +129,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 125);
+            this.label8.Location = new System.Drawing.Point(4, 153);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(136, 13);
             this.label8.TabIndex = 2;
@@ -132,9 +140,9 @@
             this.txtBranches.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtBranches.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.txtBranches.FormattingEnabled = true;
-            this.txtBranches.Location = new System.Drawing.Point(98, 86);
+            this.txtBranches.Location = new System.Drawing.Point(141, 114);
             this.txtBranches.Name = "txtBranches";
-            this.txtBranches.Size = new System.Drawing.Size(121, 21);
+            this.txtBranches.Size = new System.Drawing.Size(154, 21);
             this.txtBranches.TabIndex = 10;
             // 
             // txtPayment
@@ -143,6 +151,15 @@
             this.txtPayment.Name = "txtPayment";
             this.txtPayment.Size = new System.Drawing.Size(213, 20);
             this.txtPayment.TabIndex = 9;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(339, 156);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(59, 13);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Comment:";
             // 
             // label1
             // 
@@ -190,7 +207,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(10, 89);
+            this.label7.Location = new System.Drawing.Point(51, 117);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 13);
             this.label7.TabIndex = 3;
@@ -199,7 +216,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 54);
+            this.label3.Location = new System.Drawing.Point(49, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 13);
             this.label3.TabIndex = 3;
@@ -208,7 +225,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 31);
+            this.label2.Location = new System.Drawing.Point(49, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 2;
@@ -226,7 +243,7 @@
             // NameLab
             // 
             this.NameLab.AutoSize = true;
-            this.NameLab.Location = new System.Drawing.Point(127, 31);
+            this.NameLab.Location = new System.Drawing.Point(164, 60);
             this.NameLab.Name = "NameLab";
             this.NameLab.Size = new System.Drawing.Size(27, 13);
             this.NameLab.TabIndex = 1;
@@ -235,7 +252,7 @@
             // PhoneLab
             // 
             this.PhoneLab.AutoSize = true;
-            this.PhoneLab.Location = new System.Drawing.Point(127, 54);
+            this.PhoneLab.Location = new System.Drawing.Point(164, 83);
             this.PhoneLab.Name = "PhoneLab";
             this.PhoneLab.Size = new System.Drawing.Size(23, 13);
             this.PhoneLab.TabIndex = 0;
@@ -304,7 +321,7 @@
             this.OkeyBtn.Image = global::Bylsan_System.Properties.Resources.Save;
             this.OkeyBtn.Location = new System.Drawing.Point(517, 4);
             this.OkeyBtn.Name = "OkeyBtn";
-            this.OkeyBtn.Size = new System.Drawing.Size(109, 38);
+            this.OkeyBtn.Size = new System.Drawing.Size(166, 38);
             this.OkeyBtn.TabIndex = 0;
             this.OkeyBtn.Text = "Ok";
             this.OkeyBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -359,23 +376,6 @@
             this.radGridView1.Text = "radGridView1";
             this.radGridView1.ThemeName = "Office2010Black";
             // 
-            // txtCommint
-            // 
-            this.txtCommint.Location = new System.Drawing.Point(398, 156);
-            this.txtCommint.Multiline = true;
-            this.txtCommint.Name = "txtCommint";
-            this.txtCommint.Size = new System.Drawing.Size(212, 93);
-            this.txtCommint.TabIndex = 12;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(339, 156);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 13);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Comment:";
-            // 
             // FrmTotalOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,7 +393,7 @@
             this.RootElement.MaxSize = new System.Drawing.Size(0, 0);
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmTotalOrder";
+            this.Text = "Total";
             this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmTotalOrder_Load_1);
             this.CustomerInfomationGroupBox.ResumeLayout(false);

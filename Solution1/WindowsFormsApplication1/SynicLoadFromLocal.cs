@@ -55,65 +55,9 @@ namespace WindowsFormsApplication1
                 }
             }
 
-            #region Account
+            
 
-            foreach (var item in remotedb.Accounts)
-            {
-                try
-                {
-                    var q = localdb.Accounts.Where(p => p.ID == item.ID).Single();
-                    q.AccountName = item.AccountName;
-                    q.Description = item.Description;
-                    q.ID = item.ID;
-                    q.CategoryID = item.CategoryID;
-                    localdb.SubmitChanges();
-                }
-                catch (Exception ex)
-                {
-                    localdb.Accounts.InsertOnSubmit(new Account()
-                    {
-                        AccountName = item.AccountName,
-                        Description = item.Description,
-                        ID = item.ID,
-                        CategoryID = item.CategoryID,
-                    });
-                    localdb.SubmitChanges();
-                }
-            }
-#endregion
-
-            #region AccountDaily
-
-            foreach (var item in remotedb.AccountDailies)
-            {
-                try
-                {
-                    var q = localdb.AccountDailies.Where(p => p.ID == item.ID).Single();
-                    q.AccountID = item.AccountID;
-                    q.DateOfProcess = item.DateOfProcess;
-                    q.ID = item.ID;
-                    q.TotalIn = item.TotalIn;
-                    q.TotalOut = item.TotalOut;
-                    q.Description = item.Description;
-                    q.CommandArg = item.CommandArg;
-                    localdb.SubmitChanges();
-                }
-                catch (Exception ex)
-                {
-                    localdb.AccountDailies.InsertOnSubmit(new AccountDaily()
-                    {
-                    AccountID = item.AccountID,
-                    DateOfProcess = item.DateOfProcess,
-                    ID = item.ID,
-                    TotalIn = item.TotalIn,
-                    TotalOut = item.TotalOut,
-                    Description = item.Description,
-                    CommandArg = item.CommandArg,
-                    });
-                    localdb.SubmitChanges();
-                }
-            }
-            #endregion
+            
 
             #region Debtors
 
@@ -164,7 +108,7 @@ namespace WindowsFormsApplication1
                 {
                     localdb.Expensses.InsertOnSubmit(new Expenss()
                     {
-                        AccountID = item.AccountID,
+                       // AccountID = item.AccountID,
                         ExpenssesName = item.ExpenssesName,
                         ID = item.ID,
                         Description = item.Description,
@@ -250,7 +194,7 @@ namespace WindowsFormsApplication1
                     q.ID = item.ID;
                     q.CreateDate = item.CreateDate;
                     q.Points = item.Points;
-                    q.AccountID = item.AccountID;
+                  //  q.AccountID = item.AccountID;
                     localdb.SubmitChanges();
                 }
                 catch (Exception ex)
@@ -262,7 +206,7 @@ namespace WindowsFormsApplication1
                         ID = item.ID,
                         CreateDate = item.CreateDate,
                         Points = item.Points,
-                        AccountID = item.AccountID,
+                        //AccountID = item.AccountID,
 
                     });
                     localdb.SubmitChanges();
@@ -347,7 +291,7 @@ namespace WindowsFormsApplication1
                     Comment = item.Comment,
                     OrderStatus = item.OrderStatus,
                     TotalAmount = item.TotalAmount,
-                    OrderAccount = item.OrderAccount,
+                   // OrderAccount = item.OrderAccount,
                     OrderDate = item.OrderDate,
                     DeliverdToBranch = item.DeliverdToBranch,
                     isOrderBranch = item.isOrderBranch,
@@ -610,7 +554,7 @@ namespace WindowsFormsApplication1
             {
                 try
                 {
-                    var q = localdb.QuotationProducts.Where(p => p.ID == item.ID).Single();
+                    var q = localdb.QuotationProducts.Where(p => p.id == item.id).Single();
                     q.id = item.id;
                     q.QuotationID = item.QuotationID;
                     q.ProductID = item.ProductID;
@@ -1322,6 +1266,65 @@ namespace WindowsFormsApplication1
 
 
 
+                    });
+                    localdb.SubmitChanges();
+                }
+            }
+            #endregion
+            #region Account
+
+            foreach (var item in remotedb.Accounts)
+            {
+                try
+                {
+                    var q = localdb.Accounts.Where(p => p.ID == item.ID).Single();
+                    q.AccountName = item.AccountName;
+                    q.Description = item.Description;
+                    q.ID = item.ID;
+                    q.CategoryID = item.CategoryID;
+                    localdb.SubmitChanges();
+                }
+                catch (Exception ex)
+                {
+                    localdb.Accounts.InsertOnSubmit(new Account()
+                    {
+                        AccountName = item.AccountName,
+                        Description = item.Description,
+                        ID = item.ID,
+                        CategoryID = item.CategoryID,
+                    });
+                    localdb.SubmitChanges();
+                }
+            }
+            #endregion
+
+            #region AccountDaily
+
+            foreach (var item in remotedb.AccountDailies)
+            {
+                try
+                {
+                    var q = localdb.AccountDailies.Where(p => p.ID == item.ID).Single();
+                    q.AccountID = item.AccountID;
+                    q.DateOfProcess = item.DateOfProcess;
+                    q.ID = item.ID;
+                    q.TotalIn = item.TotalIn;
+                    q.TotalOut = item.TotalOut;
+                    q.Description = item.Description;
+                    q.CommandArg = item.CommandArg;
+                    localdb.SubmitChanges();
+                }
+                catch (Exception ex)
+                {
+                    localdb.AccountDailies.InsertOnSubmit(new AccountDaily()
+                    {
+                        AccountID = item.AccountID,
+                        DateOfProcess = item.DateOfProcess,
+                        ID = item.ID,
+                        TotalIn = item.TotalIn,
+                        TotalOut = item.TotalOut,
+                        Description = item.Description,
+                        CommandArg = item.CommandArg,
                     });
                     localdb.SubmitChanges();
                 }

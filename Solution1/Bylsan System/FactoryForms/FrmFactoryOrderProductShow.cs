@@ -28,13 +28,12 @@ namespace Bylsan_System.FactoryForms
             try
             {
                 var q = Operation.AllOrderProduct.Where(p => p.OrderID == TagOrder.ID).ToList();  //Operation.AllOrder.Where(p => p.ID == TagOrder.ID).Single().OrderProducts; //TagOrder.OrderProducts.ToList();
+              
                 this.Invoke((MethodInvoker)delegate
                 {
                     foreach (var item in q)
                     {
-                        DGVProducts.Rows.Add(new string[] { item .ID .ToString (), item .ProductID .ToString (), item.Product.Product_Name,
-                     item .Qty .ToString ()
-                     });
+                        DGVProducts.Rows.Add(new string[] { item .ID .ToString (), item .ProductID .ToString (), item.Product.Product_Name,item .Qty .ToString ()});
                     }
                 });
 
@@ -42,7 +41,8 @@ namespace Bylsan_System.FactoryForms
             catch (Exception ex) 
             {
                 RadMessageBox.ThemeName = this.ThemeName;
-                RadMessageBox.Show("No Any Product on this Order");
+               // RadMessageBox.Show("No Any Product on this Order");
+                RadMessageBox.Show( ex.ToString());
                 
             }
             Operation.EndOperation(this);
@@ -69,6 +69,8 @@ namespace Bylsan_System.FactoryForms
 
             Thr = new Thread(PopulateGrd);
             Thr.Start();
+            lblOrderDate.Text = TagOrder.OrderDate.Value.ToString("dd/MM/yyyy");
+            lblOrderDelviryDate.Text = TagOrder.OrderDeliveryDate.Value.ToString("dd/MM/yyyy");
         }
 
 
@@ -86,9 +88,17 @@ namespace Bylsan_System.FactoryForms
             var lst1 = px; //OrderProductsCmd.GetAllByProductID(PrdID);
 
             //var CurrentProduct = Operation.Allproducts.Where(p => p.ID == PrdID).ToList();
+            DbDataContext db = new DbDataContext();
+            var q = from i in db.OrderProuctAttachments where i.OrderProductID == productID select new { i.Description   };
             this.Invoke((MethodInvoker)delegate
             {
-                TxtDescription.Text = lst1.Description;
+                string des = "";
+                foreach (var item in q)
+                {
+                    des += "\n Description ["+item.Description+"] \n";
+                    
+                }
+                TxtDescription.Text = lst1.Description+des;
                 PhotoBox.Image = lst1.ImageX;
 
 

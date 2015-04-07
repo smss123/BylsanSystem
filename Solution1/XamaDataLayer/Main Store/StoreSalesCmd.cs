@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 
 namespace XamaDataLayer.Main_Store
@@ -10,7 +11,7 @@ namespace XamaDataLayer.Main_Store
 
         public static bool AddNewSales(Store_Sell tb)
         {
-             
+            tb.ID = GetNumber();
             db.Store_Sells.InsertOnSubmit(tb);
             db.SubmitChanges();
             XamaDataLayer.Security.UserCmd.SaveHistory("Add ", " Add sell store ", " Add new sell store    At Main Store ");
@@ -35,7 +36,9 @@ namespace XamaDataLayer.Main_Store
         }
         public void DeleteStore_SellAt(int xid)
         {
-            
+
+          
+
                 var q = db.Store_Sells.Where(p => p.ID == xid).SingleOrDefault();
                 db.Store_Sells.DeleteOnSubmit(q);
                 db.SubmitChanges();
@@ -49,28 +52,55 @@ namespace XamaDataLayer.Main_Store
 
         public static List<Store_Sell> GetAllSTore_Sell()
         {
-            db = new DbDataContext();
-            return db.Store_Sells.ToList();
+            var com = CompiledQuery.Compile(
+            (DbDataContext dbx) =>
+                db.Store_Sells
+            );
+            {
+                db = new DbDataContext();
+            }
+            db.CommandTimeout = 9000;
+
+            return com(db).ToList();
+
+            
+           
         }
 
         public static List<Store_Sell> GetAllSTore_SellByUserID( int xid)
         {
-            db = new DbDataContext();
-            var lst = (from s in db.Store_Sells
-                       orderby s.DateOfProcess ascending
-                       where s.UserID == xid
-                       select s).ToList();
-            return lst;
+            var com = CompiledQuery.Compile(
+           (DbDataContext dbx) =>
+              (from s in dbx.Store_Sells
+               orderby s.DateOfProcess ascending
+               where s.UserID == xid
+               select s)
+           );
+            {
+                db = new DbDataContext();
+            }
+            db.CommandTimeout = 9000;
+
+            return com(db).ToList();
+
+            
         }
 
         public static List<Store_Sell> GetAllSTore_SellBySupplierID(int xid)
         {
-            db = new DbDataContext();
-            var lst = (from s in db.Store_Sells
-                       orderby s.DateOfProcess ascending
-                       where s.SupplierID  == xid
-                       select s).ToList();
-            return lst;
+            var com = CompiledQuery.Compile(
+          (DbDataContext dbx) =>
+             (from s in dbx.Store_Sells
+              orderby s.DateOfProcess ascending
+              where s.SupplierID == xid
+              select s)
+          );
+            {
+                db = new DbDataContext();
+            }
+            db.CommandTimeout = 9000;
+
+            return com(db).ToList();
         }
 
 

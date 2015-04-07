@@ -20,9 +20,9 @@ namespace Bylsan_System.SenarioAddOrderForms
         public FrmAddOrderProduct()
         {
             InitializeComponent();
-            ProductImageList.ImageSize = new Size(70, 70);
+            productImageList.ImageSize = new Size(70, 70);
         }
-        private ImageList ProductImageList = new ImageList();
+        private ImageList productImageList = new ImageList();
         public int CustomerID { get; set; }
         private FrmTotalOrder frm = new FrmTotalOrder();
 
@@ -30,19 +30,19 @@ namespace Bylsan_System.SenarioAddOrderForms
         {
             try
             {
-                CustomerID = CustomerInformations.WatingCustomer.ID;
-                CustomerNameLab.Text = string.Format("Customer Name is : {0} ", CustomerInformations.WatingCustomer.CustomerName);
-                CustomerPhoneLab.Text = string.Format("Customer Phone  is : {0} ", CustomerInformations.WatingCustomer.PhoneNumber);
+                CustomerID = CustomerInformations.CurrCustomer.ID;
+                CustomerNameLab.Text = string.Format("Customer Name is : {0} ", CustomerInformations.CurrCustomer.CustomerName);
+                CustomerPhoneLab.Text = string.Format("Customer Phone  is : {0} ", CustomerInformations.CurrCustomer.PhoneNumber);
 
-                frm.NameLab.Text = CustomerInformations.WatingCustomer.CustomerName;
-                frm.PhoneLab.Text = CustomerInformations.WatingCustomer.PhoneNumber;
+                frm.NameLab.Text = CustomerInformations.CurrCustomer.CustomerName;
+                frm.PhoneLab.Text = CustomerInformations.CurrCustomer.PhoneNumber;
             }
             catch (Exception)
             {
-                CustomerNameLab.Text = string.Format("Customer Name is : {0} ", CustomerInformations.CustmrName);
-                CustomerPhoneLab.Text = string.Format("Customer Phone  is : {0} ", CustomerInformations.CustmrPhone);
-                frm.NameLab.Text = CustomerInformations.WatingCustomer.CustomerName;
-                frm.PhoneLab.Text = CustomerInformations.CustmrPhone;
+                CustomerNameLab.Text = string.Format("Customer Name is : {0} ", CustomerInformations.CurrCustomer.CustomerName);
+                CustomerPhoneLab.Text = string.Format("Customer Phone  is : {0} ", CustomerInformations.CurrCustomer.PhoneNumber);
+                frm.NameLab.Text = CustomerInformations.CurrCustomer.CustomerName;
+                frm.PhoneLab.Text = CustomerInformations.CurrCustomer.PhoneNumber;
             }
         }
 
@@ -67,9 +67,11 @@ namespace Bylsan_System.SenarioAddOrderForms
         private Thread th;
         private void FrmAddOrderProduct_Load(object sender, EventArgs e)
         {
+            dataGridView1.AutoGenerateColumns = false;
             th = new Thread(LoadingProduct);
             th.Start();
             CustomerInformations.AttachIni();
+            CustomerInformations.CurOrder = new Order();
         }
 
         private void LoadingProduct()
@@ -88,8 +90,8 @@ namespace Bylsan_System.SenarioAddOrderForms
 
                 lblStatus.Text = "Complete Loading  ...";
                 ImportCustomerData();
-                PopulateCategoreisTree();
-                CreateOrdersListView();
+                // PopulateCategoreisTree();
+                //CreateOrdersListView();
                 CustomerInformations.Orderini();
             });
             Operation.EndOperation(this);
@@ -141,13 +143,15 @@ namespace Bylsan_System.SenarioAddOrderForms
             }
             catch (Exception)
             {
+                RadMessageBox.ThemeName = this.ThemeName;
+                RadMessageBox.Show("Item not Found");
             }
         }
 
 
         public int PrdID { get; set; }
         public List<OrderProduct> selectedProductX { get; set; }
-        private int QtyCounter = 1;
+        private int qtyCounter = 1;
         private void ListViewProductes_MouseClick(object sender, MouseEventArgs e)
         {
         }
@@ -156,6 +160,7 @@ namespace Bylsan_System.SenarioAddOrderForms
         private void nextBtn_Click_1(object sender, EventArgs e)
         {
             XamaDataLayer.Security.UserCmd.SaveHistory("Add", "Order Product ", "Add New Order Product  ");
+           
             frm.TragetOrderType = OrderTypeCheckLab.Text;
             frm.ShowDialog();
             
@@ -225,16 +230,14 @@ namespace Bylsan_System.SenarioAddOrderForms
         {
             if (CustomerInformations.OrdrType == "Special")
             {
-                //var SFrm = new FrmSpecialOrder();
-                //SFrm.TragetOrderproduct = (Product )dataGridView1.CurrentRow.DataBoundItem;
-                //SFrm.ShowDialog();
-                //radGridView1.DataSource = CustomerInformations.WaitingOrder.OrderProducts.ToList();
+                 
                 frmSpAttachment_ frm = new frmSpAttachment_();
                 frm.TragetProduct = (Product)dataGridView1.CurrentRow.DataBoundItem;
                 frm.ShowDialog();
+                
 
-                CustomerInformations.WaitingOrder.OrderProducts.Add(frm.RetrunProduct);
-                radGridView1.DataSource = CustomerInformations.WaitingOrder.OrderProducts.ToList();
+                //CustomerInformations.WaitingOrder.OrderProducts.Add(frm.RetrunProduct);
+                radGridView1.DataSource = CustomerInformations.CurOrder.OrderProducts.ToList();
                 return;
             }
 
@@ -257,24 +260,24 @@ namespace Bylsan_System.SenarioAddOrderForms
 
 
 
-                //var q = CustomerInformations.WaitingOrder.OrderProducts.Where(p => p.ProductID == item.ID).SingleOrDefault();
-                //if (q == null)
-                //{
-                    CustomerInformations.WaitingOrder.OrderProducts.Add(new OrderProduct()
+                var q = CustomerInformations.CurOrder.OrderProducts.Where(p => p.ProductID == item.ID).SingleOrDefault();
+                if (q == null)
+                {
+                    CustomerInformations.CurOrder.OrderProducts.Add(new OrderProduct()
                     {
                         Product = myProdctut[0],
-                        Qty = QtyCounter,
+                        Qty = qtyCounter,
                         Status = "Orderd",
                         ImageX = item.Img
                     });
-                    QtyCounter = 1;
-                //}
-                //else
-                //{
-                    //q.Qty = q.Qty + 1;
-                //}
+                    qtyCounter = 1;
+                }
+                else
+                {
+                    q.Qty = q.Qty + 1;
+                }
 
-                radGridView1.DataSource = CustomerInformations.WaitingOrder.OrderProducts.ToList();
+                radGridView1.DataSource = CustomerInformations.CurOrder.OrderProducts.ToList();
             }
         }
 
@@ -284,8 +287,11 @@ namespace Bylsan_System.SenarioAddOrderForms
             frmSpAttachment_ frm = new frmSpAttachment_();
             frm.RetrunProduct = q;
             frm.ShowDialog();
-           
-           
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

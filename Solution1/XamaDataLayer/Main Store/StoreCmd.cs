@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 
 namespace XamaDataLayer.Main_Store
@@ -9,7 +10,7 @@ namespace XamaDataLayer.Main_Store
        
         public static bool AddNewStore(Store  tb)
         {
-            
+            tb.ID = GetNumber();
             db.CommandTimeout = 9000;
             db.Stores.InsertOnSubmit(tb);
 
@@ -53,13 +54,22 @@ namespace XamaDataLayer.Main_Store
         {
             try
             {
-                db = new DbDataContext();
+               
                 db.CommandTimeout = 9000;
-                var lst = (from i in db.Stores
-                           where i.ProductID == ItmId
-                           orderby i.ID ascending
-                           select i).Single();
-                return lst;
+                var com = CompiledQuery.Compile(
+                            (DbDataContext dbx) =>
+                                 (from i in dbx.Stores
+                                  where i.ProductID == ItmId
+                                  orderby i.ID ascending
+                                  select i).Single()
+                             );
+                {
+                    db = new DbDataContext();
+                }
+                db.CommandTimeout = 9000;
+
+                return com(db);
+                
             }
             catch (Exception)
             {
@@ -73,10 +83,20 @@ namespace XamaDataLayer.Main_Store
         {
             db = new DbDataContext();
             db.CommandTimeout = 9000;
-            var Rec = (from i in db.Stores
-                       where i.ProductID == ItmId
-                      select i).Single ();
-            return Rec;
+            var com = CompiledQuery.Compile(
+                        (DbDataContext dbx) =>
+                            (from i in dbx.Stores
+                             where i.ProductID == ItmId
+                             select i)
+                         );
+            {
+                db = new DbDataContext();
+            }
+            db.CommandTimeout = 9000;
+
+            return com(db).Single();
+
+             
         }
 
 
@@ -86,7 +106,18 @@ namespace XamaDataLayer.Main_Store
         {
             db = new DbDataContext();
             db.CommandTimeout = 9000;
-            return db.Stores .ToList();
+            var com = CompiledQuery.Compile(
+                        (DbDataContext dbx) =>
+                            dbx.Stores
+                         );
+            {
+                db = new DbDataContext();
+            }
+            db.CommandTimeout = 9000;
+
+            return com(db).ToList();
+
+            
         }
     }
 }

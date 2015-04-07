@@ -11,6 +11,7 @@ namespace XamaDataLayer.BranchCmd
 
         public static bool AddQuotation(Quotation tb)
         {
+            
             db.CommandTimeout = 9000;
             db.Quotations.InsertOnSubmit(tb);
             db.SubmitChanges();

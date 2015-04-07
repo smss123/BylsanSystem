@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 
 namespace XamaDataLayer.Main_Store
@@ -9,7 +10,7 @@ namespace XamaDataLayer.Main_Store
         private static DbDataContext db = new DbDataContext();
         public static bool AddDrawal(StoreWithDrawal tb)
         {
-           
+            tb.ID = GetNumber();
             db.StoreWithDrawals.InsertOnSubmit(tb);
             db.SubmitChanges();
 
@@ -53,25 +54,55 @@ namespace XamaDataLayer.Main_Store
         }
         public static List<StoreWithDrawal> GetAllStoreDrawals()
         {
-            return db.StoreWithDrawals.ToList();
+            var com = CompiledQuery.Compile(
+                (DbDataContext dbx) =>
+                    dbx.StoreWithDrawals
+                );
+            {
+                db = new DbDataContext();
+            }
+            db.CommandTimeout = 9000;
+             
+            return com(db).ToList();
         }
 
         public static List<StoreWithDrawal> GetAllStoreDrawalByUserID( int XID )
         {
-            var LST = (from u in db.StoreWithDrawals
+
+            var com = CompiledQuery.Compile(
+                (DbDataContext dbx) =>
+                     (from u in dbx.StoreWithDrawals
                        orderby u.DateOfProcess ascending
                        where u.UserID == XID
-                       select u).ToList();
-            return LST;
+                       select u)
+                );
+            {
+                db = new DbDataContext();
+            }
+            db.CommandTimeout = 9000;
+
+            return com(db).ToList();
+
+           
         }
 
         public static List<StoreWithDrawal> GetAllStoreDrawalByStoreID(int XID)
         {
-            var LST = (from u in db.StoreWithDrawals
-                       orderby u.DateOfProcess ascending
-                       where u.StoreID == XID
-                       select u).ToList();
-            return LST;
+            var com = CompiledQuery.Compile(
+                (DbDataContext dbx) =>
+                     (from u in dbx.StoreWithDrawals
+                      orderby u.DateOfProcess ascending
+                      where u.StoreID == XID
+                      select u)
+                );
+            {
+                db = new DbDataContext();
+            }
+            db.CommandTimeout = 9000;
+
+            return com(db).ToList();
+
+             
         }
     }
 }

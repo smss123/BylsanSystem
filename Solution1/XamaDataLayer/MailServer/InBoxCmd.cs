@@ -10,7 +10,7 @@ namespace XamaDataLayer.MailServer
 
         public static bool InsertMassegeInBox(Inbox tb)
         {
-             
+            tb.ID = GetNumber();
             db.CommandTimeout = 9000;
             db.Inboxes.InsertOnSubmit(tb);
             db.SubmitChanges();
