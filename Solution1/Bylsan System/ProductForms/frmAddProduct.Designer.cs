@@ -37,10 +37,10 @@
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label4;
             System.Windows.Forms.Label itemTypeLabel;
+            System.Windows.Forms.Label label5;
             Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            System.Windows.Forms.Label label5;
             this.ProductgroupBox = new System.Windows.Forms.GroupBox();
             this.ItemTypecomboBox = new System.Windows.Forms.ComboBox();
             this.productUnitTextBox = new System.Windows.Forms.ComboBox();
@@ -57,11 +57,11 @@
             this.BrowseBtn = new Telerik.WinControls.UI.RadButton();
             this.productpictureBox = new System.Windows.Forms.PictureBox();
             this.product_DescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.txtBarCode = new System.Windows.Forms.TextBox();
             this.product_NameTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
-            this.txtBarCode = new System.Windows.Forms.TextBox();
             product_DescriptionLabel = new System.Windows.Forms.Label();
             product_NameLabel = new System.Windows.Forms.Label();
             productPriceLabel = new System.Windows.Forms.Label();
@@ -155,6 +155,15 @@
             itemTypeLabel.Size = new System.Drawing.Size(58, 13);
             itemTypeLabel.TabIndex = 17;
             itemTypeLabel.Text = "Item Type:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(62, 40);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(60, 13);
+            label5.TabIndex = 6;
+            label5.Text = "Bar Code :";
             // 
             // ProductgroupBox
             // 
@@ -293,7 +302,7 @@
             this.CategoryComboBox.EditorControl.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.CategoryComboBox.EditorControl.Location = new System.Drawing.Point(0, 0);
             // 
-            // CategoryComboBox.NestedRadGridView
+            // 
             // 
             this.CategoryComboBox.EditorControl.MasterTemplate.AllowAddNewRow = false;
             this.CategoryComboBox.EditorControl.MasterTemplate.AllowCellContextMenu = false;
@@ -368,7 +377,6 @@
             // productpictureBox
             // 
             this.productpictureBox.BackColor = System.Drawing.SystemColors.Info;
-            this.productpictureBox.Image = global::Bylsan_System.Properties.Resources.ImagePreview;
             this.productpictureBox.Location = new System.Drawing.Point(128, 352);
             this.productpictureBox.Name = "productpictureBox";
             this.productpictureBox.Size = new System.Drawing.Size(149, 99);
@@ -384,6 +392,14 @@
             this.product_DescriptionTextBox.Name = "product_DescriptionTextBox";
             this.product_DescriptionTextBox.Size = new System.Drawing.Size(203, 75);
             this.product_DescriptionTextBox.TabIndex = 2;
+            // 
+            // txtBarCode
+            // 
+            this.txtBarCode.BackColor = System.Drawing.SystemColors.Info;
+            this.txtBarCode.Location = new System.Drawing.Point(128, 37);
+            this.txtBarCode.Name = "txtBarCode";
+            this.txtBarCode.Size = new System.Drawing.Size(203, 20);
+            this.txtBarCode.TabIndex = 0;
             // 
             // product_NameTextBox
             // 
@@ -404,23 +420,6 @@
             this.statusStrip1.Size = new System.Drawing.Size(398, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // txtBarCode
-            // 
-            this.txtBarCode.BackColor = System.Drawing.SystemColors.Info;
-            this.txtBarCode.Location = new System.Drawing.Point(128, 37);
-            this.txtBarCode.Name = "txtBarCode";
-            this.txtBarCode.Size = new System.Drawing.Size(203, 20);
-            this.txtBarCode.TabIndex = 0;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(62, 40);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(60, 13);
-            label5.TabIndex = 6;
-            label5.Text = "Bar Code :";
             // 
             // frmAddProduct
             // 

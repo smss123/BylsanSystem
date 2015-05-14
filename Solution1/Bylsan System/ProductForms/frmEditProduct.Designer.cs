@@ -34,7 +34,9 @@
             System.Windows.Forms.Label productUnitLabel;
             System.Windows.Forms.Label publicNameLabel;
             System.Windows.Forms.Label itemTypeLabel;
+            System.Windows.Forms.Label label4;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.productUnitTextBox = new System.Windows.Forms.ComboBox();
             this.ItemTypecomboBox = new System.Windows.Forms.ComboBox();
             this.publicNameTextBox = new System.Windows.Forms.TextBox();
             this.txtprice = new System.Windows.Forms.TextBox();
@@ -51,12 +53,13 @@
             this.windows8Theme1 = new Telerik.WinControls.Themes.Windows8Theme();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblstatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.productUnitTextBox = new System.Windows.Forms.ComboBox();
+            this.txtBarcode = new System.Windows.Forms.TextBox();
             product_DescriptionLabel = new System.Windows.Forms.Label();
             product_NameLabel = new System.Windows.Forms.Label();
             productUnitLabel = new System.Windows.Forms.Label();
             publicNameLabel = new System.Windows.Forms.Label();
             itemTypeLabel = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CategoryComboBox.EditorControl)).BeginInit();
@@ -72,7 +75,7 @@
             // product_DescriptionLabel
             // 
             product_DescriptionLabel.AutoSize = true;
-            product_DescriptionLabel.Location = new System.Drawing.Point(5, 76);
+            product_DescriptionLabel.Location = new System.Drawing.Point(8, 109);
             product_DescriptionLabel.Name = "product_DescriptionLabel";
             product_DescriptionLabel.Size = new System.Drawing.Size(112, 13);
             product_DescriptionLabel.TabIndex = 16;
@@ -81,7 +84,7 @@
             // product_NameLabel
             // 
             product_NameLabel.AutoSize = true;
-            product_NameLabel.Location = new System.Drawing.Point(29, 39);
+            product_NameLabel.Location = new System.Drawing.Point(32, 72);
             product_NameLabel.Name = "product_NameLabel";
             product_NameLabel.Size = new System.Drawing.Size(82, 13);
             product_NameLabel.TabIndex = 17;
@@ -90,7 +93,7 @@
             // productUnitLabel
             // 
             productUnitLabel.AutoSize = true;
-            productUnitLabel.Location = new System.Drawing.Point(32, 179);
+            productUnitLabel.Location = new System.Drawing.Point(35, 212);
             productUnitLabel.Name = "productUnitLabel";
             productUnitLabel.Size = new System.Drawing.Size(75, 13);
             productUnitLabel.TabIndex = 27;
@@ -99,7 +102,7 @@
             // publicNameLabel
             // 
             publicNameLabel.AutoSize = true;
-            publicNameLabel.Location = new System.Drawing.Point(40, 155);
+            publicNameLabel.Location = new System.Drawing.Point(43, 188);
             publicNameLabel.Name = "publicNameLabel";
             publicNameLabel.Size = new System.Drawing.Size(73, 13);
             publicNameLabel.TabIndex = 24;
@@ -108,7 +111,7 @@
             // itemTypeLabel
             // 
             itemTypeLabel.AutoSize = true;
-            itemTypeLabel.Location = new System.Drawing.Point(61, 205);
+            itemTypeLabel.Location = new System.Drawing.Point(64, 238);
             itemTypeLabel.Name = "itemTypeLabel";
             itemTypeLabel.Size = new System.Drawing.Size(58, 13);
             itemTypeLabel.TabIndex = 29;
@@ -129,17 +132,39 @@
             this.groupBox1.Controls.Add(this.productpictureBox);
             this.groupBox1.Controls.Add(product_DescriptionLabel);
             this.groupBox1.Controls.Add(this.product_DescriptionTextBox);
+            this.groupBox1.Controls.Add(label4);
             this.groupBox1.Controls.Add(product_NameLabel);
+            this.groupBox1.Controls.Add(this.txtBarcode);
             this.groupBox1.Controls.Add(this.product_NameTextBox);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 11);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(374, 429);
+            this.groupBox1.Size = new System.Drawing.Size(374, 471);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit Prodct";
+            // 
+            // productUnitTextBox
+            // 
+            this.productUnitTextBox.FormattingEnabled = true;
+            this.productUnitTextBox.Items.AddRange(new object[] {
+            "Number",
+            "Centimeter",
+            "dozen",
+            "feet",
+            "gram",
+            "inch",
+            "Kg",
+            "Liter",
+            "Meter",
+            "Mm",
+            "Piece"});
+            this.productUnitTextBox.Location = new System.Drawing.Point(123, 212);
+            this.productUnitTextBox.Name = "productUnitTextBox";
+            this.productUnitTextBox.Size = new System.Drawing.Size(229, 21);
+            this.productUnitTextBox.TabIndex = 30;
             // 
             // ItemTypecomboBox
             // 
@@ -149,7 +174,7 @@
             "item product",
             "item row material",
             "All"});
-            this.ItemTypecomboBox.Location = new System.Drawing.Point(120, 202);
+            this.ItemTypecomboBox.Location = new System.Drawing.Point(123, 235);
             this.ItemTypecomboBox.Name = "ItemTypecomboBox";
             this.ItemTypecomboBox.Size = new System.Drawing.Size(229, 21);
             this.ItemTypecomboBox.TabIndex = 28;
@@ -157,14 +182,14 @@
             // publicNameTextBox
             // 
             this.publicNameTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.publicNameTextBox.Location = new System.Drawing.Point(117, 152);
+            this.publicNameTextBox.Location = new System.Drawing.Point(120, 185);
             this.publicNameTextBox.Name = "publicNameTextBox";
             this.publicNameTextBox.Size = new System.Drawing.Size(232, 20);
             this.publicNameTextBox.TabIndex = 2;
             // 
             // txtprice
             // 
-            this.txtprice.Location = new System.Drawing.Point(120, 255);
+            this.txtprice.Location = new System.Drawing.Point(123, 288);
             this.txtprice.Name = "txtprice";
             this.txtprice.Size = new System.Drawing.Size(229, 20);
             this.txtprice.TabIndex = 5;
@@ -191,7 +216,7 @@
             this.CategoryComboBox.EditorControl.ShowGroupPanel = false;
             this.CategoryComboBox.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.CategoryComboBox.EditorControl.TabIndex = 0;
-            this.CategoryComboBox.Location = new System.Drawing.Point(120, 226);
+            this.CategoryComboBox.Location = new System.Drawing.Point(123, 259);
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(229, 20);
             this.CategoryComboBox.TabIndex = 4;
@@ -202,7 +227,7 @@
             // 
             this.AddBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddBtn.Image = global::Bylsan_System.Properties.Resources.Save;
-            this.AddBtn.Location = new System.Drawing.Point(8, 386);
+            this.AddBtn.Location = new System.Drawing.Point(11, 419);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(111, 37);
             this.AddBtn.TabIndex = 8;
@@ -213,7 +238,7 @@
             // 
             // BrowseBtn
             // 
-            this.BrowseBtn.Location = new System.Drawing.Point(280, 282);
+            this.BrowseBtn.Location = new System.Drawing.Point(283, 315);
             this.BrowseBtn.Name = "BrowseBtn";
             this.BrowseBtn.Size = new System.Drawing.Size(69, 24);
             this.BrowseBtn.TabIndex = 6;
@@ -224,7 +249,7 @@
             // productpictureBox
             // 
             this.productpictureBox.BackColor = System.Drawing.SystemColors.Info;
-            this.productpictureBox.Location = new System.Drawing.Point(120, 282);
+            this.productpictureBox.Location = new System.Drawing.Point(123, 315);
             this.productpictureBox.Name = "productpictureBox";
             this.productpictureBox.Size = new System.Drawing.Size(149, 99);
             this.productpictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -234,7 +259,7 @@
             // product_DescriptionTextBox
             // 
             this.product_DescriptionTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.product_DescriptionTextBox.Location = new System.Drawing.Point(117, 73);
+            this.product_DescriptionTextBox.Location = new System.Drawing.Point(120, 106);
             this.product_DescriptionTextBox.Multiline = true;
             this.product_DescriptionTextBox.Name = "product_DescriptionTextBox";
             this.product_DescriptionTextBox.Size = new System.Drawing.Size(232, 75);
@@ -243,7 +268,7 @@
             // product_NameTextBox
             // 
             this.product_NameTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.product_NameTextBox.Location = new System.Drawing.Point(117, 36);
+            this.product_NameTextBox.Location = new System.Drawing.Point(120, 69);
             this.product_NameTextBox.Name = "product_NameTextBox";
             this.product_NameTextBox.Size = new System.Drawing.Size(232, 20);
             this.product_NameTextBox.TabIndex = 0;
@@ -251,7 +276,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(73, 296);
+            this.label2.Location = new System.Drawing.Point(76, 329);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 20;
@@ -260,7 +285,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(80, 258);
+            this.label3.Location = new System.Drawing.Point(83, 291);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 19;
@@ -269,7 +294,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 229);
+            this.label1.Location = new System.Drawing.Point(61, 262);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 19;
@@ -283,7 +308,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblstatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 455);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 486);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(396, 22);
             this.statusStrip1.TabIndex = 1;
@@ -295,32 +320,29 @@
             this.lblstatus.Size = new System.Drawing.Size(12, 17);
             this.lblstatus.Text = "_";
             // 
-            // productUnitTextBox
+            // txtBarcode
             // 
-            this.productUnitTextBox.FormattingEnabled = true;
-            this.productUnitTextBox.Items.AddRange(new object[] {
-            "Number",
-            "Centimeter",
-            "dozen",
-            "feet",
-            "gram",
-            "inch",
-            "Kg",
-            "Liter",
-            "Meter",
-            "Mm",
-            "Piece"});
-            this.productUnitTextBox.Location = new System.Drawing.Point(120, 179);
-            this.productUnitTextBox.Name = "productUnitTextBox";
-            this.productUnitTextBox.Size = new System.Drawing.Size(229, 21);
-            this.productUnitTextBox.TabIndex = 30;
+            this.txtBarcode.BackColor = System.Drawing.SystemColors.Info;
+            this.txtBarcode.Location = new System.Drawing.Point(120, 43);
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.Size = new System.Drawing.Size(232, 20);
+            this.txtBarcode.TabIndex = 0;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(59, 46);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(51, 13);
+            label4.TabIndex = 17;
+            label4.Text = "BarCode";
             // 
             // frmEditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(396, 477);
+            this.ClientSize = new System.Drawing.Size(396, 508);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
@@ -373,6 +395,7 @@
         private System.Windows.Forms.TextBox publicNameTextBox;
         private System.Windows.Forms.ComboBox ItemTypecomboBox;
         private System.Windows.Forms.ComboBox productUnitTextBox;
+        private System.Windows.Forms.TextBox txtBarcode;
 
     }
 }

@@ -6,12 +6,12 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.09531cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>3.36412cm</Height>
+              <Height>2.00879cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -37,10 +37,10 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox1</rd:DefaultName>
-                          <Top>0.91489cm</Top>
+                          <Top>0.33783cm</Top>
                           <Left>0cm</Left>
-                          <Height>0.71276cm</Height>
-                          <Width>2.5cm</Width>
+                          <Height>0.53637cm</Height>
+                          <Width>3.09531cm</Width>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -60,7 +60,7 @@
                                 <TextRun>
                                   <Value>=Fields!ItemName.Value</Value>
                                   <Style>
-                                    <FontSize>7pt</FontSize>
+                                    <FontSize>5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -70,10 +70,10 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox2</rd:DefaultName>
-                          <Top>1.62765cm</Top>
+                          <Top>0.8742cm</Top>
                           <Left>0cm</Left>
-                          <Height>0.54841cm</Height>
-                          <Width>2.5cm</Width>
+                          <Height>0.37202cm</Height>
+                          <Width>3.09531cm</Width>
                           <ZIndex>1</ZIndex>
                           <Style>
                             <Border>
@@ -94,7 +94,7 @@
                                 <TextRun>
                                   <Value>=str(Fields!ItemPrice.Value)+" R.O"</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -104,9 +104,9 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
-                          <Top>2.17606cm</Top>
-                          <Height>0.52045cm</Height>
-                          <Width>2.5cm</Width>
+                          <Top>1.24622cm</Top>
+                          <Height>0.34775cm</Height>
+                          <Width>3.09531cm</Width>
                           <ZIndex>2</ZIndex>
                           <Style>
                             <Border>
@@ -127,7 +127,7 @@
                                 <TextRun>
                                   <Value>ALBAYLASSAN CHOCOLATES</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -139,8 +139,8 @@
                           <rd:DefaultName>Textbox4</rd:DefaultName>
                           <Top>0cm</Top>
                           <Left>0cm</Left>
-                          <Height>0.91489cm</Height>
-                          <Width>2.5cm</Width>
+                          <Height>0.33783cm</Height>
+                          <Width>3.09531cm</Width>
                           <ZIndex>3</ZIndex>
                           <Style>
                             <Border>
@@ -161,7 +161,7 @@
                                 <TextRun>
                                   <Value>="Exp:"+Fields!ExpriedDate.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>5pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -171,10 +171,10 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox5</rd:DefaultName>
-                          <Top>2.69651cm</Top>
+                          <Top>1.59396cm</Top>
                           <Left>0cm</Left>
-                          <Height>0.6cm</Height>
-                          <Width>2.5cm</Width>
+                          <Height>0.41483cm</Height>
+                          <Width>3.09531cm</Width>
                           <ZIndex>4</ZIndex>
                           <Style>
                             <Border>
@@ -214,10 +214,10 @@
         </TablixRowHierarchy>
         <KeepTogether>true</KeepTogether>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.10583cm</Top>
+        <Top>0cm</Top>
         <Left>0cm</Left>
-        <Height>3.36412cm</Height>
-        <Width>2.5cm</Width>
+        <Height>2.00879cm</Height>
+        <Width>3.09531cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -226,16 +226,16 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>1.38337in</Height>
+    <Height>0.79086in</Height>
     <Style />
   </Body>
-  <Width>0.98425in</Width>
+  <Width>1.21863in</Width>
   <Page>
-    <PageHeight>29.7cm</PageHeight>
-    <PageWidth>21cm</PageWidth>
-    <LeftMargin>0.5cm</LeftMargin>
-    <RightMargin>0.5cm</RightMargin>
-    <TopMargin>0.5cm</TopMargin>
+    <PageHeight>2.5cm</PageHeight>
+    <PageWidth>3.5cm</PageWidth>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0cm</TopMargin>
     <BottomMargin>0cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />

@@ -142,6 +142,7 @@ namespace Bylsan_System.ProductForms
             Operation.BeginOperation(this);
             var th = new Thread(FillCategoreisCombo);
             th.Start();
+            txtBarcode.Text = TragetProduct.ID.ToString();
             product_NameTextBox.Text = TragetProduct.Product_Name;
             product_DescriptionTextBox.Text = TragetProduct.Product_Description;
             productpictureBox.Image = TragetProduct.Img;
