@@ -72,6 +72,13 @@ namespace Bylsan_System.SenarioAddOrderForms
             th.Start();
             CustomerInformations.AttachIni();
             CustomerInformations.CurOrder = new Order();
+            textBox1.AutoCompleteCustomSource.Clear();
+            foreach (var item in Operation.Allproducts)
+            {
+                textBox1.AutoCompleteCustomSource.Add(item.Product_Name);
+            }
+            textBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         private void LoadingProduct()
@@ -290,6 +297,16 @@ namespace Bylsan_System.SenarioAddOrderForms
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ckBracode_CheckedChanged(object sender, EventArgs e)
         {
 
         }

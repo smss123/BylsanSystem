@@ -27,6 +27,10 @@ namespace Bylsan_System.designerForms
         private void PopulateGrd()
         {
             Operation.BeginOperation(this);
+            if (Operation.Allproducts == null)
+            {
+                Operation.AllOrderProduct = OrderProductsCmd.GetAll();
+            }
             var q = Operation.AllOrderProduct.Where(p => p.OrderID == SelectedOrder.ID).ToList();  //Operation.AllOrder.Where(p => p.ID == TagOrder.ID).Single().OrderProducts; //TagOrder.OrderProducts.ToList();
               
             this.Invoke((MethodInvoker)delegate
@@ -43,7 +47,7 @@ namespace Bylsan_System.designerForms
             Thr = new Thread(PopulateGrd);
             Thr.Start();
             lblOrderDate.Text = SelectedOrder.OrderDate.Value.ToString("dd/MM/yyyy");
-            lblOrderDelviryDate.Text = SelectedOrder.OrderDeliveryDate. ToString();
+            lblOrderDelviryDate.Text = SelectedOrder.OrderDeliveryDate.ToString();
         }
 
 

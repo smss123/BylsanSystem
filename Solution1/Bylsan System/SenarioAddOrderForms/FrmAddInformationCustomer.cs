@@ -86,8 +86,9 @@ namespace Bylsan_System.SenarioAddOrderForms
                 frm.OrderTypeCheckLab.Text = string.Format("Normal Order");
                 CustomerInformations.OrdrType = "Normal";
             }
-            frm.Show();
             this.Hide();
+            frm.ShowDialog();
+           
             Operation.EndOperation(this);
             
             //try

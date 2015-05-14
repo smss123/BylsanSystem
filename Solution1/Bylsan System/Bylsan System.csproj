@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Bylsan_System</RootNamespace>
     <AssemblyName>Bylsan System</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>19</ApplicationRevision>
+    <ApplicationRevision>23</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -795,6 +795,7 @@
     <Compile Include="Reports\ReportsObject\QuotationReportObj.cs" />
     <Compile Include="Reports\ReportsObject\ReceiptVoucherObj.cs" />
     <Compile Include="Reports\ReportsObject\RptBillObj.cs" />
+    <Compile Include="Reports\ReportsObject\Rpt_SalesByDates.cs" />
     <Compile Include="SecurityForm\FrmAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1201,6 +1202,7 @@
     <EmbeddedResource Include="Reports\Sheets\RptBalanceSheet.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\rptOrderPurcheses.rdlc" />
     <EmbeddedResource Include="Reports\Sheets\RptPurchases.rdlc" />
+    <EmbeddedResource Include="Reports\Sheets\Rpt_Sales.rdlc" />
     <EmbeddedResource Include="SecurityForm\FrmAddUser.resx">
       <DependentUpon>FrmAddUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -1280,6 +1282,7 @@
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.QuotationReportObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.ReceiptVoucherObj.datasource" />
     <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.RptBillObj.datasource" />
+    <None Include="Properties\DataSources\Bylsan_System.Reports.ReportsObject.Rpt_SalesByDates.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.Account.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.AccountCategory.datasource" />
     <None Include="Properties\DataSources\XamaDataLayer.AccountDaily.datasource" />
@@ -1378,6 +1381,11 @@
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

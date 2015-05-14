@@ -73,6 +73,7 @@ namespace XamaDataLayer.Security
         public static User Login(string usr, string pwd)
         {
 
+            db = new DbDataContext();
             var q = db.Users .Where(p => p.UserName == usr && p.Passwords == pwd).ToList();
             if (q.Count == 0 || q.Count == -1)
             {

@@ -2,22 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="XamaDataLayer.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="soft_BylsanConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=jasmine.arvixe.com;Initial Catalog=Cloud_Bylsan1;User ID=xama;Password=Pa$$w0rd;Connect Timeout=90&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=jasmine.arvixe.com;Initial Catalog=Cloud_Bylsan1;User ID=xama;Password=Pa$$w0rd;Connect Timeout=90</Value>
-    </Setting>
-    <Setting Name="bylsanConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=SEZEROFFICE-PC\SQL2008;Initial Catalog=bylsan;Integrated Security=True&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=SEZEROFFICE-PC\SQL2008;Initial Catalog=bylsan;Integrated Security=True</Value>
-    </Setting>
     <Setting Name="Cloud_BylsanConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
@@ -25,38 +9,6 @@
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=jasmine.arvixe.com;Initial Catalog=App_Bylsan;Persist Security Info=True;User ID=xama;Password=Pa$$w0rd;Max Pool Size=1000;Asynchronous Processing=True;MultipleActiveResultSets=True;Replication=False;Connect Timeout=900;TrustServerCertificate=False;Load Balance Timeout=9999;Packet Size=32768;User Instance=False;Context Connection=False;MultiSubnetFailover=True;ConnectRetryCount=90</Value>
-    </Setting>
-    <Setting Name="ClientApp_BylsanConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=|DataDirectory|\App_Bylsan.sdf;Max Database Size=2047&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;Microsoft.SqlServerCe.Client.3.5&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=|DataDirectory|\App_Bylsan.sdf;Max Database Size=2047</Value>
-    </Setting>
-    <Setting Name="ClientApp_Bylsan1ConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=|DataDirectory|\App_Bylsan1.sdf;Max Database Size=2047&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;Microsoft.SqlServerCe.Client.3.5&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=|DataDirectory|\App_Bylsan1.sdf;Max Database Size=2047</Value>
-    </Setting>
-    <Setting Name="soft_BylsanConnectionString1" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=jasmine.arvixe.com;Initial Catalog=App_Bylsan;User ID=xama;Password=Pa$$w0rd&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=jasmine.arvixe.com;Initial Catalog=App_Bylsan;User ID=xama;Password=Pa$$w0rd</Value>
-    </Setting>
-    <Setting Name="soft_BylsanConnectionString2" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=SEZEROFFICE-PC\SQL2008;Initial Catalog=soft_Bylsan;Integrated Security=True&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=SEZEROFFICE-PC\SQL2008;Initial Catalog=soft_Bylsan;Integrated Security=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

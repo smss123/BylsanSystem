@@ -43,6 +43,13 @@ namespace Bylsan_System.SenarioAddOrderForms
             PopulateCategoreisTree();
             CreateListViewProducts();
             CustomerInformations.Orderini();
+            textBox1.AutoCompleteCustomSource.Clear();
+            foreach (var item in Operation.Allproducts)
+            {
+                textBox1.AutoCompleteCustomSource.Add(item.Product_Name);
+            }
+            textBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         private void TreeCategories_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -199,6 +206,51 @@ namespace Bylsan_System.SenarioAddOrderForms
                 return;
             }
            
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+            {
+                textBox1.AutoCompleteCustomSource.Clear();
+                foreach (var item in Operation.Allproducts)
+                {
+                    textBox1.AutoCompleteCustomSource.Add(item.PublicName);
+                }
+            }
+        }
+
+        private void ckBracode_CheckedChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void radioButton2_Click(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+            {
+                textBox1.AutoCompleteCustomSource.Clear();
+                foreach (var item in Operation.Allproducts)
+                {
+                    textBox1.AutoCompleteCustomSource.Add(item.PublicName);
+                }
+                textBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            }
+        }
+
+        private void ckBracode_Click(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+            {
+                textBox1.AutoCompleteCustomSource.Clear();
+                foreach (var item in Operation.Allproducts)
+                {
+                    textBox1.AutoCompleteCustomSource.Add(item.PublicName);
+                }
+                textBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            }
         }
     }
 }

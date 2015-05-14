@@ -9,92 +9,34 @@
 //------------------------------------------------------------------------------
 
 namespace XamaDataLayer.Properties {
-    
-    
+
+
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+    {
+
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-        
-        public static Settings Default {
-            get {
+
+        public static Settings Default
+        {
+            get
+            {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=jasmine.arvixe.com;Initial Catalog=Cloud_Bylsan1;User ID=xama;Passwor" +
-            "d=Pa$$w0rd;Connect Timeout=90")]
-        public string soft_BylsanConnectionString {
-            get {
-                return ((string)(this["soft_BylsanConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SEZEROFFICE-PC\\SQL2008;Initial Catalog=bylsan;Integrated Security=Tru" +
-            "e")]
-        public string bylsanConnectionString {
-            get {
-                return ((string)(this["bylsanConnectionString"]));
-            }
-        }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute(@"Data Source=jasmine.arvixe.com;Initial Catalog=App_Bylsan;Persist Security Info=True;User ID=xama;Password=Pa$$w0rd;Max Pool Size=1000;Asynchronous Processing=True;MultipleActiveResultSets=True;Replication=False;Connect Timeout=900;TrustServerCertificate=False;Load Balance Timeout=9999;Packet Size=32768;User Instance=False;Context Connection=False;MultiSubnetFailover=True;ConnectRetryCount=90")]
-        public string Cloud_BylsanConnectionString {
-            get {
+        public string Cloud_BylsanConnectionString
+        {
+            get
+            {
                 return ((string)(this["Cloud_BylsanConnectionString"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=|DataDirectory|\\App_Bylsan.sdf;Max Database Size=2047")]
-        public string ClientApp_BylsanConnectionString {
-            get {
-                return ((string)(this["ClientApp_BylsanConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=|DataDirectory|\\App_Bylsan1.sdf;Max Database Size=2047")]
-        public string ClientApp_Bylsan1ConnectionString {
-            get {
-                return ((string)(this["ClientApp_Bylsan1ConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=jasmine.arvixe.com;Initial Catalog=App_Bylsan;User ID=xama;Password=P" +
-            "a$$w0rd")]
-        public string soft_BylsanConnectionString1 {
-            get {
-                return ((string)(this["soft_BylsanConnectionString1"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SEZEROFFICE-PC\\SQL2008;Initial Catalog=soft_Bylsan;Integrated Securit" +
-            "y=True")]
-        public string soft_BylsanConnectionString2 {
-            get {
-                return ((string)(this["soft_BylsanConnectionString2"]));
-            }
-        }
     }
+    
 }

@@ -64,7 +64,7 @@ namespace XamaDataLayer.Accountant
                                             select c).ToList()
              );
             db.CommandTimeout = 9000;
-            return com(db,expID);
+            return com(db,expID).ToList();
         }
         public static List<ExpenssesMovment> GetAllExpnssesMovmentsByDate( DateTime dat )
         {

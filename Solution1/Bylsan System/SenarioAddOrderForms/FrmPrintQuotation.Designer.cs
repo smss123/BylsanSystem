@@ -215,6 +215,8 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Name";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.radioButton2.Click += new System.EventHandler(this.radioButton2_Click);
             // 
             // ckBracode
             // 
@@ -226,9 +228,13 @@
             this.ckBracode.TabStop = true;
             this.ckBracode.Text = "Bar Code";
             this.ckBracode.UseVisualStyleBackColor = true;
+            this.ckBracode.CheckedChanged += new System.EventHandler(this.ckBracode_CheckedChanged);
+            this.ckBracode.Click += new System.EventHandler(this.ckBracode_Click);
             // 
             // textBox1
             // 
+            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBox1.Location = new System.Drawing.Point(224, 24);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(192, 20);

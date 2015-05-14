@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddOrderProduct));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
@@ -238,6 +238,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "by Item Name";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // ckBracode
             // 
@@ -249,6 +250,7 @@
             this.ckBracode.TabStop = true;
             this.ckBracode.Text = "By Barcode";
             this.ckBracode.UseVisualStyleBackColor = true;
+            this.ckBracode.CheckedChanged += new System.EventHandler(this.ckBracode_CheckedChanged);
             // 
             // textBox1
             // 
@@ -312,32 +314,32 @@
             // radGridView1
             // 
             this.radGridView1.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.EnableExpressionEditor = false;
-            gridViewTextBoxColumn1.FieldName = "Product.Product_Name";
-            gridViewTextBoxColumn1.HeaderText = "Name";
-            gridViewTextBoxColumn1.Name = "ColName";
-            gridViewTextBoxColumn1.Width = 98;
-            gridViewTextBoxColumn2.EnableExpressionEditor = false;
-            gridViewTextBoxColumn2.FieldName = "Qty";
-            gridViewTextBoxColumn2.HeaderText = "Qty";
-            gridViewTextBoxColumn2.Name = "ColQty";
-            gridViewTextBoxColumn2.Width = 98;
-            gridViewTextBoxColumn3.EnableExpressionEditor = false;
-            gridViewTextBoxColumn3.FieldName = "Product.ProductPrice";
-            gridViewTextBoxColumn3.HeaderText = "Product Price";
-            gridViewTextBoxColumn3.Name = "ColProductPrice";
-            gridViewTextBoxColumn3.Width = 98;
-            gridViewTextBoxColumn4.EnableExpressionEditor = true;
-            gridViewTextBoxColumn4.Expression = "ColProductPrice * ColQty";
-            gridViewTextBoxColumn4.HeaderText = "Price";
-            gridViewTextBoxColumn4.Name = "ColPrice";
-            gridViewTextBoxColumn4.ReadOnly = true;
-            gridViewTextBoxColumn4.Width = 95;
+            gridViewTextBoxColumn5.EnableExpressionEditor = false;
+            gridViewTextBoxColumn5.FieldName = "Product.Product_Name";
+            gridViewTextBoxColumn5.HeaderText = "Name";
+            gridViewTextBoxColumn5.Name = "ColName";
+            gridViewTextBoxColumn5.Width = 98;
+            gridViewTextBoxColumn6.EnableExpressionEditor = false;
+            gridViewTextBoxColumn6.FieldName = "Qty";
+            gridViewTextBoxColumn6.HeaderText = "Qty";
+            gridViewTextBoxColumn6.Name = "ColQty";
+            gridViewTextBoxColumn6.Width = 98;
+            gridViewTextBoxColumn7.EnableExpressionEditor = false;
+            gridViewTextBoxColumn7.FieldName = "Product.ProductPrice";
+            gridViewTextBoxColumn7.HeaderText = "Product Price";
+            gridViewTextBoxColumn7.Name = "ColProductPrice";
+            gridViewTextBoxColumn7.Width = 98;
+            gridViewTextBoxColumn8.EnableExpressionEditor = true;
+            gridViewTextBoxColumn8.Expression = "ColProductPrice * ColQty";
+            gridViewTextBoxColumn8.HeaderText = "Price";
+            gridViewTextBoxColumn8.Name = "ColPrice";
+            gridViewTextBoxColumn8.ReadOnly = true;
+            gridViewTextBoxColumn8.Width = 95;
             this.radGridView1.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4});
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8});
             this.radGridView1.Name = "radGridView1";
             this.radGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.radGridView1.Size = new System.Drawing.Size(406, 304);

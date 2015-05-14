@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn2 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.DGVOrders = new Telerik.WinControls.UI.RadGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -60,41 +60,41 @@
             // 
             this.DGVOrders.MasterTemplate.AutoGenerateColumns = false;
             this.DGVOrders.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn4.EnableExpressionEditor = false;
-            gridViewTextBoxColumn4.FieldName = "ID";
-            gridViewTextBoxColumn4.HeaderText = "ID";
-            gridViewTextBoxColumn4.Name = "ID";
-            gridViewTextBoxColumn4.Width = 92;
-            gridViewTextBoxColumn5.EnableExpressionEditor = false;
-            gridViewTextBoxColumn5.FieldName = "OrderName";
-            gridViewTextBoxColumn5.HeaderText = "Order Name";
-            gridViewTextBoxColumn5.Name = "OrderName";
-            gridViewTextBoxColumn5.Width = 165;
-            gridViewDateTimeColumn2.DateTimeKind = System.DateTimeKind.Local;
-            gridViewDateTimeColumn2.EnableExpressionEditor = false;
-            gridViewDateTimeColumn2.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.MediumTime;
-            gridViewDateTimeColumn2.FieldName = "OrderDate";
-            gridViewDateTimeColumn2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            gridViewDateTimeColumn2.FormatInfo = new System.Globalization.CultureInfo("en-GB");
-            gridViewDateTimeColumn2.FormatString = "{0:d}";
-            gridViewDateTimeColumn2.HeaderText = "Order Date";
-            gridViewDateTimeColumn2.Name = "column1";
-            gridViewDateTimeColumn2.Width = 185;
-            gridViewTextBoxColumn6.EnableExpressionEditor = false;
-            gridViewTextBoxColumn6.FieldName = "OrderDeliveryDate";
-            gridViewTextBoxColumn6.HeaderText = "Delivery Date";
-            gridViewTextBoxColumn6.Name = "ColDevliverDate";
-            gridViewTextBoxColumn6.Width = 193;
-            gridViewCommandColumn2.EnableExpressionEditor = false;
-            gridViewCommandColumn2.HeaderText = "Enter";
-            gridViewCommandColumn2.Name = "EnterColm";
-            gridViewCommandColumn2.Width = 176;
+            gridViewTextBoxColumn1.EnableExpressionEditor = false;
+            gridViewTextBoxColumn1.FieldName = "ID";
+            gridViewTextBoxColumn1.HeaderText = "ID";
+            gridViewTextBoxColumn1.Name = "ID";
+            gridViewTextBoxColumn1.Width = 92;
+            gridViewTextBoxColumn2.EnableExpressionEditor = false;
+            gridViewTextBoxColumn2.FieldName = "OrderName";
+            gridViewTextBoxColumn2.HeaderText = "Order Name";
+            gridViewTextBoxColumn2.Name = "OrderName";
+            gridViewTextBoxColumn2.Width = 165;
+            gridViewDateTimeColumn1.DateTimeKind = System.DateTimeKind.Local;
+            gridViewDateTimeColumn1.EnableExpressionEditor = false;
+            gridViewDateTimeColumn1.ExcelExportType = Telerik.WinControls.UI.Export.DisplayFormatType.MediumTime;
+            gridViewDateTimeColumn1.FieldName = "OrderDate";
+            gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            gridViewDateTimeColumn1.FormatInfo = new System.Globalization.CultureInfo("en-GB");
+            gridViewDateTimeColumn1.FormatString = "{0:d}";
+            gridViewDateTimeColumn1.HeaderText = "Order Date";
+            gridViewDateTimeColumn1.Name = "column1";
+            gridViewDateTimeColumn1.Width = 185;
+            gridViewTextBoxColumn3.EnableExpressionEditor = false;
+            gridViewTextBoxColumn3.FieldName = "OrderDeliveryDate";
+            gridViewTextBoxColumn3.HeaderText = "Delivery Date";
+            gridViewTextBoxColumn3.Name = "ColDevliverDate";
+            gridViewTextBoxColumn3.Width = 193;
+            gridViewCommandColumn1.EnableExpressionEditor = false;
+            gridViewCommandColumn1.HeaderText = "Enter";
+            gridViewCommandColumn1.Name = "EnterColm";
+            gridViewCommandColumn1.Width = 176;
             this.DGVOrders.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewDateTimeColumn2,
-            gridViewTextBoxColumn6,
-            gridViewCommandColumn2});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewDateTimeColumn1,
+            gridViewTextBoxColumn3,
+            gridViewCommandColumn1});
             this.DGVOrders.MasterTemplate.EnableFiltering = true;
             this.DGVOrders.Name = "DGVOrders";
             this.DGVOrders.ReadOnly = true;
@@ -161,7 +161,7 @@
             this.RootElement.ApplyShapeToControl = true;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmOrderShow";
+            this.Text = "Order Show";
             this.ThemeName = "Office2010Black";
             this.Load += new System.EventHandler(this.FrmOrderShow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVOrders.MasterTemplate)).EndInit();

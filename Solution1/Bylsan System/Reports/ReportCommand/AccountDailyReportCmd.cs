@@ -40,7 +40,17 @@ namespace Bylsan_System.Reports.ReportCommand
             frm.ShowDialog();
         }
 
-
+        public void GetSales(List<Rpt_SalesByDates> ls)
+        {
+            var rs = new ReportDataSource();
+            rs.Name = "DataSet1";
+            rs.Value = ls;
+            var frm = new RebortView();
+            frm.reportViewer1.LocalReport.DataSources.Clear();
+            frm.reportViewer1.LocalReport.DataSources.Add(rs);
+            frm.reportViewer1.LocalReport.ReportEmbeddedResource = "Bylsan_System.Reports.Sheets.Rpt_Sales.rdlc";
+            frm.ShowDialog();
+        }
 
         public void GetExpenssesMovmentByDate( int AccountID)
         {
